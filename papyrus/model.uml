@@ -73,4 +73,18 @@
     <node xmi:type="uml:ActivityFinalNode" xmi:id="_woaYMI8EEeWkVtgeNIZRdw" name="" incoming="_Y5czEI8FEeWkVtgeNIZRdw"/>
     <node xmi:type="uml:DecisionNode" xmi:id="_mvn4sI8FEeWkVtgeNIZRdw" name="" incoming="_q6YB4I8FEeWkVtgeNIZRdw" outgoing="_rZOhEI8FEeWkVtgeNIZRdw _12QgoI8FEeWkVtgeNIZRdw"/>
   </packagedElement>
+  <packagedElement xmi:type="uml:Activity" xmi:id="_7Z3VsI9eEeWPV6mOYIaemg" name="Activity3" node="__zExoI9eEeWPV6mOYIaemg _GHqVII9fEeWPV6mOYIaemg _IcdpUI9fEeWPV6mOYIaemg _Kq86II9fEeWPV6mOYIaemg _OXs4sI9fEeWPV6mOYIaemg _TlcI4I9fEeWPV6mOYIaemg _ZGsK8I9fEeWPV6mOYIaemg _dLy_II9fEeWPV6mOYIaemg _fvo04I9fEeWPV6mOYIaemg _p7ngsI9fEeWPV6mOYIaemg _szBLoI9fEeWPV6mOYIaemg _vhNQMI9fEeWPV6mOYIaemg">
+    <node xmi:type="uml:InitialNode" xmi:id="__zExoI9eEeWPV6mOYIaemg" name=""/>
+    <node xmi:type="uml:DecisionNode" xmi:id="_GHqVII9fEeWPV6mOYIaemg" name="Wants to create booking"/>
+    <node xmi:type="uml:FlowFinalNode" xmi:id="_IcdpUI9fEeWPV6mOYIaemg" name=""/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_Kq86II9fEeWPV6mOYIaemg" name="System asks for date and room"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_OXs4sI9fEeWPV6mOYIaemg" name="Actor inputs date and room"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_TlcI4I9fEeWPV6mOYIaemg" name="Include UC: Search available room"/>
+    <node xmi:type="uml:DecisionNode" xmi:id="_ZGsK8I9fEeWPV6mOYIaemg" name="Date is correct and room is available"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_dLy_II9fEeWPV6mOYIaemg" name="System generates a booking"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_fvo04I9fEeWPV6mOYIaemg" name="Include UC: Create guest"/>
+    <node xmi:type="uml:DecisionNode" xmi:id="_p7ngsI9fEeWPV6mOYIaemg" name="Want to add more guests"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_szBLoI9fEeWPV6mOYIaemg" name="System adds default room service"/>
+    <node xmi:type="uml:DecisionNode" xmi:id="_vhNQMI9fEeWPV6mOYIaemg" name="Wants to add additional services"/>
+  </packagedElement>
 </uml:Model>
