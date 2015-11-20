@@ -109,7 +109,6 @@
     <node xmi:type="uml:ActivityFinalNode" xmi:id="_-1q0kI9mEeWPV6mOYIaemg" name="" incoming="_aPaM4I9nEeWPV6mOYIaemg"/>
     <node xmi:type="uml:ActivityFinalNode" xmi:id="_AvFNQI9nEeWPV6mOYIaemg" incoming="_C76RMI9nEeWPV6mOYIaemg"/>
   </packagedElement>
-<<<<<<< abd1cdbbbbcb3edd93e53846e52f3da4f5d25439
   <packagedElement xmi:type="uml:Activity" xmi:id="_SCGUkI9kEeWPV6mOYIaemg" name="SearchUsedService" node="_qsy3QI9lEeW7Xr55BlhNFQ _8RUd8I9lEeW7Xr55BlhNFQ _IUmpoI9mEeW7Xr55BlhNFQ _MjXwII9mEeW7Xr55BlhNFQ _Vy3lkI9mEeW7Xr55BlhNFQ _ipQCII9mEeW7Xr55BlhNFQ _5Z3TMI9mEeW7Xr55BlhNFQ __ROvMI9mEeW7Xr55BlhNFQ _J2SCUI9nEeW7Xr55BlhNFQ _LLW-4I9nEeW7Xr55BlhNFQ _ZI4CoI9nEeW7Xr55BlhNFQ">
     <edge xmi:type="uml:ControlFlow" xmi:id="_eMsh0I9nEeW7Xr55BlhNFQ" target="_8RUd8I9lEeW7Xr55BlhNFQ" source="_qsy3QI9lEeW7Xr55BlhNFQ"/>
     <edge xmi:type="uml:ControlFlow" xmi:id="_gby2oI9nEeW7Xr55BlhNFQ" target="_IUmpoI9mEeW7Xr55BlhNFQ" source="_8RUd8I9lEeW7Xr55BlhNFQ"/>
@@ -136,8 +135,6 @@
     <node xmi:type="uml:OpaqueAction" xmi:id="_LLW-4I9nEeW7Xr55BlhNFQ" name="Display result" incoming="_NdeWAI9oEeW7Xr55BlhNFQ _A3A54I9qEeW7Xr55BlhNFQ" outgoing="_Olo38I9oEeW7Xr55BlhNFQ"/>
     <node xmi:type="uml:ActivityFinalNode" xmi:id="_ZI4CoI9nEeW7Xr55BlhNFQ" incoming="_Olo38I9oEeW7Xr55BlhNFQ"/>
   </packagedElement>
-  <packagedElement xmi:type="uml:Activity" xmi:id="_Z7suEI9kEeWPV6mOYIaemg" name="CreateGuest"/>
-<<<<<<< 2085b53c567945ca8903e20d9bbe1471f58f91d7
   <packagedElement xmi:type="uml:Activity" xmi:id="_cLTZMI9kEeWPV6mOYIaemg" name="BookService" node="_8mY8wI9qEeW7Xr55BlhNFQ _9myCwI9qEeW7Xr55BlhNFQ _BD0KUI9rEeW7Xr55BlhNFQ _CTJEMI9rEeW7Xr55BlhNFQ _FC2ywI9rEeW7Xr55BlhNFQ _IjUo0I9rEeW7Xr55BlhNFQ _TthQYI9rEeW7Xr55BlhNFQ _cmc_8I9rEeW7Xr55BlhNFQ _faqM8I9rEeW7Xr55BlhNFQ _iiZZ8I9rEeW7Xr55BlhNFQ _lMEx8I9rEeW7Xr55BlhNFQ _OUSscI9sEeW7Xr55BlhNFQ">
     <edge xmi:type="uml:ControlFlow" xmi:id="_vtW_YI9rEeW7Xr55BlhNFQ" target="_9myCwI9qEeW7Xr55BlhNFQ" source="_8mY8wI9qEeW7Xr55BlhNFQ"/>
     <edge xmi:type="uml:ControlFlow" xmi:id="_wOnSUI9rEeW7Xr55BlhNFQ" target="_BD0KUI9rEeW7Xr55BlhNFQ" source="_9myCwI9qEeW7Xr55BlhNFQ"/>
@@ -183,9 +180,6 @@
     <node xmi:type="uml:OpaqueAction" xmi:id="_ID-oII9wEeWAKfHvY91fAA" name="System displays remaining rooms" incoming="_Lj0zII9wEeWAKfHvY91fAA" outgoing="_QhBF4I9wEeWAKfHvY91fAA"/>
     <node xmi:type="uml:ActivityFinalNode" xmi:id="_OcWfcI9wEeWAKfHvY91fAA" name="" incoming="_QhBF4I9wEeWAKfHvY91fAA"/>
   </packagedElement>
-=======
-=======
-  <packagedElement xmi:type="uml:Activity" xmi:id="_SCGUkI9kEeWPV6mOYIaemg" name="SearchUsedService"/>
   <packagedElement xmi:type="uml:Activity" xmi:id="_Z7suEI9kEeWPV6mOYIaemg" name="CreateGuest" node="_4nha0I9nEeWPV6mOYIaemg _7N8qgI9nEeWPV6mOYIaemg _HPMO0I9oEeWPV6mOYIaemg _LJaBoI9oEeWPV6mOYIaemg _Nd7pAI9oEeWPV6mOYIaemg _QVPNUI9oEeWPV6mOYIaemg _BgCowI9qEeWPV6mOYIaemg _l_oyUI9qEeWPV6mOYIaemg _nnh9MI9qEeWPV6mOYIaemg _B8amQI9rEeWPV6mOYIaemg _yc4gsI9rEeWPV6mOYIaemg">
     <edge xmi:type="uml:ControlFlow" xmi:id="_s-QKQI9qEeWPV6mOYIaemg" target="_7N8qgI9nEeWPV6mOYIaemg" source="_4nha0I9nEeWPV6mOYIaemg"/>
     <edge xmi:type="uml:ControlFlow" xmi:id="_tfSawI9qEeWPV6mOYIaemg" target="_HPMO0I9oEeWPV6mOYIaemg" source="_7N8qgI9nEeWPV6mOYIaemg"/>
@@ -211,9 +205,5 @@
     <node xmi:type="uml:OpaqueAction" xmi:id="_B8amQI9rEeWPV6mOYIaemg" name="Fetch guests already in booking, compute #underage, #notUnderage" incoming="_MOjkcI9rEeWPV6mOYIaemg" outgoing="_NFaT8I9rEeWPV6mOYIaemg"/>
     <node xmi:type="uml:ActivityFinalNode" xmi:id="_yc4gsI9rEeWPV6mOYIaemg" incoming="_22UmII9rEeWPV6mOYIaemg"/>
   </packagedElement>
->>>>>>> Add Activity diagram usecase CreateGuest
-  <packagedElement xmi:type="uml:Activity" xmi:id="_cLTZMI9kEeWPV6mOYIaemg" name="BookService"/>
-  <packagedElement xmi:type="uml:Activity" xmi:id="_oKzREI9kEeWPV6mOYIaemg" name="SearchAvailableRooms"/>
->>>>>>> Add Activity diagram usecase CreateGuest
   <packagedElement xmi:type="uml:Activity" xmi:id="_pxfiEI9kEeWPV6mOYIaemg" name="SearchOccupiedRooms"/>
 </uml:Model>
