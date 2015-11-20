@@ -73,19 +73,41 @@
     <node xmi:type="uml:ActivityFinalNode" xmi:id="_woaYMI8EEeWkVtgeNIZRdw" name="" incoming="_Y5czEI8FEeWkVtgeNIZRdw"/>
     <node xmi:type="uml:DecisionNode" xmi:id="_mvn4sI8FEeWkVtgeNIZRdw" name="" incoming="_q6YB4I8FEeWkVtgeNIZRdw" outgoing="_rZOhEI8FEeWkVtgeNIZRdw _12QgoI8FEeWkVtgeNIZRdw"/>
   </packagedElement>
-  <packagedElement xmi:type="uml:Activity" xmi:id="_7Z3VsI9eEeWPV6mOYIaemg" name="CreateBooking" node="__zExoI9eEeWPV6mOYIaemg _GHqVII9fEeWPV6mOYIaemg _IcdpUI9fEeWPV6mOYIaemg _Kq86II9fEeWPV6mOYIaemg _OXs4sI9fEeWPV6mOYIaemg _TlcI4I9fEeWPV6mOYIaemg _ZGsK8I9fEeWPV6mOYIaemg _dLy_II9fEeWPV6mOYIaemg _fvo04I9fEeWPV6mOYIaemg _p7ngsI9fEeWPV6mOYIaemg _szBLoI9fEeWPV6mOYIaemg _vhNQMI9fEeWPV6mOYIaemg">
-    <node xmi:type="uml:InitialNode" xmi:id="__zExoI9eEeWPV6mOYIaemg" name=""/>
-    <node xmi:type="uml:DecisionNode" xmi:id="_GHqVII9fEeWPV6mOYIaemg" name="Wants to create booking"/>
-    <node xmi:type="uml:FlowFinalNode" xmi:id="_IcdpUI9fEeWPV6mOYIaemg" name=""/>
-    <node xmi:type="uml:OpaqueAction" xmi:id="_Kq86II9fEeWPV6mOYIaemg" name="System asks for date and room"/>
-    <node xmi:type="uml:OpaqueAction" xmi:id="_OXs4sI9fEeWPV6mOYIaemg" name="Actor inputs date and room"/>
-    <node xmi:type="uml:OpaqueAction" xmi:id="_TlcI4I9fEeWPV6mOYIaemg" name="Include UC: Search available room"/>
-    <node xmi:type="uml:DecisionNode" xmi:id="_ZGsK8I9fEeWPV6mOYIaemg" name="Date is correct and room is available"/>
-    <node xmi:type="uml:OpaqueAction" xmi:id="_dLy_II9fEeWPV6mOYIaemg" name="System generates a booking"/>
-    <node xmi:type="uml:OpaqueAction" xmi:id="_fvo04I9fEeWPV6mOYIaemg" name="Include UC: Create guest"/>
-    <node xmi:type="uml:DecisionNode" xmi:id="_p7ngsI9fEeWPV6mOYIaemg" name="Want to add more guests"/>
-    <node xmi:type="uml:OpaqueAction" xmi:id="_szBLoI9fEeWPV6mOYIaemg" name="System adds default room service"/>
-    <node xmi:type="uml:DecisionNode" xmi:id="_vhNQMI9fEeWPV6mOYIaemg" name="Wants to add additional services"/>
+  <packagedElement xmi:type="uml:Activity" xmi:id="_7Z3VsI9eEeWPV6mOYIaemg" name="CreateBooking" node="__zExoI9eEeWPV6mOYIaemg _GHqVII9fEeWPV6mOYIaemg _IcdpUI9fEeWPV6mOYIaemg _Kq86II9fEeWPV6mOYIaemg _OXs4sI9fEeWPV6mOYIaemg _TlcI4I9fEeWPV6mOYIaemg _ZGsK8I9fEeWPV6mOYIaemg _dLy_II9fEeWPV6mOYIaemg _fvo04I9fEeWPV6mOYIaemg _p7ngsI9fEeWPV6mOYIaemg _szBLoI9fEeWPV6mOYIaemg _vhNQMI9fEeWPV6mOYIaemg _yVTEQI9mEeWPV6mOYIaemg _2UgEwI9mEeWPV6mOYIaemg _-1q0kI9mEeWPV6mOYIaemg _AvFNQI9nEeWPV6mOYIaemg">
+    <edge xmi:type="uml:ControlFlow" xmi:id="_4Vik4I9lEeWPV6mOYIaemg" target="_GHqVII9fEeWPV6mOYIaemg" source="__zExoI9eEeWPV6mOYIaemg"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_5U9agI9lEeWPV6mOYIaemg" name="no" target="_IcdpUI9fEeWPV6mOYIaemg" source="_GHqVII9fEeWPV6mOYIaemg"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_6Co_4I9lEeWPV6mOYIaemg" name="yes" target="_Kq86II9fEeWPV6mOYIaemg" source="_GHqVII9fEeWPV6mOYIaemg"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_6pBDYI9lEeWPV6mOYIaemg" target="_OXs4sI9fEeWPV6mOYIaemg" source="_Kq86II9fEeWPV6mOYIaemg"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_7fD6kI9lEeWPV6mOYIaemg" target="_TlcI4I9fEeWPV6mOYIaemg" source="_OXs4sI9fEeWPV6mOYIaemg"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_9X_yII9lEeWPV6mOYIaemg" target="_ZGsK8I9fEeWPV6mOYIaemg" source="_TlcI4I9fEeWPV6mOYIaemg"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_-CFQ8I9lEeWPV6mOYIaemg" name="yes" target="_dLy_II9fEeWPV6mOYIaemg" source="_ZGsK8I9fEeWPV6mOYIaemg"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_BaQGoI9mEeWPV6mOYIaemg" target="_fvo04I9fEeWPV6mOYIaemg" source="_dLy_II9fEeWPV6mOYIaemg"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_IahEYI9mEeWPV6mOYIaemg" target="_p7ngsI9fEeWPV6mOYIaemg" source="_fvo04I9fEeWPV6mOYIaemg"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_KELJ0I9mEeWPV6mOYIaemg" name="no" target="_szBLoI9fEeWPV6mOYIaemg" source="_p7ngsI9fEeWPV6mOYIaemg"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_KswMwI9mEeWPV6mOYIaemg" target="_vhNQMI9fEeWPV6mOYIaemg" source="_szBLoI9fEeWPV6mOYIaemg"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_MIkDcI9mEeWPV6mOYIaemg" name="yes" target="_fvo04I9fEeWPV6mOYIaemg" source="_p7ngsI9fEeWPV6mOYIaemg"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_iSUv4I9mEeWPV6mOYIaemg" name="no" target="_OXs4sI9fEeWPV6mOYIaemg" source="_ZGsK8I9fEeWPV6mOYIaemg"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_87UnwI9mEeWPV6mOYIaemg" name="yes" target="_yVTEQI9mEeWPV6mOYIaemg" source="_vhNQMI9fEeWPV6mOYIaemg"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_B-iqAI9nEeWPV6mOYIaemg" target="_2UgEwI9mEeWPV6mOYIaemg" source="_yVTEQI9mEeWPV6mOYIaemg"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_C76RMI9nEeWPV6mOYIaemg" name="no" target="_AvFNQI9nEeWPV6mOYIaemg" source="_2UgEwI9mEeWPV6mOYIaemg"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_EILQAI9nEeWPV6mOYIaemg" name="yes" target="_yVTEQI9mEeWPV6mOYIaemg" source="_2UgEwI9mEeWPV6mOYIaemg"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_aPaM4I9nEeWPV6mOYIaemg" name="no" target="_-1q0kI9mEeWPV6mOYIaemg" source="_vhNQMI9fEeWPV6mOYIaemg"/>
+    <node xmi:type="uml:InitialNode" xmi:id="__zExoI9eEeWPV6mOYIaemg" name="" outgoing="_4Vik4I9lEeWPV6mOYIaemg"/>
+    <node xmi:type="uml:DecisionNode" xmi:id="_GHqVII9fEeWPV6mOYIaemg" name="Wants to create booking" incoming="_4Vik4I9lEeWPV6mOYIaemg" outgoing="_5U9agI9lEeWPV6mOYIaemg _6Co_4I9lEeWPV6mOYIaemg"/>
+    <node xmi:type="uml:FlowFinalNode" xmi:id="_IcdpUI9fEeWPV6mOYIaemg" name="" incoming="_5U9agI9lEeWPV6mOYIaemg"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_Kq86II9fEeWPV6mOYIaemg" name="System asks for date and room" incoming="_6Co_4I9lEeWPV6mOYIaemg" outgoing="_6pBDYI9lEeWPV6mOYIaemg"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_OXs4sI9fEeWPV6mOYIaemg" name="Actor inputs date and room" incoming="_6pBDYI9lEeWPV6mOYIaemg _iSUv4I9mEeWPV6mOYIaemg" outgoing="_7fD6kI9lEeWPV6mOYIaemg"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_TlcI4I9fEeWPV6mOYIaemg" name="Include UC: Search available room" incoming="_7fD6kI9lEeWPV6mOYIaemg" outgoing="_9X_yII9lEeWPV6mOYIaemg"/>
+    <node xmi:type="uml:DecisionNode" xmi:id="_ZGsK8I9fEeWPV6mOYIaemg" name="Date is correct and room is available" incoming="_9X_yII9lEeWPV6mOYIaemg" outgoing="_-CFQ8I9lEeWPV6mOYIaemg _iSUv4I9mEeWPV6mOYIaemg"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_dLy_II9fEeWPV6mOYIaemg" name="System generates a booking" incoming="_-CFQ8I9lEeWPV6mOYIaemg" outgoing="_BaQGoI9mEeWPV6mOYIaemg"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_fvo04I9fEeWPV6mOYIaemg" name="Include UC: Create guest" incoming="_BaQGoI9mEeWPV6mOYIaemg _MIkDcI9mEeWPV6mOYIaemg" outgoing="_IahEYI9mEeWPV6mOYIaemg"/>
+    <node xmi:type="uml:DecisionNode" xmi:id="_p7ngsI9fEeWPV6mOYIaemg" name="Want to add more guests" incoming="_IahEYI9mEeWPV6mOYIaemg" outgoing="_KELJ0I9mEeWPV6mOYIaemg _MIkDcI9mEeWPV6mOYIaemg"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_szBLoI9fEeWPV6mOYIaemg" name="System adds default room service" incoming="_KELJ0I9mEeWPV6mOYIaemg" outgoing="_KswMwI9mEeWPV6mOYIaemg"/>
+    <node xmi:type="uml:DecisionNode" xmi:id="_vhNQMI9fEeWPV6mOYIaemg" name="Wants to add additional services" incoming="_KswMwI9mEeWPV6mOYIaemg" outgoing="_87UnwI9mEeWPV6mOYIaemg _aPaM4I9nEeWPV6mOYIaemg"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_yVTEQI9mEeWPV6mOYIaemg" name="Include UC: Book a service" incoming="_87UnwI9mEeWPV6mOYIaemg _EILQAI9nEeWPV6mOYIaemg" outgoing="_B-iqAI9nEeWPV6mOYIaemg"/>
+    <node xmi:type="uml:DecisionNode" xmi:id="_2UgEwI9mEeWPV6mOYIaemg" name="Add more services" incoming="_B-iqAI9nEeWPV6mOYIaemg" outgoing="_C76RMI9nEeWPV6mOYIaemg _EILQAI9nEeWPV6mOYIaemg"/>
+    <node xmi:type="uml:ActivityFinalNode" xmi:id="_-1q0kI9mEeWPV6mOYIaemg" name="" incoming="_aPaM4I9nEeWPV6mOYIaemg"/>
+    <node xmi:type="uml:ActivityFinalNode" xmi:id="_AvFNQI9nEeWPV6mOYIaemg" incoming="_C76RMI9nEeWPV6mOYIaemg"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Activity" xmi:id="_SCGUkI9kEeWPV6mOYIaemg" name="SearchUsedService"/>
   <packagedElement xmi:type="uml:Activity" xmi:id="_Z7suEI9kEeWPV6mOYIaemg" name="CreateGuest"/>
