@@ -144,12 +144,12 @@
     <edge xmi:type="uml:ControlFlow" xmi:id="_zPVRUI9rEeW7Xr55BlhNFQ" target="_TthQYI9rEeW7Xr55BlhNFQ" source="_IjUo0I9rEeW7Xr55BlhNFQ"/>
     <edge xmi:type="uml:ControlFlow" xmi:id="_zv6O0I9rEeW7Xr55BlhNFQ" name="Yes" target="_cmc_8I9rEeW7Xr55BlhNFQ" source="_TthQYI9rEeW7Xr55BlhNFQ"/>
     <edge xmi:type="uml:ControlFlow" xmi:id="_3DiiwI9rEeW7Xr55BlhNFQ" target="_faqM8I9rEeW7Xr55BlhNFQ" source="_cmc_8I9rEeW7Xr55BlhNFQ"/>
-    <edge xmi:type="uml:ControlFlow" xmi:id="_4KMBwI9rEeW7Xr55BlhNFQ" name="Yes" target="_iiZZ8I9rEeW7Xr55BlhNFQ" source="_faqM8I9rEeW7Xr55BlhNFQ"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_4KMBwI9rEeW7Xr55BlhNFQ" name="yes" target="_iiZZ8I9rEeW7Xr55BlhNFQ" source="_faqM8I9rEeW7Xr55BlhNFQ"/>
     <edge xmi:type="uml:ControlFlow" xmi:id="_46yYQI9rEeW7Xr55BlhNFQ" target="_lMEx8I9rEeW7Xr55BlhNFQ" source="_iiZZ8I9rEeW7Xr55BlhNFQ"/>
-    <edge xmi:type="uml:ControlFlow" xmi:id="_99hSUI9rEeW7Xr55BlhNFQ" name="No" target="_BD0KUI9rEeW7Xr55BlhNFQ" source="_FC2ywI9rEeW7Xr55BlhNFQ"/>
-    <edge xmi:type="uml:ControlFlow" xmi:id="_SxrdwI9sEeW7Xr55BlhNFQ" target="_OUSscI9sEeW7Xr55BlhNFQ" source="_TthQYI9rEeW7Xr55BlhNFQ"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_99hSUI9rEeW7Xr55BlhNFQ" name="no" target="_BD0KUI9rEeW7Xr55BlhNFQ" source="_FC2ywI9rEeW7Xr55BlhNFQ"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_SxrdwI9sEeW7Xr55BlhNFQ" name="no" target="_OUSscI9sEeW7Xr55BlhNFQ" source="_TthQYI9rEeW7Xr55BlhNFQ"/>
     <edge xmi:type="uml:ControlFlow" xmi:id="_U3HgQI9sEeW7Xr55BlhNFQ" target="_IjUo0I9rEeW7Xr55BlhNFQ" source="_OUSscI9sEeW7Xr55BlhNFQ"/>
-    <edge xmi:type="uml:ControlFlow" xmi:id="_sPZOQI9sEeW7Xr55BlhNFQ" name="No" target="_IjUo0I9rEeW7Xr55BlhNFQ" source="_faqM8I9rEeW7Xr55BlhNFQ"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_sPZOQI9sEeW7Xr55BlhNFQ" name="no" target="_IjUo0I9rEeW7Xr55BlhNFQ" source="_faqM8I9rEeW7Xr55BlhNFQ"/>
     <node xmi:type="uml:InitialNode" xmi:id="_8mY8wI9qEeW7Xr55BlhNFQ" name="" outgoing="_vtW_YI9rEeW7Xr55BlhNFQ"/>
     <node xmi:type="uml:OpaqueAction" xmi:id="_9myCwI9qEeW7Xr55BlhNFQ" name="Choice: Actor wants to book service" incoming="_vtW_YI9rEeW7Xr55BlhNFQ" outgoing="_wOnSUI9rEeW7Xr55BlhNFQ"/>
     <node xmi:type="uml:OpaqueAction" xmi:id="_BD0KUI9rEeW7Xr55BlhNFQ" name="Ask actor for booking" incoming="_wOnSUI9rEeW7Xr55BlhNFQ _99hSUI9rEeW7Xr55BlhNFQ" outgoing="_wuazwI9rEeW7Xr55BlhNFQ"/>
@@ -163,22 +163,22 @@
     <node xmi:type="uml:ActivityFinalNode" xmi:id="_lMEx8I9rEeW7Xr55BlhNFQ" name="" incoming="_46yYQI9rEeW7Xr55BlhNFQ"/>
     <node xmi:type="uml:OpaqueAction" xmi:id="_OUSscI9sEeW7Xr55BlhNFQ" name="Extend: UC: #7 Search for service given room" incoming="_SxrdwI9sEeW7Xr55BlhNFQ" outgoing="_U3HgQI9sEeW7Xr55BlhNFQ"/>
   </packagedElement>
-  <packagedElement xmi:type="uml:Activity" xmi:id="_oKzREI9kEeWPV6mOYIaemg" name="SearchAvailableRooms" node="_VCuBYI9uEeWAKfHvY91fAA _i6BIYI9uEeWAKfHvY91fAA _C9VT4I9vEeWAKfHvY91fAA _Tfv9UI9vEeWAKfHvY91fAA _fWL_0I9vEeWAKfHvY91fAA _98ASkI9vEeWAKfHvY91fAA _OcWfcI9wEeWAKfHvY91fAA _ID-oII9wEeWAKfHvY91fAA">
-    <edge xmi:type="uml:ControlFlow" xmi:id="_9nHdII9uEeWAKfHvY91fAA" target="_i6BIYI9uEeWAKfHvY91fAA" source="_VCuBYI9uEeWAKfHvY91fAA"/>
-    <edge xmi:type="uml:ControlFlow" xmi:id="_GX9nsI9vEeWAKfHvY91fAA" name="No" target="_C9VT4I9vEeWAKfHvY91fAA" source="_i6BIYI9uEeWAKfHvY91fAA"/>
-    <edge xmi:type="uml:ControlFlow" xmi:id="_ap7FAI9vEeWAKfHvY91fAA" name="Yes" target="_Tfv9UI9vEeWAKfHvY91fAA" source="_i6BIYI9uEeWAKfHvY91fAA"/>
-    <edge xmi:type="uml:ControlFlow" xmi:id="_nwLJkI9vEeWAKfHvY91fAA" target="_fWL_0I9vEeWAKfHvY91fAA" source="_Tfv9UI9vEeWAKfHvY91fAA"/>
+  <packagedElement xmi:type="uml:Activity" xmi:id="_oKzREI9kEeWPV6mOYIaemg" name="SearchAvailableRooms" node="_VCuBYI9uEeWAKfHvY91fAA _C9VT4I9vEeWAKfHvY91fAA _fWL_0I9vEeWAKfHvY91fAA _98ASkI9vEeWAKfHvY91fAA _OcWfcI9wEeWAKfHvY91fAA _ID-oII9wEeWAKfHvY91fAA _CA7gwI-VEeWoLMtd6O1CbQ _UMOzkI-VEeWoLMtd6O1CbQ">
+    <edge xmi:type="uml:ControlFlow" xmi:id="_nwLJkI9vEeWAKfHvY91fAA" target="_fWL_0I9vEeWAKfHvY91fAA" source="_UMOzkI-VEeWoLMtd6O1CbQ"/>
     <edge xmi:type="uml:ControlFlow" xmi:id="_Eoq-4I9wEeWAKfHvY91fAA" target="_98ASkI9vEeWAKfHvY91fAA" source="_fWL_0I9vEeWAKfHvY91fAA"/>
     <edge xmi:type="uml:ControlFlow" xmi:id="_Lj0zII9wEeWAKfHvY91fAA" target="_ID-oII9wEeWAKfHvY91fAA" source="_98ASkI9vEeWAKfHvY91fAA"/>
     <edge xmi:type="uml:ControlFlow" xmi:id="_QhBF4I9wEeWAKfHvY91fAA" target="_OcWfcI9wEeWAKfHvY91fAA" source="_ID-oII9wEeWAKfHvY91fAA"/>
-    <node xmi:type="uml:InitialNode" xmi:id="_VCuBYI9uEeWAKfHvY91fAA" name="" outgoing="_9nHdII9uEeWAKfHvY91fAA"/>
-    <node xmi:type="uml:DecisionNode" xmi:id="_i6BIYI9uEeWAKfHvY91fAA" name="Search Avaliable Rooms?" incoming="_9nHdII9uEeWAKfHvY91fAA" outgoing="_GX9nsI9vEeWAKfHvY91fAA _ap7FAI9vEeWAKfHvY91fAA"/>
-    <node xmi:type="uml:FlowFinalNode" xmi:id="_C9VT4I9vEeWAKfHvY91fAA" name="" incoming="_GX9nsI9vEeWAKfHvY91fAA"/>
-    <node xmi:type="uml:OpaqueAction" xmi:id="_Tfv9UI9vEeWAKfHvY91fAA" name="System fetches list of all rooms" incoming="_ap7FAI9vEeWAKfHvY91fAA" outgoing="_nwLJkI9vEeWAKfHvY91fAA"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_FL4Z0I-VEeWoLMtd6O1CbQ" target="_CA7gwI-VEeWoLMtd6O1CbQ" source="_VCuBYI9uEeWAKfHvY91fAA"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_FwBBoI-VEeWoLMtd6O1CbQ" name="yes" target="_UMOzkI-VEeWoLMtd6O1CbQ" source="_CA7gwI-VEeWoLMtd6O1CbQ"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_Gc6j4I-VEeWoLMtd6O1CbQ" name="no" target="_C9VT4I9vEeWAKfHvY91fAA" source="_CA7gwI-VEeWoLMtd6O1CbQ"/>
+    <node xmi:type="uml:InitialNode" xmi:id="_VCuBYI9uEeWAKfHvY91fAA" name="" outgoing="_FL4Z0I-VEeWoLMtd6O1CbQ"/>
+    <node xmi:type="uml:FlowFinalNode" xmi:id="_C9VT4I9vEeWAKfHvY91fAA" name="" incoming="_Gc6j4I-VEeWoLMtd6O1CbQ"/>
     <node xmi:type="uml:OpaqueAction" xmi:id="_fWL_0I9vEeWAKfHvY91fAA" name="Include UC: Search for occupied rooms" incoming="_nwLJkI9vEeWAKfHvY91fAA" outgoing="_Eoq-4I9wEeWAKfHvY91fAA"/>
     <node xmi:type="uml:OpaqueAction" xmi:id="_98ASkI9vEeWAKfHvY91fAA" name="System removes all rooms returned" incoming="_Eoq-4I9wEeWAKfHvY91fAA" outgoing="_Lj0zII9wEeWAKfHvY91fAA"/>
     <node xmi:type="uml:OpaqueAction" xmi:id="_ID-oII9wEeWAKfHvY91fAA" name="System displays remaining rooms" incoming="_Lj0zII9wEeWAKfHvY91fAA" outgoing="_QhBF4I9wEeWAKfHvY91fAA"/>
     <node xmi:type="uml:ActivityFinalNode" xmi:id="_OcWfcI9wEeWAKfHvY91fAA" name="" incoming="_QhBF4I9wEeWAKfHvY91fAA"/>
+    <node xmi:type="uml:DecisionNode" xmi:id="_CA7gwI-VEeWoLMtd6O1CbQ" name="Search Available Rooms" incoming="_FL4Z0I-VEeWoLMtd6O1CbQ" outgoing="_FwBBoI-VEeWoLMtd6O1CbQ _Gc6j4I-VEeWoLMtd6O1CbQ"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_UMOzkI-VEeWoLMtd6O1CbQ" name="System fetches list of all rooms" incoming="_FwBBoI-VEeWoLMtd6O1CbQ" outgoing="_nwLJkI9vEeWAKfHvY91fAA"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Activity" xmi:id="_Z7suEI9kEeWPV6mOYIaemg" name="CreateGuest" node="_4nha0I9nEeWPV6mOYIaemg _7N8qgI9nEeWPV6mOYIaemg _HPMO0I9oEeWPV6mOYIaemg _LJaBoI9oEeWPV6mOYIaemg _Nd7pAI9oEeWPV6mOYIaemg _QVPNUI9oEeWPV6mOYIaemg _BgCowI9qEeWPV6mOYIaemg _l_oyUI9qEeWPV6mOYIaemg _nnh9MI9qEeWPV6mOYIaemg _B8amQI9rEeWPV6mOYIaemg _yc4gsI9rEeWPV6mOYIaemg">
     <edge xmi:type="uml:ControlFlow" xmi:id="_s-QKQI9qEeWPV6mOYIaemg" target="_7N8qgI9nEeWPV6mOYIaemg" source="_4nha0I9nEeWPV6mOYIaemg"/>
