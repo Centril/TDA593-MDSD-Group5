@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_EKRAQI0uEeWoqfi1hHsgYg" name="RootElement">
-  <packagedElement xmi:type="uml:Activity" xmi:id="_AtuFUI75EeWkVtgeNIZRdw" name="Activity1" node="_1RiRsI7_EeWkVtgeNIZRdw _5WqwgI7-EeWkVtgeNIZRdw _24ihMI7-EeWkVtgeNIZRdw _1ZKZII7-EeWkVtgeNIZRdw _zYapYI7-EeWkVtgeNIZRdw _p5WG4I7-EeWkVtgeNIZRdw _hJcXgI7-EeWkVtgeNIZRdw _acn6MI7-EeWkVtgeNIZRdw _VlFjgI7-EeWkVtgeNIZRdw _P9BHwI7-EeWkVtgeNIZRdw _NGbVII7-EeWkVtgeNIZRdw _JhzX0I7-EeWkVtgeNIZRdw _BpND4I7-EeWkVtgeNIZRdw _xotGoI77EeWkVtgeNIZRdw _nQfVoI77EeWkVtgeNIZRdw _joR40I77EeWkVtgeNIZRdw _VxDDQI77EeWkVtgeNIZRdw _Zy6ysI76EeWkVtgeNIZRdw _dud3sI75EeWkVtgeNIZRdw">
+  <packagedElement xmi:type="uml:Activity" xmi:id="_AtuFUI75EeWkVtgeNIZRdw" name="CreateOrder" node="_1RiRsI7_EeWkVtgeNIZRdw _5WqwgI7-EeWkVtgeNIZRdw _24ihMI7-EeWkVtgeNIZRdw _1ZKZII7-EeWkVtgeNIZRdw _zYapYI7-EeWkVtgeNIZRdw _p5WG4I7-EeWkVtgeNIZRdw _hJcXgI7-EeWkVtgeNIZRdw _acn6MI7-EeWkVtgeNIZRdw _VlFjgI7-EeWkVtgeNIZRdw _P9BHwI7-EeWkVtgeNIZRdw _NGbVII7-EeWkVtgeNIZRdw _JhzX0I7-EeWkVtgeNIZRdw _BpND4I7-EeWkVtgeNIZRdw _xotGoI77EeWkVtgeNIZRdw _nQfVoI77EeWkVtgeNIZRdw _joR40I77EeWkVtgeNIZRdw _VxDDQI77EeWkVtgeNIZRdw _Zy6ysI76EeWkVtgeNIZRdw _dud3sI75EeWkVtgeNIZRdw">
     <ownedBehavior xmi:type="uml:Activity" xmi:id="_7ATaEI75EeWkVtgeNIZRdw" name="Activity1"/>
     <edge xmi:type="uml:ControlFlow" xmi:id="_3-Ia0I7_EeWkVtgeNIZRdw" target="_Zy6ysI76EeWkVtgeNIZRdw" source="_dud3sI75EeWkVtgeNIZRdw"/>
     <edge xmi:type="uml:ControlFlow" xmi:id="_5YGecI7_EeWkVtgeNIZRdw" target="_VxDDQI77EeWkVtgeNIZRdw" source="_Zy6ysI76EeWkVtgeNIZRdw"/>
@@ -45,7 +45,7 @@
     <node xmi:type="uml:OpaqueAction" xmi:id="_5WqwgI7-EeWkVtgeNIZRdw" name="Send mail to customer" incoming="_YObngI8CEeWkVtgeNIZRdw" outgoing="_z5d2EI8AEeWkVtgeNIZRdw"/>
     <node xmi:type="uml:ActivityFinalNode" xmi:id="_1RiRsI7_EeWkVtgeNIZRdw" name="ActivityFinalNode1" incoming="_z5d2EI8AEeWkVtgeNIZRdw"/>
   </packagedElement>
-  <packagedElement xmi:type="uml:Activity" xmi:id="_of84wI8DEeWkVtgeNIZRdw" name="Activity2" visibility="package" node="_KQSmwI8EEeWkVtgeNIZRdw _MORWYI8EEeWkVtgeNIZRdw _Qyl2II8EEeWkVtgeNIZRdw _XHBooI8EEeWkVtgeNIZRdw _bXG9wI8EEeWkVtgeNIZRdw _e7LhcI8EEeWkVtgeNIZRdw _h6-6cI8EEeWkVtgeNIZRdw _nxA5sI8EEeWkVtgeNIZRdw _tg-tMI8EEeWkVtgeNIZRdw _vFaUYI8EEeWkVtgeNIZRdw _woaYMI8EEeWkVtgeNIZRdw _mvn4sI8FEeWkVtgeNIZRdw">
+  <packagedElement xmi:type="uml:Activity" xmi:id="_of84wI8DEeWkVtgeNIZRdw" name="SearchAvailableOrders" visibility="package" node="_KQSmwI8EEeWkVtgeNIZRdw _MORWYI8EEeWkVtgeNIZRdw _Qyl2II8EEeWkVtgeNIZRdw _XHBooI8EEeWkVtgeNIZRdw _bXG9wI8EEeWkVtgeNIZRdw _e7LhcI8EEeWkVtgeNIZRdw _h6-6cI8EEeWkVtgeNIZRdw _nxA5sI8EEeWkVtgeNIZRdw _tg-tMI8EEeWkVtgeNIZRdw _vFaUYI8EEeWkVtgeNIZRdw _woaYMI8EEeWkVtgeNIZRdw _mvn4sI8FEeWkVtgeNIZRdw">
     <edge xmi:type="uml:ControlFlow" xmi:id="_CIGiMI8FEeWkVtgeNIZRdw" target="_MORWYI8EEeWkVtgeNIZRdw" source="_KQSmwI8EEeWkVtgeNIZRdw"/>
     <edge xmi:type="uml:ControlFlow" xmi:id="_VDzXMI8FEeWkVtgeNIZRdw" target="_Qyl2II8EEeWkVtgeNIZRdw" source="_MORWYI8EEeWkVtgeNIZRdw"/>
     <edge xmi:type="uml:ControlFlow" xmi:id="_WNpUII8FEeWkVtgeNIZRdw" target="_bXG9wI8EEeWkVtgeNIZRdw" source="_Qyl2II8EEeWkVtgeNIZRdw"/>
@@ -73,7 +73,7 @@
     <node xmi:type="uml:ActivityFinalNode" xmi:id="_woaYMI8EEeWkVtgeNIZRdw" name="" incoming="_Y5czEI8FEeWkVtgeNIZRdw"/>
     <node xmi:type="uml:DecisionNode" xmi:id="_mvn4sI8FEeWkVtgeNIZRdw" name="" incoming="_q6YB4I8FEeWkVtgeNIZRdw" outgoing="_rZOhEI8FEeWkVtgeNIZRdw _12QgoI8FEeWkVtgeNIZRdw"/>
   </packagedElement>
-  <packagedElement xmi:type="uml:Activity" xmi:id="_7Z3VsI9eEeWPV6mOYIaemg" name="Activity3" node="__zExoI9eEeWPV6mOYIaemg _GHqVII9fEeWPV6mOYIaemg _IcdpUI9fEeWPV6mOYIaemg _Kq86II9fEeWPV6mOYIaemg _OXs4sI9fEeWPV6mOYIaemg _TlcI4I9fEeWPV6mOYIaemg _ZGsK8I9fEeWPV6mOYIaemg _dLy_II9fEeWPV6mOYIaemg _fvo04I9fEeWPV6mOYIaemg _p7ngsI9fEeWPV6mOYIaemg _szBLoI9fEeWPV6mOYIaemg _vhNQMI9fEeWPV6mOYIaemg">
+  <packagedElement xmi:type="uml:Activity" xmi:id="_7Z3VsI9eEeWPV6mOYIaemg" name="CreateBooking" node="__zExoI9eEeWPV6mOYIaemg _GHqVII9fEeWPV6mOYIaemg _IcdpUI9fEeWPV6mOYIaemg _Kq86II9fEeWPV6mOYIaemg _OXs4sI9fEeWPV6mOYIaemg _TlcI4I9fEeWPV6mOYIaemg _ZGsK8I9fEeWPV6mOYIaemg _dLy_II9fEeWPV6mOYIaemg _fvo04I9fEeWPV6mOYIaemg _p7ngsI9fEeWPV6mOYIaemg _szBLoI9fEeWPV6mOYIaemg _vhNQMI9fEeWPV6mOYIaemg">
     <node xmi:type="uml:InitialNode" xmi:id="__zExoI9eEeWPV6mOYIaemg" name=""/>
     <node xmi:type="uml:DecisionNode" xmi:id="_GHqVII9fEeWPV6mOYIaemg" name="Wants to create booking"/>
     <node xmi:type="uml:FlowFinalNode" xmi:id="_IcdpUI9fEeWPV6mOYIaemg" name=""/>
@@ -87,4 +87,9 @@
     <node xmi:type="uml:OpaqueAction" xmi:id="_szBLoI9fEeWPV6mOYIaemg" name="System adds default room service"/>
     <node xmi:type="uml:DecisionNode" xmi:id="_vhNQMI9fEeWPV6mOYIaemg" name="Wants to add additional services"/>
   </packagedElement>
+  <packagedElement xmi:type="uml:Activity" xmi:id="_SCGUkI9kEeWPV6mOYIaemg" name="SearchUsedService"/>
+  <packagedElement xmi:type="uml:Activity" xmi:id="_Z7suEI9kEeWPV6mOYIaemg" name="CreateGuest"/>
+  <packagedElement xmi:type="uml:Activity" xmi:id="_cLTZMI9kEeWPV6mOYIaemg" name="BookService"/>
+  <packagedElement xmi:type="uml:Activity" xmi:id="_oKzREI9kEeWPV6mOYIaemg" name="SearchAvailableRooms"/>
+  <packagedElement xmi:type="uml:Activity" xmi:id="_pxfiEI9kEeWPV6mOYIaemg" name="SearchOccupiedRooms"/>
 </uml:Model>
