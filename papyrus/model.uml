@@ -163,7 +163,7 @@
     <node xmi:type="uml:ActivityFinalNode" xmi:id="_lMEx8I9rEeW7Xr55BlhNFQ" name="" incoming="_46yYQI9rEeW7Xr55BlhNFQ"/>
     <node xmi:type="uml:OpaqueAction" xmi:id="_OUSscI9sEeW7Xr55BlhNFQ" name="Extend: UC: #7 Search for service given room" incoming="_SxrdwI9sEeW7Xr55BlhNFQ" outgoing="_U3HgQI9sEeW7Xr55BlhNFQ"/>
   </packagedElement>
-  <packagedElement xmi:type="uml:Activity" xmi:id="_oKzREI9kEeWPV6mOYIaemg" name="SearchAvailableRooms" node="_VCuBYI9uEeWAKfHvY91fAA _i6BIYI9uEeWAKfHvY91fAA _C9VT4I9vEeWAKfHvY91fAA _Tfv9UI9vEeWAKfHvY91fAA _fWL_0I9vEeWAKfHvY91fAA _98ASkI9vEeWAKfHvY91fAA _ID-oII9wEeWAKfHvY91fAA _OcWfcI9wEeWAKfHvY91fAA">
+  <packagedElement xmi:type="uml:Activity" xmi:id="_oKzREI9kEeWPV6mOYIaemg" name="SearchAvailableRooms" node="_VCuBYI9uEeWAKfHvY91fAA _i6BIYI9uEeWAKfHvY91fAA _C9VT4I9vEeWAKfHvY91fAA _Tfv9UI9vEeWAKfHvY91fAA _fWL_0I9vEeWAKfHvY91fAA _98ASkI9vEeWAKfHvY91fAA _OcWfcI9wEeWAKfHvY91fAA _ID-oII9wEeWAKfHvY91fAA">
     <edge xmi:type="uml:ControlFlow" xmi:id="_9nHdII9uEeWAKfHvY91fAA" target="_i6BIYI9uEeWAKfHvY91fAA" source="_VCuBYI9uEeWAKfHvY91fAA"/>
     <edge xmi:type="uml:ControlFlow" xmi:id="_GX9nsI9vEeWAKfHvY91fAA" name="No" target="_C9VT4I9vEeWAKfHvY91fAA" source="_i6BIYI9uEeWAKfHvY91fAA"/>
     <edge xmi:type="uml:ControlFlow" xmi:id="_ap7FAI9vEeWAKfHvY91fAA" name="Yes" target="_Tfv9UI9vEeWAKfHvY91fAA" source="_i6BIYI9uEeWAKfHvY91fAA"/>
@@ -217,5 +217,23 @@
     <node xmi:type="uml:OpaqueAction" xmi:id="_qYo3QI-IEeWoLMtd6O1CbQ" name="System maps all active bookings received into rooms" incoming="_87ThMI-IEeWoLMtd6O1CbQ" outgoing="_9bh5YI-IEeWoLMtd6O1CbQ"/>
     <node xmi:type="uml:OpaqueAction" xmi:id="_udLDsI-IEeWoLMtd6O1CbQ" name="System presents the rooms to the actor" incoming="_9bh5YI-IEeWoLMtd6O1CbQ" outgoing="_-YX8II-IEeWoLMtd6O1CbQ"/>
     <node xmi:type="uml:ActivityFinalNode" xmi:id="_xK3ZAI-IEeWoLMtd6O1CbQ" name="" incoming="_-YX8II-IEeWoLMtd6O1CbQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Activity" xmi:id="_stPsQI-KEeWoLMtd6O1CbQ" name="SearchActiveBookings" node="_-Tbf0I-KEeWoLMtd6O1CbQ _oOndcI-NEeWoLMtd6O1CbQ _uEBxoI-NEeWoLMtd6O1CbQ _ytFncI-NEeWoLMtd6O1CbQ _29klMI-NEeWoLMtd6O1CbQ _HkD2UI-OEeWoLMtd6O1CbQ _iyn5YI-OEeWoLMtd6O1CbQ _kqEjMI-OEeWoLMtd6O1CbQ">
+    <edge xmi:type="uml:ControlFlow" xmi:id="_qP0DsI-OEeWoLMtd6O1CbQ" target="_oOndcI-NEeWoLMtd6O1CbQ" source="_-Tbf0I-KEeWoLMtd6O1CbQ"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_u8xiEI-OEeWoLMtd6O1CbQ" target="_uEBxoI-NEeWoLMtd6O1CbQ" source="_oOndcI-NEeWoLMtd6O1CbQ"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_vfsB4I-OEeWoLMtd6O1CbQ" target="_ytFncI-NEeWoLMtd6O1CbQ" source="_uEBxoI-NEeWoLMtd6O1CbQ"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_v_LaQI-OEeWoLMtd6O1CbQ" target="_29klMI-NEeWoLMtd6O1CbQ" source="_ytFncI-NEeWoLMtd6O1CbQ"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_wvW6AI-OEeWoLMtd6O1CbQ" target="_HkD2UI-OEeWoLMtd6O1CbQ" source="_29klMI-NEeWoLMtd6O1CbQ"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_xZjtkI-OEeWoLMtd6O1CbQ" target="_iyn5YI-OEeWoLMtd6O1CbQ" source="_HkD2UI-OEeWoLMtd6O1CbQ"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_x9FRYI-OEeWoLMtd6O1CbQ" target="_kqEjMI-OEeWoLMtd6O1CbQ" source="_iyn5YI-OEeWoLMtd6O1CbQ"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_zN4x8I-OEeWoLMtd6O1CbQ" target="_uEBxoI-NEeWoLMtd6O1CbQ" source="_29klMI-NEeWoLMtd6O1CbQ"/>
+    <node xmi:type="uml:InitialNode" xmi:id="_-Tbf0I-KEeWoLMtd6O1CbQ" name="" outgoing="_qP0DsI-OEeWoLMtd6O1CbQ"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_oOndcI-NEeWoLMtd6O1CbQ" name="Actor requests to view active bookings" incoming="_qP0DsI-OEeWoLMtd6O1CbQ" outgoing="_u8xiEI-OEeWoLMtd6O1CbQ"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_uEBxoI-NEeWoLMtd6O1CbQ" name="System ask for a timespan" incoming="_u8xiEI-OEeWoLMtd6O1CbQ _zN4x8I-OEeWoLMtd6O1CbQ" outgoing="_vfsB4I-OEeWoLMtd6O1CbQ"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_ytFncI-NEeWoLMtd6O1CbQ" name="Actor enters timespan" incoming="_vfsB4I-OEeWoLMtd6O1CbQ" outgoing="_v_LaQI-OEeWoLMtd6O1CbQ"/>
+    <node xmi:type="uml:DecisionNode" xmi:id="_29klMI-NEeWoLMtd6O1CbQ" name="Timespan is valid" incoming="_v_LaQI-OEeWoLMtd6O1CbQ" outgoing="_wvW6AI-OEeWoLMtd6O1CbQ _zN4x8I-OEeWoLMtd6O1CbQ"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_HkD2UI-OEeWoLMtd6O1CbQ" name="System fetches bookings in timespan" incoming="_wvW6AI-OEeWoLMtd6O1CbQ" outgoing="_xZjtkI-OEeWoLMtd6O1CbQ"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_iyn5YI-OEeWoLMtd6O1CbQ" name="Present active bookings" incoming="_xZjtkI-OEeWoLMtd6O1CbQ" outgoing="_x9FRYI-OEeWoLMtd6O1CbQ"/>
+    <node xmi:type="uml:ActivityFinalNode" xmi:id="_kqEjMI-OEeWoLMtd6O1CbQ" name="" incoming="_x9FRYI-OEeWoLMtd6O1CbQ"/>
   </packagedElement>
 </uml:Model>
