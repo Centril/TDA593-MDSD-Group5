@@ -205,5 +205,17 @@
     <node xmi:type="uml:OpaqueAction" xmi:id="_B8amQI9rEeWPV6mOYIaemg" name="Fetch guests already in booking, compute #underage, #notUnderage" incoming="_MOjkcI9rEeWPV6mOYIaemg" outgoing="_NFaT8I9rEeWPV6mOYIaemg"/>
     <node xmi:type="uml:ActivityFinalNode" xmi:id="_yc4gsI9rEeWPV6mOYIaemg" incoming="_22UmII9rEeWPV6mOYIaemg"/>
   </packagedElement>
-  <packagedElement xmi:type="uml:Activity" xmi:id="_pxfiEI9kEeWPV6mOYIaemg" name="SearchOccupiedRooms"/>
+  <packagedElement xmi:type="uml:Activity" xmi:id="_pxfiEI9kEeWPV6mOYIaemg" name="SearchOccupiedRooms" node="_Pxjq8I-IEeWoLMtd6O1CbQ _Te11AI-IEeWoLMtd6O1CbQ _XAD5AI-IEeWoLMtd6O1CbQ _qYo3QI-IEeWoLMtd6O1CbQ _udLDsI-IEeWoLMtd6O1CbQ _xK3ZAI-IEeWoLMtd6O1CbQ">
+    <edge xmi:type="uml:ControlFlow" xmi:id="_62w2kI-IEeWoLMtd6O1CbQ" target="_Te11AI-IEeWoLMtd6O1CbQ" source="_Pxjq8I-IEeWoLMtd6O1CbQ"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_8Z2Z8I-IEeWoLMtd6O1CbQ" target="_XAD5AI-IEeWoLMtd6O1CbQ" source="_Te11AI-IEeWoLMtd6O1CbQ"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_87ThMI-IEeWoLMtd6O1CbQ" target="_qYo3QI-IEeWoLMtd6O1CbQ" source="_XAD5AI-IEeWoLMtd6O1CbQ"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_9bh5YI-IEeWoLMtd6O1CbQ" target="_udLDsI-IEeWoLMtd6O1CbQ" source="_qYo3QI-IEeWoLMtd6O1CbQ"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_-YX8II-IEeWoLMtd6O1CbQ" target="_xK3ZAI-IEeWoLMtd6O1CbQ" source="_udLDsI-IEeWoLMtd6O1CbQ"/>
+    <node xmi:type="uml:InitialNode" xmi:id="_Pxjq8I-IEeWoLMtd6O1CbQ" name="" outgoing="_62w2kI-IEeWoLMtd6O1CbQ"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_Te11AI-IEeWoLMtd6O1CbQ" name="Actor wants to search for occupied room" incoming="_62w2kI-IEeWoLMtd6O1CbQ" outgoing="_8Z2Z8I-IEeWoLMtd6O1CbQ"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_XAD5AI-IEeWoLMtd6O1CbQ" name="Include UC: Search for active bookings" incoming="_8Z2Z8I-IEeWoLMtd6O1CbQ" outgoing="_87ThMI-IEeWoLMtd6O1CbQ"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_qYo3QI-IEeWoLMtd6O1CbQ" name="System maps all active bookings received into rooms" incoming="_87ThMI-IEeWoLMtd6O1CbQ" outgoing="_9bh5YI-IEeWoLMtd6O1CbQ"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_udLDsI-IEeWoLMtd6O1CbQ" name="System presents the rooms to the actor" incoming="_9bh5YI-IEeWoLMtd6O1CbQ" outgoing="_-YX8II-IEeWoLMtd6O1CbQ"/>
+    <node xmi:type="uml:ActivityFinalNode" xmi:id="_xK3ZAI-IEeWoLMtd6O1CbQ" name="" incoming="_-YX8II-IEeWoLMtd6O1CbQ"/>
+  </packagedElement>
 </uml:Model>
