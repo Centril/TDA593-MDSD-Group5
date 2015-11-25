@@ -4,8 +4,8 @@
     <ownedBehavior xmi:type="uml:Activity" xmi:id="_7ATaEI75EeWkVtgeNIZRdw" name="Activity1"/>
     <edge xmi:type="uml:ControlFlow" xmi:id="_3-Ia0I7_EeWkVtgeNIZRdw" target="_Zy6ysI76EeWkVtgeNIZRdw" source="_dud3sI75EeWkVtgeNIZRdw"/>
     <edge xmi:type="uml:ControlFlow" xmi:id="_5YGecI7_EeWkVtgeNIZRdw" target="_VxDDQI77EeWkVtgeNIZRdw" source="_Zy6ysI76EeWkVtgeNIZRdw"/>
-    <edge xmi:type="uml:ControlFlow" xmi:id="_88GJoI7_EeWkVtgeNIZRdw" name="yes" target="_joR40I77EeWkVtgeNIZRdw" source="_VxDDQI77EeWkVtgeNIZRdw"/>
-    <edge xmi:type="uml:ControlFlow" xmi:id="_COgecI8AEeWkVtgeNIZRdw" name="no" target="_nQfVoI77EeWkVtgeNIZRdw" source="_VxDDQI77EeWkVtgeNIZRdw"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_88GJoI7_EeWkVtgeNIZRdw" name="no" target="_joR40I77EeWkVtgeNIZRdw" source="_VxDDQI77EeWkVtgeNIZRdw"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_COgecI8AEeWkVtgeNIZRdw" name="yes" target="_nQfVoI77EeWkVtgeNIZRdw" source="_VxDDQI77EeWkVtgeNIZRdw"/>
     <edge xmi:type="uml:ControlFlow" xmi:id="_G7GJYI8AEeWkVtgeNIZRdw" name="no" target="_joR40I77EeWkVtgeNIZRdw" source="_nQfVoI77EeWkVtgeNIZRdw"/>
     <edge xmi:type="uml:ControlFlow" xmi:id="_KszgcI8AEeWkVtgeNIZRdw" target="_nQfVoI77EeWkVtgeNIZRdw" source="_joR40I77EeWkVtgeNIZRdw"/>
     <edge xmi:type="uml:ControlFlow" xmi:id="_ShHKQI8AEeWkVtgeNIZRdw" name="yes" target="_xotGoI77EeWkVtgeNIZRdw" source="_nQfVoI77EeWkVtgeNIZRdw"/>
@@ -218,7 +218,7 @@
     <node xmi:type="uml:OpaqueAction" xmi:id="_udLDsI-IEeWoLMtd6O1CbQ" name="System presents the rooms to the actor" incoming="_9bh5YI-IEeWoLMtd6O1CbQ" outgoing="_-YX8II-IEeWoLMtd6O1CbQ"/>
     <node xmi:type="uml:ActivityFinalNode" xmi:id="_xK3ZAI-IEeWoLMtd6O1CbQ" name="" incoming="_-YX8II-IEeWoLMtd6O1CbQ"/>
   </packagedElement>
-  <packagedElement xmi:type="uml:Activity" xmi:id="_stPsQI-KEeWoLMtd6O1CbQ" name="SearchActiveBookings" node="_-Tbf0I-KEeWoLMtd6O1CbQ _oOndcI-NEeWoLMtd6O1CbQ _uEBxoI-NEeWoLMtd6O1CbQ _ytFncI-NEeWoLMtd6O1CbQ _29klMI-NEeWoLMtd6O1CbQ _HkD2UI-OEeWoLMtd6O1CbQ _iyn5YI-OEeWoLMtd6O1CbQ _kqEjMI-OEeWoLMtd6O1CbQ">
+  <packagedElement xmi:type="uml:Activity" xmi:id="_stPsQI-KEeWoLMtd6O1CbQ" name="SearchActiveBookings" node="_kqEjMI-OEeWoLMtd6O1CbQ _iyn5YI-OEeWoLMtd6O1CbQ _HkD2UI-OEeWoLMtd6O1CbQ _29klMI-NEeWoLMtd6O1CbQ _ytFncI-NEeWoLMtd6O1CbQ _uEBxoI-NEeWoLMtd6O1CbQ _oOndcI-NEeWoLMtd6O1CbQ _-Tbf0I-KEeWoLMtd6O1CbQ">
     <edge xmi:type="uml:ControlFlow" xmi:id="_qP0DsI-OEeWoLMtd6O1CbQ" target="_oOndcI-NEeWoLMtd6O1CbQ" source="_-Tbf0I-KEeWoLMtd6O1CbQ"/>
     <edge xmi:type="uml:ControlFlow" xmi:id="_u8xiEI-OEeWoLMtd6O1CbQ" target="_uEBxoI-NEeWoLMtd6O1CbQ" source="_oOndcI-NEeWoLMtd6O1CbQ"/>
     <edge xmi:type="uml:ControlFlow" xmi:id="_vfsB4I-OEeWoLMtd6O1CbQ" target="_ytFncI-NEeWoLMtd6O1CbQ" source="_uEBxoI-NEeWoLMtd6O1CbQ"/>
@@ -235,5 +235,37 @@
     <node xmi:type="uml:OpaqueAction" xmi:id="_HkD2UI-OEeWoLMtd6O1CbQ" name="System fetches bookings in timespan" incoming="_wvW6AI-OEeWoLMtd6O1CbQ" outgoing="_xZjtkI-OEeWoLMtd6O1CbQ"/>
     <node xmi:type="uml:OpaqueAction" xmi:id="_iyn5YI-OEeWoLMtd6O1CbQ" name="Present active bookings" incoming="_xZjtkI-OEeWoLMtd6O1CbQ" outgoing="_x9FRYI-OEeWoLMtd6O1CbQ"/>
     <node xmi:type="uml:ActivityFinalNode" xmi:id="_kqEjMI-OEeWoLMtd6O1CbQ" name="" incoming="_x9FRYI-OEeWoLMtd6O1CbQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Activity" xmi:id="_pZdWUJK2EeWtaLOO9lsclA" name="SimpleCreateOrder" node="_3D1boJK2EeWtaLOO9lsclA _3D2CsZK2EeWtaLOO9lsclA _3D2pwJK2EeWtaLOO9lsclA _3D3Q0JK2EeWtaLOO9lsclA _3D334JK2EeWtaLOO9lsclA _3D4e8ZK2EeWtaLOO9lsclA _3D5GAJK2EeWtaLOO9lsclA _3D5GAZK2EeWtaLOO9lsclA _3D5tEJK2EeWtaLOO9lsclA _3D5tEZK2EeWtaLOO9lsclA _3D6UIJK2EeWtaLOO9lsclA _3D7iQJK2EeWtaLOO9lsclA _3D7iQZK2EeWtaLOO9lsclA _7uxKoJK_EeWtaLOO9lsclA">
+    <edge xmi:type="uml:ControlFlow" xmi:id="_3Dut8JK2EeWtaLOO9lsclA" name="no" target="_3D2CsZK2EeWtaLOO9lsclA" source="_3D2pwJK2EeWtaLOO9lsclA"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_3Dut8ZK2EeWtaLOO9lsclA" target="_3D2pwJK2EeWtaLOO9lsclA" source="_3D2CsZK2EeWtaLOO9lsclA"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_3DvVAJK2EeWtaLOO9lsclA" name="yes" target="_3D3Q0JK2EeWtaLOO9lsclA" source="_3D2pwJK2EeWtaLOO9lsclA"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_3DxxQJK2EeWtaLOO9lsclA" target="_7uxKoJK_EeWtaLOO9lsclA" source="_3D4e8ZK2EeWtaLOO9lsclA"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_3DxxQZK2EeWtaLOO9lsclA" name="no" target="_3D4e8ZK2EeWtaLOO9lsclA" source="_3D5GAJK2EeWtaLOO9lsclA"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_3DyYUJK2EeWtaLOO9lsclA" name="yes" target="_3D5GAZK2EeWtaLOO9lsclA" source="_3D5GAJK2EeWtaLOO9lsclA"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_3DyYUZK2EeWtaLOO9lsclA" target="_3D5tEJK2EeWtaLOO9lsclA" source="_3D5GAZK2EeWtaLOO9lsclA"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_3Dy_YJK2EeWtaLOO9lsclA" name="no" target="_3D5GAZK2EeWtaLOO9lsclA" source="_3D5tEJK2EeWtaLOO9lsclA"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_3DzmcJK2EeWtaLOO9lsclA" name="yes" target="_3D6UIJK2EeWtaLOO9lsclA" source="_3D5tEJK2EeWtaLOO9lsclA"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_3DzmcZK2EeWtaLOO9lsclA" name="quit" target="_3D5tEZK2EeWtaLOO9lsclA" source="_3D5tEJK2EeWtaLOO9lsclA"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_3D0NgJK2EeWtaLOO9lsclA" target="_3D7iQZK2EeWtaLOO9lsclA" source="_3D7iQJK2EeWtaLOO9lsclA"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_k55ogJK7EeWtaLOO9lsclA" target="_3D2CsZK2EeWtaLOO9lsclA" source="_3D1boJK2EeWtaLOO9lsclA"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_qw200JK7EeWtaLOO9lsclA" target="_3D334JK2EeWtaLOO9lsclA" source="_3D3Q0JK2EeWtaLOO9lsclA"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_DaA_EJLAEeWtaLOO9lsclA" target="_3D5GAJK2EeWtaLOO9lsclA" source="_7uxKoJK_EeWtaLOO9lsclA"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_7wMmoJLCEeWtaLOO9lsclA" target="_3D7iQJK2EeWtaLOO9lsclA" source="_3D6UIJK2EeWtaLOO9lsclA"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_8R3JQJLCEeWtaLOO9lsclA" target="_3D4e8ZK2EeWtaLOO9lsclA" source="_3D334JK2EeWtaLOO9lsclA"/>
+    <node xmi:type="uml:InitialNode" xmi:id="_3D1boJK2EeWtaLOO9lsclA" name="Create Order" outgoing="_k55ogJK7EeWtaLOO9lsclA"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_3D2CsZK2EeWtaLOO9lsclA" name="Extend UC: SearchAvailableOrders" incoming="_3Dut8JK2EeWtaLOO9lsclA _k55ogJK7EeWtaLOO9lsclA" outgoing="_3Dut8ZK2EeWtaLOO9lsclA"/>
+    <node xmi:type="uml:DecisionNode" xmi:id="_3D2pwJK2EeWtaLOO9lsclA" name="Are there search results?" incoming="_3Dut8ZK2EeWtaLOO9lsclA" outgoing="_3Dut8JK2EeWtaLOO9lsclA _3DvVAJK2EeWtaLOO9lsclA"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_3D3Q0JK2EeWtaLOO9lsclA" name="Actor: pick bookings" incoming="_3DvVAJK2EeWtaLOO9lsclA" outgoing="_qw200JK7EeWtaLOO9lsclA"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_3D334JK2EeWtaLOO9lsclA" name="System: CreateBookings" incoming="_qw200JK7EeWtaLOO9lsclA" outgoing="_8R3JQJLCEeWtaLOO9lsclA"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_3D4e8ZK2EeWtaLOO9lsclA" name="System: Ask for customer information" incoming="_3DxxQZK2EeWtaLOO9lsclA _8R3JQJLCEeWtaLOO9lsclA" outgoing="_3DxxQJK2EeWtaLOO9lsclA"/>
+    <node xmi:type="uml:DecisionNode" xmi:id="_3D5GAJK2EeWtaLOO9lsclA" name="Valid info?" incoming="_DaA_EJLAEeWtaLOO9lsclA" outgoing="_3DxxQZK2EeWtaLOO9lsclA _3DyYUJK2EeWtaLOO9lsclA"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_3D5GAZK2EeWtaLOO9lsclA" name="System: Ask customer to accept terms and conditions" incoming="_3DyYUJK2EeWtaLOO9lsclA _3Dy_YJK2EeWtaLOO9lsclA" outgoing="_3DyYUZK2EeWtaLOO9lsclA"/>
+    <node xmi:type="uml:DecisionNode" xmi:id="_3D5tEJK2EeWtaLOO9lsclA" name="Accept terms and conditions?" incoming="_3DyYUZK2EeWtaLOO9lsclA" outgoing="_3Dy_YJK2EeWtaLOO9lsclA _3DzmcJK2EeWtaLOO9lsclA _3DzmcZK2EeWtaLOO9lsclA"/>
+    <node xmi:type="uml:FlowFinalNode" xmi:id="_3D5tEZK2EeWtaLOO9lsclA" name="Didn't accept terms" incoming="_3DzmcZK2EeWtaLOO9lsclA"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_3D6UIJK2EeWtaLOO9lsclA" name="System: Create order" incoming="_3DzmcJK2EeWtaLOO9lsclA" outgoing="_7wMmoJLCEeWtaLOO9lsclA"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_3D7iQJK2EeWtaLOO9lsclA" name="Send mail to customer" incoming="_7wMmoJLCEeWtaLOO9lsclA" outgoing="_3D0NgJK2EeWtaLOO9lsclA"/>
+    <node xmi:type="uml:ActivityFinalNode" xmi:id="_3D7iQZK2EeWtaLOO9lsclA" name="" incoming="_3D0NgJK2EeWtaLOO9lsclA"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_7uxKoJK_EeWtaLOO9lsclA" name="Actor: Input information" incoming="_3DxxQJK2EeWtaLOO9lsclA" outgoing="_DaA_EJLAEeWtaLOO9lsclA"/>
   </packagedElement>
 </uml:Model>
