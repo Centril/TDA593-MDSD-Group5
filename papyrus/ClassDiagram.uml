@@ -42,9 +42,18 @@
       </packagedElement>
       <packagedElement xmi:type="uml:Package" xmi:id="_mtmlQJOAEeWEKYEtRmghUQ" name="humanrelations">
         <packagedElement xmi:type="uml:Class" xmi:id="_st4FoJOAEeWEKYEtRmghUQ" name="Guest"/>
-        <packagedElement xmi:type="uml:Class" xmi:id="_vWo3oJOAEeWEKYEtRmghUQ" name="RealPerson"/>
+        <packagedElement xmi:type="uml:Class" xmi:id="_vWo3oJOAEeWEKYEtRmghUQ" name="RealPerson">
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_ehgFgJOLEeWEKYEtRmghUQ" name="age">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+          </ownedAttribute>
+        </packagedElement>
         <packagedElement xmi:type="uml:Class" xmi:id="_28enoJOAEeWEKYEtRmghUQ" name="Employee"/>
         <packagedElement xmi:type="uml:Class" xmi:id="_7PSgoJOAEeWEKYEtRmghUQ" name="Customer"/>
+        <packagedElement xmi:type="uml:Class" xmi:id="_HDwBoJOLEeWEKYEtRmghUQ" name="Role">
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_HtXmYJOLEeWEKYEtRmghUQ" name="name">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+          </ownedAttribute>
+        </packagedElement>
         <packagedElement xmi:type="uml:Class" xmi:id="_8icKkJOAEeWEKYEtRmghUQ" name="Identity">
           <ownedAttribute xmi:type="uml:Property" xmi:id="_-2yLwJOAEeWEKYEtRmghUQ" name="name"/>
           <ownedAttribute xmi:type="uml:Property" xmi:id="_C9b4EJOBEeWEKYEtRmghUQ" name="idNumber"/>
@@ -150,6 +159,27 @@
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_hhfzIJOIEeWEKYEtRmghUQ" value="*"/>
       </ownedEnd>
       <ownedEnd xmi:type="uml:Property" xmi:id="_Tv6SkJOIEeWEKYEtRmghUQ" name="hasState" type="_CKsl0JN8EeWEKYEtRmghUQ" association="_Tv5rgJOIEeWEKYEtRmghUQ"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_lKQiMJOLEeWEKYEtRmghUQ" memberEnd="_lKQiM5OLEeWEKYEtRmghUQ _lKRwUJOLEeWEKYEtRmghUQ">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_lKQiMZOLEeWEKYEtRmghUQ" source="org.eclipse.papyrus">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_lKQiMpOLEeWEKYEtRmghUQ" key="nature" value="UML_Nature"/>
+      </eAnnotations>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_lKRwUJOLEeWEKYEtRmghUQ" name="usesIdentity" type="_vWo3oJOAEeWEKYEtRmghUQ" aggregation="shared" association="_lKQiMJOLEeWEKYEtRmghUQ"/>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_lKQiM5OLEeWEKYEtRmghUQ" name="identity" type="_28enoJOAEeWEKYEtRmghUQ" association="_lKQiMJOLEeWEKYEtRmghUQ"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_pKwtwJOMEeWEKYEtRmghUQ" memberEnd="_pKwtw5OMEeWEKYEtRmghUQ _pKxU0JOMEeWEKYEtRmghUQ">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_pKwtwZOMEeWEKYEtRmghUQ" source="org.eclipse.papyrus">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_pKwtwpOMEeWEKYEtRmghUQ" key="nature" value="UML_Nature"/>
+      </eAnnotations>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_pKxU0JOMEeWEKYEtRmghUQ" name="usesIdentity" type="_vWo3oJOAEeWEKYEtRmghUQ" aggregation="shared" association="_pKwtwJOMEeWEKYEtRmghUQ"/>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_pKwtw5OMEeWEKYEtRmghUQ" name="identity" type="_st4FoJOAEeWEKYEtRmghUQ" association="_pKwtwJOMEeWEKYEtRmghUQ"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_A7NrMJONEeWEKYEtRmghUQ" memberEnd="_A7OSQZONEeWEKYEtRmghUQ _A7PgYJONEeWEKYEtRmghUQ">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_A7NrMZONEeWEKYEtRmghUQ" source="org.eclipse.papyrus">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_A7OSQJONEeWEKYEtRmghUQ" key="nature" value="UML_Nature"/>
+      </eAnnotations>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_A7PgYJONEeWEKYEtRmghUQ" name="identity" type="_8icKkJOAEeWEKYEtRmghUQ" association="_A7NrMJONEeWEKYEtRmghUQ"/>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_A7OSQZONEeWEKYEtRmghUQ" name="realperson" type="_vWo3oJOAEeWEKYEtRmghUQ" association="_A7NrMJONEeWEKYEtRmghUQ"/>
     </packagedElement>
     <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_0lMEUJN5EeWEKYEtRmghUQ">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_0lNScJN5EeWEKYEtRmghUQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
