@@ -17,18 +17,21 @@
       <ownedAttribute xmi:type="uml:Property" xmi:id="_8JVLMJN5EeWEKYEtRmghUQ" name="lastCleaned" visibility="private">
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EDate"/>
       </ownedAttribute>
-    </packagedElement>
-    <packagedElement xmi:type="uml:Class" xmi:id="_owOzEJN6EeWEKYEtRmghUQ" name="RoomAttribute">
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_p_zkkJN6EeWEKYEtRmghUQ" name="name" visibility="private">
-        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
-      </ownedAttribute>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_jZT8QJN7EeWEKYEtRmghUQ" name="value" visibility="private"/>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_jhxUsJN7EeWEKYEtRmghUQ" name="price" visibility="private"/>
-    </packagedElement>
-    <packagedElement xmi:type="uml:Class" xmi:id="_CKsl0JN8EeWEKYEtRmghUQ" name="RoomPrototype">
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_G3vjwJN8EeWEKYEtRmghUQ" name="basePrice" visibility="private">
-        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#double"/>
-      </ownedAttribute>
+      <nestedClassifier xmi:type="uml:Class" xmi:id="_CKsl0JN8EeWEKYEtRmghUQ" name="RoomPrototype">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_G3vjwJN8EeWEKYEtRmghUQ" name="name" visibility="private">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_U0RTkJN9EeWEKYEtRmghUQ" name="basePrice" visibility="private">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#double"/>
+        </ownedAttribute>
+      </nestedClassifier>
+      <nestedClassifier xmi:type="uml:Class" xmi:id="_owOzEJN6EeWEKYEtRmghUQ" name="RoomAttribute">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_p_zkkJN6EeWEKYEtRmghUQ" name="name" visibility="private">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_jZT8QJN7EeWEKYEtRmghUQ" name="value" visibility="private"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_jhxUsJN7EeWEKYEtRmghUQ" name="price" visibility="private"/>
+      </nestedClassifier>
     </packagedElement>
   </packagedElement>
   <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_0lMEUJN5EeWEKYEtRmghUQ">
