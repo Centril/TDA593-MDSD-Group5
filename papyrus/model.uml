@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_EKRAQI0uEeWoqfi1hHsgYg" name="RootElement">
-  <packagedElement xmi:type="uml:Activity" xmi:id="_AtuFUI75EeWkVtgeNIZRdw" name="CreateOrder" node="_1RiRsI7_EeWkVtgeNIZRdw _5WqwgI7-EeWkVtgeNIZRdw _24ihMI7-EeWkVtgeNIZRdw _1ZKZII7-EeWkVtgeNIZRdw _zYapYI7-EeWkVtgeNIZRdw _p5WG4I7-EeWkVtgeNIZRdw _hJcXgI7-EeWkVtgeNIZRdw _acn6MI7-EeWkVtgeNIZRdw _VlFjgI7-EeWkVtgeNIZRdw _P9BHwI7-EeWkVtgeNIZRdw _NGbVII7-EeWkVtgeNIZRdw _JhzX0I7-EeWkVtgeNIZRdw _BpND4I7-EeWkVtgeNIZRdw _xotGoI77EeWkVtgeNIZRdw _nQfVoI77EeWkVtgeNIZRdw _joR40I77EeWkVtgeNIZRdw _VxDDQI77EeWkVtgeNIZRdw _Zy6ysI76EeWkVtgeNIZRdw _dud3sI75EeWkVtgeNIZRdw">
+  <packagedElement xmi:type="uml:Activity" xmi:id="_AtuFUI75EeWkVtgeNIZRdw" name="CreateOrder" node="_NvV60JPWEeWQgfxX6LSH2A _U6Df8JPUEeWQgfxX6LSH2A _1RiRsI7_EeWkVtgeNIZRdw _5WqwgI7-EeWkVtgeNIZRdw _24ihMI7-EeWkVtgeNIZRdw _1ZKZII7-EeWkVtgeNIZRdw _zYapYI7-EeWkVtgeNIZRdw _p5WG4I7-EeWkVtgeNIZRdw _hJcXgI7-EeWkVtgeNIZRdw _acn6MI7-EeWkVtgeNIZRdw _VlFjgI7-EeWkVtgeNIZRdw _P9BHwI7-EeWkVtgeNIZRdw _NGbVII7-EeWkVtgeNIZRdw _JhzX0I7-EeWkVtgeNIZRdw _BpND4I7-EeWkVtgeNIZRdw _xotGoI77EeWkVtgeNIZRdw _nQfVoI77EeWkVtgeNIZRdw _joR40I77EeWkVtgeNIZRdw _VxDDQI77EeWkVtgeNIZRdw _Zy6ysI76EeWkVtgeNIZRdw _dud3sI75EeWkVtgeNIZRdw">
     <ownedBehavior xmi:type="uml:Activity" xmi:id="_7ATaEI75EeWkVtgeNIZRdw" name="Activity1"/>
     <edge xmi:type="uml:ControlFlow" xmi:id="_3-Ia0I7_EeWkVtgeNIZRdw" target="_Zy6ysI76EeWkVtgeNIZRdw" source="_dud3sI75EeWkVtgeNIZRdw"/>
     <edge xmi:type="uml:ControlFlow" xmi:id="_5YGecI7_EeWkVtgeNIZRdw" target="_VxDDQI77EeWkVtgeNIZRdw" source="_Zy6ysI76EeWkVtgeNIZRdw"/>
@@ -16,7 +16,7 @@
     <edge xmi:type="uml:ControlFlow" xmi:id="_kw7JoI8AEeWkVtgeNIZRdw" name="no" target="_P9BHwI7-EeWkVtgeNIZRdw" source="_NGbVII7-EeWkVtgeNIZRdw"/>
     <edge xmi:type="uml:ControlFlow" xmi:id="_pt6BAI8AEeWkVtgeNIZRdw" target="_VlFjgI7-EeWkVtgeNIZRdw" source="_P9BHwI7-EeWkVtgeNIZRdw"/>
     <edge xmi:type="uml:ControlFlow" xmi:id="_qPz0MI8AEeWkVtgeNIZRdw" name="no" target="_P9BHwI7-EeWkVtgeNIZRdw" source="_VlFjgI7-EeWkVtgeNIZRdw"/>
-    <edge xmi:type="uml:ControlFlow" xmi:id="_rOiGQI8AEeWkVtgeNIZRdw" name="yes" target="_acn6MI7-EeWkVtgeNIZRdw" source="_VlFjgI7-EeWkVtgeNIZRdw"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_rOiGQI8AEeWkVtgeNIZRdw" name="yes" target="_U6Df8JPUEeWQgfxX6LSH2A" source="_VlFjgI7-EeWkVtgeNIZRdw"/>
     <edge xmi:type="uml:ControlFlow" xmi:id="_srLDYI8AEeWkVtgeNIZRdw" target="_hJcXgI7-EeWkVtgeNIZRdw" source="_acn6MI7-EeWkVtgeNIZRdw"/>
     <edge xmi:type="uml:ControlFlow" xmi:id="_tlmEQI8AEeWkVtgeNIZRdw" name="no" target="_acn6MI7-EeWkVtgeNIZRdw" source="_hJcXgI7-EeWkVtgeNIZRdw"/>
     <edge xmi:type="uml:ControlFlow" xmi:id="_uaiIMI8AEeWkVtgeNIZRdw" name="yes" target="_zYapYI7-EeWkVtgeNIZRdw" source="_hJcXgI7-EeWkVtgeNIZRdw"/>
@@ -25,6 +25,9 @@
     <edge xmi:type="uml:ControlFlow" xmi:id="_S25iII8CEeWkVtgeNIZRdw" target="_1ZKZII7-EeWkVtgeNIZRdw" source="_zYapYI7-EeWkVtgeNIZRdw"/>
     <edge xmi:type="uml:ControlFlow" xmi:id="_XTBvMI8CEeWkVtgeNIZRdw" target="_24ihMI7-EeWkVtgeNIZRdw" source="_1ZKZII7-EeWkVtgeNIZRdw"/>
     <edge xmi:type="uml:ControlFlow" xmi:id="_YObngI8CEeWkVtgeNIZRdw" target="_5WqwgI7-EeWkVtgeNIZRdw" source="_24ihMI7-EeWkVtgeNIZRdw"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_98eCgJPWEeWQgfxX6LSH2A" target="_NvV60JPWEeWQgfxX6LSH2A" source="_U6Df8JPUEeWQgfxX6LSH2A"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_AxXMAJPXEeWQgfxX6LSH2A" name="no" target="_acn6MI7-EeWkVtgeNIZRdw" source="_NvV60JPWEeWQgfxX6LSH2A"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_Hx2MMJPXEeWQgfxX6LSH2A" name="yes" target="_1RiRsI7_EeWkVtgeNIZRdw" source="_NvV60JPWEeWQgfxX6LSH2A"/>
     <node xmi:type="uml:InitialNode" xmi:id="_dud3sI75EeWkVtgeNIZRdw" name="Create Order" outgoing="_3-Ia0I7_EeWkVtgeNIZRdw"/>
     <node xmi:type="uml:OpaqueAction" xmi:id="_Zy6ysI76EeWkVtgeNIZRdw" name="Chose wants to create order" incoming="_3-Ia0I7_EeWkVtgeNIZRdw" outgoing="_5YGecI7_EeWkVtgeNIZRdw"/>
     <node xmi:type="uml:DecisionNode" xmi:id="_VxDDQI77EeWkVtgeNIZRdw" name="Already Searched" incoming="_5YGecI7_EeWkVtgeNIZRdw" outgoing="_88GJoI7_EeWkVtgeNIZRdw _COgecI8AEeWkVtgeNIZRdw"/>
@@ -36,14 +39,16 @@
     <node xmi:type="uml:DecisionNode" xmi:id="_NGbVII7-EeWkVtgeNIZRdw" name="More Bookings?" incoming="_a-rMcI8AEeWkVtgeNIZRdw" outgoing="_d0XAII8AEeWkVtgeNIZRdw _kw7JoI8AEeWkVtgeNIZRdw"/>
     <node xmi:type="uml:OpaqueAction" xmi:id="_P9BHwI7-EeWkVtgeNIZRdw" name="Ask for customer information" incoming="_kw7JoI8AEeWkVtgeNIZRdw _qPz0MI8AEeWkVtgeNIZRdw" outgoing="_pt6BAI8AEeWkVtgeNIZRdw"/>
     <node xmi:type="uml:DecisionNode" xmi:id="_VlFjgI7-EeWkVtgeNIZRdw" name="Valid info?" incoming="_pt6BAI8AEeWkVtgeNIZRdw" outgoing="_qPz0MI8AEeWkVtgeNIZRdw _rOiGQI8AEeWkVtgeNIZRdw"/>
-    <node xmi:type="uml:OpaqueAction" xmi:id="_acn6MI7-EeWkVtgeNIZRdw" name="Ask customer to accept terms and conditions" incoming="_rOiGQI8AEeWkVtgeNIZRdw _tlmEQI8AEeWkVtgeNIZRdw" outgoing="_srLDYI8AEeWkVtgeNIZRdw"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_acn6MI7-EeWkVtgeNIZRdw" name="Ask customer to accept terms and conditions" incoming="_tlmEQI8AEeWkVtgeNIZRdw _AxXMAJPXEeWQgfxX6LSH2A" outgoing="_srLDYI8AEeWkVtgeNIZRdw"/>
     <node xmi:type="uml:DecisionNode" xmi:id="_hJcXgI7-EeWkVtgeNIZRdw" name="Accept terms and conditions?" incoming="_srLDYI8AEeWkVtgeNIZRdw" outgoing="_tlmEQI8AEeWkVtgeNIZRdw _uaiIMI8AEeWkVtgeNIZRdw _u_blAI8AEeWkVtgeNIZRdw"/>
     <node xmi:type="uml:FlowFinalNode" xmi:id="_p5WG4I7-EeWkVtgeNIZRdw" name="Didn't accept terms" incoming="_u_blAI8AEeWkVtgeNIZRdw"/>
     <node xmi:type="uml:OpaqueAction" xmi:id="_zYapYI7-EeWkVtgeNIZRdw" name="Create order in system" incoming="_uaiIMI8AEeWkVtgeNIZRdw" outgoing="_S25iII8CEeWkVtgeNIZRdw"/>
     <node xmi:type="uml:OpaqueAction" xmi:id="_1ZKZII7-EeWkVtgeNIZRdw" name="Add booking to order" incoming="_S25iII8CEeWkVtgeNIZRdw" outgoing="_XTBvMI8CEeWkVtgeNIZRdw"/>
     <node xmi:type="uml:OpaqueAction" xmi:id="_24ihMI7-EeWkVtgeNIZRdw" name="Commit transaction" incoming="_XTBvMI8CEeWkVtgeNIZRdw" outgoing="_YObngI8CEeWkVtgeNIZRdw"/>
     <node xmi:type="uml:OpaqueAction" xmi:id="_5WqwgI7-EeWkVtgeNIZRdw" name="Send mail to customer" incoming="_YObngI8CEeWkVtgeNIZRdw" outgoing="_z5d2EI8AEeWkVtgeNIZRdw"/>
-    <node xmi:type="uml:ActivityFinalNode" xmi:id="_1RiRsI7_EeWkVtgeNIZRdw" name="ActivityFinalNode1" incoming="_z5d2EI8AEeWkVtgeNIZRdw"/>
+    <node xmi:type="uml:ActivityFinalNode" xmi:id="_1RiRsI7_EeWkVtgeNIZRdw" name="" incoming="_z5d2EI8AEeWkVtgeNIZRdw _Hx2MMJPXEeWQgfxX6LSH2A"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_U6Df8JPUEeWQgfxX6LSH2A" name="Include UC: Check blacklist" incoming="_rOiGQI8AEeWkVtgeNIZRdw" outgoing="_98eCgJPWEeWQgfxX6LSH2A"/>
+    <node xmi:type="uml:DecisionNode" xmi:id="_NvV60JPWEeWQgfxX6LSH2A" name="Is blacklisted?" incoming="_98eCgJPWEeWQgfxX6LSH2A" outgoing="_AxXMAJPXEeWQgfxX6LSH2A _Hx2MMJPXEeWQgfxX6LSH2A"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Activity" xmi:id="_of84wI8DEeWkVtgeNIZRdw" name="SearchAvailableOrders" visibility="package" node="_KQSmwI8EEeWkVtgeNIZRdw _MORWYI8EEeWkVtgeNIZRdw _Qyl2II8EEeWkVtgeNIZRdw _XHBooI8EEeWkVtgeNIZRdw _bXG9wI8EEeWkVtgeNIZRdw _e7LhcI8EEeWkVtgeNIZRdw _h6-6cI8EEeWkVtgeNIZRdw _nxA5sI8EEeWkVtgeNIZRdw _tg-tMI8EEeWkVtgeNIZRdw _vFaUYI8EEeWkVtgeNIZRdw _woaYMI8EEeWkVtgeNIZRdw _mvn4sI8FEeWkVtgeNIZRdw">
     <edge xmi:type="uml:ControlFlow" xmi:id="_CIGiMI8FEeWkVtgeNIZRdw" target="_MORWYI8EEeWkVtgeNIZRdw" source="_KQSmwI8EEeWkVtgeNIZRdw"/>
