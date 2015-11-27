@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_WY-yAJUGEeWtRMAmqbtyDA" name="componentDiagram">
+  <packagedElement xmi:type="uml:Component" xmi:id="_YXGEgJUGEeWtRMAmqbtyDA" name="Hotel component"/>
+  <packagedElement xmi:type="uml:Component" xmi:id="_a14bIJUGEeWtRMAmqbtyDA" name="Component1"/>
+  <packagedElement xmi:type="uml:Component" xmi:id="_mOuisJUGEeWtRMAmqbtyDA" name="Checking in / out component"/>
+  <packagedElement xmi:type="uml:Component" xmi:id="_pQgRoJUGEeWtRMAmqbtyDA" name="Service component"/>
+  <packagedElement xmi:type="uml:Component" xmi:id="_qeJwgJUGEeWtRMAmqbtyDA" name="Search component"/>
+</uml:Model>
