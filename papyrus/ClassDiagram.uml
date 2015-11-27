@@ -333,6 +333,16 @@
     <ownedEnd xmi:type="uml:Property" xmi:id="_W_hQkJTlEeWM7foaxE7ztg" name="in" type="_iViNMJROEeWEKYEtRmghUQ" association="_W_eNQJTlEeWM7foaxE7ztg"/>
     <ownedEnd xmi:type="uml:Property" xmi:id="_W_fbYJTlEeWM7foaxE7ztg" name="works" type="_jotFQJROEeWEKYEtRmghUQ" aggregation="composite" association="_W_eNQJTlEeWM7foaxE7ztg"/>
   </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_RhQboJTmEeWM7foaxE7ztg" memberEnd="_RhRCspTmEeWM7foaxE7ztg _RhRpwJTmEeWM7foaxE7ztg">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_RhRCsJTmEeWM7foaxE7ztg" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_RhRCsZTmEeWM7foaxE7ztg" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_RhRpwJTmEeWM7foaxE7ztg" name="has" type="_YJJ_IJRWEeWEKYEtRmghUQ" association="_RhQboJTmEeWM7foaxE7ztg"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_RhRCspTmEeWM7foaxE7ztg" name="provides" type="_-pFowJRWEeWEKYEtRmghUQ" aggregation="shared" association="_RhQboJTmEeWM7foaxE7ztg">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_ej9c8JTmEeWM7foaxE7ztg"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ej_5MJTmEeWM7foaxE7ztg" value="*"/>
+    </ownedEnd>
+  </packagedElement>
   <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_0lMEUJN5EeWEKYEtRmghUQ">
     <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_0lNScJN5EeWEKYEtRmghUQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
       <references xmi:type="ecore:EPackage" href="pathmap://PAPYRUS_ACTIONLANGUAGE_PROFILE/ActionLanguage-Profile.profile.uml#_Kv8EIKFXEeS_KNX0nfvIVQ"/>
