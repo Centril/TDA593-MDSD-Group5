@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_WY-yAJUGEeWtRMAmqbtyDA" name="componentDiagram">
   <packagedElement xmi:type="uml:Component" xmi:id="_YXGEgJUGEeWtRMAmqbtyDA" name="Hotel component">
-    <packagedElement xmi:type="uml:Dependency" xmi:id="_KLbvsJUJEeWtRMAmqbtyDA" client="_YXGEgJUGEeWtRMAmqbtyDA" supplier="_4Z19YJUIEeWtRMAmqbtyDA"/>
     <packagedElement xmi:type="uml:Dependency" xmi:id="_XtJ9YJULEeWtRMAmqbtyDA" client="_YXGEgJUGEeWtRMAmqbtyDA" supplier="_PSGSEJUKEeWtRMAmqbtyDA"/>
     <packagedElement xmi:type="uml:Dependency" xmi:id="_YJrhUJULEeWtRMAmqbtyDA" client="_YXGEgJUGEeWtRMAmqbtyDA" supplier="_tMKSEJUKEeWtRMAmqbtyDA"/>
     <packagedElement xmi:type="uml:Dependency" xmi:id="_Yf96YJULEeWtRMAmqbtyDA" client="_YXGEgJUGEeWtRMAmqbtyDA" supplier="_K8UkoJUKEeWtRMAmqbtyDA"/>
     <packagedElement xmi:type="uml:Dependency" xmi:id="_b6jK4JULEeWtRMAmqbtyDA" client="_YXGEgJUGEeWtRMAmqbtyDA" supplier="_OLE_oJUKEeWtRMAmqbtyDA"/>
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_wFhq4JUVEeWl_rEFMzUzOw" client="_YXGEgJUGEeWtRMAmqbtyDA" supplier="_4Z19YJUIEeWtRMAmqbtyDA"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Component" xmi:id="_a14bIJUGEeWtRMAmqbtyDA" name="Booking Component">
     <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_iq_j8JULEeWtRMAmqbtyDA" client="_a14bIJUGEeWtRMAmqbtyDA" supplier="_OLE_oJUKEeWtRMAmqbtyDA" contract="_OLE_oJUKEeWtRMAmqbtyDA"/>
@@ -17,7 +17,7 @@
     <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_iJk48JULEeWtRMAmqbtyDA" client="_pQgRoJUGEeWtRMAmqbtyDA" supplier="_K8UkoJUKEeWtRMAmqbtyDA" contract="_K8UkoJUKEeWtRMAmqbtyDA"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Component" xmi:id="_qeJwgJUGEeWtRMAmqbtyDA" name="Search component">
-    <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_kG-rsJUJEeWtRMAmqbtyDA" client="_qeJwgJUGEeWtRMAmqbtyDA" supplier="_4Z19YJUIEeWtRMAmqbtyDA" contract="_4Z19YJUIEeWtRMAmqbtyDA"/>
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_xvzbYJUVEeWl_rEFMzUzOw" client="_qeJwgJUGEeWtRMAmqbtyDA" supplier="_4Z19YJUIEeWtRMAmqbtyDA"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Interface" xmi:id="_4Z19YJUIEeWtRMAmqbtyDA" name="Search interface">
     <ownedOperation xmi:type="uml:Operation" xmi:id="__lhZkJULEeWtRMAmqbtyDA" name="searchAvailableOrders"/>
@@ -25,7 +25,6 @@
     <ownedOperation xmi:type="uml:Operation" xmi:id="_LscIEJUMEeWtRMAmqbtyDA" name="searchActiveBookings"/>
     <ownedOperation xmi:type="uml:Operation" xmi:id="_N5MTgJUMEeWtRMAmqbtyDA" name="searchUsedServices"/>
     <ownedOperation xmi:type="uml:Operation" xmi:id="_PNM5EJUMEeWtRMAmqbtyDA" name="searchBookingNotCheckedIn"/>
-    <ownedOperation xmi:type="uml:Operation" xmi:id="_SeY9AJUMEeWtRMAmqbtyDA" name="Operation1"/>
     <ownedOperation xmi:type="uml:Operation" xmi:id="_VKFHMJUMEeWtRMAmqbtyDA" name="searchKeyCard"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Interface" xmi:id="_K8UkoJUKEeWtRMAmqbtyDA" name="Service interface">
