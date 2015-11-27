@@ -57,6 +57,36 @@
     <packagedElement xmi:type="uml:Class" xmi:id="_L2f_8JOAEeWEKYEtRmghUQ" name="Hotel">
       <ownedAttribute xmi:type="uml:Property" xmi:id="_WZCxoJOAEeWEKYEtRmghUQ" name="name"/>
       <ownedAttribute xmi:type="uml:Property" xmi:id="_YYSFgJOAEeWEKYEtRmghUQ" name="location"/>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_7GOcMJTpEeWh5u7XS7pPgw" name="searchAvailableOrders">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_LQ96kJTsEeWh5u7XS7pPgw" name="searchTerms">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EEList"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_pHI5EJTsEeWh5u7XS7pPgw" name="result" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EEList"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_yWFqAJTuEeWh5u7XS7pPgw" name="searchAvailableRooms">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_6tbvcJTuEeWh5u7XS7pPgw" name="availableFrom">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EDate"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_-ot5QJTuEeWh5u7XS7pPgw" name="availableTo">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EDate"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_CVQccJTvEeWh5u7XS7pPgw" name="result" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EEList"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_Qrx2EJTvEeWh5u7XS7pPgw" name="searchOccupiedRooms">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_cZNGgJTvEeWh5u7XS7pPgw" name="occupiedFrom">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EDate"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_edxmUJTvEeWh5u7XS7pPgw" name="occupiedTo">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EDate"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_h00aoJTvEeWh5u7XS7pPgw" name="result" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EEList"/>
+        </ownedParameter>
+      </ownedOperation>
     </packagedElement>
     <packagedElement xmi:type="uml:Package" xmi:id="_mtmlQJOAEeWEKYEtRmghUQ" name="clients">
       <packagedElement xmi:type="uml:Class" xmi:id="_st4FoJOAEeWEKYEtRmghUQ" name="Guest"/>
@@ -156,6 +186,7 @@
       <packagedElement xmi:type="uml:Class" xmi:id="_b5tHUJRQEeWEKYEtRmghUQ" name="PackageDeal"/>
       <packagedElement xmi:type="uml:Interface" xmi:id="_9Je-kJRTEeWEKYEtRmghUQ" name="SearchCriteria"/>
       <packagedElement xmi:type="uml:Interface" xmi:id="_A4r0MJRUEeWEKYEtRmghUQ" name="SearchResult"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="_P9j3cJTqEeWh5u7XS7pPgw" name="SearchTerm"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Package" xmi:id="_r23uoJRQEeWEKYEtRmghUQ" name="ordering">
       <packagedElement xmi:type="uml:Class" xmi:id="_f1YaIJOJEeWEKYEtRmghUQ" name="Order">
