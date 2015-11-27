@@ -176,8 +176,52 @@
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EDate"/>
         </ownedAttribute>
       </packagedElement>
-      <packagedElement xmi:type="uml:Class" xmi:id="_2hOYgJRQEeWEKYEtRmghUQ" name="Campaign"/>
-      <packagedElement xmi:type="uml:Class" xmi:id="_3gRasJRQEeWEKYEtRmghUQ" name="Invoice"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="_2hOYgJRQEeWEKYEtRmghUQ" name="Campaign" visibility="public">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_LTLTUJTnEeWM7foaxE7ztg" name="name">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_L6WoEJTnEeWM7foaxE7ztg" name="description">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_MCyLUJTnEeWM7foaxE7ztg" name="startDate">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EDate"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_MG6dYJTnEeWM7foaxE7ztg" name="endDate">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EDate"/>
+        </ownedAttribute>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_MxJtMJTnEeWM7foaxE7ztg" name="discount">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_ipHpkJToEeWM7foaxE7ztg" name="order" type="_f1YaIJOJEeWEKYEtRmghUQ"/>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_8WtCEJToEeWM7foaxE7ztg" name="price">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#double"/>
+          </ownedParameter>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_P4-H0JTpEeWM7foaxE7ztg" direction="return">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#double"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_M3SKYJTnEeWM7foaxE7ztg" name="appliesTo">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_l8ykUJTpEeWM7foaxE7ztg" name="order" type="_f1YaIJOJEeWEKYEtRmghUQ"/>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_vKMIAJTpEeWM7foaxE7ztg" direction="return">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_M-N40JTnEeWM7foaxE7ztg" name="appliesTo" concurrency="concurrent">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_Dx06YJTqEeWM7foaxE7ztg" name="code">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+          </ownedParameter>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_NTuHYJTqEeWM7foaxE7ztg" direction="return">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_7USNsJTmEeWM7foaxE7ztg" name="totalPrice"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_3gRasJRQEeWEKYEtRmghUQ" name="Invoice">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_AXtEQJTnEeWM7foaxE7ztg" name="isPaid">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_EUJEoJTnEeWM7foaxE7ztg" name="expiryDate">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EDate"/>
+        </ownedAttribute>
+      </packagedElement>
     </packagedElement>
     <packagedElement xmi:type="uml:Package" xmi:id="_YzWk8JRREeWEKYEtRmghUQ" name="blacklist">
       <packagedElement xmi:type="uml:Class" xmi:id="_aHGr0JRREeWEKYEtRmghUQ" name="Blacklist"/>
