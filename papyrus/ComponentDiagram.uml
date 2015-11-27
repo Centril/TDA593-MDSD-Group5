@@ -1,8 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_WY-yAJUGEeWtRMAmqbtyDA" name="componentDiagram">
-  <packagedElement xmi:type="uml:Component" xmi:id="_YXGEgJUGEeWtRMAmqbtyDA" name="Hotel component"/>
-  <packagedElement xmi:type="uml:Component" xmi:id="_a14bIJUGEeWtRMAmqbtyDA" name="Component1"/>
-  <packagedElement xmi:type="uml:Component" xmi:id="_mOuisJUGEeWtRMAmqbtyDA" name="Checking in / out component"/>
-  <packagedElement xmi:type="uml:Component" xmi:id="_pQgRoJUGEeWtRMAmqbtyDA" name="Service component"/>
-  <packagedElement xmi:type="uml:Component" xmi:id="_qeJwgJUGEeWtRMAmqbtyDA" name="Search component"/>
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_WY-yAJUGEeWtRMAmqbtyDA" name="componentDiagram">
+  <packagedElement xmi:type="uml:Component" xmi:id="_YXGEgJUGEeWtRMAmqbtyDA" name="Hotel component">
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_KLbvsJUJEeWtRMAmqbtyDA" client="_YXGEgJUGEeWtRMAmqbtyDA" supplier="_4Z19YJUIEeWtRMAmqbtyDA"/>
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_XtJ9YJULEeWtRMAmqbtyDA" client="_YXGEgJUGEeWtRMAmqbtyDA" supplier="_PSGSEJUKEeWtRMAmqbtyDA"/>
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_YJrhUJULEeWtRMAmqbtyDA" client="_YXGEgJUGEeWtRMAmqbtyDA" supplier="_tMKSEJUKEeWtRMAmqbtyDA"/>
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_Yf96YJULEeWtRMAmqbtyDA" client="_YXGEgJUGEeWtRMAmqbtyDA" supplier="_K8UkoJUKEeWtRMAmqbtyDA"/>
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_b6jK4JULEeWtRMAmqbtyDA" client="_YXGEgJUGEeWtRMAmqbtyDA" supplier="_OLE_oJUKEeWtRMAmqbtyDA"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Component" xmi:id="_a14bIJUGEeWtRMAmqbtyDA" name="Booking Component">
+    <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_iq_j8JULEeWtRMAmqbtyDA" client="_a14bIJUGEeWtRMAmqbtyDA" supplier="_OLE_oJUKEeWtRMAmqbtyDA" contract="_OLE_oJUKEeWtRMAmqbtyDA"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Component" xmi:id="_mOuisJUGEeWtRMAmqbtyDA" name="Checking in / out component">
+    <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_jbhpAJULEeWtRMAmqbtyDA" client="_mOuisJUGEeWtRMAmqbtyDA" supplier="_PSGSEJUKEeWtRMAmqbtyDA" contract="_PSGSEJUKEeWtRMAmqbtyDA"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Component" xmi:id="_pQgRoJUGEeWtRMAmqbtyDA" name="Service component">
+    <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_iJk48JULEeWtRMAmqbtyDA" client="_pQgRoJUGEeWtRMAmqbtyDA" supplier="_K8UkoJUKEeWtRMAmqbtyDA" contract="_K8UkoJUKEeWtRMAmqbtyDA"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Component" xmi:id="_qeJwgJUGEeWtRMAmqbtyDA" name="Search component">
+    <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_kG-rsJUJEeWtRMAmqbtyDA" client="_qeJwgJUGEeWtRMAmqbtyDA" supplier="_4Z19YJUIEeWtRMAmqbtyDA" contract="_4Z19YJUIEeWtRMAmqbtyDA"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Interface" xmi:id="_4Z19YJUIEeWtRMAmqbtyDA" name="Search interface"/>
+  <packagedElement xmi:type="uml:Interface" xmi:id="_K8UkoJUKEeWtRMAmqbtyDA" name="Service interface"/>
+  <packagedElement xmi:type="uml:Interface" xmi:id="_OLE_oJUKEeWtRMAmqbtyDA" name="Booking interface"/>
+  <packagedElement xmi:type="uml:Interface" xmi:id="_PSGSEJUKEeWtRMAmqbtyDA" name="Checking in/out Interface"/>
+  <packagedElement xmi:type="uml:Component" xmi:id="_WoOyIJUKEeWtRMAmqbtyDA" name="Payment">
+    <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_hmsOUJULEeWtRMAmqbtyDA" client="_WoOyIJUKEeWtRMAmqbtyDA" supplier="_tMKSEJUKEeWtRMAmqbtyDA" contract="_tMKSEJUKEeWtRMAmqbtyDA"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Component" xmi:id="_YT30kJUKEeWtRMAmqbtyDA" name="Guest"/>
+  <packagedElement xmi:type="uml:Component" xmi:id="_ZU4loJUKEeWtRMAmqbtyDA" name="Customer"/>
+  <packagedElement xmi:type="uml:Component" xmi:id="_Z2myoJUKEeWtRMAmqbtyDA" name="Manager"/>
+  <packagedElement xmi:type="uml:Component" xmi:id="_bCvOkJUKEeWtRMAmqbtyDA" name="Maintenance staff"/>
+  <packagedElement xmi:type="uml:Component" xmi:id="_fG0vEJUKEeWtRMAmqbtyDA" name="Admin"/>
+  <packagedElement xmi:type="uml:Component" xmi:id="_fyY0kJUKEeWtRMAmqbtyDA" name="Reception staff"/>
+  <packagedElement xmi:type="uml:Interface" xmi:id="_tMKSEJUKEeWtRMAmqbtyDA" name="Payment interface"/>
+  <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_xz2rYJUJEeWtRMAmqbtyDA">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_xz35gJUJEeWtRMAmqbtyDA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+      <references xmi:type="ecore:EPackage" href="pathmap://PAPYRUS_ACTIONLANGUAGE_PROFILE/ActionLanguage-Profile.profile.uml#_Kv8EIKFXEeS_KNX0nfvIVQ"/>
+    </eAnnotations>
+    <appliedProfile xmi:type="uml:Profile" href="pathmap://PAPYRUS_ACTIONLANGUAGE_PROFILE/ActionLanguage-Profile.profile.uml#ActionLanguage"/>
+  </profileApplication>
 </uml:Model>
