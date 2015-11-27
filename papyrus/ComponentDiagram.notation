@@ -280,6 +280,10 @@
       <layoutConstraint xmi:type="notation:Bounds" xmi:id="_tMLgOZUKEeWtRMAmqbtyDA"/>
     </children>
     <children xmi:type="notation:BasicCompartment" xmi:id="_tMLgOpUKEeWtRMAmqbtyDA" type="7009">
+      <children xmi:type="notation:Shape" xmi:id="_t-k7kJUMEeWl_rEFMzUzOw" type="5">
+        <element xmi:type="uml:Operation" href="ComponentDiagram.uml#_t-QLcJUMEeWl_rEFMzUzOw"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_t-k7kZUMEeWl_rEFMzUzOw"/>
+      </children>
       <styles xmi:type="notation:TitleStyle" xmi:id="_tMLgO5UKEeWtRMAmqbtyDA"/>
       <styles xmi:type="notation:SortingStyle" xmi:id="_tMLgPJUKEeWtRMAmqbtyDA"/>
       <styles xmi:type="notation:FilteringStyle" xmi:id="_tMLgPZUKEeWtRMAmqbtyDA"/>

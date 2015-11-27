@@ -45,7 +45,9 @@
   <packagedElement xmi:type="uml:Component" xmi:id="_bCvOkJUKEeWtRMAmqbtyDA" name="Maintenance staff"/>
   <packagedElement xmi:type="uml:Component" xmi:id="_fG0vEJUKEeWtRMAmqbtyDA" name="Admin"/>
   <packagedElement xmi:type="uml:Component" xmi:id="_fyY0kJUKEeWtRMAmqbtyDA" name="Reception staff"/>
-  <packagedElement xmi:type="uml:Interface" xmi:id="_tMKSEJUKEeWtRMAmqbtyDA" name="Payment interface"/>
+  <packagedElement xmi:type="uml:Interface" xmi:id="_tMKSEJUKEeWtRMAmqbtyDA" name="Payment interface">
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_t-QLcJUMEeWl_rEFMzUzOw" name="verifyPaymentInformation"/>
+  </packagedElement>
   <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_xz2rYJUJEeWtRMAmqbtyDA">
     <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_xz35gJUJEeWtRMAmqbtyDA" source="http://www.eclipse.org/uml2/2.0.0/UML">
       <references xmi:type="ecore:EPackage" href="pathmap://PAPYRUS_ACTIONLANGUAGE_PROFILE/ActionLanguage-Profile.profile.uml#_Kv8EIKFXEeS_KNX0nfvIVQ"/>
