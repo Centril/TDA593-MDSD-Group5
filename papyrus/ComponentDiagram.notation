@@ -120,6 +120,14 @@
       <layoutConstraint xmi:type="notation:Bounds" xmi:id="_K8Vyx5UKEeWtRMAmqbtyDA"/>
     </children>
     <children xmi:type="notation:BasicCompartment" xmi:id="_K8VyyJUKEeWtRMAmqbtyDA" type="7009">
+      <children xmi:type="notation:Shape" xmi:id="_KsFB0JUNEeWl_rEFMzUzOw" type="5">
+        <element xmi:type="uml:Operation" href="ComponentDiagram.uml#_Kr4NgJUNEeWl_rEFMzUzOw"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_KsFB0ZUNEeWl_rEFMzUzOw"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_MIR6EJUNEeWl_rEFMzUzOw" type="5">
+        <element xmi:type="uml:Operation" href="ComponentDiagram.uml#_MICpgJUNEeWl_rEFMzUzOw"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_MIR6EZUNEeWl_rEFMzUzOw"/>
+      </children>
       <styles xmi:type="notation:TitleStyle" xmi:id="_K8VyyZUKEeWtRMAmqbtyDA"/>
       <styles xmi:type="notation:SortingStyle" xmi:id="_K8VyypUKEeWtRMAmqbtyDA"/>
       <styles xmi:type="notation:FilteringStyle" xmi:id="_K8Vyy5UKEeWtRMAmqbtyDA"/>

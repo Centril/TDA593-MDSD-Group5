@@ -28,7 +28,10 @@
     <ownedOperation xmi:type="uml:Operation" xmi:id="_SeY9AJUMEeWtRMAmqbtyDA" name="Operation1"/>
     <ownedOperation xmi:type="uml:Operation" xmi:id="_VKFHMJUMEeWtRMAmqbtyDA" name="searchKeyCard"/>
   </packagedElement>
-  <packagedElement xmi:type="uml:Interface" xmi:id="_K8UkoJUKEeWtRMAmqbtyDA" name="Service interface"/>
+  <packagedElement xmi:type="uml:Interface" xmi:id="_K8UkoJUKEeWtRMAmqbtyDA" name="Service interface">
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_Kr4NgJUNEeWl_rEFMzUzOw" name="addServiceToBooking"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_MICpgJUNEeWl_rEFMzUzOw" name="bookService"/>
+  </packagedElement>
   <packagedElement xmi:type="uml:Interface" xmi:id="_OLE_oJUKEeWtRMAmqbtyDA" name="Booking interface"/>
   <packagedElement xmi:type="uml:Interface" xmi:id="_PSGSEJUKEeWtRMAmqbtyDA" name="Checking in/out Interface">
     <ownedOperation xmi:type="uml:Operation" xmi:id="_AfB0cJUMEeWl_rEFMzUzOw" name="checkIn"/>
