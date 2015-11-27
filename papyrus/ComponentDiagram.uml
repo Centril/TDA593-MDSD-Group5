@@ -30,7 +30,12 @@
   </packagedElement>
   <packagedElement xmi:type="uml:Interface" xmi:id="_K8UkoJUKEeWtRMAmqbtyDA" name="Service interface"/>
   <packagedElement xmi:type="uml:Interface" xmi:id="_OLE_oJUKEeWtRMAmqbtyDA" name="Booking interface"/>
-  <packagedElement xmi:type="uml:Interface" xmi:id="_PSGSEJUKEeWtRMAmqbtyDA" name="Checking in/out Interface"/>
+  <packagedElement xmi:type="uml:Interface" xmi:id="_PSGSEJUKEeWtRMAmqbtyDA" name="Checking in/out Interface">
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_AfB0cJUMEeWl_rEFMzUzOw" name="checkIn"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_cXTi4JUMEeWl_rEFMzUzOw" name="checkOut"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_eWqykJUMEeWl_rEFMzUzOw" name="giveOutKeyCard"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_g6DVUJUMEeWl_rEFMzUzOw" name="takeBackKeyCard"/>
+  </packagedElement>
   <packagedElement xmi:type="uml:Component" xmi:id="_WoOyIJUKEeWtRMAmqbtyDA" name="Payment">
     <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_hmsOUJULEeWtRMAmqbtyDA" client="_WoOyIJUKEeWtRMAmqbtyDA" supplier="_tMKSEJUKEeWtRMAmqbtyDA" contract="_tMKSEJUKEeWtRMAmqbtyDA"/>
   </packagedElement>
