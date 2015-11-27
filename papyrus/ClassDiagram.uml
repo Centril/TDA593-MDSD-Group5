@@ -55,8 +55,12 @@
       <packagedElement xmi:type="uml:Class" xmi:id="_FzuSMJRREeWEKYEtRmghUQ" name="PrototypeOrdering"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_L2f_8JOAEeWEKYEtRmghUQ" name="Hotel">
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_WZCxoJOAEeWEKYEtRmghUQ" name="name"/>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_YYSFgJOAEeWEKYEtRmghUQ" name="location"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_WZCxoJOAEeWEKYEtRmghUQ" name="name">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_YYSFgJOAEeWEKYEtRmghUQ" name="location">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+      </ownedAttribute>
       <ownedOperation xmi:type="uml:Operation" xmi:id="_7GOcMJTpEeWh5u7XS7pPgw" name="searchAvailableOrders">
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_LQ96kJTsEeWh5u7XS7pPgw" name="searchTerms">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EEList"/>
