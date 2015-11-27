@@ -47,12 +47,23 @@
   <packagedElement xmi:type="uml:Component" xmi:id="_WoOyIJUKEeWtRMAmqbtyDA" name="Payment">
     <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_hmsOUJULEeWtRMAmqbtyDA" client="_WoOyIJUKEeWtRMAmqbtyDA" supplier="_tMKSEJUKEeWtRMAmqbtyDA" contract="_tMKSEJUKEeWtRMAmqbtyDA"/>
   </packagedElement>
-  <packagedElement xmi:type="uml:Component" xmi:id="_YT30kJUKEeWtRMAmqbtyDA" name="Guest"/>
-  <packagedElement xmi:type="uml:Component" xmi:id="_ZU4loJUKEeWtRMAmqbtyDA" name="Customer"/>
-  <packagedElement xmi:type="uml:Component" xmi:id="_Z2myoJUKEeWtRMAmqbtyDA" name="Manager"/>
-  <packagedElement xmi:type="uml:Component" xmi:id="_bCvOkJUKEeWtRMAmqbtyDA" name="Maintenance staff"/>
-  <packagedElement xmi:type="uml:Component" xmi:id="_fG0vEJUKEeWtRMAmqbtyDA" name="Admin"/>
-  <packagedElement xmi:type="uml:Component" xmi:id="_fyY0kJUKEeWtRMAmqbtyDA" name="Reception staff"/>
+  <packagedElement xmi:type="uml:Component" xmi:id="_YT30kJUKEeWtRMAmqbtyDA" name="Guest">
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_AjZWEJUXEeWl_rEFMzUzOw" client="_YT30kJUKEeWtRMAmqbtyDA" supplier="_tMKSEJUKEeWtRMAmqbtyDA"/>
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_ETMooJUXEeWl_rEFMzUzOw" client="_YT30kJUKEeWtRMAmqbtyDA" supplier="_K8UkoJUKEeWtRMAmqbtyDA"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Component" xmi:id="_ZU4loJUKEeWtRMAmqbtyDA" name="Customer">
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_8xIlYJUWEeWl_rEFMzUzOw" client="_ZU4loJUKEeWtRMAmqbtyDA" supplier="_tMKSEJUKEeWtRMAmqbtyDA"/>
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_Dp0UcJUXEeWl_rEFMzUzOw" client="_ZU4loJUKEeWtRMAmqbtyDA" supplier="_K8UkoJUKEeWtRMAmqbtyDA"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Component" xmi:id="_fG0vEJUKEeWtRMAmqbtyDA" name="Admin">
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_pWHXIJUWEeWl_rEFMzUzOw" client="_fG0vEJUKEeWtRMAmqbtyDA" supplier="_YXGEgJUGEeWtRMAmqbtyDA"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Component" xmi:id="_fyY0kJUKEeWtRMAmqbtyDA" name="Reception staff">
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_z6etwJUWEeWl_rEFMzUzOw" client="_fyY0kJUKEeWtRMAmqbtyDA" supplier="_K8UkoJUKEeWtRMAmqbtyDA"/>
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_0kzdIJUWEeWl_rEFMzUzOw" client="_fyY0kJUKEeWtRMAmqbtyDA" supplier="_OLE_oJUKEeWtRMAmqbtyDA"/>
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_1aLl8JUWEeWl_rEFMzUzOw" client="_fyY0kJUKEeWtRMAmqbtyDA" supplier="_PSGSEJUKEeWtRMAmqbtyDA"/>
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_T2tZ0JUXEeWl_rEFMzUzOw" client="_fyY0kJUKEeWtRMAmqbtyDA" supplier="_4Z19YJUIEeWtRMAmqbtyDA"/>
+  </packagedElement>
   <packagedElement xmi:type="uml:Interface" xmi:id="_tMKSEJUKEeWtRMAmqbtyDA" name="Payment interface">
     <ownedOperation xmi:type="uml:Operation" xmi:id="_t-QLcJUMEeWl_rEFMzUzOw" name="verifyPaymentInformation"/>
   </packagedElement>
