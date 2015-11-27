@@ -394,6 +394,19 @@
       <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ej_5MJTmEeWM7foaxE7ztg" value="*"/>
     </ownedEnd>
   </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_b6OL0JTsEeWzTqnQSzpdtA" memberEnd="_b6XVwJTsEeWzTqnQSzpdtA _b6Yj4JTsEeWzTqnQSzpdtA">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_b6VgkJTsEeWzTqnQSzpdtA" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_b6VgkZTsEeWzTqnQSzpdtA" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_b6Yj4JTsEeWzTqnQSzpdtA" name="area" type="_EzYb4JQXEeWEKYEtRmghUQ" aggregation="shared" association="_b6OL0JTsEeWzTqnQSzpdtA">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_jrXz8JTsEeWzTqnQSzpdtA" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_jrbeUJTsEeWzTqnQSzpdtA" value="1"/>
+    </ownedEnd>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_b6XVwJTsEeWzTqnQSzpdtA" name="entranceFor" type="_BsvbEJQXEeWEKYEtRmghUQ" association="_b6OL0JTsEeWzTqnQSzpdtA">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_kmOSoJTsEeWzTqnQSzpdtA"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_kmQH0JTsEeWzTqnQSzpdtA" value="*"/>
+    </ownedEnd>
+  </packagedElement>
   <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_0lMEUJN5EeWEKYEtRmghUQ">
     <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_0lNScJN5EeWEKYEtRmghUQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
       <references xmi:type="ecore:EPackage" href="pathmap://PAPYRUS_ACTIONLANGUAGE_PROFILE/ActionLanguage-Profile.profile.uml#_Kv8EIKFXEeS_KNX0nfvIVQ"/>
