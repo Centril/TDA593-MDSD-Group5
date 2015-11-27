@@ -32,7 +32,13 @@
     <ownedOperation xmi:type="uml:Operation" xmi:id="_Kr4NgJUNEeWl_rEFMzUzOw" name="addServiceToBooking"/>
     <ownedOperation xmi:type="uml:Operation" xmi:id="_MICpgJUNEeWl_rEFMzUzOw" name="bookService"/>
   </packagedElement>
-  <packagedElement xmi:type="uml:Interface" xmi:id="_OLE_oJUKEeWtRMAmqbtyDA" name="Booking interface"/>
+  <packagedElement xmi:type="uml:Interface" xmi:id="_OLE_oJUKEeWtRMAmqbtyDA" name="Booking interface">
+    <ownedOperation xmi:type="uml:Operation" xmi:id="__PdJUJUTEeWl_rEFMzUzOw" name="createBooking"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_AirrwJUUEeWl_rEFMzUzOw" name="addGuestToBooking"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_DLb2sJUUEeWl_rEFMzUzOw" name="createOrder"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_FQSDUJUUEeWl_rEFMzUzOw" name="sendConfirmationMail"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_HAZWEJUUEeWl_rEFMzUzOw" name="createGuest"/>
+  </packagedElement>
   <packagedElement xmi:type="uml:Interface" xmi:id="_PSGSEJUKEeWtRMAmqbtyDA" name="Checking in/out Interface">
     <ownedOperation xmi:type="uml:Operation" xmi:id="_AfB0cJUMEeWl_rEFMzUzOw" name="checkIn"/>
     <ownedOperation xmi:type="uml:Operation" xmi:id="_cXTi4JUMEeWl_rEFMzUzOw" name="checkOut"/>
