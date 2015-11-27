@@ -19,7 +19,15 @@
   <packagedElement xmi:type="uml:Component" xmi:id="_qeJwgJUGEeWtRMAmqbtyDA" name="Search component">
     <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_kG-rsJUJEeWtRMAmqbtyDA" client="_qeJwgJUGEeWtRMAmqbtyDA" supplier="_4Z19YJUIEeWtRMAmqbtyDA" contract="_4Z19YJUIEeWtRMAmqbtyDA"/>
   </packagedElement>
-  <packagedElement xmi:type="uml:Interface" xmi:id="_4Z19YJUIEeWtRMAmqbtyDA" name="Search interface"/>
+  <packagedElement xmi:type="uml:Interface" xmi:id="_4Z19YJUIEeWtRMAmqbtyDA" name="Search interface">
+    <ownedOperation xmi:type="uml:Operation" xmi:id="__lhZkJULEeWtRMAmqbtyDA" name="searchAvailableOrders"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_CfOxoJUMEeWtRMAmqbtyDA" name="searchOccupiedRooms"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_LscIEJUMEeWtRMAmqbtyDA" name="searchActiveBookings"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_N5MTgJUMEeWtRMAmqbtyDA" name="searchUsedServices"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_PNM5EJUMEeWtRMAmqbtyDA" name="searchBookingNotCheckedIn"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_SeY9AJUMEeWtRMAmqbtyDA" name="Operation1"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_VKFHMJUMEeWtRMAmqbtyDA" name="searchKeyCard"/>
+  </packagedElement>
   <packagedElement xmi:type="uml:Interface" xmi:id="_K8UkoJUKEeWtRMAmqbtyDA" name="Service interface"/>
   <packagedElement xmi:type="uml:Interface" xmi:id="_OLE_oJUKEeWtRMAmqbtyDA" name="Booking interface"/>
   <packagedElement xmi:type="uml:Interface" xmi:id="_PSGSEJUKEeWtRMAmqbtyDA" name="Checking in/out Interface"/>
