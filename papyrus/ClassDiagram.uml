@@ -337,13 +337,45 @@
         </ownedAttribute>
       </packagedElement>
     </packagedElement>
-    <packagedElement xmi:type="uml:Package" xmi:id="_NeNHEJRQEeWEKYEtRmghUQ" name="search">
+    <packagedElement xmi:type="uml:Package" xmi:id="_NeNHEJRQEeWEKYEtRmghUQ" name="Search">
       <packagedElement xmi:type="uml:Class" xmi:id="_Tb9e8JRQEeWEKYEtRmghUQ" name="SearchQuery"/>
-      <packagedElement xmi:type="uml:Class" xmi:id="_aDzVoJRQEeWEKYEtRmghUQ" name="OrderSearchResult"/>
-      <packagedElement xmi:type="uml:Class" xmi:id="_b5tHUJRQEeWEKYEtRmghUQ" name="PackageDeal"/>
-      <packagedElement xmi:type="uml:Interface" xmi:id="_9Je-kJRTEeWEKYEtRmghUQ" name="SearchCriteria"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="_aDzVoJRQEeWEKYEtRmghUQ" name="OrderSearchResult">
+        <generalization xmi:type="uml:Generalization" xmi:id="_OVhqMJUMEeWh5u7XS7pPgw" general="_A4r0MJRUEeWEKYEtRmghUQ"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_b5tHUJRQEeWEKYEtRmghUQ" name="PackageDeal">
+        <generalization xmi:type="uml:Generalization" xmi:id="_mY48kJUMEeWh5u7XS7pPgw" general="_t2mysJUJEeWh5u7XS7pPgw"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Interface" xmi:id="_9Je-kJRTEeWEKYEtRmghUQ" name="SearchCriteria">
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_MY7-gJUIEeWh5u7XS7pPgw" name="filter">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_Tf7PUJUIEeWh5u7XS7pPgw" name="searchResults">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EEList"/>
+          </ownedParameter>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_WSh50JUIEeWh5u7XS7pPgw" name="result" direction="return">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EEList"/>
+          </ownedParameter>
+        </ownedOperation>
+      </packagedElement>
       <packagedElement xmi:type="uml:Interface" xmi:id="_A4r0MJRUEeWEKYEtRmghUQ" name="SearchResult"/>
       <packagedElement xmi:type="uml:Class" xmi:id="_P9j3cJTqEeWh5u7XS7pPgw" name="SearchTerm"/>
+      <packagedElement xmi:type="uml:Interface" xmi:id="_t2mysJUJEeWh5u7XS7pPgw" name="RoomSearchResult">
+        <generalization xmi:type="uml:Generalization" xmi:id="_RJ4oMJUMEeWh5u7XS7pPgw" general="_A4r0MJRUEeWEKYEtRmghUQ"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Interface" xmi:id="_zU7ckJUJEeWh5u7XS7pPgw" name="BookingSearchResult">
+        <generalization xmi:type="uml:Generalization" xmi:id="_R7XvgJUMEeWh5u7XS7pPgw" general="_A4r0MJRUEeWEKYEtRmghUQ"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Interface" xmi:id="_26w60JUJEeWh5u7XS7pPgw" name="ServiceSearchResult">
+        <generalization xmi:type="uml:Generalization" xmi:id="_J9oc4JUMEeWh5u7XS7pPgw" general="_A4r0MJRUEeWEKYEtRmghUQ"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Interface" xmi:id="_7N5j8JUJEeWh5u7XS7pPgw" name="ServiceBlueprintSearchResult">
+        <generalization xmi:type="uml:Generalization" xmi:id="_QPmKMJUMEeWh5u7XS7pPgw" general="_A4r0MJRUEeWEKYEtRmghUQ"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Interface" xmi:id="_9VeUcJUJEeWh5u7XS7pPgw" name="KeySearchResult">
+        <generalization xmi:type="uml:Generalization" xmi:id="_PVi8wJUMEeWh5u7XS7pPgw" general="_A4r0MJRUEeWEKYEtRmghUQ"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_R3e_8JUKEeWh5u7XS7pPgw" name="RoomCriteria">
+        <generalization xmi:type="uml:Generalization" xmi:id="_pkXaEJUMEeWh5u7XS7pPgw" general="_9Je-kJRTEeWEKYEtRmghUQ"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_TL4nEJUKEeWh5u7XS7pPgw" name="Attribute1"/>
+      </packagedElement>
     </packagedElement>
     <packagedElement xmi:type="uml:Package" xmi:id="_r23uoJRQEeWEKYEtRmghUQ" name="ordering">
       <packagedElement xmi:type="uml:Class" xmi:id="_f1YaIJOJEeWEKYEtRmghUQ" name="Order">
@@ -629,6 +661,19 @@
     </eAnnotations>
     <ownedEnd xmi:type="uml:Property" xmi:id="_rCvEQJUGEeWh5u7XS7pPgw" name="serviceconsumer" type="_8JUM8JRREeWEKYEtRmghUQ" association="_rCtPEJUGEeWh5u7XS7pPgw"/>
     <ownedEnd xmi:type="uml:Property" xmi:id="_rCt2IpUGEeWh5u7XS7pPgw" name="service" type="_4zgHsJRREeWEKYEtRmghUQ" association="_rCtPEJUGEeWh5u7XS7pPgw"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_CWLgIJUIEeWh5u7XS7pPgw" memberEnd="_CWLgI5UIEeWh5u7XS7pPgw _CWMuQJUIEeWh5u7XS7pPgw">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_CWLgIZUIEeWh5u7XS7pPgw" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_CWLgIpUIEeWh5u7XS7pPgw" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_CWMuQJUIEeWh5u7XS7pPgw" name="searchcriteria" type="_9Je-kJRTEeWEKYEtRmghUQ" aggregation="composite" association="_CWLgIJUIEeWh5u7XS7pPgw">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Ik5FIJUIEeWh5u7XS7pPgw"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Ik5sMJUIEeWh5u7XS7pPgw" value="*"/>
+    </ownedEnd>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_CWLgI5UIEeWh5u7XS7pPgw" name="searchquery" type="_Tb9e8JRQEeWEKYEtRmghUQ" association="_CWLgIJUIEeWh5u7XS7pPgw">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Gz4agJUIEeWh5u7XS7pPgw" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Gz5ooJUIEeWh5u7XS7pPgw" value="1"/>
+    </ownedEnd>
   </packagedElement>
   <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_0lMEUJN5EeWEKYEtRmghUQ">
     <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_0lNScJN5EeWEKYEtRmghUQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
