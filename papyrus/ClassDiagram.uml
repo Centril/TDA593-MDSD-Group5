@@ -418,6 +418,12 @@
         <ownedAttribute xmi:type="uml:Property" xmi:id="_cvhSwJUFEeWh5u7XS7pPgw" name="reason">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
         </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_ZY_w8JUHEeWh5u7XS7pPgw" name="date">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EDate"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_dLz7QJUHEeWh5u7XS7pPgw" name="expiry">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EDate"/>
+        </ownedAttribute>
       </packagedElement>
     </packagedElement>
     <packagedElement xmi:type="uml:Package" xmi:id="_3tXmEJRREeWEKYEtRmghUQ" name="services">
@@ -429,7 +435,7 @@
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
         </ownedAttribute>
       </packagedElement>
-      <packagedElement xmi:type="uml:Class" xmi:id="_6sH2MJRREeWEKYEtRmghUQ" name="SericeBlueprint"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="_6sH2MJRREeWEKYEtRmghUQ" name="ServiceBlueprint"/>
       <packagedElement xmi:type="uml:Class" xmi:id="_8JUM8JRREeWEKYEtRmghUQ" name="ServiceConsumer"/>
     </packagedElement>
   </packagedElement>
@@ -616,6 +622,13 @@
       <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Occ1wJUFEeWh5u7XS7pPgw"/>
       <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_OceD4JUFEeWh5u7XS7pPgw" value="*"/>
     </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_rCtPEJUGEeWh5u7XS7pPgw" name="consumes" memberEnd="_rCt2IpUGEeWh5u7XS7pPgw _rCvEQJUGEeWh5u7XS7pPgw">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_rCt2IJUGEeWh5u7XS7pPgw" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_rCt2IZUGEeWh5u7XS7pPgw" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_rCvEQJUGEeWh5u7XS7pPgw" name="serviceconsumer" type="_8JUM8JRREeWEKYEtRmghUQ" association="_rCtPEJUGEeWh5u7XS7pPgw"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_rCt2IpUGEeWh5u7XS7pPgw" name="service" type="_4zgHsJRREeWEKYEtRmghUQ" association="_rCtPEJUGEeWh5u7XS7pPgw"/>
   </packagedElement>
   <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_0lMEUJN5EeWEKYEtRmghUQ">
     <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_0lNScJN5EeWEKYEtRmghUQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
