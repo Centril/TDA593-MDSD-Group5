@@ -184,7 +184,14 @@
       <packagedElement xmi:type="uml:Class" xmi:id="_cpTi0JRREeWEKYEtRmghUQ" name="BlacklistItem"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Package" xmi:id="_3tXmEJRREeWEKYEtRmghUQ" name="services">
-      <packagedElement xmi:type="uml:Class" xmi:id="_4zgHsJRREeWEKYEtRmghUQ" name="Service"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="_4zgHsJRREeWEKYEtRmghUQ" name="Service">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_0OfPsJTmEeWh5u7XS7pPgw" name="price">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#double"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_IUCosJTnEeWh5u7XS7pPgw" name="isPaid">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+        </ownedAttribute>
+      </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_6sH2MJRREeWEKYEtRmghUQ" name="SericeBlueprint"/>
       <packagedElement xmi:type="uml:Class" xmi:id="_8JUM8JRREeWEKYEtRmghUQ" name="ServiceConsumer"/>
     </packagedElement>

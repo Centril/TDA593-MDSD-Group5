@@ -1221,6 +1221,14 @@
               <layoutConstraint xmi:type="notation:Location" xmi:id="_40C6QpRREeWEKYEtRmghUQ" y="5"/>
             </children>
             <children xmi:type="notation:BasicCompartment" xmi:id="_40C6Q5RREeWEKYEtRmghUQ" type="7011">
+              <children xmi:type="notation:Shape" xmi:id="_0PMaUJTmEeWh5u7XS7pPgw" type="3012">
+                <element xmi:type="uml:Property" href="ClassDiagram.uml#_0OfPsJTmEeWh5u7XS7pPgw"/>
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_0PMaUZTmEeWh5u7XS7pPgw"/>
+              </children>
+              <children xmi:type="notation:Shape" xmi:id="_IUoekJTnEeWh5u7XS7pPgw" type="3012">
+                <element xmi:type="uml:Property" href="ClassDiagram.uml#_IUCosJTnEeWh5u7XS7pPgw"/>
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_IUoekZTnEeWh5u7XS7pPgw"/>
+              </children>
               <styles xmi:type="notation:TitleStyle" xmi:id="_40C6RJRREeWEKYEtRmghUQ"/>
               <styles xmi:type="notation:SortingStyle" xmi:id="_40C6RZRREeWEKYEtRmghUQ"/>
               <styles xmi:type="notation:FilteringStyle" xmi:id="_40C6RpRREeWEKYEtRmghUQ"/>
