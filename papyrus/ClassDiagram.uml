@@ -471,7 +471,11 @@
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
         </ownedAttribute>
       </packagedElement>
-      <packagedElement xmi:type="uml:Class" xmi:id="_6sH2MJRREeWEKYEtRmghUQ" name="ServiceBlueprint"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="_6sH2MJRREeWEKYEtRmghUQ" name="ServiceBlueprint">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_KbVbkJXHEeWibcI8pRhyBw" name="basePrice" visibility="private">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#double"/>
+        </ownedAttribute>
+      </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_8JUM8JRREeWEKYEtRmghUQ" name="ServiceConsumer"/>
     </packagedElement>
   </packagedElement>
@@ -708,6 +712,27 @@
       <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_nq69cJUSEeWGQOCCfM2qyw" value="*"/>
     </ownedEnd>
     <ownedEnd xmi:type="uml:Property" xmi:id="_XV-IQpUSEeWGQOCCfM2qyw" name="includedIn" type="_f1YaIJOJEeWEKYEtRmghUQ" association="_XV9hMJUSEeWGQOCCfM2qyw"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_BZoxkJXHEeWibcI8pRhyBw" name="includedIn" memberEnd="_BZwGUJXHEeWibcI8pRhyBw _BZx7gJXHEeWibcI8pRhyBw">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_BZvfQJXHEeWibcI8pRhyBw" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_BZvfQZXHEeWibcI8pRhyBw" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_BZwGUJXHEeWibcI8pRhyBw" name="room" type="_sPEY0JN3EeWEKYEtRmghUQ" association="_BZoxkJXHEeWibcI8pRhyBw"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_BZx7gJXHEeWibcI8pRhyBw" name="serviceblueprint" type="_6sH2MJRREeWEKYEtRmghUQ" aggregation="shared" association="_BZoxkJXHEeWibcI8pRhyBw"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_gkmYwJXHEeWibcI8pRhyBw" memberEnd="_gkm_0pXHEeWibcI8pRhyBw _gkm_05XHEeWibcI8pRhyBw">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_gkm_0JXHEeWibcI8pRhyBw" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_gkm_0ZXHEeWibcI8pRhyBw" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_gkm_05XHEeWibcI8pRhyBw" name="serviceblueprint" type="_6sH2MJRREeWEKYEtRmghUQ" association="_gkmYwJXHEeWibcI8pRhyBw"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_gkm_0pXHEeWibcI8pRhyBw" name="roomprototype" type="_CKsl0JN8EeWEKYEtRmghUQ" association="_gkmYwJXHEeWibcI8pRhyBw"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_niIyoJXHEeWibcI8pRhyBw" memberEnd="_niJZsZXHEeWibcI8pRhyBw _niJZspXHEeWibcI8pRhyBw">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_niIyoZXHEeWibcI8pRhyBw" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_niJZsJXHEeWibcI8pRhyBw" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_niJZspXHEeWibcI8pRhyBw" name="serviceblueprint" type="_6sH2MJRREeWEKYEtRmghUQ" aggregation="composite" association="_niIyoJXHEeWibcI8pRhyBw"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_niJZsZXHEeWibcI8pRhyBw" name="hotel" type="_L2f_8JOAEeWEKYEtRmghUQ" association="_niIyoJXHEeWibcI8pRhyBw"/>
   </packagedElement>
   <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_0lMEUJN5EeWEKYEtRmghUQ">
     <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_0lNScJN5EeWEKYEtRmghUQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
