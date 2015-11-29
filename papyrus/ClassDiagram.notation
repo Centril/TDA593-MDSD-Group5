@@ -1358,7 +1358,7 @@
           <layoutConstraint xmi:type="notation:Bounds" xmi:id="_NepzBZRQEeWEKYEtRmghUQ"/>
         </children>
         <element xmi:type="uml:Package" href="ClassDiagram.uml#_NeNHEJRQEeWEKYEtRmghUQ"/>
-        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_NepzAZRQEeWEKYEtRmghUQ" x="1128" y="907" width="501" height="664"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_NepzAZRQEeWEKYEtRmghUQ" x="1128" y="907" width="501" height="757"/>
       </children>
       <children xmi:type="notation:Shape" xmi:id="_Yz3iUJRREeWEKYEtRmghUQ" type="3009">
         <children xmi:type="notation:DecorationNode" xmi:id="_Yz3iUpRREeWEKYEtRmghUQ" type="5017"/>
@@ -1534,7 +1534,7 @@
           <layoutConstraint xmi:type="notation:Bounds" xmi:id="_3t6YpZRREeWEKYEtRmghUQ"/>
         </children>
         <element xmi:type="uml:Package" href="ClassDiagram.uml#_3tXmEJRREeWEKYEtRmghUQ"/>
-        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_3t6YoZRREeWEKYEtRmghUQ" x="1674" y="850" height="432"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_3t6YoZRREeWEKYEtRmghUQ" x="1674" y="850" height="464"/>
       </children>
       <children xmi:type="notation:Shape" xmi:id="_r3W20JRQEeWEKYEtRmghUQ" type="3009">
         <children xmi:type="notation:DecorationNode" xmi:id="_r3W20pRQEeWEKYEtRmghUQ" type="5017"/>
