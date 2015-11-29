@@ -417,6 +417,37 @@
         <ownedAttribute xmi:type="uml:Property" xmi:id="_TL4nEJUKEeWh5u7XS7pPgw" name="Attribute1"/>
       </packagedElement>
     </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_YzWk8JRREeWEKYEtRmghUQ" name="blacklist">
+      <packagedElement xmi:type="uml:Class" xmi:id="_aHGr0JRREeWEKYEtRmghUQ" name="Blacklist"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="_cpTi0JRREeWEKYEtRmghUQ" name="BlacklistItem">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_UR4YEJUFEeWh5u7XS7pPgw" name="identity" type="_8icKkJOAEeWEKYEtRmghUQ"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_cvhSwJUFEeWh5u7XS7pPgw" name="reason">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_ZY_w8JUHEeWh5u7XS7pPgw" name="date">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EDate"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_dLz7QJUHEeWh5u7XS7pPgw" name="expiry">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EDate"/>
+        </ownedAttribute>
+      </packagedElement>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_3tXmEJRREeWEKYEtRmghUQ" name="services">
+      <packagedElement xmi:type="uml:Class" xmi:id="_4zgHsJRREeWEKYEtRmghUQ" name="Service">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_0OfPsJTmEeWh5u7XS7pPgw" name="price" visibility="private">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#double"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_IUCosJTnEeWh5u7XS7pPgw" name="isPaid" visibility="private">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_6sH2MJRREeWEKYEtRmghUQ" name="ServiceBlueprint">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_KbVbkJXHEeWibcI8pRhyBw" name="basePrice" visibility="private">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#double"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_8JUM8JRREeWEKYEtRmghUQ" name="ServiceConsumer"/>
+    </packagedElement>
     <packagedElement xmi:type="uml:Package" xmi:id="_r23uoJRQEeWEKYEtRmghUQ" name="ordering">
       <packagedElement xmi:type="uml:Class" xmi:id="_f1YaIJOJEeWEKYEtRmghUQ" name="Order">
         <ownedOperation xmi:type="uml:Operation" xmi:id="_wS58gJOJEeWEKYEtRmghUQ" name="calculatePrice"/>
@@ -482,37 +513,6 @@
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EDate"/>
         </ownedAttribute>
       </packagedElement>
-    </packagedElement>
-    <packagedElement xmi:type="uml:Package" xmi:id="_YzWk8JRREeWEKYEtRmghUQ" name="blacklist">
-      <packagedElement xmi:type="uml:Class" xmi:id="_aHGr0JRREeWEKYEtRmghUQ" name="Blacklist"/>
-      <packagedElement xmi:type="uml:Class" xmi:id="_cpTi0JRREeWEKYEtRmghUQ" name="BlacklistItem">
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_UR4YEJUFEeWh5u7XS7pPgw" name="identity" type="_8icKkJOAEeWEKYEtRmghUQ"/>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_cvhSwJUFEeWh5u7XS7pPgw" name="reason">
-          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
-        </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_ZY_w8JUHEeWh5u7XS7pPgw" name="date">
-          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EDate"/>
-        </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_dLz7QJUHEeWh5u7XS7pPgw" name="expiry">
-          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EDate"/>
-        </ownedAttribute>
-      </packagedElement>
-    </packagedElement>
-    <packagedElement xmi:type="uml:Package" xmi:id="_3tXmEJRREeWEKYEtRmghUQ" name="services">
-      <packagedElement xmi:type="uml:Class" xmi:id="_4zgHsJRREeWEKYEtRmghUQ" name="Service">
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_0OfPsJTmEeWh5u7XS7pPgw" name="price" visibility="private">
-          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#double"/>
-        </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_IUCosJTnEeWh5u7XS7pPgw" name="isPaid" visibility="private">
-          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
-        </ownedAttribute>
-      </packagedElement>
-      <packagedElement xmi:type="uml:Class" xmi:id="_6sH2MJRREeWEKYEtRmghUQ" name="ServiceBlueprint">
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_KbVbkJXHEeWibcI8pRhyBw" name="basePrice" visibility="private">
-          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#double"/>
-        </ownedAttribute>
-      </packagedElement>
-      <packagedElement xmi:type="uml:Class" xmi:id="_8JUM8JRREeWEKYEtRmghUQ" name="ServiceConsumer"/>
     </packagedElement>
   </packagedElement>
   <packagedElement xmi:type="uml:Association" xmi:id="_tZ_A4JOEEeWEKYEtRmghUQ" visibility="public" memberEnd="_tZ_A45OEEeWEKYEtRmghUQ _tZ_n8JOEEeWEKYEtRmghUQ">
