@@ -332,6 +332,14 @@
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EDate"/>
         </ownedAttribute>
       </packagedElement>
+      <packagedElement xmi:type="uml:Interface" xmi:id="_m6QDYJnREeWsldw0CEc3ng" name="IBlacklist">
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_ymbWoJnREeWsldw0CEc3ng" name="addToBlackList">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_9N3PYJnREeWsldw0CEc3ng" name="identity" type="_8icKkJOAEeWEKYEtRmghUQ"/>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_zK3gcJnREeWsldw0CEc3ng" name="removeFromBlackList">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_Ast74JnSEeWsldw0CEc3ng" name="identity" type="_8icKkJOAEeWEKYEtRmghUQ"/>
+        </ownedOperation>
+      </packagedElement>
     </packagedElement>
     <packagedElement xmi:type="uml:Package" xmi:id="_r23uoJRQEeWEKYEtRmghUQ" name="ordering">
       <packagedElement xmi:type="uml:Class" xmi:id="_f1YaIJOJEeWEKYEtRmghUQ" name="Order">
