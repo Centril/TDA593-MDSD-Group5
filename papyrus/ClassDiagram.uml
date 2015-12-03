@@ -215,20 +215,6 @@
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
         </ownedParameter>
       </ownedOperation>
-      <ownedOperation xmi:type="uml:Operation" xmi:id="_No8vgJT1EeWh5u7XS7pPgw" name="checkIn">
-        <ownedParameter xmi:type="uml:Parameter" xmi:id="_SClCMJT1EeWh5u7XS7pPgw" name="guest" type="_st4FoJOAEeWEKYEtRmghUQ"/>
-        <ownedParameter xmi:type="uml:Parameter" xmi:id="_UPQ8MJT1EeWh5u7XS7pPgw" name="booking" type="_8ormYJOJEeWEKYEtRmghUQ"/>
-        <ownedParameter xmi:type="uml:Parameter" xmi:id="_WRTscJT1EeWh5u7XS7pPgw" name="result" direction="return">
-          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
-        </ownedParameter>
-      </ownedOperation>
-      <ownedOperation xmi:type="uml:Operation" xmi:id="_XrPT0JT1EeWh5u7XS7pPgw" name="checkOut">
-        <ownedParameter xmi:type="uml:Parameter" xmi:id="_ae9_sJT1EeWh5u7XS7pPgw" name="guest" type="_st4FoJOAEeWEKYEtRmghUQ"/>
-        <ownedParameter xmi:type="uml:Parameter" xmi:id="_cTLIQJT1EeWh5u7XS7pPgw" name="booking" type="_8ormYJOJEeWEKYEtRmghUQ"/>
-        <ownedParameter xmi:type="uml:Parameter" xmi:id="_fvfeIJT1EeWh5u7XS7pPgw" name="result" direction="return">
-          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
-        </ownedParameter>
-      </ownedOperation>
     </packagedElement>
     <packagedElement xmi:type="uml:Package" xmi:id="_mtmlQJOAEeWEKYEtRmghUQ" name="clients">
       <packagedElement xmi:type="uml:Class" xmi:id="_st4FoJOAEeWEKYEtRmghUQ" name="Guest">
@@ -511,6 +497,22 @@
         <ownedOperation xmi:type="uml:Operation" xmi:id="__tqpwJm9EeW2JPAtqMJHLg" name="addCustomerToOrder">
           <ownedParameter xmi:type="uml:Parameter" xmi:id="_I2fPcJm-EeW2JPAtqMJHLg" name="customer" type="_7PSgoJOAEeWEKYEtRmghUQ"/>
           <ownedParameter xmi:type="uml:Parameter" xmi:id="_Kl2UQJm-EeW2JPAtqMJHLg" name="order" type="_f1YaIJOJEeWEKYEtRmghUQ"/>
+        </ownedOperation>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Interface" xmi:id="_A1QHcJm_EeW2JPAtqMJHLg" name="ICheckInCheckOut">
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_jyvlEJm_EeW2JPAtqMJHLg" name="checkIn">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_jyvlEZm_EeW2JPAtqMJHLg" name="guest" type="_st4FoJOAEeWEKYEtRmghUQ"/>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_jyvlEpm_EeW2JPAtqMJHLg" name="booking" type="_8ormYJOJEeWEKYEtRmghUQ"/>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_jyvlE5m_EeW2JPAtqMJHLg" name="result" direction="return">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_jywMIJm_EeW2JPAtqMJHLg" name="checkOut">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_jywMIZm_EeW2JPAtqMJHLg" name="guest" type="_st4FoJOAEeWEKYEtRmghUQ"/>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_jywMIpm_EeW2JPAtqMJHLg" name="booking" type="_8ormYJOJEeWEKYEtRmghUQ"/>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_jywMI5m_EeW2JPAtqMJHLg" name="result" direction="return">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+          </ownedParameter>
         </ownedOperation>
       </packagedElement>
     </packagedElement>
