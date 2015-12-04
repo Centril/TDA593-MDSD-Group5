@@ -263,15 +263,17 @@
         </ownedOperation>
       </packagedElement>
       <packagedElement xmi:type="uml:Interface" xmi:id="_A4r0MJRUEeWEKYEtRmghUQ" name="SearchResult" visibility="public">
+        <ownedTemplateSignature xmi:type="uml:RedefinableTemplateSignature" xmi:id="_-i1BsJqWEeWXppCtG_WnKw" name="RedefinableTemplateSignature1" parameter="_AAPa4JqXEeWXppCtG_WnKw">
+          <ownedParameter xmi:type="uml:ClassifierTemplateParameter" xmi:id="_AAPa4JqXEeWXppCtG_WnKw" parameteredElement="_UzIbAJqXEeWXppCtG_WnKw"/>
+        </ownedTemplateSignature>
+        <nestedClassifier xmi:type="uml:Class" xmi:id="_UzIbAJqXEeWXppCtG_WnKw" name="T" templateParameter="_AAPa4JqXEeWXppCtG_WnKw"/>
         <ownedOperation xmi:type="uml:Operation" xmi:id="_FHLaIJqEEeWv8co7MiJhGA" name="getRelevance">
           <ownedParameter xmi:type="uml:Parameter" xmi:id="_M_QJoJqEEeWv8co7MiJhGA" direction="return">
             <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#double"/>
           </ownedParameter>
         </ownedOperation>
         <ownedOperation xmi:type="uml:Operation" xmi:id="_PlqD0JqHEeWv8co7MiJhGA" name="getResult">
-          <ownedParameter xmi:type="uml:Parameter" xmi:id="_ep6GIJqHEeW6sthYlB3-ZQ" direction="return">
-            <type xmi:type="uml:Class" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EJavaClass-_ownedElement.0-_ownedParameter.0-_ownedParameteredElement"/>
-          </ownedParameter>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_ep6GIJqHEeW6sthYlB3-ZQ" type="_UzIbAJqXEeWXppCtG_WnKw" direction="return"/>
         </ownedOperation>
       </packagedElement>
       <packagedElement xmi:type="uml:Interface" xmi:id="_t2mysJUJEeWh5u7XS7pPgw" name="RoomSearchResult">
