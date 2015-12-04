@@ -83,6 +83,7 @@
   <packagedElement xmi:type="uml:Interface" xmi:id="_uJrfQJplEeWdwcOaiLHkPA" name="Task Log interface">
     <ownedOperation xmi:type="uml:Operation" xmi:id="_6atzEJplEeWdwcOaiLHkPA" name="addTask"/>
     <ownedOperation xmi:type="uml:Operation" xmi:id="_DZEOIJpmEeWdwcOaiLHkPA" name="completeTask"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_QJRNYJpqEeWdwcOaiLHkPA" name="updateTask"/>
   </packagedElement>
   <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_xz2rYJUJEeWtRMAmqbtyDA">
     <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_xz35gJUJEeWtRMAmqbtyDA" source="http://www.eclipse.org/uml2/2.0.0/UML">
