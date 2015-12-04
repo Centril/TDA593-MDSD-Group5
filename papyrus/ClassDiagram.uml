@@ -230,14 +230,18 @@
           </ownedParameter>
         </ownedOperation>
       </packagedElement>
-      <packagedElement xmi:type="uml:Interface" xmi:id="_A4r0MJRUEeWEKYEtRmghUQ" name="SearchResult">
+      <packagedElement xmi:type="uml:Interface" xmi:id="_A4r0MJRUEeWEKYEtRmghUQ" name="SearchResult" visibility="public">
         <ownedOperation xmi:type="uml:Operation" xmi:id="_FHLaIJqEEeWv8co7MiJhGA" name="getRelevance">
           <ownedParameter xmi:type="uml:Parameter" xmi:id="_M_QJoJqEEeWv8co7MiJhGA" direction="return">
             <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#double"/>
           </ownedParameter>
         </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_PlqD0JqHEeWv8co7MiJhGA" name="getResult">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_ep6GIJqHEeW6sthYlB3-ZQ" direction="return">
+            <type xmi:type="uml:Class" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EJavaClass-_ownedElement.0-_ownedParameter.0-_ownedParameteredElement"/>
+          </ownedParameter>
+        </ownedOperation>
       </packagedElement>
-      <packagedElement xmi:type="uml:Class" xmi:id="_P9j3cJTqEeWh5u7XS7pPgw" name="SearchTerm"/>
       <packagedElement xmi:type="uml:Interface" xmi:id="_t2mysJUJEeWh5u7XS7pPgw" name="RoomSearchResult">
         <generalization xmi:type="uml:Generalization" xmi:id="_RJ4oMJUMEeWh5u7XS7pPgw" general="_A4r0MJRUEeWEKYEtRmghUQ"/>
       </packagedElement>
@@ -435,6 +439,7 @@
         <ownedAttribute xmi:type="uml:Property" xmi:id="_WnAwoJOKEeWEKYEtRmghUQ" name="checkoutTime" visibility="private">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EDate"/>
         </ownedAttribute>
+        <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_U1EkcJqGEeWv8co7MiJhGA" client="_8ormYJOJEeWEKYEtRmghUQ" supplier="_zU7ckJUJEeWh5u7XS7pPgw" contract="_zU7ckJUJEeWh5u7XS7pPgw"/>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_2hOYgJRQEeWEKYEtRmghUQ" name="Campaign" visibility="public">
         <ownedAttribute xmi:type="uml:Property" xmi:id="_LTLTUJTnEeWM7foaxE7ztg" name="name" visibility="private">
