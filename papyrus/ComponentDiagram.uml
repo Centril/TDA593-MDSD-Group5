@@ -7,6 +7,7 @@
     <packagedElement xmi:type="uml:Dependency" xmi:id="_b6jK4JULEeWtRMAmqbtyDA" client="_YXGEgJUGEeWtRMAmqbtyDA" supplier="_OLE_oJUKEeWtRMAmqbtyDA"/>
     <packagedElement xmi:type="uml:Dependency" xmi:id="_wFhq4JUVEeWl_rEFMzUzOw" client="_YXGEgJUGEeWtRMAmqbtyDA" supplier="_4Z19YJUIEeWtRMAmqbtyDA"/>
     <packagedElement xmi:type="uml:Dependency" xmi:id="_63PWQJnREeWCxNmOTrZsWA" client="_YXGEgJUGEeWtRMAmqbtyDA" supplier="__WrLcJnQEeWCxNmOTrZsWA"/>
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_4BMW8JplEeWdwcOaiLHkPA" client="_YXGEgJUGEeWtRMAmqbtyDA" supplier="_uJrfQJplEeWdwcOaiLHkPA"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Component" xmi:id="_a14bIJUGEeWtRMAmqbtyDA" name="Order Component">
     <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_iq_j8JULEeWtRMAmqbtyDA" client="_a14bIJUGEeWtRMAmqbtyDA" supplier="_OLE_oJUKEeWtRMAmqbtyDA" contract="_OLE_oJUKEeWtRMAmqbtyDA"/>
@@ -63,6 +64,7 @@
     <packagedElement xmi:type="uml:Dependency" xmi:id="_1aLl8JUWEeWl_rEFMzUzOw" client="_fyY0kJUKEeWtRMAmqbtyDA" supplier="_PSGSEJUKEeWtRMAmqbtyDA"/>
     <packagedElement xmi:type="uml:Dependency" xmi:id="_T2tZ0JUXEeWl_rEFMzUzOw" client="_fyY0kJUKEeWtRMAmqbtyDA" supplier="_4Z19YJUIEeWtRMAmqbtyDA"/>
     <packagedElement xmi:type="uml:Dependency" xmi:id="_4VWoUJnREeWCxNmOTrZsWA" client="_fyY0kJUKEeWtRMAmqbtyDA" supplier="__WrLcJnQEeWCxNmOTrZsWA"/>
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_5gvMMJpnEeWdwcOaiLHkPA" client="_fyY0kJUKEeWtRMAmqbtyDA" supplier="_uJrfQJplEeWdwcOaiLHkPA"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Interface" xmi:id="_tMKSEJUKEeWtRMAmqbtyDA" name="Payment interface">
     <ownedOperation xmi:type="uml:Operation" xmi:id="_t-QLcJUMEeWl_rEFMzUzOw" name="verifyPaymentInformation"/>
@@ -74,6 +76,13 @@
   <packagedElement xmi:type="uml:Interface" xmi:id="__WrLcJnQEeWCxNmOTrZsWA" name="Blacklist">
     <ownedOperation xmi:type="uml:Operation" xmi:id="_EujPEJnREeWCxNmOTrZsWA" name="addToBlackList"/>
     <ownedOperation xmi:type="uml:Operation" xmi:id="_ZuAEgJnREeWCxNmOTrZsWA" name="removeFromBlackList"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Component" xmi:id="_tDcP8JplEeWdwcOaiLHkPA" name="Task Log component">
+    <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_1-rsoJplEeWdwcOaiLHkPA" client="_tDcP8JplEeWdwcOaiLHkPA" supplier="_uJrfQJplEeWdwcOaiLHkPA" contract="_uJrfQJplEeWdwcOaiLHkPA"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Interface" xmi:id="_uJrfQJplEeWdwcOaiLHkPA" name="Task Log interface">
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_6atzEJplEeWdwcOaiLHkPA" name="addTask"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_DZEOIJpmEeWdwcOaiLHkPA" name="completeTask"/>
   </packagedElement>
   <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_xz2rYJUJEeWtRMAmqbtyDA">
     <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_xz35gJUJEeWtRMAmqbtyDA" source="http://www.eclipse.org/uml2/2.0.0/UML">
