@@ -119,8 +119,8 @@
       <packagedElement xmi:type="uml:Realization" xmi:id="_DwDfkJbpEeWGQOCCfM2qyw" client="_st4FoJOAEeWEKYEtRmghUQ" supplier="_yo2uEJboEeWGQOCCfM2qyw"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Package" xmi:id="_0zjE4JODEeWEKYEtRmghUQ" name="log">
-      <packagedElement xmi:type="uml:Class" xmi:id="_D__r0JOCEeWEKYEtRmghUQ" name="Log"/>
-      <packagedElement xmi:type="uml:Class" xmi:id="_pB9YEJOBEeWEKYEtRmghUQ" name="LogItem">
+      <packagedElement xmi:type="uml:Class" xmi:id="_D__r0JOCEeWEKYEtRmghUQ" name="TaskLog"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="_pB9YEJOBEeWEKYEtRmghUQ" name="TaskItem">
         <ownedAttribute xmi:type="uml:Property" xmi:id="_qZ_iAJOBEeWEKYEtRmghUQ" name="description" visibility="private"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="_qkeTsJOBEeWEKYEtRmghUQ" name="creator" visibility="private" type="_28enoJOAEeWEKYEtRmghUQ"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="_rVQ3cJOBEeWEKYEtRmghUQ" name="deadline" visibility="private">
@@ -141,7 +141,7 @@
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EDate"/>
         </ownedAttribute>
       </packagedElement>
-      <packagedElement xmi:type="uml:Class" xmi:id="__u838JOCEeWEKYEtRmghUQ" name="LogTag" visibility="public">
+      <packagedElement xmi:type="uml:Class" xmi:id="__u838JOCEeWEKYEtRmghUQ" name="TaskTag" visibility="public">
         <ownedAttribute xmi:type="uml:Property" xmi:id="_BHAQAJODEeWEKYEtRmghUQ" name="what" visibility="private">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
         </ownedAttribute>
@@ -324,6 +324,45 @@
             <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EEList"/>
           </ownedParameter>
         </ownedOperation>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_a3d5oJpjEeWv8co7MiJhGA" name="GuestCriteria">
+        <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_FCZOUJpkEeWv8co7MiJhGA" client="_a3d5oJpjEeWv8co7MiJhGA" supplier="_9Je-kJRTEeWEKYEtRmghUQ" contract="_9Je-kJRTEeWEKYEtRmghUQ"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_c7Mr8JpjEeWv8co7MiJhGA" name="CustomerCriteria">
+        <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_EVH4oJpkEeWv8co7MiJhGA" client="_c7Mr8JpjEeWv8co7MiJhGA" supplier="_9Je-kJRTEeWEKYEtRmghUQ" contract="_9Je-kJRTEeWEKYEtRmghUQ"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_daLuAJpjEeWv8co7MiJhGA" name="EmployeeCriteria">
+        <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_Fmzi8JpkEeWv8co7MiJhGA" client="_daLuAJpjEeWv8co7MiJhGA" supplier="_9Je-kJRTEeWEKYEtRmghUQ" contract="_9Je-kJRTEeWEKYEtRmghUQ"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_eAkYkJpjEeWv8co7MiJhGA" name="FloorCriteria">
+        <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_GFXHMJpkEeWv8co7MiJhGA" client="_eAkYkJpjEeWv8co7MiJhGA" supplier="_9Je-kJRTEeWEKYEtRmghUQ" contract="_9Je-kJRTEeWEKYEtRmghUQ"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_ejOZsJpjEeWv8co7MiJhGA" name="EmployeeAreaCriteria">
+        <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_JrQ24JpkEeWv8co7MiJhGA" client="_ejOZsJpjEeWv8co7MiJhGA" supplier="_9Je-kJRTEeWEKYEtRmghUQ" contract="_9Je-kJRTEeWEKYEtRmghUQ"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_fSJ8QJpjEeWv8co7MiJhGA" name="DoorCriteria">
+        <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_KOgG0JpkEeWv8co7MiJhGA" client="_fSJ8QJpjEeWv8co7MiJhGA" supplier="_9Je-kJRTEeWEKYEtRmghUQ" contract="_9Je-kJRTEeWEKYEtRmghUQ"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_q3uRMJpjEeWv8co7MiJhGA" name="IntervalCriteria">
+        <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_KrxRoJpkEeWv8co7MiJhGA" client="_q3uRMJpjEeWv8co7MiJhGA" supplier="_9Je-kJRTEeWEKYEtRmghUQ" contract="_9Je-kJRTEeWEKYEtRmghUQ"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_sXIOcJpjEeWv8co7MiJhGA" name="OrderCriteria">
+        <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_JMf3QJpkEeWv8co7MiJhGA" client="_sXIOcJpjEeWv8co7MiJhGA" supplier="_9Je-kJRTEeWEKYEtRmghUQ" contract="_9Je-kJRTEeWEKYEtRmghUQ"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_vEiP4JpjEeWv8co7MiJhGA" name="BookingCriteria">
+        <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_GfwkMJpkEeWv8co7MiJhGA" client="_vEiP4JpjEeWv8co7MiJhGA" supplier="_9Je-kJRTEeWEKYEtRmghUQ" contract="_9Je-kJRTEeWEKYEtRmghUQ"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_ygZ50JpjEeWv8co7MiJhGA" name="RoomAttributeCriteria">
+        <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_G_IAwJpkEeWv8co7MiJhGA" client="_ygZ50JpjEeWv8co7MiJhGA" supplier="_9Je-kJRTEeWEKYEtRmghUQ" contract="_9Je-kJRTEeWEKYEtRmghUQ"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_0KakkJpjEeWv8co7MiJhGA" name="PriceRangeCriteria">
+        <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_IghiEJpkEeWv8co7MiJhGA" client="_0KakkJpjEeWv8co7MiJhGA" supplier="_9Je-kJRTEeWEKYEtRmghUQ" contract="_9Je-kJRTEeWEKYEtRmghUQ"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_2mnhQJpjEeWv8co7MiJhGA" name="UsableCriteria">
+        <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_HzakcJpkEeWv8co7MiJhGA" client="_2mnhQJpjEeWv8co7MiJhGA" supplier="_9Je-kJRTEeWEKYEtRmghUQ" contract="_9Je-kJRTEeWEKYEtRmghUQ"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_3yI5MJpjEeWv8co7MiJhGA" name="LastCleanedCriteria">
+        <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_LYTngJpkEeWv8co7MiJhGA" client="_3yI5MJpjEeWv8co7MiJhGA" supplier="_9Je-kJRTEeWEKYEtRmghUQ" contract="_9Je-kJRTEeWEKYEtRmghUQ"/>
       </packagedElement>
     </packagedElement>
     <packagedElement xmi:type="uml:Package" xmi:id="_YzWk8JRREeWEKYEtRmghUQ" name="blacklist">
