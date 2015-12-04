@@ -245,8 +245,8 @@
         <generalization xmi:type="uml:Generalization" xmi:id="_PVi8wJUMEeWh5u7XS7pPgw" general="_A4r0MJRUEeWEKYEtRmghUQ"/>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_R3e_8JUKEeWh5u7XS7pPgw" name="RoomCriteria">
-        <generalization xmi:type="uml:Generalization" xmi:id="_pkXaEJUMEeWh5u7XS7pPgw" general="_9Je-kJRTEeWEKYEtRmghUQ"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="_TL4nEJUKEeWh5u7XS7pPgw" name="Attribute1"/>
+        <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_wkmJ4JpiEeWv8co7MiJhGA" client="_R3e_8JUKEeWh5u7XS7pPgw" supplier="_9Je-kJRTEeWEKYEtRmghUQ" contract="_9Je-kJRTEeWEKYEtRmghUQ"/>
       </packagedElement>
       <packagedElement xmi:type="uml:Interface" xmi:id="_JXGsYJnCEeW2JPAtqMJHLg" name="ISearch">
         <ownedOperation xmi:type="uml:Operation" xmi:id="_Tv5FIJnCEeW2JPAtqMJHLg" name="searchAvailableOrders">
