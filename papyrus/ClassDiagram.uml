@@ -76,41 +76,53 @@
       <ownedAttribute xmi:type="uml:Property" xmi:id="_YYSFgJOAEeWEKYEtRmghUQ" name="location">
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
       </ownedAttribute>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_R71I8JbBEeWGQOCCfM2qyw" name="orders">
-        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EEList"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_R71I8JbBEeWGQOCCfM2qyw" name="orders" type="_f1YaIJOJEeWEKYEtRmghUQ">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_rSsQ8JqaEeWiqYR0x2Uogg"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_rSwiYJqaEeWiqYR0x2Uogg" value="*"/>
       </ownedAttribute>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_SQ6oIJbBEeWGQOCCfM2qyw" name="rooms">
-        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EEList"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_SQ6oIJbBEeWGQOCCfM2qyw" name="rooms" visibility="public" type="_sPEY0JN3EeWEKYEtRmghUQ">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_ymiSAJqaEeWiqYR0x2Uogg"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ymjgIJqaEeWiqYR0x2Uogg" value="*"/>
       </ownedAttribute>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_SVqlQJbBEeWGQOCCfM2qyw" name="campaigns">
-        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EEList"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_SVqlQJbBEeWGQOCCfM2qyw" name="campaigns" type="_2hOYgJRQEeWEKYEtRmghUQ">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_3s6V8JqaEeWiqYR0x2Uogg"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_3s7kEJqaEeWiqYR0x2Uogg" value="*"/>
       </ownedAttribute>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_SgWLQJbBEeWGQOCCfM2qyw" name="keys">
-        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EEList"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_SgWLQJbBEeWGQOCCfM2qyw" name="keys" type="_ChtUMJQXEeWEKYEtRmghUQ">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_9ZIR4JqaEeWiqYR0x2Uogg"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_9ZI48JqaEeWiqYR0x2Uogg" value="*"/>
       </ownedAttribute>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_StvuEJbBEeWGQOCCfM2qyw" name="doors">
-        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EEList"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_StvuEJbBEeWGQOCCfM2qyw" name="doors" type="_BsvbEJQXEeWEKYEtRmghUQ">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Api5wJqbEeWiqYR0x2Uogg"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Apjg0JqbEeWiqYR0x2Uogg" value="*"/>
       </ownedAttribute>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_udcIQJbBEeWGQOCCfM2qyw" name="employeeAreas">
-        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EEList"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_udcIQJbBEeWGQOCCfM2qyw" name="employeeAreas" visibility="public" type="_EzYb4JQXEeWEKYEtRmghUQ">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_KFoZsJqbEeWiqYR0x2Uogg"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_KFpAwJqbEeWiqYR0x2Uogg" value="*"/>
       </ownedAttribute>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_uoZbEJbBEeWGQOCCfM2qyw" name="subcontractors">
-        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EEList"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_uoZbEJbBEeWGQOCCfM2qyw" name="subcontractors" type="_ZZ-ncJROEeWEKYEtRmghUQ">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_M40TAJqbEeWiqYR0x2Uogg"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_M406EJqbEeWiqYR0x2Uogg" value="*"/>
       </ownedAttribute>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_lrvMoJbCEeWGQOCCfM2qyw" name="customers">
-        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EEList"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_lrvMoJbCEeWGQOCCfM2qyw" name="customers" type="_7PSgoJOAEeWEKYEtRmghUQ">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_NoA7UJqbEeWiqYR0x2Uogg"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_NoBiYJqbEeWiqYR0x2Uogg" value="*"/>
       </ownedAttribute>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_l1ovgJbCEeWGQOCCfM2qyw" name="guests">
-        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EEList"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_l1ovgJbCEeWGQOCCfM2qyw" name="guests" type="_st4FoJOAEeWEKYEtRmghUQ">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_PsWKkJqbEeWiqYR0x2Uogg"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_PsWxoJqbEeWiqYR0x2Uogg" value="*"/>
       </ownedAttribute>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_l-E50JbCEeWGQOCCfM2qyw" name="employees">
-        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EEList"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_l-E50JbCEeWGQOCCfM2qyw" name="employees" type="_28enoJOAEeWEKYEtRmghUQ">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_UNWQkJqbEeWiqYR0x2Uogg"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_UNW3oJqbEeWiqYR0x2Uogg" value="*"/>
       </ownedAttribute>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_mGnx0JbCEeWGQOCCfM2qyw" name="serviceBlueprints">
-        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EEList"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_mGnx0JbCEeWGQOCCfM2qyw" name="serviceBlueprints" type="_6sH2MJRREeWEKYEtRmghUQ">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_ZrCBQJqbEeWiqYR0x2Uogg"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ZrDPYJqbEeWiqYR0x2Uogg" value="*"/>
       </ownedAttribute>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_QQkZoJbEEeWGQOCCfM2qyw" name="roomPrototypes">
-        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EEList"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_QQkZoJbEEeWGQOCCfM2qyw" name="roomPrototypes" type="_CKsl0JN8EeWEKYEtRmghUQ">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_cEVa8JqbEeWiqYR0x2Uogg"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_cEWCAJqbEeWiqYR0x2Uogg" value="*"/>
       </ownedAttribute>
       <ownedAttribute xmi:type="uml:Property" xmi:id="_uUupMJnXEeWXgOnGO-OFAA" name="accessLog" type="_G4u1YJnWEeWsldw0CEc3ng"/>
       <ownedAttribute xmi:type="uml:Property" xmi:id="_F0ZWMJpoEeWv8co7MiJhGA" name="taskLog" type="_D__r0JOCEeWEKYEtRmghUQ"/>
