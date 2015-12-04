@@ -18,6 +18,7 @@
         <ownedAttribute xmi:type="uml:Property" xmi:id="_8JVLMJN5EeWEKYEtRmghUQ" name="lastCleaned" visibility="private">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EDate"/>
         </ownedAttribute>
+        <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_BS3bAJqEEeWv8co7MiJhGA" client="_sPEY0JN3EeWEKYEtRmghUQ" supplier="_t2mysJUJEeWh5u7XS7pPgw" contract="_t2mysJUJEeWh5u7XS7pPgw"/>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_CKsl0JN8EeWEKYEtRmghUQ" name="RoomPrototype">
         <ownedAttribute xmi:type="uml:Property" xmi:id="_G3vjwJN8EeWEKYEtRmghUQ" name="name" visibility="private">
@@ -46,6 +47,7 @@
         <ownedAttribute xmi:type="uml:Property" xmi:id="_Acgv8JTgEeWEKYEtRmghUQ" name="id" visibility="private">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
         </ownedAttribute>
+        <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_1U-QMJqEEeWv8co7MiJhGA" client="_ChtUMJQXEeWEKYEtRmghUQ" supplier="_9VeUcJUJEeWh5u7XS7pPgw" contract="_9VeUcJUJEeWh5u7XS7pPgw"/>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_EzYb4JQXEeWEKYEtRmghUQ" name="EmployeeArea">
         <ownedAttribute xmi:type="uml:Property" xmi:id="_7mr0AJTgEeWEKYEtRmghUQ" name="id" visibility="private">
@@ -107,6 +109,7 @@
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EEList"/>
       </ownedAttribute>
       <ownedAttribute xmi:type="uml:Property" xmi:id="_uUupMJnXEeWXgOnGO-OFAA" name="accessLog" type="_G4u1YJnWEeWsldw0CEc3ng"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_F0ZWMJpoEeWv8co7MiJhGA" name="taskLog" type="_D__r0JOCEeWEKYEtRmghUQ"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Package" xmi:id="_mtmlQJOAEeWEKYEtRmghUQ" name="clients">
       <packagedElement xmi:type="uml:Class" xmi:id="_st4FoJOAEeWEKYEtRmghUQ" name="Guest">
@@ -227,7 +230,13 @@
           </ownedParameter>
         </ownedOperation>
       </packagedElement>
-      <packagedElement xmi:type="uml:Interface" xmi:id="_A4r0MJRUEeWEKYEtRmghUQ" name="SearchResult"/>
+      <packagedElement xmi:type="uml:Interface" xmi:id="_A4r0MJRUEeWEKYEtRmghUQ" name="SearchResult">
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_FHLaIJqEEeWv8co7MiJhGA" name="getRelevance">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_M_QJoJqEEeWv8co7MiJhGA" direction="return">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#double"/>
+          </ownedParameter>
+        </ownedOperation>
+      </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_P9j3cJTqEeWh5u7XS7pPgw" name="SearchTerm"/>
       <packagedElement xmi:type="uml:Interface" xmi:id="_t2mysJUJEeWh5u7XS7pPgw" name="RoomSearchResult">
         <generalization xmi:type="uml:Generalization" xmi:id="_RJ4oMJUMEeWh5u7XS7pPgw" general="_A4r0MJRUEeWEKYEtRmghUQ"/>
@@ -235,7 +244,7 @@
       <packagedElement xmi:type="uml:Interface" xmi:id="_zU7ckJUJEeWh5u7XS7pPgw" name="BookingSearchResult">
         <generalization xmi:type="uml:Generalization" xmi:id="_R7XvgJUMEeWh5u7XS7pPgw" general="_A4r0MJRUEeWEKYEtRmghUQ"/>
       </packagedElement>
-      <packagedElement xmi:type="uml:Interface" xmi:id="_26w60JUJEeWh5u7XS7pPgw" name="ServiceSearchResult">
+      <packagedElement xmi:type="uml:Interface" xmi:id="_26w60JUJEeWh5u7XS7pPgw" name="ServiceSearchResult" visibility="private">
         <generalization xmi:type="uml:Generalization" xmi:id="_J9oc4JUMEeWh5u7XS7pPgw" general="_A4r0MJRUEeWEKYEtRmghUQ"/>
       </packagedElement>
       <packagedElement xmi:type="uml:Interface" xmi:id="_7N5j8JUJEeWh5u7XS7pPgw" name="ServiceBlueprintSearchResult">
@@ -245,7 +254,6 @@
         <generalization xmi:type="uml:Generalization" xmi:id="_PVi8wJUMEeWh5u7XS7pPgw" general="_A4r0MJRUEeWEKYEtRmghUQ"/>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_R3e_8JUKEeWh5u7XS7pPgw" name="RoomCriteria">
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_TL4nEJUKEeWh5u7XS7pPgw" name="Attribute1"/>
         <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_wkmJ4JpiEeWv8co7MiJhGA" client="_R3e_8JUKEeWh5u7XS7pPgw" supplier="_9Je-kJRTEeWEKYEtRmghUQ" contract="_9Je-kJRTEeWEKYEtRmghUQ"/>
       </packagedElement>
       <packagedElement xmi:type="uml:Interface" xmi:id="_JXGsYJnCEeW2JPAtqMJHLg" name="ISearch">
@@ -335,6 +343,9 @@
         <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_Fmzi8JpkEeWv8co7MiJhGA" client="_daLuAJpjEeWv8co7MiJhGA" supplier="_9Je-kJRTEeWEKYEtRmghUQ" contract="_9Je-kJRTEeWEKYEtRmghUQ"/>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_eAkYkJpjEeWv8co7MiJhGA" name="FloorCriteria">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_rzAUEJprEeWv8co7MiJhGA" name="floor">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </ownedAttribute>
         <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_GFXHMJpkEeWv8co7MiJhGA" client="_eAkYkJpjEeWv8co7MiJhGA" supplier="_9Je-kJRTEeWEKYEtRmghUQ" contract="_9Je-kJRTEeWEKYEtRmghUQ"/>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_ejOZsJpjEeWv8co7MiJhGA" name="EmployeeAreaCriteria">
@@ -344,6 +355,12 @@
         <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_KOgG0JpkEeWv8co7MiJhGA" client="_fSJ8QJpjEeWv8co7MiJhGA" supplier="_9Je-kJRTEeWEKYEtRmghUQ" contract="_9Je-kJRTEeWEKYEtRmghUQ"/>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_q3uRMJpjEeWv8co7MiJhGA" name="IntervalCriteria">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_iAi7gJprEeWv8co7MiJhGA" name="start">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EDate"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_iMiwIJprEeWv8co7MiJhGA" name="end">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EDate"/>
+        </ownedAttribute>
         <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_KrxRoJpkEeWv8co7MiJhGA" client="_q3uRMJpjEeWv8co7MiJhGA" supplier="_9Je-kJRTEeWEKYEtRmghUQ" contract="_9Je-kJRTEeWEKYEtRmghUQ"/>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_sXIOcJpjEeWv8co7MiJhGA" name="OrderCriteria">
@@ -356,14 +373,26 @@
         <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_G_IAwJpkEeWv8co7MiJhGA" client="_ygZ50JpjEeWv8co7MiJhGA" supplier="_9Je-kJRTEeWEKYEtRmghUQ" contract="_9Je-kJRTEeWEKYEtRmghUQ"/>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_0KakkJpjEeWv8co7MiJhGA" name="PriceRangeCriteria">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_wUOcgJprEeWv8co7MiJhGA" name="start">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#double"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_xE1aEJprEeWv8co7MiJhGA" name="end">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#double"/>
+        </ownedAttribute>
         <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_IghiEJpkEeWv8co7MiJhGA" client="_0KakkJpjEeWv8co7MiJhGA" supplier="_9Je-kJRTEeWEKYEtRmghUQ" contract="_9Je-kJRTEeWEKYEtRmghUQ"/>
-      </packagedElement>
-      <packagedElement xmi:type="uml:Class" xmi:id="_2mnhQJpjEeWv8co7MiJhGA" name="UsableCriteria">
-        <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_HzakcJpkEeWv8co7MiJhGA" client="_2mnhQJpjEeWv8co7MiJhGA" supplier="_9Je-kJRTEeWEKYEtRmghUQ" contract="_9Je-kJRTEeWEKYEtRmghUQ"/>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_3yI5MJpjEeWv8co7MiJhGA" name="LastCleanedCriteria">
         <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_LYTngJpkEeWv8co7MiJhGA" client="_3yI5MJpjEeWv8co7MiJhGA" supplier="_9Je-kJRTEeWEKYEtRmghUQ" contract="_9Je-kJRTEeWEKYEtRmghUQ"/>
       </packagedElement>
+      <packagedElement xmi:type="uml:Realization" xmi:id="_7HOW8JppEeWv8co7MiJhGA" client="_fSJ8QJpjEeWv8co7MiJhGA" supplier="_BsvbEJQXEeWEKYEtRmghUQ"/>
+      <packagedElement xmi:type="uml:Realization" xmi:id="_-gicIJppEeWv8co7MiJhGA" client="_a3d5oJpjEeWv8co7MiJhGA" supplier="_st4FoJOAEeWEKYEtRmghUQ"/>
+      <packagedElement xmi:type="uml:Realization" xmi:id="_BslhYJpqEeWv8co7MiJhGA" client="_daLuAJpjEeWv8co7MiJhGA" supplier="_28enoJOAEeWEKYEtRmghUQ"/>
+      <packagedElement xmi:type="uml:Realization" xmi:id="_Fe7KkJpqEeWv8co7MiJhGA" client="_c7Mr8JpjEeWv8co7MiJhGA" supplier="_7PSgoJOAEeWEKYEtRmghUQ"/>
+      <packagedElement xmi:type="uml:Realization" xmi:id="_K_YicJpqEeWv8co7MiJhGA" client="_vEiP4JpjEeWv8co7MiJhGA" supplier="_8ormYJOJEeWEKYEtRmghUQ"/>
+      <packagedElement xmi:type="uml:Realization" xmi:id="_SyOzsJpqEeWv8co7MiJhGA" client="_sXIOcJpjEeWv8co7MiJhGA" supplier="_f1YaIJOJEeWEKYEtRmghUQ"/>
+      <packagedElement xmi:type="uml:Realization" xmi:id="_YY124JpqEeWv8co7MiJhGA" client="_ygZ50JpjEeWv8co7MiJhGA" supplier="_owOzEJN6EeWEKYEtRmghUQ"/>
+      <packagedElement xmi:type="uml:Realization" xmi:id="_g1fTEJpqEeWv8co7MiJhGA" client="_ejOZsJpjEeWv8co7MiJhGA" supplier="_EzYb4JQXEeWEKYEtRmghUQ"/>
+      <packagedElement xmi:type="uml:Realization" xmi:id="_ppJEkJprEeWv8co7MiJhGA" client="_R3e_8JUKEeWh5u7XS7pPgw" supplier="_sPEY0JN3EeWEKYEtRmghUQ"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Package" xmi:id="_YzWk8JRREeWEKYEtRmghUQ" name="blacklist">
       <packagedElement xmi:type="uml:Class" xmi:id="_aHGr0JRREeWEKYEtRmghUQ" name="Blacklist"/>
@@ -554,6 +583,7 @@
         <ownedAttribute xmi:type="uml:Property" xmi:id="_IUCosJTnEeWh5u7XS7pPgw" name="isPaid" visibility="private">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
         </ownedAttribute>
+        <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_6Fc8oJqEEeWv8co7MiJhGA" client="_4zgHsJRREeWEKYEtRmghUQ" supplier="_26w60JUJEeWh5u7XS7pPgw" contract="_26w60JUJEeWh5u7XS7pPgw"/>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_6sH2MJRREeWEKYEtRmghUQ" name="ServiceBlueprint">
         <ownedAttribute xmi:type="uml:Property" xmi:id="_KbVbkJXHEeWibcI8pRhyBw" name="basePrice" visibility="private">
