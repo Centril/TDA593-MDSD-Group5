@@ -39,15 +39,21 @@
     <ownedAttribute xmi:type="uml:Property" xmi:id="_jJ7xUJj-EeWqGvcYtYPtAg" name="">
       <type xmi:type="uml:Interface" href="ComponentDiagram.uml#_4Z19YJUIEeWtRMAmqbtyDA"/>
     </ownedAttribute>
-    <lifeline xmi:type="uml:Lifeline" xmi:id="_g4_CYJj-EeWqGvcYtYPtAg" name="" represents="_g4_pcJj-EeWqGvcYtYPtAg" coveredBy="_nDakUJj-EeWqGvcYtYPtAg _sF604Jj-EeWqGvcYtYPtAg _uXTBoJj-EeWqGvcYtYPtAg"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_x39SkJqLEeW_wMntwChwSA" name="">
+      <type xmi:type="uml:Interface" href="ComponentDiagram.uml#_tMKSEJUKEeWtRMAmqbtyDA"/>
+    </ownedAttribute>
+    <lifeline xmi:type="uml:Lifeline" xmi:id="_g4_CYJj-EeWqGvcYtYPtAg" name="" represents="_g4_pcJj-EeWqGvcYtYPtAg" coveredBy="_nDakUJj-EeWqGvcYtYPtAg _sF604Jj-EeWqGvcYtYPtAg _uXTBoJj-EeWqGvcYtYPtAg _127pkJqLEeW_wMntwChwSA"/>
     <lifeline xmi:type="uml:Lifeline" xmi:id="_iPe7QJj-EeWqGvcYtYPtAg" name="" represents="_iPe7QZj-EeWqGvcYtYPtAg" coveredBy="_sF8DAJj-EeWqGvcYtYPtAg _uXTosJj-EeWqGvcYtYPtAg"/>
     <lifeline xmi:type="uml:Lifeline" xmi:id="_jJ7KQJj-EeWqGvcYtYPtAg" name="" represents="_jJ7xUJj-EeWqGvcYtYPtAg" coveredBy="_nDakUZj-EeWqGvcYtYPtAg"/>
-    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_uXTosJj-EeWqGvcYtYPtAg" name="checkOut_MessageRecv" covered="_iPe7QJj-EeWqGvcYtYPtAg" message="_uXRzgJj-EeWqGvcYtYPtAg"/>
+    <lifeline xmi:type="uml:Lifeline" xmi:id="_x37dYJqLEeW_wMntwChwSA" name="" represents="_x39SkJqLEeW_wMntwChwSA" coveredBy="_128QoJqLEeW_wMntwChwSA"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_128QoJqLEeW_wMntwChwSA" name="debitCustomer_MessageRecv" covered="_x37dYJqLEeW_wMntwChwSA" message="_126bcJqLEeW_wMntwChwSA"/>
     <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_nDakUJj-EeWqGvcYtYPtAg" name="searchActiveBookings_MessageSend" covered="_g4_CYJj-EeWqGvcYtYPtAg" message="_nDYvIJj-EeWqGvcYtYPtAg"/>
     <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_nDakUZj-EeWqGvcYtYPtAg" name="searchActiveBookings_MessageRecv" covered="_jJ7KQJj-EeWqGvcYtYPtAg" message="_nDYvIJj-EeWqGvcYtYPtAg"/>
     <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_sF604Jj-EeWqGvcYtYPtAg" name="takeBackKeyCard_MessageSend" covered="_g4_CYJj-EeWqGvcYtYPtAg" message="_sF4YoJj-EeWqGvcYtYPtAg"/>
     <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_sF8DAJj-EeWqGvcYtYPtAg" name="takeBackKeyCard_MessageRecv" covered="_iPe7QJj-EeWqGvcYtYPtAg" message="_sF4YoJj-EeWqGvcYtYPtAg"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_127pkJqLEeW_wMntwChwSA" name="debitCustomer_MessageSend" covered="_g4_CYJj-EeWqGvcYtYPtAg" message="_126bcJqLEeW_wMntwChwSA"/>
     <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_uXTBoJj-EeWqGvcYtYPtAg" name="checkOut_MessageSend" covered="_g4_CYJj-EeWqGvcYtYPtAg" message="_uXRzgJj-EeWqGvcYtYPtAg"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_uXTosJj-EeWqGvcYtYPtAg" name="checkOut_MessageRecv" covered="_iPe7QJj-EeWqGvcYtYPtAg" message="_uXRzgJj-EeWqGvcYtYPtAg"/>
     <message xmi:type="uml:Message" xmi:id="_nDYvIJj-EeWqGvcYtYPtAg" name="searchActiveBookings_Message" receiveEvent="_nDakUZj-EeWqGvcYtYPtAg" sendEvent="_nDakUJj-EeWqGvcYtYPtAg">
       <signature xmi:type="uml:Operation" href="ComponentDiagram.uml#_LscIEJUMEeWtRMAmqbtyDA"/>
     </message>
@@ -56,6 +62,9 @@
     </message>
     <message xmi:type="uml:Message" xmi:id="_uXRzgJj-EeWqGvcYtYPtAg" name="checkOut_Message" receiveEvent="_uXTosJj-EeWqGvcYtYPtAg" sendEvent="_uXTBoJj-EeWqGvcYtYPtAg">
       <signature xmi:type="uml:Operation" href="ComponentDiagram.uml#_cXTi4JUMEeWl_rEFMzUzOw"/>
+    </message>
+    <message xmi:type="uml:Message" xmi:id="_126bcJqLEeW_wMntwChwSA" name="debitCustomer_Message" receiveEvent="_128QoJqLEeW_wMntwChwSA" sendEvent="_127pkJqLEeW_wMntwChwSA">
+      <signature xmi:type="uml:Operation" href="ComponentDiagram.uml#_4hRH8JnSEeWCxNmOTrZsWA"/>
     </message>
   </packagedElement>
   <packagedElement xmi:type="uml:Interaction" xmi:id="_lUH4UJj7EeWqGvcYtYPtAg" name="Interaction3">
@@ -77,25 +86,31 @@
     <ownedAttribute xmi:type="uml:Property" xmi:id="_LzfEwJj9EeWqGvcYtYPtAg" name="">
       <type xmi:type="uml:Interface" href="ComponentDiagram.uml#_K8UkoJUKEeWtRMAmqbtyDA"/>
     </ownedAttribute>
-    <lifeline xmi:type="uml:Lifeline" xmi:id="_wA6LIJj7EeWqGvcYtYPtAg" name="" represents="_wA7ZQJj7EeWqGvcYtYPtAg" coveredBy="_b6mHsJj8EeWqGvcYtYPtAg _mivLEJj8EeWqGvcYtYPtAg _pSn4wJj8EeWqGvcYtYPtAg _172qIJj8EeWqGvcYtYPtAg _O8KF4Jj9EeWqGvcYtYPtAg _WXf2EJj9EeWqGvcYtYPtAg _CVrREJj-EeWqGvcYtYPtAg"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_oKRsUJqLEeW_wMntwChwSA" name="">
+      <type xmi:type="uml:Interface" href="ComponentDiagram.uml#_tMKSEJUKEeWtRMAmqbtyDA"/>
+    </ownedAttribute>
+    <lifeline xmi:type="uml:Lifeline" xmi:id="_wA6LIJj7EeWqGvcYtYPtAg" name="" represents="_wA7ZQJj7EeWqGvcYtYPtAg" coveredBy="_b6mHsJj8EeWqGvcYtYPtAg _mivLEJj8EeWqGvcYtYPtAg _pSn4wJj8EeWqGvcYtYPtAg _172qIJj8EeWqGvcYtYPtAg _O8KF4Jj9EeWqGvcYtYPtAg _WXf2EJj9EeWqGvcYtYPtAg _CVrREJj-EeWqGvcYtYPtAg _p2WzoJqLEeW_wMntwChwSA"/>
     <lifeline xmi:type="uml:Lifeline" xmi:id="_5qOOwJj7EeWqGvcYtYPtAg" name="" represents="_5qO10Jj7EeWqGvcYtYPtAg" coveredBy="_miwZMJj8EeWqGvcYtYPtAg _1734QJj8EeWqGvcYtYPtAg _CVsfMJj-EeWqGvcYtYPtAg _FLrN0Jj-EeWqGvcYtYPtAg _FLr04Jj-EeWqGvcYtYPtAg"/>
     <lifeline xmi:type="uml:Lifeline" xmi:id="_VOmw0Jj8EeWqGvcYtYPtAg" name="" represents="_VOnX4Jj8EeWqGvcYtYPtAg" coveredBy="_b6nV0Jj8EeWqGvcYtYPtAg"/>
     <lifeline xmi:type="uml:Lifeline" xmi:id="_Lzd2oJj9EeWqGvcYtYPtAg" name="" represents="_LzfEwJj9EeWqGvcYtYPtAg" coveredBy="_O8KF4Zj9EeWqGvcYtYPtAg _WXhrQJj9EeWqGvcYtYPtAg"/>
+    <lifeline xmi:type="uml:Lifeline" xmi:id="_oKNa4JqLEeW_wMntwChwSA" name="" represents="_oKRsUJqLEeW_wMntwChwSA" coveredBy="_p2XasJqLEeW_wMntwChwSA"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_p2XasJqLEeW_wMntwChwSA" name="debitCustomer_MessageRecv" covered="_oKNa4JqLEeW_wMntwChwSA" message="_p2RUEJqLEeW_wMntwChwSA"/>
     <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_b6mHsJj8EeWqGvcYtYPtAg" name="searchAvailableOrders_MessageSend" covered="_wA6LIJj7EeWqGvcYtYPtAg" message="_b6kSgJj8EeWqGvcYtYPtAg"/>
     <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_b6nV0Jj8EeWqGvcYtYPtAg" name="searchAvailableOrders_MessageRecv" covered="_VOmw0Jj8EeWqGvcYtYPtAg" message="_b6kSgJj8EeWqGvcYtYPtAg"/>
     <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_mivLEJj8EeWqGvcYtYPtAg" name="createBooking_MessageSend" covered="_wA6LIJj7EeWqGvcYtYPtAg" message="_misu0Jj8EeWqGvcYtYPtAg"/>
     <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_miwZMJj8EeWqGvcYtYPtAg" name="createBooking_MessageRecv" covered="_5qOOwJj7EeWqGvcYtYPtAg" message="_misu0Jj8EeWqGvcYtYPtAg"/>
-    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_FLr04Jj-EeWqGvcYtYPtAg" name="sendConfirmationMail_MessageRecv" covered="_5qOOwJj7EeWqGvcYtYPtAg" message="_FLqmwJj-EeWqGvcYtYPtAg"/>
     <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_172qIJj8EeWqGvcYtYPtAg" name="addGuestToBooking_MessageSend" covered="_wA6LIJj7EeWqGvcYtYPtAg" message="_171cAJj8EeWqGvcYtYPtAg"/>
     <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_1734QJj8EeWqGvcYtYPtAg" name="addGuestToBooking_MessageRecv" covered="_5qOOwJj7EeWqGvcYtYPtAg" message="_171cAJj8EeWqGvcYtYPtAg"/>
     <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_WXf2EJj9EeWqGvcYtYPtAg" name="bookService_MessageSend" covered="_wA6LIJj7EeWqGvcYtYPtAg" message="_WXeA4Jj9EeWqGvcYtYPtAg"/>
     <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_WXhrQJj9EeWqGvcYtYPtAg" name="bookService_MessageRecv" covered="_Lzd2oJj9EeWqGvcYtYPtAg" message="_WXeA4Jj9EeWqGvcYtYPtAg"/>
     <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_O8KF4Jj9EeWqGvcYtYPtAg" name="addServiceToBooking_MessageSend" covered="_wA6LIJj7EeWqGvcYtYPtAg" message="_O8IQsJj9EeWqGvcYtYPtAg"/>
     <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_O8KF4Zj9EeWqGvcYtYPtAg" name="addServiceToBooking_MessageRecv" covered="_Lzd2oJj9EeWqGvcYtYPtAg" message="_O8IQsJj9EeWqGvcYtYPtAg"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_p2WzoJqLEeW_wMntwChwSA" name="debitCustomer_MessageSend" covered="_wA6LIJj7EeWqGvcYtYPtAg" message="_p2RUEJqLEeW_wMntwChwSA"/>
     <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_CVrREJj-EeWqGvcYtYPtAg" name="createOrder_MessageSend" covered="_wA6LIJj7EeWqGvcYtYPtAg" message="_CVnmsJj-EeWqGvcYtYPtAg"/>
     <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_CVsfMJj-EeWqGvcYtYPtAg" name="createOrder_MessageRecv" covered="_5qOOwJj7EeWqGvcYtYPtAg" message="_CVnmsJj-EeWqGvcYtYPtAg"/>
     <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_FLrN0Jj-EeWqGvcYtYPtAg" name="sendConfirmationMail_MessageSend" covered="_5qOOwJj7EeWqGvcYtYPtAg" message="_FLqmwJj-EeWqGvcYtYPtAg"/>
     <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_pSn4wJj8EeWqGvcYtYPtAg" name="createGuest_MessageSend" covered="_wA6LIJj7EeWqGvcYtYPtAg"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_FLr04Jj-EeWqGvcYtYPtAg" name="sendConfirmationMail_MessageRecv" covered="_5qOOwJj7EeWqGvcYtYPtAg" message="_FLqmwJj-EeWqGvcYtYPtAg"/>
     <message xmi:type="uml:Message" xmi:id="_b6kSgJj8EeWqGvcYtYPtAg" name="searchAvailableOrders_Message" receiveEvent="_b6nV0Jj8EeWqGvcYtYPtAg" sendEvent="_b6mHsJj8EeWqGvcYtYPtAg">
       <signature xmi:type="uml:Operation" href="ComponentDiagram.uml#__lhZkJULEeWtRMAmqbtyDA"/>
     </message>
@@ -116,6 +131,9 @@
     </message>
     <message xmi:type="uml:Message" xmi:id="_FLqmwJj-EeWqGvcYtYPtAg" name="sendConfirmationMail_Message" receiveEvent="_FLr04Jj-EeWqGvcYtYPtAg" sendEvent="_FLrN0Jj-EeWqGvcYtYPtAg">
       <signature xmi:type="uml:Operation" href="ComponentDiagram.uml#_FQSDUJUUEeWl_rEFMzUzOw"/>
+    </message>
+    <message xmi:type="uml:Message" xmi:id="_p2RUEJqLEeW_wMntwChwSA" name="debitCustomer_Message" receiveEvent="_p2XasJqLEeW_wMntwChwSA" sendEvent="_p2WzoJqLEeW_wMntwChwSA">
+      <signature xmi:type="uml:Operation" href="ComponentDiagram.uml#_4hRH8JnSEeWCxNmOTrZsWA"/>
     </message>
   </packagedElement>
 </uml:Model>
