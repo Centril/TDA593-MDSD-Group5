@@ -12,6 +12,9 @@
           </ownedParameter>
         </ownedTemplateSignature>
         <ownedAttribute xmi:type="uml:Property" xmi:id="_P2XPcJveEeWI05svcUTHXg" name="elem" type="_Zq_AoJvdEeWI05svcUTHXg"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_zOhWwJxVEeWESJEFGhWPTA" name="self">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_4trHEJxVEeWESJEFGhWPTA" name="return" type="_M1wFEJxVEeWESJEFGhWPTA" direction="return"/>
+        </ownedOperation>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_XH_ioJvhEeWQhMfKZQBaBw" name="BasicElement_A">
         <templateBinding xmi:type="uml:TemplateBinding" xmi:id="_dRyLYJvhEeWQhMfKZQBaBw" signature="_INVeAJvdEeWI05svcUTHXg">
@@ -21,6 +24,12 @@
       <packagedElement xmi:type="uml:Class" xmi:id="_hpytcJvhEeWQhMfKZQBaBw" name="A"/>
       <packagedElement xmi:type="uml:Class" xmi:id="_NOZK0JviEeWQhMfKZQBaBw" name="AElement">
         <generalization xmi:type="uml:Generalization" xmi:id="_XjsKsJviEeWQhMfKZQBaBw" general="_XH_ioJvhEeWQhMfKZQBaBw"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_iz3J4JxPEeWESJEFGhWPTA" name="Wildcard_extends_SRT"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="_M1wFEJxVEeWESJEFGhWPTA" name="BasicElement_Wildcard_extends_SRT">
+        <templateBinding xmi:type="uml:TemplateBinding" xmi:id="_erO44JxVEeWESJEFGhWPTA" signature="_INVeAJvdEeWI05svcUTHXg">
+          <parameterSubstitution xmi:type="uml:TemplateParameterSubstitution" xmi:id="_tI-74JxVEeWESJEFGhWPTA" actual="_iz3J4JxPEeWESJEFGhWPTA" formal="_SpPcMJvdEeWI05svcUTHXg"/>
+        </templateBinding>
       </packagedElement>
     </packagedElement>
     <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_pzntkJvcEeWI05svcUTHXg">
@@ -38,4 +47,6 @@
   <Ecore:EGenericType xmi:id="_aQuOIJvhEeWQhMfKZQBaBw" base_Class="_XH_ioJvhEeWQhMfKZQBaBw"/>
   <Ecore:EClass xmi:id="_sCx6gJvhEeWQhMfKZQBaBw" base_Class="_hpytcJvhEeWQhMfKZQBaBw"/>
   <Ecore:EClass xmi:id="_VMZjMJviEeWQhMfKZQBaBw" base_Class="_NOZK0JviEeWQhMfKZQBaBw"/>
+  <Ecore:EGenericType xmi:id="_n0qKQJxPEeWESJEFGhWPTA" base_Class="_iz3J4JxPEeWESJEFGhWPTA" upperBound="_Zq_AoJvdEeWI05svcUTHXg"/>
+  <Ecore:EGenericType xmi:id="_PS414JxVEeWESJEFGhWPTA" base_Class="_M1wFEJxVEeWESJEFGhWPTA"/>
 </xmi:XMI>
