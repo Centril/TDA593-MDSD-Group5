@@ -2,9 +2,9 @@
 <genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/uml2/2.2.0/GenModel"
     modelDirectory="/hotel.tda593/src" modelPluginID="hotel.tda593"
-    modelName="ClassDiagram" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
-    importerID="org.eclipse.uml2.uml.ecore.importer" complianceLevel="8.0" copyrightFields="false"
-    operationReflection="true" importOrganizing="true">
+    redirection="" modelName="ClassDiagram" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    featureMapWrapperInternalInterface="" importerID="org.eclipse.uml2.uml.ecore.importer"
+    complianceLevel="8.0" copyrightFields="false" operationReflection="true" importOrganizing="true">
   <genAnnotations source="http://www.eclipse.org/emf/2002/GenModel/importer/org.eclipse.uml2.uml.ecore.importer">
     <details key="OPPOSITE_ROLE_NAMES" value="IGNORE"/>
     <details key="DUPLICATE_FEATURES" value="DISCARD"/>
@@ -99,7 +99,6 @@
         <genClasses xsi:type="genmodel:GenClass" ecoreClass="sechalmersmdsdgroup5.ecore#//hotel/facilities/AccessLogItem">
           <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute sechalmersmdsdgroup5.ecore#//hotel/facilities/AccessLogItem/when"/>
         </genClasses>
-        <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="sechalmersmdsdgroup5.ecore#//hotel/facilities/AccessLogItem_Interface1"/>
       </nestedGenPackages>
       <nestedGenPackages xsi:type="genmodel:GenPackage" prefix="Ordering" basePackage="sechalmersmdsdgroup5.hotel"
           disposableProviderFactory="true" ecorePackage="sechalmersmdsdgroup5.ecore#//hotel/ordering">
@@ -378,6 +377,39 @@
         </genClasses>
         <genClasses xsi:type="genmodel:GenClass" ecoreClass="sechalmersmdsdgroup5.ecore#//hotel/search/ConcreteSearchResult">
           <genTypeParameters ecoreTypeParameter="sechalmersmdsdgroup5.ecore#//hotel/search/ConcreteSearchResult/SRT"/>
+        </genClasses>
+        <genClasses xsi:type="genmodel:GenClass" ecoreClass="sechalmersmdsdgroup5.ecore#//hotel/search/AndSearchCriteria">
+          <genTypeParameters ecoreTypeParameter="sechalmersmdsdgroup5.ecore#//hotel/search/AndSearchCriteria/SRT"/>
+          <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+              propertySortChoices="true" ecoreFeature="ecore:EReference sechalmersmdsdgroup5.ecore#//hotel/search/AndSearchCriteria/left"/>
+          <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+              propertySortChoices="true" ecoreFeature="ecore:EReference sechalmersmdsdgroup5.ecore#//hotel/search/AndSearchCriteria/right"/>
+        </genClasses>
+        <genClasses xsi:type="genmodel:GenClass" ecoreClass="sechalmersmdsdgroup5.ecore#//hotel/search/OrSearchCriteria">
+          <genTypeParameters ecoreTypeParameter="sechalmersmdsdgroup5.ecore#//hotel/search/OrSearchCriteria/SRT"/>
+          <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+              propertySortChoices="true" ecoreFeature="ecore:EReference sechalmersmdsdgroup5.ecore#//hotel/search/OrSearchCriteria/left"/>
+          <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+              propertySortChoices="true" ecoreFeature="ecore:EReference sechalmersmdsdgroup5.ecore#//hotel/search/OrSearchCriteria/right"/>
+        </genClasses>
+        <genClasses xsi:type="genmodel:GenClass" ecoreClass="sechalmersmdsdgroup5.ecore#//hotel/search/NotSearchCriteria">
+          <genTypeParameters ecoreTypeParameter="sechalmersmdsdgroup5.ecore#//hotel/search/NotSearchCriteria/SRT"/>
+          <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+              propertySortChoices="true" ecoreFeature="ecore:EReference sechalmersmdsdgroup5.ecore#//hotel/search/NotSearchCriteria/criteria"/>
+        </genClasses>
+        <genClasses xsi:type="genmodel:GenClass" ecoreClass="sechalmersmdsdgroup5.ecore#//hotel/search/MatchesSearchCriteria">
+          <genTypeParameters ecoreTypeParameter="sechalmersmdsdgroup5.ecore#//hotel/search/MatchesSearchCriteria/SRT"/>
+          <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+              propertySortChoices="true" ecoreFeature="ecore:EReference sechalmersmdsdgroup5.ecore#//hotel/search/MatchesSearchCriteria/predicate"/>
+          <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+              propertySortChoices="true" ecoreFeature="ecore:EReference sechalmersmdsdgroup5.ecore#//hotel/search/MatchesSearchCriteria/transform"/>
+        </genClasses>
+        <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="sechalmersmdsdgroup5.ecore#//hotel/search/UnaryOperator">
+          <genTypeParameters ecoreTypeParameter="sechalmersmdsdgroup5.ecore#//hotel/search/UnaryOperator/UOT"/>
+        </genClasses>
+        <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="sechalmersmdsdgroup5.ecore#//hotel/search/BiPredicate">
+          <genTypeParameters ecoreTypeParameter="sechalmersmdsdgroup5.ecore#//hotel/search/BiPredicate/BPT1"/>
+          <genTypeParameters ecoreTypeParameter="sechalmersmdsdgroup5.ecore#//hotel/search/BiPredicate/BPT2"/>
         </genClasses>
       </nestedGenPackages>
       <nestedGenPackages xsi:type="genmodel:GenPackage" prefix="Blacklist" basePackage="sechalmersmdsdgroup5.hotel"

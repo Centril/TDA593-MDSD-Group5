@@ -89,8 +89,6 @@
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="when" ordered="false"
             lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
       </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="AccessLogItem_Interface1" abstract="true"
-          interface="true"/>
     </eSubpackages>
     <eSubpackages name="ordering" nsURI="http:///sechalmersmdsdgroup5/hotel/ordering.ecore"
         nsPrefix="sechalmersmdsdgroup5.hotel.ordering">
@@ -475,6 +473,98 @@
         <eGenericSuperTypes eClassifier="#//hotel/search/SearchResult">
           <eTypeArguments eTypeParameter="#//hotel/search/SearchResult/SRT"/>
         </eGenericSuperTypes>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="AndSearchCriteria">
+        <eTypeParameters name="SRT"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="left" ordered="false"
+            lowerBound="1">
+          <eGenericType eClassifier="#//hotel/search/SearchCriteria">
+            <eTypeArguments>
+              <eUpperBound eTypeParameter="#//hotel/search/SearchResult/SRT"/>
+            </eTypeArguments>
+          </eGenericType>
+        </eStructuralFeatures>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="right" ordered="false"
+            lowerBound="1">
+          <eGenericType eClassifier="#//hotel/search/SearchCriteria">
+            <eTypeArguments>
+              <eUpperBound eTypeParameter="#//hotel/search/SearchResult/SRT"/>
+            </eTypeArguments>
+          </eGenericType>
+        </eStructuralFeatures>
+        <eGenericSuperTypes eClassifier="#//hotel/search/SearchCriteria">
+          <eTypeArguments eTypeParameter="#//hotel/search/SearchCriteria/SRT"/>
+        </eGenericSuperTypes>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="OrSearchCriteria">
+        <eTypeParameters name="SRT"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="left" ordered="false"
+            lowerBound="1">
+          <eGenericType eClassifier="#//hotel/search/SearchCriteria">
+            <eTypeArguments>
+              <eUpperBound eTypeParameter="#//hotel/search/SearchResult/SRT"/>
+            </eTypeArguments>
+          </eGenericType>
+        </eStructuralFeatures>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="right" ordered="false"
+            lowerBound="1">
+          <eGenericType eClassifier="#//hotel/search/SearchCriteria">
+            <eTypeArguments>
+              <eUpperBound eTypeParameter="#//hotel/search/SearchResult/SRT"/>
+            </eTypeArguments>
+          </eGenericType>
+        </eStructuralFeatures>
+        <eGenericSuperTypes eClassifier="#//hotel/search/SearchCriteria">
+          <eTypeArguments eTypeParameter="#//hotel/search/SearchCriteria/SRT"/>
+        </eGenericSuperTypes>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="NotSearchCriteria">
+        <eTypeParameters name="SRT"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="criteria" ordered="false"
+            lowerBound="1">
+          <eGenericType eClassifier="#//hotel/search/SearchCriteria">
+            <eTypeArguments>
+              <eUpperBound eTypeParameter="#//hotel/search/SearchResult/SRT"/>
+            </eTypeArguments>
+          </eGenericType>
+        </eStructuralFeatures>
+        <eGenericSuperTypes eClassifier="#//hotel/search/SearchCriteria">
+          <eTypeArguments eTypeParameter="#//hotel/search/SearchCriteria/SRT"/>
+        </eGenericSuperTypes>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="MatchesSearchCriteria">
+        <eTypeParameters name="SRT"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="predicate" ordered="false"
+            lowerBound="1">
+          <eGenericType eClassifier="#//hotel/search/UnaryOperator">
+            <eTypeArguments>
+              <eUpperBound eTypeParameter="#//hotel/search/SearchResult/SRT"/>
+            </eTypeArguments>
+          </eGenericType>
+        </eStructuralFeatures>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="transform" ordered="false"
+            lowerBound="1">
+          <eGenericType eClassifier="#//hotel/search/BiPredicate">
+            <eTypeArguments>
+              <eUpperBound eTypeParameter="#//hotel/search/SearchResult/SRT"/>
+            </eTypeArguments>
+            <eTypeArguments>
+              <eUpperBound eTypeParameter="#//hotel/search/SearchResult/SRT"/>
+            </eTypeArguments>
+          </eGenericType>
+        </eStructuralFeatures>
+        <eGenericSuperTypes eClassifier="#//hotel/search/SearchCriteria">
+          <eTypeArguments eTypeParameter="#//hotel/search/SearchCriteria/SRT"/>
+        </eGenericSuperTypes>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="UnaryOperator" instanceClassName="java.util.function.UnaryOperator"
+          abstract="true" interface="true">
+        <eTypeParameters name="UOT"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="BiPredicate" instanceClassName="java.util.function.BiPredicate"
+          abstract="true" interface="true">
+        <eTypeParameters name="BPT1"/>
+        <eTypeParameters name="BPT2"/>
       </eClassifiers>
     </eSubpackages>
     <eSubpackages name="blacklist" nsURI="http:///sechalmersmdsdgroup5/hotel/blacklist.ecore"
