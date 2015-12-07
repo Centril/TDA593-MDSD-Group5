@@ -56,34 +56,14 @@
             lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="lastCleaned" ordered="false"
             lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="extends" ordered="false"
-            upperBound="-1" eType="#//hotel/facilities/RoomPrototype"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="servicesAfforded" ordered="false"
             upperBound="-1" eType="#//hotel/services/ServiceBlueprint"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="states" ordered="false"
             lowerBound="1" eType="#//hotel/facilities/RoomAttribute"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="prototypes" ordered="false"
+            upperBound="-1" eType="#//hotel/facilities/PrototypeOrdering" containment="true"/>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="Area" abstract="true" interface="true"/>
-      <eClassifiers xsi:type="ecore:EClass" name="RoomPrototype">
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" ordered="false"
-            lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="basePrice" ordered="false"
-            lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="priority" ordered="false"
-            lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="states" ordered="false"
-            upperBound="-1" eType="#//hotel/facilities/RoomAttribute" containment="true"/>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="servicesAfforded" ordered="false"
-            upperBound="-1" eType="#//hotel/services/ServiceBlueprint"/>
-      </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="RoomAttribute">
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" ordered="false"
-            lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" ordered="false"
-            lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="price" ordered="false"
-            lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
-      </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="Key">
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" ordered="false"
             lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
@@ -95,6 +75,30 @@
             lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="areas" ordered="false"
             lowerBound="1" upperBound="-1" eType="#//hotel/facilities/Area"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="RoomAttribute">
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" ordered="false"
+            lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" ordered="false"
+            lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="price" ordered="false"
+            lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="PrototypeOrdering">
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="order" ordered="false"
+            lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="prototype" ordered="false"
+            lowerBound="1" eType="#//hotel/facilities/RoomPrototype"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="RoomPrototype">
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" ordered="false"
+            lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="basePrice" ordered="false"
+            lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="states" ordered="false"
+            upperBound="-1" eType="#//hotel/facilities/RoomAttribute" containment="true"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="servicesAfforded" ordered="false"
+            upperBound="-1" eType="#//hotel/services/ServiceBlueprint"/>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="EmployeeArea" eSuperTypes="#//hotel/facilities/Area">
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" ordered="false"
