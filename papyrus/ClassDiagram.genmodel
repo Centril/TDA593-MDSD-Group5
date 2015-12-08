@@ -2,9 +2,10 @@
 <genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/uml2/2.2.0/GenModel"
     modelDirectory="/application/src/main/java" modelPluginID="hotel.tda593"
-    redirection="" modelName="ClassDiagram" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
-    featureMapWrapperInternalInterface="" importerID="org.eclipse.uml2.uml.ecore.importer"
-    complianceLevel="8.0" copyrightFields="false" operationReflection="true" importOrganizing="true">
+    redirection="" modelName="ClassDiagram" rootExtendsInterface="" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    suppressEMFTypes="true" suppressEMFMetaData="true" importerID="org.eclipse.uml2.uml.ecore.importer"
+    minimalReflectiveMethods="false" suppressContainment="true" suppressNotification="true"
+    complianceLevel="8.0" copyrightFields="false" importOrganizing="true">
   <genAnnotations source="http://www.eclipse.org/emf/2002/GenModel/importer/org.eclipse.uml2.uml.ecore.importer">
     <details key="OPPOSITE_ROLE_NAMES" value="IGNORE"/>
     <details key="DUPLICATE_FEATURES" value="DISCARD"/>
@@ -32,8 +33,8 @@
   <foreignModel>ClassDiagram.uml</foreignModel>
   <genPackages xsi:type="genmodel:GenPackage" prefix="Sechalmersmdsdgroup5" disposableProviderFactory="true"
       ecorePackage="sechalmersmdsdgroup5.ecore#/">
-    <nestedGenPackages xsi:type="genmodel:GenPackage" prefix="Hotel" basePackage="sechalmersmdsdgroup5"
-        disposableProviderFactory="true" ecorePackage="sechalmersmdsdgroup5.ecore#//hotel">
+    <nestedGenPackages xsi:type="genmodel:GenPackage" prefix="Hotel" disposableProviderFactory="true"
+        ecorePackage="sechalmersmdsdgroup5.ecore#//hotel">
       <genClasses xsi:type="genmodel:GenClass" ecoreClass="sechalmersmdsdgroup5.ecore#//hotel/Hotel">
         <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute sechalmersmdsdgroup5.ecore#//hotel/Hotel/name"/>
         <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute sechalmersmdsdgroup5.ecore#//hotel/Hotel/location"/>
@@ -66,8 +67,8 @@
         <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
             propertySortChoices="true" ecoreFeature="ecore:EReference sechalmersmdsdgroup5.ecore#//hotel/Hotel/taskLog"/>
       </genClasses>
-      <nestedGenPackages xsi:type="genmodel:GenPackage" prefix="Facilities" basePackage="sechalmersmdsdgroup5.hotel"
-          disposableProviderFactory="true" ecorePackage="sechalmersmdsdgroup5.ecore#//hotel/facilities">
+      <nestedGenPackages xsi:type="genmodel:GenPackage" prefix="Facilities" disposableProviderFactory="true"
+          ecorePackage="sechalmersmdsdgroup5.ecore#//hotel/facilities">
         <genClasses xsi:type="genmodel:GenClass" ecoreClass="sechalmersmdsdgroup5.ecore#//hotel/facilities/Room">
           <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute sechalmersmdsdgroup5.ecore#//hotel/facilities/Room/nr"/>
           <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute sechalmersmdsdgroup5.ecore#//hotel/facilities/Room/floor"/>
@@ -129,8 +130,8 @@
               propertySortChoices="true" ecoreFeature="ecore:EReference sechalmersmdsdgroup5.ecore#//hotel/facilities/AccessLogItem/accessed"/>
         </genClasses>
       </nestedGenPackages>
-      <nestedGenPackages xsi:type="genmodel:GenPackage" prefix="Services" basePackage="sechalmersmdsdgroup5.hotel"
-          disposableProviderFactory="true" ecorePackage="sechalmersmdsdgroup5.ecore#//hotel/services">
+      <nestedGenPackages xsi:type="genmodel:GenPackage" prefix="Services" disposableProviderFactory="true"
+          ecorePackage="sechalmersmdsdgroup5.ecore#//hotel/services">
         <genClasses xsi:type="genmodel:GenClass" ecoreClass="sechalmersmdsdgroup5.ecore#//hotel/services/Service">
           <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute sechalmersmdsdgroup5.ecore#//hotel/services/Service/price"/>
           <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute sechalmersmdsdgroup5.ecore#//hotel/services/Service/isPaid"/>
@@ -150,8 +151,8 @@
           <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute sechalmersmdsdgroup5.ecore#//hotel/services/ServiceBlueprint/basePrice"/>
         </genClasses>
       </nestedGenPackages>
-      <nestedGenPackages xsi:type="genmodel:GenPackage" prefix="Ordering" basePackage="sechalmersmdsdgroup5.hotel"
-          disposableProviderFactory="true" ecorePackage="sechalmersmdsdgroup5.ecore#//hotel/ordering">
+      <nestedGenPackages xsi:type="genmodel:GenPackage" prefix="Ordering" disposableProviderFactory="true"
+          ecorePackage="sechalmersmdsdgroup5.ecore#//hotel/ordering">
         <genClasses xsi:type="genmodel:GenClass" ecoreClass="sechalmersmdsdgroup5.ecore#//hotel/ordering/Order">
           <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
               propertySortChoices="true" ecoreFeature="ecore:EReference sechalmersmdsdgroup5.ecore#//hotel/ordering/Order/campaigns"/>
@@ -259,8 +260,8 @@
           <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute sechalmersmdsdgroup5.ecore#//hotel/ordering/RoomBooking/isPaid"/>
         </genClasses>
       </nestedGenPackages>
-      <nestedGenPackages xsi:type="genmodel:GenPackage" prefix="Clients" basePackage="sechalmersmdsdgroup5.hotel"
-          disposableProviderFactory="true" ecorePackage="sechalmersmdsdgroup5.ecore#//hotel/clients">
+      <nestedGenPackages xsi:type="genmodel:GenPackage" prefix="Clients" disposableProviderFactory="true"
+          ecorePackage="sechalmersmdsdgroup5.ecore#//hotel/clients">
         <genClasses xsi:type="genmodel:GenClass" ecoreClass="sechalmersmdsdgroup5.ecore#//hotel/clients/Customer">
           <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute sechalmersmdsdgroup5.ecore#//hotel/clients/Customer/paymentMethod"/>
           <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
@@ -286,8 +287,8 @@
               propertySortChoices="true" ecoreFeature="ecore:EReference sechalmersmdsdgroup5.ecore#//hotel/clients/Guest/identity"/>
         </genClasses>
       </nestedGenPackages>
-      <nestedGenPackages xsi:type="genmodel:GenPackage" prefix="Payment" basePackage="sechalmersmdsdgroup5.hotel"
-          disposableProviderFactory="true" ecorePackage="sechalmersmdsdgroup5.ecore#//hotel/payment">
+      <nestedGenPackages xsi:type="genmodel:GenPackage" prefix="Payment" disposableProviderFactory="true"
+          ecorePackage="sechalmersmdsdgroup5.ecore#//hotel/payment">
         <genEnums xsi:type="genmodel:GenEnum" typeSafeEnumCompatible="false" ecoreEnum="sechalmersmdsdgroup5.ecore#//hotel/payment/PaymentMethod"/>
         <genClasses xsi:type="genmodel:GenClass" ecoreClass="sechalmersmdsdgroup5.ecore#//hotel/payment/CreditCard">
           <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute sechalmersmdsdgroup5.ecore#//hotel/payment/CreditCard/name"/>
@@ -305,19 +306,19 @@
           </genOperations>
         </genClasses>
       </nestedGenPackages>
-      <nestedGenPackages xsi:type="genmodel:GenPackage" prefix="Identities" basePackage="sechalmersmdsdgroup5.hotel"
-          disposableProviderFactory="true" ecorePackage="sechalmersmdsdgroup5.ecore#//hotel/identities">
+      <nestedGenPackages xsi:type="genmodel:GenPackage" prefix="Identities" disposableProviderFactory="true"
+          ecorePackage="sechalmersmdsdgroup5.ecore#//hotel/identities">
         <genClasses xsi:type="genmodel:GenClass" ecoreClass="sechalmersmdsdgroup5.ecore#//hotel/identities/RealPerson">
           <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute sechalmersmdsdgroup5.ecore#//hotel/identities/RealPerson/age"/>
         </genClasses>
         <genClasses xsi:type="genmodel:GenClass" ecoreClass="sechalmersmdsdgroup5.ecore#//hotel/identities/Organisation"/>
-        <genClasses xsi:type="genmodel:GenClass" ecoreClass="sechalmersmdsdgroup5.ecore#//hotel/identities/Identity">
+        <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="sechalmersmdsdgroup5.ecore#//hotel/identities/Identity">
           <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute sechalmersmdsdgroup5.ecore#//hotel/identities/Identity/name"/>
           <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute sechalmersmdsdgroup5.ecore#//hotel/identities/Identity/idNumber"/>
         </genClasses>
       </nestedGenPackages>
-      <nestedGenPackages xsi:type="genmodel:GenPackage" prefix="Personnel" basePackage="sechalmersmdsdgroup5.hotel"
-          disposableProviderFactory="true" ecorePackage="sechalmersmdsdgroup5.ecore#//hotel/personnel">
+      <nestedGenPackages xsi:type="genmodel:GenPackage" prefix="Personnel" disposableProviderFactory="true"
+          ecorePackage="sechalmersmdsdgroup5.ecore#//hotel/personnel">
         <genClasses xsi:type="genmodel:GenClass" ecoreClass="sechalmersmdsdgroup5.ecore#//hotel/personnel/Employee">
           <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
               propertySortChoices="true" ecoreFeature="ecore:EReference sechalmersmdsdgroup5.ecore#//hotel/personnel/Employee/schedule"/>
@@ -340,8 +341,8 @@
               propertySortChoices="true" ecoreFeature="ecore:EReference sechalmersmdsdgroup5.ecore#//hotel/personnel/Subcontractor/key"/>
         </genClasses>
       </nestedGenPackages>
-      <nestedGenPackages xsi:type="genmodel:GenPackage" prefix="Schedule" basePackage="sechalmersmdsdgroup5.hotel"
-          disposableProviderFactory="true" ecorePackage="sechalmersmdsdgroup5.ecore#//hotel/schedule">
+      <nestedGenPackages xsi:type="genmodel:GenPackage" prefix="Schedule" disposableProviderFactory="true"
+          ecorePackage="sechalmersmdsdgroup5.ecore#//hotel/schedule">
         <genClasses xsi:type="genmodel:GenClass" ecoreClass="sechalmersmdsdgroup5.ecore#//hotel/schedule/Shift">
           <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute sechalmersmdsdgroup5.ecore#//hotel/schedule/Shift/startTime"/>
           <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute sechalmersmdsdgroup5.ecore#//hotel/schedule/Shift/endTime"/>
@@ -352,8 +353,8 @@
               createChild="true" ecoreFeature="ecore:EReference sechalmersmdsdgroup5.ecore#//hotel/schedule/Schedule/shifts"/>
         </genClasses>
       </nestedGenPackages>
-      <nestedGenPackages xsi:type="genmodel:GenPackage" prefix="Log" basePackage="sechalmersmdsdgroup5.hotel"
-          disposableProviderFactory="true" ecorePackage="sechalmersmdsdgroup5.ecore#//hotel/log">
+      <nestedGenPackages xsi:type="genmodel:GenPackage" prefix="Log" disposableProviderFactory="true"
+          ecorePackage="sechalmersmdsdgroup5.ecore#//hotel/log">
         <genClasses xsi:type="genmodel:GenClass" ecoreClass="sechalmersmdsdgroup5.ecore#//hotel/log/TaskItem">
           <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute sechalmersmdsdgroup5.ecore#//hotel/log/TaskItem/description"/>
           <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
@@ -376,8 +377,8 @@
               createChild="true" ecoreFeature="ecore:EReference sechalmersmdsdgroup5.ecore#//hotel/log/TaskLog/tasks"/>
         </genClasses>
       </nestedGenPackages>
-      <nestedGenPackages xsi:type="genmodel:GenPackage" prefix="Inventory" basePackage="sechalmersmdsdgroup5.hotel"
-          disposableProviderFactory="true" ecorePackage="sechalmersmdsdgroup5.ecore#//hotel/inventory">
+      <nestedGenPackages xsi:type="genmodel:GenPackage" prefix="Inventory" disposableProviderFactory="true"
+          ecorePackage="sechalmersmdsdgroup5.ecore#//hotel/inventory">
         <genClasses xsi:type="genmodel:GenClass" ecoreClass="sechalmersmdsdgroup5.ecore#//hotel/inventory/Inventory">
           <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
               createChild="true" ecoreFeature="ecore:EReference sechalmersmdsdgroup5.ecore#//hotel/inventory/Inventory/hasInStore"/>
@@ -387,8 +388,8 @@
           <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute sechalmersmdsdgroup5.ecore#//hotel/inventory/Product/amount"/>
         </genClasses>
       </nestedGenPackages>
-      <nestedGenPackages xsi:type="genmodel:GenPackage" prefix="Search" basePackage="sechalmersmdsdgroup5.hotel"
-          disposableProviderFactory="true" ecorePackage="sechalmersmdsdgroup5.ecore#//hotel/search">
+      <nestedGenPackages xsi:type="genmodel:GenPackage" prefix="Search" disposableProviderFactory="true"
+          ecorePackage="sechalmersmdsdgroup5.ecore#//hotel/search">
         <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="sechalmersmdsdgroup5.ecore#//hotel/search/ISearch">
           <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="sechalmersmdsdgroup5.ecore#//hotel/search/ISearch/searchAvailableOrders">
             <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="sechalmersmdsdgroup5.ecore#//hotel/search/ISearch/searchAvailableOrders/query"/>
@@ -479,8 +480,8 @@
           <genTypeParameters ecoreTypeParameter="sechalmersmdsdgroup5.ecore#//hotel/search/BiPredicate/BPT2"/>
         </genClasses>
       </nestedGenPackages>
-      <nestedGenPackages xsi:type="genmodel:GenPackage" prefix="Blacklist" basePackage="sechalmersmdsdgroup5.hotel"
-          disposableProviderFactory="true" ecorePackage="sechalmersmdsdgroup5.ecore#//hotel/blacklist">
+      <nestedGenPackages xsi:type="genmodel:GenPackage" prefix="Blacklist" disposableProviderFactory="true"
+          ecorePackage="sechalmersmdsdgroup5.ecore#//hotel/blacklist">
         <genClasses xsi:type="genmodel:GenClass" ecoreClass="sechalmersmdsdgroup5.ecore#//hotel/blacklist/Blacklist">
           <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
               propertySortChoices="true" ecoreFeature="ecore:EReference sechalmersmdsdgroup5.ecore#//hotel/blacklist/Blacklist/items"/>
