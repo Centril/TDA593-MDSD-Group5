@@ -36,6 +36,7 @@ sourceCompatibility = 1.8
  */
 repositories {
 	jcenter()
+	mavenCentral()
 }
 dependencies {
 	// mandatory dependencies for using Spock
@@ -46,6 +47,10 @@ dependencies {
 	testCompile "org.hamcrest:hamcrest-core:1.3" // only necessary if Hamcrest matchers are used
 	testRuntime "cglib:cglib-nodep:3.1"          // allows mocking of classes (in addition to interfaces)
 	testRuntime "org.objenesis:objenesis:2.1"    // allows mocking of classes without default constructor (together with CGLIB)
+
+	// Eclipse EMF:
+	compile 'org.eclipse.emf:org.eclipse.emf.common:2.11.0-v20150123-0347'
+	compile 'org.eclipse.emf:org.eclipse.emf.ecore:2.11.0-v20150123-0347'
 }
 
 /**
