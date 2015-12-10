@@ -3154,6 +3154,10 @@
                 <element xmi:type="uml:Operation" href="ClassDiagram.uml#_mUztYJ9KEeW5UY5BQ7hdQQ"/>
                 <layoutConstraint xmi:type="notation:Location" xmi:id="_mWNbkZ9KEeW5UY5BQ7hdQQ"/>
               </children>
+              <children xmi:type="notation:Shape" xmi:id="_0smncJ9MEeW5UY5BQ7hdQQ" type="3007">
+                <element xmi:type="uml:Operation" href="ClassDiagram.uml#_0rRKsJ9MEeW5UY5BQ7hdQQ"/>
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_0smncZ9MEeW5UY5BQ7hdQQ"/>
+              </children>
               <styles xmi:type="notation:TitleStyle" xmi:id="_00NsmZnAEeW2JPAtqMJHLg"/>
               <styles xmi:type="notation:SortingStyle" xmi:id="_00NsmpnAEeW2JPAtqMJHLg"/>
               <styles xmi:type="notation:FilteringStyle" xmi:id="_00Nsm5nAEeW2JPAtqMJHLg"/>

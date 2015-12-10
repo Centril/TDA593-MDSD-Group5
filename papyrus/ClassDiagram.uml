@@ -931,6 +931,9 @@
             <ownedParameter xmi:type="uml:Parameter" xmi:id="_vbdv4J9KEeW5UY5BQ7hdQQ" name="invoicable" type="_BDMDQJ9FEeW5UY5BQ7hdQQ"/>
             <ownedParameter xmi:type="uml:Parameter" xmi:id="_5oI_QJ9KEeW5UY5BQ7hdQQ" name="customer" type="_7PSgoJOAEeWEKYEtRmghUQ"/>
           </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_0rRKsJ9MEeW5UY5BQ7hdQQ" name="printReceipt">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_SbpDMJ9NEeW5UY5BQ7hdQQ" name="invoicable" type="_BDMDQJ9FEeW5UY5BQ7hdQQ"/>
+          </ownedOperation>
         </packagedElement>
         <packagedElement xmi:type="uml:Enumeration" xmi:id="_90_gwJqVEeWXppCtG_WnKw" name="PaymentMethod"/>
         <packagedElement xmi:type="uml:Interface" xmi:id="_BDMDQJ9FEeW5UY5BQ7hdQQ" name="Invoicable">
