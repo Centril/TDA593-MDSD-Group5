@@ -925,7 +925,11 @@
             </ownedParameter>
           </ownedOperation>
           <ownedOperation xmi:type="uml:Operation" xmi:id="_GE7mcJnBEeW2JPAtqMJHLg" name="debit" visibility="public">
-            <ownedParameter xmi:type="uml:Parameter" xmi:id="_BYa-kJnCEeW2JPAtqMJHLg" name="order" type="_f1YaIJOJEeWEKYEtRmghUQ"/>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_BYa-kJnCEeW2JPAtqMJHLg" name="invoicable" type="_BDMDQJ9FEeW5UY5BQ7hdQQ"/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_mUztYJ9KEeW5UY5BQ7hdQQ" name="debit">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_vbdv4J9KEeW5UY5BQ7hdQQ" name="invoicable" type="_BDMDQJ9FEeW5UY5BQ7hdQQ"/>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_5oI_QJ9KEeW5UY5BQ7hdQQ" name="customer" type="_7PSgoJOAEeWEKYEtRmghUQ"/>
           </ownedOperation>
         </packagedElement>
         <packagedElement xmi:type="uml:Enumeration" xmi:id="_90_gwJqVEeWXppCtG_WnKw" name="PaymentMethod"/>
