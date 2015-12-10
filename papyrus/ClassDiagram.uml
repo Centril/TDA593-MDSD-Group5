@@ -924,6 +924,13 @@
           </ownedOperation>
         </packagedElement>
         <packagedElement xmi:type="uml:Enumeration" xmi:id="_90_gwJqVEeWXppCtG_WnKw" name="PaymentMethod"/>
+        <packagedElement xmi:type="uml:Interface" xmi:id="_BDMDQJ9FEeW5UY5BQ7hdQQ" name="Invoicable">
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_NvMb0J9FEeW5UY5BQ7hdQQ" name="totalPrice"/>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_5KsnkJ9FEeW5UY5BQ7hdQQ" name="isPaid"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Realization" xmi:id="_kkuzsJ9GEeW5UY5BQ7hdQQ" client="_BDMDQJ9FEeW5UY5BQ7hdQQ" supplier="_f1YaIJOJEeWEKYEtRmghUQ"/>
+        <packagedElement xmi:type="uml:Realization" xmi:id="_spn3MJ9GEeW5UY5BQ7hdQQ" client="_BDMDQJ9FEeW5UY5BQ7hdQQ" supplier="_8ormYJOJEeWEKYEtRmghUQ"/>
+        <packagedElement xmi:type="uml:Realization" xmi:id="_yaPK8J9GEeW5UY5BQ7hdQQ" client="_BDMDQJ9FEeW5UY5BQ7hdQQ" supplier="_4zgHsJRREeWEKYEtRmghUQ"/>
       </packagedElement>
     </packagedElement>
     <packagedElement xmi:type="uml:Association" xmi:id="_tZ_A4JOEEeWEKYEtRmghUQ" visibility="public" memberEnd="_tZ_A45OEEeWEKYEtRmghUQ _tZ_n8JOEEeWEKYEtRmghUQ">
