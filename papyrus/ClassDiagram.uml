@@ -823,15 +823,15 @@
               <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
             </ownedParameter>
           </ownedOperation>
-          <ownedOperation xmi:type="uml:Operation" xmi:id="_si5nkJnJEeW2JPAtqMJHLg" name="giveOutKeycard">
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_si5nkJnJEeW2JPAtqMJHLg" name="giveOutKey">
             <ownedParameter xmi:type="uml:Parameter" xmi:id="_si5nkZnJEeW2JPAtqMJHLg" name="identity" type="_8icKkJOAEeWEKYEtRmghUQ"/>
-            <ownedParameter xmi:type="uml:Parameter" xmi:id="_si5nkpnJEeW2JPAtqMJHLg" name="keycard" type="_ChtUMJQXEeWEKYEtRmghUQ"/>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_si5nkpnJEeW2JPAtqMJHLg" name="key" type="_ChtUMJQXEeWEKYEtRmghUQ"/>
             <ownedParameter xmi:type="uml:Parameter" xmi:id="_si5nk5nJEeW2JPAtqMJHLg" name="result" direction="return">
               <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
             </ownedParameter>
           </ownedOperation>
-          <ownedOperation xmi:type="uml:Operation" xmi:id="_si5nlJnJEeW2JPAtqMJHLg" name="takeBackKeycard">
-            <ownedParameter xmi:type="uml:Parameter" xmi:id="_si5nlZnJEeW2JPAtqMJHLg" name="keycard" type="_ChtUMJQXEeWEKYEtRmghUQ"/>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_si5nlJnJEeW2JPAtqMJHLg" name="takeBackKey">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_si5nlZnJEeW2JPAtqMJHLg" name="key" type="_ChtUMJQXEeWEKYEtRmghUQ"/>
             <ownedParameter xmi:type="uml:Parameter" xmi:id="_si5nlpnJEeW2JPAtqMJHLg" name="result" direction="return">
               <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
             </ownedParameter>
