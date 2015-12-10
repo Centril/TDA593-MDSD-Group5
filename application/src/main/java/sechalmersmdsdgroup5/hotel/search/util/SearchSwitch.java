@@ -5,8 +5,7 @@ package sechalmersmdsdgroup5.hotel.search.util;
 import java.util.List;
 
 import java.util.function.BiPredicate;
-import java.util.function.UnaryOperator;
-
+import java.util.function.Function;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 
@@ -132,15 +131,15 @@ public class SearchSwitch<T> extends Switch<T> {
 				return result;
 			}
 			case SearchPackageImpl.MATCHES_SEARCH_CRITERIA: {
-				MatchesSearchCriteria<?> matchesSearchCriteria = (MatchesSearchCriteria<?>)theEObject;
+				MatchesSearchCriteria<?, ?> matchesSearchCriteria = (MatchesSearchCriteria<?, ?>)theEObject;
 				T result = caseMatchesSearchCriteria(matchesSearchCriteria);
 				if (result == null) result = caseSearchCriteria(matchesSearchCriteria);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case SearchPackageImpl.UNARY_OPERATOR: {
-				UnaryOperator<?> unaryOperator = (UnaryOperator<?>)theEObject;
-				T result = caseUnaryOperator(unaryOperator);
+			case SearchPackageImpl.FUNCTION: {
+				Function<?, ?> function = (Function<?, ?>)theEObject;
+				T result = caseFunction(function);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -300,22 +299,7 @@ public class SearchSwitch<T> extends Switch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public <SRT> T caseMatchesSearchCriteria(MatchesSearchCriteria<SRT> object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Unary Operator</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Unary Operator</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public <UOT> T caseUnaryOperator(UnaryOperator<UOT> object) {
+	public <SRT, IN> T caseMatchesSearchCriteria(MatchesSearchCriteria<SRT, IN> object) {
 		return null;
 	}
 
@@ -331,6 +315,21 @@ public class SearchSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public <BPT1, BPT2> T caseBiPredicate(BiPredicate<BPT1, BPT2> object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Function</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Function</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public <FI, FO> T caseFunction(Function<FI, FO> object) {
 		return null;
 	}
 

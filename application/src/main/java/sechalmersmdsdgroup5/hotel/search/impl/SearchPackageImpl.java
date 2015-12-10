@@ -5,8 +5,7 @@ package sechalmersmdsdgroup5.hotel.search.impl;
 import java.util.List;
 
 import java.util.function.BiPredicate;
-import java.util.function.UnaryOperator;
-
+import java.util.function.Function;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EFactory;
 import org.eclipse.emf.ecore.EGenericType;
@@ -327,13 +326,13 @@ public class SearchPackageImpl extends EPackageImpl {
 	public static final int MATCHES_SEARCH_CRITERIA = 9;
 
 	/**
-	 * The feature id for the '<em><b>Predicate</b></em>' reference.
+	 * The feature id for the '<em><b>Input</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	public static final int MATCHES_SEARCH_CRITERIA__PREDICATE = SEARCH_CRITERIA_FEATURE_COUNT + 0;
+	public static final int MATCHES_SEARCH_CRITERIA__INPUT = SEARCH_CRITERIA_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Transform</b></em>' reference.
@@ -345,32 +344,22 @@ public class SearchPackageImpl extends EPackageImpl {
 	public static final int MATCHES_SEARCH_CRITERIA__TRANSFORM = SEARCH_CRITERIA_FEATURE_COUNT + 1;
 
 	/**
+	 * The feature id for the '<em><b>Predicate</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MATCHES_SEARCH_CRITERIA__PREDICATE = SEARCH_CRITERIA_FEATURE_COUNT + 2;
+
+	/**
 	 * The number of structural features of the '<em>Matches Search Criteria</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	public static final int MATCHES_SEARCH_CRITERIA_FEATURE_COUNT = SEARCH_CRITERIA_FEATURE_COUNT + 2;
-
-	/**
-	 * The meta object id for the '{@link java.util.function.UnaryOperator <em>Unary Operator</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see java.util.function.UnaryOperator
-	 * @see sechalmersmdsdgroup5.hotel.search.impl.SearchPackageImpl#getUnaryOperator()
-	 * @generated
-	 */
-	public static final int UNARY_OPERATOR = 10;
-
-	/**
-	 * The number of structural features of the '<em>Unary Operator</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int UNARY_OPERATOR_FEATURE_COUNT = 0;
+	public static final int MATCHES_SEARCH_CRITERIA_FEATURE_COUNT = SEARCH_CRITERIA_FEATURE_COUNT + 3;
 
 	/**
 	 * The meta object id for the '{@link java.util.function.BiPredicate <em>Bi Predicate</em>}' class.
@@ -381,6 +370,25 @@ public class SearchPackageImpl extends EPackageImpl {
 	 * @generated
 	 */
 	public static final int BI_PREDICATE = 11;
+
+	/**
+	 * The meta object id for the '{@link java.util.function.Function <em>Function</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see java.util.function.Function
+	 * @see sechalmersmdsdgroup5.hotel.search.impl.SearchPackageImpl#getFunction()
+	 * @generated
+	 */
+	public static final int FUNCTION = 10;
+
+	/**
+	 * The number of structural features of the '<em>Function</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int FUNCTION_FEATURE_COUNT = 0;
 
 	/**
 	 * The number of structural features of the '<em>Bi Predicate</em>' class.
@@ -466,14 +474,14 @@ public class SearchPackageImpl extends EPackageImpl {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass unaryOperatorEClass = null;
+	private EClass biPredicateEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass biPredicateEClass = null;
+	private EClass functionEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -762,6 +770,20 @@ public class SearchPackageImpl extends EPackageImpl {
 	}
 
 	/**
+	 * Returns the meta object for the reference '{@link sechalmersmdsdgroup5.hotel.search.MatchesSearchCriteria#getInput <em>Input</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Input</em>'.
+	 * @see sechalmersmdsdgroup5.hotel.search.MatchesSearchCriteria#getInput()
+	 * @see #getMatchesSearchCriteria()
+	 * @generated
+	 */
+	public EReference getMatchesSearchCriteria_Input() {
+		return (EReference)matchesSearchCriteriaEClass.getEStructuralFeatures().get(0);
+	}
+
+
+	/**
 	 * Returns the meta object for the reference '{@link sechalmersmdsdgroup5.hotel.search.MatchesSearchCriteria#getPredicate <em>Predicate</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -771,7 +793,7 @@ public class SearchPackageImpl extends EPackageImpl {
 	 * @generated
 	 */
 	public EReference getMatchesSearchCriteria_Predicate() {
-		return (EReference)matchesSearchCriteriaEClass.getEStructuralFeatures().get(0);
+		return (EReference)matchesSearchCriteriaEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -788,19 +810,6 @@ public class SearchPackageImpl extends EPackageImpl {
 	}
 
 	/**
-	 * Returns the meta object for class '{@link java.util.function.UnaryOperator <em>Unary Operator</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Unary Operator</em>'.
-	 * @see java.util.function.UnaryOperator
-	 * @model instanceClass="java.util.function.UnaryOperator" typeParameters="UOT"
-	 * @generated
-	 */
-	public EClass getUnaryOperator() {
-		return unaryOperatorEClass;
-	}
-
-	/**
 	 * Returns the meta object for class '{@link java.util.function.BiPredicate <em>Bi Predicate</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -812,6 +821,20 @@ public class SearchPackageImpl extends EPackageImpl {
 	public EClass getBiPredicate() {
 		return biPredicateEClass;
 	}
+
+	/**
+	 * Returns the meta object for class '{@link java.util.function.Function <em>Function</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Function</em>'.
+	 * @see java.util.function.Function
+	 * @model instanceClass="java.util.function.Function" typeParameters="FI FO"
+	 * @generated
+	 */
+	public EClass getFunction() {
+		return functionEClass;
+	}
+
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -867,10 +890,11 @@ public class SearchPackageImpl extends EPackageImpl {
 		createEReference(notSearchCriteriaEClass, NOT_SEARCH_CRITERIA__CRITERIA);
 
 		matchesSearchCriteriaEClass = createEClass(MATCHES_SEARCH_CRITERIA);
-		createEReference(matchesSearchCriteriaEClass, MATCHES_SEARCH_CRITERIA__PREDICATE);
+		createEReference(matchesSearchCriteriaEClass, MATCHES_SEARCH_CRITERIA__INPUT);
 		createEReference(matchesSearchCriteriaEClass, MATCHES_SEARCH_CRITERIA__TRANSFORM);
+		createEReference(matchesSearchCriteriaEClass, MATCHES_SEARCH_CRITERIA__PREDICATE);
 
-		unaryOperatorEClass = createEClass(UNARY_OPERATOR);
+		functionEClass = createEClass(FUNCTION);
 
 		biPredicateEClass = createEClass(BI_PREDICATE);
 	}
@@ -913,7 +937,9 @@ public class SearchPackageImpl extends EPackageImpl {
 		addETypeParameter(orSearchCriteriaEClass, "SRT");
 		addETypeParameter(notSearchCriteriaEClass, "SRT");
 		addETypeParameter(matchesSearchCriteriaEClass, "SRT");
-		addETypeParameter(unaryOperatorEClass, "UOT");
+		ETypeParameter matchesSearchCriteriaEClass_IN = addETypeParameter(matchesSearchCriteriaEClass, "IN");
+		addETypeParameter(functionEClass, "FI");
+		addETypeParameter(functionEClass, "FO");
 		addETypeParameter(biPredicateEClass, "BPT1");
 		addETypeParameter(biPredicateEClass, "BPT2");
 
@@ -1083,24 +1109,30 @@ public class SearchPackageImpl extends EPackageImpl {
 		initEReference(getNotSearchCriteria_Criteria(), g1, null, "criteria", null, 1, 1, NotSearchCriteria.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(matchesSearchCriteriaEClass, MatchesSearchCriteria.class, "MatchesSearchCriteria", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		g1 = createEGenericType(this.getUnaryOperator());
+		g1 = createEGenericType(matchesSearchCriteriaEClass_IN);
+		initEReference(getMatchesSearchCriteria_Input(), g1, null, "input", null, 1, 1, MatchesSearchCriteria.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		g1 = createEGenericType(this.getFunction());
 		g2 = createEGenericType();
 		g1.getETypeArguments().add(g2);
 		g3 = createEGenericType(searchResultEClass_SRT);
 		g2.setEUpperBound(g3);
-		initEReference(getMatchesSearchCriteria_Predicate(), g1, null, "predicate", null, 1, 1, MatchesSearchCriteria.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		g2 = createEGenericType();
+		g1.getETypeArguments().add(g2);
+		g3 = createEGenericType(matchesSearchCriteriaEClass_IN);
+		g2.setEUpperBound(g3);
+		initEReference(getMatchesSearchCriteria_Transform(), g1, null, "transform", null, 1, 1, MatchesSearchCriteria.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		g1 = createEGenericType(this.getBiPredicate());
 		g2 = createEGenericType();
 		g1.getETypeArguments().add(g2);
-		g3 = createEGenericType(searchResultEClass_SRT);
+		g3 = createEGenericType(matchesSearchCriteriaEClass_IN);
 		g2.setEUpperBound(g3);
 		g2 = createEGenericType();
 		g1.getETypeArguments().add(g2);
-		g3 = createEGenericType(searchResultEClass_SRT);
+		g3 = createEGenericType(matchesSearchCriteriaEClass_IN);
 		g2.setEUpperBound(g3);
-		initEReference(getMatchesSearchCriteria_Transform(), g1, null, "transform", null, 1, 1, MatchesSearchCriteria.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getMatchesSearchCriteria_Predicate(), g1, null, "predicate", null, 1, 1, MatchesSearchCriteria.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
-		initEClass(unaryOperatorEClass, UnaryOperator.class, "UnaryOperator", IS_ABSTRACT, IS_INTERFACE, !IS_GENERATED_INSTANCE_CLASS);
+		initEClass(functionEClass, Function.class, "Function", IS_ABSTRACT, IS_INTERFACE, !IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(biPredicateEClass, BiPredicate.class, "BiPredicate", IS_ABSTRACT, IS_INTERFACE, !IS_GENERATED_INSTANCE_CLASS);
 	}
@@ -1259,6 +1291,14 @@ public class SearchPackageImpl extends EPackageImpl {
 		public static final EClass MATCHES_SEARCH_CRITERIA = eINSTANCE.getMatchesSearchCriteria();
 
 		/**
+		 * The meta object literal for the '<em><b>Input</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		public static final EReference MATCHES_SEARCH_CRITERIA__INPUT = eINSTANCE.getMatchesSearchCriteria_Input();
+
+		/**
 		 * The meta object literal for the '<em><b>Predicate</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1275,16 +1315,6 @@ public class SearchPackageImpl extends EPackageImpl {
 		public static final EReference MATCHES_SEARCH_CRITERIA__TRANSFORM = eINSTANCE.getMatchesSearchCriteria_Transform();
 
 		/**
-		 * The meta object literal for the '{@link java.util.function.UnaryOperator <em>Unary Operator</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see java.util.function.UnaryOperator
-		 * @see sechalmersmdsdgroup5.hotel.search.impl.SearchPackageImpl#getUnaryOperator()
-		 * @generated
-		 */
-		public static final EClass UNARY_OPERATOR = eINSTANCE.getUnaryOperator();
-
-		/**
 		 * The meta object literal for the '{@link java.util.function.BiPredicate <em>Bi Predicate</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1293,6 +1323,16 @@ public class SearchPackageImpl extends EPackageImpl {
 		 * @generated
 		 */
 		public static final EClass BI_PREDICATE = eINSTANCE.getBiPredicate();
+
+		/**
+		 * The meta object literal for the '{@link java.util.function.Function <em>Function</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see java.util.function.Function
+		 * @see sechalmersmdsdgroup5.hotel.search.impl.SearchPackageImpl#getFunction()
+		 * @generated
+		 */
+		public static final EClass FUNCTION = eINSTANCE.getFunction();
 
 	}
 

@@ -71,6 +71,6 @@ public interface SearchFactory {
 	 * @return a new object of class '<em>Matches Search Criteria</em>'.
 	 * @generated
 	 */
-	<SRT> MatchesSearchCriteria<SRT> createMatchesSearchCriteria();
+	<SRT, IN> MatchesSearchCriteria<SRT, IN> createMatchesSearchCriteria();
 
 } //SearchFactory

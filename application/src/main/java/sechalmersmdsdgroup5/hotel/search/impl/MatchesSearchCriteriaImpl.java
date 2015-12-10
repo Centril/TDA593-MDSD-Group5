@@ -3,8 +3,7 @@
 package sechalmersmdsdgroup5.hotel.search.impl;
 
 import java.util.function.BiPredicate;
-import java.util.function.UnaryOperator;
-
+import java.util.function.Function;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
@@ -22,22 +21,23 @@ import sechalmersmdsdgroup5.hotel.search.SearchResult;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link sechalmersmdsdgroup5.hotel.search.impl.MatchesSearchCriteriaImpl#getPredicate <em>Predicate</em>}</li>
+ *   <li>{@link sechalmersmdsdgroup5.hotel.search.impl.MatchesSearchCriteriaImpl#getInput <em>Input</em>}</li>
  *   <li>{@link sechalmersmdsdgroup5.hotel.search.impl.MatchesSearchCriteriaImpl#getTransform <em>Transform</em>}</li>
+ *   <li>{@link sechalmersmdsdgroup5.hotel.search.impl.MatchesSearchCriteriaImpl#getPredicate <em>Predicate</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class MatchesSearchCriteriaImpl<SRT> extends MinimalEObjectImpl.Container implements MatchesSearchCriteria<SRT> {
+public class MatchesSearchCriteriaImpl<SRT, IN> extends MinimalEObjectImpl.Container implements MatchesSearchCriteria<SRT, IN> {
 	/**
-	 * The cached value of the '{@link #getPredicate() <em>Predicate</em>}' reference.
+	 * The cached value of the '{@link #getInput() <em>Input</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getPredicate()
+	 * @see #getInput()
 	 * @generated
 	 * @ordered
 	 */
-	protected UnaryOperator<? extends SRT> predicate;
+	protected IN input;
 
 	/**
 	 * The cached value of the '{@link #getTransform() <em>Transform</em>}' reference.
@@ -47,7 +47,17 @@ public class MatchesSearchCriteriaImpl<SRT> extends MinimalEObjectImpl.Container
 	 * @generated
 	 * @ordered
 	 */
-	protected BiPredicate<? extends SRT, ? extends SRT> transform;
+	protected Function<? extends SRT, ? extends IN> transform;
+
+	/**
+	 * The cached value of the '{@link #getPredicate() <em>Predicate</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPredicate()
+	 * @generated
+	 * @ordered
+	 */
+	protected BiPredicate<? extends IN, ? extends IN> predicate;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -74,10 +84,44 @@ public class MatchesSearchCriteriaImpl<SRT> extends MinimalEObjectImpl.Container
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
-	public UnaryOperator<? extends SRT> getPredicate() {
+	public IN getInput() {
+		if (input != null && ((EObject)input).eIsProxy()) {
+			InternalEObject oldInput = (InternalEObject)input;
+			input = (IN)eResolveProxy(oldInput);
+			if (input != oldInput) {
+			}
+		}
+		return input;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public IN basicGetInput() {
+		return input;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setInput(IN newInput) {
+		input = newInput;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	public BiPredicate<? extends IN, ? extends IN> getPredicate() {
 		if (predicate != null && ((EObject)predicate).eIsProxy()) {
 			InternalEObject oldPredicate = (InternalEObject)predicate;
-			predicate = (UnaryOperator<? extends SRT>)eResolveProxy(oldPredicate);
+			predicate = (BiPredicate<? extends IN, ? extends IN>)eResolveProxy(oldPredicate);
 			if (predicate != oldPredicate) {
 			}
 		}
@@ -89,7 +133,7 @@ public class MatchesSearchCriteriaImpl<SRT> extends MinimalEObjectImpl.Container
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public UnaryOperator<? extends SRT> basicGetPredicate() {
+	public BiPredicate<? extends IN, ? extends IN> basicGetPredicate() {
 		return predicate;
 	}
 
@@ -98,7 +142,7 @@ public class MatchesSearchCriteriaImpl<SRT> extends MinimalEObjectImpl.Container
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setPredicate(UnaryOperator<? extends SRT> newPredicate) {
+	public void setPredicate(BiPredicate<? extends IN, ? extends IN> newPredicate) {
 		predicate = newPredicate;
 	}
 
@@ -108,10 +152,10 @@ public class MatchesSearchCriteriaImpl<SRT> extends MinimalEObjectImpl.Container
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
-	public BiPredicate<? extends SRT, ? extends SRT> getTransform() {
+	public Function<? extends SRT, ? extends IN> getTransform() {
 		if (transform != null && ((EObject)transform).eIsProxy()) {
 			InternalEObject oldTransform = (InternalEObject)transform;
-			transform = (BiPredicate<? extends SRT, ? extends SRT>)eResolveProxy(oldTransform);
+			transform = (Function<? extends SRT, ? extends IN>)eResolveProxy(oldTransform);
 			if (transform != oldTransform) {
 			}
 		}
@@ -123,7 +167,7 @@ public class MatchesSearchCriteriaImpl<SRT> extends MinimalEObjectImpl.Container
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public BiPredicate<? extends SRT, ? extends SRT> basicGetTransform() {
+	public Function<? extends SRT, ? extends IN> basicGetTransform() {
 		return transform;
 	}
 
@@ -132,7 +176,7 @@ public class MatchesSearchCriteriaImpl<SRT> extends MinimalEObjectImpl.Container
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setTransform(BiPredicate<? extends SRT, ? extends SRT> newTransform) {
+	public void setTransform(Function<? extends SRT, ? extends IN> newTransform) {
 		transform = newTransform;
 	}
 
@@ -155,12 +199,15 @@ public class MatchesSearchCriteriaImpl<SRT> extends MinimalEObjectImpl.Container
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case SearchPackageImpl.MATCHES_SEARCH_CRITERIA__PREDICATE:
-				if (resolve) return getPredicate();
-				return basicGetPredicate();
+			case SearchPackageImpl.MATCHES_SEARCH_CRITERIA__INPUT:
+				if (resolve) return getInput();
+				return basicGetInput();
 			case SearchPackageImpl.MATCHES_SEARCH_CRITERIA__TRANSFORM:
 				if (resolve) return getTransform();
 				return basicGetTransform();
+			case SearchPackageImpl.MATCHES_SEARCH_CRITERIA__PREDICATE:
+				if (resolve) return getPredicate();
+				return basicGetPredicate();
 		}
 		return eDynamicGet(featureID, resolve, coreType);
 	}
@@ -174,11 +221,14 @@ public class MatchesSearchCriteriaImpl<SRT> extends MinimalEObjectImpl.Container
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case SearchPackageImpl.MATCHES_SEARCH_CRITERIA__PREDICATE:
-				setPredicate((UnaryOperator<? extends SRT>)newValue);
+			case SearchPackageImpl.MATCHES_SEARCH_CRITERIA__INPUT:
+				setInput((IN)newValue);
 				return;
 			case SearchPackageImpl.MATCHES_SEARCH_CRITERIA__TRANSFORM:
-				setTransform((BiPredicate<? extends SRT, ? extends SRT>)newValue);
+				setTransform((Function<? extends SRT, ? extends IN>)newValue);
+				return;
+			case SearchPackageImpl.MATCHES_SEARCH_CRITERIA__PREDICATE:
+				setPredicate((BiPredicate<? extends IN, ? extends IN>)newValue);
 				return;
 		}
 		eDynamicSet(featureID, newValue);
@@ -192,11 +242,14 @@ public class MatchesSearchCriteriaImpl<SRT> extends MinimalEObjectImpl.Container
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case SearchPackageImpl.MATCHES_SEARCH_CRITERIA__PREDICATE:
-				setPredicate((UnaryOperator<? extends SRT>)null);
+			case SearchPackageImpl.MATCHES_SEARCH_CRITERIA__INPUT:
+				setInput((IN)null);
 				return;
 			case SearchPackageImpl.MATCHES_SEARCH_CRITERIA__TRANSFORM:
-				setTransform((BiPredicate<? extends SRT, ? extends SRT>)null);
+				setTransform((Function<? extends SRT, ? extends IN>)null);
+				return;
+			case SearchPackageImpl.MATCHES_SEARCH_CRITERIA__PREDICATE:
+				setPredicate((BiPredicate<? extends IN, ? extends IN>)null);
 				return;
 		}
 		eDynamicUnset(featureID);
@@ -210,10 +263,12 @@ public class MatchesSearchCriteriaImpl<SRT> extends MinimalEObjectImpl.Container
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case SearchPackageImpl.MATCHES_SEARCH_CRITERIA__PREDICATE:
-				return predicate != null;
+			case SearchPackageImpl.MATCHES_SEARCH_CRITERIA__INPUT:
+				return input != null;
 			case SearchPackageImpl.MATCHES_SEARCH_CRITERIA__TRANSFORM:
 				return transform != null;
+			case SearchPackageImpl.MATCHES_SEARCH_CRITERIA__PREDICATE:
+				return predicate != null;
 		}
 		return eDynamicIsSet(featureID);
 	}

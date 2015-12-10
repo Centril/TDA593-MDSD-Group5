@@ -3,7 +3,7 @@
 package sechalmersmdsdgroup5.hotel.search;
 
 import java.util.function.BiPredicate;
-import java.util.function.UnaryOperator;
+import java.util.function.Function;
 
 /**
  * <!-- begin-user-doc -->
@@ -14,14 +14,40 @@ import java.util.function.UnaryOperator;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link sechalmersmdsdgroup5.hotel.search.MatchesSearchCriteria#getPredicate <em>Predicate</em>}</li>
+ *   <li>{@link sechalmersmdsdgroup5.hotel.search.MatchesSearchCriteria#getInput <em>Input</em>}</li>
  *   <li>{@link sechalmersmdsdgroup5.hotel.search.MatchesSearchCriteria#getTransform <em>Transform</em>}</li>
+ *   <li>{@link sechalmersmdsdgroup5.hotel.search.MatchesSearchCriteria#getPredicate <em>Predicate</em>}</li>
  * </ul>
  *
  * @model
  * @generated
  */
-public interface MatchesSearchCriteria<SRT> extends SearchCriteria<SRT> {
+public interface MatchesSearchCriteria<SRT, IN> extends SearchCriteria<SRT> {
+	/**
+	 * Returns the value of the '<em><b>Input</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Input</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Input</em>' reference.
+	 * @see #setInput(Object)
+	 * @model kind="reference" required="true" ordered="false"
+	 * @generated
+	 */
+	IN getInput();
+
+	/**
+	 * Sets the value of the '{@link sechalmersmdsdgroup5.hotel.search.MatchesSearchCriteria#getInput <em>Input</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Input</em>' reference.
+	 * @see #getInput()
+	 * @generated
+	 */
+	void setInput(IN value);
+
 	/**
 	 * Returns the value of the '<em><b>Predicate</b></em>' reference.
 	 * <!-- begin-user-doc -->
@@ -31,11 +57,11 @@ public interface MatchesSearchCriteria<SRT> extends SearchCriteria<SRT> {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Predicate</em>' reference.
-	 * @see #setPredicate(UnaryOperator)
-	 * @model type="sechalmersmdsdgroup5.hotel.search.UnaryOperator<? extends SRT>" required="true" ordered="false"
+	 * @see #setPredicate(BiPredicate)
+	 * @model type="sechalmersmdsdgroup5.hotel.search.BiPredicate<? extends IN, ? extends IN>" required="true" ordered="false"
 	 * @generated
 	 */
-	UnaryOperator<? extends SRT> getPredicate();
+	BiPredicate<? extends IN, ? extends IN> getPredicate();
 
 	/**
 	 * Sets the value of the '{@link sechalmersmdsdgroup5.hotel.search.MatchesSearchCriteria#getPredicate <em>Predicate</em>}' reference.
@@ -45,7 +71,7 @@ public interface MatchesSearchCriteria<SRT> extends SearchCriteria<SRT> {
 	 * @see #getPredicate()
 	 * @generated
 	 */
-	void setPredicate(UnaryOperator<? extends SRT> value);
+	void setPredicate(BiPredicate<? extends IN, ? extends IN> value);
 
 	/**
 	 * Returns the value of the '<em><b>Transform</b></em>' reference.
@@ -56,11 +82,11 @@ public interface MatchesSearchCriteria<SRT> extends SearchCriteria<SRT> {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Transform</em>' reference.
-	 * @see #setTransform(BiPredicate)
-	 * @model type="sechalmersmdsdgroup5.hotel.search.BiPredicate<? extends SRT, ? extends SRT>" required="true" ordered="false"
+	 * @see #setTransform(Function)
+	 * @model type="sechalmersmdsdgroup5.hotel.search.Function<? extends SRT, ? extends IN>" required="true" ordered="false"
 	 * @generated
 	 */
-	BiPredicate<? extends SRT, ? extends SRT> getTransform();
+	Function<? extends SRT, ? extends IN> getTransform();
 
 	/**
 	 * Sets the value of the '{@link sechalmersmdsdgroup5.hotel.search.MatchesSearchCriteria#getTransform <em>Transform</em>}' reference.
@@ -70,6 +96,6 @@ public interface MatchesSearchCriteria<SRT> extends SearchCriteria<SRT> {
 	 * @see #getTransform()
 	 * @generated
 	 */
-	void setTransform(BiPredicate<? extends SRT, ? extends SRT> value);
+	void setTransform(Function<? extends SRT, ? extends IN> value);
 
 } // MatchesSearchCriteria

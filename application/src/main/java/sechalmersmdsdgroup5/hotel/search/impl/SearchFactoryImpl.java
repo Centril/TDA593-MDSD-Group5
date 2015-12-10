@@ -130,8 +130,8 @@ public class SearchFactoryImpl extends EFactoryImpl implements SearchFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public <SRT> MatchesSearchCriteria<SRT> createMatchesSearchCriteria() {
-		MatchesSearchCriteriaImpl<SRT> matchesSearchCriteria = new MatchesSearchCriteriaImpl<SRT>();
+	public <SRT, IN> MatchesSearchCriteria<SRT, IN> createMatchesSearchCriteria() {
+		MatchesSearchCriteriaImpl<SRT, IN> matchesSearchCriteria = new MatchesSearchCriteriaImpl<SRT, IN>();
 		return matchesSearchCriteria;
 	}
 

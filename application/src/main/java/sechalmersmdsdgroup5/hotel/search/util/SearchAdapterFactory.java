@@ -5,8 +5,7 @@ package sechalmersmdsdgroup5.hotel.search.util;
 import java.util.List;
 
 import java.util.function.BiPredicate;
-import java.util.function.UnaryOperator;
-
+import java.util.function.Function;
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
 
@@ -111,12 +110,12 @@ public class SearchAdapterFactory extends AdapterFactoryImpl {
 				return createNotSearchCriteriaAdapter();
 			}
 			@Override
-			public <SRT> Adapter caseMatchesSearchCriteria(MatchesSearchCriteria<SRT> object) {
+			public <SRT, IN> Adapter caseMatchesSearchCriteria(MatchesSearchCriteria<SRT, IN> object) {
 				return createMatchesSearchCriteriaAdapter();
 			}
 			@Override
-			public <UOT> Adapter caseUnaryOperator(UnaryOperator<UOT> object) {
-				return createUnaryOperatorAdapter();
+			public <FI, FO> Adapter caseFunction(Function<FI, FO> object) {
+				return createFunctionAdapter();
 			}
 			@Override
 			public <BPT1, BPT2> Adapter caseBiPredicate(BiPredicate<BPT1, BPT2> object) {
@@ -283,20 +282,6 @@ public class SearchAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link java.util.function.UnaryOperator <em>Unary Operator</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see java.util.function.UnaryOperator
-	 * @generated
-	 */
-	public Adapter createUnaryOperatorAdapter() {
-		return null;
-	}
-
-	/**
 	 * Creates a new adapter for an object of class '{@link java.util.function.BiPredicate <em>Bi Predicate</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -307,6 +292,20 @@ public class SearchAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createBiPredicateAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link java.util.function.Function <em>Function</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see java.util.function.Function
+	 * @generated
+	 */
+	public Adapter createFunctionAdapter() {
 		return null;
 	}
 
