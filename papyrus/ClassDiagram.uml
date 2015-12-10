@@ -892,7 +892,7 @@
           </ownedOperation>
           <ownedOperation xmi:type="uml:Operation" xmi:id="_A2KFYJnKEeW2JPAtqMJHLg" name="bookService">
             <ownedParameter xmi:type="uml:Parameter" xmi:id="_A2KFYZnKEeW2JPAtqMJHLg" name="booking" type="_8ormYJOJEeWEKYEtRmghUQ"/>
-            <ownedParameter xmi:type="uml:Parameter" xmi:id="_A2KFYpnKEeW2JPAtqMJHLg" name="wantedService" type="_4zgHsJRREeWEKYEtRmghUQ"/>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_A2KFYpnKEeW2JPAtqMJHLg" name="wantedService" type="_6sH2MJRREeWEKYEtRmghUQ"/>
             <ownedParameter xmi:type="uml:Parameter" xmi:id="_A2KFY5nKEeW2JPAtqMJHLg" name="result" direction="return">
               <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
             </ownedParameter>
