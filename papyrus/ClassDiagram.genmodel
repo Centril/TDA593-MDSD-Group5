@@ -135,6 +135,7 @@
         <genClasses xsi:type="genmodel:GenClass" ecoreClass="sechalmersmdsdgroup5.ecore#//hotel/services/Service">
           <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute sechalmersmdsdgroup5.ecore#//hotel/services/Service/price"/>
           <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute sechalmersmdsdgroup5.ecore#//hotel/services/Service/isPaid"/>
+          <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute sechalmersmdsdgroup5.ecore#//hotel/services/Service/creationDate"/>
         </genClasses>
         <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="sechalmersmdsdgroup5.ecore#//hotel/services/ServiceConsumer"/>
         <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="sechalmersmdsdgroup5.ecore#//hotel/services/IService">
@@ -151,17 +152,90 @@
           <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute sechalmersmdsdgroup5.ecore#//hotel/services/ServiceBlueprint/basePrice"/>
         </genClasses>
       </nestedGenPackages>
+      <nestedGenPackages xsi:type="genmodel:GenPackage" prefix="Payment" basePackage="sechalmersmdsdgroup5.hotel"
+          disposableProviderFactory="true" ecorePackage="sechalmersmdsdgroup5.ecore#//hotel/payment">
+        <genEnums xsi:type="genmodel:GenEnum" typeSafeEnumCompatible="false" ecoreEnum="sechalmersmdsdgroup5.ecore#//hotel/payment/PaymentMethod"/>
+        <genClasses xsi:type="genmodel:GenClass" ecoreClass="sechalmersmdsdgroup5.ecore#//hotel/payment/CreditCard">
+          <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute sechalmersmdsdgroup5.ecore#//hotel/payment/CreditCard/name"/>
+          <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute sechalmersmdsdgroup5.ecore#//hotel/payment/CreditCard/expiryMonth"/>
+          <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute sechalmersmdsdgroup5.ecore#//hotel/payment/CreditCard/expiryYear"/>
+          <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute sechalmersmdsdgroup5.ecore#//hotel/payment/CreditCard/number"/>
+          <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute sechalmersmdsdgroup5.ecore#//hotel/payment/CreditCard/ccv"/>
+        </genClasses>
+        <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="sechalmersmdsdgroup5.ecore#//hotel/payment/IPayment">
+          <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="sechalmersmdsdgroup5.ecore#//hotel/payment/IPayment/verifyPaymentInformation">
+            <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="sechalmersmdsdgroup5.ecore#//hotel/payment/IPayment/verifyPaymentInformation/paymentInformation"/>
+          </genOperations>
+          <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="sechalmersmdsdgroup5.ecore#//hotel/payment/IPayment/debit">
+            <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="sechalmersmdsdgroup5.ecore#//hotel/payment/IPayment/debit/invoicable"/>
+          </genOperations>
+          <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="sechalmersmdsdgroup5.ecore#//hotel/payment/IPayment/debit.1">
+            <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="sechalmersmdsdgroup5.ecore#//hotel/payment/IPayment/debit.1/invoicable"/>
+            <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="sechalmersmdsdgroup5.ecore#//hotel/payment/IPayment/debit.1/customer"/>
+          </genOperations>
+          <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="sechalmersmdsdgroup5.ecore#//hotel/payment/IPayment/printReceipt">
+            <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="sechalmersmdsdgroup5.ecore#//hotel/payment/IPayment/printReceipt/invoicable"/>
+          </genOperations>
+        </genClasses>
+        <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="sechalmersmdsdgroup5.ecore#//hotel/payment/Invoicable">
+          <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+              createChild="true" ecoreFeature="ecore:EReference sechalmersmdsdgroup5.ecore#//hotel/payment/Invoicable/invoice"/>
+          <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="sechalmersmdsdgroup5.ecore#//hotel/payment/Invoicable/totalPrice"/>
+          <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="sechalmersmdsdgroup5.ecore#//hotel/payment/Invoicable/isPaid"/>
+        </genClasses>
+      </nestedGenPackages>
+      <nestedGenPackages xsi:type="genmodel:GenPackage" prefix="Clients" basePackage="sechalmersmdsdgroup5.hotel"
+          disposableProviderFactory="true" ecorePackage="sechalmersmdsdgroup5.ecore#//hotel/clients">
+        <genClasses xsi:type="genmodel:GenClass" ecoreClass="sechalmersmdsdgroup5.ecore#//hotel/clients/Guest">
+          <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+              propertySortChoices="true" ecoreFeature="ecore:EReference sechalmersmdsdgroup5.ecore#//hotel/clients/Guest/key"/>
+          <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+              propertySortChoices="true" ecoreFeature="ecore:EReference sechalmersmdsdgroup5.ecore#//hotel/clients/Guest/identity"/>
+        </genClasses>
+        <genClasses xsi:type="genmodel:GenClass" ecoreClass="sechalmersmdsdgroup5.ecore#//hotel/clients/Customer">
+          <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute sechalmersmdsdgroup5.ecore#//hotel/clients/Customer/paymentMethod"/>
+          <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+              propertySortChoices="true" ecoreFeature="ecore:EReference sechalmersmdsdgroup5.ecore#//hotel/clients/Customer/card"/>
+          <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+              propertySortChoices="true" ecoreFeature="ecore:EReference sechalmersmdsdgroup5.ecore#//hotel/clients/Customer/associatedAdress"/>
+          <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+              propertySortChoices="true" ecoreFeature="ecore:EReference sechalmersmdsdgroup5.ecore#//hotel/clients/Customer/identity"/>
+        </genClasses>
+        <genClasses xsi:type="genmodel:GenClass" ecoreClass="sechalmersmdsdgroup5.ecore#//hotel/clients/Address">
+          <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute sechalmersmdsdgroup5.ecore#//hotel/clients/Address/street"/>
+          <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute sechalmersmdsdgroup5.ecore#//hotel/clients/Address/zipCode"/>
+          <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute sechalmersmdsdgroup5.ecore#//hotel/clients/Address/zipArea"/>
+          <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute sechalmersmdsdgroup5.ecore#//hotel/clients/Address/country"/>
+          <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute sechalmersmdsdgroup5.ecore#//hotel/clients/Address/region"/>
+          <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute sechalmersmdsdgroup5.ecore#//hotel/clients/Address/municipality"/>
+          <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute sechalmersmdsdgroup5.ecore#//hotel/clients/Address/careOf"/>
+        </genClasses>
+        <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="sechalmersmdsdgroup5.ecore#//hotel/clients/Client">
+          <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+              propertySortChoices="true" ecoreFeature="ecore:EReference sechalmersmdsdgroup5.ecore#//hotel/clients/Client/invoice"/>
+        </genClasses>
+      </nestedGenPackages>
+      <nestedGenPackages xsi:type="genmodel:GenPackage" prefix="Identities" basePackage="sechalmersmdsdgroup5.hotel"
+          disposableProviderFactory="true" ecorePackage="sechalmersmdsdgroup5.ecore#//hotel/identities">
+        <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="sechalmersmdsdgroup5.ecore#//hotel/identities/Identity">
+          <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute sechalmersmdsdgroup5.ecore#//hotel/identities/Identity/name"/>
+          <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute sechalmersmdsdgroup5.ecore#//hotel/identities/Identity/idNumber"/>
+        </genClasses>
+        <genClasses xsi:type="genmodel:GenClass" ecoreClass="sechalmersmdsdgroup5.ecore#//hotel/identities/Organisation"/>
+        <genClasses xsi:type="genmodel:GenClass" ecoreClass="sechalmersmdsdgroup5.ecore#//hotel/identities/RealPerson">
+          <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute sechalmersmdsdgroup5.ecore#//hotel/identities/RealPerson/age"/>
+          <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute sechalmersmdsdgroup5.ecore#//hotel/identities/RealPerson/citizenship"/>
+        </genClasses>
+      </nestedGenPackages>
       <nestedGenPackages xsi:type="genmodel:GenPackage" prefix="Ordering" basePackage="sechalmersmdsdgroup5.hotel"
           disposableProviderFactory="true" ecorePackage="sechalmersmdsdgroup5.ecore#//hotel/ordering">
         <genClasses xsi:type="genmodel:GenClass" ecoreClass="sechalmersmdsdgroup5.ecore#//hotel/ordering/Order">
           <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
               propertySortChoices="true" ecoreFeature="ecore:EReference sechalmersmdsdgroup5.ecore#//hotel/ordering/Order/campaigns"/>
-          <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
-              createChild="true" ecoreFeature="ecore:EReference sechalmersmdsdgroup5.ecore#//hotel/ordering/Order/invoices"/>
           <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
               propertySortChoices="true" ecoreFeature="ecore:EReference sechalmersmdsdgroup5.ecore#//hotel/ordering/Order/bookings"/>
+          <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute sechalmersmdsdgroup5.ecore#//hotel/ordering/Order/creationDate"/>
           <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="sechalmersmdsdgroup5.ecore#//hotel/ordering/Order/calculatePrice"/>
-          <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="sechalmersmdsdgroup5.ecore#//hotel/ordering/Order/isPaid"/>
         </genClasses>
         <genClasses xsi:type="genmodel:GenClass" ecoreClass="sechalmersmdsdgroup5.ecore#//hotel/ordering/Campaign">
           <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute sechalmersmdsdgroup5.ecore#//hotel/ordering/Campaign/name"/>
@@ -192,9 +266,14 @@
           <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
               propertySortChoices="true" ecoreFeature="ecore:EReference sechalmersmdsdgroup5.ecore#//hotel/ordering/PreBooking/willBook"/>
         </genClasses>
-        <genClasses xsi:type="genmodel:GenClass" ecoreClass="sechalmersmdsdgroup5.ecore#//hotel/ordering/Invoice">
-          <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute sechalmersmdsdgroup5.ecore#//hotel/ordering/Invoice/isPaid"/>
-          <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute sechalmersmdsdgroup5.ecore#//hotel/ordering/Invoice/expiryDate"/>
+        <genClasses xsi:type="genmodel:GenClass" ecoreClass="sechalmersmdsdgroup5.ecore#//hotel/ordering/RoomBooking">
+          <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute sechalmersmdsdgroup5.ecore#//hotel/ordering/RoomBooking/startDate"/>
+          <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute sechalmersmdsdgroup5.ecore#//hotel/ordering/RoomBooking/endDate"/>
+          <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute sechalmersmdsdgroup5.ecore#//hotel/ordering/RoomBooking/checkinTime"/>
+          <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute sechalmersmdsdgroup5.ecore#//hotel/ordering/RoomBooking/checkoutTime"/>
+          <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+              propertySortChoices="true" ecoreFeature="ecore:EReference sechalmersmdsdgroup5.ecore#//hotel/ordering/RoomBooking/bookedRoom"/>
+          <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute sechalmersmdsdgroup5.ecore#//hotel/ordering/RoomBooking/isPaid"/>
         </genClasses>
         <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="sechalmersmdsdgroup5.ecore#//hotel/ordering/IOrder">
           <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="sechalmersmdsdgroup5.ecore#//hotel/ordering/IOrder/createBooking">
@@ -240,81 +319,19 @@
             <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="sechalmersmdsdgroup5.ecore#//hotel/ordering/ICheckInCheckOut/checkOut/guest"/>
             <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="sechalmersmdsdgroup5.ecore#//hotel/ordering/ICheckInCheckOut/checkOut/booking"/>
           </genOperations>
-          <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="sechalmersmdsdgroup5.ecore#//hotel/ordering/ICheckInCheckOut/giveOutKeycard">
-            <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="sechalmersmdsdgroup5.ecore#//hotel/ordering/ICheckInCheckOut/giveOutKeycard/identity"/>
-            <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="sechalmersmdsdgroup5.ecore#//hotel/ordering/ICheckInCheckOut/giveOutKeycard/keycard"/>
+          <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="sechalmersmdsdgroup5.ecore#//hotel/ordering/ICheckInCheckOut/giveOutKey">
+            <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="sechalmersmdsdgroup5.ecore#//hotel/ordering/ICheckInCheckOut/giveOutKey/identity"/>
+            <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="sechalmersmdsdgroup5.ecore#//hotel/ordering/ICheckInCheckOut/giveOutKey/key"/>
           </genOperations>
-          <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="sechalmersmdsdgroup5.ecore#//hotel/ordering/ICheckInCheckOut/takeBackKeycard">
-            <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="sechalmersmdsdgroup5.ecore#//hotel/ordering/ICheckInCheckOut/takeBackKeycard/keycard"/>
+          <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="sechalmersmdsdgroup5.ecore#//hotel/ordering/ICheckInCheckOut/takeBackKey">
+            <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="sechalmersmdsdgroup5.ecore#//hotel/ordering/ICheckInCheckOut/takeBackKey/key"/>
           </genOperations>
         </genClasses>
         <genClasses xsi:type="genmodel:GenClass" ecoreClass="sechalmersmdsdgroup5.ecore#//hotel/ordering/OrdinaryPreOrder"/>
         <genClasses xsi:type="genmodel:GenClass" ecoreClass="sechalmersmdsdgroup5.ecore#//hotel/ordering/PackagePreOrder"/>
-        <genClasses xsi:type="genmodel:GenClass" ecoreClass="sechalmersmdsdgroup5.ecore#//hotel/ordering/RoomBooking">
-          <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute sechalmersmdsdgroup5.ecore#//hotel/ordering/RoomBooking/startDate"/>
-          <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute sechalmersmdsdgroup5.ecore#//hotel/ordering/RoomBooking/endDate"/>
-          <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute sechalmersmdsdgroup5.ecore#//hotel/ordering/RoomBooking/checkinTime"/>
-          <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute sechalmersmdsdgroup5.ecore#//hotel/ordering/RoomBooking/checkoutTime"/>
-          <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
-              propertySortChoices="true" ecoreFeature="ecore:EReference sechalmersmdsdgroup5.ecore#//hotel/ordering/RoomBooking/bookedRoom"/>
-          <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute sechalmersmdsdgroup5.ecore#//hotel/ordering/RoomBooking/isPaid"/>
-        </genClasses>
-      </nestedGenPackages>
-      <nestedGenPackages xsi:type="genmodel:GenPackage" prefix="Clients" basePackage="sechalmersmdsdgroup5.hotel"
-          disposableProviderFactory="true" ecorePackage="sechalmersmdsdgroup5.ecore#//hotel/clients">
-        <genClasses xsi:type="genmodel:GenClass" ecoreClass="sechalmersmdsdgroup5.ecore#//hotel/clients/Customer">
-          <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute sechalmersmdsdgroup5.ecore#//hotel/clients/Customer/paymentMethod"/>
-          <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
-              propertySortChoices="true" ecoreFeature="ecore:EReference sechalmersmdsdgroup5.ecore#//hotel/clients/Customer/card"/>
-          <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
-              propertySortChoices="true" ecoreFeature="ecore:EReference sechalmersmdsdgroup5.ecore#//hotel/clients/Customer/associatedAdress"/>
-          <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
-              propertySortChoices="true" ecoreFeature="ecore:EReference sechalmersmdsdgroup5.ecore#//hotel/clients/Customer/identity"/>
-        </genClasses>
-        <genClasses xsi:type="genmodel:GenClass" ecoreClass="sechalmersmdsdgroup5.ecore#//hotel/clients/Address">
-          <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute sechalmersmdsdgroup5.ecore#//hotel/clients/Address/street"/>
-          <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute sechalmersmdsdgroup5.ecore#//hotel/clients/Address/zipCode"/>
-          <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute sechalmersmdsdgroup5.ecore#//hotel/clients/Address/zipArea"/>
-          <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute sechalmersmdsdgroup5.ecore#//hotel/clients/Address/country"/>
-          <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute sechalmersmdsdgroup5.ecore#//hotel/clients/Address/region"/>
-          <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute sechalmersmdsdgroup5.ecore#//hotel/clients/Address/municipality"/>
-          <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute sechalmersmdsdgroup5.ecore#//hotel/clients/Address/careOf"/>
-        </genClasses>
-        <genClasses xsi:type="genmodel:GenClass" ecoreClass="sechalmersmdsdgroup5.ecore#//hotel/clients/Guest">
-          <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
-              propertySortChoices="true" ecoreFeature="ecore:EReference sechalmersmdsdgroup5.ecore#//hotel/clients/Guest/key"/>
-          <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
-              propertySortChoices="true" ecoreFeature="ecore:EReference sechalmersmdsdgroup5.ecore#//hotel/clients/Guest/identity"/>
-        </genClasses>
-      </nestedGenPackages>
-      <nestedGenPackages xsi:type="genmodel:GenPackage" prefix="Payment" basePackage="sechalmersmdsdgroup5.hotel"
-          disposableProviderFactory="true" ecorePackage="sechalmersmdsdgroup5.ecore#//hotel/payment">
-        <genEnums xsi:type="genmodel:GenEnum" typeSafeEnumCompatible="false" ecoreEnum="sechalmersmdsdgroup5.ecore#//hotel/payment/PaymentMethod"/>
-        <genClasses xsi:type="genmodel:GenClass" ecoreClass="sechalmersmdsdgroup5.ecore#//hotel/payment/CreditCard">
-          <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute sechalmersmdsdgroup5.ecore#//hotel/payment/CreditCard/name"/>
-          <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute sechalmersmdsdgroup5.ecore#//hotel/payment/CreditCard/expiryMonth"/>
-          <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute sechalmersmdsdgroup5.ecore#//hotel/payment/CreditCard/expiryYear"/>
-          <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute sechalmersmdsdgroup5.ecore#//hotel/payment/CreditCard/number"/>
-          <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute sechalmersmdsdgroup5.ecore#//hotel/payment/CreditCard/ccv"/>
-        </genClasses>
-        <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="sechalmersmdsdgroup5.ecore#//hotel/payment/IPayment">
-          <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="sechalmersmdsdgroup5.ecore#//hotel/payment/IPayment/verifyPaymentInformation">
-            <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="sechalmersmdsdgroup5.ecore#//hotel/payment/IPayment/verifyPaymentInformation/paymentInformation"/>
-          </genOperations>
-          <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="sechalmersmdsdgroup5.ecore#//hotel/payment/IPayment/debit">
-            <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="sechalmersmdsdgroup5.ecore#//hotel/payment/IPayment/debit/order"/>
-          </genOperations>
-        </genClasses>
-      </nestedGenPackages>
-      <nestedGenPackages xsi:type="genmodel:GenPackage" prefix="Identities" basePackage="sechalmersmdsdgroup5.hotel"
-          disposableProviderFactory="true" ecorePackage="sechalmersmdsdgroup5.ecore#//hotel/identities">
-        <genClasses xsi:type="genmodel:GenClass" ecoreClass="sechalmersmdsdgroup5.ecore#//hotel/identities/RealPerson">
-          <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute sechalmersmdsdgroup5.ecore#//hotel/identities/RealPerson/age"/>
-        </genClasses>
-        <genClasses xsi:type="genmodel:GenClass" ecoreClass="sechalmersmdsdgroup5.ecore#//hotel/identities/Organisation"/>
-        <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="sechalmersmdsdgroup5.ecore#//hotel/identities/Identity">
-          <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute sechalmersmdsdgroup5.ecore#//hotel/identities/Identity/name"/>
-          <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute sechalmersmdsdgroup5.ecore#//hotel/identities/Identity/idNumber"/>
+        <genClasses xsi:type="genmodel:GenClass" ecoreClass="sechalmersmdsdgroup5.ecore#//hotel/ordering/Invoice">
+          <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute sechalmersmdsdgroup5.ecore#//hotel/ordering/Invoice/isPaid"/>
+          <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute sechalmersmdsdgroup5.ecore#//hotel/ordering/Invoice/expiryDate"/>
         </genClasses>
       </nestedGenPackages>
       <nestedGenPackages xsi:type="genmodel:GenPackage" prefix="Personnel" basePackage="sechalmersmdsdgroup5.hotel"
@@ -418,8 +435,8 @@
           <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="sechalmersmdsdgroup5.ecore#//hotel/search/ISearch/searchBookingsNotCheckedIn">
             <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="sechalmersmdsdgroup5.ecore#//hotel/search/ISearch/searchBookingsNotCheckedIn/query"/>
           </genOperations>
-          <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="sechalmersmdsdgroup5.ecore#//hotel/search/ISearch/searchKeycard">
-            <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="sechalmersmdsdgroup5.ecore#//hotel/search/ISearch/searchKeycard/query"/>
+          <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="sechalmersmdsdgroup5.ecore#//hotel/search/ISearch/searchKey">
+            <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="sechalmersmdsdgroup5.ecore#//hotel/search/ISearch/searchKey/query"/>
           </genOperations>
         </genClasses>
         <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="sechalmersmdsdgroup5.ecore#//hotel/search/SearchResult">

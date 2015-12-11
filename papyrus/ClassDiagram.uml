@@ -176,12 +176,14 @@
         <packagedElement xmi:type="uml:Class" xmi:id="_st4FoJOAEeWEKYEtRmghUQ" name="Guest">
           <ownedAttribute xmi:type="uml:Property" xmi:id="_i8pT4JboEeWGQOCCfM2qyw" name="key" type="_ChtUMJQXEeWEKYEtRmghUQ"/>
           <ownedAttribute xmi:type="uml:Property" xmi:id="_pKxU0JOMEeWEKYEtRmghUQ" name="identity" type="_vWo3oJOAEeWEKYEtRmghUQ" aggregation="shared" association="_pKwtwJOMEeWEKYEtRmghUQ"/>
+          <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_pAv-EKAtEeWRM8HqbnnQEA" client="_st4FoJOAEeWEKYEtRmghUQ" supplier="_0CgQwKAsEeWRM8HqbnnQEA" contract="_0CgQwKAsEeWRM8HqbnnQEA"/>
         </packagedElement>
         <packagedElement xmi:type="uml:Class" xmi:id="_7PSgoJOAEeWEKYEtRmghUQ" name="Customer">
           <ownedAttribute xmi:type="uml:Property" xmi:id="_5ipv4JRVEeWEKYEtRmghUQ" name="paymentMethod" visibility="private" type="_90_gwJqVEeWXppCtG_WnKw"/>
           <ownedAttribute xmi:type="uml:Property" xmi:id="_cBxPcJRWEeWEKYEtRmghUQ" name="card" type="_YJJ_IJRWEeWEKYEtRmghUQ" aggregation="shared" association="_cBwoYJRWEeWEKYEtRmghUQ"/>
           <ownedAttribute xmi:type="uml:Property" xmi:id="_klB_wZqSEeWXppCtG_WnKw" name="associatedAdress" type="_-3k78JqREeWXppCtG_WnKw" aggregation="shared" association="_kk9uUJqSEeWXppCtG_WnKw"/>
           <ownedAttribute xmi:type="uml:Property" xmi:id="_9j5vs5QREeWEKYEtRmghUQ" name="identity" type="_8icKkJOAEeWEKYEtRmghUQ" aggregation="shared" association="_9j5IoJQREeWEKYEtRmghUQ"/>
+          <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_no9EsKAtEeWRM8HqbnnQEA" client="_7PSgoJOAEeWEKYEtRmghUQ" supplier="_0CgQwKAsEeWRM8HqbnnQEA" contract="_0CgQwKAsEeWRM8HqbnnQEA"/>
         </packagedElement>
         <packagedElement xmi:type="uml:Realization" xmi:id="_DwDfkJbpEeWGQOCCfM2qyw" client="_st4FoJOAEeWEKYEtRmghUQ" supplier="_yo2uEJboEeWGQOCCfM2qyw"/>
         <packagedElement xmi:type="uml:Class" xmi:id="_-3k78JqREeWXppCtG_WnKw" name="Address">
@@ -206,6 +208,9 @@
           <ownedAttribute xmi:type="uml:Property" xmi:id="_7L_JEJqTEeWXppCtG_WnKw" name="careOf">
             <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
           </ownedAttribute>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Interface" xmi:id="_0CgQwKAsEeWRM8HqbnnQEA" name="Client">
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_9B67c6AvEeWRM8HqbnnQEA" name="invoice" type="_3gRasJRQEeWEKYEtRmghUQ" aggregation="shared" association="_9B67cKAvEeWRM8HqbnnQEA"/>
         </packagedElement>
       </packagedElement>
       <packagedElement xmi:type="uml:Package" xmi:id="_0zjE4JODEeWEKYEtRmghUQ" name="log">
@@ -661,10 +666,6 @@
             <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_nq4hMJUSEeWGQOCCfM2qyw"/>
             <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_nq69cJUSEeWGQOCCfM2qyw" value="*"/>
           </ownedAttribute>
-          <ownedAttribute xmi:type="uml:Property" xmi:id="_W0mgkJUSEeWGQOCCfM2qyw" name="invoices" type="_3gRasJRQEeWEKYEtRmghUQ" aggregation="composite" association="_W0lScJUSEeWGQOCCfM2qyw">
-            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_yInEUJUSEeWGQOCCfM2qyw"/>
-            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_yIoScJUSEeWGQOCCfM2qyw" value="*"/>
-          </ownedAttribute>
           <ownedAttribute xmi:type="uml:Property" xmi:id="_NRYd4JUSEeWGQOCCfM2qyw" name="bookings" type="_8ormYJOJEeWEKYEtRmghUQ" aggregation="shared" association="_NRNewJUSEeWGQOCCfM2qyw">
             <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_V0l1EJUSEeWGQOCCfM2qyw"/>
             <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_V0pfcJUSEeWGQOCCfM2qyw" value="*"/>
@@ -674,6 +675,7 @@
             <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_M1dFgJ9HEeW5UY5BQ7hdQQ" value="1"/>
             <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_M1fhwJ9HEeW5UY5BQ7hdQQ" value="1"/>
           </ownedAttribute>
+          <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_3LB5MKAyEeWDjIMsRDMNyg" client="_f1YaIJOJEeWEKYEtRmghUQ" supplier="_BDMDQJ9FEeW5UY5BQ7hdQQ" contract="_BDMDQJ9FEeW5UY5BQ7hdQQ"/>
           <ownedOperation xmi:type="uml:Operation" xmi:id="_wS58gJOJEeWEKYEtRmghUQ" name="calculatePrice">
             <ownedParameter xmi:type="uml:Parameter" xmi:id="_69V3cJy0EeWonJqBvx1hUQ" name="return" direction="return">
               <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#double"/>
@@ -702,6 +704,7 @@
           <ownedAttribute xmi:type="uml:Property" xmi:id="_nKxr4Jy0EeWonJqBvx1hUQ" name="isPaid">
             <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
           </ownedAttribute>
+          <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_QkrpEKAzEeWDjIMsRDMNyg" client="_8ormYJOJEeWEKYEtRmghUQ" supplier="_BDMDQJ9FEeW5UY5BQ7hdQQ" contract="_BDMDQJ9FEeW5UY5BQ7hdQQ"/>
         </packagedElement>
         <packagedElement xmi:type="uml:Class" xmi:id="_2hOYgJRQEeWEKYEtRmghUQ" name="Campaign" visibility="public">
           <ownedAttribute xmi:type="uml:Property" xmi:id="_LTLTUJTnEeWM7foaxE7ztg" name="name" visibility="private">
@@ -878,6 +881,7 @@
           <ownedAttribute xmi:type="uml:Property" xmi:id="_sIcRMJ9QEeW5UY5BQ7hdQQ" name="creationDate" visibility="private">
             <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EDate"/>
           </ownedAttribute>
+          <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_alDh0KAzEeWDjIMsRDMNyg" client="_4zgHsJRREeWEKYEtRmghUQ" supplier="_BDMDQJ9FEeW5UY5BQ7hdQQ" contract="_BDMDQJ9FEeW5UY5BQ7hdQQ"/>
         </packagedElement>
         <packagedElement xmi:type="uml:Class" xmi:id="_6sH2MJRREeWEKYEtRmghUQ" name="ServiceBlueprint">
           <ownedAttribute xmi:type="uml:Property" xmi:id="_KbVbkJXHEeWibcI8pRhyBw" name="basePrice" visibility="private">
@@ -932,7 +936,7 @@
           </ownedOperation>
           <ownedOperation xmi:type="uml:Operation" xmi:id="_mUztYJ9KEeW5UY5BQ7hdQQ" name="debit">
             <ownedParameter xmi:type="uml:Parameter" xmi:id="_vbdv4J9KEeW5UY5BQ7hdQQ" name="invoicable" type="_BDMDQJ9FEeW5UY5BQ7hdQQ"/>
-            <ownedParameter xmi:type="uml:Parameter" xmi:id="_5oI_QJ9KEeW5UY5BQ7hdQQ" name="customer" type="_7PSgoJOAEeWEKYEtRmghUQ"/>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_5oI_QJ9KEeW5UY5BQ7hdQQ" name="customer" type="_0CgQwKAsEeWRM8HqbnnQEA"/>
           </ownedOperation>
           <ownedOperation xmi:type="uml:Operation" xmi:id="_0rRKsJ9MEeW5UY5BQ7hdQQ" name="printReceipt">
             <ownedParameter xmi:type="uml:Parameter" xmi:id="_SbpDMJ9NEeW5UY5BQ7hdQQ" name="invoicable" type="_BDMDQJ9FEeW5UY5BQ7hdQQ"/>
@@ -940,12 +944,21 @@
         </packagedElement>
         <packagedElement xmi:type="uml:Enumeration" xmi:id="_90_gwJqVEeWXppCtG_WnKw" name="PaymentMethod"/>
         <packagedElement xmi:type="uml:Interface" xmi:id="_BDMDQJ9FEeW5UY5BQ7hdQQ" name="Invoicable">
-          <ownedOperation xmi:type="uml:Operation" xmi:id="_NvMb0J9FEeW5UY5BQ7hdQQ" name="totalPrice"/>
-          <ownedOperation xmi:type="uml:Operation" xmi:id="_5KsnkJ9FEeW5UY5BQ7hdQQ" name="isPaid"/>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_5aGVoKAuEeWRM8HqbnnQEA" name="invoice" type="_3gRasJRQEeWEKYEtRmghUQ" aggregation="composite" association="_5aDSUKAuEeWRM8HqbnnQEA">
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_eSfu0KAxEeWOoL20tWoV8A"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_eSqt8KAxEeWOoL20tWoV8A" value="*"/>
+          </ownedAttribute>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_NvMb0J9FEeW5UY5BQ7hdQQ" name="totalPrice">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_hFlB0KAuEeWRM8HqbnnQEA" name="return" direction="return">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#double"/>
+            </ownedParameter>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_5KsnkJ9FEeW5UY5BQ7hdQQ" name="isPaid">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_ktC3wKAuEeWRM8HqbnnQEA" name="return" direction="return">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+            </ownedParameter>
+          </ownedOperation>
         </packagedElement>
-        <packagedElement xmi:type="uml:Realization" xmi:id="_kkuzsJ9GEeW5UY5BQ7hdQQ" client="_BDMDQJ9FEeW5UY5BQ7hdQQ" supplier="_f1YaIJOJEeWEKYEtRmghUQ"/>
-        <packagedElement xmi:type="uml:Realization" xmi:id="_spn3MJ9GEeW5UY5BQ7hdQQ" client="_BDMDQJ9FEeW5UY5BQ7hdQQ" supplier="_8ormYJOJEeWEKYEtRmghUQ"/>
-        <packagedElement xmi:type="uml:Realization" xmi:id="_yaPK8J9GEeW5UY5BQ7hdQQ" client="_BDMDQJ9FEeW5UY5BQ7hdQQ" supplier="_4zgHsJRREeWEKYEtRmghUQ"/>
       </packagedElement>
     </packagedElement>
     <packagedElement xmi:type="uml:Association" xmi:id="_tZ_A4JOEEeWEKYEtRmghUQ" visibility="public" memberEnd="_tZ_A45OEEeWEKYEtRmghUQ _tZ_n8JOEEeWEKYEtRmghUQ">
@@ -1063,12 +1076,6 @@
       </eAnnotations>
       <ownedEnd xmi:type="uml:Property" xmi:id="_NRXPwJUSEeWGQOCCfM2qyw" name="bookingOf" type="_f1YaIJOJEeWEKYEtRmghUQ" association="_NRNewJUSEeWGQOCCfM2qyw"/>
     </packagedElement>
-    <packagedElement xmi:type="uml:Association" xmi:id="_W0lScJUSEeWGQOCCfM2qyw" memberEnd="_W0l5gpUSEeWGQOCCfM2qyw _W0mgkJUSEeWGQOCCfM2qyw">
-      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_W0l5gJUSEeWGQOCCfM2qyw" source="org.eclipse.papyrus">
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_W0l5gZUSEeWGQOCCfM2qyw" key="nature" value="UML_Nature"/>
-      </eAnnotations>
-      <ownedEnd xmi:type="uml:Property" xmi:id="_W0l5gpUSEeWGQOCCfM2qyw" name="invoiceFor" type="_f1YaIJOJEeWEKYEtRmghUQ" association="_W0lScJUSEeWGQOCCfM2qyw"/>
-    </packagedElement>
     <packagedElement xmi:type="uml:Association" xmi:id="_XV9hMJUSEeWGQOCCfM2qyw" memberEnd="_XV-IQpUSEeWGQOCCfM2qyw _XV-IQ5USEeWGQOCCfM2qyw">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_XV-IQJUSEeWGQOCCfM2qyw" source="org.eclipse.papyrus">
         <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_XV-IQZUSEeWGQOCCfM2qyw" key="nature" value="UML_Nature"/>
@@ -1180,6 +1187,18 @@
         <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_z4ee0Zy6EeWo8dNNGRJY3w" key="nature" value="UML_Nature"/>
       </eAnnotations>
       <ownedEnd xmi:type="uml:Property" xmi:id="_z4fF4Jy6EeWo8dNNGRJY3w" name="inheriting" type="_rnubgJy4EeWo8dNNGRJY3w" association="_z4d3wJy6EeWo8dNNGRJY3w"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_5aDSUKAuEeWRM8HqbnnQEA" memberEnd="_5aGVoKAuEeWRM8HqbnnQEA _5aG8sKAuEeWRM8HqbnnQEA">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_5aD5YKAuEeWRM8HqbnnQEA" source="org.eclipse.papyrus">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_5aEgcKAuEeWRM8HqbnnQEA" key="nature" value="UML_Nature"/>
+      </eAnnotations>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_5aG8sKAuEeWRM8HqbnnQEA" name="invoicable" type="_BDMDQJ9FEeW5UY5BQ7hdQQ" association="_5aDSUKAuEeWRM8HqbnnQEA"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_9B67cKAvEeWRM8HqbnnQEA" memberEnd="_9B67c6AvEeWRM8HqbnnQEA _9B67dKAvEeWRM8HqbnnQEA">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_9B67caAvEeWRM8HqbnnQEA" source="org.eclipse.papyrus">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_9B67cqAvEeWRM8HqbnnQEA" key="nature" value="UML_Nature"/>
+      </eAnnotations>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_9B67dKAvEeWRM8HqbnnQEA" name="client" type="_0CgQwKAsEeWRM8HqbnnQEA" association="_9B67cKAvEeWRM8HqbnnQEA"/>
     </packagedElement>
     <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_0lMEUJN5EeWEKYEtRmghUQ">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_0lNScJN5EeWEKYEtRmghUQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
