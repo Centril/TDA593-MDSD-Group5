@@ -291,7 +291,7 @@
         <type xmi:type="uml:Interface" href="ClassDiagram.uml#_BDMDQJ9FEeW5UY5BQ7hdQQ"/>
       </ownedParameter>
       <ownedParameter xmi:type="uml:Parameter" xmi:id="_pA5XwqAcEeWgLM8IXIN21w" name="customer">
-        <type xmi:type="uml:Class" href="ClassDiagram.uml#_7PSgoJOAEeWEKYEtRmghUQ"/>
+        <type xmi:type="uml:Interface" href="ClassDiagram.uml#_0CgQwKAsEeWRM8HqbnnQEA"/>
       </ownedParameter>
     </ownedOperation>
     <ownedOperation xmi:type="uml:Operation" xmi:id="_pA5-0KAcEeWgLM8IXIN21w" name="debit" visibility="public">
