@@ -2,7 +2,7 @@
  */
 package sechalmersmdsdgroup5.hotel.payment;
 
-import sechalmersmdsdgroup5.hotel.ordering.Order;
+import sechalmersmdsdgroup5.hotel.clients.Client;
 
 /**
  * <!-- begin-user-doc -->
@@ -25,9 +25,25 @@ public interface IPayment {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model orderRequired="true" orderOrdered="false"
+	 * @model invoicableRequired="true" invoicableOrdered="false"
 	 * @generated
 	 */
-	void debit(Order order);
+	void debit(Invoicable invoicable);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model invoicableRequired="true" invoicableOrdered="false" customerRequired="true" customerOrdered="false"
+	 * @generated
+	 */
+	void debit(Invoicable invoicable, Client customer);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model invoicableRequired="true" invoicableOrdered="false"
+	 * @generated
+	 */
+	void printReceipt(Invoicable invoicable);
 
 } // IPayment

@@ -2,10 +2,16 @@
  */
 package sechalmersmdsdgroup5.hotel.services.impl;
 
+import java.util.Collection;
+import java.util.Date;
+import java.util.List;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
+import org.eclipse.emf.ecore.util.BasicInternalEList;
+import sechalmersmdsdgroup5.hotel.ordering.Invoice;
 import sechalmersmdsdgroup5.hotel.services.Service;
 
 /**
@@ -16,13 +22,25 @@ import sechalmersmdsdgroup5.hotel.services.Service;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link sechalmersmdsdgroup5.hotel.services.impl.ServiceImpl#getInvoice <em>Invoice</em>}</li>
  *   <li>{@link sechalmersmdsdgroup5.hotel.services.impl.ServiceImpl#getPrice <em>Price</em>}</li>
  *   <li>{@link sechalmersmdsdgroup5.hotel.services.impl.ServiceImpl#isPaid <em>Is Paid</em>}</li>
+ *   <li>{@link sechalmersmdsdgroup5.hotel.services.impl.ServiceImpl#getCreationDate <em>Creation Date</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class ServiceImpl extends MinimalEObjectImpl.Container implements Service {
+	/**
+	 * The cached value of the '{@link #getInvoice() <em>Invoice</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getInvoice()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Invoice> invoice;
+
 	/**
 	 * The default value of the '{@link #getPrice() <em>Price</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -64,6 +82,26 @@ public class ServiceImpl extends MinimalEObjectImpl.Container implements Service
 	protected boolean isPaid = IS_PAID_EDEFAULT;
 
 	/**
+	 * The default value of the '{@link #getCreationDate() <em>Creation Date</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCreationDate()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final Date CREATION_DATE_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getCreationDate() <em>Creation Date</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCreationDate()
+	 * @generated
+	 * @ordered
+	 */
+	protected Date creationDate = CREATION_DATE_EDEFAULT;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -80,6 +118,18 @@ public class ServiceImpl extends MinimalEObjectImpl.Container implements Service
 	@Override
 	protected EClass eStaticClass() {
 		return ServicesPackageImpl.Literals.SERVICE;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public List<Invoice> getInvoice() {
+		if (invoice == null) {
+			invoice = new BasicInternalEList<Invoice>(Invoice.class);
+		}
+		return invoice;
 	}
 
 	/**
@@ -123,13 +173,46 @@ public class ServiceImpl extends MinimalEObjectImpl.Container implements Service
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Date getCreationDate() {
+		return creationDate;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setCreationDate(Date newCreationDate) {
+		creationDate = newCreationDate;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public double totalPrice() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case ServicesPackageImpl.SERVICE__INVOICE:
+				return getInvoice();
 			case ServicesPackageImpl.SERVICE__PRICE:
 				return getPrice();
 			case ServicesPackageImpl.SERVICE__IS_PAID:
 				return isPaid();
+			case ServicesPackageImpl.SERVICE__CREATION_DATE:
+				return getCreationDate();
 		}
 		return eDynamicGet(featureID, resolve, coreType);
 	}
@@ -139,14 +222,22 @@ public class ServiceImpl extends MinimalEObjectImpl.Container implements Service
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case ServicesPackageImpl.SERVICE__INVOICE:
+				getInvoice().clear();
+				getInvoice().addAll((Collection<? extends Invoice>)newValue);
+				return;
 			case ServicesPackageImpl.SERVICE__PRICE:
 				setPrice((Double)newValue);
 				return;
 			case ServicesPackageImpl.SERVICE__IS_PAID:
 				setIsPaid((Boolean)newValue);
+				return;
+			case ServicesPackageImpl.SERVICE__CREATION_DATE:
+				setCreationDate((Date)newValue);
 				return;
 		}
 		eDynamicSet(featureID, newValue);
@@ -160,11 +251,17 @@ public class ServiceImpl extends MinimalEObjectImpl.Container implements Service
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case ServicesPackageImpl.SERVICE__INVOICE:
+				getInvoice().clear();
+				return;
 			case ServicesPackageImpl.SERVICE__PRICE:
 				setPrice(PRICE_EDEFAULT);
 				return;
 			case ServicesPackageImpl.SERVICE__IS_PAID:
 				setIsPaid(IS_PAID_EDEFAULT);
+				return;
+			case ServicesPackageImpl.SERVICE__CREATION_DATE:
+				setCreationDate(CREATION_DATE_EDEFAULT);
 				return;
 		}
 		eDynamicUnset(featureID);
@@ -178,10 +275,14 @@ public class ServiceImpl extends MinimalEObjectImpl.Container implements Service
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case ServicesPackageImpl.SERVICE__INVOICE:
+				return invoice != null && !invoice.isEmpty();
 			case ServicesPackageImpl.SERVICE__PRICE:
 				return price != PRICE_EDEFAULT;
 			case ServicesPackageImpl.SERVICE__IS_PAID:
 				return isPaid != IS_PAID_EDEFAULT;
+			case ServicesPackageImpl.SERVICE__CREATION_DATE:
+				return CREATION_DATE_EDEFAULT == null ? creationDate != null : !CREATION_DATE_EDEFAULT.equals(creationDate);
 		}
 		return eDynamicIsSet(featureID);
 	}
@@ -200,6 +301,8 @@ public class ServiceImpl extends MinimalEObjectImpl.Container implements Service
 		result.append(price);
 		result.append(", isPaid: ");
 		result.append(isPaid);
+		result.append(", creationDate: ");
+		result.append(creationDate);
 		result.append(')');
 		return result.toString();
 	}

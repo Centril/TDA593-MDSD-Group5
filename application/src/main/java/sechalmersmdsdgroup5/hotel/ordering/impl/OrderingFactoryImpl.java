@@ -67,10 +67,10 @@ public class OrderingFactoryImpl extends EFactoryImpl implements OrderingFactory
 			case OrderingPackageImpl.ORDER: return (EObject)createOrder();
 			case OrderingPackageImpl.CAMPAIGN: return (EObject)createCampaign();
 			case OrderingPackageImpl.PRE_BOOKING: return (EObject)createPreBooking();
-			case OrderingPackageImpl.INVOICE: return (EObject)createInvoice();
+			case OrderingPackageImpl.ROOM_BOOKING: return (EObject)createRoomBooking();
 			case OrderingPackageImpl.ORDINARY_PRE_ORDER: return (EObject)createOrdinaryPreOrder();
 			case OrderingPackageImpl.PACKAGE_PRE_ORDER: return (EObject)createPackagePreOrder();
-			case OrderingPackageImpl.ROOM_BOOKING: return (EObject)createRoomBooking();
+			case OrderingPackageImpl.INVOICE: return (EObject)createInvoice();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}

@@ -25,7 +25,7 @@ import sechalmersmdsdgroup5.hotel.payment.PaymentMethod;
  * @model
  * @generated
  */
-public interface Customer {
+public interface Customer extends Client {
 	/**
 	 * Returns the value of the '<em><b>Payment Method</b></em>' attribute.
 	 * The literals are from the enumeration {@link sechalmersmdsdgroup5.hotel.payment.PaymentMethod}.

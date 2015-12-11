@@ -13,6 +13,7 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
 import sechalmersmdsdgroup5.hotel.blacklist.impl.BlacklistPackageImpl;
 
 import sechalmersmdsdgroup5.hotel.clients.Address;
+import sechalmersmdsdgroup5.hotel.clients.Client;
 import sechalmersmdsdgroup5.hotel.clients.ClientsFactory;
 import sechalmersmdsdgroup5.hotel.clients.Customer;
 import sechalmersmdsdgroup5.hotel.clients.Guest;
@@ -88,6 +89,34 @@ public class ClientsPackageImpl extends EPackageImpl {
 	public static final ClientsPackageImpl eINSTANCE = sechalmersmdsdgroup5.hotel.clients.impl.ClientsPackageImpl.init();
 
 	/**
+	 * The meta object id for the '{@link sechalmersmdsdgroup5.hotel.clients.Client <em>Client</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see sechalmersmdsdgroup5.hotel.clients.Client
+	 * @see sechalmersmdsdgroup5.hotel.clients.impl.ClientsPackageImpl#getClient()
+	 * @generated
+	 */
+	public static final int CLIENT = 3;
+
+	/**
+	 * The feature id for the '<em><b>Invoice</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int CLIENT__INVOICE = 0;
+
+	/**
+	 * The number of structural features of the '<em>Client</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int CLIENT_FEATURE_COUNT = 1;
+
+	/**
 	 * The meta object id for the '{@link sechalmersmdsdgroup5.hotel.clients.impl.CustomerImpl <em>Customer</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -95,52 +124,7 @@ public class ClientsPackageImpl extends EPackageImpl {
 	 * @see sechalmersmdsdgroup5.hotel.clients.impl.ClientsPackageImpl#getCustomer()
 	 * @generated
 	 */
-	public static final int CUSTOMER = 0;
-
-	/**
-	 * The feature id for the '<em><b>Payment Method</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int CUSTOMER__PAYMENT_METHOD = 0;
-
-	/**
-	 * The feature id for the '<em><b>Card</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int CUSTOMER__CARD = 1;
-
-	/**
-	 * The feature id for the '<em><b>Associated Adress</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int CUSTOMER__ASSOCIATED_ADRESS = 2;
-
-	/**
-	 * The feature id for the '<em><b>Identity</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int CUSTOMER__IDENTITY = 3;
-
-	/**
-	 * The number of structural features of the '<em>Customer</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int CUSTOMER_FEATURE_COUNT = 4;
+	public static final int CUSTOMER = 1;
 
 	/**
 	 * The meta object id for the '{@link sechalmersmdsdgroup5.hotel.clients.impl.AddressImpl <em>Address</em>}' class.
@@ -150,7 +134,107 @@ public class ClientsPackageImpl extends EPackageImpl {
 	 * @see sechalmersmdsdgroup5.hotel.clients.impl.ClientsPackageImpl#getAddress()
 	 * @generated
 	 */
-	public static final int ADDRESS = 1;
+	public static final int ADDRESS = 2;
+
+	/**
+	 * The meta object id for the '{@link sechalmersmdsdgroup5.hotel.clients.impl.GuestImpl <em>Guest</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see sechalmersmdsdgroup5.hotel.clients.impl.GuestImpl
+	 * @see sechalmersmdsdgroup5.hotel.clients.impl.ClientsPackageImpl#getGuest()
+	 * @generated
+	 */
+	public static final int GUEST = 0;
+
+	/**
+	 * The feature id for the '<em><b>Invoice</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int GUEST__INVOICE = CLIENT__INVOICE;
+
+	/**
+	 * The feature id for the '<em><b>Key</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int GUEST__KEY = CLIENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Identity</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int GUEST__IDENTITY = CLIENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Guest</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int GUEST_FEATURE_COUNT = CLIENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Invoice</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int CUSTOMER__INVOICE = CLIENT__INVOICE;
+
+	/**
+	 * The feature id for the '<em><b>Payment Method</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int CUSTOMER__PAYMENT_METHOD = CLIENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Card</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int CUSTOMER__CARD = CLIENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Associated Adress</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int CUSTOMER__ASSOCIATED_ADRESS = CLIENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Identity</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int CUSTOMER__IDENTITY = CLIENT_FEATURE_COUNT + 3;
+
+	/**
+	 * The number of structural features of the '<em>Customer</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int CUSTOMER_FEATURE_COUNT = CLIENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Street</b></em>' attribute.
@@ -225,43 +309,6 @@ public class ClientsPackageImpl extends EPackageImpl {
 	public static final int ADDRESS_FEATURE_COUNT = 7;
 
 	/**
-	 * The meta object id for the '{@link sechalmersmdsdgroup5.hotel.clients.impl.GuestImpl <em>Guest</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see sechalmersmdsdgroup5.hotel.clients.impl.GuestImpl
-	 * @see sechalmersmdsdgroup5.hotel.clients.impl.ClientsPackageImpl#getGuest()
-	 * @generated
-	 */
-	public static final int GUEST = 2;
-
-	/**
-	 * The feature id for the '<em><b>Key</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int GUEST__KEY = 0;
-
-	/**
-	 * The feature id for the '<em><b>Identity</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int GUEST__IDENTITY = 1;
-
-	/**
-	 * The number of structural features of the '<em>Guest</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int GUEST_FEATURE_COUNT = 2;
-
-	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -274,6 +321,13 @@ public class ClientsPackageImpl extends EPackageImpl {
 	 * @generated
 	 */
 	private EClass addressEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass clientEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -332,9 +386,9 @@ public class ClientsPackageImpl extends EPackageImpl {
 		HotelPackageImpl theHotelPackage = (HotelPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(HotelPackageImpl.eNS_URI) instanceof HotelPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(HotelPackageImpl.eNS_URI) : HotelPackageImpl.eINSTANCE);
 		FacilitiesPackageImpl theFacilitiesPackage = (FacilitiesPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(FacilitiesPackageImpl.eNS_URI) instanceof FacilitiesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(FacilitiesPackageImpl.eNS_URI) : FacilitiesPackageImpl.eINSTANCE);
 		ServicesPackageImpl theServicesPackage = (ServicesPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ServicesPackageImpl.eNS_URI) instanceof ServicesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ServicesPackageImpl.eNS_URI) : ServicesPackageImpl.eINSTANCE);
-		OrderingPackageImpl theOrderingPackage = (OrderingPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(OrderingPackageImpl.eNS_URI) instanceof OrderingPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(OrderingPackageImpl.eNS_URI) : OrderingPackageImpl.eINSTANCE);
 		PaymentPackageImpl thePaymentPackage = (PaymentPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(PaymentPackageImpl.eNS_URI) instanceof PaymentPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(PaymentPackageImpl.eNS_URI) : PaymentPackageImpl.eINSTANCE);
 		IdentitiesPackageImpl theIdentitiesPackage = (IdentitiesPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(IdentitiesPackageImpl.eNS_URI) instanceof IdentitiesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(IdentitiesPackageImpl.eNS_URI) : IdentitiesPackageImpl.eINSTANCE);
+		OrderingPackageImpl theOrderingPackage = (OrderingPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(OrderingPackageImpl.eNS_URI) instanceof OrderingPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(OrderingPackageImpl.eNS_URI) : OrderingPackageImpl.eINSTANCE);
 		PersonnelPackageImpl thePersonnelPackage = (PersonnelPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(PersonnelPackageImpl.eNS_URI) instanceof PersonnelPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(PersonnelPackageImpl.eNS_URI) : PersonnelPackageImpl.eINSTANCE);
 		SchedulePackageImpl theSchedulePackage = (SchedulePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(SchedulePackageImpl.eNS_URI) instanceof SchedulePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(SchedulePackageImpl.eNS_URI) : SchedulePackageImpl.eINSTANCE);
 		LogPackageImpl theLogPackage = (LogPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(LogPackageImpl.eNS_URI) instanceof LogPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(LogPackageImpl.eNS_URI) : LogPackageImpl.eINSTANCE);
@@ -347,9 +401,9 @@ public class ClientsPackageImpl extends EPackageImpl {
 		theHotelPackage.createPackageContents();
 		theFacilitiesPackage.createPackageContents();
 		theServicesPackage.createPackageContents();
-		theOrderingPackage.createPackageContents();
 		thePaymentPackage.createPackageContents();
 		theIdentitiesPackage.createPackageContents();
+		theOrderingPackage.createPackageContents();
 		thePersonnelPackage.createPackageContents();
 		theSchedulePackage.createPackageContents();
 		theLogPackage.createPackageContents();
@@ -362,9 +416,9 @@ public class ClientsPackageImpl extends EPackageImpl {
 		theHotelPackage.initializePackageContents();
 		theFacilitiesPackage.initializePackageContents();
 		theServicesPackage.initializePackageContents();
-		theOrderingPackage.initializePackageContents();
 		thePaymentPackage.initializePackageContents();
 		theIdentitiesPackage.initializePackageContents();
+		theOrderingPackage.initializePackageContents();
 		thePersonnelPackage.initializePackageContents();
 		theSchedulePackage.initializePackageContents();
 		theLogPackage.initializePackageContents();
@@ -550,6 +604,33 @@ public class ClientsPackageImpl extends EPackageImpl {
 	}
 
 	/**
+	 * Returns the meta object for class '{@link sechalmersmdsdgroup5.hotel.clients.Client <em>Client</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Client</em>'.
+	 * @see sechalmersmdsdgroup5.hotel.clients.Client
+	 * @generated
+	 */
+	public EClass getClient() {
+		return clientEClass;
+	}
+
+
+	/**
+	 * Returns the meta object for the reference '{@link sechalmersmdsdgroup5.hotel.clients.Client#getInvoice <em>Invoice</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Invoice</em>'.
+	 * @see sechalmersmdsdgroup5.hotel.clients.Client#getInvoice()
+	 * @see #getClient()
+	 * @generated
+	 */
+	public EReference getClient_Invoice() {
+		return (EReference)clientEClass.getEStructuralFeatures().get(0);
+	}
+
+
+	/**
 	 * Returns the meta object for class '{@link sechalmersmdsdgroup5.hotel.clients.Guest <em>Guest</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -617,6 +698,10 @@ public class ClientsPackageImpl extends EPackageImpl {
 		isCreated = true;
 
 		// Create classes and their features
+		guestEClass = createEClass(GUEST);
+		createEReference(guestEClass, GUEST__KEY);
+		createEReference(guestEClass, GUEST__IDENTITY);
+
 		customerEClass = createEClass(CUSTOMER);
 		createEAttribute(customerEClass, CUSTOMER__PAYMENT_METHOD);
 		createEReference(customerEClass, CUSTOMER__CARD);
@@ -632,9 +717,8 @@ public class ClientsPackageImpl extends EPackageImpl {
 		createEAttribute(addressEClass, ADDRESS__MUNICIPALITY);
 		createEAttribute(addressEClass, ADDRESS__CARE_OF);
 
-		guestEClass = createEClass(GUEST);
-		createEReference(guestEClass, GUEST__KEY);
-		createEReference(guestEClass, GUEST__IDENTITY);
+		clientEClass = createEClass(CLIENT);
+		createEReference(clientEClass, CLIENT__INVOICE);
 	}
 
 	/**
@@ -661,17 +745,24 @@ public class ClientsPackageImpl extends EPackageImpl {
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
-		PaymentPackageImpl thePaymentPackage = (PaymentPackageImpl)EPackage.Registry.INSTANCE.getEPackage(PaymentPackageImpl.eNS_URI);
-		IdentitiesPackageImpl theIdentitiesPackage = (IdentitiesPackageImpl)EPackage.Registry.INSTANCE.getEPackage(IdentitiesPackageImpl.eNS_URI);
 		FacilitiesPackageImpl theFacilitiesPackage = (FacilitiesPackageImpl)EPackage.Registry.INSTANCE.getEPackage(FacilitiesPackageImpl.eNS_URI);
+		IdentitiesPackageImpl theIdentitiesPackage = (IdentitiesPackageImpl)EPackage.Registry.INSTANCE.getEPackage(IdentitiesPackageImpl.eNS_URI);
+		PaymentPackageImpl thePaymentPackage = (PaymentPackageImpl)EPackage.Registry.INSTANCE.getEPackage(PaymentPackageImpl.eNS_URI);
+		OrderingPackageImpl theOrderingPackage = (OrderingPackageImpl)EPackage.Registry.INSTANCE.getEPackage(OrderingPackageImpl.eNS_URI);
 
 		// Create type parameters
 
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
+		guestEClass.getESuperTypes().add(this.getClient());
+		customerEClass.getESuperTypes().add(this.getClient());
 
 		// Initialize classes and features; add operations and parameters
+		initEClass(guestEClass, Guest.class, "Guest", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getGuest_Key(), theFacilitiesPackage.getKey(), null, "key", null, 1, 1, Guest.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getGuest_Identity(), theIdentitiesPackage.getRealPerson(), null, "identity", null, 1, 1, Guest.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+
 		initEClass(customerEClass, Customer.class, "Customer", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getCustomer_PaymentMethod(), thePaymentPackage.getPaymentMethod(), "paymentMethod", null, 1, 1, Customer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getCustomer_Card(), thePaymentPackage.getCreditCard(), null, "card", null, 1, 1, Customer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -687,9 +778,8 @@ public class ClientsPackageImpl extends EPackageImpl {
 		initEAttribute(getAddress_Municipality(), ecorePackage.getEString(), "municipality", null, 1, 1, Address.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getAddress_CareOf(), ecorePackage.getEString(), "careOf", null, 1, 1, Address.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
-		initEClass(guestEClass, Guest.class, "Guest", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getGuest_Key(), theFacilitiesPackage.getKey(), null, "key", null, 1, 1, Guest.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getGuest_Identity(), theIdentitiesPackage.getRealPerson(), null, "identity", null, 1, 1, Guest.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEClass(clientEClass, Client.class, "Client", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getClient_Invoice(), theOrderingPackage.getInvoice(), null, "invoice", null, 1, 1, Client.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 	}
 
 	/**
@@ -812,6 +902,24 @@ public class ClientsPackageImpl extends EPackageImpl {
 		 * @generated
 		 */
 		public static final EAttribute ADDRESS__CARE_OF = eINSTANCE.getAddress_CareOf();
+
+		/**
+		 * The meta object literal for the '{@link sechalmersmdsdgroup5.hotel.clients.Client <em>Client</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see sechalmersmdsdgroup5.hotel.clients.Client
+		 * @see sechalmersmdsdgroup5.hotel.clients.impl.ClientsPackageImpl#getClient()
+		 * @generated
+		 */
+		public static final EClass CLIENT = eINSTANCE.getClient();
+
+		/**
+		 * The meta object literal for the '<em><b>Invoice</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		public static final EReference CLIENT__INVOICE = eINSTANCE.getClient_Invoice();
 
 		/**
 		 * The meta object literal for the '{@link sechalmersmdsdgroup5.hotel.clients.impl.GuestImpl <em>Guest</em>}' class.

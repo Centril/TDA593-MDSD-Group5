@@ -15,6 +15,7 @@ import sechalmersmdsdgroup5.hotel.identities.RealPerson;
  * </p>
  * <ul>
  *   <li>{@link sechalmersmdsdgroup5.hotel.identities.impl.RealPersonImpl#getAge <em>Age</em>}</li>
+ *   <li>{@link sechalmersmdsdgroup5.hotel.identities.impl.RealPersonImpl#getCitizenship <em>Citizenship</em>}</li>
  * </ul>
  *
  * @generated
@@ -39,6 +40,26 @@ public class RealPersonImpl extends IdentityImpl implements RealPerson {
 	 * @ordered
 	 */
 	protected int age = AGE_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getCitizenship() <em>Citizenship</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCitizenship()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String CITIZENSHIP_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getCitizenship() <em>Citizenship</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCitizenship()
+	 * @generated
+	 * @ordered
+	 */
+	protected String citizenship = CITIZENSHIP_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -82,6 +103,24 @@ public class RealPersonImpl extends IdentityImpl implements RealPerson {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getCitizenship() {
+		return citizenship;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setCitizenship(String newCitizenship) {
+		citizenship = newCitizenship;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -91,6 +130,8 @@ public class RealPersonImpl extends IdentityImpl implements RealPerson {
 				return getIdNumber();
 			case IdentitiesPackageImpl.REAL_PERSON__AGE:
 				return getAge();
+			case IdentitiesPackageImpl.REAL_PERSON__CITIZENSHIP:
+				return getCitizenship();
 		}
 		return eDynamicGet(featureID, resolve, coreType);
 	}
@@ -111,6 +152,9 @@ public class RealPersonImpl extends IdentityImpl implements RealPerson {
 				return;
 			case IdentitiesPackageImpl.REAL_PERSON__AGE:
 				setAge((Integer)newValue);
+				return;
+			case IdentitiesPackageImpl.REAL_PERSON__CITIZENSHIP:
+				setCitizenship((String)newValue);
 				return;
 		}
 		eDynamicSet(featureID, newValue);
@@ -133,6 +177,9 @@ public class RealPersonImpl extends IdentityImpl implements RealPerson {
 			case IdentitiesPackageImpl.REAL_PERSON__AGE:
 				setAge(AGE_EDEFAULT);
 				return;
+			case IdentitiesPackageImpl.REAL_PERSON__CITIZENSHIP:
+				setCitizenship(CITIZENSHIP_EDEFAULT);
+				return;
 		}
 		eDynamicUnset(featureID);
 	}
@@ -151,6 +198,8 @@ public class RealPersonImpl extends IdentityImpl implements RealPerson {
 				return ID_NUMBER_EDEFAULT == null ? idNumber != null : !ID_NUMBER_EDEFAULT.equals(idNumber);
 			case IdentitiesPackageImpl.REAL_PERSON__AGE:
 				return age != AGE_EDEFAULT;
+			case IdentitiesPackageImpl.REAL_PERSON__CITIZENSHIP:
+				return CITIZENSHIP_EDEFAULT == null ? citizenship != null : !CITIZENSHIP_EDEFAULT.equals(citizenship);
 		}
 		return eDynamicIsSet(featureID);
 	}
@@ -167,6 +216,8 @@ public class RealPersonImpl extends IdentityImpl implements RealPerson {
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (age: ");
 		result.append(age);
+		result.append(", citizenship: ");
+		result.append(citizenship);
 		result.append(')');
 		return result.toString();
 	}

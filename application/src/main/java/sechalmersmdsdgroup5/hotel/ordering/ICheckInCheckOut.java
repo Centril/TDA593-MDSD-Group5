@@ -37,17 +37,17 @@ public interface ICheckInCheckOut {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true" ordered="false" identityRequired="true" identityOrdered="false" keycardRequired="true" keycardOrdered="false"
+	 * @model required="true" ordered="false" identityRequired="true" identityOrdered="false" keyRequired="true" keyOrdered="false"
 	 * @generated
 	 */
-	boolean giveOutKeycard(Identity identity, Key keycard);
+	boolean giveOutKey(Identity identity, Key key);
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true" ordered="false" keycardRequired="true" keycardOrdered="false"
+	 * @model required="true" ordered="false" keyRequired="true" keyOrdered="false"
 	 * @generated
 	 */
-	boolean takeBackKeycard(Key keycard);
+	boolean takeBackKey(Key key);
 
 } // ICheckInCheckOut

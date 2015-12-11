@@ -28,6 +28,6 @@ public interface IService {
 	 * @model required="true" ordered="false" bookingRequired="true" bookingOrdered="false" wantedServiceRequired="true" wantedServiceOrdered="false"
 	 * @generated
 	 */
-	boolean bookService(RoomBooking booking, Service wantedService);
+	boolean bookService(RoomBooking booking, ServiceBlueprint wantedService);
 
 } // IService

@@ -2,7 +2,9 @@
  */
 package sechalmersmdsdgroup5.hotel.ordering;
 
+import java.util.Date;
 import java.util.List;
+import sechalmersmdsdgroup5.hotel.payment.Invoicable;
 
 /**
  * <!-- begin-user-doc -->
@@ -14,14 +16,14 @@ import java.util.List;
  * </p>
  * <ul>
  *   <li>{@link sechalmersmdsdgroup5.hotel.ordering.Order#getCampaigns <em>Campaigns</em>}</li>
- *   <li>{@link sechalmersmdsdgroup5.hotel.ordering.Order#getInvoices <em>Invoices</em>}</li>
  *   <li>{@link sechalmersmdsdgroup5.hotel.ordering.Order#getBookings <em>Bookings</em>}</li>
+ *   <li>{@link sechalmersmdsdgroup5.hotel.ordering.Order#getCreationDate <em>Creation Date</em>}</li>
  * </ul>
  *
  * @model
  * @generated
  */
-public interface Order {
+public interface Order extends Invoicable {
 	/**
 	 * Returns the value of the '<em><b>Campaigns</b></em>' reference list.
 	 * The list contents are of type {@link sechalmersmdsdgroup5.hotel.ordering.Campaign}.
@@ -36,21 +38,6 @@ public interface Order {
 	 * @generated
 	 */
 	List<Campaign> getCampaigns();
-
-	/**
-	 * Returns the value of the '<em><b>Invoices</b></em>' containment reference list.
-	 * The list contents are of type {@link sechalmersmdsdgroup5.hotel.ordering.Invoice}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Invoices</em>' containment reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Invoices</em>' containment reference list.
-	 * @model containment="true" ordered="false"
-	 * @generated
-	 */
-	List<Invoice> getInvoices();
 
 	/**
 	 * Returns the value of the '<em><b>Bookings</b></em>' reference list.
@@ -68,19 +55,36 @@ public interface Order {
 	List<RoomBooking> getBookings();
 
 	/**
+	 * Returns the value of the '<em><b>Creation Date</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Creation Date</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Creation Date</em>' attribute.
+	 * @see #setCreationDate(Date)
+	 * @model required="true" ordered="false"
+	 * @generated
+	 */
+	Date getCreationDate();
+
+	/**
+	 * Sets the value of the '{@link sechalmersmdsdgroup5.hotel.ordering.Order#getCreationDate <em>Creation Date</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Creation Date</em>' attribute.
+	 * @see #getCreationDate()
+	 * @generated
+	 */
+	void setCreationDate(Date value);
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model required="true" ordered="false"
 	 * @generated
 	 */
 	double calculatePrice();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model kind="operation" required="true" ordered="false"
-	 * @generated
-	 */
-	boolean isPaid();
 
 } // Order

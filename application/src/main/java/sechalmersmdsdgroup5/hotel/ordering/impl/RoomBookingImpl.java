@@ -2,16 +2,21 @@
  */
 package sechalmersmdsdgroup5.hotel.ordering.impl;
 
+import java.util.Collection;
 import java.util.Date;
 
+import java.util.List;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
+import org.eclipse.emf.ecore.util.BasicInternalEList;
 import sechalmersmdsdgroup5.hotel.facilities.Room;
 
+import sechalmersmdsdgroup5.hotel.ordering.Invoice;
 import sechalmersmdsdgroup5.hotel.ordering.RoomBooking;
 
 /**
@@ -22,6 +27,7 @@ import sechalmersmdsdgroup5.hotel.ordering.RoomBooking;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link sechalmersmdsdgroup5.hotel.ordering.impl.RoomBookingImpl#getInvoice <em>Invoice</em>}</li>
  *   <li>{@link sechalmersmdsdgroup5.hotel.ordering.impl.RoomBookingImpl#getStartDate <em>Start Date</em>}</li>
  *   <li>{@link sechalmersmdsdgroup5.hotel.ordering.impl.RoomBookingImpl#getEndDate <em>End Date</em>}</li>
  *   <li>{@link sechalmersmdsdgroup5.hotel.ordering.impl.RoomBookingImpl#getCheckinTime <em>Checkin Time</em>}</li>
@@ -33,6 +39,16 @@ import sechalmersmdsdgroup5.hotel.ordering.RoomBooking;
  * @generated
  */
 public class RoomBookingImpl extends MinimalEObjectImpl.Container implements RoomBooking {
+	/**
+	 * The cached value of the '{@link #getInvoice() <em>Invoice</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getInvoice()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Invoice> invoice;
+
 	/**
 	 * The default value of the '{@link #getStartDate() <em>Start Date</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -167,6 +183,18 @@ public class RoomBookingImpl extends MinimalEObjectImpl.Container implements Roo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public List<Invoice> getInvoice() {
+		if (invoice == null) {
+			invoice = new BasicInternalEList<Invoice>(Invoice.class);
+		}
+		return invoice;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public Date getStartDate() {
 		return startDate;
 	}
@@ -290,9 +318,22 @@ public class RoomBookingImpl extends MinimalEObjectImpl.Container implements Roo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public double totalPrice() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case OrderingPackageImpl.ROOM_BOOKING__INVOICE:
+				return getInvoice();
 			case OrderingPackageImpl.ROOM_BOOKING__START_DATE:
 				return getStartDate();
 			case OrderingPackageImpl.ROOM_BOOKING__END_DATE:
@@ -315,9 +356,14 @@ public class RoomBookingImpl extends MinimalEObjectImpl.Container implements Roo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case OrderingPackageImpl.ROOM_BOOKING__INVOICE:
+				getInvoice().clear();
+				getInvoice().addAll((Collection<? extends Invoice>)newValue);
+				return;
 			case OrderingPackageImpl.ROOM_BOOKING__START_DATE:
 				setStartDate((Date)newValue);
 				return;
@@ -348,6 +394,9 @@ public class RoomBookingImpl extends MinimalEObjectImpl.Container implements Roo
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case OrderingPackageImpl.ROOM_BOOKING__INVOICE:
+				getInvoice().clear();
+				return;
 			case OrderingPackageImpl.ROOM_BOOKING__START_DATE:
 				setStartDate(START_DATE_EDEFAULT);
 				return;
@@ -378,6 +427,8 @@ public class RoomBookingImpl extends MinimalEObjectImpl.Container implements Roo
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case OrderingPackageImpl.ROOM_BOOKING__INVOICE:
+				return invoice != null && !invoice.isEmpty();
 			case OrderingPackageImpl.ROOM_BOOKING__START_DATE:
 				return START_DATE_EDEFAULT == null ? startDate != null : !START_DATE_EDEFAULT.equals(startDate);
 			case OrderingPackageImpl.ROOM_BOOKING__END_DATE:

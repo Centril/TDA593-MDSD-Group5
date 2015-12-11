@@ -64,9 +64,9 @@ public class ClientsFactoryImpl extends EFactoryImpl implements ClientsFactory {
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
+			case ClientsPackageImpl.GUEST: return (EObject)createGuest();
 			case ClientsPackageImpl.CUSTOMER: return (EObject)createCustomer();
 			case ClientsPackageImpl.ADDRESS: return (EObject)createAddress();
-			case ClientsPackageImpl.GUEST: return (EObject)createGuest();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}

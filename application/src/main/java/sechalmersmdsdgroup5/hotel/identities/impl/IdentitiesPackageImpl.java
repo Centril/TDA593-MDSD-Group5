@@ -94,7 +94,7 @@ public class IdentitiesPackageImpl extends EPackageImpl {
 	 * @see sechalmersmdsdgroup5.hotel.identities.impl.IdentitiesPackageImpl#getIdentity()
 	 * @generated
 	 */
-	public static final int IDENTITY = 2;
+	public static final int IDENTITY = 0;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -131,43 +131,7 @@ public class IdentitiesPackageImpl extends EPackageImpl {
 	 * @see sechalmersmdsdgroup5.hotel.identities.impl.IdentitiesPackageImpl#getRealPerson()
 	 * @generated
 	 */
-	public static final int REAL_PERSON = 0;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int REAL_PERSON__NAME = IDENTITY__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Id Number</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int REAL_PERSON__ID_NUMBER = IDENTITY__ID_NUMBER;
-
-	/**
-	 * The feature id for the '<em><b>Age</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int REAL_PERSON__AGE = IDENTITY_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of structural features of the '<em>Real Person</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int REAL_PERSON_FEATURE_COUNT = IDENTITY_FEATURE_COUNT + 1;
+	public static final int REAL_PERSON = 2;
 
 	/**
 	 * The meta object id for the '{@link sechalmersmdsdgroup5.hotel.identities.impl.OrganisationImpl <em>Organisation</em>}' class.
@@ -205,6 +169,51 @@ public class IdentitiesPackageImpl extends EPackageImpl {
 	 * @ordered
 	 */
 	public static final int ORGANISATION_FEATURE_COUNT = IDENTITY_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int REAL_PERSON__NAME = IDENTITY__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Id Number</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int REAL_PERSON__ID_NUMBER = IDENTITY__ID_NUMBER;
+
+	/**
+	 * The feature id for the '<em><b>Age</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int REAL_PERSON__AGE = IDENTITY_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Citizenship</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int REAL_PERSON__CITIZENSHIP = IDENTITY_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Real Person</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int REAL_PERSON_FEATURE_COUNT = IDENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -277,9 +286,9 @@ public class IdentitiesPackageImpl extends EPackageImpl {
 		HotelPackageImpl theHotelPackage = (HotelPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(HotelPackageImpl.eNS_URI) instanceof HotelPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(HotelPackageImpl.eNS_URI) : HotelPackageImpl.eINSTANCE);
 		FacilitiesPackageImpl theFacilitiesPackage = (FacilitiesPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(FacilitiesPackageImpl.eNS_URI) instanceof FacilitiesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(FacilitiesPackageImpl.eNS_URI) : FacilitiesPackageImpl.eINSTANCE);
 		ServicesPackageImpl theServicesPackage = (ServicesPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ServicesPackageImpl.eNS_URI) instanceof ServicesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ServicesPackageImpl.eNS_URI) : ServicesPackageImpl.eINSTANCE);
-		OrderingPackageImpl theOrderingPackage = (OrderingPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(OrderingPackageImpl.eNS_URI) instanceof OrderingPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(OrderingPackageImpl.eNS_URI) : OrderingPackageImpl.eINSTANCE);
-		ClientsPackageImpl theClientsPackage = (ClientsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ClientsPackageImpl.eNS_URI) instanceof ClientsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ClientsPackageImpl.eNS_URI) : ClientsPackageImpl.eINSTANCE);
 		PaymentPackageImpl thePaymentPackage = (PaymentPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(PaymentPackageImpl.eNS_URI) instanceof PaymentPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(PaymentPackageImpl.eNS_URI) : PaymentPackageImpl.eINSTANCE);
+		ClientsPackageImpl theClientsPackage = (ClientsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ClientsPackageImpl.eNS_URI) instanceof ClientsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ClientsPackageImpl.eNS_URI) : ClientsPackageImpl.eINSTANCE);
+		OrderingPackageImpl theOrderingPackage = (OrderingPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(OrderingPackageImpl.eNS_URI) instanceof OrderingPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(OrderingPackageImpl.eNS_URI) : OrderingPackageImpl.eINSTANCE);
 		PersonnelPackageImpl thePersonnelPackage = (PersonnelPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(PersonnelPackageImpl.eNS_URI) instanceof PersonnelPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(PersonnelPackageImpl.eNS_URI) : PersonnelPackageImpl.eINSTANCE);
 		SchedulePackageImpl theSchedulePackage = (SchedulePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(SchedulePackageImpl.eNS_URI) instanceof SchedulePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(SchedulePackageImpl.eNS_URI) : SchedulePackageImpl.eINSTANCE);
 		LogPackageImpl theLogPackage = (LogPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(LogPackageImpl.eNS_URI) instanceof LogPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(LogPackageImpl.eNS_URI) : LogPackageImpl.eINSTANCE);
@@ -292,9 +301,9 @@ public class IdentitiesPackageImpl extends EPackageImpl {
 		theHotelPackage.createPackageContents();
 		theFacilitiesPackage.createPackageContents();
 		theServicesPackage.createPackageContents();
-		theOrderingPackage.createPackageContents();
-		theClientsPackage.createPackageContents();
 		thePaymentPackage.createPackageContents();
+		theClientsPackage.createPackageContents();
+		theOrderingPackage.createPackageContents();
 		thePersonnelPackage.createPackageContents();
 		theSchedulePackage.createPackageContents();
 		theLogPackage.createPackageContents();
@@ -307,9 +316,9 @@ public class IdentitiesPackageImpl extends EPackageImpl {
 		theHotelPackage.initializePackageContents();
 		theFacilitiesPackage.initializePackageContents();
 		theServicesPackage.initializePackageContents();
-		theOrderingPackage.initializePackageContents();
-		theClientsPackage.initializePackageContents();
 		thePaymentPackage.initializePackageContents();
+		theClientsPackage.initializePackageContents();
+		theOrderingPackage.initializePackageContents();
 		thePersonnelPackage.initializePackageContents();
 		theSchedulePackage.initializePackageContents();
 		theLogPackage.initializePackageContents();
@@ -351,6 +360,20 @@ public class IdentitiesPackageImpl extends EPackageImpl {
 	public EAttribute getRealPerson_Age() {
 		return (EAttribute)realPersonEClass.getEStructuralFeatures().get(0);
 	}
+
+	/**
+	 * Returns the meta object for the attribute '{@link sechalmersmdsdgroup5.hotel.identities.RealPerson#getCitizenship <em>Citizenship</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Citizenship</em>'.
+	 * @see sechalmersmdsdgroup5.hotel.identities.RealPerson#getCitizenship()
+	 * @see #getRealPerson()
+	 * @generated
+	 */
+	public EAttribute getRealPerson_Citizenship() {
+		return (EAttribute)realPersonEClass.getEStructuralFeatures().get(1);
+	}
+
 
 	/**
 	 * Returns the meta object for class '{@link sechalmersmdsdgroup5.hotel.identities.Organisation <em>Organisation</em>}'.
@@ -432,14 +455,15 @@ public class IdentitiesPackageImpl extends EPackageImpl {
 		isCreated = true;
 
 		// Create classes and their features
-		realPersonEClass = createEClass(REAL_PERSON);
-		createEAttribute(realPersonEClass, REAL_PERSON__AGE);
-
-		organisationEClass = createEClass(ORGANISATION);
-
 		identityEClass = createEClass(IDENTITY);
 		createEAttribute(identityEClass, IDENTITY__NAME);
 		createEAttribute(identityEClass, IDENTITY__ID_NUMBER);
+
+		organisationEClass = createEClass(ORGANISATION);
+
+		realPersonEClass = createEClass(REAL_PERSON);
+		createEAttribute(realPersonEClass, REAL_PERSON__AGE);
+		createEAttribute(realPersonEClass, REAL_PERSON__CITIZENSHIP);
 	}
 
 	/**
@@ -470,18 +494,19 @@ public class IdentitiesPackageImpl extends EPackageImpl {
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		realPersonEClass.getESuperTypes().add(this.getIdentity());
 		organisationEClass.getESuperTypes().add(this.getIdentity());
+		realPersonEClass.getESuperTypes().add(this.getIdentity());
 
 		// Initialize classes and features; add operations and parameters
-		initEClass(realPersonEClass, RealPerson.class, "RealPerson", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getRealPerson_Age(), ecorePackage.getEInt(), "age", null, 1, 1, RealPerson.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-
-		initEClass(organisationEClass, Organisation.class, "Organisation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
 		initEClass(identityEClass, Identity.class, "Identity", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getIdentity_Name(), ecorePackage.getEString(), "name", null, 1, 1, Identity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getIdentity_IdNumber(), ecorePackage.getEString(), "idNumber", null, 1, 1, Identity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+
+		initEClass(organisationEClass, Organisation.class, "Organisation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(realPersonEClass, RealPerson.class, "RealPerson", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getRealPerson_Age(), ecorePackage.getEInt(), "age", null, 1, 1, RealPerson.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getRealPerson_Citizenship(), ecorePackage.getEString(), "citizenship", null, 1, 1, RealPerson.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 	}
 
 	/**
@@ -514,6 +539,14 @@ public class IdentitiesPackageImpl extends EPackageImpl {
 		 * @generated
 		 */
 		public static final EAttribute REAL_PERSON__AGE = eINSTANCE.getRealPerson_Age();
+
+		/**
+		 * The meta object literal for the '<em><b>Citizenship</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		public static final EAttribute REAL_PERSON__CITIZENSHIP = eINSTANCE.getRealPerson_Citizenship();
 
 		/**
 		 * The meta object literal for the '{@link sechalmersmdsdgroup5.hotel.identities.impl.OrganisationImpl <em>Organisation</em>}' class.

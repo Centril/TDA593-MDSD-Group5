@@ -10,6 +10,7 @@ import org.eclipse.emf.ecore.util.Switch;
 import sechalmersmdsdgroup5.hotel.ordering.*;
 
 import sechalmersmdsdgroup5.hotel.ordering.impl.OrderingPackageImpl;
+import sechalmersmdsdgroup5.hotel.payment.Invoicable;
 
 /**
  * <!-- begin-user-doc -->
@@ -71,6 +72,7 @@ public class OrderingSwitch<T> extends Switch<T> {
 			case OrderingPackageImpl.ORDER: {
 				Order order = (Order)theEObject;
 				T result = caseOrder(order);
+				if (result == null) result = caseInvoicable(order);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -92,9 +94,10 @@ public class OrderingSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case OrderingPackageImpl.INVOICE: {
-				Invoice invoice = (Invoice)theEObject;
-				T result = caseInvoice(invoice);
+			case OrderingPackageImpl.ROOM_BOOKING: {
+				RoomBooking roomBooking = (RoomBooking)theEObject;
+				T result = caseRoomBooking(roomBooking);
+				if (result == null) result = caseInvoicable(roomBooking);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -124,9 +127,9 @@ public class OrderingSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case OrderingPackageImpl.ROOM_BOOKING: {
-				RoomBooking roomBooking = (RoomBooking)theEObject;
-				T result = caseRoomBooking(roomBooking);
+			case OrderingPackageImpl.INVOICE: {
+				Invoice invoice = (Invoice)theEObject;
+				T result = caseInvoice(invoice);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -206,6 +209,21 @@ public class OrderingSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseInvoice(Invoice object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Invoicable</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Invoicable</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseInvoicable(Invoicable object) {
 		return null;
 	}
 

@@ -7,6 +7,7 @@ import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.util.Switch;
 
+import sechalmersmdsdgroup5.hotel.payment.Invoicable;
 import sechalmersmdsdgroup5.hotel.services.*;
 
 import sechalmersmdsdgroup5.hotel.services.impl.ServicesPackageImpl;
@@ -71,6 +72,7 @@ public class ServicesSwitch<T> extends Switch<T> {
 			case ServicesPackageImpl.SERVICE: {
 				Service service = (Service)theEObject;
 				T result = caseService(service);
+				if (result == null) result = caseInvoicable(service);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -153,6 +155,21 @@ public class ServicesSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseServiceBlueprint(ServiceBlueprint object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Invoicable</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Invoicable</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseInvoicable(Invoicable object) {
 		return null;
 	}
 

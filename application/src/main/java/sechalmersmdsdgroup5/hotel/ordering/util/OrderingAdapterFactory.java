@@ -12,6 +12,7 @@ import org.eclipse.emf.ecore.EObject;
 import sechalmersmdsdgroup5.hotel.ordering.*;
 
 import sechalmersmdsdgroup5.hotel.ordering.impl.OrderingPackageImpl;
+import sechalmersmdsdgroup5.hotel.payment.Invoicable;
 
 /**
  * <!-- begin-user-doc -->
@@ -86,8 +87,8 @@ public class OrderingAdapterFactory extends AdapterFactoryImpl {
 				return createPreBookingAdapter();
 			}
 			@Override
-			public Adapter caseInvoice(Invoice object) {
-				return createInvoiceAdapter();
+			public Adapter caseRoomBooking(RoomBooking object) {
+				return createRoomBookingAdapter();
 			}
 			@Override
 			public Adapter caseIOrder(IOrder object) {
@@ -106,8 +107,12 @@ public class OrderingAdapterFactory extends AdapterFactoryImpl {
 				return createPackagePreOrderAdapter();
 			}
 			@Override
-			public Adapter caseRoomBooking(RoomBooking object) {
-				return createRoomBookingAdapter();
+			public Adapter caseInvoice(Invoice object) {
+				return createInvoiceAdapter();
+			}
+			@Override
+			public Adapter caseInvoicable(Invoicable object) {
+				return createInvoicableAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -196,6 +201,20 @@ public class OrderingAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createInvoiceAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link sechalmersmdsdgroup5.hotel.payment.Invoicable <em>Invoicable</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see sechalmersmdsdgroup5.hotel.payment.Invoicable
+	 * @generated
+	 */
+	public Adapter createInvoicableAdapter() {
 		return null;
 	}
 

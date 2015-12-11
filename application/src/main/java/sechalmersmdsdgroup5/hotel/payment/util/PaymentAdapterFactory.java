@@ -78,6 +78,10 @@ public class PaymentAdapterFactory extends AdapterFactoryImpl {
 				return createIPaymentAdapter();
 			}
 			@Override
+			public Adapter caseInvoicable(Invoicable object) {
+				return createInvoicableAdapter();
+			}
+			@Override
 			public Adapter defaultCase(EObject object) {
 				return createEObjectAdapter();
 			}
@@ -122,6 +126,20 @@ public class PaymentAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createIPaymentAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link sechalmersmdsdgroup5.hotel.payment.Invoicable <em>Invoicable</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see sechalmersmdsdgroup5.hotel.payment.Invoicable
+	 * @generated
+	 */
+	public Adapter createInvoicableAdapter() {
 		return null;
 	}
 

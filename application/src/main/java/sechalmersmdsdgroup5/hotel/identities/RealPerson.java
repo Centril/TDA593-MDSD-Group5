@@ -13,6 +13,7 @@ package sechalmersmdsdgroup5.hotel.identities;
  * </p>
  * <ul>
  *   <li>{@link sechalmersmdsdgroup5.hotel.identities.RealPerson#getAge <em>Age</em>}</li>
+ *   <li>{@link sechalmersmdsdgroup5.hotel.identities.RealPerson#getCitizenship <em>Citizenship</em>}</li>
  * </ul>
  *
  * @model
@@ -43,5 +44,30 @@ public interface RealPerson extends Identity {
 	 * @generated
 	 */
 	void setAge(int value);
+
+	/**
+	 * Returns the value of the '<em><b>Citizenship</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Citizenship</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Citizenship</em>' attribute.
+	 * @see #setCitizenship(String)
+	 * @model required="true" ordered="false"
+	 * @generated
+	 */
+	String getCitizenship();
+
+	/**
+	 * Sets the value of the '{@link sechalmersmdsdgroup5.hotel.identities.RealPerson#getCitizenship <em>Citizenship</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Citizenship</em>' attribute.
+	 * @see #getCitizenship()
+	 * @generated
+	 */
+	void setCitizenship(String value);
 
 } // RealPerson

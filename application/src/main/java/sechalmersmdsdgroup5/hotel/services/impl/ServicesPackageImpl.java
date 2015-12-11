@@ -99,13 +99,22 @@ public class ServicesPackageImpl extends EPackageImpl {
 	public static final int SERVICE = 0;
 
 	/**
+	 * The feature id for the '<em><b>Invoice</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int SERVICE__INVOICE = PaymentPackageImpl.INVOICABLE__INVOICE;
+
+	/**
 	 * The feature id for the '<em><b>Price</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	public static final int SERVICE__PRICE = 0;
+	public static final int SERVICE__PRICE = PaymentPackageImpl.INVOICABLE_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Is Paid</b></em>' attribute.
@@ -114,7 +123,16 @@ public class ServicesPackageImpl extends EPackageImpl {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int SERVICE__IS_PAID = 1;
+	public static final int SERVICE__IS_PAID = PaymentPackageImpl.INVOICABLE_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Creation Date</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int SERVICE__CREATION_DATE = PaymentPackageImpl.INVOICABLE_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Service</em>' class.
@@ -123,7 +141,7 @@ public class ServicesPackageImpl extends EPackageImpl {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int SERVICE_FEATURE_COUNT = 2;
+	public static final int SERVICE_FEATURE_COUNT = PaymentPackageImpl.INVOICABLE_FEATURE_COUNT + 3;
 
 	/**
 	 * The meta object id for the '{@link sechalmersmdsdgroup5.hotel.services.ServiceConsumer <em>Service Consumer</em>}' class.
@@ -268,10 +286,10 @@ public class ServicesPackageImpl extends EPackageImpl {
 		// Obtain or create and register interdependencies
 		HotelPackageImpl theHotelPackage = (HotelPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(HotelPackageImpl.eNS_URI) instanceof HotelPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(HotelPackageImpl.eNS_URI) : HotelPackageImpl.eINSTANCE);
 		FacilitiesPackageImpl theFacilitiesPackage = (FacilitiesPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(FacilitiesPackageImpl.eNS_URI) instanceof FacilitiesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(FacilitiesPackageImpl.eNS_URI) : FacilitiesPackageImpl.eINSTANCE);
-		OrderingPackageImpl theOrderingPackage = (OrderingPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(OrderingPackageImpl.eNS_URI) instanceof OrderingPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(OrderingPackageImpl.eNS_URI) : OrderingPackageImpl.eINSTANCE);
-		ClientsPackageImpl theClientsPackage = (ClientsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ClientsPackageImpl.eNS_URI) instanceof ClientsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ClientsPackageImpl.eNS_URI) : ClientsPackageImpl.eINSTANCE);
 		PaymentPackageImpl thePaymentPackage = (PaymentPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(PaymentPackageImpl.eNS_URI) instanceof PaymentPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(PaymentPackageImpl.eNS_URI) : PaymentPackageImpl.eINSTANCE);
+		ClientsPackageImpl theClientsPackage = (ClientsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ClientsPackageImpl.eNS_URI) instanceof ClientsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ClientsPackageImpl.eNS_URI) : ClientsPackageImpl.eINSTANCE);
 		IdentitiesPackageImpl theIdentitiesPackage = (IdentitiesPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(IdentitiesPackageImpl.eNS_URI) instanceof IdentitiesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(IdentitiesPackageImpl.eNS_URI) : IdentitiesPackageImpl.eINSTANCE);
+		OrderingPackageImpl theOrderingPackage = (OrderingPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(OrderingPackageImpl.eNS_URI) instanceof OrderingPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(OrderingPackageImpl.eNS_URI) : OrderingPackageImpl.eINSTANCE);
 		PersonnelPackageImpl thePersonnelPackage = (PersonnelPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(PersonnelPackageImpl.eNS_URI) instanceof PersonnelPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(PersonnelPackageImpl.eNS_URI) : PersonnelPackageImpl.eINSTANCE);
 		SchedulePackageImpl theSchedulePackage = (SchedulePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(SchedulePackageImpl.eNS_URI) instanceof SchedulePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(SchedulePackageImpl.eNS_URI) : SchedulePackageImpl.eINSTANCE);
 		LogPackageImpl theLogPackage = (LogPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(LogPackageImpl.eNS_URI) instanceof LogPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(LogPackageImpl.eNS_URI) : LogPackageImpl.eINSTANCE);
@@ -283,10 +301,10 @@ public class ServicesPackageImpl extends EPackageImpl {
 		theServicesPackage.createPackageContents();
 		theHotelPackage.createPackageContents();
 		theFacilitiesPackage.createPackageContents();
-		theOrderingPackage.createPackageContents();
-		theClientsPackage.createPackageContents();
 		thePaymentPackage.createPackageContents();
+		theClientsPackage.createPackageContents();
 		theIdentitiesPackage.createPackageContents();
+		theOrderingPackage.createPackageContents();
 		thePersonnelPackage.createPackageContents();
 		theSchedulePackage.createPackageContents();
 		theLogPackage.createPackageContents();
@@ -298,10 +316,10 @@ public class ServicesPackageImpl extends EPackageImpl {
 		theServicesPackage.initializePackageContents();
 		theHotelPackage.initializePackageContents();
 		theFacilitiesPackage.initializePackageContents();
-		theOrderingPackage.initializePackageContents();
-		theClientsPackage.initializePackageContents();
 		thePaymentPackage.initializePackageContents();
+		theClientsPackage.initializePackageContents();
 		theIdentitiesPackage.initializePackageContents();
+		theOrderingPackage.initializePackageContents();
 		thePersonnelPackage.initializePackageContents();
 		theSchedulePackage.initializePackageContents();
 		theLogPackage.initializePackageContents();
@@ -356,6 +374,20 @@ public class ServicesPackageImpl extends EPackageImpl {
 	public EAttribute getService_IsPaid() {
 		return (EAttribute)serviceEClass.getEStructuralFeatures().get(1);
 	}
+
+	/**
+	 * Returns the meta object for the attribute '{@link sechalmersmdsdgroup5.hotel.services.Service#getCreationDate <em>Creation Date</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Creation Date</em>'.
+	 * @see sechalmersmdsdgroup5.hotel.services.Service#getCreationDate()
+	 * @see #getService()
+	 * @generated
+	 */
+	public EAttribute getService_CreationDate() {
+		return (EAttribute)serviceEClass.getEStructuralFeatures().get(2);
+	}
+
 
 	/**
 	 * Returns the meta object for class '{@link sechalmersmdsdgroup5.hotel.services.ServiceConsumer <em>Service Consumer</em>}'.
@@ -439,6 +471,7 @@ public class ServicesPackageImpl extends EPackageImpl {
 		serviceEClass = createEClass(SERVICE);
 		createEAttribute(serviceEClass, SERVICE__PRICE);
 		createEAttribute(serviceEClass, SERVICE__IS_PAID);
+		createEAttribute(serviceEClass, SERVICE__CREATION_DATE);
 
 		serviceConsumerEClass = createEClass(SERVICE_CONSUMER);
 
@@ -472,6 +505,7 @@ public class ServicesPackageImpl extends EPackageImpl {
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
+		PaymentPackageImpl thePaymentPackage = (PaymentPackageImpl)EPackage.Registry.INSTANCE.getEPackage(PaymentPackageImpl.eNS_URI);
 		OrderingPackageImpl theOrderingPackage = (OrderingPackageImpl)EPackage.Registry.INSTANCE.getEPackage(OrderingPackageImpl.eNS_URI);
 
 		// Create type parameters
@@ -479,11 +513,13 @@ public class ServicesPackageImpl extends EPackageImpl {
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
+		serviceEClass.getESuperTypes().add(thePaymentPackage.getInvoicable());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(serviceEClass, Service.class, "Service", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getService_Price(), ecorePackage.getEDouble(), "price", null, 1, 1, Service.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getService_IsPaid(), ecorePackage.getEBoolean(), "isPaid", null, 1, 1, Service.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getService_CreationDate(), ecorePackage.getEDate(), "creationDate", null, 1, 1, Service.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(serviceConsumerEClass, ServiceConsumer.class, "ServiceConsumer", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -495,7 +531,7 @@ public class ServicesPackageImpl extends EPackageImpl {
 
 		op = addEOperation(iServiceEClass, ecorePackage.getEBoolean(), "bookService", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, theOrderingPackage.getRoomBooking(), "booking", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, this.getService(), "wantedService", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, this.getServiceBlueprint(), "wantedService", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		initEClass(serviceBlueprintEClass, ServiceBlueprint.class, "ServiceBlueprint", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getServiceBlueprint_BasePrice(), ecorePackage.getEDouble(), "basePrice", null, 1, 1, ServiceBlueprint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -539,6 +575,14 @@ public class ServicesPackageImpl extends EPackageImpl {
 		 * @generated
 		 */
 		public static final EAttribute SERVICE__IS_PAID = eINSTANCE.getService_IsPaid();
+
+		/**
+		 * The meta object literal for the '<em><b>Creation Date</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		public static final EAttribute SERVICE__CREATION_DATE = eINSTANCE.getService_CreationDate();
 
 		/**
 		 * The meta object literal for the '{@link sechalmersmdsdgroup5.hotel.services.ServiceConsumer <em>Service Consumer</em>}' class.

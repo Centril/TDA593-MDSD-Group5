@@ -304,10 +304,10 @@ public class HotelPackageImpl extends EPackageImpl {
 		// Obtain or create and register interdependencies
 		FacilitiesPackageImpl theFacilitiesPackage = (FacilitiesPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(FacilitiesPackageImpl.eNS_URI) instanceof FacilitiesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(FacilitiesPackageImpl.eNS_URI) : FacilitiesPackageImpl.eINSTANCE);
 		ServicesPackageImpl theServicesPackage = (ServicesPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ServicesPackageImpl.eNS_URI) instanceof ServicesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ServicesPackageImpl.eNS_URI) : ServicesPackageImpl.eINSTANCE);
-		OrderingPackageImpl theOrderingPackage = (OrderingPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(OrderingPackageImpl.eNS_URI) instanceof OrderingPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(OrderingPackageImpl.eNS_URI) : OrderingPackageImpl.eINSTANCE);
-		ClientsPackageImpl theClientsPackage = (ClientsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ClientsPackageImpl.eNS_URI) instanceof ClientsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ClientsPackageImpl.eNS_URI) : ClientsPackageImpl.eINSTANCE);
 		PaymentPackageImpl thePaymentPackage = (PaymentPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(PaymentPackageImpl.eNS_URI) instanceof PaymentPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(PaymentPackageImpl.eNS_URI) : PaymentPackageImpl.eINSTANCE);
+		ClientsPackageImpl theClientsPackage = (ClientsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ClientsPackageImpl.eNS_URI) instanceof ClientsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ClientsPackageImpl.eNS_URI) : ClientsPackageImpl.eINSTANCE);
 		IdentitiesPackageImpl theIdentitiesPackage = (IdentitiesPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(IdentitiesPackageImpl.eNS_URI) instanceof IdentitiesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(IdentitiesPackageImpl.eNS_URI) : IdentitiesPackageImpl.eINSTANCE);
+		OrderingPackageImpl theOrderingPackage = (OrderingPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(OrderingPackageImpl.eNS_URI) instanceof OrderingPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(OrderingPackageImpl.eNS_URI) : OrderingPackageImpl.eINSTANCE);
 		PersonnelPackageImpl thePersonnelPackage = (PersonnelPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(PersonnelPackageImpl.eNS_URI) instanceof PersonnelPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(PersonnelPackageImpl.eNS_URI) : PersonnelPackageImpl.eINSTANCE);
 		SchedulePackageImpl theSchedulePackage = (SchedulePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(SchedulePackageImpl.eNS_URI) instanceof SchedulePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(SchedulePackageImpl.eNS_URI) : SchedulePackageImpl.eINSTANCE);
 		LogPackageImpl theLogPackage = (LogPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(LogPackageImpl.eNS_URI) instanceof LogPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(LogPackageImpl.eNS_URI) : LogPackageImpl.eINSTANCE);
@@ -319,10 +319,10 @@ public class HotelPackageImpl extends EPackageImpl {
 		theHotelPackage.createPackageContents();
 		theFacilitiesPackage.createPackageContents();
 		theServicesPackage.createPackageContents();
-		theOrderingPackage.createPackageContents();
-		theClientsPackage.createPackageContents();
 		thePaymentPackage.createPackageContents();
+		theClientsPackage.createPackageContents();
 		theIdentitiesPackage.createPackageContents();
+		theOrderingPackage.createPackageContents();
 		thePersonnelPackage.createPackageContents();
 		theSchedulePackage.createPackageContents();
 		theLogPackage.createPackageContents();
@@ -334,10 +334,10 @@ public class HotelPackageImpl extends EPackageImpl {
 		theHotelPackage.initializePackageContents();
 		theFacilitiesPackage.initializePackageContents();
 		theServicesPackage.initializePackageContents();
-		theOrderingPackage.initializePackageContents();
-		theClientsPackage.initializePackageContents();
 		thePaymentPackage.initializePackageContents();
+		theClientsPackage.initializePackageContents();
 		theIdentitiesPackage.initializePackageContents();
+		theOrderingPackage.initializePackageContents();
 		thePersonnelPackage.initializePackageContents();
 		theSchedulePackage.initializePackageContents();
 		theLogPackage.initializePackageContents();
@@ -650,10 +650,10 @@ public class HotelPackageImpl extends EPackageImpl {
 		// Obtain other dependent packages
 		FacilitiesPackageImpl theFacilitiesPackage = (FacilitiesPackageImpl)EPackage.Registry.INSTANCE.getEPackage(FacilitiesPackageImpl.eNS_URI);
 		ServicesPackageImpl theServicesPackage = (ServicesPackageImpl)EPackage.Registry.INSTANCE.getEPackage(ServicesPackageImpl.eNS_URI);
-		OrderingPackageImpl theOrderingPackage = (OrderingPackageImpl)EPackage.Registry.INSTANCE.getEPackage(OrderingPackageImpl.eNS_URI);
-		ClientsPackageImpl theClientsPackage = (ClientsPackageImpl)EPackage.Registry.INSTANCE.getEPackage(ClientsPackageImpl.eNS_URI);
 		PaymentPackageImpl thePaymentPackage = (PaymentPackageImpl)EPackage.Registry.INSTANCE.getEPackage(PaymentPackageImpl.eNS_URI);
+		ClientsPackageImpl theClientsPackage = (ClientsPackageImpl)EPackage.Registry.INSTANCE.getEPackage(ClientsPackageImpl.eNS_URI);
 		IdentitiesPackageImpl theIdentitiesPackage = (IdentitiesPackageImpl)EPackage.Registry.INSTANCE.getEPackage(IdentitiesPackageImpl.eNS_URI);
+		OrderingPackageImpl theOrderingPackage = (OrderingPackageImpl)EPackage.Registry.INSTANCE.getEPackage(OrderingPackageImpl.eNS_URI);
 		PersonnelPackageImpl thePersonnelPackage = (PersonnelPackageImpl)EPackage.Registry.INSTANCE.getEPackage(PersonnelPackageImpl.eNS_URI);
 		SchedulePackageImpl theSchedulePackage = (SchedulePackageImpl)EPackage.Registry.INSTANCE.getEPackage(SchedulePackageImpl.eNS_URI);
 		LogPackageImpl theLogPackage = (LogPackageImpl)EPackage.Registry.INSTANCE.getEPackage(LogPackageImpl.eNS_URI);
@@ -664,10 +664,10 @@ public class HotelPackageImpl extends EPackageImpl {
 		// Add subpackages
 		getESubpackages().add(theFacilitiesPackage);
 		getESubpackages().add(theServicesPackage);
-		getESubpackages().add(theOrderingPackage);
-		getESubpackages().add(theClientsPackage);
 		getESubpackages().add(thePaymentPackage);
+		getESubpackages().add(theClientsPackage);
 		getESubpackages().add(theIdentitiesPackage);
+		getESubpackages().add(theOrderingPackage);
 		getESubpackages().add(thePersonnelPackage);
 		getESubpackages().add(theSchedulePackage);
 		getESubpackages().add(theLogPackage);

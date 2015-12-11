@@ -2,6 +2,9 @@
  */
 package sechalmersmdsdgroup5.hotel.services;
 
+import java.util.Date;
+import sechalmersmdsdgroup5.hotel.payment.Invoicable;
+
 
 /**
  * <!-- begin-user-doc -->
@@ -14,12 +17,13 @@ package sechalmersmdsdgroup5.hotel.services;
  * <ul>
  *   <li>{@link sechalmersmdsdgroup5.hotel.services.Service#getPrice <em>Price</em>}</li>
  *   <li>{@link sechalmersmdsdgroup5.hotel.services.Service#isPaid <em>Is Paid</em>}</li>
+ *   <li>{@link sechalmersmdsdgroup5.hotel.services.Service#getCreationDate <em>Creation Date</em>}</li>
  * </ul>
  *
  * @model
  * @generated
  */
-public interface Service {
+public interface Service extends Invoicable {
 	/**
 	 * Returns the value of the '<em><b>Price</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -69,5 +73,30 @@ public interface Service {
 	 * @generated
 	 */
 	void setIsPaid(boolean value);
+
+	/**
+	 * Returns the value of the '<em><b>Creation Date</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Creation Date</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Creation Date</em>' attribute.
+	 * @see #setCreationDate(Date)
+	 * @model required="true" ordered="false"
+	 * @generated
+	 */
+	Date getCreationDate();
+
+	/**
+	 * Sets the value of the '{@link sechalmersmdsdgroup5.hotel.services.Service#getCreationDate <em>Creation Date</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Creation Date</em>' attribute.
+	 * @see #getCreationDate()
+	 * @generated
+	 */
+	void setCreationDate(Date value);
 
 } // Service

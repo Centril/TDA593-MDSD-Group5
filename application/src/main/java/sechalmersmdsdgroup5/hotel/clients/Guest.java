@@ -22,7 +22,7 @@ import sechalmersmdsdgroup5.hotel.identities.RealPerson;
  * @model
  * @generated
  */
-public interface Guest {
+public interface Guest extends Client {
 	/**
 	 * Returns the value of the '<em><b>Key</b></em>' reference.
 	 * <!-- begin-user-doc -->

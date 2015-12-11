@@ -106,22 +106,22 @@ public class OrderingPackageImpl extends EPackageImpl {
 	public static final int ORDER = 0;
 
 	/**
+	 * The feature id for the '<em><b>Invoice</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int ORDER__INVOICE = PaymentPackageImpl.INVOICABLE__INVOICE;
+
+	/**
 	 * The feature id for the '<em><b>Campaigns</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	public static final int ORDER__CAMPAIGNS = 0;
-
-	/**
-	 * The feature id for the '<em><b>Invoices</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int ORDER__INVOICES = 1;
+	public static final int ORDER__CAMPAIGNS = PaymentPackageImpl.INVOICABLE_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Bookings</b></em>' reference list.
@@ -130,7 +130,16 @@ public class OrderingPackageImpl extends EPackageImpl {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int ORDER__BOOKINGS = 2;
+	public static final int ORDER__BOOKINGS = PaymentPackageImpl.INVOICABLE_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Creation Date</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int ORDER__CREATION_DATE = PaymentPackageImpl.INVOICABLE_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Order</em>' class.
@@ -139,7 +148,7 @@ public class OrderingPackageImpl extends EPackageImpl {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int ORDER_FEATURE_COUNT = 3;
+	public static final int ORDER_FEATURE_COUNT = PaymentPackageImpl.INVOICABLE_FEATURE_COUNT + 3;
 
 	/**
 	 * The meta object id for the '{@link sechalmersmdsdgroup5.hotel.ordering.impl.CampaignImpl <em>Campaign</em>}' class.
@@ -287,34 +296,7 @@ public class OrderingPackageImpl extends EPackageImpl {
 	 * @see sechalmersmdsdgroup5.hotel.ordering.impl.OrderingPackageImpl#getInvoice()
 	 * @generated
 	 */
-	public static final int INVOICE = 4;
-
-	/**
-	 * The feature id for the '<em><b>Is Paid</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int INVOICE__IS_PAID = 0;
-
-	/**
-	 * The feature id for the '<em><b>Expiry Date</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int INVOICE__EXPIRY_DATE = 1;
-
-	/**
-	 * The number of structural features of the '<em>Invoice</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int INVOICE_FEATURE_COUNT = 2;
+	public static final int INVOICE = 9;
 
 	/**
 	 * The meta object id for the '{@link sechalmersmdsdgroup5.hotel.ordering.IOrder <em>IOrder</em>}' class.
@@ -327,15 +309,6 @@ public class OrderingPackageImpl extends EPackageImpl {
 	public static final int IORDER = 5;
 
 	/**
-	 * The number of structural features of the '<em>IOrder</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int IORDER_FEATURE_COUNT = 0;
-
-	/**
 	 * The meta object id for the '{@link sechalmersmdsdgroup5.hotel.ordering.ICheckInCheckOut <em>ICheck In Check Out</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -346,15 +319,6 @@ public class OrderingPackageImpl extends EPackageImpl {
 	public static final int ICHECK_IN_CHECK_OUT = 6;
 
 	/**
-	 * The number of structural features of the '<em>ICheck In Check Out</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int ICHECK_IN_CHECK_OUT_FEATURE_COUNT = 0;
-
-	/**
 	 * The meta object id for the '{@link sechalmersmdsdgroup5.hotel.ordering.impl.OrdinaryPreOrderImpl <em>Ordinary Pre Order</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -363,6 +327,116 @@ public class OrderingPackageImpl extends EPackageImpl {
 	 * @generated
 	 */
 	public static final int ORDINARY_PRE_ORDER = 7;
+
+	/**
+	 * The meta object id for the '{@link sechalmersmdsdgroup5.hotel.ordering.impl.PackagePreOrderImpl <em>Package Pre Order</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see sechalmersmdsdgroup5.hotel.ordering.impl.PackagePreOrderImpl
+	 * @see sechalmersmdsdgroup5.hotel.ordering.impl.OrderingPackageImpl#getPackagePreOrder()
+	 * @generated
+	 */
+	public static final int PACKAGE_PRE_ORDER = 8;
+
+	/**
+	 * The meta object id for the '{@link sechalmersmdsdgroup5.hotel.ordering.impl.RoomBookingImpl <em>Room Booking</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see sechalmersmdsdgroup5.hotel.ordering.impl.RoomBookingImpl
+	 * @see sechalmersmdsdgroup5.hotel.ordering.impl.OrderingPackageImpl#getRoomBooking()
+	 * @generated
+	 */
+	public static final int ROOM_BOOKING = 4;
+
+	/**
+	 * The feature id for the '<em><b>Invoice</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int ROOM_BOOKING__INVOICE = PaymentPackageImpl.INVOICABLE__INVOICE;
+
+	/**
+	 * The feature id for the '<em><b>Start Date</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int ROOM_BOOKING__START_DATE = PaymentPackageImpl.INVOICABLE_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>End Date</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int ROOM_BOOKING__END_DATE = PaymentPackageImpl.INVOICABLE_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Checkin Time</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int ROOM_BOOKING__CHECKIN_TIME = PaymentPackageImpl.INVOICABLE_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Checkout Time</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int ROOM_BOOKING__CHECKOUT_TIME = PaymentPackageImpl.INVOICABLE_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Booked Room</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int ROOM_BOOKING__BOOKED_ROOM = PaymentPackageImpl.INVOICABLE_FEATURE_COUNT + 4;
+
+	/**
+	 * The feature id for the '<em><b>Is Paid</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int ROOM_BOOKING__IS_PAID = PaymentPackageImpl.INVOICABLE_FEATURE_COUNT + 5;
+
+	/**
+	 * The number of structural features of the '<em>Room Booking</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int ROOM_BOOKING_FEATURE_COUNT = PaymentPackageImpl.INVOICABLE_FEATURE_COUNT + 6;
+
+	/**
+	 * The number of structural features of the '<em>IOrder</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int IORDER_FEATURE_COUNT = 0;
+
+	/**
+	 * The number of structural features of the '<em>ICheck In Check Out</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int ICHECK_IN_CHECK_OUT_FEATURE_COUNT = 0;
 
 	/**
 	 * The feature id for the '<em><b>Bookings</b></em>' containment reference list.
@@ -392,16 +466,6 @@ public class OrderingPackageImpl extends EPackageImpl {
 	public static final int ORDINARY_PRE_ORDER_FEATURE_COUNT = PRE_ORDER_FEATURE_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link sechalmersmdsdgroup5.hotel.ordering.impl.PackagePreOrderImpl <em>Package Pre Order</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see sechalmersmdsdgroup5.hotel.ordering.impl.PackagePreOrderImpl
-	 * @see sechalmersmdsdgroup5.hotel.ordering.impl.OrderingPackageImpl#getPackagePreOrder()
-	 * @generated
-	 */
-	public static final int PACKAGE_PRE_ORDER = 8;
-
-	/**
 	 * The feature id for the '<em><b>Bookings</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -429,77 +493,31 @@ public class OrderingPackageImpl extends EPackageImpl {
 	public static final int PACKAGE_PRE_ORDER_FEATURE_COUNT = PRE_ORDER_FEATURE_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link sechalmersmdsdgroup5.hotel.ordering.impl.RoomBookingImpl <em>Room Booking</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see sechalmersmdsdgroup5.hotel.ordering.impl.RoomBookingImpl
-	 * @see sechalmersmdsdgroup5.hotel.ordering.impl.OrderingPackageImpl#getRoomBooking()
-	 * @generated
-	 */
-	public static final int ROOM_BOOKING = 9;
-
-	/**
-	 * The feature id for the '<em><b>Start Date</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int ROOM_BOOKING__START_DATE = 0;
-
-	/**
-	 * The feature id for the '<em><b>End Date</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int ROOM_BOOKING__END_DATE = 1;
-
-	/**
-	 * The feature id for the '<em><b>Checkin Time</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int ROOM_BOOKING__CHECKIN_TIME = 2;
-
-	/**
-	 * The feature id for the '<em><b>Checkout Time</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int ROOM_BOOKING__CHECKOUT_TIME = 3;
-
-	/**
-	 * The feature id for the '<em><b>Booked Room</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int ROOM_BOOKING__BOOKED_ROOM = 4;
-
-	/**
 	 * The feature id for the '<em><b>Is Paid</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	public static final int ROOM_BOOKING__IS_PAID = 5;
+	public static final int INVOICE__IS_PAID = 0;
 
 	/**
-	 * The number of structural features of the '<em>Room Booking</em>' class.
+	 * The feature id for the '<em><b>Expiry Date</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	public static final int ROOM_BOOKING_FEATURE_COUNT = 6;
+	public static final int INVOICE__EXPIRY_DATE = 1;
+
+	/**
+	 * The number of structural features of the '<em>Invoice</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int INVOICE_FEATURE_COUNT = 2;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -621,8 +639,8 @@ public class OrderingPackageImpl extends EPackageImpl {
 		HotelPackageImpl theHotelPackage = (HotelPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(HotelPackageImpl.eNS_URI) instanceof HotelPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(HotelPackageImpl.eNS_URI) : HotelPackageImpl.eINSTANCE);
 		FacilitiesPackageImpl theFacilitiesPackage = (FacilitiesPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(FacilitiesPackageImpl.eNS_URI) instanceof FacilitiesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(FacilitiesPackageImpl.eNS_URI) : FacilitiesPackageImpl.eINSTANCE);
 		ServicesPackageImpl theServicesPackage = (ServicesPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ServicesPackageImpl.eNS_URI) instanceof ServicesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ServicesPackageImpl.eNS_URI) : ServicesPackageImpl.eINSTANCE);
-		ClientsPackageImpl theClientsPackage = (ClientsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ClientsPackageImpl.eNS_URI) instanceof ClientsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ClientsPackageImpl.eNS_URI) : ClientsPackageImpl.eINSTANCE);
 		PaymentPackageImpl thePaymentPackage = (PaymentPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(PaymentPackageImpl.eNS_URI) instanceof PaymentPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(PaymentPackageImpl.eNS_URI) : PaymentPackageImpl.eINSTANCE);
+		ClientsPackageImpl theClientsPackage = (ClientsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ClientsPackageImpl.eNS_URI) instanceof ClientsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ClientsPackageImpl.eNS_URI) : ClientsPackageImpl.eINSTANCE);
 		IdentitiesPackageImpl theIdentitiesPackage = (IdentitiesPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(IdentitiesPackageImpl.eNS_URI) instanceof IdentitiesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(IdentitiesPackageImpl.eNS_URI) : IdentitiesPackageImpl.eINSTANCE);
 		PersonnelPackageImpl thePersonnelPackage = (PersonnelPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(PersonnelPackageImpl.eNS_URI) instanceof PersonnelPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(PersonnelPackageImpl.eNS_URI) : PersonnelPackageImpl.eINSTANCE);
 		SchedulePackageImpl theSchedulePackage = (SchedulePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(SchedulePackageImpl.eNS_URI) instanceof SchedulePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(SchedulePackageImpl.eNS_URI) : SchedulePackageImpl.eINSTANCE);
@@ -636,8 +654,8 @@ public class OrderingPackageImpl extends EPackageImpl {
 		theHotelPackage.createPackageContents();
 		theFacilitiesPackage.createPackageContents();
 		theServicesPackage.createPackageContents();
-		theClientsPackage.createPackageContents();
 		thePaymentPackage.createPackageContents();
+		theClientsPackage.createPackageContents();
 		theIdentitiesPackage.createPackageContents();
 		thePersonnelPackage.createPackageContents();
 		theSchedulePackage.createPackageContents();
@@ -651,8 +669,8 @@ public class OrderingPackageImpl extends EPackageImpl {
 		theHotelPackage.initializePackageContents();
 		theFacilitiesPackage.initializePackageContents();
 		theServicesPackage.initializePackageContents();
-		theClientsPackage.initializePackageContents();
 		thePaymentPackage.initializePackageContents();
+		theClientsPackage.initializePackageContents();
 		theIdentitiesPackage.initializePackageContents();
 		thePersonnelPackage.initializePackageContents();
 		theSchedulePackage.initializePackageContents();
@@ -697,19 +715,6 @@ public class OrderingPackageImpl extends EPackageImpl {
 	}
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link sechalmersmdsdgroup5.hotel.ordering.Order#getInvoices <em>Invoices</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Invoices</em>'.
-	 * @see sechalmersmdsdgroup5.hotel.ordering.Order#getInvoices()
-	 * @see #getOrder()
-	 * @generated
-	 */
-	public EReference getOrder_Invoices() {
-		return (EReference)orderEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
 	 * Returns the meta object for the reference list '{@link sechalmersmdsdgroup5.hotel.ordering.Order#getBookings <em>Bookings</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -719,8 +724,22 @@ public class OrderingPackageImpl extends EPackageImpl {
 	 * @generated
 	 */
 	public EReference getOrder_Bookings() {
-		return (EReference)orderEClass.getEStructuralFeatures().get(2);
+		return (EReference)orderEClass.getEStructuralFeatures().get(1);
 	}
+
+	/**
+	 * Returns the meta object for the attribute '{@link sechalmersmdsdgroup5.hotel.ordering.Order#getCreationDate <em>Creation Date</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Creation Date</em>'.
+	 * @see sechalmersmdsdgroup5.hotel.ordering.Order#getCreationDate()
+	 * @see #getOrder()
+	 * @generated
+	 */
+	public EAttribute getOrder_CreationDate() {
+		return (EAttribute)orderEClass.getEStructuralFeatures().get(2);
+	}
+
 
 	/**
 	 * Returns the meta object for class '{@link sechalmersmdsdgroup5.hotel.ordering.Campaign <em>Campaign</em>}'.
@@ -1083,8 +1102,8 @@ public class OrderingPackageImpl extends EPackageImpl {
 		// Create classes and their features
 		orderEClass = createEClass(ORDER);
 		createEReference(orderEClass, ORDER__CAMPAIGNS);
-		createEReference(orderEClass, ORDER__INVOICES);
 		createEReference(orderEClass, ORDER__BOOKINGS);
+		createEAttribute(orderEClass, ORDER__CREATION_DATE);
 
 		campaignEClass = createEClass(CAMPAIGN);
 		createEAttribute(campaignEClass, CAMPAIGN__NAME);
@@ -1101,9 +1120,13 @@ public class OrderingPackageImpl extends EPackageImpl {
 		createEAttribute(preBookingEClass, PRE_BOOKING__END_DATE);
 		createEReference(preBookingEClass, PRE_BOOKING__WILL_BOOK);
 
-		invoiceEClass = createEClass(INVOICE);
-		createEAttribute(invoiceEClass, INVOICE__IS_PAID);
-		createEAttribute(invoiceEClass, INVOICE__EXPIRY_DATE);
+		roomBookingEClass = createEClass(ROOM_BOOKING);
+		createEAttribute(roomBookingEClass, ROOM_BOOKING__START_DATE);
+		createEAttribute(roomBookingEClass, ROOM_BOOKING__END_DATE);
+		createEAttribute(roomBookingEClass, ROOM_BOOKING__CHECKIN_TIME);
+		createEAttribute(roomBookingEClass, ROOM_BOOKING__CHECKOUT_TIME);
+		createEReference(roomBookingEClass, ROOM_BOOKING__BOOKED_ROOM);
+		createEAttribute(roomBookingEClass, ROOM_BOOKING__IS_PAID);
 
 		iOrderEClass = createEClass(IORDER);
 
@@ -1113,13 +1136,9 @@ public class OrderingPackageImpl extends EPackageImpl {
 
 		packagePreOrderEClass = createEClass(PACKAGE_PRE_ORDER);
 
-		roomBookingEClass = createEClass(ROOM_BOOKING);
-		createEAttribute(roomBookingEClass, ROOM_BOOKING__START_DATE);
-		createEAttribute(roomBookingEClass, ROOM_BOOKING__END_DATE);
-		createEAttribute(roomBookingEClass, ROOM_BOOKING__CHECKIN_TIME);
-		createEAttribute(roomBookingEClass, ROOM_BOOKING__CHECKOUT_TIME);
-		createEReference(roomBookingEClass, ROOM_BOOKING__BOOKED_ROOM);
-		createEAttribute(roomBookingEClass, ROOM_BOOKING__IS_PAID);
+		invoiceEClass = createEClass(INVOICE);
+		createEAttribute(invoiceEClass, INVOICE__IS_PAID);
+		createEAttribute(invoiceEClass, INVOICE__EXPIRY_DATE);
 	}
 
 	/**
@@ -1146,6 +1165,7 @@ public class OrderingPackageImpl extends EPackageImpl {
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
+		PaymentPackageImpl thePaymentPackage = (PaymentPackageImpl)EPackage.Registry.INSTANCE.getEPackage(PaymentPackageImpl.eNS_URI);
 		FacilitiesPackageImpl theFacilitiesPackage = (FacilitiesPackageImpl)EPackage.Registry.INSTANCE.getEPackage(FacilitiesPackageImpl.eNS_URI);
 		ClientsPackageImpl theClientsPackage = (ClientsPackageImpl)EPackage.Registry.INSTANCE.getEPackage(ClientsPackageImpl.eNS_URI);
 		IdentitiesPackageImpl theIdentitiesPackage = (IdentitiesPackageImpl)EPackage.Registry.INSTANCE.getEPackage(IdentitiesPackageImpl.eNS_URI);
@@ -1155,18 +1175,18 @@ public class OrderingPackageImpl extends EPackageImpl {
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
+		orderEClass.getESuperTypes().add(thePaymentPackage.getInvoicable());
+		roomBookingEClass.getESuperTypes().add(thePaymentPackage.getInvoicable());
 		ordinaryPreOrderEClass.getESuperTypes().add(this.getPreOrder());
 		packagePreOrderEClass.getESuperTypes().add(this.getPreOrder());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(orderEClass, Order.class, "Order", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getOrder_Campaigns(), this.getCampaign(), null, "campaigns", null, 0, -1, Order.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getOrder_Invoices(), this.getInvoice(), null, "invoices", null, 0, -1, Order.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getOrder_Bookings(), this.getRoomBooking(), null, "bookings", null, 0, -1, Order.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getOrder_CreationDate(), ecorePackage.getEDate(), "creationDate", null, 1, 1, Order.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		addEOperation(orderEClass, ecorePackage.getEDouble(), "calculatePrice", 1, 1, IS_UNIQUE, !IS_ORDERED);
-
-		addEOperation(orderEClass, ecorePackage.getEBoolean(), "isPaid", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		initEClass(campaignEClass, Campaign.class, "Campaign", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getCampaign_Name(), ecorePackage.getEString(), "name", null, 1, 1, Campaign.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -1195,9 +1215,13 @@ public class OrderingPackageImpl extends EPackageImpl {
 		initEAttribute(getPreBooking_EndDate(), ecorePackage.getEDate(), "endDate", null, 1, 1, PreBooking.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getPreBooking_WillBook(), theFacilitiesPackage.getRoom(), null, "willBook", null, 1, 1, PreBooking.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
-		initEClass(invoiceEClass, Invoice.class, "Invoice", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getInvoice_IsPaid(), ecorePackage.getEBoolean(), "isPaid", null, 1, 1, Invoice.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getInvoice_ExpiryDate(), ecorePackage.getEDate(), "expiryDate", null, 1, 1, Invoice.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEClass(roomBookingEClass, RoomBooking.class, "RoomBooking", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getRoomBooking_StartDate(), ecorePackage.getEDate(), "startDate", null, 1, 1, RoomBooking.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getRoomBooking_EndDate(), ecorePackage.getEDate(), "endDate", null, 1, 1, RoomBooking.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getRoomBooking_CheckinTime(), ecorePackage.getEDate(), "checkinTime", null, 1, 1, RoomBooking.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getRoomBooking_CheckoutTime(), ecorePackage.getEDate(), "checkoutTime", null, 1, 1, RoomBooking.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getRoomBooking_BookedRoom(), theFacilitiesPackage.getRoom(), null, "bookedRoom", null, 1, 1, RoomBooking.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getRoomBooking_IsPaid(), ecorePackage.getEBoolean(), "isPaid", null, 1, 1, RoomBooking.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(iOrderEClass, IOrder.class, "IOrder", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -1244,24 +1268,20 @@ public class OrderingPackageImpl extends EPackageImpl {
 		addEParameter(op, theClientsPackage.getGuest(), "guest", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, this.getRoomBooking(), "booking", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
-		op = addEOperation(iCheckInCheckOutEClass, ecorePackage.getEBoolean(), "giveOutKeycard", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		op = addEOperation(iCheckInCheckOutEClass, ecorePackage.getEBoolean(), "giveOutKey", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, theIdentitiesPackage.getIdentity(), "identity", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, theFacilitiesPackage.getKey(), "keycard", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, theFacilitiesPackage.getKey(), "key", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
-		op = addEOperation(iCheckInCheckOutEClass, ecorePackage.getEBoolean(), "takeBackKeycard", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, theFacilitiesPackage.getKey(), "keycard", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		op = addEOperation(iCheckInCheckOutEClass, ecorePackage.getEBoolean(), "takeBackKey", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, theFacilitiesPackage.getKey(), "key", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		initEClass(ordinaryPreOrderEClass, OrdinaryPreOrder.class, "OrdinaryPreOrder", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(packagePreOrderEClass, PackagePreOrder.class, "PackagePreOrder", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		initEClass(roomBookingEClass, RoomBooking.class, "RoomBooking", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getRoomBooking_StartDate(), ecorePackage.getEDate(), "startDate", null, 1, 1, RoomBooking.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getRoomBooking_EndDate(), ecorePackage.getEDate(), "endDate", null, 1, 1, RoomBooking.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getRoomBooking_CheckinTime(), ecorePackage.getEDate(), "checkinTime", null, 1, 1, RoomBooking.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getRoomBooking_CheckoutTime(), ecorePackage.getEDate(), "checkoutTime", null, 1, 1, RoomBooking.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getRoomBooking_BookedRoom(), theFacilitiesPackage.getRoom(), null, "bookedRoom", null, 1, 1, RoomBooking.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getRoomBooking_IsPaid(), ecorePackage.getEBoolean(), "isPaid", null, 1, 1, RoomBooking.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEClass(invoiceEClass, Invoice.class, "Invoice", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getInvoice_IsPaid(), ecorePackage.getEBoolean(), "isPaid", null, 1, 1, Invoice.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getInvoice_ExpiryDate(), ecorePackage.getEDate(), "expiryDate", null, 1, 1, Invoice.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 	}
 
 	/**
@@ -1296,20 +1316,20 @@ public class OrderingPackageImpl extends EPackageImpl {
 		public static final EReference ORDER__CAMPAIGNS = eINSTANCE.getOrder_Campaigns();
 
 		/**
-		 * The meta object literal for the '<em><b>Invoices</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		public static final EReference ORDER__INVOICES = eINSTANCE.getOrder_Invoices();
-
-		/**
 		 * The meta object literal for the '<em><b>Bookings</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		public static final EReference ORDER__BOOKINGS = eINSTANCE.getOrder_Bookings();
+
+		/**
+		 * The meta object literal for the '<em><b>Creation Date</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		public static final EAttribute ORDER__CREATION_DATE = eINSTANCE.getOrder_CreationDate();
 
 		/**
 		 * The meta object literal for the '{@link sechalmersmdsdgroup5.hotel.ordering.impl.CampaignImpl <em>Campaign</em>}' class.

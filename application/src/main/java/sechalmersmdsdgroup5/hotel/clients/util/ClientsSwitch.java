@@ -68,9 +68,17 @@ public class ClientsSwitch<T> extends Switch<T> {
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
+			case ClientsPackageImpl.GUEST: {
+				Guest guest = (Guest)theEObject;
+				T result = caseGuest(guest);
+				if (result == null) result = caseClient(guest);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case ClientsPackageImpl.CUSTOMER: {
 				Customer customer = (Customer)theEObject;
 				T result = caseCustomer(customer);
+				if (result == null) result = caseClient(customer);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -80,9 +88,9 @@ public class ClientsSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case ClientsPackageImpl.GUEST: {
-				Guest guest = (Guest)theEObject;
-				T result = caseGuest(guest);
+			case ClientsPackageImpl.CLIENT: {
+				Client client = (Client)theEObject;
+				T result = caseClient(client);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -117,6 +125,21 @@ public class ClientsSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseAddress(Address object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Client</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Client</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseClient(Client object) {
 		return null;
 	}
 

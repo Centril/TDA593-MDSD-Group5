@@ -95,6 +95,6 @@ public interface ISearch {
 	 * @model ordered="false" queryRequired="true" queryOrdered="false"
 	 * @generated
 	 */
-	List<SearchResult<Key>> searchKeycard(SearchQuery<Key> query);
+	List<SearchResult<Key>> searchKey(SearchQuery<Key> query);
 
 } // ISearch

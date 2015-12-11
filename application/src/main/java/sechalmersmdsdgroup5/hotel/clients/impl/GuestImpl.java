@@ -13,6 +13,7 @@ import sechalmersmdsdgroup5.hotel.clients.Guest;
 import sechalmersmdsdgroup5.hotel.facilities.Key;
 
 import sechalmersmdsdgroup5.hotel.identities.RealPerson;
+import sechalmersmdsdgroup5.hotel.ordering.Invoice;
 
 /**
  * <!-- begin-user-doc -->
@@ -22,6 +23,7 @@ import sechalmersmdsdgroup5.hotel.identities.RealPerson;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link sechalmersmdsdgroup5.hotel.clients.impl.GuestImpl#getInvoice <em>Invoice</em>}</li>
  *   <li>{@link sechalmersmdsdgroup5.hotel.clients.impl.GuestImpl#getKey <em>Key</em>}</li>
  *   <li>{@link sechalmersmdsdgroup5.hotel.clients.impl.GuestImpl#getIdentity <em>Identity</em>}</li>
  * </ul>
@@ -29,6 +31,16 @@ import sechalmersmdsdgroup5.hotel.identities.RealPerson;
  * @generated
  */
 public class GuestImpl extends MinimalEObjectImpl.Container implements Guest {
+	/**
+	 * The cached value of the '{@link #getInvoice() <em>Invoice</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getInvoice()
+	 * @generated
+	 * @ordered
+	 */
+	protected Invoice invoice;
+
 	/**
 	 * The cached value of the '{@link #getKey() <em>Key</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -66,6 +78,39 @@ public class GuestImpl extends MinimalEObjectImpl.Container implements Guest {
 	@Override
 	protected EClass eStaticClass() {
 		return ClientsPackageImpl.Literals.GUEST;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Invoice getInvoice() {
+		if (invoice != null && ((EObject)invoice).eIsProxy()) {
+			InternalEObject oldInvoice = (InternalEObject)invoice;
+			invoice = (Invoice)eResolveProxy(oldInvoice);
+			if (invoice != oldInvoice) {
+			}
+		}
+		return invoice;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Invoice basicGetInvoice() {
+		return invoice;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setInvoice(Invoice newInvoice) {
+		invoice = newInvoice;
 	}
 
 	/**
@@ -142,6 +187,9 @@ public class GuestImpl extends MinimalEObjectImpl.Container implements Guest {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case ClientsPackageImpl.GUEST__INVOICE:
+				if (resolve) return getInvoice();
+				return basicGetInvoice();
 			case ClientsPackageImpl.GUEST__KEY:
 				if (resolve) return getKey();
 				return basicGetKey();
@@ -160,6 +208,9 @@ public class GuestImpl extends MinimalEObjectImpl.Container implements Guest {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case ClientsPackageImpl.GUEST__INVOICE:
+				setInvoice((Invoice)newValue);
+				return;
 			case ClientsPackageImpl.GUEST__KEY:
 				setKey((Key)newValue);
 				return;
@@ -178,6 +229,9 @@ public class GuestImpl extends MinimalEObjectImpl.Container implements Guest {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case ClientsPackageImpl.GUEST__INVOICE:
+				setInvoice((Invoice)null);
+				return;
 			case ClientsPackageImpl.GUEST__KEY:
 				setKey((Key)null);
 				return;
@@ -196,6 +250,8 @@ public class GuestImpl extends MinimalEObjectImpl.Container implements Guest {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case ClientsPackageImpl.GUEST__INVOICE:
+				return invoice != null;
 			case ClientsPackageImpl.GUEST__KEY:
 				return key != null;
 			case ClientsPackageImpl.GUEST__IDENTITY:

@@ -70,6 +70,10 @@ public class ClientsAdapterFactory extends AdapterFactoryImpl {
 	protected ClientsSwitch<Adapter> modelSwitch =
 		new ClientsSwitch<Adapter>() {
 			@Override
+			public Adapter caseGuest(Guest object) {
+				return createGuestAdapter();
+			}
+			@Override
 			public Adapter caseCustomer(Customer object) {
 				return createCustomerAdapter();
 			}
@@ -78,8 +82,8 @@ public class ClientsAdapterFactory extends AdapterFactoryImpl {
 				return createAddressAdapter();
 			}
 			@Override
-			public Adapter caseGuest(Guest object) {
-				return createGuestAdapter();
+			public Adapter caseClient(Client object) {
+				return createClientAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -126,6 +130,20 @@ public class ClientsAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createAddressAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link sechalmersmdsdgroup5.hotel.clients.Client <em>Client</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see sechalmersmdsdgroup5.hotel.clients.Client
+	 * @generated
+	 */
+	public Adapter createClientAdapter() {
 		return null;
 	}
 
