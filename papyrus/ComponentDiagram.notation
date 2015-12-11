@@ -288,13 +288,21 @@
       <layoutConstraint xmi:type="notation:Bounds" xmi:id="_tMLgOZUKEeWtRMAmqbtyDA"/>
     </children>
     <children xmi:type="notation:BasicCompartment" xmi:id="_tMLgOpUKEeWtRMAmqbtyDA" type="7009">
-      <children xmi:type="notation:Shape" xmi:id="_4hgYgJnSEeWCxNmOTrZsWA" type="5">
-        <element xmi:type="uml:Operation" href="ComponentDiagram.uml#_4hRH8JnSEeWCxNmOTrZsWA"/>
-        <layoutConstraint xmi:type="notation:Location" xmi:id="_4hgYgZnSEeWCxNmOTrZsWA"/>
+      <children xmi:type="notation:Shape" xmi:id="_pA7M8KAcEeWgLM8IXIN21w" type="5">
+        <element xmi:type="uml:Operation" href="ComponentDiagram.uml#_pA5-1aAcEeWgLM8IXIN21w"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_pA7M8aAcEeWgLM8IXIN21w"/>
       </children>
-      <children xmi:type="notation:Shape" xmi:id="__F5K4KAaEeWgLM8IXIN21w" type="5">
-        <element xmi:type="uml:Operation" href="ComponentDiagram.uml#__F4j0KAaEeWgLM8IXIN21w"/>
-        <layoutConstraint xmi:type="notation:Location" xmi:id="__F5K4aAaEeWgLM8IXIN21w"/>
+      <children xmi:type="notation:Shape" xmi:id="_pA70AKAcEeWgLM8IXIN21w" type="5">
+        <element xmi:type="uml:Operation" href="ComponentDiagram.uml#_pA5XwKAcEeWgLM8IXIN21w"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_pA70AaAcEeWgLM8IXIN21w"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_pA70AqAcEeWgLM8IXIN21w" type="5">
+        <element xmi:type="uml:Operation" href="ComponentDiagram.uml#_pA5-0KAcEeWgLM8IXIN21w"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_pA70A6AcEeWgLM8IXIN21w"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_pA8bEKAcEeWgLM8IXIN21w" type="5">
+        <element xmi:type="uml:Operation" href="ComponentDiagram.uml#_pA5-0qAcEeWgLM8IXIN21w"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_pA8bEaAcEeWgLM8IXIN21w"/>
       </children>
       <styles xmi:type="notation:TitleStyle" xmi:id="_tMLgO5UKEeWtRMAmqbtyDA"/>
       <styles xmi:type="notation:SortingStyle" xmi:id="_tMLgPJUKEeWtRMAmqbtyDA"/>

@@ -286,13 +286,30 @@
     <packagedElement xmi:type="uml:Dependency" xmi:id="_5gvMMJpnEeWdwcOaiLHkPA" client="_fyY0kJUKEeWtRMAmqbtyDA" supplier="_uJrfQJplEeWdwcOaiLHkPA"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Interface" xmi:id="_tMKSEJUKEeWtRMAmqbtyDA" name="Payment interface">
-    <ownedOperation xmi:type="uml:Operation" xmi:id="_4hRH8JnSEeWCxNmOTrZsWA" name="debit"/>
-    <ownedOperation xmi:type="uml:Operation" xmi:id="__F4j0KAaEeWgLM8IXIN21w" name="verifyPaymentInformation">
-      <ownedParameter xmi:type="uml:Parameter" xmi:id="__F4j0aAaEeWgLM8IXIN21w" name="paymentInformation">
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_pA5XwKAcEeWgLM8IXIN21w" name="debit">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_pA5XwaAcEeWgLM8IXIN21w" name="invoicable">
+        <type xmi:type="uml:Interface" href="ClassDiagram.uml#_BDMDQJ9FEeW5UY5BQ7hdQQ"/>
+      </ownedParameter>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_pA5XwqAcEeWgLM8IXIN21w" name="customer">
+        <type xmi:type="uml:Class" href="ClassDiagram.uml#_7PSgoJOAEeWEKYEtRmghUQ"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_pA5-0KAcEeWgLM8IXIN21w" name="debit" visibility="public">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_pA5-0aAcEeWgLM8IXIN21w" name="invoicable">
+        <type xmi:type="uml:Interface" href="ClassDiagram.uml#_BDMDQJ9FEeW5UY5BQ7hdQQ"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_pA5-0qAcEeWgLM8IXIN21w" name="verifyPaymentInformation">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_pA5-06AcEeWgLM8IXIN21w" name="paymentInformation">
         <type xmi:type="uml:Class" href="ClassDiagram.uml#_YJJ_IJRWEeWEKYEtRmghUQ"/>
       </ownedParameter>
-      <ownedParameter xmi:type="uml:Parameter" xmi:id="__F4j0qAaEeWgLM8IXIN21w" name="result" direction="return">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_pA5-1KAcEeWgLM8IXIN21w" name="result" direction="return">
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_pA5-1aAcEeWgLM8IXIN21w" name="printReceipt">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_pA5-1qAcEeWgLM8IXIN21w" name="invoicable">
+        <type xmi:type="uml:Interface" href="ClassDiagram.uml#_BDMDQJ9FEeW5UY5BQ7hdQQ"/>
       </ownedParameter>
     </ownedOperation>
   </packagedElement>
