@@ -1,3 +1,12 @@
+# Additional, added by Centril:
+
+**/.gradle/
+**/build/
+**/build.properties
+**/plugin.properties
+**/plugin.xml
+**/META-INF/
+
 # Created by https://www.gitignore.io/api/ava,eclipse,emacs,linux,osx,vim,windows
 
 #!! ERROR: ava is undefined. Use list command to see defined gitignore types !!#
@@ -95,7 +104,8 @@ tramp
 .LSOverride
 
 # Icon must end with two \r
-Icon
+Icon
+
 
 # Thumbnails
 ._*

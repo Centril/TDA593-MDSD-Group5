@@ -1,0 +1,19 @@
+language: groovy
+
+jdk:
+  - openjdk8
+
+env:
+- TERM=dumb
+
+cache:
+  directories:
+  - $HOME/.gradle/caches/
+  - $HOME/.gradle/wrapper/
+
+before_install:
+- cd application
+- chmod +x gradlew
+
+script:
+- ./gradlew build

@@ -602,22 +602,30 @@
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="MatchesSearchCriteria">
         <eTypeParameters name="SRT"/>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="predicate" ordered="false"
+        <eTypeParameters name="IN"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="input" ordered="false"
             lowerBound="1">
-          <eGenericType eClassifier="#//hotel/search/UnaryOperator">
-            <eTypeArguments>
-              <eUpperBound eTypeParameter="#//hotel/search/SearchResult/SRT"/>
-            </eTypeArguments>
-          </eGenericType>
+          <eGenericType eTypeParameter="#//hotel/search/MatchesSearchCriteria/IN"/>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="transform" ordered="false"
             lowerBound="1">
-          <eGenericType eClassifier="#//hotel/search/BiPredicate">
+          <eGenericType eClassifier="#//hotel/search/Function">
             <eTypeArguments>
               <eUpperBound eTypeParameter="#//hotel/search/SearchResult/SRT"/>
             </eTypeArguments>
             <eTypeArguments>
-              <eUpperBound eTypeParameter="#//hotel/search/SearchResult/SRT"/>
+              <eUpperBound eTypeParameter="#//hotel/search/MatchesSearchCriteria/IN"/>
+            </eTypeArguments>
+          </eGenericType>
+        </eStructuralFeatures>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="predicate" ordered="false"
+            lowerBound="1">
+          <eGenericType eClassifier="#//hotel/search/BiPredicate">
+            <eTypeArguments>
+              <eUpperBound eTypeParameter="#//hotel/search/MatchesSearchCriteria/IN"/>
+            </eTypeArguments>
+            <eTypeArguments>
+              <eUpperBound eTypeParameter="#//hotel/search/MatchesSearchCriteria/IN"/>
             </eTypeArguments>
           </eGenericType>
         </eStructuralFeatures>
@@ -625,9 +633,10 @@
           <eTypeArguments eTypeParameter="#//hotel/search/SearchCriteria/SRT"/>
         </eGenericSuperTypes>
       </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="UnaryOperator" instanceClassName="java.util.function.UnaryOperator"
+      <eClassifiers xsi:type="ecore:EClass" name="Function" instanceClassName="java.util.function.Function"
           abstract="true" interface="true">
-        <eTypeParameters name="UOT"/>
+        <eTypeParameters name="FI"/>
+        <eTypeParameters name="FO"/>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="BiPredicate" instanceClassName="java.util.function.BiPredicate"
           abstract="true" interface="true">
