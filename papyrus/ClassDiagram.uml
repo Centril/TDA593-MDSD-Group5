@@ -410,7 +410,7 @@
               <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_78TSEJqbEeWhp8VYZPcMtQ" value="*"/>
             </ownedParameter>
           </ownedOperation>
-          <ownedOperation xmi:type="uml:Operation" xmi:id="_Tv66UJnCEeW2JPAtqMJHLg" name="searchKeycard">
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_Tv66UJnCEeW2JPAtqMJHLg" name="searchKey">
             <ownedParameter xmi:type="uml:Parameter" xmi:id="_Tv66UZnCEeW2JPAtqMJHLg" name="query" type="_sSl9EJxuEeWiw-HwyxZ8Kg">
               <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_9c13wJqbEeWhp8VYZPcMtQ" value="1"/>
               <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_9c3s8JqbEeWhp8VYZPcMtQ" value="1"/>
