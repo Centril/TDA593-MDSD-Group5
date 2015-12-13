@@ -121,7 +121,7 @@
     </eSubpackages>
     <eSubpackages name="services" nsURI="http:///sechalmersmdsdgroup5/hotel/services.ecore"
         nsPrefix="sechalmersmdsdgroup5.hotel.services">
-      <eClassifiers xsi:type="ecore:EClass" name="Service" eSuperTypes="#//hotel/payment/Invoicable">
+      <eClassifiers xsi:type="ecore:EClass" name="Service" eSuperTypes="#//hotel/payment/Payable">
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="price" ordered="false"
             lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="isPaid" ordered="false"
@@ -166,18 +166,18 @@
           <eParameters name="paymentInformation" ordered="false" lowerBound="1" eType="#//hotel/payment/CreditCard"/>
         </eOperations>
         <eOperations name="debit" ordered="false" lowerBound="1">
-          <eParameters name="invoicable" ordered="false" lowerBound="1" eType="#//hotel/payment/Invoicable"/>
+          <eParameters name="invoicable" ordered="false" lowerBound="1" eType="#//hotel/payment/Payable"/>
         </eOperations>
         <eOperations name="debit" ordered="false" lowerBound="1">
-          <eParameters name="invoicable" ordered="false" lowerBound="1" eType="#//hotel/payment/Invoicable"/>
+          <eParameters name="invoicable" ordered="false" lowerBound="1" eType="#//hotel/payment/Payable"/>
           <eParameters name="customer" ordered="false" lowerBound="1" eType="#//hotel/clients/Client"/>
         </eOperations>
         <eOperations name="printReceipt" ordered="false" lowerBound="1">
-          <eParameters name="invoicable" ordered="false" lowerBound="1" eType="#//hotel/payment/Invoicable"/>
+          <eParameters name="invoicable" ordered="false" lowerBound="1" eType="#//hotel/payment/Payable"/>
         </eOperations>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EEnum" name="PaymentMethod"/>
-      <eClassifiers xsi:type="ecore:EClass" name="Invoicable" abstract="true" interface="true">
+      <eClassifiers xsi:type="ecore:EClass" name="Payable" abstract="true" interface="true">
         <eOperations name="totalPrice" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
         <eOperations name="isPaid" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="invoice" ordered="false"
@@ -201,6 +201,8 @@
             lowerBound="1" eType="#//hotel/clients/Address"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="identity" ordered="false"
             lowerBound="1" eType="#//hotel/identities/Identity"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="email" ordered="false"
+            lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="Address">
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="street" ordered="false"
@@ -241,7 +243,7 @@
     </eSubpackages>
     <eSubpackages name="ordering" nsURI="http:///sechalmersmdsdgroup5/hotel/ordering.ecore"
         nsPrefix="sechalmersmdsdgroup5.hotel.ordering">
-      <eClassifiers xsi:type="ecore:EClass" name="Order" eSuperTypes="#//hotel/payment/Invoicable">
+      <eClassifiers xsi:type="ecore:EClass" name="Order" eSuperTypes="#//hotel/payment/Payable">
         <eOperations name="calculatePrice" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="campaigns" ordered="false"
             upperBound="-1" eType="#//hotel/ordering/Campaign"/>
@@ -285,7 +287,7 @@
         <eStructuralFeatures xsi:type="ecore:EReference" name="willBook" ordered="false"
             lowerBound="1" eType="#//hotel/facilities/Room"/>
       </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="RoomBooking" eSuperTypes="#//hotel/payment/Invoicable">
+      <eClassifiers xsi:type="ecore:EClass" name="RoomBooking" eSuperTypes="#//hotel/payment/Payable">
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="startDate" ordered="false"
             lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="endDate" ordered="false"
