@@ -183,6 +183,9 @@
           <ownedAttribute xmi:type="uml:Property" xmi:id="_cBxPcJRWEeWEKYEtRmghUQ" name="card" type="_YJJ_IJRWEeWEKYEtRmghUQ" aggregation="shared" association="_cBwoYJRWEeWEKYEtRmghUQ"/>
           <ownedAttribute xmi:type="uml:Property" xmi:id="_klB_wZqSEeWXppCtG_WnKw" name="associatedAdress" type="_-3k78JqREeWXppCtG_WnKw" aggregation="shared" association="_kk9uUJqSEeWXppCtG_WnKw"/>
           <ownedAttribute xmi:type="uml:Property" xmi:id="_9j5vs5QREeWEKYEtRmghUQ" name="identity" type="_8icKkJOAEeWEKYEtRmghUQ" aggregation="shared" association="_9j5IoJQREeWEKYEtRmghUQ"/>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_RcJJgKHIEeWr16OUKCLqNQ" name="email" visibility="private">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+          </ownedAttribute>
           <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_no9EsKAtEeWRM8HqbnnQEA" client="_7PSgoJOAEeWEKYEtRmghUQ" supplier="_0CgQwKAsEeWRM8HqbnnQEA" contract="_0CgQwKAsEeWRM8HqbnnQEA"/>
         </packagedElement>
         <packagedElement xmi:type="uml:Realization" xmi:id="_DwDfkJbpEeWGQOCCfM2qyw" client="_st4FoJOAEeWEKYEtRmghUQ" supplier="_yo2uEJboEeWGQOCCfM2qyw"/>
