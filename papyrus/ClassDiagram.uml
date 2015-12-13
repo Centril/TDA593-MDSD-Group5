@@ -943,7 +943,7 @@
           </ownedOperation>
         </packagedElement>
         <packagedElement xmi:type="uml:Enumeration" xmi:id="_90_gwJqVEeWXppCtG_WnKw" name="PaymentMethod"/>
-        <packagedElement xmi:type="uml:Interface" xmi:id="_BDMDQJ9FEeW5UY5BQ7hdQQ" name="Invoicable">
+        <packagedElement xmi:type="uml:Interface" xmi:id="_BDMDQJ9FEeW5UY5BQ7hdQQ" name="Payable">
           <ownedAttribute xmi:type="uml:Property" xmi:id="_5aGVoKAuEeWRM8HqbnnQEA" name="invoice" type="_3gRasJRQEeWEKYEtRmghUQ" aggregation="composite" association="_5aDSUKAuEeWRM8HqbnnQEA">
             <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_eSfu0KAxEeWOoL20tWoV8A"/>
             <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_eSqt8KAxEeWOoL20tWoV8A" value="*"/>
