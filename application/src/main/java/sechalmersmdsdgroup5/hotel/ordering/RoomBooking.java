@@ -5,7 +5,7 @@ package sechalmersmdsdgroup5.hotel.ordering;
 import java.util.Date;
 
 import sechalmersmdsdgroup5.hotel.facilities.Room;
-import sechalmersmdsdgroup5.hotel.payment.Invoicable;
+import sechalmersmdsdgroup5.hotel.payment.Payable;
 
 /**
  * <!-- begin-user-doc -->
@@ -27,7 +27,7 @@ import sechalmersmdsdgroup5.hotel.payment.Invoicable;
  * @model
  * @generated
  */
-public interface RoomBooking extends Invoicable {
+public interface RoomBooking extends Payable {
 	/**
 	 * Returns the value of the '<em><b>Start Date</b></em>' attribute.
 	 * <!-- begin-user-doc -->

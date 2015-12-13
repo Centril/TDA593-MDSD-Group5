@@ -30,7 +30,7 @@ import sechalmersmdsdgroup5.hotel.ordering.impl.OrderingPackageImpl;
 
 import sechalmersmdsdgroup5.hotel.payment.CreditCard;
 import sechalmersmdsdgroup5.hotel.payment.IPayment;
-import sechalmersmdsdgroup5.hotel.payment.Invoicable;
+import sechalmersmdsdgroup5.hotel.payment.Payable;
 import sechalmersmdsdgroup5.hotel.payment.PaymentFactory;
 import sechalmersmdsdgroup5.hotel.payment.PaymentMethod;
 
@@ -174,14 +174,14 @@ public class PaymentPackageImpl extends EPackageImpl {
 	public static final int IPAYMENT_FEATURE_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link sechalmersmdsdgroup5.hotel.payment.Invoicable <em>Invoicable</em>}' class.
+	 * The meta object id for the '{@link sechalmersmdsdgroup5.hotel.payment.Payable <em>Payable</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see sechalmersmdsdgroup5.hotel.payment.Invoicable
-	 * @see sechalmersmdsdgroup5.hotel.payment.impl.PaymentPackageImpl#getInvoicable()
+	 * @see sechalmersmdsdgroup5.hotel.payment.Payable
+	 * @see sechalmersmdsdgroup5.hotel.payment.impl.PaymentPackageImpl#getPayable()
 	 * @generated
 	 */
-	public static final int INVOICABLE = 2;
+	public static final int PAYABLE = 2;
 
 	/**
 	 * The feature id for the '<em><b>Invoice</b></em>' containment reference list.
@@ -190,16 +190,16 @@ public class PaymentPackageImpl extends EPackageImpl {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int INVOICABLE__INVOICE = 0;
+	public static final int PAYABLE__INVOICE = 0;
 
 	/**
-	 * The number of structural features of the '<em>Invoicable</em>' class.
+	 * The number of structural features of the '<em>Payable</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	public static final int INVOICABLE_FEATURE_COUNT = 1;
+	public static final int PAYABLE_FEATURE_COUNT = 1;
 
 	/**
 	 * The meta object id for the '{@link sechalmersmdsdgroup5.hotel.payment.PaymentMethod <em>Method</em>}' enum.
@@ -230,7 +230,7 @@ public class PaymentPackageImpl extends EPackageImpl {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass invoicableEClass = null;
+	private EClass payableEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -429,29 +429,29 @@ public class PaymentPackageImpl extends EPackageImpl {
 	}
 
 	/**
-	 * Returns the meta object for class '{@link sechalmersmdsdgroup5.hotel.payment.Invoicable <em>Invoicable</em>}'.
+	 * Returns the meta object for class '{@link sechalmersmdsdgroup5.hotel.payment.Payable <em>Payable</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Invoicable</em>'.
-	 * @see sechalmersmdsdgroup5.hotel.payment.Invoicable
+	 * @return the meta object for class '<em>Payable</em>'.
+	 * @see sechalmersmdsdgroup5.hotel.payment.Payable
 	 * @generated
 	 */
-	public EClass getInvoicable() {
-		return invoicableEClass;
+	public EClass getPayable() {
+		return payableEClass;
 	}
 
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link sechalmersmdsdgroup5.hotel.payment.Invoicable#getInvoice <em>Invoice</em>}'.
+	 * Returns the meta object for the containment reference list '{@link sechalmersmdsdgroup5.hotel.payment.Payable#getInvoice <em>Invoice</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Invoice</em>'.
-	 * @see sechalmersmdsdgroup5.hotel.payment.Invoicable#getInvoice()
-	 * @see #getInvoicable()
+	 * @see sechalmersmdsdgroup5.hotel.payment.Payable#getInvoice()
+	 * @see #getPayable()
 	 * @generated
 	 */
-	public EReference getInvoicable_Invoice() {
-		return (EReference)invoicableEClass.getEStructuralFeatures().get(0);
+	public EReference getPayable_Invoice() {
+		return (EReference)payableEClass.getEStructuralFeatures().get(0);
 	}
 
 
@@ -506,8 +506,8 @@ public class PaymentPackageImpl extends EPackageImpl {
 
 		iPaymentEClass = createEClass(IPAYMENT);
 
-		invoicableEClass = createEClass(INVOICABLE);
-		createEReference(invoicableEClass, INVOICABLE__INVOICE);
+		payableEClass = createEClass(PAYABLE);
+		createEReference(payableEClass, PAYABLE__INVOICE);
 
 		// Create enums
 		paymentMethodEEnum = createEEnum(PAYMENT_METHOD);
@@ -560,21 +560,21 @@ public class PaymentPackageImpl extends EPackageImpl {
 		addEParameter(op, this.getCreditCard(), "paymentInformation", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		op = addEOperation(iPaymentEClass, null, "debit", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, this.getInvoicable(), "invoicable", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, this.getPayable(), "invoicable", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		op = addEOperation(iPaymentEClass, null, "debit", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, this.getInvoicable(), "invoicable", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, this.getPayable(), "invoicable", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, theClientsPackage.getClient(), "customer", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		op = addEOperation(iPaymentEClass, null, "printReceipt", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, this.getInvoicable(), "invoicable", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, this.getPayable(), "invoicable", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
-		initEClass(invoicableEClass, Invoicable.class, "Invoicable", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getInvoicable_Invoice(), theOrderingPackage.getInvoice(), null, "invoice", null, 0, -1, Invoicable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEClass(payableEClass, Payable.class, "Payable", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getPayable_Invoice(), theOrderingPackage.getInvoice(), null, "invoice", null, 0, -1, Payable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
-		addEOperation(invoicableEClass, ecorePackage.getEDouble(), "totalPrice", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEOperation(payableEClass, ecorePackage.getEDouble(), "totalPrice", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
-		addEOperation(invoicableEClass, ecorePackage.getEBoolean(), "isPaid", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEOperation(payableEClass, ecorePackage.getEBoolean(), "isPaid", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(paymentMethodEEnum, PaymentMethod.class, "PaymentMethod");
@@ -654,14 +654,14 @@ public class PaymentPackageImpl extends EPackageImpl {
 		public static final EClass IPAYMENT = eINSTANCE.getIPayment();
 
 		/**
-		 * The meta object literal for the '{@link sechalmersmdsdgroup5.hotel.payment.Invoicable <em>Invoicable</em>}' class.
+		 * The meta object literal for the '{@link sechalmersmdsdgroup5.hotel.payment.Payable <em>Payable</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see sechalmersmdsdgroup5.hotel.payment.Invoicable
-		 * @see sechalmersmdsdgroup5.hotel.payment.impl.PaymentPackageImpl#getInvoicable()
+		 * @see sechalmersmdsdgroup5.hotel.payment.Payable
+		 * @see sechalmersmdsdgroup5.hotel.payment.impl.PaymentPackageImpl#getPayable()
 		 * @generated
 		 */
-		public static final EClass INVOICABLE = eINSTANCE.getInvoicable();
+		public static final EClass PAYABLE = eINSTANCE.getPayable();
 
 		/**
 		 * The meta object literal for the '<em><b>Invoice</b></em>' containment reference list feature.
@@ -669,7 +669,7 @@ public class PaymentPackageImpl extends EPackageImpl {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		public static final EReference INVOICABLE__INVOICE = eINSTANCE.getInvoicable_Invoice();
+		public static final EReference PAYABLE__INVOICE = eINSTANCE.getPayable_Invoice();
 
 		/**
 		 * The meta object literal for the '{@link sechalmersmdsdgroup5.hotel.payment.PaymentMethod <em>Method</em>}' enum.

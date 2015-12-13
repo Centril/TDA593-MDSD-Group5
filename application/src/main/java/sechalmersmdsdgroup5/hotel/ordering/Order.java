@@ -4,7 +4,7 @@ package sechalmersmdsdgroup5.hotel.ordering;
 
 import java.util.Date;
 import java.util.List;
-import sechalmersmdsdgroup5.hotel.payment.Invoicable;
+import sechalmersmdsdgroup5.hotel.payment.Payable;
 
 /**
  * <!-- begin-user-doc -->
@@ -23,7 +23,7 @@ import sechalmersmdsdgroup5.hotel.payment.Invoicable;
  * @model
  * @generated
  */
-public interface Order extends Invoicable {
+public interface Order extends Payable {
 	/**
 	 * Returns the value of the '<em><b>Campaigns</b></em>' reference list.
 	 * The list contents are of type {@link sechalmersmdsdgroup5.hotel.ordering.Campaign}.

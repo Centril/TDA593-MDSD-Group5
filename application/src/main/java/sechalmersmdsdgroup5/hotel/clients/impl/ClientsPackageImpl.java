@@ -228,13 +228,22 @@ public class ClientsPackageImpl extends EPackageImpl {
 	public static final int CUSTOMER__IDENTITY = CLIENT_FEATURE_COUNT + 3;
 
 	/**
+	 * The feature id for the '<em><b>Email</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int CUSTOMER__EMAIL = CLIENT_FEATURE_COUNT + 4;
+
+	/**
 	 * The number of structural features of the '<em>Customer</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	public static final int CUSTOMER_FEATURE_COUNT = CLIENT_FEATURE_COUNT + 4;
+	public static final int CUSTOMER_FEATURE_COUNT = CLIENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Street</b></em>' attribute.
@@ -501,6 +510,20 @@ public class ClientsPackageImpl extends EPackageImpl {
 	}
 
 	/**
+	 * Returns the meta object for the attribute '{@link sechalmersmdsdgroup5.hotel.clients.Customer#getEmail <em>Email</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Email</em>'.
+	 * @see sechalmersmdsdgroup5.hotel.clients.Customer#getEmail()
+	 * @see #getCustomer()
+	 * @generated
+	 */
+	public EAttribute getCustomer_Email() {
+		return (EAttribute)customerEClass.getEStructuralFeatures().get(4);
+	}
+
+
+	/**
 	 * Returns the meta object for class '{@link sechalmersmdsdgroup5.hotel.clients.Address <em>Address</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -707,6 +730,7 @@ public class ClientsPackageImpl extends EPackageImpl {
 		createEReference(customerEClass, CUSTOMER__CARD);
 		createEReference(customerEClass, CUSTOMER__ASSOCIATED_ADRESS);
 		createEReference(customerEClass, CUSTOMER__IDENTITY);
+		createEAttribute(customerEClass, CUSTOMER__EMAIL);
 
 		addressEClass = createEClass(ADDRESS);
 		createEAttribute(addressEClass, ADDRESS__STREET);
@@ -768,6 +792,7 @@ public class ClientsPackageImpl extends EPackageImpl {
 		initEReference(getCustomer_Card(), thePaymentPackage.getCreditCard(), null, "card", null, 1, 1, Customer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getCustomer_AssociatedAdress(), this.getAddress(), null, "associatedAdress", null, 1, 1, Customer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getCustomer_Identity(), theIdentitiesPackage.getIdentity(), null, "identity", null, 1, 1, Customer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getCustomer_Email(), ecorePackage.getEString(), "email", null, 1, 1, Customer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(addressEClass, Address.class, "Address", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getAddress_Street(), ecorePackage.getEString(), "street", null, 1, 1, Address.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -836,6 +861,14 @@ public class ClientsPackageImpl extends EPackageImpl {
 		 * @generated
 		 */
 		public static final EReference CUSTOMER__IDENTITY = eINSTANCE.getCustomer_Identity();
+
+		/**
+		 * The meta object literal for the '<em><b>Email</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		public static final EAttribute CUSTOMER__EMAIL = eINSTANCE.getCustomer_Email();
 
 		/**
 		 * The meta object literal for the '{@link sechalmersmdsdgroup5.hotel.clients.impl.AddressImpl <em>Address</em>}' class.

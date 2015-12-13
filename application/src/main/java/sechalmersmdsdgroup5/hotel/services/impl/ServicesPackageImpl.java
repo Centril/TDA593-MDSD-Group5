@@ -105,7 +105,7 @@ public class ServicesPackageImpl extends EPackageImpl {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int SERVICE__INVOICE = PaymentPackageImpl.INVOICABLE__INVOICE;
+	public static final int SERVICE__INVOICE = PaymentPackageImpl.PAYABLE__INVOICE;
 
 	/**
 	 * The feature id for the '<em><b>Price</b></em>' attribute.
@@ -114,7 +114,7 @@ public class ServicesPackageImpl extends EPackageImpl {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int SERVICE__PRICE = PaymentPackageImpl.INVOICABLE_FEATURE_COUNT + 0;
+	public static final int SERVICE__PRICE = PaymentPackageImpl.PAYABLE_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Is Paid</b></em>' attribute.
@@ -123,7 +123,7 @@ public class ServicesPackageImpl extends EPackageImpl {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int SERVICE__IS_PAID = PaymentPackageImpl.INVOICABLE_FEATURE_COUNT + 1;
+	public static final int SERVICE__IS_PAID = PaymentPackageImpl.PAYABLE_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Creation Date</b></em>' attribute.
@@ -132,7 +132,7 @@ public class ServicesPackageImpl extends EPackageImpl {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int SERVICE__CREATION_DATE = PaymentPackageImpl.INVOICABLE_FEATURE_COUNT + 2;
+	public static final int SERVICE__CREATION_DATE = PaymentPackageImpl.PAYABLE_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Service</em>' class.
@@ -141,7 +141,7 @@ public class ServicesPackageImpl extends EPackageImpl {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int SERVICE_FEATURE_COUNT = PaymentPackageImpl.INVOICABLE_FEATURE_COUNT + 3;
+	public static final int SERVICE_FEATURE_COUNT = PaymentPackageImpl.PAYABLE_FEATURE_COUNT + 3;
 
 	/**
 	 * The meta object id for the '{@link sechalmersmdsdgroup5.hotel.services.ServiceConsumer <em>Service Consumer</em>}' class.
@@ -513,7 +513,7 @@ public class ServicesPackageImpl extends EPackageImpl {
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		serviceEClass.getESuperTypes().add(thePaymentPackage.getInvoicable());
+		serviceEClass.getESuperTypes().add(thePaymentPackage.getPayable());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(serviceEClass, Service.class, "Service", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

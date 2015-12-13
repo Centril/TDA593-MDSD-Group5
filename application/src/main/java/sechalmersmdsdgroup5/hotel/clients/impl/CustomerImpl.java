@@ -30,6 +30,7 @@ import sechalmersmdsdgroup5.hotel.payment.PaymentMethod;
  *   <li>{@link sechalmersmdsdgroup5.hotel.clients.impl.CustomerImpl#getCard <em>Card</em>}</li>
  *   <li>{@link sechalmersmdsdgroup5.hotel.clients.impl.CustomerImpl#getAssociatedAdress <em>Associated Adress</em>}</li>
  *   <li>{@link sechalmersmdsdgroup5.hotel.clients.impl.CustomerImpl#getIdentity <em>Identity</em>}</li>
+ *   <li>{@link sechalmersmdsdgroup5.hotel.clients.impl.CustomerImpl#getEmail <em>Email</em>}</li>
  * </ul>
  *
  * @generated
@@ -94,6 +95,26 @@ public class CustomerImpl extends MinimalEObjectImpl.Container implements Custom
 	 * @ordered
 	 */
 	protected Identity identity;
+
+	/**
+	 * The default value of the '{@link #getEmail() <em>Email</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getEmail()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String EMAIL_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getEmail() <em>Email</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getEmail()
+	 * @generated
+	 * @ordered
+	 */
+	protected String email = EMAIL_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -269,6 +290,24 @@ public class CustomerImpl extends MinimalEObjectImpl.Container implements Custom
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getEmail() {
+		return email;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setEmail(String newEmail) {
+		email = newEmail;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -286,6 +325,8 @@ public class CustomerImpl extends MinimalEObjectImpl.Container implements Custom
 			case ClientsPackageImpl.CUSTOMER__IDENTITY:
 				if (resolve) return getIdentity();
 				return basicGetIdentity();
+			case ClientsPackageImpl.CUSTOMER__EMAIL:
+				return getEmail();
 		}
 		return eDynamicGet(featureID, resolve, coreType);
 	}
@@ -312,6 +353,9 @@ public class CustomerImpl extends MinimalEObjectImpl.Container implements Custom
 				return;
 			case ClientsPackageImpl.CUSTOMER__IDENTITY:
 				setIdentity((Identity)newValue);
+				return;
+			case ClientsPackageImpl.CUSTOMER__EMAIL:
+				setEmail((String)newValue);
 				return;
 		}
 		eDynamicSet(featureID, newValue);
@@ -340,6 +384,9 @@ public class CustomerImpl extends MinimalEObjectImpl.Container implements Custom
 			case ClientsPackageImpl.CUSTOMER__IDENTITY:
 				setIdentity((Identity)null);
 				return;
+			case ClientsPackageImpl.CUSTOMER__EMAIL:
+				setEmail(EMAIL_EDEFAULT);
+				return;
 		}
 		eDynamicUnset(featureID);
 	}
@@ -362,6 +409,8 @@ public class CustomerImpl extends MinimalEObjectImpl.Container implements Custom
 				return associatedAdress != null;
 			case ClientsPackageImpl.CUSTOMER__IDENTITY:
 				return identity != null;
+			case ClientsPackageImpl.CUSTOMER__EMAIL:
+				return EMAIL_EDEFAULT == null ? email != null : !EMAIL_EDEFAULT.equals(email);
 		}
 		return eDynamicIsSet(featureID);
 	}
@@ -378,6 +427,8 @@ public class CustomerImpl extends MinimalEObjectImpl.Container implements Custom
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (paymentMethod: ");
 		result.append(paymentMethod);
+		result.append(", email: ");
+		result.append(email);
 		result.append(')');
 		return result.toString();
 	}

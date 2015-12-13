@@ -112,7 +112,7 @@ public class OrderingPackageImpl extends EPackageImpl {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int ORDER__INVOICE = PaymentPackageImpl.INVOICABLE__INVOICE;
+	public static final int ORDER__INVOICE = PaymentPackageImpl.PAYABLE__INVOICE;
 
 	/**
 	 * The feature id for the '<em><b>Campaigns</b></em>' reference list.
@@ -121,7 +121,7 @@ public class OrderingPackageImpl extends EPackageImpl {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int ORDER__CAMPAIGNS = PaymentPackageImpl.INVOICABLE_FEATURE_COUNT + 0;
+	public static final int ORDER__CAMPAIGNS = PaymentPackageImpl.PAYABLE_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Bookings</b></em>' reference list.
@@ -130,7 +130,7 @@ public class OrderingPackageImpl extends EPackageImpl {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int ORDER__BOOKINGS = PaymentPackageImpl.INVOICABLE_FEATURE_COUNT + 1;
+	public static final int ORDER__BOOKINGS = PaymentPackageImpl.PAYABLE_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Creation Date</b></em>' attribute.
@@ -139,7 +139,7 @@ public class OrderingPackageImpl extends EPackageImpl {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int ORDER__CREATION_DATE = PaymentPackageImpl.INVOICABLE_FEATURE_COUNT + 2;
+	public static final int ORDER__CREATION_DATE = PaymentPackageImpl.PAYABLE_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Order</em>' class.
@@ -148,7 +148,7 @@ public class OrderingPackageImpl extends EPackageImpl {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int ORDER_FEATURE_COUNT = PaymentPackageImpl.INVOICABLE_FEATURE_COUNT + 3;
+	public static final int ORDER_FEATURE_COUNT = PaymentPackageImpl.PAYABLE_FEATURE_COUNT + 3;
 
 	/**
 	 * The meta object id for the '{@link sechalmersmdsdgroup5.hotel.ordering.impl.CampaignImpl <em>Campaign</em>}' class.
@@ -355,7 +355,7 @@ public class OrderingPackageImpl extends EPackageImpl {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int ROOM_BOOKING__INVOICE = PaymentPackageImpl.INVOICABLE__INVOICE;
+	public static final int ROOM_BOOKING__INVOICE = PaymentPackageImpl.PAYABLE__INVOICE;
 
 	/**
 	 * The feature id for the '<em><b>Start Date</b></em>' attribute.
@@ -364,7 +364,7 @@ public class OrderingPackageImpl extends EPackageImpl {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int ROOM_BOOKING__START_DATE = PaymentPackageImpl.INVOICABLE_FEATURE_COUNT + 0;
+	public static final int ROOM_BOOKING__START_DATE = PaymentPackageImpl.PAYABLE_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>End Date</b></em>' attribute.
@@ -373,7 +373,7 @@ public class OrderingPackageImpl extends EPackageImpl {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int ROOM_BOOKING__END_DATE = PaymentPackageImpl.INVOICABLE_FEATURE_COUNT + 1;
+	public static final int ROOM_BOOKING__END_DATE = PaymentPackageImpl.PAYABLE_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Checkin Time</b></em>' attribute.
@@ -382,7 +382,7 @@ public class OrderingPackageImpl extends EPackageImpl {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int ROOM_BOOKING__CHECKIN_TIME = PaymentPackageImpl.INVOICABLE_FEATURE_COUNT + 2;
+	public static final int ROOM_BOOKING__CHECKIN_TIME = PaymentPackageImpl.PAYABLE_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Checkout Time</b></em>' attribute.
@@ -391,7 +391,7 @@ public class OrderingPackageImpl extends EPackageImpl {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int ROOM_BOOKING__CHECKOUT_TIME = PaymentPackageImpl.INVOICABLE_FEATURE_COUNT + 3;
+	public static final int ROOM_BOOKING__CHECKOUT_TIME = PaymentPackageImpl.PAYABLE_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Booked Room</b></em>' reference.
@@ -400,7 +400,7 @@ public class OrderingPackageImpl extends EPackageImpl {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int ROOM_BOOKING__BOOKED_ROOM = PaymentPackageImpl.INVOICABLE_FEATURE_COUNT + 4;
+	public static final int ROOM_BOOKING__BOOKED_ROOM = PaymentPackageImpl.PAYABLE_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Is Paid</b></em>' attribute.
@@ -409,7 +409,7 @@ public class OrderingPackageImpl extends EPackageImpl {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int ROOM_BOOKING__IS_PAID = PaymentPackageImpl.INVOICABLE_FEATURE_COUNT + 5;
+	public static final int ROOM_BOOKING__IS_PAID = PaymentPackageImpl.PAYABLE_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of structural features of the '<em>Room Booking</em>' class.
@@ -418,7 +418,7 @@ public class OrderingPackageImpl extends EPackageImpl {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int ROOM_BOOKING_FEATURE_COUNT = PaymentPackageImpl.INVOICABLE_FEATURE_COUNT + 6;
+	public static final int ROOM_BOOKING_FEATURE_COUNT = PaymentPackageImpl.PAYABLE_FEATURE_COUNT + 6;
 
 	/**
 	 * The number of structural features of the '<em>IOrder</em>' class.
@@ -1175,8 +1175,8 @@ public class OrderingPackageImpl extends EPackageImpl {
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		orderEClass.getESuperTypes().add(thePaymentPackage.getInvoicable());
-		roomBookingEClass.getESuperTypes().add(thePaymentPackage.getInvoicable());
+		orderEClass.getESuperTypes().add(thePaymentPackage.getPayable());
+		roomBookingEClass.getESuperTypes().add(thePaymentPackage.getPayable());
 		ordinaryPreOrderEClass.getESuperTypes().add(this.getPreOrder());
 		packagePreOrderEClass.getESuperTypes().add(this.getPreOrder());
 

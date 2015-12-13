@@ -20,6 +20,7 @@ import sechalmersmdsdgroup5.hotel.payment.PaymentMethod;
  *   <li>{@link sechalmersmdsdgroup5.hotel.clients.Customer#getCard <em>Card</em>}</li>
  *   <li>{@link sechalmersmdsdgroup5.hotel.clients.Customer#getAssociatedAdress <em>Associated Adress</em>}</li>
  *   <li>{@link sechalmersmdsdgroup5.hotel.clients.Customer#getIdentity <em>Identity</em>}</li>
+ *   <li>{@link sechalmersmdsdgroup5.hotel.clients.Customer#getEmail <em>Email</em>}</li>
  * </ul>
  *
  * @model
@@ -128,5 +129,30 @@ public interface Customer extends Client {
 	 * @generated
 	 */
 	void setIdentity(Identity value);
+
+	/**
+	 * Returns the value of the '<em><b>Email</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Email</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Email</em>' attribute.
+	 * @see #setEmail(String)
+	 * @model required="true" ordered="false"
+	 * @generated
+	 */
+	String getEmail();
+
+	/**
+	 * Sets the value of the '{@link sechalmersmdsdgroup5.hotel.clients.Customer#getEmail <em>Email</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Email</em>' attribute.
+	 * @see #getEmail()
+	 * @generated
+	 */
+	void setEmail(String value);
 
 } // Customer

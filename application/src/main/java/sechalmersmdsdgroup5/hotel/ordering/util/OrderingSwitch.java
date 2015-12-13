@@ -10,7 +10,7 @@ import org.eclipse.emf.ecore.util.Switch;
 import sechalmersmdsdgroup5.hotel.ordering.*;
 
 import sechalmersmdsdgroup5.hotel.ordering.impl.OrderingPackageImpl;
-import sechalmersmdsdgroup5.hotel.payment.Invoicable;
+import sechalmersmdsdgroup5.hotel.payment.Payable;
 
 /**
  * <!-- begin-user-doc -->
@@ -72,7 +72,7 @@ public class OrderingSwitch<T> extends Switch<T> {
 			case OrderingPackageImpl.ORDER: {
 				Order order = (Order)theEObject;
 				T result = caseOrder(order);
-				if (result == null) result = caseInvoicable(order);
+				if (result == null) result = casePayable(order);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -97,7 +97,7 @@ public class OrderingSwitch<T> extends Switch<T> {
 			case OrderingPackageImpl.ROOM_BOOKING: {
 				RoomBooking roomBooking = (RoomBooking)theEObject;
 				T result = caseRoomBooking(roomBooking);
-				if (result == null) result = caseInvoicable(roomBooking);
+				if (result == null) result = casePayable(roomBooking);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -213,17 +213,17 @@ public class OrderingSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Invoicable</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Payable</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Invoicable</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Payable</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseInvoicable(Invoicable object) {
+	public T casePayable(Payable object) {
 		return null;
 	}
 

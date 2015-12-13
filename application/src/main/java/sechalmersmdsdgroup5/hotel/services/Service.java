@@ -3,7 +3,7 @@
 package sechalmersmdsdgroup5.hotel.services;
 
 import java.util.Date;
-import sechalmersmdsdgroup5.hotel.payment.Invoicable;
+import sechalmersmdsdgroup5.hotel.payment.Payable;
 
 
 /**
@@ -23,7 +23,7 @@ import sechalmersmdsdgroup5.hotel.payment.Invoicable;
  * @model
  * @generated
  */
-public interface Service extends Invoicable {
+public interface Service extends Payable {
 	/**
 	 * Returns the value of the '<em><b>Price</b></em>' attribute.
 	 * <!-- begin-user-doc -->

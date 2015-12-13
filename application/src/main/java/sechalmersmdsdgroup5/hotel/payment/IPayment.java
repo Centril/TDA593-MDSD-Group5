@@ -28,7 +28,7 @@ public interface IPayment {
 	 * @model invoicableRequired="true" invoicableOrdered="false"
 	 * @generated
 	 */
-	void debit(Invoicable invoicable);
+	void debit(Payable invoicable);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -36,7 +36,7 @@ public interface IPayment {
 	 * @model invoicableRequired="true" invoicableOrdered="false" customerRequired="true" customerOrdered="false"
 	 * @generated
 	 */
-	void debit(Invoicable invoicable, Client customer);
+	void debit(Payable invoicable, Client customer);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -44,6 +44,6 @@ public interface IPayment {
 	 * @model invoicableRequired="true" invoicableOrdered="false"
 	 * @generated
 	 */
-	void printReceipt(Invoicable invoicable);
+	void printReceipt(Payable invoicable);
 
 } // IPayment

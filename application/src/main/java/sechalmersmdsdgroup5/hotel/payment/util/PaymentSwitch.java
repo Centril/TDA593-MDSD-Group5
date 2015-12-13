@@ -80,9 +80,9 @@ public class PaymentSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case PaymentPackageImpl.INVOICABLE: {
-				Invoicable invoicable = (Invoicable)theEObject;
-				T result = caseInvoicable(invoicable);
+			case PaymentPackageImpl.PAYABLE: {
+				Payable payable = (Payable)theEObject;
+				T result = casePayable(payable);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -121,17 +121,17 @@ public class PaymentSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Invoicable</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Payable</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Invoicable</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Payable</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseInvoicable(Invoicable object) {
+	public T casePayable(Payable object) {
 		return null;
 	}
 
