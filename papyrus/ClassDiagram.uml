@@ -27,7 +27,7 @@
             <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_j13wAJbqEeWGQOCCfM2qyw"/>
             <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_j14-IJbqEeWGQOCCfM2qyw" value="*"/>
           </ownedAttribute>
-          <ownedAttribute xmi:type="uml:Property" xmi:id="_9kn8JJOHEeWEKYEtRmghUQ" name="states" type="_owOzEJN6EeWEKYEtRmghUQ" aggregation="shared" association="_9kn8IJOHEeWEKYEtRmghUQ">
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_9kn8JJOHEeWEKYEtRmghUQ" name="attributes" type="_owOzEJN6EeWEKYEtRmghUQ" aggregation="shared" association="_9kn8IJOHEeWEKYEtRmghUQ">
             <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_CyeY0KWWEeWDk9xEWZYKsg"/>
             <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Cyfm8KWWEeWDk9xEWZYKsg" value="*"/>
           </ownedAttribute>
