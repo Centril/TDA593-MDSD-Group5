@@ -93,6 +93,19 @@ public class RoomAttributeImpl extends MinimalEObjectImpl.Container implements R
 		super();
 	}
 
+
+	protected RoomAttributeImpl(String name, Object value, double price) {
+		super();
+
+		if(name == null) {
+			this.name = new String();
+		} else {
+			this.name = name;
+		}
+
+		this.value = value;
+		this.price = price;
+	}
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
