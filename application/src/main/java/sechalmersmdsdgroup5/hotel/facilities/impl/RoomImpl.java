@@ -2,6 +2,7 @@
  */
 package sechalmersmdsdgroup5.hotel.facilities.impl;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
 import java.util.List;
@@ -148,7 +149,7 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<ServiceBlueprint> servicesAfforded;
+	protected List<ServiceBlueprint> servicesAfforded;
 
 	/**
 	 * The cached value of the '{@link #getStates() <em>States</em>}' reference list.
@@ -158,7 +159,7 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<RoomAttribute> states;
+	protected List<RoomAttribute> states;
 
 	/**
 	 * The cached value of the '{@link #getPrototypes() <em>Prototypes</em>}' containment reference list.
@@ -168,7 +169,7 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<PrototypeOrdering> prototypes;
+	protected List<PrototypeOrdering> prototypes;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -177,6 +178,31 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 	 */
 	protected RoomImpl() {
 		super();
+	}
+
+	protected RoomImpl(int nr, int floor, boolean usable, double basePrice, List<RoomAttribute> roomAttributes,
+					   List<PrototypeOrdering> prototypeOrderings, List<ServiceBlueprint> serviceBlueprints) {
+		this.nr = nr;
+		this.floor = floor;
+		this.usable = usable;
+		this.basePrice = basePrice;
+
+		if(roomAttributes == null) {
+			this.states = new ArrayList<>();
+		} else {
+			this.states = roomAttributes;
+		}
+
+		if(prototypeOrderings == null) {
+			this.prototypes = new ArrayList<>();
+		} else {
+			this.prototypes = prototypeOrderings;
+		}
+		if(serviceBlueprints == null) {
+			this.servicesAfforded = new ArrayList<>();
+		} else {
+			this.servicesAfforded = serviceBlueprints;
+		}
 	}
 
 	/**
