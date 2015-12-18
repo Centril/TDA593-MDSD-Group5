@@ -92,12 +92,11 @@ public class NotSearchCriteriaImpl<SRT> extends MinimalEObjectImpl.Container imp
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
-	public SearchResult<? extends SRT> apply(SearchResult<? extends SRT> results) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+	public SearchResult<? extends SRT> apply(SearchResult<? extends SRT> result) {
+		return result.withRelevance( 2 * result.getRelevance() -
+									 criteria.apply( result ).getRelevance() );
 	}
 
 	/**
