@@ -159,7 +159,7 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 	 * @generated
 	 * @ordered
 	 */
-	protected List<RoomAttribute> states;
+	protected List<RoomAttribute> attributes;
 
 	/**
 	 * The cached value of the '{@link #getPrototypes() <em>Prototypes</em>}' containment reference list.
@@ -182,15 +182,16 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 
 	protected RoomImpl(int nr, int floor, boolean usable, double basePrice, List<RoomAttribute> roomAttributes,
 					   List<PrototypeOrdering> prototypeOrderings, List<ServiceBlueprint> serviceBlueprints) {
+		super();
 		this.nr = nr;
 		this.floor = floor;
 		this.usable = usable;
 		this.basePrice = basePrice;
 
 		if(roomAttributes == null) {
-			this.states = new ArrayList<>();
+			this.attributes = new ArrayList<>();
 		} else {
-			this.states = roomAttributes;
+			this.attributes = roomAttributes;
 		}
 
 		if(prototypeOrderings == null) {
