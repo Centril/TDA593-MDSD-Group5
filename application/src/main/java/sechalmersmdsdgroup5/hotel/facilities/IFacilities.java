@@ -17,10 +17,10 @@ public interface IFacilities {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true" ordered="false" idRequired="true" idOrdered="false" unlocksRequired="true" unlocksOrdered="false"
+	 * @model required="true" ordered="false" idRequired="true" idOrdered="false" unlocksMany="true" unlocksOrdered="false"
 	 * @generated
 	 */
-	Key createKey(int id, Door unlocks);
+	Key createKey(int id, List<Door> unlocks);
 
 	/**
 	 * <!-- begin-user-doc -->

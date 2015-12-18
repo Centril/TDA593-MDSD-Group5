@@ -1379,7 +1379,7 @@ public class FacilitiesPackageImpl extends EPackageImpl {
 
 		op = addEOperation(iFacilitiesEClass, this.getKey(), "createKey", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEInt(), "id", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, this.getDoor(), "unlocks", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, this.getDoor(), "unlocks", 0, -1, IS_UNIQUE, !IS_ORDERED);
 
 		op = addEOperation(iFacilitiesEClass, this.getRoom(), "createRoom", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEInt(), "nr", 1, 1, IS_UNIQUE, !IS_ORDERED);

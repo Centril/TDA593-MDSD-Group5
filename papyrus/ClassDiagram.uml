@@ -121,7 +121,10 @@
             <ownedParameter xmi:type="uml:Parameter" xmi:id="_SaEc8KWPEeWDk9xEWZYKsg" name="id">
               <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
             </ownedParameter>
-            <ownedParameter xmi:type="uml:Parameter" xmi:id="_aOajAKWPEeWDk9xEWZYKsg" name="unlocks" type="_BsvbEJQXEeWEKYEtRmghUQ"/>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_aOajAKWPEeWDk9xEWZYKsg" name="unlocks" type="_BsvbEJQXEeWEKYEtRmghUQ">
+              <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_DUGuIKW1EeWDk9xEWZYKsg"/>
+              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_DUH8QKW1EeWDk9xEWZYKsg" value="*"/>
+            </ownedParameter>
             <ownedParameter xmi:type="uml:Parameter" xmi:id="_24BhkKWsEeWDk9xEWZYKsg" name="return" type="_ChtUMJQXEeWEKYEtRmghUQ" direction="return"/>
           </ownedOperation>
           <ownedOperation xmi:type="uml:Operation" xmi:id="_AtLvAKWQEeWDk9xEWZYKsg" name="createRoom">
