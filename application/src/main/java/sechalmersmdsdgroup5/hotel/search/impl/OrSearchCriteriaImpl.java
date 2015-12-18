@@ -12,6 +12,8 @@ import sechalmersmdsdgroup5.hotel.search.OrSearchCriteria;
 import sechalmersmdsdgroup5.hotel.search.SearchCriteria;
 import sechalmersmdsdgroup5.hotel.search.SearchResult;
 
+import java.lang.Math;
+
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Or Search Criteria</b></em>'.
@@ -137,12 +139,12 @@ public class OrSearchCriteriaImpl<SRT> extends MinimalEObjectImpl.Container impl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
-	public SearchResult<? extends SRT> apply(SearchResult<? extends SRT> results) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+	public SearchResult<? extends SRT> apply(SearchResult<? extends SRT> result ) {
+		double rl = left.apply( result ).getRelevance();
+		double rr = right.apply( result ).getRelevance();
+		return result.withRelevance( Math.max( rl, rr ) );
 	}
 
 	/**
