@@ -1255,7 +1255,7 @@
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_Odg2AJy2EeWonJqBvx1hUQ" source="org.eclipse.papyrus">
         <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Odg2AZy2EeWonJqBvx1hUQ" key="nature" value="UML_Nature"/>
       </eAnnotations>
-      <ownedEnd xmi:type="uml:Property" xmi:id="_OdhdEJy2EeWonJqBvx1hUQ" name="enterance" type="_BsvbEJQXEeWEKYEtRmghUQ" association="_OdgO8Jy2EeWonJqBvx1hUQ"/>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_OdhdEJy2EeWonJqBvx1hUQ" name="entrance" type="_BsvbEJQXEeWEKYEtRmghUQ" association="_OdgO8Jy2EeWonJqBvx1hUQ"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Association" xmi:id="_yxRmMJy6EeWo8dNNGRJY3w" memberEnd="_yxUCcJy6EeWo8dNNGRJY3w _yxV3oJy6EeWo8dNNGRJY3w">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_yxS0UJy6EeWo8dNNGRJY3w" source="org.eclipse.papyrus">
