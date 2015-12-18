@@ -2,6 +2,7 @@
  */
 package sechalmersmdsdgroup5.hotel.facilities.impl;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
@@ -83,7 +84,7 @@ public class RoomPrototypeImpl extends MinimalEObjectImpl.Container implements R
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<RoomAttribute> states;
+	protected List<RoomAttribute> states;
 
 	/**
 	 * The cached value of the '{@link #getServicesAfforded() <em>Services Afforded</em>}' reference list.
@@ -102,6 +103,25 @@ public class RoomPrototypeImpl extends MinimalEObjectImpl.Container implements R
 	 */
 	protected RoomPrototypeImpl() {
 		super();
+	}
+
+	protected RoomPrototypeImpl(String name, double basePrice, List<RoomAttribute> roomAttributes) {
+		super();
+
+		if(name == null) {
+			this.name = new String();
+		} else {
+			this.name = name;
+		}
+
+		this.basePrice = basePrice;
+
+		if(roomAttributes == null) {
+			this.states = new ArrayList<>();
+		} else {
+			this.states = roomAttributes;
+		}
+
 	}
 
 	/**
