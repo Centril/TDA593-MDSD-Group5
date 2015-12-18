@@ -130,6 +130,7 @@
           <eParameters name="basePrice" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
           <eParameters name="prototypeOrdering" ordered="false" upperBound="-1" eType="#//hotel/facilities/PrototypeOrdering"/>
           <eParameters name="roomAttributes" ordered="false" upperBound="-1" eType="#//hotel/facilities/RoomAttribute"/>
+          <eParameters name="serviceBlueprints" ordered="false" upperBound="-1" eType="#//hotel/services/ServiceBlueprint"/>
         </eOperations>
         <eOperations name="createRoomPrototype" ordered="false" lowerBound="1" eType="#//hotel/facilities/RoomPrototype">
           <eParameters name="name" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>

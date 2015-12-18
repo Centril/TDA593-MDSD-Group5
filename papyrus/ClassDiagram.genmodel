@@ -141,6 +141,7 @@
             <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="sechalmersmdsdgroup5.ecore#//hotel/facilities/IFacilities/createRoom/basePrice"/>
             <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="sechalmersmdsdgroup5.ecore#//hotel/facilities/IFacilities/createRoom/prototypeOrdering"/>
             <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="sechalmersmdsdgroup5.ecore#//hotel/facilities/IFacilities/createRoom/roomAttributes"/>
+            <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="sechalmersmdsdgroup5.ecore#//hotel/facilities/IFacilities/createRoom/serviceBlueprints"/>
           </genOperations>
           <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="sechalmersmdsdgroup5.ecore#//hotel/facilities/IFacilities/createRoomPrototype">
             <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="sechalmersmdsdgroup5.ecore#//hotel/facilities/IFacilities/createRoomPrototype/name"/>

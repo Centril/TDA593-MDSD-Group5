@@ -149,6 +149,10 @@
               <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_TpadkKWSEeWDk9xEWZYKsg" value="*"/>
             </ownedParameter>
             <ownedParameter xmi:type="uml:Parameter" xmi:id="_53zscKWsEeWDk9xEWZYKsg" name="return" type="_sPEY0JN3EeWEKYEtRmghUQ" direction="return"/>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_Mfl0AKW6EeWDk9xEWZYKsg" name="serviceBlueprints" type="_6sH2MJRREeWEKYEtRmghUQ">
+              <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_OXGIMKW6EeWDk9xEWZYKsg"/>
+              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_OXHWUKW6EeWDk9xEWZYKsg" value="*"/>
+            </ownedParameter>
           </ownedOperation>
           <ownedOperation xmi:type="uml:Operation" xmi:id="_Cpq0YKWREeWDk9xEWZYKsg" name="createRoomPrototype">
             <ownedParameter xmi:type="uml:Parameter" xmi:id="_la5iMKWSEeWDk9xEWZYKsg" name="name">

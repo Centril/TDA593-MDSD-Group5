@@ -3,6 +3,7 @@
 package sechalmersmdsdgroup5.hotel.facilities;
 
 import java.util.List;
+import sechalmersmdsdgroup5.hotel.services.ServiceBlueprint;
 
 /**
  * <!-- begin-user-doc -->
@@ -25,10 +26,10 @@ public interface IFacilities {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true" ordered="false" nrRequired="true" nrOrdered="false" floorRequired="true" floorOrdered="false" usableRequired="true" usableOrdered="false" basePriceRequired="true" basePriceOrdered="false" prototypeOrderingMany="true" prototypeOrderingOrdered="false" roomAttributesMany="true" roomAttributesOrdered="false"
+	 * @model required="true" ordered="false" nrRequired="true" nrOrdered="false" floorRequired="true" floorOrdered="false" usableRequired="true" usableOrdered="false" basePriceRequired="true" basePriceOrdered="false" prototypeOrderingMany="true" prototypeOrderingOrdered="false" roomAttributesMany="true" roomAttributesOrdered="false" serviceBlueprintsMany="true" serviceBlueprintsOrdered="false"
 	 * @generated
 	 */
-	Room createRoom(int nr, int floor, boolean usable, double basePrice, List<PrototypeOrdering> prototypeOrdering, List<RoomAttribute> roomAttributes);
+	Room createRoom(int nr, int floor, boolean usable, double basePrice, List<PrototypeOrdering> prototypeOrdering, List<RoomAttribute> roomAttributes, List<ServiceBlueprint> serviceBlueprints);
 
 	/**
 	 * <!-- begin-user-doc -->
