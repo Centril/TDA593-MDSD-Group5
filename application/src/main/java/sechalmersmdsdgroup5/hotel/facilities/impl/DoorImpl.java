@@ -2,6 +2,7 @@
  */
 package sechalmersmdsdgroup5.hotel.facilities.impl;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
@@ -56,10 +57,10 @@ public class DoorImpl extends MinimalEObjectImpl.Container implements Door {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getAreas()
-	 * @generated
+	 * @generated NOT
 	 * @ordered
 	 */
-	protected EList<Area> areas;
+	protected List<Area> areas;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -68,6 +69,18 @@ public class DoorImpl extends MinimalEObjectImpl.Container implements Door {
 	 */
 	protected DoorImpl() {
 		super();
+	}
+
+	protected DoorImpl(int id, List<Area> areas) {
+		super();
+
+		this.id = id;
+
+		if(areas == null) {
+			this.areas = new ArrayList<>();
+		} else {
+			this.areas = areas;
+		}
 	}
 
 	/**

@@ -57,7 +57,7 @@ public class KeyImpl extends MinimalEObjectImpl.Container implements Key {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getUnlocks()
-	 * @generated
+	 * @generated NOT
 	 * @ordered
 	 */
 	protected List<Door> unlocks;
