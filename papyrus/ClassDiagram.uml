@@ -27,7 +27,10 @@
             <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_j13wAJbqEeWGQOCCfM2qyw"/>
             <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_j14-IJbqEeWGQOCCfM2qyw" value="*"/>
           </ownedAttribute>
-          <ownedAttribute xmi:type="uml:Property" xmi:id="_9kn8JJOHEeWEKYEtRmghUQ" name="states" type="_owOzEJN6EeWEKYEtRmghUQ" aggregation="shared" association="_9kn8IJOHEeWEKYEtRmghUQ"/>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_9kn8JJOHEeWEKYEtRmghUQ" name="states" type="_owOzEJN6EeWEKYEtRmghUQ" aggregation="shared" association="_9kn8IJOHEeWEKYEtRmghUQ">
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_CyeY0KWWEeWDk9xEWZYKsg"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Cyfm8KWWEeWDk9xEWZYKsg" value="*"/>
+          </ownedAttribute>
           <ownedAttribute xmi:type="uml:Property" xmi:id="_yxUCcJy6EeWo8dNNGRJY3w" name="prototypes" type="_rnubgJy4EeWo8dNNGRJY3w" aggregation="composite" association="_yxRmMJy6EeWo8dNNGRJY3w">
             <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_rkCuAJy7EeWdGMY6IJjSAg"/>
             <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_rkOUMJy7EeWdGMY6IJjSAg" value="*"/>
@@ -1054,8 +1057,8 @@
         <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_9kn8IpOHEeWEKYEtRmghUQ" key="nature" value="UML_Nature"/>
       </eAnnotations>
       <ownedEnd xmi:type="uml:Property" xmi:id="_9kn8I5OHEeWEKYEtRmghUQ" name="stateOf" type="_sPEY0JN3EeWEKYEtRmghUQ" association="_9kn8IJOHEeWEKYEtRmghUQ">
-        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_ARCfEJOIEeWEKYEtRmghUQ"/>
-        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ARDGIJOIEeWEKYEtRmghUQ" value="*"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_ARCfEJOIEeWEKYEtRmghUQ" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ARDGIJOIEeWEKYEtRmghUQ" value="1"/>
       </ownedEnd>
     </packagedElement>
     <packagedElement xmi:type="uml:Association" xmi:id="_Tv5rgJOIEeWEKYEtRmghUQ" memberEnd="_Tv6SkJOIEeWEKYEtRmghUQ _Tv6SkZOIEeWEKYEtRmghUQ">
