@@ -601,17 +601,13 @@
         <eStructuralFeatures xsi:type="ecore:EReference" name="left" ordered="false"
             lowerBound="1">
           <eGenericType eClassifier="#//hotel/search/SearchCriteria">
-            <eTypeArguments>
-              <eUpperBound eTypeParameter="#//hotel/search/SearchResult/SRT"/>
-            </eTypeArguments>
+            <eTypeArguments eTypeParameter="#//hotel/search/SearchCriteria/SRT"/>
           </eGenericType>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="right" ordered="false"
             lowerBound="1">
           <eGenericType eClassifier="#//hotel/search/SearchCriteria">
-            <eTypeArguments>
-              <eUpperBound eTypeParameter="#//hotel/search/SearchResult/SRT"/>
-            </eTypeArguments>
+            <eTypeArguments eTypeParameter="#//hotel/search/SearchCriteria/SRT"/>
           </eGenericType>
         </eStructuralFeatures>
         <eGenericSuperTypes eClassifier="#//hotel/search/SearchCriteria">
@@ -623,17 +619,13 @@
         <eStructuralFeatures xsi:type="ecore:EReference" name="left" ordered="false"
             lowerBound="1">
           <eGenericType eClassifier="#//hotel/search/SearchCriteria">
-            <eTypeArguments>
-              <eUpperBound eTypeParameter="#//hotel/search/SearchResult/SRT"/>
-            </eTypeArguments>
+            <eTypeArguments eTypeParameter="#//hotel/search/SearchCriteria/SRT"/>
           </eGenericType>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="right" ordered="false"
             lowerBound="1">
           <eGenericType eClassifier="#//hotel/search/SearchCriteria">
-            <eTypeArguments>
-              <eUpperBound eTypeParameter="#//hotel/search/SearchResult/SRT"/>
-            </eTypeArguments>
+            <eTypeArguments eTypeParameter="#//hotel/search/SearchCriteria/SRT"/>
           </eGenericType>
         </eStructuralFeatures>
         <eGenericSuperTypes eClassifier="#//hotel/search/SearchCriteria">
@@ -645,9 +637,7 @@
         <eStructuralFeatures xsi:type="ecore:EReference" name="criteria" ordered="false"
             lowerBound="1">
           <eGenericType eClassifier="#//hotel/search/SearchCriteria">
-            <eTypeArguments>
-              <eUpperBound eTypeParameter="#//hotel/search/SearchResult/SRT"/>
-            </eTypeArguments>
+            <eTypeArguments eTypeParameter="#//hotel/search/SearchCriteria/SRT"/>
           </eGenericType>
         </eStructuralFeatures>
         <eGenericSuperTypes eClassifier="#//hotel/search/SearchCriteria">
@@ -664,23 +654,15 @@
         <eStructuralFeatures xsi:type="ecore:EReference" name="transform" ordered="false"
             lowerBound="1">
           <eGenericType eClassifier="#//hotel/search/Function">
-            <eTypeArguments>
-              <eUpperBound eTypeParameter="#//hotel/search/SearchResult/SRT"/>
-            </eTypeArguments>
-            <eTypeArguments>
-              <eUpperBound eTypeParameter="#//hotel/search/MatchesSearchCriteria/IN"/>
-            </eTypeArguments>
+            <eTypeArguments eTypeParameter="#//hotel/search/MatchesSearchCriteria/SRT"/>
+            <eTypeArguments eTypeParameter="#//hotel/search/MatchesSearchCriteria/IN"/>
           </eGenericType>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="predicate" ordered="false"
             lowerBound="1">
           <eGenericType eClassifier="#//hotel/search/BiPredicate">
-            <eTypeArguments>
-              <eUpperBound eTypeParameter="#//hotel/search/MatchesSearchCriteria/IN"/>
-            </eTypeArguments>
-            <eTypeArguments>
-              <eUpperBound eTypeParameter="#//hotel/search/MatchesSearchCriteria/IN"/>
-            </eTypeArguments>
+            <eTypeArguments eTypeParameter="#//hotel/search/MatchesSearchCriteria/IN"/>
+            <eTypeArguments eTypeParameter="#//hotel/search/MatchesSearchCriteria/IN"/>
           </eGenericType>
         </eStructuralFeatures>
         <eGenericSuperTypes eClassifier="#//hotel/search/SearchCriteria">
