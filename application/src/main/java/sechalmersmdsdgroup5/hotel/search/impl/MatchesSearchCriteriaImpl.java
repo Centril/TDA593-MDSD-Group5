@@ -47,7 +47,7 @@ public class MatchesSearchCriteriaImpl<SRT, IN> extends MinimalEObjectImpl.Conta
 	 * @generated
 	 * @ordered
 	 */
-	protected Function<? extends SRT, ? extends IN> transform;
+	protected Function<SRT, IN> transform;
 
 	/**
 	 * The cached value of the '{@link #getPredicate() <em>Predicate</em>}' reference.
@@ -57,7 +57,7 @@ public class MatchesSearchCriteriaImpl<SRT, IN> extends MinimalEObjectImpl.Conta
 	 * @generated
 	 * @ordered
 	 */
-	protected BiPredicate<? extends IN, ? extends IN> predicate;
+	protected BiPredicate<IN, IN> predicate;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -118,10 +118,10 @@ public class MatchesSearchCriteriaImpl<SRT, IN> extends MinimalEObjectImpl.Conta
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
-	public BiPredicate<? extends IN, ? extends IN> getPredicate() {
+	public BiPredicate<IN, IN> getPredicate() {
 		if (predicate != null && ((EObject)predicate).eIsProxy()) {
 			InternalEObject oldPredicate = (InternalEObject)predicate;
-			predicate = (BiPredicate<? extends IN, ? extends IN>)eResolveProxy(oldPredicate);
+			predicate = (BiPredicate<IN, IN>)eResolveProxy(oldPredicate);
 			if (predicate != oldPredicate) {
 			}
 		}
@@ -133,7 +133,7 @@ public class MatchesSearchCriteriaImpl<SRT, IN> extends MinimalEObjectImpl.Conta
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public BiPredicate<? extends IN, ? extends IN> basicGetPredicate() {
+	public BiPredicate<IN, IN> basicGetPredicate() {
 		return predicate;
 	}
 
@@ -142,7 +142,7 @@ public class MatchesSearchCriteriaImpl<SRT, IN> extends MinimalEObjectImpl.Conta
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setPredicate(BiPredicate<? extends IN, ? extends IN> newPredicate) {
+	public void setPredicate(BiPredicate<IN, IN> newPredicate) {
 		predicate = newPredicate;
 	}
 
@@ -152,10 +152,10 @@ public class MatchesSearchCriteriaImpl<SRT, IN> extends MinimalEObjectImpl.Conta
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
-	public Function<? extends SRT, ? extends IN> getTransform() {
+	public Function<SRT, IN> getTransform() {
 		if (transform != null && ((EObject)transform).eIsProxy()) {
 			InternalEObject oldTransform = (InternalEObject)transform;
-			transform = (Function<? extends SRT, ? extends IN>)eResolveProxy(oldTransform);
+			transform = (Function<SRT, IN>)eResolveProxy(oldTransform);
 			if (transform != oldTransform) {
 			}
 		}
@@ -167,7 +167,7 @@ public class MatchesSearchCriteriaImpl<SRT, IN> extends MinimalEObjectImpl.Conta
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Function<? extends SRT, ? extends IN> basicGetTransform() {
+	public Function<SRT, IN> basicGetTransform() {
 		return transform;
 	}
 
@@ -176,7 +176,7 @@ public class MatchesSearchCriteriaImpl<SRT, IN> extends MinimalEObjectImpl.Conta
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setTransform(Function<? extends SRT, ? extends IN> newTransform) {
+	public void setTransform(Function<SRT, IN> newTransform) {
 		transform = newTransform;
 	}
 
@@ -225,10 +225,10 @@ public class MatchesSearchCriteriaImpl<SRT, IN> extends MinimalEObjectImpl.Conta
 				setInput((IN)newValue);
 				return;
 			case SearchPackageImpl.MATCHES_SEARCH_CRITERIA__TRANSFORM:
-				setTransform((Function<? extends SRT, ? extends IN>)newValue);
+				setTransform((Function<SRT, IN>)newValue);
 				return;
 			case SearchPackageImpl.MATCHES_SEARCH_CRITERIA__PREDICATE:
-				setPredicate((BiPredicate<? extends IN, ? extends IN>)newValue);
+				setPredicate((BiPredicate<IN, IN>)newValue);
 				return;
 		}
 		eDynamicSet(featureID, newValue);
@@ -246,10 +246,10 @@ public class MatchesSearchCriteriaImpl<SRT, IN> extends MinimalEObjectImpl.Conta
 				setInput((IN)null);
 				return;
 			case SearchPackageImpl.MATCHES_SEARCH_CRITERIA__TRANSFORM:
-				setTransform((Function<? extends SRT, ? extends IN>)null);
+				setTransform((Function<SRT, IN>)null);
 				return;
 			case SearchPackageImpl.MATCHES_SEARCH_CRITERIA__PREDICATE:
-				setPredicate((BiPredicate<? extends IN, ? extends IN>)null);
+				setPredicate((BiPredicate<IN, IN>)null);
 				return;
 		}
 		eDynamicUnset(featureID);

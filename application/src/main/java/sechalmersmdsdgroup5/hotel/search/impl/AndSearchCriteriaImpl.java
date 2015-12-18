@@ -12,6 +12,8 @@ import sechalmersmdsdgroup5.hotel.search.AndSearchCriteria;
 import sechalmersmdsdgroup5.hotel.search.SearchCriteria;
 import sechalmersmdsdgroup5.hotel.search.SearchResult;
 
+import java.lang.Math;
+
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>And Search Criteria</b></em>'.
@@ -35,7 +37,7 @@ public class AndSearchCriteriaImpl<SRT> extends MinimalEObjectImpl.Container imp
 	 * @generated
 	 * @ordered
 	 */
-	protected SearchCriteria<? extends SRT> left;
+	protected SearchCriteria<SRT> left;
 
 	/**
 	 * The cached value of the '{@link #getRight() <em>Right</em>}' reference.
@@ -45,7 +47,7 @@ public class AndSearchCriteriaImpl<SRT> extends MinimalEObjectImpl.Container imp
 	 * @generated
 	 * @ordered
 	 */
-	protected SearchCriteria<? extends SRT> right;
+	protected SearchCriteria<SRT> right;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -72,10 +74,10 @@ public class AndSearchCriteriaImpl<SRT> extends MinimalEObjectImpl.Container imp
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
-	public SearchCriteria<? extends SRT> getLeft() {
+	public SearchCriteria<SRT> getLeft() {
 		if (left != null && ((EObject)left).eIsProxy()) {
 			InternalEObject oldLeft = (InternalEObject)left;
-			left = (SearchCriteria<? extends SRT>)eResolveProxy(oldLeft);
+			left = (SearchCriteria<SRT>)eResolveProxy(oldLeft);
 			if (left != oldLeft) {
 			}
 		}
@@ -87,7 +89,7 @@ public class AndSearchCriteriaImpl<SRT> extends MinimalEObjectImpl.Container imp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public SearchCriteria<? extends SRT> basicGetLeft() {
+	public SearchCriteria<SRT> basicGetLeft() {
 		return left;
 	}
 
@@ -96,7 +98,7 @@ public class AndSearchCriteriaImpl<SRT> extends MinimalEObjectImpl.Container imp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setLeft(SearchCriteria<? extends SRT> newLeft) {
+	public void setLeft(SearchCriteria<SRT> newLeft) {
 		left = newLeft;
 	}
 
@@ -106,10 +108,10 @@ public class AndSearchCriteriaImpl<SRT> extends MinimalEObjectImpl.Container imp
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
-	public SearchCriteria<? extends SRT> getRight() {
+	public SearchCriteria<SRT> getRight() {
 		if (right != null && ((EObject)right).eIsProxy()) {
 			InternalEObject oldRight = (InternalEObject)right;
-			right = (SearchCriteria<? extends SRT>)eResolveProxy(oldRight);
+			right = (SearchCriteria<SRT>)eResolveProxy(oldRight);
 			if (right != oldRight) {
 			}
 		}
@@ -121,7 +123,7 @@ public class AndSearchCriteriaImpl<SRT> extends MinimalEObjectImpl.Container imp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public SearchCriteria<? extends SRT> basicGetRight() {
+	public SearchCriteria<SRT> basicGetRight() {
 		return right;
 	}
 
@@ -130,19 +132,19 @@ public class AndSearchCriteriaImpl<SRT> extends MinimalEObjectImpl.Container imp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setRight(SearchCriteria<? extends SRT> newRight) {
+	public void setRight(SearchCriteria<SRT> newRight) {
 		right = newRight;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
-	public SearchResult<? extends SRT> apply(SearchResult<? extends SRT> results) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+	public SearchResult<? extends SRT> apply(SearchResult<? extends SRT> result ) {
+		double rl = left.apply( result ).getRelevance();
+		double rr = right.apply( result ).getRelevance();
+		return result.withRelevance( Math.min( rl, rr ) );
 	}
 
 	/**
@@ -173,10 +175,10 @@ public class AndSearchCriteriaImpl<SRT> extends MinimalEObjectImpl.Container imp
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case SearchPackageImpl.AND_SEARCH_CRITERIA__LEFT:
-				setLeft((SearchCriteria<? extends SRT>)newValue);
+				setLeft((SearchCriteria<SRT>)newValue);
 				return;
 			case SearchPackageImpl.AND_SEARCH_CRITERIA__RIGHT:
-				setRight((SearchCriteria<? extends SRT>)newValue);
+				setRight((SearchCriteria<SRT>)newValue);
 				return;
 		}
 		eDynamicSet(featureID, newValue);
@@ -191,10 +193,10 @@ public class AndSearchCriteriaImpl<SRT> extends MinimalEObjectImpl.Container imp
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case SearchPackageImpl.AND_SEARCH_CRITERIA__LEFT:
-				setLeft((SearchCriteria<? extends SRT>)null);
+				setLeft((SearchCriteria<SRT>)null);
 				return;
 			case SearchPackageImpl.AND_SEARCH_CRITERIA__RIGHT:
-				setRight((SearchCriteria<? extends SRT>)null);
+				setRight((SearchCriteria<SRT>)null);
 				return;
 		}
 		eDynamicUnset(featureID);

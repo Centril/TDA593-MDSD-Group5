@@ -35,7 +35,7 @@ public class OrSearchCriteriaImpl<SRT> extends MinimalEObjectImpl.Container impl
 	 * @generated
 	 * @ordered
 	 */
-	protected SearchCriteria<? extends SRT> left;
+	protected SearchCriteria<SRT> left;
 
 	/**
 	 * The cached value of the '{@link #getRight() <em>Right</em>}' reference.
@@ -45,7 +45,7 @@ public class OrSearchCriteriaImpl<SRT> extends MinimalEObjectImpl.Container impl
 	 * @generated
 	 * @ordered
 	 */
-	protected SearchCriteria<? extends SRT> right;
+	protected SearchCriteria<SRT> right;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -72,10 +72,10 @@ public class OrSearchCriteriaImpl<SRT> extends MinimalEObjectImpl.Container impl
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
-	public SearchCriteria<? extends SRT> getLeft() {
+	public SearchCriteria<SRT> getLeft() {
 		if (left != null && ((EObject)left).eIsProxy()) {
 			InternalEObject oldLeft = (InternalEObject)left;
-			left = (SearchCriteria<? extends SRT>)eResolveProxy(oldLeft);
+			left = (SearchCriteria<SRT>)eResolveProxy(oldLeft);
 			if (left != oldLeft) {
 			}
 		}
@@ -87,7 +87,7 @@ public class OrSearchCriteriaImpl<SRT> extends MinimalEObjectImpl.Container impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public SearchCriteria<? extends SRT> basicGetLeft() {
+	public SearchCriteria<SRT> basicGetLeft() {
 		return left;
 	}
 
@@ -96,7 +96,7 @@ public class OrSearchCriteriaImpl<SRT> extends MinimalEObjectImpl.Container impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setLeft(SearchCriteria<? extends SRT> newLeft) {
+	public void setLeft(SearchCriteria<SRT> newLeft) {
 		left = newLeft;
 	}
 
@@ -106,10 +106,10 @@ public class OrSearchCriteriaImpl<SRT> extends MinimalEObjectImpl.Container impl
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
-	public SearchCriteria<? extends SRT> getRight() {
+	public SearchCriteria<SRT> getRight() {
 		if (right != null && ((EObject)right).eIsProxy()) {
 			InternalEObject oldRight = (InternalEObject)right;
-			right = (SearchCriteria<? extends SRT>)eResolveProxy(oldRight);
+			right = (SearchCriteria<SRT>)eResolveProxy(oldRight);
 			if (right != oldRight) {
 			}
 		}
@@ -121,7 +121,7 @@ public class OrSearchCriteriaImpl<SRT> extends MinimalEObjectImpl.Container impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public SearchCriteria<? extends SRT> basicGetRight() {
+	public SearchCriteria<SRT> basicGetRight() {
 		return right;
 	}
 
@@ -130,7 +130,7 @@ public class OrSearchCriteriaImpl<SRT> extends MinimalEObjectImpl.Container impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setRight(SearchCriteria<? extends SRT> newRight) {
+	public void setRight(SearchCriteria<SRT> newRight) {
 		right = newRight;
 	}
 
@@ -173,10 +173,10 @@ public class OrSearchCriteriaImpl<SRT> extends MinimalEObjectImpl.Container impl
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case SearchPackageImpl.OR_SEARCH_CRITERIA__LEFT:
-				setLeft((SearchCriteria<? extends SRT>)newValue);
+				setLeft((SearchCriteria<SRT>)newValue);
 				return;
 			case SearchPackageImpl.OR_SEARCH_CRITERIA__RIGHT:
-				setRight((SearchCriteria<? extends SRT>)newValue);
+				setRight((SearchCriteria<SRT>)newValue);
 				return;
 		}
 		eDynamicSet(featureID, newValue);
@@ -191,10 +191,10 @@ public class OrSearchCriteriaImpl<SRT> extends MinimalEObjectImpl.Container impl
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case SearchPackageImpl.OR_SEARCH_CRITERIA__LEFT:
-				setLeft((SearchCriteria<? extends SRT>)null);
+				setLeft((SearchCriteria<SRT>)null);
 				return;
 			case SearchPackageImpl.OR_SEARCH_CRITERIA__RIGHT:
-				setRight((SearchCriteria<? extends SRT>)null);
+				setRight((SearchCriteria<SRT>)null);
 				return;
 		}
 		eDynamicUnset(featureID);
