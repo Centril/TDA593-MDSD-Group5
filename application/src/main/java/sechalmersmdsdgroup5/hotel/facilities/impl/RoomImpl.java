@@ -146,7 +146,7 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getServicesAfforded()
-	 * @generated
+	 * @generated NOT
 	 * @ordered
 	 */
 	protected List<ServiceBlueprint> servicesAfforded;
@@ -156,7 +156,7 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getAttributes()
-	 * @generated
+	 * @generated NOT
 	 * @ordered
 	 */
 	protected List<RoomAttribute> attributes;
@@ -166,7 +166,7 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getPrototypes()
-	 * @generated
+	 * @generated NOT
 	 * @ordered
 	 */
 	protected List<PrototypeOrdering> prototypes;
