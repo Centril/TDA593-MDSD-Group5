@@ -34,7 +34,7 @@ import sechalmersmdsdgroup5.hotel.services.ServiceBlueprint;
  *   <li>{@link sechalmersmdsdgroup5.hotel.facilities.impl.RoomImpl#getBasePrice <em>Base Price</em>}</li>
  *   <li>{@link sechalmersmdsdgroup5.hotel.facilities.impl.RoomImpl#getLastCleaned <em>Last Cleaned</em>}</li>
  *   <li>{@link sechalmersmdsdgroup5.hotel.facilities.impl.RoomImpl#getServicesAfforded <em>Services Afforded</em>}</li>
- *   <li>{@link sechalmersmdsdgroup5.hotel.facilities.impl.RoomImpl#getStates <em>States</em>}</li>
+ *   <li>{@link sechalmersmdsdgroup5.hotel.facilities.impl.RoomImpl#getAttributes <em>Attributes</em>}</li>
  *   <li>{@link sechalmersmdsdgroup5.hotel.facilities.impl.RoomImpl#getPrototypes <em>Prototypes</em>}</li>
  * </ul>
  *
@@ -152,10 +152,10 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 	protected List<ServiceBlueprint> servicesAfforded;
 
 	/**
-	 * The cached value of the '{@link #getStates() <em>States</em>}' reference list.
+	 * The cached value of the '{@link #getAttributes() <em>Attributes</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getStates()
+	 * @see #getAttributes()
 	 * @generated
 	 * @ordered
 	 */
@@ -322,11 +322,11 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public List<RoomAttribute> getStates() {
-		if (states == null) {
-			states = new BasicInternalEList<RoomAttribute>(RoomAttribute.class);
+	public List<RoomAttribute> getAttributes() {
+		if (attributes == null) {
+			attributes = new BasicInternalEList<RoomAttribute>(RoomAttribute.class);
 		}
-		return states;
+		return attributes;
 	}
 
 	/**
@@ -372,8 +372,8 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 				return getLastCleaned();
 			case FacilitiesPackageImpl.ROOM__SERVICES_AFFORDED:
 				return getServicesAfforded();
-			case FacilitiesPackageImpl.ROOM__STATES:
-				return getStates();
+			case FacilitiesPackageImpl.ROOM__ATTRIBUTES:
+				return getAttributes();
 			case FacilitiesPackageImpl.ROOM__PROTOTYPES:
 				return getPrototypes();
 		}
@@ -408,9 +408,9 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 				getServicesAfforded().clear();
 				getServicesAfforded().addAll((Collection<? extends ServiceBlueprint>)newValue);
 				return;
-			case FacilitiesPackageImpl.ROOM__STATES:
-				getStates().clear();
-				getStates().addAll((Collection<? extends RoomAttribute>)newValue);
+			case FacilitiesPackageImpl.ROOM__ATTRIBUTES:
+				getAttributes().clear();
+				getAttributes().addAll((Collection<? extends RoomAttribute>)newValue);
 				return;
 			case FacilitiesPackageImpl.ROOM__PROTOTYPES:
 				getPrototypes().clear();
@@ -446,8 +446,8 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 			case FacilitiesPackageImpl.ROOM__SERVICES_AFFORDED:
 				getServicesAfforded().clear();
 				return;
-			case FacilitiesPackageImpl.ROOM__STATES:
-				getStates().clear();
+			case FacilitiesPackageImpl.ROOM__ATTRIBUTES:
+				getAttributes().clear();
 				return;
 			case FacilitiesPackageImpl.ROOM__PROTOTYPES:
 				getPrototypes().clear();
@@ -476,8 +476,8 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 				return LAST_CLEANED_EDEFAULT == null ? lastCleaned != null : !LAST_CLEANED_EDEFAULT.equals(lastCleaned);
 			case FacilitiesPackageImpl.ROOM__SERVICES_AFFORDED:
 				return servicesAfforded != null && !servicesAfforded.isEmpty();
-			case FacilitiesPackageImpl.ROOM__STATES:
-				return states != null && !states.isEmpty();
+			case FacilitiesPackageImpl.ROOM__ATTRIBUTES:
+				return attributes != null && !attributes.isEmpty();
 			case FacilitiesPackageImpl.ROOM__PROTOTYPES:
 				return prototypes != null && !prototypes.isEmpty();
 		}

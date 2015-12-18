@@ -58,10 +58,10 @@ public interface MatchesSearchCriteria<SRT, IN> extends SearchCriteria<SRT> {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Predicate</em>' reference.
 	 * @see #setPredicate(BiPredicate)
-	 * @model type="sechalmersmdsdgroup5.hotel.search.BiPredicate<? extends IN, ? extends IN>" required="true" ordered="false"
+	 * @model type="sechalmersmdsdgroup5.hotel.search.BiPredicate<IN, IN>" required="true" ordered="false"
 	 * @generated
 	 */
-	BiPredicate<? extends IN, ? extends IN> getPredicate();
+	BiPredicate<IN, IN> getPredicate();
 
 	/**
 	 * Sets the value of the '{@link sechalmersmdsdgroup5.hotel.search.MatchesSearchCriteria#getPredicate <em>Predicate</em>}' reference.
@@ -71,7 +71,7 @@ public interface MatchesSearchCriteria<SRT, IN> extends SearchCriteria<SRT> {
 	 * @see #getPredicate()
 	 * @generated
 	 */
-	void setPredicate(BiPredicate<? extends IN, ? extends IN> value);
+	void setPredicate(BiPredicate<IN, IN> value);
 
 	/**
 	 * Returns the value of the '<em><b>Transform</b></em>' reference.
@@ -83,10 +83,10 @@ public interface MatchesSearchCriteria<SRT, IN> extends SearchCriteria<SRT> {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Transform</em>' reference.
 	 * @see #setTransform(Function)
-	 * @model type="sechalmersmdsdgroup5.hotel.search.Function<? extends SRT, ? extends IN>" required="true" ordered="false"
+	 * @model type="sechalmersmdsdgroup5.hotel.search.Function<SRT, IN>" required="true" ordered="false"
 	 * @generated
 	 */
-	Function<? extends SRT, ? extends IN> getTransform();
+	Function<SRT, IN> getTransform();
 
 	/**
 	 * Sets the value of the '{@link sechalmersmdsdgroup5.hotel.search.MatchesSearchCriteria#getTransform <em>Transform</em>}' reference.
@@ -96,6 +96,6 @@ public interface MatchesSearchCriteria<SRT, IN> extends SearchCriteria<SRT> {
 	 * @see #getTransform()
 	 * @generated
 	 */
-	void setTransform(Function<? extends SRT, ? extends IN> value);
+	void setTransform(Function<SRT, IN> value);
 
 } // MatchesSearchCriteria

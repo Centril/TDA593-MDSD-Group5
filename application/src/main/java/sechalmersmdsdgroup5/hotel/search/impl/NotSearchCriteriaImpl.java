@@ -34,7 +34,7 @@ public class NotSearchCriteriaImpl<SRT> extends MinimalEObjectImpl.Container imp
 	 * @generated
 	 * @ordered
 	 */
-	protected SearchCriteria<? extends SRT> criteria;
+	protected SearchCriteria<SRT> criteria;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -61,10 +61,10 @@ public class NotSearchCriteriaImpl<SRT> extends MinimalEObjectImpl.Container imp
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
-	public SearchCriteria<? extends SRT> getCriteria() {
+	public SearchCriteria<SRT> getCriteria() {
 		if (criteria != null && ((EObject)criteria).eIsProxy()) {
 			InternalEObject oldCriteria = (InternalEObject)criteria;
-			criteria = (SearchCriteria<? extends SRT>)eResolveProxy(oldCriteria);
+			criteria = (SearchCriteria<SRT>)eResolveProxy(oldCriteria);
 			if (criteria != oldCriteria) {
 			}
 		}
@@ -76,7 +76,7 @@ public class NotSearchCriteriaImpl<SRT> extends MinimalEObjectImpl.Container imp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public SearchCriteria<? extends SRT> basicGetCriteria() {
+	public SearchCriteria<SRT> basicGetCriteria() {
 		return criteria;
 	}
 
@@ -85,7 +85,7 @@ public class NotSearchCriteriaImpl<SRT> extends MinimalEObjectImpl.Container imp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setCriteria(SearchCriteria<? extends SRT> newCriteria) {
+	public void setCriteria(SearchCriteria<SRT> newCriteria) {
 		criteria = newCriteria;
 	}
 
@@ -125,7 +125,7 @@ public class NotSearchCriteriaImpl<SRT> extends MinimalEObjectImpl.Container imp
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case SearchPackageImpl.NOT_SEARCH_CRITERIA__CRITERIA:
-				setCriteria((SearchCriteria<? extends SRT>)newValue);
+				setCriteria((SearchCriteria<SRT>)newValue);
 				return;
 		}
 		eDynamicSet(featureID, newValue);
@@ -140,7 +140,7 @@ public class NotSearchCriteriaImpl<SRT> extends MinimalEObjectImpl.Container imp
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case SearchPackageImpl.NOT_SEARCH_CRITERIA__CRITERIA:
-				setCriteria((SearchCriteria<? extends SRT>)null);
+				setCriteria((SearchCriteria<SRT>)null);
 				return;
 		}
 		eDynamicUnset(featureID);
