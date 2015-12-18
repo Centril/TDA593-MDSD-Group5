@@ -911,7 +911,7 @@ public class SearchPackageImpl extends EPackageImpl {
 	 * method is guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void initializePackageContents() {
 		if (isInitialized) return;

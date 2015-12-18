@@ -171,29 +171,19 @@ public interface Room extends Area {
 	List<ServiceBlueprint> getServicesAfforded();
 
 	/**
-	 * Returns the value of the '<em><b>States</b></em>' reference.
+	 * Returns the value of the '<em><b>States</b></em>' reference list.
+	 * The list contents are of type {@link sechalmersmdsdgroup5.hotel.facilities.RoomAttribute}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>States</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>States</em>' reference.
-	 * @see #setStates(RoomAttribute)
-	 * @model required="true" ordered="false"
+	 * @return the value of the '<em>States</em>' reference list.
+	 * @model ordered="false"
 	 * @generated
 	 */
-	RoomAttribute getStates();
-
-	/**
-	 * Sets the value of the '{@link sechalmersmdsdgroup5.hotel.facilities.Room#getStates <em>States</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>States</em>' reference.
-	 * @see #getStates()
-	 * @generated
-	 */
-	void setStates(RoomAttribute value);
+	List<RoomAttribute> getStates();
 
 	/**
 	 * Returns the value of the '<em><b>Prototypes</b></em>' containment reference list.

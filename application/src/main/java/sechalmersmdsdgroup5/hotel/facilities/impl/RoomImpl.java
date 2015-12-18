@@ -9,9 +9,6 @@ import java.util.List;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.BasicInternalEList;
@@ -154,14 +151,14 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 	protected EList<ServiceBlueprint> servicesAfforded;
 
 	/**
-	 * The cached value of the '{@link #getStates() <em>States</em>}' reference.
+	 * The cached value of the '{@link #getStates() <em>States</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getStates()
 	 * @generated
 	 * @ordered
 	 */
-	protected RoomAttribute states;
+	protected EList<RoomAttribute> states;
 
 	/**
 	 * The cached value of the '{@link #getPrototypes() <em>Prototypes</em>}' containment reference list.
@@ -299,32 +296,11 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public RoomAttribute getStates() {
-		if (states != null && ((EObject)states).eIsProxy()) {
-			InternalEObject oldStates = (InternalEObject)states;
-			states = (RoomAttribute)eResolveProxy(oldStates);
-			if (states != oldStates) {
-			}
+	public List<RoomAttribute> getStates() {
+		if (states == null) {
+			states = new BasicInternalEList<RoomAttribute>(RoomAttribute.class);
 		}
 		return states;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public RoomAttribute basicGetStates() {
-		return states;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setStates(RoomAttribute newStates) {
-		states = newStates;
 	}
 
 	/**
@@ -371,8 +347,7 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 			case FacilitiesPackageImpl.ROOM__SERVICES_AFFORDED:
 				return getServicesAfforded();
 			case FacilitiesPackageImpl.ROOM__STATES:
-				if (resolve) return getStates();
-				return basicGetStates();
+				return getStates();
 			case FacilitiesPackageImpl.ROOM__PROTOTYPES:
 				return getPrototypes();
 		}
@@ -408,7 +383,8 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 				getServicesAfforded().addAll((Collection<? extends ServiceBlueprint>)newValue);
 				return;
 			case FacilitiesPackageImpl.ROOM__STATES:
-				setStates((RoomAttribute)newValue);
+				getStates().clear();
+				getStates().addAll((Collection<? extends RoomAttribute>)newValue);
 				return;
 			case FacilitiesPackageImpl.ROOM__PROTOTYPES:
 				getPrototypes().clear();
@@ -445,7 +421,7 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 				getServicesAfforded().clear();
 				return;
 			case FacilitiesPackageImpl.ROOM__STATES:
-				setStates((RoomAttribute)null);
+				getStates().clear();
 				return;
 			case FacilitiesPackageImpl.ROOM__PROTOTYPES:
 				getPrototypes().clear();
@@ -475,7 +451,7 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 			case FacilitiesPackageImpl.ROOM__SERVICES_AFFORDED:
 				return servicesAfforded != null && !servicesAfforded.isEmpty();
 			case FacilitiesPackageImpl.ROOM__STATES:
-				return states != null;
+				return states != null && !states.isEmpty();
 			case FacilitiesPackageImpl.ROOM__PROTOTYPES:
 				return prototypes != null && !prototypes.isEmpty();
 		}

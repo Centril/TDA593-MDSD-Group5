@@ -130,6 +130,12 @@ public class FacilitiesSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case FacilitiesPackageImpl.IFACILITIES: {
+				IFacilities iFacilities = (IFacilities)theEObject;
+				T result = caseIFacilities(iFacilities);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			default: return defaultCase(theEObject);
 		}
 	}
@@ -281,6 +287,21 @@ public class FacilitiesSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseAccessLogItem(AccessLogItem object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>IFacilities</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>IFacilities</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseIFacilities(IFacilities object) {
 		return null;
 	}
 
