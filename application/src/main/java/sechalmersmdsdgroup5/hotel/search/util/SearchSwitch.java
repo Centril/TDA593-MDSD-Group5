@@ -2,8 +2,6 @@
  */
 package sechalmersmdsdgroup5.hotel.search.util;
 
-import java.util.List;
-
 import java.util.function.BiPredicate;
 import java.util.function.Function;
 import org.eclipse.emf.ecore.EObject;
@@ -87,12 +85,6 @@ public class SearchSwitch<T> extends Switch<T> {
 			case SearchPackageImpl.SEARCH_QUERY: {
 				SearchQuery<?> searchQuery = (SearchQuery<?>)theEObject;
 				T result = caseSearchQuery(searchQuery);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case SearchPackageImpl.LIST: {
-				List<?> list = (List<?>)theEObject;
-				T result = caseList(list);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -195,21 +187,6 @@ public class SearchSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public <SRT> T caseSearchQuery(SearchQuery<SRT> object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>List</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>List</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public <LT> T caseList(List<LT> object) {
 		return null;
 	}
 

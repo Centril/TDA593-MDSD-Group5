@@ -43,7 +43,7 @@ public class SearchQueryImpl<SRT> extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public List<? extends SearchCriteria<? extends SRT>> getCriterias() {
+	public List<SearchCriteria<SRT>> getCriterias() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
