@@ -17,49 +17,49 @@ public interface IFacilities {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model idRequired="true" idOrdered="false" unlocksRequired="true" unlocksOrdered="false"
+	 * @model required="true" ordered="false" idRequired="true" idOrdered="false" unlocksRequired="true" unlocksOrdered="false"
 	 * @generated
 	 */
-	void createKey(int id, Door unlocks);
+	Key createKey(int id, Door unlocks);
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model nrRequired="true" nrOrdered="false" floorRequired="true" floorOrdered="false" usableRequired="true" usableOrdered="false" basePriceRequired="true" basePriceOrdered="false" prototypeOrderingMany="true" prototypeOrderingOrdered="false" roomAttributesMany="true" roomAttributesOrdered="false"
+	 * @model required="true" ordered="false" nrRequired="true" nrOrdered="false" floorRequired="true" floorOrdered="false" usableRequired="true" usableOrdered="false" basePriceRequired="true" basePriceOrdered="false" prototypeOrderingMany="true" prototypeOrderingOrdered="false" roomAttributesMany="true" roomAttributesOrdered="false"
 	 * @generated
 	 */
-	void createRoom(int nr, int floor, boolean usable, double basePrice, List<PrototypeOrdering> prototypeOrdering, List<RoomAttribute> roomAttributes);
+	Room createRoom(int nr, int floor, boolean usable, double basePrice, List<PrototypeOrdering> prototypeOrdering, List<RoomAttribute> roomAttributes);
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model nameRequired="true" nameOrdered="false" basePriceRequired="true" basePriceOrdered="false" roomAttributesMany="true" roomAttributesOrdered="false"
+	 * @model required="true" ordered="false" nameRequired="true" nameOrdered="false" basePriceRequired="true" basePriceOrdered="false" roomAttributesMany="true" roomAttributesOrdered="false"
 	 * @generated
 	 */
-	void createRoomPrototype(String name, double basePrice, List<RoomAttribute> roomAttributes);
+	RoomPrototype createRoomPrototype(String name, double basePrice, List<RoomAttribute> roomAttributes);
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model nameRequired="true" nameOrdered="false" valueRequired="true" valueOrdered="false" priceRequired="true" priceOrdered="false"
+	 * @model required="true" ordered="false" nameRequired="true" nameOrdered="false" valueRequired="true" valueOrdered="false" priceRequired="true" priceOrdered="false"
 	 * @generated
 	 */
-	void createRoomAttribute(String name, Object value, double price);
+	RoomAttribute createRoomAttribute(String name, Object value, double price);
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model idRequired="true" idOrdered="false" areasMany="true" areasOrdered="false"
+	 * @model required="true" ordered="false" idRequired="true" idOrdered="false" areasMany="true" areasOrdered="false"
 	 * @generated
 	 */
-	void createDoor(int id, List<Area> areas);
+	Door createDoor(int id, List<Area> areas);
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model idRequired="true" idOrdered="false" floorRequired="true" floorOrdered="false"
+	 * @model required="true" ordered="false" idRequired="true" idOrdered="false" floorRequired="true" floorOrdered="false"
 	 * @generated
 	 */
-	void createEmployeeArea(int id, int floor);
+	EmployeeArea createEmployeeArea(int id, int floor);
 
 } // IFacilities

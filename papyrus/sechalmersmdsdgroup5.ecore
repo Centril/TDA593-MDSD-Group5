@@ -58,7 +58,7 @@
             lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="servicesAfforded" ordered="false"
             upperBound="-1" eType="#//hotel/services/ServiceBlueprint"/>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="states" ordered="false"
+        <eStructuralFeatures xsi:type="ecore:EReference" name="attributes" ordered="false"
             upperBound="-1" eType="#//hotel/facilities/RoomAttribute"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="prototypes" ordered="false"
             upperBound="-1" eType="#//hotel/facilities/PrototypeOrdering" containment="true"/>
@@ -119,11 +119,11 @@
             lowerBound="1" eType="#//hotel/facilities/Door"/>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="IFacilities" abstract="true" interface="true">
-        <eOperations name="createKey" ordered="false" lowerBound="1">
+        <eOperations name="createKey" ordered="false" lowerBound="1" eType="#//hotel/facilities/Key">
           <eParameters name="id" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
           <eParameters name="unlocks" ordered="false" lowerBound="1" eType="#//hotel/facilities/Door"/>
         </eOperations>
-        <eOperations name="createRoom" ordered="false" lowerBound="1">
+        <eOperations name="createRoom" ordered="false" lowerBound="1" eType="#//hotel/facilities/Room">
           <eParameters name="nr" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
           <eParameters name="floor" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
           <eParameters name="usable" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
@@ -131,21 +131,21 @@
           <eParameters name="prototypeOrdering" ordered="false" upperBound="-1" eType="#//hotel/facilities/PrototypeOrdering"/>
           <eParameters name="roomAttributes" ordered="false" upperBound="-1" eType="#//hotel/facilities/RoomAttribute"/>
         </eOperations>
-        <eOperations name="createRoomPrototype" ordered="false" lowerBound="1">
+        <eOperations name="createRoomPrototype" ordered="false" lowerBound="1" eType="#//hotel/facilities/RoomPrototype">
           <eParameters name="name" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
           <eParameters name="basePrice" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
           <eParameters name="roomAttributes" ordered="false" upperBound="-1" eType="#//hotel/facilities/RoomAttribute"/>
         </eOperations>
-        <eOperations name="createRoomAttribute" ordered="false" lowerBound="1">
+        <eOperations name="createRoomAttribute" ordered="false" lowerBound="1" eType="#//hotel/facilities/RoomAttribute">
           <eParameters name="name" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
           <eParameters name="value" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
           <eParameters name="price" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
         </eOperations>
-        <eOperations name="createDoor" ordered="false" lowerBound="1">
+        <eOperations name="createDoor" ordered="false" lowerBound="1" eType="#//hotel/facilities/Door">
           <eParameters name="id" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
           <eParameters name="areas" ordered="false" upperBound="-1" eType="#//hotel/facilities/Area"/>
         </eOperations>
-        <eOperations name="createEmployeeArea" ordered="false" lowerBound="1">
+        <eOperations name="createEmployeeArea" ordered="false" lowerBound="1" eType="#//hotel/facilities/EmployeeArea">
           <eParameters name="id" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
           <eParameters name="floor" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
         </eOperations>

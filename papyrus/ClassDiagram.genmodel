@@ -78,7 +78,7 @@
           <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
               propertySortChoices="true" ecoreFeature="ecore:EReference sechalmersmdsdgroup5.ecore#//hotel/facilities/Room/servicesAfforded"/>
           <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
-              propertySortChoices="true" ecoreFeature="ecore:EReference sechalmersmdsdgroup5.ecore#//hotel/facilities/Room/states"/>
+              propertySortChoices="true" ecoreFeature="ecore:EReference sechalmersmdsdgroup5.ecore#//hotel/facilities/Room/attributes"/>
           <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
               createChild="true" ecoreFeature="ecore:EReference sechalmersmdsdgroup5.ecore#//hotel/facilities/Room/prototypes"/>
           <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="sechalmersmdsdgroup5.ecore#//hotel/facilities/Room/getAttribute">
