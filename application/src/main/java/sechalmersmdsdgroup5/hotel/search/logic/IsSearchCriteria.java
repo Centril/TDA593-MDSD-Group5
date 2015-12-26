@@ -7,6 +7,6 @@ import java.util.function.Function;
 
 public class IsSearchCriteria<SRT, IN> extends MatchesSearchCriteriaImpl<SRT, IN> implements SearchCriteria<SRT> {
 	IsSearchCriteria( IN input, Function<SRT, IN> transform ) {
-		super( input, transform, (l, r) -> l == r );
+		super( input, transform, IN::equals );
 	}
 }
