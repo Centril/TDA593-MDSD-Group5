@@ -515,9 +515,9 @@
             </ownedParameter>
           </ownedTemplateSignature>
           <ownedOperation xmi:type="uml:Operation" xmi:id="_cGqFgJxkEeWESJEFGhWPTA" name="getCriterias">
-            <ownedParameter xmi:type="uml:Parameter" xmi:id="_D-lVcJxoEeWESJEFGhWPTA" name="return" type="_NBeK4JxrEeWiw-HwyxZ8Kg" direction="return">
-              <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_R_UFQJxoEeWESJEFGhWPTA" value="1"/>
-              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_R_WhgJxoEeWESJEFGhWPTA" value="1"/>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_D-lVcJxoEeWESJEFGhWPTA" name="return" type="_7LmgQJyQEeWiw-HwyxZ8Kg" direction="return">
+              <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_R_UFQJxoEeWESJEFGhWPTA"/>
+              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_R_WhgJxoEeWESJEFGhWPTA" value="*"/>
             </ownedParameter>
           </ownedOperation>
         </packagedElement>
@@ -565,24 +565,6 @@
         <packagedElement xmi:type="uml:Class" xmi:id="_A20REJxZEeWESJEFGhWPTA" name="SearchResult_*_extends_SRT">
           <templateBinding xmi:type="uml:TemplateBinding" xmi:id="_WyBkIJxZEeWESJEFGhWPTA" signature="_nwJ1cJvmEeWJcrkAjYwcTw">
             <parameterSubstitution xmi:type="uml:TemplateParameterSubstitution" xmi:id="_karyMJxZEeWESJEFGhWPTA" actual="_VeCpMJxYEeWESJEFGhWPTA" formal="_p2l9gJvmEeWJcrkAjYwcTw"/>
-          </templateBinding>
-        </packagedElement>
-        <packagedElement xmi:type="uml:Class" xmi:id="_QuZ-YJxlEeWESJEFGhWPTA" name="*_extends_SearchCriteria_*_extends_SRT"/>
-        <packagedElement xmi:type="uml:Class" xmi:id="_glad4JxmEeWESJEFGhWPTA" name="SearchCriteria_*_extends_SRT">
-          <templateBinding xmi:type="uml:TemplateBinding" xmi:id="_PloGgJxnEeWESJEFGhWPTA" signature="_0zgBcJxeEeWESJEFGhWPTA">
-            <parameterSubstitution xmi:type="uml:TemplateParameterSubstitution" xmi:id="_Z-JZgJxnEeWESJEFGhWPTA" actual="_VeCpMJxYEeWESJEFGhWPTA" formal="_hjuvAJxgEeWESJEFGhWPTA"/>
-          </templateBinding>
-        </packagedElement>
-        <packagedElement xmi:type="uml:Interface" xmi:id="_h4Oz0JxqEeWESJEFGhWPTA" name="List">
-          <ownedTemplateSignature xmi:type="uml:RedefinableTemplateSignature" xmi:id="_bc4EgJxrEeWiw-HwyxZ8Kg" name="List_RTS" parameter="_trmewJxrEeWiw-HwyxZ8Kg">
-            <ownedParameter xmi:type="uml:ClassifierTemplateParameter" xmi:id="_trmewJxrEeWiw-HwyxZ8Kg" default="_xTa6AJxrEeWiw-HwyxZ8Kg" parameteredElement="_xTa6AJxrEeWiw-HwyxZ8Kg">
-              <ownedDefault xmi:type="uml:Class" xmi:id="_xTa6AJxrEeWiw-HwyxZ8Kg" name="LT" templateParameter="_trmewJxrEeWiw-HwyxZ8Kg"/>
-            </ownedParameter>
-          </ownedTemplateSignature>
-        </packagedElement>
-        <packagedElement xmi:type="uml:Class" xmi:id="_NBeK4JxrEeWiw-HwyxZ8Kg" name="List_*_extends_SearchCriteria_*_extends_SRT">
-          <templateBinding xmi:type="uml:TemplateBinding" xmi:id="_dl80YJxsEeWiw-HwyxZ8Kg" signature="_bc4EgJxrEeWiw-HwyxZ8Kg">
-            <parameterSubstitution xmi:type="uml:TemplateParameterSubstitution" xmi:id="_xpMgQJxsEeWiw-HwyxZ8Kg" actual="_QuZ-YJxlEeWESJEFGhWPTA" formal="_trmewJxrEeWiw-HwyxZ8Kg"/>
           </templateBinding>
         </packagedElement>
         <packagedElement xmi:type="uml:Class" xmi:id="_TUVIsJxuEeWiw-HwyxZ8Kg" name="SearchResult_PreOrder">
@@ -1310,11 +1292,6 @@
   <Ecore:ETypeParameter xmi:id="_9jc3UJxiEeWESJEFGhWPTA" base_TemplateParameter="_8g3Y8JxiEeWESJEFGhWPTA"/>
   <Ecore:EOperation xmi:id="_f7aJgJxkEeWESJEFGhWPTA" base_Operation="_cGqFgJxkEeWESJEFGhWPTA"/>
   <Ecore:EOperation xmi:id="_g58OUJxkEeWESJEFGhWPTA" base_Operation="_MY7-gJUIEeWh5u7XS7pPgw"/>
-  <Ecore:EGenericType xmi:id="_jwX-AJxmEeWESJEFGhWPTA" base_Class="_glad4JxmEeWESJEFGhWPTA"/>
-  <Ecore:EGenericType xmi:id="_k3unoJxmEeWESJEFGhWPTA" base_Class="_QuZ-YJxlEeWESJEFGhWPTA" upperBound="_glad4JxmEeWESJEFGhWPTA"/>
-  <Ecore:EClass xmi:id="_i9t1MJxqEeWESJEFGhWPTA" instanceClassName="java.util.List" base_Interface="_h4Oz0JxqEeWESJEFGhWPTA"/>
-  <Ecore:EGenericType xmi:id="_V4DKAJxrEeWiw-HwyxZ8Kg" base_Class="_NBeK4JxrEeWiw-HwyxZ8Kg"/>
-  <Ecore:ETypeParameter xmi:id="_5bsBoJxrEeWiw-HwyxZ8Kg" base_TemplateParameter="_trmewJxrEeWiw-HwyxZ8Kg"/>
   <Ecore:EGenericType xmi:id="_SQP1gJxuEeWiw-HwyxZ8Kg" base_Class="_SQMyMJxuEeWiw-HwyxZ8Kg" upperBound="_vP49cJvmEeWJcrkAjYwcTw"/>
   <Ecore:EGenericType xmi:id="_v6YjIJxuEeWiw-HwyxZ8Kg" base_Class="_TUVIsJxuEeWiw-HwyxZ8Kg"/>
   <Ecore:EGenericType xmi:id="_wepGwJxuEeWiw-HwyxZ8Kg" base_Class="_ZcjEIJxuEeWiw-HwyxZ8Kg"/>

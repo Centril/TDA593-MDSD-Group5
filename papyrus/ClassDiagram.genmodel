@@ -484,9 +484,6 @@
           <genTypeParameters ecoreTypeParameter="sechalmersmdsdgroup5.ecore#//hotel/search/SearchQuery/SRT"/>
           <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="sechalmersmdsdgroup5.ecore#//hotel/search/SearchQuery/getCriterias"/>
         </genClasses>
-        <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="sechalmersmdsdgroup5.ecore#//hotel/search/List">
-          <genTypeParameters ecoreTypeParameter="sechalmersmdsdgroup5.ecore#//hotel/search/List/LT"/>
-        </genClasses>
         <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="sechalmersmdsdgroup5.ecore#//hotel/search/SearchCriteria">
           <genTypeParameters ecoreTypeParameter="sechalmersmdsdgroup5.ecore#//hotel/search/SearchCriteria/SRT"/>
           <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="sechalmersmdsdgroup5.ecore#//hotel/search/SearchCriteria/apply">

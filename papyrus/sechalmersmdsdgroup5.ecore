@@ -556,21 +556,11 @@
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="SearchQuery">
         <eTypeParameters name="SRT"/>
-        <eOperations name="getCriterias" ordered="false" lowerBound="1">
-          <eGenericType eClassifier="#//hotel/search/List">
-            <eTypeArguments>
-              <eUpperBound eClassifier="#//hotel/search/SearchCriteria">
-                <eTypeArguments>
-                  <eUpperBound eTypeParameter="#//hotel/search/SearchResult/SRT"/>
-                </eTypeArguments>
-              </eUpperBound>
-            </eTypeArguments>
+        <eOperations name="getCriterias" ordered="false" upperBound="-1">
+          <eGenericType eClassifier="#//hotel/search/SearchCriteria">
+            <eTypeArguments eTypeParameter="#//hotel/search/SearchCriteria/SRT"/>
           </eGenericType>
         </eOperations>
-      </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="List" instanceClassName="java.util.List"
-          abstract="true" interface="true">
-        <eTypeParameters name="LT"/>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="SearchCriteria" abstract="true"
           interface="true">
