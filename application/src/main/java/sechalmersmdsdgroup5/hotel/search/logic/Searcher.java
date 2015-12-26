@@ -1,6 +1,5 @@
 package sechalmersmdsdgroup5.hotel.search.logic;
 
-import sechalmersmdsdgroup5.hotel.search.SearchCriteria;
 import sechalmersmdsdgroup5.hotel.search.SearchQuery;
 import sechalmersmdsdgroup5.hotel.search.SearchResult;
 import sechalmersmdsdgroup5.hotel.search.impl.ConcreteSearchResultImpl;
@@ -9,7 +8,8 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.function.ToDoubleFunction;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
+
+import static sechalmersmdsdgroup5.hotel.utils.Functional.foldl;
 
 /**
  * Searcher performs searching given queries and initial data.
@@ -26,17 +26,13 @@ public class Searcher<SRT> {
 	 *         and without those below relevance of 1.0
 	 */
 	List<SearchResult<? extends SRT>> search( List<SearchResult<? extends SRT>> results, SearchQuery<SRT> query ) {
-		Stream<SearchResult<? extends SRT>> stream = results.stream();
-
-		for ( SearchCriteria<SRT> criteria : query.getCriterias() ) {
-			stream = stream.map( criteria );
-		}
-
-		Comparator<SearchResult<? extends SRT>> cmp = Comparator.comparingDouble(
-				(ToDoubleFunction<SearchResult<? extends SRT>>) SearchResult::getRelevance ).reversed();
-
-		return stream.filter( sr -> sr.getRelevance() >= 1 ).sorted( cmp ).collect( Collectors.toList() );
+		return foldl( query.getCriterias(), results.stream(), (srs, criteria) -> srs.map( criteria::apply ) )
+				.filter( sr -> sr.getRelevance() >= 1 )
+				.sorted( Comparator.comparingDouble(
+						(ToDoubleFunction<SearchResult<? extends SRT>>) SearchResult::getRelevance ).reversed() )
+				.collect( Collectors.toList() );
 	}
+
 
 	/**
 	 * Performs search given initial data with query.
