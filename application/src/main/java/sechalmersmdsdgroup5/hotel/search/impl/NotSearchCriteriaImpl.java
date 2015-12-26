@@ -30,6 +30,10 @@ public class NotSearchCriteriaImpl<SRT> implements NotSearchCriteria<SRT> {
 	 */
 	protected SearchCriteria<SRT> criteria;
 
+	public NotSearchCriteriaImpl( SearchCriteria<SRT> criteria ) {
+		this.criteria = criteria;
+	}
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
