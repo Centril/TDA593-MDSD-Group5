@@ -1,17 +1,20 @@
 package sechalmersmdsdgroup5.hotel.search.logic;
 
 import sechalmersmdsdgroup5.hotel.search.SearchCriteria;
-import sechalmersmdsdgroup5.hotel.search.impl.AndSearchCriteriaImpl;
-import sechalmersmdsdgroup5.hotel.search.impl.MatchesSearchCriteriaImpl;
-import sechalmersmdsdgroup5.hotel.search.impl.NotSearchCriteriaImpl;
-import sechalmersmdsdgroup5.hotel.search.impl.OrSearchCriteriaImpl;
+import sechalmersmdsdgroup5.hotel.search.SearchQuery;
+import sechalmersmdsdgroup5.hotel.search.impl.*;
 import sechalmersmdsdgroup5.hotel.utils.Functional;
 
 import java.util.Arrays;
+import java.util.List;
 import java.util.function.BiPredicate;
 import java.util.function.Function;
 
 public class SearchCriteriaFactory {
+	public static <SRT>SearchQuery<SRT> query( List<SearchCriteria<SRT>> criterion ) {
+		return new SearchQueryImpl<>( criterion );
+	}
+
 	public static <SRT> SearchCriteria<SRT> id() {
 		return result -> result;
 	}
