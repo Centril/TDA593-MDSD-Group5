@@ -23,14 +23,24 @@ class SearcherTest extends Specification {
         s.search( [], q ) == []
     }
 
-    def "below 1.0 dropped"() {
+    def "below 1.0 dropped, sorted by relevance, test overlapping"() {
         given:
-        def c1 = matches( 7, { a, b -> b > a } )
-        def c2 = matches( 3, { a, b -> b < a } )
+        def eq = { a, b -> b == a }
+        def gt = { a, b -> b > a }
+        def lt = { a, b -> b < a }
+        def c1 = matches( 7, gt )
+        def c2 = matches( 3, lt )
         expect:
-        s.searchInitFlatten( (1..10), query( [c1] ) ) == [8, 9, 10]
-        s.searchInitFlatten( (1..10), query( [c1, c2] ) ) == [1, 2, 8, 9, 10]
+        searchIF( [c1] ) == [8, 9, 10]
+        searchIF( [c1, c2] ) == [1, 2, 8, 9, 10]
+        searchIF( [c1, c2, c1] ) == [8, 9, 10, 1, 2]
+        searchIF( [matches( 2, eq ), matches( 5, eq ), matches( 9, eq )] ) == [2, 5, 9]
+        searchIF( [matches( 5, gt ), matches( 8, gt ), matches( 9, gt )] ) == [10, 9, 6, 7, 8]
         // todo
+    }
+
+    def searchIF( criterion ) {
+        s.searchInitFlatten( (1..10), query( criterion ) )
     }
 
     def query( criterion ) {

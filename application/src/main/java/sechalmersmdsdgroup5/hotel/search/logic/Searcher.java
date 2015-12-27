@@ -1,5 +1,6 @@
 package sechalmersmdsdgroup5.hotel.search.logic;
 
+import sechalmersmdsdgroup5.hotel.search.SearchCriteria;
 import sechalmersmdsdgroup5.hotel.search.SearchQuery;
 import sechalmersmdsdgroup5.hotel.search.SearchResult;
 import sechalmersmdsdgroup5.hotel.search.impl.ConcreteSearchResultImpl;
@@ -25,14 +26,25 @@ public class Searcher<SRT> {
 	 * @return the results, with new relevance depending on query,
 	 *         and without those below relevance of 1.0
 	 */
-	List<SearchResult<? extends SRT>> search( List<SearchResult<? extends SRT>> results, SearchQuery<SRT> query ) {
-		return foldl( query.getCriterias(), results.stream(), (srs, criteria) -> srs.map( criteria::apply ) )
-				.filter( sr -> sr.getRelevance() >= 1 )
-				.sorted( Comparator.comparingDouble(
-						(ToDoubleFunction<SearchResult<? extends SRT>>) SearchResult::getRelevance ).reversed() )
-				.collect( Collectors.toList() );
+	public List<SearchResult<? extends SRT>> search(
+		List<SearchResult<? extends SRT>> results, SearchQuery<SRT> query ) {
+		return results.stream()
+			.map( sr -> this.applyCriterias( sr, query ) )
+			.filter( sr -> sr.getRelevance() >= 1 )
+			.sorted( Comparator.comparingDouble(
+				(ToDoubleFunction<SearchResult<? extends SRT>>) SearchResult::getRelevance ).reversed() )
+			.collect( Collectors.toList() );
 	}
 
+	private SearchResult<? extends SRT> applyCriterias( SearchResult<? extends SRT> sr, SearchQuery<SRT> q ) {
+		return foldl( q.getCriterias(), sr, (SearchResult<? extends SRT> srn, SearchCriteria<SRT> criteria) ->
+			srn.withRelevance( Math.max(
+				// performing a fuzzy OR operation, seeding the right branch with at least 1.0,
+				// but letting those that match many get higher relevance.
+				srn.getRelevance(),
+				criteria.apply( srn.withRelevance( Math.max( srn.getRelevance(), 1 ) ) ).getRelevance()
+		) ) );
+	}
 
 	/**
 	 * Performs search given initial data with query.
@@ -77,7 +89,7 @@ public class Searcher<SRT> {
 	}
 
 	private List<SearchResult<? extends SRT>> init( List<? extends SRT> data ) {
-		return data.stream().map( d -> new ConcreteSearchResultImpl<>( d, 1.0 ) )
+		return data.stream().map( d -> new ConcreteSearchResultImpl<>( d, 0 ) )
 				   .collect( Collectors.toList() );
 	}
 }
