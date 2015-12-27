@@ -17,9 +17,9 @@ public interface SearchQuery<SRT> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model kind="operation" type="sechalmersmdsdgroup5.hotel.search.List<? extends sechalmersmdsdgroup5.hotel.search.SearchCriteria<? extends SRT>>" required="true" many="false" ordered="false"
+	 * @model kind="operation" ordered="false"
 	 * @generated
 	 */
-	List<? extends SearchCriteria<? extends SRT>> getCriterias();
+	List<SearchCriteria<SRT>> getCriterias();
 
 } // SearchQuery
