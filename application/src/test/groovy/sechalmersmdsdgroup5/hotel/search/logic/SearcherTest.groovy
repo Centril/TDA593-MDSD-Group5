@@ -36,7 +36,6 @@ class SearcherTest extends Specification {
         searchIF( [c1, c2, c1] ) == [8, 9, 10, 1, 2]
         searchIF( [matches( 2, eq ), matches( 5, eq ), matches( 9, eq )] ) == [2, 5, 9]
         searchIF( [matches( 5, gt ), matches( 8, gt ), matches( 9, gt )] ) == [10, 9, 6, 7, 8]
-        // todo
     }
 
     def searchIF( criterion ) {
