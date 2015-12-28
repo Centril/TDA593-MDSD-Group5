@@ -67,7 +67,7 @@ public class Searcher<SRT> {
 	 * @return the results, with new relevance depending on query,
 	 *         and without those below relevance of 1.0
 	 */
-	List<? extends SRT> searchFlatten( List<SearchResult<? extends SRT>> results, SearchQuery<SRT> query ) {
+	public List<? extends SRT> searchFlatten( List<SearchResult<? extends SRT>> results, SearchQuery<SRT> query ) {
 		return this.flatten( this.search( results, query ) );
 	}
 
@@ -80,7 +80,7 @@ public class Searcher<SRT> {
 	 * @return the results, with new relevance depending on query,
 	 *         and without those below relevance of 1.0
 	 */
-	List<? extends SRT> searchInitFlatten( List<? extends SRT> data, SearchQuery<SRT> query ) {
+	public List<? extends SRT> searchInitFlatten( List<? extends SRT> data, SearchQuery<SRT> query ) {
 		return this.flatten( this.search( this.init( data ), query ) );
 	}
 
