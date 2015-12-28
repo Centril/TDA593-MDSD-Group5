@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.function.ToDoubleFunction;
 import java.util.stream.Collectors;
 
-import static sechalmersmdsdgroup5.hotel.utils.Functional.foldl;
+import static sechalmersmdsdgroup5.hotel.utils.Functional.*;
 
 /**
  * Searcher performs searching given queries and initial data.
@@ -85,11 +85,10 @@ public class Searcher<SRT> {
 	}
 
 	private List<? extends SRT> flatten( List<SearchResult<? extends SRT>> results ) {
-		return results.stream().map( SearchResult::getResult ).collect( Collectors.toList() );
+		return listify( results.stream().map( SearchResult::getResult ) );
 	}
 
 	private List<SearchResult<? extends SRT>> init( List<? extends SRT> data ) {
-		return data.stream().map( d -> new ConcreteSearchResultImpl<>( d, 0 ) )
-				   .collect( Collectors.toList() );
+		return listify2( data.stream().map( d -> new ConcreteSearchResultImpl<>( d, 0 ) ) );
 	}
 }
