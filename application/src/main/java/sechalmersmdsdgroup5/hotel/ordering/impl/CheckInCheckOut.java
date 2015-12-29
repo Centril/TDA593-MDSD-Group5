@@ -6,12 +6,23 @@ import sechalmersmdsdgroup5.hotel.identities.Identity;
 import sechalmersmdsdgroup5.hotel.ordering.ICheckInCheckOut;
 import sechalmersmdsdgroup5.hotel.ordering.RoomBooking;
 
+import java.util.Date;
+
 /**
  * Created by kalior on 18/12/15.
  */
 public class CheckInCheckOut implements ICheckInCheckOut {
     @Override
     public boolean checkIn(Guest guest, RoomBooking booking) {
+        /*
+        TODO check that the guest exists in the booking
+        if (booking.getGuests().contains(guest)
+         */
+        if ((new Date()).getTime() <= booking.getCheckinTime().getTime())
+        {
+            booking.setCheckinTime(new Date());
+            return true;
+        }
         return false;
     }
 
