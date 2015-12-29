@@ -8,6 +8,7 @@ import sechalmersmdsdgroup5.hotel.ordering.Invoice;
 import sechalmersmdsdgroup5.hotel.ordering.RoomBooking;
 import sechalmersmdsdgroup5.hotel.services.Service;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -171,7 +172,7 @@ class RoomBookingImpl implements RoomBooking {
 	 * @generated
 	 * @ordered
 	 */
-	protected List<Service> services;
+	protected List<Service> services = new ArrayList<>();
 
 	/**
 	 * <!-- begin-user-doc -->
