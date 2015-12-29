@@ -535,11 +535,11 @@
             </ownedParameter>
           </ownedTemplateSignature>
           <ownedOperation xmi:type="uml:Operation" xmi:id="_MY7-gJUIEeWh5u7XS7pPgw" name="apply" visibility="public">
-            <ownedParameter xmi:type="uml:Parameter" xmi:id="_Tf7PUJUIEeWh5u7XS7pPgw" name="results" type="_A20REJxZEeWESJEFGhWPTA">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_Tf7PUJUIEeWh5u7XS7pPgw" name="result" type="_0rBUsJx7EeWiw-HwyxZ8Kg">
               <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_8nMeoJqaEeWhp8VYZPcMtQ" value="1"/>
               <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_8nfZkJqaEeWhp8VYZPcMtQ" value="1"/>
             </ownedParameter>
-            <ownedParameter xmi:type="uml:Parameter" xmi:id="_WSh50JUIEeWh5u7XS7pPgw" name="result" type="_A20REJxZEeWESJEFGhWPTA" direction="return">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_WSh50JUIEeWh5u7XS7pPgw" name="return" type="_0rBUsJx7EeWiw-HwyxZ8Kg" direction="return">
               <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_DJ9BAJqbEeWhp8VYZPcMtQ" value="1"/>
               <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_DJ-2MJqbEeWhp8VYZPcMtQ" value="1"/>
             </ownedParameter>
@@ -563,16 +563,8 @@
             <ownedParameter xmi:type="uml:Parameter" xmi:id="_zug0gJxMEeWESJEFGhWPTA" name="relevance">
               <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#double"/>
             </ownedParameter>
-            <ownedParameter xmi:type="uml:Parameter" xmi:id="_5i2KoJxMEeWESJEFGhWPTA" name="return" type="_A20REJxZEeWESJEFGhWPTA" direction="return"/>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_5i2KoJxMEeWESJEFGhWPTA" name="return" type="_0rBUsJx7EeWiw-HwyxZ8Kg" direction="return"/>
           </ownedOperation>
-        </packagedElement>
-        <packagedElement xmi:type="uml:Class" xmi:id="_VeCpMJxYEeWESJEFGhWPTA" name="*_extends_SRT">
-          <nestedClassifier xmi:type="uml:Class" xmi:id="_SQMyMJxuEeWiw-HwyxZ8Kg" name="*_extends_SRT"/>
-        </packagedElement>
-        <packagedElement xmi:type="uml:Class" xmi:id="_A20REJxZEeWESJEFGhWPTA" name="SearchResult_*_extends_SRT">
-          <templateBinding xmi:type="uml:TemplateBinding" xmi:id="_WyBkIJxZEeWESJEFGhWPTA" signature="_nwJ1cJvmEeWJcrkAjYwcTw">
-            <parameterSubstitution xmi:type="uml:TemplateParameterSubstitution" xmi:id="_karyMJxZEeWESJEFGhWPTA" actual="_VeCpMJxYEeWESJEFGhWPTA" formal="_p2l9gJvmEeWJcrkAjYwcTw"/>
-          </templateBinding>
         </packagedElement>
         <packagedElement xmi:type="uml:Class" xmi:id="_TUVIsJxuEeWiw-HwyxZ8Kg" name="SearchResult_PreOrder">
           <templateBinding xmi:type="uml:TemplateBinding" xmi:id="_ekG-YJxvEeWiw-HwyxZ8Kg" signature="_nwJ1cJvmEeWJcrkAjYwcTw">
@@ -1291,15 +1283,12 @@
   <Ecore:EOperation xmi:id="_enyAcJxOEeWESJEFGhWPTA" base_Operation="_A3JIAJvnEeWJcrkAjYwcTw"/>
   <Ecore:EOperation xmi:id="_fjCu0JxOEeWESJEFGhWPTA" base_Operation="_hQZ6cJxMEeWESJEFGhWPTA"/>
   <Ecore:EOperation xmi:id="_gT488JxOEeWESJEFGhWPTA" base_Operation="_NVp3IJvnEeWJcrkAjYwcTw"/>
-  <Ecore:EGenericType xmi:id="_f43CQJxYEeWESJEFGhWPTA" base_Class="_VeCpMJxYEeWESJEFGhWPTA" upperBound="_vP49cJvmEeWJcrkAjYwcTw"/>
-  <Ecore:EGenericType xmi:id="_FhM8kJxZEeWESJEFGhWPTA" base_Class="_A20REJxZEeWESJEFGhWPTA"/>
   <Ecore:EClass xmi:id="_Prkz8JxbEeWESJEFGhWPTA" base_Interface="_9Je-kJRTEeWEKYEtRmghUQ"/>
   <Ecore:ETypeParameter xmi:id="_x53P8JxgEeWESJEFGhWPTA" base_TemplateParameter="_hjuvAJxgEeWESJEFGhWPTA"/>
   <Ecore:EClass xmi:id="_oEVDUJxiEeWESJEFGhWPTA" base_Class="_Tb9e8JRQEeWEKYEtRmghUQ"/>
   <Ecore:ETypeParameter xmi:id="_9jc3UJxiEeWESJEFGhWPTA" base_TemplateParameter="_8g3Y8JxiEeWESJEFGhWPTA"/>
   <Ecore:EOperation xmi:id="_f7aJgJxkEeWESJEFGhWPTA" base_Operation="_cGqFgJxkEeWESJEFGhWPTA"/>
   <Ecore:EOperation xmi:id="_g58OUJxkEeWESJEFGhWPTA" base_Operation="_MY7-gJUIEeWh5u7XS7pPgw"/>
-  <Ecore:EGenericType xmi:id="_SQP1gJxuEeWiw-HwyxZ8Kg" base_Class="_SQMyMJxuEeWiw-HwyxZ8Kg" upperBound="_vP49cJvmEeWJcrkAjYwcTw"/>
   <Ecore:EGenericType xmi:id="_v6YjIJxuEeWiw-HwyxZ8Kg" base_Class="_TUVIsJxuEeWiw-HwyxZ8Kg"/>
   <Ecore:EGenericType xmi:id="_wepGwJxuEeWiw-HwyxZ8Kg" base_Class="_ZcjEIJxuEeWiw-HwyxZ8Kg"/>
   <Ecore:EGenericType xmi:id="_xey8MJxuEeWiw-HwyxZ8Kg" base_Class="_kl-PoJxuEeWiw-HwyxZ8Kg"/>

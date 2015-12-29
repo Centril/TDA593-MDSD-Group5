@@ -548,9 +548,7 @@
         <eOperations name="getRelevance" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
         <eOperations name="withRelevance" ordered="false" lowerBound="1">
           <eGenericType eClassifier="#//hotel/search/SearchResult">
-            <eTypeArguments>
-              <eUpperBound eTypeParameter="#//hotel/search/SearchResult/SRT"/>
-            </eTypeArguments>
+            <eTypeArguments eTypeParameter="#//hotel/search/SearchResult/SRT"/>
           </eGenericType>
           <eParameters name="relevance" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
         </eOperations>
@@ -568,15 +566,11 @@
         <eTypeParameters name="SRT"/>
         <eOperations name="apply" ordered="false" lowerBound="1">
           <eGenericType eClassifier="#//hotel/search/SearchResult">
-            <eTypeArguments>
-              <eUpperBound eTypeParameter="#//hotel/search/SearchResult/SRT"/>
-            </eTypeArguments>
+            <eTypeArguments eTypeParameter="#//hotel/search/SearchResult/SRT"/>
           </eGenericType>
-          <eParameters name="results" ordered="false" lowerBound="1">
+          <eParameters name="result" ordered="false" lowerBound="1">
             <eGenericType eClassifier="#//hotel/search/SearchResult">
-              <eTypeArguments>
-                <eUpperBound eTypeParameter="#//hotel/search/SearchResult/SRT"/>
-              </eTypeArguments>
+              <eTypeArguments eTypeParameter="#//hotel/search/SearchResult/SRT"/>
             </eGenericType>
           </eParameters>
         </eOperations>
