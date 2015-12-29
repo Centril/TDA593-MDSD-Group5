@@ -49,18 +49,7 @@ public class Functional {
 	 * @param <E> the element type.
 	 * @return the resulting list.
 	 */
-	public static <E> List<? extends E> listify( Stream<? extends E> stream ) {
-		return stream.collect( Collectors.toList() );
-	}
-
-	/**
-	 * Converts a stream of elements to a list.
-	 *
-	 * @param stream the stream to convert.
-	 * @param <E> the element type.
-	 * @return the resulting list.
-	 */
-	public static <E> List<E> listify2( Stream<E> stream ) {
+	public static <E> List<E> listify( Stream<E> stream ) {
 		return stream.collect( Collectors.toList() );
 	}
 
@@ -74,9 +63,8 @@ public class Functional {
 	 * @param <S> the source type.
 	 * @return the list with elements of type T.
 	 */
-	public static <T, S> List<? extends T> concatMap( List<? extends S> outer,
-	                                                  Function<? super S, ? extends Iterable<? extends T>> mapper ) {
-		return Functional.<T>listify( concatMap( outer.stream(), mapper ) );
+	public static <T, S> List<T> concatMap( List<S> outer, Function<? super S, ? extends Iterable<T>> mapper ) {
+		return listify( concatMap( outer.stream(), mapper ) );
 	}
 
 	/**
@@ -89,8 +77,7 @@ public class Functional {
 	 * @param <S> the source type.
 	 * @return the stream with elements of type T.
 	 */
-	public static <T, S> Stream<? extends T> concatMap( Stream<? extends S> outer,
-	                                                  Function<? super S, ? extends Iterable<? extends T>> mapper ) {
+	public static <T, S> Stream<T> concatMap( Stream<S> outer, Function<? super S, ? extends Iterable<T>> mapper ) {
 		return outer.flatMap( elem -> StreamSupport.stream( mapper.apply( elem ).spliterator(), false ) );
 	}
 }

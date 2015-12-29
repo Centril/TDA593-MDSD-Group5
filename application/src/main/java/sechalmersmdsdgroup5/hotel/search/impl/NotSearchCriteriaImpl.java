@@ -25,10 +25,10 @@ public class NotSearchCriteriaImpl<SRT> implements NotSearchCriteria<SRT> {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getCriteria()
-	 * @generated
+	 * @generated NOT
 	 * @ordered
 	 */
-	protected SearchCriteria<SRT> criteria;
+	private SearchCriteria<SRT> criteria;
 
 	public NotSearchCriteriaImpl( SearchCriteria<SRT> criteria ) {
 		this.criteria = criteria;
@@ -64,8 +64,7 @@ public class NotSearchCriteriaImpl<SRT> implements NotSearchCriteria<SRT> {
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	public SearchResult<? extends SRT> apply(SearchResult<? extends SRT> result) {
-		return result.withRelevance( 2 * result.getRelevance() -
-									 criteria.apply( result ).getRelevance() );
+	public SearchResult<SRT> apply(SearchResult<SRT> result) {
+		return result.withRelevance( 2 * result.getRelevance() - criteria.apply( result ).getRelevance() );
 	}
 } //NotSearchCriteriaImpl

@@ -12,7 +12,7 @@ public class PredicatedSearchCriteria<SRT> implements SearchCriteria<SRT> {
 		this.predicate = predicate;
 	}
 
-	public SearchResult<? extends SRT> apply( SearchResult<? extends SRT> sr ) {
+	public SearchResult<SRT> apply( SearchResult<SRT> sr ) {
 		return sr.withRelevance( sr.getRelevance() * (predicate.test( sr.getResult( ) ) ? 2 : 0.5 ) );
 	}
 }

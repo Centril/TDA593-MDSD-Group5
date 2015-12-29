@@ -46,13 +46,12 @@ public class Search implements ISearch {
 
 	@Override
 	public List<Room> searchOccupiedRooms( Date from, Date to ) {
-		return listify2( searchActiveBookings( from, to ).stream().map( RoomBooking::getBookedRoom ).distinct() );
+		return listify( searchActiveBookings( from, to ).stream().map( RoomBooking::getBookedRoom ).distinct() );
 	}
 
-	@SuppressWarnings( "unchecked" )
 	@Override
 	public List<RoomBooking> searchActiveBookings( Date from, Date to ) {
-		return (List<RoomBooking>) new Searcher<RoomBooking>().searchInitFlatten( allBookings(),
+		return new Searcher<RoomBooking>().searchInitFlatten( allBookings(),
 			query( matches( booking ->
 				within( booking.getCheckoutTime(), from, to ) && (
 				within( booking.getStartDate(), from, to ) || within( booking.getEndDate(), from, to ) ) ) ) );
@@ -80,23 +79,17 @@ public class Search implements ISearch {
 		SearchCriteria<RoomBooking> restriction = matches( booking -> booking.getCheckinTime() == null &&
 			leq( now, booking.getStartDate() ) || leq( now, booking.getEndDate() ) );
 
-		return stupidCast( new Searcher<RoomBooking>().searchInit( allBookings(),
-				SearchQueryBuilder.<RoomBooking>builder().wrap( restriction ).and().each(
-					query.getCriterias(), SearchQueryBuilder::or
-				).query() ) );
+		return new Searcher<RoomBooking>().searchInit( allBookings(),
+				SearchQueryBuilder.<RoomBooking>builder().wrap( restriction )
+					.and().each( query.getCriterias(), SearchQueryBuilder::or ).query() );
 	}
 
 	@Override
 	public List<SearchResult<Key>> searchKey( SearchQuery<Key> query ) {
-		return stupidCast( new Searcher<Key>().searchInit( hotel.getKeys(), query ) );
+		return new Searcher<Key>().searchInit( hotel.getKeys(), query );
 	}
 
-	private List<? extends RoomBooking> allBookings() {
+	private List<RoomBooking> allBookings() {
 		return concatMap( hotel.getOrders(), Order::getBookings );
-	}
-
-	// todo: fix the stupid cast... have to change the signature in SearchCriteria to SearchResult<T>.
-	private <T> List<SearchResult<T>> stupidCast( List<SearchResult<? extends T>> l ) {
-		return listify2( l.stream().map( sr -> (SearchResult<T>) sr ) );
 	}
 }
