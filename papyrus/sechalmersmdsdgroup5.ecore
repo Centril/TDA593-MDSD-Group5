@@ -319,6 +319,8 @@
             lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="willBook" ordered="false"
             lowerBound="1" eType="#//hotel/facilities/Room"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="services" ordered="false"
+            upperBound="-1" eType="#//hotel/services/ServiceBlueprint"/>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="RoomBooking" eSuperTypes="#//hotel/payment/Payable">
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="startDate" ordered="false"
@@ -335,6 +337,8 @@
             lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="guests" ordered="false"
             lowerBound="1" upperBound="-1" eType="#//hotel/clients/Guest"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="services" ordered="false"
+            upperBound="-1" eType="#//hotel/services/Service" containment="true"/>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="IOrder" abstract="true" interface="true">
         <eOperations name="createBooking" ordered="false" lowerBound="1" eType="#//hotel/ordering/RoomBooking">

@@ -770,6 +770,10 @@
             <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_IeH9oK5VEeWv27QKdYHuVQ" value="1"/>
             <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_IeKZ4K5VEeWv27QKdYHuVQ" value="*"/>
           </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_VnsxEK5XEeWv27QKdYHuVQ" name="services" type="_4zgHsJRREeWEKYEtRmghUQ" aggregation="composite" association="_VnsKAK5XEeWv27QKdYHuVQ">
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_y7zH0K5YEeWv27QKdYHuVQ"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_y709AK5YEeWv27QKdYHuVQ" value="*"/>
+          </ownedAttribute>
           <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_QkrpEKAzEeWDjIMsRDMNyg" client="_8ormYJOJEeWEKYEtRmghUQ" supplier="_BDMDQJ9FEeW5UY5BQ7hdQQ" contract="_BDMDQJ9FEeW5UY5BQ7hdQQ"/>
         </packagedElement>
         <packagedElement xmi:type="uml:Class" xmi:id="_2hOYgJRQEeWEKYEtRmghUQ" name="Campaign" visibility="public">
@@ -934,6 +938,10 @@
             <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EDate"/>
           </ownedAttribute>
           <ownedAttribute xmi:type="uml:Property" xmi:id="_ZvhqUJxJEeWZyucTm7GAUw" name="willBook" type="_sPEY0JN3EeWEKYEtRmghUQ" aggregation="shared" association="_ZvgcMJxJEeWZyucTm7GAUw"/>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_3s44Qq5YEeWv27QKdYHuVQ" name="services" type="_6sH2MJRREeWEKYEtRmghUQ" aggregation="shared" association="_3s4RMK5YEeWv27QKdYHuVQ">
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Hr2PUK5ZEeWv27QKdYHuVQ"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Hr4EgK5ZEeWv27QKdYHuVQ" value="*"/>
+          </ownedAttribute>
         </packagedElement>
       </packagedElement>
       <packagedElement xmi:type="uml:Package" xmi:id="_3tXmEJRREeWEKYEtRmghUQ" name="services">
@@ -1271,6 +1279,18 @@
         <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_5VS9Ua5UEeWv27QKdYHuVQ" key="nature" value="UML_Nature"/>
       </eAnnotations>
       <ownedEnd xmi:type="uml:Property" xmi:id="_5VULca5UEeWv27QKdYHuVQ" name="roombooking" type="_8ormYJOJEeWEKYEtRmghUQ" association="_5VOr4K5UEeWv27QKdYHuVQ"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_VnsKAK5XEeWv27QKdYHuVQ" memberEnd="_VnsxEK5XEeWv27QKdYHuVQ _VnsxEa5XEeWv27QKdYHuVQ">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_VnsKAa5XEeWv27QKdYHuVQ" source="org.eclipse.papyrus">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_VnsKAq5XEeWv27QKdYHuVQ" key="nature" value="UML_Nature"/>
+      </eAnnotations>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_VnsxEa5XEeWv27QKdYHuVQ" name="roombooking" type="_8ormYJOJEeWEKYEtRmghUQ" association="_VnsKAK5XEeWv27QKdYHuVQ"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_3s4RMK5YEeWv27QKdYHuVQ" memberEnd="_3s44Qq5YEeWv27QKdYHuVQ _3s44Q65YEeWv27QKdYHuVQ">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_3s44QK5YEeWv27QKdYHuVQ" source="org.eclipse.papyrus">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_3s44Qa5YEeWv27QKdYHuVQ" key="nature" value="UML_Nature"/>
+      </eAnnotations>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_3s44Q65YEeWv27QKdYHuVQ" name="prebooking" type="_bRmzAJxHEeW5eMToz_1RuA" association="_3s4RMK5YEeWv27QKdYHuVQ"/>
     </packagedElement>
     <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_0lMEUJN5EeWEKYEtRmghUQ">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_0lNScJN5EeWEKYEtRmghUQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
