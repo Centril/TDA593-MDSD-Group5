@@ -19,6 +19,7 @@ import sechalmersmdsdgroup5.hotel.facilities.Room;
 
 import sechalmersmdsdgroup5.hotel.ordering.Invoice;
 import sechalmersmdsdgroup5.hotel.ordering.RoomBooking;
+import sechalmersmdsdgroup5.hotel.services.Service;
 
 /**
  * <!-- begin-user-doc -->
@@ -36,6 +37,7 @@ import sechalmersmdsdgroup5.hotel.ordering.RoomBooking;
  *   <li>{@link sechalmersmdsdgroup5.hotel.ordering.impl.RoomBookingImpl#getBookedRoom <em>Booked Room</em>}</li>
  *   <li>{@link sechalmersmdsdgroup5.hotel.ordering.impl.RoomBookingImpl#isPaid <em>Is Paid</em>}</li>
  *   <li>{@link sechalmersmdsdgroup5.hotel.ordering.impl.RoomBookingImpl#getGuests <em>Guests</em>}</li>
+ *   <li>{@link sechalmersmdsdgroup5.hotel.ordering.impl.RoomBookingImpl#getServices <em>Services</em>}</li>
  * </ul>
  *
  * @generated
@@ -170,6 +172,16 @@ public class RoomBookingImpl extends MinimalEObjectImpl.Container implements Roo
 	 * @ordered
 	 */
 	protected EList<Guest> guests;
+
+	/**
+	 * The cached value of the '{@link #getServices() <em>Services</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getServices()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Service> services;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -342,6 +354,18 @@ public class RoomBookingImpl extends MinimalEObjectImpl.Container implements Roo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public List<Service> getServices() {
+		if (services == null) {
+			services = new BasicInternalEList<Service>(Service.class);
+		}
+		return services;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public double totalPrice() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
@@ -373,6 +397,8 @@ public class RoomBookingImpl extends MinimalEObjectImpl.Container implements Roo
 				return isPaid();
 			case OrderingPackageImpl.ROOM_BOOKING__GUESTS:
 				return getGuests();
+			case OrderingPackageImpl.ROOM_BOOKING__SERVICES:
+				return getServices();
 		}
 		return eDynamicGet(featureID, resolve, coreType);
 	}
@@ -412,6 +438,10 @@ public class RoomBookingImpl extends MinimalEObjectImpl.Container implements Roo
 				getGuests().clear();
 				getGuests().addAll((Collection<? extends Guest>)newValue);
 				return;
+			case OrderingPackageImpl.ROOM_BOOKING__SERVICES:
+				getServices().clear();
+				getServices().addAll((Collection<? extends Service>)newValue);
+				return;
 		}
 		eDynamicSet(featureID, newValue);
 	}
@@ -448,6 +478,9 @@ public class RoomBookingImpl extends MinimalEObjectImpl.Container implements Roo
 			case OrderingPackageImpl.ROOM_BOOKING__GUESTS:
 				getGuests().clear();
 				return;
+			case OrderingPackageImpl.ROOM_BOOKING__SERVICES:
+				getServices().clear();
+				return;
 		}
 		eDynamicUnset(featureID);
 	}
@@ -476,6 +509,8 @@ public class RoomBookingImpl extends MinimalEObjectImpl.Container implements Roo
 				return isPaid != IS_PAID_EDEFAULT;
 			case OrderingPackageImpl.ROOM_BOOKING__GUESTS:
 				return guests != null && !guests.isEmpty();
+			case OrderingPackageImpl.ROOM_BOOKING__SERVICES:
+				return services != null && !services.isEmpty();
 		}
 		return eDynamicIsSet(featureID);
 	}

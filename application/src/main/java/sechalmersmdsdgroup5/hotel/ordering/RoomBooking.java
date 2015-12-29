@@ -8,6 +8,7 @@ import java.util.List;
 import sechalmersmdsdgroup5.hotel.clients.Guest;
 import sechalmersmdsdgroup5.hotel.facilities.Room;
 import sechalmersmdsdgroup5.hotel.payment.Payable;
+import sechalmersmdsdgroup5.hotel.services.Service;
 
 /**
  * <!-- begin-user-doc -->
@@ -25,6 +26,7 @@ import sechalmersmdsdgroup5.hotel.payment.Payable;
  *   <li>{@link sechalmersmdsdgroup5.hotel.ordering.RoomBooking#getBookedRoom <em>Booked Room</em>}</li>
  *   <li>{@link sechalmersmdsdgroup5.hotel.ordering.RoomBooking#isPaid <em>Is Paid</em>}</li>
  *   <li>{@link sechalmersmdsdgroup5.hotel.ordering.RoomBooking#getGuests <em>Guests</em>}</li>
+ *   <li>{@link sechalmersmdsdgroup5.hotel.ordering.RoomBooking#getServices <em>Services</em>}</li>
  * </ul>
  *
  * @model
@@ -195,5 +197,20 @@ public interface RoomBooking extends Payable {
 	 * @generated
 	 */
 	List<Guest> getGuests();
+
+	/**
+	 * Returns the value of the '<em><b>Services</b></em>' containment reference list.
+	 * The list contents are of type {@link sechalmersmdsdgroup5.hotel.services.Service}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Services</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Services</em>' containment reference list.
+	 * @model containment="true" ordered="false"
+	 * @generated
+	 */
+	List<Service> getServices();
 
 } // RoomBooking

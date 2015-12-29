@@ -2,17 +2,22 @@
  */
 package sechalmersmdsdgroup5.hotel.ordering.impl;
 
+import java.util.Collection;
 import java.util.Date;
 
+import java.util.List;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
+import org.eclipse.emf.ecore.util.BasicInternalEList;
 import sechalmersmdsdgroup5.hotel.facilities.Room;
 
 import sechalmersmdsdgroup5.hotel.ordering.PreBooking;
+import sechalmersmdsdgroup5.hotel.services.ServiceBlueprint;
 
 /**
  * <!-- begin-user-doc -->
@@ -25,6 +30,7 @@ import sechalmersmdsdgroup5.hotel.ordering.PreBooking;
  *   <li>{@link sechalmersmdsdgroup5.hotel.ordering.impl.PreBookingImpl#getStartDate <em>Start Date</em>}</li>
  *   <li>{@link sechalmersmdsdgroup5.hotel.ordering.impl.PreBookingImpl#getEndDate <em>End Date</em>}</li>
  *   <li>{@link sechalmersmdsdgroup5.hotel.ordering.impl.PreBookingImpl#getWillBook <em>Will Book</em>}</li>
+ *   <li>{@link sechalmersmdsdgroup5.hotel.ordering.impl.PreBookingImpl#getServices <em>Services</em>}</li>
  * </ul>
  *
  * @generated
@@ -79,6 +85,16 @@ public class PreBookingImpl extends MinimalEObjectImpl.Container implements PreB
 	 * @ordered
 	 */
 	protected Room willBook;
+
+	/**
+	 * The cached value of the '{@link #getServices() <em>Services</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getServices()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<ServiceBlueprint> services;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -173,6 +189,18 @@ public class PreBookingImpl extends MinimalEObjectImpl.Container implements PreB
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public List<ServiceBlueprint> getServices() {
+		if (services == null) {
+			services = new BasicInternalEList<ServiceBlueprint>(ServiceBlueprint.class);
+		}
+		return services;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -183,6 +211,8 @@ public class PreBookingImpl extends MinimalEObjectImpl.Container implements PreB
 			case OrderingPackageImpl.PRE_BOOKING__WILL_BOOK:
 				if (resolve) return getWillBook();
 				return basicGetWillBook();
+			case OrderingPackageImpl.PRE_BOOKING__SERVICES:
+				return getServices();
 		}
 		return eDynamicGet(featureID, resolve, coreType);
 	}
@@ -192,6 +222,7 @@ public class PreBookingImpl extends MinimalEObjectImpl.Container implements PreB
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
@@ -203,6 +234,10 @@ public class PreBookingImpl extends MinimalEObjectImpl.Container implements PreB
 				return;
 			case OrderingPackageImpl.PRE_BOOKING__WILL_BOOK:
 				setWillBook((Room)newValue);
+				return;
+			case OrderingPackageImpl.PRE_BOOKING__SERVICES:
+				getServices().clear();
+				getServices().addAll((Collection<? extends ServiceBlueprint>)newValue);
 				return;
 		}
 		eDynamicSet(featureID, newValue);
@@ -225,6 +260,9 @@ public class PreBookingImpl extends MinimalEObjectImpl.Container implements PreB
 			case OrderingPackageImpl.PRE_BOOKING__WILL_BOOK:
 				setWillBook((Room)null);
 				return;
+			case OrderingPackageImpl.PRE_BOOKING__SERVICES:
+				getServices().clear();
+				return;
 		}
 		eDynamicUnset(featureID);
 	}
@@ -243,6 +281,8 @@ public class PreBookingImpl extends MinimalEObjectImpl.Container implements PreB
 				return END_DATE_EDEFAULT == null ? endDate != null : !END_DATE_EDEFAULT.equals(endDate);
 			case OrderingPackageImpl.PRE_BOOKING__WILL_BOOK:
 				return willBook != null;
+			case OrderingPackageImpl.PRE_BOOKING__SERVICES:
+				return services != null && !services.isEmpty();
 		}
 		return eDynamicIsSet(featureID);
 	}
