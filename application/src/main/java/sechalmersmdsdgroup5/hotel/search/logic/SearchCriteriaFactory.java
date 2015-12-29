@@ -6,12 +6,18 @@ import sechalmersmdsdgroup5.hotel.search.impl.*;
 import sechalmersmdsdgroup5.hotel.utils.Functional;
 
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 import java.util.function.BiPredicate;
 import java.util.function.Function;
+import java.util.function.Predicate;
 
 public class SearchCriteriaFactory {
-	public static <SRT>SearchQuery<SRT> query( List<SearchCriteria<SRT>> criterion ) {
+	public static <SRT> SearchQuery<SRT> query( SearchCriteria<SRT>... criterion ) {
+		return query( Arrays.asList( criterion ) );
+	}
+
+	public static <SRT> SearchQuery<SRT> query( List<SearchCriteria<SRT>> criterion ) {
 		return new SearchQueryImpl<>( criterion );
 	}
 
@@ -40,7 +46,23 @@ public class SearchCriteriaFactory {
 		return new MatchesSearchCriteriaImpl<>( input, transform, predicate );
 	}
 
+	public static <SRT> SearchCriteria<SRT> matches( Predicate<SRT> predicate ) {
+		return new PredicatedSearchCriteria<>( predicate );
+	}
+
 	public static <SRT, IN> SearchCriteria<SRT> eq( IN input, Function<SRT, IN> transform ) {
 		return new IsSearchCriteria<>( input, transform );
+	}
+
+	public static <SRT, IN> SearchCriteria<SRT> within( IN left, IN right,
+	                                                    Function<SRT, IN> transform, Comparator<IN> cmp ) {
+		return and( matches( left,  transform, (l, r) -> cmp.compare( l, r ) <= 0 ),
+					matches( right, transform, (l, r) -> cmp.compare( l, r ) >= 0 ) );
+	}
+
+	public static <SRT, IN> SearchCriteria<SRT> between( IN left, IN right,
+	                                                     Function<SRT, IN> transform, Comparator<IN> cmp ) {
+		return and( matches( left,  transform, (l, r) -> cmp.compare( l, r ) < 0 ),
+					matches( right, transform, (l, r) -> cmp.compare( l, r ) > 0 ) );
 	}
 }
