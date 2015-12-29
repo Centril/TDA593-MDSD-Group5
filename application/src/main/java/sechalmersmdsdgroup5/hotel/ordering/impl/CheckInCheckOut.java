@@ -5,6 +5,8 @@ import sechalmersmdsdgroup5.hotel.facilities.Key;
 import sechalmersmdsdgroup5.hotel.identities.Identity;
 import sechalmersmdsdgroup5.hotel.ordering.ICheckInCheckOut;
 import sechalmersmdsdgroup5.hotel.ordering.RoomBooking;
+import sechalmersmdsdgroup5.hotel.services.Service;
+import sechalmersmdsdgroup5.hotel.services.ServicesFactory;
 
 import java.util.Date;
 
@@ -30,14 +32,20 @@ public class CheckInCheckOut implements ICheckInCheckOut {
     public boolean checkOut(Guest guest, RoomBooking booking) {
         /*
         TODO check that the guest exists in the booking, requires change in class diagram
-        if (booking.getGuests().contains(guest)
+        if (booking.getGuests().contains(guest) {
          */
-        if ((new Date()).getTime() <= booking.getCheckoutTime().getTime()){
+            if ((new Date()).getTime() >= booking.getEndDate().getTime()) {
+                // TODO make sure this, via some config, is not neccesarily a thing that happens.
+                // Add penalties by adding a service to the booking that has to be paid
+                // Should have paramters: serviceConsumer, time?, price, name?
+                Service overextendService = ServicesFactory.INSTANCE.createService();
+                // TODO relate this service to the booking or guest in some way
+            }
             booking.setCheckoutTime(new Date());
             return true;
-        }
+        // }
 
-        return false;
+        //return false;
     }
 
     @Override
