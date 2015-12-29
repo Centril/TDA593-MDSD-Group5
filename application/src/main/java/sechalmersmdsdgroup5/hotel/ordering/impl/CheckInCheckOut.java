@@ -14,6 +14,9 @@ import java.util.Date;
  * Created by kalior on 18/12/15.
  */
 public class CheckInCheckOut implements ICheckInCheckOut {
+
+    public CheckInCheckOut() {}
+
     @Override
     public boolean checkIn(Guest guest, RoomBooking booking) {
         /*
