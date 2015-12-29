@@ -20,7 +20,7 @@ public class CheckInCheckOut implements ICheckInCheckOut {
         TODO check that the guest exists in the booking
         if (booking.getGuests().contains(guest)
          */
-        if ((new Date()).getTime() <= booking.getCheckinTime().getTime())
+        if ((new Date()).getTime() <= booking.getStartDate().getTime())
         {
             booking.setCheckinTime(new Date());
             return true;
