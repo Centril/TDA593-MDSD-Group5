@@ -59,12 +59,12 @@ public class Search implements ISearch {
 
 	@Override
 	public List<Service> searchUsedServices( RoomBooking booking ) {
-		return null;
+		return booking.getServices();
 	}
 
 	@Override
 	public List<Service> searchUsedServices( Order order ) {
-		return null;
+		return concatMap( order.getBookings(), RoomBooking::getServices );
 	}
 
 	@Override
