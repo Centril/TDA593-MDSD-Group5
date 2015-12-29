@@ -4,6 +4,8 @@ package sechalmersmdsdgroup5.hotel.ordering;
 
 import java.util.Date;
 
+import java.util.List;
+import sechalmersmdsdgroup5.hotel.clients.Guest;
 import sechalmersmdsdgroup5.hotel.facilities.Room;
 import sechalmersmdsdgroup5.hotel.payment.Payable;
 
@@ -22,6 +24,7 @@ import sechalmersmdsdgroup5.hotel.payment.Payable;
  *   <li>{@link sechalmersmdsdgroup5.hotel.ordering.RoomBooking#getCheckoutTime <em>Checkout Time</em>}</li>
  *   <li>{@link sechalmersmdsdgroup5.hotel.ordering.RoomBooking#getBookedRoom <em>Booked Room</em>}</li>
  *   <li>{@link sechalmersmdsdgroup5.hotel.ordering.RoomBooking#isPaid <em>Is Paid</em>}</li>
+ *   <li>{@link sechalmersmdsdgroup5.hotel.ordering.RoomBooking#getGuests <em>Guests</em>}</li>
  * </ul>
  *
  * @model
@@ -177,5 +180,20 @@ public interface RoomBooking extends Payable {
 	 * @generated
 	 */
 	void setIsPaid(boolean value);
+
+	/**
+	 * Returns the value of the '<em><b>Guests</b></em>' reference list.
+	 * The list contents are of type {@link sechalmersmdsdgroup5.hotel.clients.Guest}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Guests</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Guests</em>' reference list.
+	 * @model required="true" ordered="false"
+	 * @generated
+	 */
+	List<Guest> getGuests();
 
 } // RoomBooking
