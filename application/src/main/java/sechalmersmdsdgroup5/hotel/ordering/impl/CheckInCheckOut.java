@@ -28,6 +28,15 @@ public class CheckInCheckOut implements ICheckInCheckOut {
 
     @Override
     public boolean checkOut(Guest guest, RoomBooking booking) {
+        /*
+        TODO check that the guest exists in the booking, requires change in class diagram
+        if (booking.getGuests().contains(guest)
+         */
+        if ((new Date()).getTime() <= booking.getCheckoutTime().getTime()){
+            booking.setCheckoutTime(new Date());
+            return true;
+        }
+
         return false;
     }
 
