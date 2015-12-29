@@ -9,3 +9,5 @@
 + 2015-12-26: Fixed generics in SearchQuery, SearchCriteria<? extends SRT> => SearchCriteria<SRT>.
 + 2015-12-29: Fixed generics in SearchCriteria, SearchResult: ? extends SRT => SRT.
 + 2015-12-29: Added Guest:s to RoomBooking - was omitted by mistake prior.
++ 2015-12-29: Added Services to RoomBooking - ommitted by mistake prior.
++ 2015-12-29: Added ServiceBlueprints to PreBooking.
