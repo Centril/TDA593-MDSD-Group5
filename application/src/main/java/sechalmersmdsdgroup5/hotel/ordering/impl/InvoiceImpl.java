@@ -2,6 +2,7 @@
  */
 package sechalmersmdsdgroup5.hotel.ordering.impl;
 
+import java.util.Calendar;
 import java.util.Date;
 
 import org.eclipse.emf.ecore.EClass;
@@ -46,14 +47,13 @@ public class InvoiceImpl extends MinimalEObjectImpl.Container implements Invoice
 	protected boolean isPaid = IS_PAID_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getExpiryDate() <em>Expiry Date</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getExpiryDate()
-	 * @generated
-	 * @ordered
+	 *Creates a default expiry date one month from the current date.
 	 */
-	protected static final Date EXPIRY_DATE_EDEFAULT = null;
+	private static Date expiryDateDefault() {
+		Calendar cal = Calendar.getInstance();
+		cal.add(Calendar.MONTH, 1);
+		return cal.getTime();
+	}
 
 	/**
 	 * The cached value of the '{@link #getExpiryDate() <em>Expiry Date</em>}' attribute.
@@ -63,7 +63,7 @@ public class InvoiceImpl extends MinimalEObjectImpl.Container implements Invoice
 	 * @generated
 	 * @ordered
 	 */
-	protected Date expiryDate = EXPIRY_DATE_EDEFAULT;
+	protected Date expiryDate = expiryDateDefault();
 
 	/**
 	 * <!-- begin-user-doc -->
