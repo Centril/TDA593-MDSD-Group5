@@ -166,7 +166,7 @@ public class InvoiceImpl extends MinimalEObjectImpl.Container implements Invoice
 				setIsPaid(IS_PAID_EDEFAULT);
 				return;
 			case OrderingPackageImpl.INVOICE__EXPIRY_DATE:
-				setExpiryDate(EXPIRY_DATE_EDEFAULT);
+				setExpiryDate(expiryDateDefault());
 				return;
 		}
 		eDynamicUnset(featureID);
@@ -183,7 +183,8 @@ public class InvoiceImpl extends MinimalEObjectImpl.Container implements Invoice
 			case OrderingPackageImpl.INVOICE__IS_PAID:
 				return isPaid != IS_PAID_EDEFAULT;
 			case OrderingPackageImpl.INVOICE__EXPIRY_DATE:
-				return EXPIRY_DATE_EDEFAULT == null ? expiryDate != null : !EXPIRY_DATE_EDEFAULT.equals(expiryDate);
+				Date testDate = expiryDateDefault();
+				return testDate == null ? expiryDate != null : !testDate.equals(expiryDate);
 		}
 		return eDynamicIsSet(featureID);
 	}
