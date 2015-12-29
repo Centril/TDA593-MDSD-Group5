@@ -766,6 +766,10 @@
           <ownedAttribute xmi:type="uml:Property" xmi:id="_nKxr4Jy0EeWonJqBvx1hUQ" name="isPaid">
             <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
           </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_5VULcK5UEeWv27QKdYHuVQ" name="guests" type="_st4FoJOAEeWEKYEtRmghUQ" aggregation="shared" association="_5VOr4K5UEeWv27QKdYHuVQ">
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_IeH9oK5VEeWv27QKdYHuVQ" value="1"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_IeKZ4K5VEeWv27QKdYHuVQ" value="*"/>
+          </ownedAttribute>
           <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_QkrpEKAzEeWDjIMsRDMNyg" client="_8ormYJOJEeWEKYEtRmghUQ" supplier="_BDMDQJ9FEeW5UY5BQ7hdQQ" contract="_BDMDQJ9FEeW5UY5BQ7hdQQ"/>
         </packagedElement>
         <packagedElement xmi:type="uml:Class" xmi:id="_2hOYgJRQEeWEKYEtRmghUQ" name="Campaign" visibility="public">
@@ -1261,6 +1265,12 @@
         <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_9B67cqAvEeWRM8HqbnnQEA" key="nature" value="UML_Nature"/>
       </eAnnotations>
       <ownedEnd xmi:type="uml:Property" xmi:id="_9B67dKAvEeWRM8HqbnnQEA" name="client" type="_0CgQwKAsEeWRM8HqbnnQEA" association="_9B67cKAvEeWRM8HqbnnQEA"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_5VOr4K5UEeWv27QKdYHuVQ" memberEnd="_5VULcK5UEeWv27QKdYHuVQ _5VULca5UEeWv27QKdYHuVQ">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_5VS9UK5UEeWv27QKdYHuVQ" source="org.eclipse.papyrus">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_5VS9Ua5UEeWv27QKdYHuVQ" key="nature" value="UML_Nature"/>
+      </eAnnotations>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_5VULca5UEeWv27QKdYHuVQ" name="roombooking" type="_8ormYJOJEeWEKYEtRmghUQ" association="_5VOr4K5UEeWv27QKdYHuVQ"/>
     </packagedElement>
     <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_0lMEUJN5EeWEKYEtRmghUQ">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_0lNScJN5EeWEKYEtRmghUQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
