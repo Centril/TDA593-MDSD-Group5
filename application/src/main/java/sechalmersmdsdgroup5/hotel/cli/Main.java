@@ -10,5 +10,6 @@ public class Main {
 	 * @param args CLI args.
 	 */
 	public static void main( String[] args ) {
+		new Application().run();
 	}
 }
