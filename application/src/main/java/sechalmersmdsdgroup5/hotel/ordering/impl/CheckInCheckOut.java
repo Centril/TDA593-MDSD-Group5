@@ -29,10 +29,7 @@ public class CheckInCheckOut implements ICheckInCheckOut {
 
     @Override
     public boolean checkOut(Guest guest, RoomBooking booking) {
-        /*
-        TODO check that the guest exists in the booking, requires change in class diagram
-        if (booking.getGuests().contains(guest) {
-         */
+        if (booking.getGuests().contains(guest)) {
             if ((new Date()).getTime() >= booking.getEndDate().getTime()) {
                 // TODO make sure this, via some config, is not neccesarily a thing that happens.
                 // Add penalties by adding a service to the booking that has to be paid
@@ -42,9 +39,9 @@ public class CheckInCheckOut implements ICheckInCheckOut {
             }
             booking.setCheckoutTime(new Date());
             return true;
-        // }
+         }
 
-        //return false;
+        return false;
     }
 
     @Override
