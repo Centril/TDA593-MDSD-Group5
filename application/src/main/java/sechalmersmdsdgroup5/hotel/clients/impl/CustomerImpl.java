@@ -2,12 +2,16 @@
  */
 package sechalmersmdsdgroup5.hotel.clients.impl;
 
+import java.util.Collection;
+import java.util.List;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
+import org.eclipse.emf.ecore.util.BasicInternalEList;
 import sechalmersmdsdgroup5.hotel.clients.Address;
 import sechalmersmdsdgroup5.hotel.clients.Customer;
 
@@ -25,7 +29,7 @@ import sechalmersmdsdgroup5.hotel.payment.PaymentMethod;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link sechalmersmdsdgroup5.hotel.clients.impl.CustomerImpl#getInvoice <em>Invoice</em>}</li>
+ *   <li>{@link sechalmersmdsdgroup5.hotel.clients.impl.CustomerImpl#getInvoices <em>Invoices</em>}</li>
  *   <li>{@link sechalmersmdsdgroup5.hotel.clients.impl.CustomerImpl#getPaymentMethod <em>Payment Method</em>}</li>
  *   <li>{@link sechalmersmdsdgroup5.hotel.clients.impl.CustomerImpl#getCard <em>Card</em>}</li>
  *   <li>{@link sechalmersmdsdgroup5.hotel.clients.impl.CustomerImpl#getAssociatedAdress <em>Associated Adress</em>}</li>
@@ -37,14 +41,14 @@ import sechalmersmdsdgroup5.hotel.payment.PaymentMethod;
  */
 public class CustomerImpl extends MinimalEObjectImpl.Container implements Customer {
 	/**
-	 * The cached value of the '{@link #getInvoice() <em>Invoice</em>}' reference.
+	 * The cached value of the '{@link #getInvoices() <em>Invoices</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getInvoice()
+	 * @see #getInvoices()
 	 * @generated
 	 * @ordered
 	 */
-	protected Invoice invoice;
+	protected EList<Invoice> invoices;
 
 	/**
 	 * The default value of the '{@link #getPaymentMethod() <em>Payment Method</em>}' attribute.
@@ -140,32 +144,11 @@ public class CustomerImpl extends MinimalEObjectImpl.Container implements Custom
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Invoice getInvoice() {
-		if (invoice != null && ((EObject)invoice).eIsProxy()) {
-			InternalEObject oldInvoice = (InternalEObject)invoice;
-			invoice = (Invoice)eResolveProxy(oldInvoice);
-			if (invoice != oldInvoice) {
-			}
+	public List<Invoice> getInvoices() {
+		if (invoices == null) {
+			invoices = new BasicInternalEList<Invoice>(Invoice.class);
 		}
-		return invoice;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Invoice basicGetInvoice() {
-		return invoice;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setInvoice(Invoice newInvoice) {
-		invoice = newInvoice;
+		return invoices;
 	}
 
 	/**
@@ -311,9 +294,8 @@ public class CustomerImpl extends MinimalEObjectImpl.Container implements Custom
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ClientsPackageImpl.CUSTOMER__INVOICE:
-				if (resolve) return getInvoice();
-				return basicGetInvoice();
+			case ClientsPackageImpl.CUSTOMER__INVOICES:
+				return getInvoices();
 			case ClientsPackageImpl.CUSTOMER__PAYMENT_METHOD:
 				return getPaymentMethod();
 			case ClientsPackageImpl.CUSTOMER__CARD:
@@ -336,11 +318,13 @@ public class CustomerImpl extends MinimalEObjectImpl.Container implements Custom
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ClientsPackageImpl.CUSTOMER__INVOICE:
-				setInvoice((Invoice)newValue);
+			case ClientsPackageImpl.CUSTOMER__INVOICES:
+				getInvoices().clear();
+				getInvoices().addAll((Collection<? extends Invoice>)newValue);
 				return;
 			case ClientsPackageImpl.CUSTOMER__PAYMENT_METHOD:
 				setPaymentMethod((PaymentMethod)newValue);
@@ -369,8 +353,8 @@ public class CustomerImpl extends MinimalEObjectImpl.Container implements Custom
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ClientsPackageImpl.CUSTOMER__INVOICE:
-				setInvoice((Invoice)null);
+			case ClientsPackageImpl.CUSTOMER__INVOICES:
+				getInvoices().clear();
 				return;
 			case ClientsPackageImpl.CUSTOMER__PAYMENT_METHOD:
 				setPaymentMethod(PAYMENT_METHOD_EDEFAULT);
@@ -399,8 +383,8 @@ public class CustomerImpl extends MinimalEObjectImpl.Container implements Custom
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ClientsPackageImpl.CUSTOMER__INVOICE:
-				return invoice != null;
+			case ClientsPackageImpl.CUSTOMER__INVOICES:
+				return invoices != null && !invoices.isEmpty();
 			case ClientsPackageImpl.CUSTOMER__PAYMENT_METHOD:
 				return paymentMethod != PAYMENT_METHOD_EDEFAULT;
 			case ClientsPackageImpl.CUSTOMER__CARD:

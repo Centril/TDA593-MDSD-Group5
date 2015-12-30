@@ -538,13 +538,22 @@ public class OrderingPackageImpl extends EPackageImpl {
 	public static final int INVOICE__EXPIRY_DATE = 1;
 
 	/**
+	 * The feature id for the '<em><b>Total Price</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int INVOICE__TOTAL_PRICE = 2;
+
+	/**
 	 * The number of structural features of the '<em>Invoice</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	public static final int INVOICE_FEATURE_COUNT = 2;
+	public static final int INVOICE_FEATURE_COUNT = 3;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -974,6 +983,20 @@ public class OrderingPackageImpl extends EPackageImpl {
 	}
 
 	/**
+	 * Returns the meta object for the attribute '{@link sechalmersmdsdgroup5.hotel.ordering.Invoice#getTotalPrice <em>Total Price</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Total Price</em>'.
+	 * @see sechalmersmdsdgroup5.hotel.ordering.Invoice#getTotalPrice()
+	 * @see #getInvoice()
+	 * @generated
+	 */
+	public EAttribute getInvoice_TotalPrice() {
+		return (EAttribute)invoiceEClass.getEStructuralFeatures().get(2);
+	}
+
+
+	/**
 	 * Returns the meta object for class '{@link sechalmersmdsdgroup5.hotel.ordering.IOrder <em>IOrder</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1211,6 +1234,7 @@ public class OrderingPackageImpl extends EPackageImpl {
 		invoiceEClass = createEClass(INVOICE);
 		createEAttribute(invoiceEClass, INVOICE__IS_PAID);
 		createEAttribute(invoiceEClass, INVOICE__EXPIRY_DATE);
+		createEAttribute(invoiceEClass, INVOICE__TOTAL_PRICE);
 	}
 
 	/**
@@ -1358,6 +1382,7 @@ public class OrderingPackageImpl extends EPackageImpl {
 		initEClass(invoiceEClass, Invoice.class, "Invoice", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getInvoice_IsPaid(), ecorePackage.getEBoolean(), "isPaid", null, 1, 1, Invoice.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getInvoice_ExpiryDate(), ecorePackage.getEDate(), "expiryDate", null, 1, 1, Invoice.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getInvoice_TotalPrice(), ecorePackage.getEDouble(), "totalPrice", null, 1, 1, Invoice.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 	}
 
 	/**
@@ -1542,6 +1567,14 @@ public class OrderingPackageImpl extends EPackageImpl {
 		 * @generated
 		 */
 		public static final EAttribute INVOICE__EXPIRY_DATE = eINSTANCE.getInvoice_ExpiryDate();
+
+		/**
+		 * The meta object literal for the '<em><b>Total Price</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		public static final EAttribute INVOICE__TOTAL_PRICE = eINSTANCE.getInvoice_TotalPrice();
 
 		/**
 		 * The meta object literal for the '{@link sechalmersmdsdgroup5.hotel.ordering.IOrder <em>IOrder</em>}' class.

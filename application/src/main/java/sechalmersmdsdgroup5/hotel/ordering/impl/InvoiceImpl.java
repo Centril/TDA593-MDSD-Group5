@@ -20,6 +20,7 @@ import sechalmersmdsdgroup5.hotel.ordering.Invoice;
  * <ul>
  *   <li>{@link sechalmersmdsdgroup5.hotel.ordering.impl.InvoiceImpl#isPaid <em>Is Paid</em>}</li>
  *   <li>{@link sechalmersmdsdgroup5.hotel.ordering.impl.InvoiceImpl#getExpiryDate <em>Expiry Date</em>}</li>
+ *   <li>{@link sechalmersmdsdgroup5.hotel.ordering.impl.InvoiceImpl#getTotalPrice <em>Total Price</em>}</li>
  * </ul>
  *
  * @generated
@@ -64,6 +65,26 @@ public class InvoiceImpl extends MinimalEObjectImpl.Container implements Invoice
 	 * @ordered
 	 */
 	protected Date expiryDate = EXPIRY_DATE_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getTotalPrice() <em>Total Price</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTotalPrice()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final double TOTAL_PRICE_EDEFAULT = 0.0;
+
+	/**
+	 * The cached value of the '{@link #getTotalPrice() <em>Total Price</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTotalPrice()
+	 * @generated
+	 * @ordered
+	 */
+	protected double totalPrice = TOTAL_PRICE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -125,6 +146,24 @@ public class InvoiceImpl extends MinimalEObjectImpl.Container implements Invoice
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public double getTotalPrice() {
+		return totalPrice;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setTotalPrice(double newTotalPrice) {
+		totalPrice = newTotalPrice;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -132,6 +171,8 @@ public class InvoiceImpl extends MinimalEObjectImpl.Container implements Invoice
 				return isPaid();
 			case OrderingPackageImpl.INVOICE__EXPIRY_DATE:
 				return getExpiryDate();
+			case OrderingPackageImpl.INVOICE__TOTAL_PRICE:
+				return getTotalPrice();
 		}
 		return eDynamicGet(featureID, resolve, coreType);
 	}
@@ -149,6 +190,9 @@ public class InvoiceImpl extends MinimalEObjectImpl.Container implements Invoice
 				return;
 			case OrderingPackageImpl.INVOICE__EXPIRY_DATE:
 				setExpiryDate((Date)newValue);
+				return;
+			case OrderingPackageImpl.INVOICE__TOTAL_PRICE:
+				setTotalPrice((Double)newValue);
 				return;
 		}
 		eDynamicSet(featureID, newValue);
@@ -168,6 +212,9 @@ public class InvoiceImpl extends MinimalEObjectImpl.Container implements Invoice
 			case OrderingPackageImpl.INVOICE__EXPIRY_DATE:
 				setExpiryDate(EXPIRY_DATE_EDEFAULT);
 				return;
+			case OrderingPackageImpl.INVOICE__TOTAL_PRICE:
+				setTotalPrice(TOTAL_PRICE_EDEFAULT);
+				return;
 		}
 		eDynamicUnset(featureID);
 	}
@@ -184,6 +231,8 @@ public class InvoiceImpl extends MinimalEObjectImpl.Container implements Invoice
 				return isPaid != IS_PAID_EDEFAULT;
 			case OrderingPackageImpl.INVOICE__EXPIRY_DATE:
 				return EXPIRY_DATE_EDEFAULT == null ? expiryDate != null : !EXPIRY_DATE_EDEFAULT.equals(expiryDate);
+			case OrderingPackageImpl.INVOICE__TOTAL_PRICE:
+				return totalPrice != TOTAL_PRICE_EDEFAULT;
 		}
 		return eDynamicIsSet(featureID);
 	}
@@ -202,6 +251,8 @@ public class InvoiceImpl extends MinimalEObjectImpl.Container implements Invoice
 		result.append(isPaid);
 		result.append(", expiryDate: ");
 		result.append(expiryDate);
+		result.append(", totalPrice: ");
+		result.append(totalPrice);
 		result.append(')');
 		return result.toString();
 	}
