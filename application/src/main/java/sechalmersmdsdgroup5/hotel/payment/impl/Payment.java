@@ -30,40 +30,52 @@ public class Payment implements IPayment{
     }
 
     /**
-     * Here the client is debitted through an invoice.
+     * Here the client is debitted through an invoice if the payable is not already paid for.
      * @param payable anything which a client has to pay for.
      * @param client
      */
     @Override
     public void debit(Payable payable, Client client) {
+
         if ( payable.isPaid() ) {
             return;
         }
 
         if ( payable.getInvoice() == null || payable.getInvoice().isEmpty() ) {
             // Create invoice if needed.
-            Invoice invoice = OrderingFactory.INSTANCE.createInvoice();
-           /*
-            TODO fix this when merged changes from issue #131 and #128
-            invoice.setTotalPrice(payable.totalPrice());
-            client.addInvoice(invoice);F
-            // The client will then get a mail or physical copy of the invoice which he or she will pay for.
-            */
-            //This is outside the system and therefore the invoice will simply be regarded as paid here.
-            invoice.setIsPaid(true);
-            payable.setIsPaid(true);
+            createInvoice(payable, client);
         }
+
         else {
             // Flag all non-paid invoices as paid and assign to client.
-            for (Invoice invoice : payable.getInvoice() ) {
-                if ( !invoice.isPaid() ) {
-                   //TODO FIX CLIENT ADD INVOICE.
-                    invoice.setIsPaid(true);
-                }
-            }
+            assignInvoices(payable, client);
             //Assume the client will pay outside the system.
         }
 
+        payable.setIsPaid(true);
+    }
+
+    private void assignInvoices(Payable payable, Client client) {
+        for (Invoice invoice : payable.getInvoice() ) {
+            if ( !invoice.isPaid() ) {
+                addInvoice(client, invoice);
+                // Will regard as handled invoice.
+                invoice.setIsPaid(true);
+            }
+        }
+    }
+
+    private void createInvoice(Payable payable, Client client) {
+        Invoice newInvoice = OrderingFactory.INSTANCE.createInvoice();
+        newInvoice.setTotalPrice(payable.totalPrice());
+        addInvoice(client, newInvoice);
+        // The client will then get a mail or physical copy of the invoice which he or she will pay for.
+        //This is outside the system and therefore the invoice will simply be regarded as paid here.
+        newInvoice.setIsPaid(true);
+    }
+
+    private void addInvoice(Client client, Invoice invoice) {
+        client.getInvoices().add(invoice);
     }
 
     @Override
