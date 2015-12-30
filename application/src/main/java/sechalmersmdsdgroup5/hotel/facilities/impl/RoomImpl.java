@@ -2,20 +2,15 @@
  */
 package sechalmersmdsdgroup5.hotel.facilities.impl;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Date;
-import java.util.List;
-import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
-import org.eclipse.emf.ecore.util.BasicInternalEList;
-
 import sechalmersmdsdgroup5.hotel.facilities.PrototypeOrdering;
 import sechalmersmdsdgroup5.hotel.facilities.Room;
 import sechalmersmdsdgroup5.hotel.facilities.RoomAttribute;
-
 import sechalmersmdsdgroup5.hotel.services.ServiceBlueprint;
+
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
 
 /**
  * <!-- begin-user-doc -->
@@ -35,7 +30,7 @@ import sechalmersmdsdgroup5.hotel.services.ServiceBlueprint;
  *   <li>{@link sechalmersmdsdgroup5.hotel.facilities.impl.RoomImpl#getPrototypes <em>Prototypes</em>}</li>
  * </ul>
  *
- * @generated
+ * @generated NOT
  */
 public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 	/**
