@@ -46,7 +46,7 @@ public class Payment implements IPayment{
            /*
             TODO fix this when merged changes from issue #131 and #128
             invoice.setTotalPrice(payable.totalPrice());
-            client.addInvoice(invoice);
+            client.addInvoice(invoice);F
             // The client will then get a mail or physical copy of the invoice which he or she will pay for.
             */
             //This is outside the system and therefore the invoice will simply be regarded as paid here.
@@ -57,7 +57,7 @@ public class Payment implements IPayment{
             // Flag all non-paid invoices as paid and assign to client.
             for (Invoice invoice : payable.getInvoice() ) {
                 if ( !invoice.isPaid() ) {
-                    client.addInvoice(invoice);
+                   //TODO FIX CLIENT ADD INVOICE.
                     invoice.setIsPaid(true);
                 }
             }
