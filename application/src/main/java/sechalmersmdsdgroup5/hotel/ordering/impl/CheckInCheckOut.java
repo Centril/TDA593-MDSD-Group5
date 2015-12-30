@@ -19,7 +19,7 @@ public class CheckInCheckOut implements ICheckInCheckOut {
 
     @Override
     public boolean checkIn(Guest guest, RoomBooking booking) {
-        if (booking.getGuests().contains(guest) && (new Date()).getTime() <= booking.getStartDate().getTime())
+        if (booking.getGuests().contains(guest) && (new Date()).getTime() >= booking.getStartDate().getTime())
         {
             booking.setCheckinTime(new Date());
             return true;
