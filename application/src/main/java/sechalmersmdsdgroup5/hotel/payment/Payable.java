@@ -10,8 +10,7 @@ import sechalmersmdsdgroup5.hotel.ordering.Invoice;
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Payable</b></em>'.
  * <!-- end-user-doc -->
- *
- * <p>
+ * * <p>
  * The following features are supported:
  * </p>
  * <ul>
@@ -22,6 +21,7 @@ import sechalmersmdsdgroup5.hotel.ordering.Invoice;
  * @generated
  */
 public interface Payable {
+
 	/**
 	 * Returns the value of the '<em><b>Invoice</b></em>' containment reference list.
 	 * The list contents are of type {@link sechalmersmdsdgroup5.hotel.ordering.Invoice}.
@@ -53,4 +53,5 @@ public interface Payable {
 	 */
 	boolean isPaid();
 
+	void setIsPaid(boolean value);
 } // Payable
