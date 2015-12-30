@@ -2,11 +2,9 @@
  */
 package sechalmersmdsdgroup5.hotel.facilities.impl;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
-
-import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
@@ -56,10 +54,10 @@ public class KeyImpl extends MinimalEObjectImpl.Container implements Key {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getUnlocks()
-	 * @generated
+	 * @generated NOT
 	 * @ordered
 	 */
-	protected EList<Door> unlocks;
+	protected List<Door> unlocks;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -68,6 +66,17 @@ public class KeyImpl extends MinimalEObjectImpl.Container implements Key {
 	 */
 	protected KeyImpl() {
 		super();
+	}
+
+	protected KeyImpl(int id, List<Door> unlocks) {
+		super();
+
+		this.id = id;
+		if(unlocks == null) {
+			this.unlocks = new ArrayList<>();
+		} else {
+			this.unlocks = unlocks;
+		}
 	}
 
 	/**

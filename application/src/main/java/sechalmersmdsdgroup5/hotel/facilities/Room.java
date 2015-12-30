@@ -22,7 +22,7 @@ import sechalmersmdsdgroup5.hotel.services.ServiceBlueprint;
  *   <li>{@link sechalmersmdsdgroup5.hotel.facilities.Room#getBasePrice <em>Base Price</em>}</li>
  *   <li>{@link sechalmersmdsdgroup5.hotel.facilities.Room#getLastCleaned <em>Last Cleaned</em>}</li>
  *   <li>{@link sechalmersmdsdgroup5.hotel.facilities.Room#getServicesAfforded <em>Services Afforded</em>}</li>
- *   <li>{@link sechalmersmdsdgroup5.hotel.facilities.Room#getStates <em>States</em>}</li>
+ *   <li>{@link sechalmersmdsdgroup5.hotel.facilities.Room#getAttributes <em>Attributes</em>}</li>
  *   <li>{@link sechalmersmdsdgroup5.hotel.facilities.Room#getPrototypes <em>Prototypes</em>}</li>
  * </ul>
  *
@@ -171,29 +171,19 @@ public interface Room extends Area {
 	List<ServiceBlueprint> getServicesAfforded();
 
 	/**
-	 * Returns the value of the '<em><b>States</b></em>' reference.
+	 * Returns the value of the '<em><b>Attributes</b></em>' reference list.
+	 * The list contents are of type {@link sechalmersmdsdgroup5.hotel.facilities.RoomAttribute}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>States</em>' reference isn't clear,
+	 * If the meaning of the '<em>Attributes</em>' reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>States</em>' reference.
-	 * @see #setStates(RoomAttribute)
-	 * @model required="true" ordered="false"
+	 * @return the value of the '<em>Attributes</em>' reference list.
+	 * @model ordered="false"
 	 * @generated
 	 */
-	RoomAttribute getStates();
-
-	/**
-	 * Sets the value of the '{@link sechalmersmdsdgroup5.hotel.facilities.Room#getStates <em>States</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>States</em>' reference.
-	 * @see #getStates()
-	 * @generated
-	 */
-	void setStates(RoomAttribute value);
+	List<RoomAttribute> getAttributes();
 
 	/**
 	 * Returns the value of the '<em><b>Prototypes</b></em>' containment reference list.

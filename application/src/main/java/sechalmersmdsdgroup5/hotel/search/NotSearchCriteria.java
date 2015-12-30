@@ -32,7 +32,7 @@ public interface NotSearchCriteria<SRT> extends SearchCriteria<SRT> {
 	 * @model required="true" ordered="false"
 	 * @generated
 	 */
-	SearchCriteria<? extends SRT> getCriteria();
+	SearchCriteria<SRT> getCriteria();
 
 	/**
 	 * Sets the value of the '{@link sechalmersmdsdgroup5.hotel.search.NotSearchCriteria#getCriteria <em>Criteria</em>}' reference.
@@ -42,6 +42,6 @@ public interface NotSearchCriteria<SRT> extends SearchCriteria<SRT> {
 	 * @see #getCriteria()
 	 * @generated
 	 */
-	void setCriteria(SearchCriteria<? extends SRT> value);
+	void setCriteria(SearchCriteria<SRT> value);
 
 } // NotSearchCriteria

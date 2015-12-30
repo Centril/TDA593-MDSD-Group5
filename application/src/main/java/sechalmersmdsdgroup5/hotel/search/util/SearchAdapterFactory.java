@@ -2,8 +2,6 @@
  */
 package sechalmersmdsdgroup5.hotel.search.util;
 
-import java.util.List;
-
 import java.util.function.BiPredicate;
 import java.util.function.Function;
 import org.eclipse.emf.common.notify.Adapter;
@@ -84,10 +82,6 @@ public class SearchAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public <SRT> Adapter caseSearchQuery(SearchQuery<SRT> object) {
 				return createSearchQueryAdapter();
-			}
-			@Override
-			public <LT> Adapter caseList(List<LT> object) {
-				return createListAdapter();
 			}
 			@Override
 			public <SRT> Adapter caseSearchCriteria(SearchCriteria<SRT> object) {
@@ -180,20 +174,6 @@ public class SearchAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createSearchQueryAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link java.util.List <em>List</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see java.util.List
-	 * @generated
-	 */
-	public Adapter createListAdapter() {
 		return null;
 	}
 

@@ -2,12 +2,6 @@
  */
 package sechalmersmdsdgroup5.hotel.search.impl;
 
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.InternalEObject;
-
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import sechalmersmdsdgroup5.hotel.search.AndSearchCriteria;
 import sechalmersmdsdgroup5.hotel.search.SearchCriteria;
 import sechalmersmdsdgroup5.hotel.search.SearchResult;
@@ -24,196 +18,89 @@ import sechalmersmdsdgroup5.hotel.search.SearchResult;
  *   <li>{@link sechalmersmdsdgroup5.hotel.search.impl.AndSearchCriteriaImpl#getRight <em>Right</em>}</li>
  * </ul>
  *
- * @generated
+ * @generated NOT
  */
-public class AndSearchCriteriaImpl<SRT> extends MinimalEObjectImpl.Container implements AndSearchCriteria<SRT> {
+public class AndSearchCriteriaImpl<SRT> implements AndSearchCriteria<SRT> {
 	/**
 	 * The cached value of the '{@link #getLeft() <em>Left</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getLeft()
-	 * @generated
+	 * @generated NOT
 	 * @ordered
 	 */
-	protected SearchCriteria<? extends SRT> left;
+	private SearchCriteria<SRT> left;
 
 	/**
 	 * The cached value of the '{@link #getRight() <em>Right</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getRight()
-	 * @generated
+	 * @generated NOT
 	 * @ordered
 	 */
-	protected SearchCriteria<? extends SRT> right;
+	private SearchCriteria<SRT> right;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
-	protected AndSearchCriteriaImpl() {
-		super();
+	public AndSearchCriteriaImpl( SearchCriteria<SRT> left, SearchCriteria<SRT> right ) {
+		this.left = left;
+		this.right = right;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
-	@Override
-	protected EClass eStaticClass() {
-		return SearchPackageImpl.Literals.AND_SEARCH_CRITERIA;
+	protected AndSearchCriteriaImpl() {}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public SearchResult<SRT> apply(SearchResult<SRT> result ) {
+		double rl = left.apply( result ).getRelevance();
+		double rr = right.apply( result ).getRelevance();
+		return result.withRelevance( Math.min( rl, rr ) );
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
-	@SuppressWarnings("unchecked")
-	public SearchCriteria<? extends SRT> getLeft() {
-		if (left != null && ((EObject)left).eIsProxy()) {
-			InternalEObject oldLeft = (InternalEObject)left;
-			left = (SearchCriteria<? extends SRT>)eResolveProxy(oldLeft);
-			if (left != oldLeft) {
-			}
-		}
+	public SearchCriteria<SRT> getLeft() {
 		return left;
 	}
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
-	public SearchCriteria<? extends SRT> basicGetLeft() {
-		return left;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setLeft(SearchCriteria<? extends SRT> newLeft) {
-		left = newLeft;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@SuppressWarnings("unchecked")
-	public SearchCriteria<? extends SRT> getRight() {
-		if (right != null && ((EObject)right).eIsProxy()) {
-			InternalEObject oldRight = (InternalEObject)right;
-			right = (SearchCriteria<? extends SRT>)eResolveProxy(oldRight);
-			if (right != oldRight) {
-			}
-		}
-		return right;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public SearchCriteria<? extends SRT> basicGetRight() {
-		return right;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setRight(SearchCriteria<? extends SRT> newRight) {
+	public void setRight(SearchCriteria<SRT> newRight) {
 		right = newRight;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
-	public SearchResult<? extends SRT> apply(SearchResult<? extends SRT> results) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+	public void setLeft(SearchCriteria<SRT> newLeft) {
+		left = newLeft;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
-	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case SearchPackageImpl.AND_SEARCH_CRITERIA__LEFT:
-				if (resolve) return getLeft();
-				return basicGetLeft();
-			case SearchPackageImpl.AND_SEARCH_CRITERIA__RIGHT:
-				if (resolve) return getRight();
-				return basicGetRight();
-		}
-		return eDynamicGet(featureID, resolve, coreType);
+	public SearchCriteria<SRT> getRight() {
+		return right;
 	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@SuppressWarnings("unchecked")
-	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case SearchPackageImpl.AND_SEARCH_CRITERIA__LEFT:
-				setLeft((SearchCriteria<? extends SRT>)newValue);
-				return;
-			case SearchPackageImpl.AND_SEARCH_CRITERIA__RIGHT:
-				setRight((SearchCriteria<? extends SRT>)newValue);
-				return;
-		}
-		eDynamicSet(featureID, newValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-			case SearchPackageImpl.AND_SEARCH_CRITERIA__LEFT:
-				setLeft((SearchCriteria<? extends SRT>)null);
-				return;
-			case SearchPackageImpl.AND_SEARCH_CRITERIA__RIGHT:
-				setRight((SearchCriteria<? extends SRT>)null);
-				return;
-		}
-		eDynamicUnset(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case SearchPackageImpl.AND_SEARCH_CRITERIA__LEFT:
-				return left != null;
-			case SearchPackageImpl.AND_SEARCH_CRITERIA__RIGHT:
-				return right != null;
-		}
-		return eDynamicIsSet(featureID);
-	}
-
 } //AndSearchCriteriaImpl

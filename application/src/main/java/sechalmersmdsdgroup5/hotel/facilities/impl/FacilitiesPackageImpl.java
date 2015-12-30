@@ -21,6 +21,7 @@ import sechalmersmdsdgroup5.hotel.facilities.Area;
 import sechalmersmdsdgroup5.hotel.facilities.Door;
 import sechalmersmdsdgroup5.hotel.facilities.EmployeeArea;
 import sechalmersmdsdgroup5.hotel.facilities.FacilitiesFactory;
+import sechalmersmdsdgroup5.hotel.facilities.IFacilities;
 import sechalmersmdsdgroup5.hotel.facilities.Key;
 import sechalmersmdsdgroup5.hotel.facilities.PrototypeOrdering;
 import sechalmersmdsdgroup5.hotel.facilities.Room;
@@ -179,13 +180,13 @@ public class FacilitiesPackageImpl extends EPackageImpl {
 	public static final int ROOM__SERVICES_AFFORDED = AREA_FEATURE_COUNT + 5;
 
 	/**
-	 * The feature id for the '<em><b>States</b></em>' reference.
+	 * The feature id for the '<em><b>Attributes</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	public static final int ROOM__STATES = AREA_FEATURE_COUNT + 6;
+	public static final int ROOM__ATTRIBUTES = AREA_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Prototypes</b></em>' containment reference list.
@@ -529,6 +530,25 @@ public class FacilitiesPackageImpl extends EPackageImpl {
 	public static final int ACCESS_LOG_ITEM_FEATURE_COUNT = 3;
 
 	/**
+	 * The meta object id for the '{@link sechalmersmdsdgroup5.hotel.facilities.IFacilities <em>IFacilities</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see sechalmersmdsdgroup5.hotel.facilities.IFacilities
+	 * @see sechalmersmdsdgroup5.hotel.facilities.impl.FacilitiesPackageImpl#getIFacilities()
+	 * @generated
+	 */
+	public static final int IFACILITIES = 10;
+
+	/**
+	 * The number of structural features of the '<em>IFacilities</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int IFACILITIES_FEATURE_COUNT = 0;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -597,6 +617,13 @@ public class FacilitiesPackageImpl extends EPackageImpl {
 	 * @generated
 	 */
 	private EClass accessLogItemEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass iFacilitiesEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -789,17 +816,18 @@ public class FacilitiesPackageImpl extends EPackageImpl {
 	}
 
 	/**
-	 * Returns the meta object for the reference '{@link sechalmersmdsdgroup5.hotel.facilities.Room#getStates <em>States</em>}'.
+	 * Returns the meta object for the reference list '{@link sechalmersmdsdgroup5.hotel.facilities.Room#getAttributes <em>Attributes</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>States</em>'.
-	 * @see sechalmersmdsdgroup5.hotel.facilities.Room#getStates()
+	 * @return the meta object for the reference list '<em>Attributes</em>'.
+	 * @see sechalmersmdsdgroup5.hotel.facilities.Room#getAttributes()
 	 * @see #getRoom()
 	 * @generated
 	 */
-	public EReference getRoom_States() {
+	public EReference getRoom_Attributes() {
 		return (EReference)roomEClass.getEStructuralFeatures().get(6);
 	}
+
 
 	/**
 	 * Returns the meta object for the containment reference list '{@link sechalmersmdsdgroup5.hotel.facilities.Room#getPrototypes <em>Prototypes</em>}'.
@@ -1170,6 +1198,19 @@ public class FacilitiesPackageImpl extends EPackageImpl {
 	}
 
 	/**
+	 * Returns the meta object for class '{@link sechalmersmdsdgroup5.hotel.facilities.IFacilities <em>IFacilities</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>IFacilities</em>'.
+	 * @see sechalmersmdsdgroup5.hotel.facilities.IFacilities
+	 * @generated
+	 */
+	public EClass getIFacilities() {
+		return iFacilitiesEClass;
+	}
+
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1206,7 +1247,7 @@ public class FacilitiesPackageImpl extends EPackageImpl {
 		createEAttribute(roomEClass, ROOM__BASE_PRICE);
 		createEAttribute(roomEClass, ROOM__LAST_CLEANED);
 		createEReference(roomEClass, ROOM__SERVICES_AFFORDED);
-		createEReference(roomEClass, ROOM__STATES);
+		createEReference(roomEClass, ROOM__ATTRIBUTES);
 		createEReference(roomEClass, ROOM__PROTOTYPES);
 
 		areaEClass = createEClass(AREA);
@@ -1245,6 +1286,8 @@ public class FacilitiesPackageImpl extends EPackageImpl {
 		createEAttribute(accessLogItemEClass, ACCESS_LOG_ITEM__WHEN);
 		createEReference(accessLogItemEClass, ACCESS_LOG_ITEM__ACCESSOR);
 		createEReference(accessLogItemEClass, ACCESS_LOG_ITEM__ACCESSED);
+
+		iFacilitiesEClass = createEClass(IFACILITIES);
 	}
 
 	/**
@@ -1289,7 +1332,7 @@ public class FacilitiesPackageImpl extends EPackageImpl {
 		initEAttribute(getRoom_BasePrice(), ecorePackage.getEDouble(), "basePrice", null, 1, 1, Room.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getRoom_LastCleaned(), ecorePackage.getEDate(), "lastCleaned", null, 1, 1, Room.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getRoom_ServicesAfforded(), theServicesPackage.getServiceBlueprint(), null, "servicesAfforded", null, 0, -1, Room.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getRoom_States(), this.getRoomAttribute(), null, "states", null, 1, 1, Room.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getRoom_Attributes(), this.getRoomAttribute(), null, "attributes", null, 0, -1, Room.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getRoom_Prototypes(), this.getPrototypeOrdering(), null, "prototypes", null, 0, -1, Room.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		EOperation op = addEOperation(roomEClass, this.getRoomAttribute(), "getAttribute", 1, 1, IS_UNIQUE, !IS_ORDERED);
@@ -1331,6 +1374,39 @@ public class FacilitiesPackageImpl extends EPackageImpl {
 		initEAttribute(getAccessLogItem_When(), ecorePackage.getEDate(), "when", null, 1, 1, AccessLogItem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getAccessLogItem_Accessor(), this.getKey(), null, "accessor", null, 1, 1, AccessLogItem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getAccessLogItem_Accessed(), this.getDoor(), null, "accessed", null, 1, 1, AccessLogItem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+
+		initEClass(iFacilitiesEClass, IFacilities.class, "IFacilities", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		op = addEOperation(iFacilitiesEClass, this.getKey(), "createKey", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEInt(), "id", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, this.getDoor(), "unlocks", 0, -1, IS_UNIQUE, !IS_ORDERED);
+
+		op = addEOperation(iFacilitiesEClass, this.getRoom(), "createRoom", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEInt(), "nr", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEInt(), "floor", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEBoolean(), "usable", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDouble(), "basePrice", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, this.getPrototypeOrdering(), "prototypeOrdering", 0, -1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, this.getRoomAttribute(), "roomAttributes", 0, -1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, theServicesPackage.getServiceBlueprint(), "serviceBlueprints", 0, -1, IS_UNIQUE, !IS_ORDERED);
+
+		op = addEOperation(iFacilitiesEClass, this.getRoomPrototype(), "createRoomPrototype", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "name", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDouble(), "basePrice", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, this.getRoomAttribute(), "roomAttributes", 0, -1, IS_UNIQUE, !IS_ORDERED);
+
+		op = addEOperation(iFacilitiesEClass, this.getRoomAttribute(), "createRoomAttribute", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "name", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEJavaObject(), "value", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDouble(), "price", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
+		op = addEOperation(iFacilitiesEClass, this.getDoor(), "createDoor", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEInt(), "id", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, this.getArea(), "areas", 0, -1, IS_UNIQUE, !IS_ORDERED);
+
+		op = addEOperation(iFacilitiesEClass, this.getEmployeeArea(), "createEmployeeArea", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEInt(), "id", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEInt(), "floor", 1, 1, IS_UNIQUE, !IS_ORDERED);
 	}
 
 	/**
@@ -1405,12 +1481,12 @@ public class FacilitiesPackageImpl extends EPackageImpl {
 		public static final EReference ROOM__SERVICES_AFFORDED = eINSTANCE.getRoom_ServicesAfforded();
 
 		/**
-		 * The meta object literal for the '<em><b>States</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Attributes</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		public static final EReference ROOM__STATES = eINSTANCE.getRoom_States();
+		public static final EReference ROOM__ATTRIBUTES = eINSTANCE.getRoom_Attributes();
 
 		/**
 		 * The meta object literal for the '<em><b>Prototypes</b></em>' containment reference list feature.
@@ -1661,6 +1737,16 @@ public class FacilitiesPackageImpl extends EPackageImpl {
 		 * @generated
 		 */
 		public static final EReference ACCESS_LOG_ITEM__ACCESSED = eINSTANCE.getAccessLogItem_Accessed();
+
+		/**
+		 * The meta object literal for the '{@link sechalmersmdsdgroup5.hotel.facilities.IFacilities <em>IFacilities</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see sechalmersmdsdgroup5.hotel.facilities.IFacilities
+		 * @see sechalmersmdsdgroup5.hotel.facilities.impl.FacilitiesPackageImpl#getIFacilities()
+		 * @generated
+		 */
+		public static final EClass IFACILITIES = eINSTANCE.getIFacilities();
 
 	}
 

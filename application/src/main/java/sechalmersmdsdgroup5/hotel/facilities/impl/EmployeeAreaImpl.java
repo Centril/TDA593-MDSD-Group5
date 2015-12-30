@@ -72,6 +72,11 @@ public class EmployeeAreaImpl extends MinimalEObjectImpl.Container implements Em
 		super();
 	}
 
+	protected EmployeeAreaImpl(int id, int floor) {
+		this.id = id;
+		this.floor = floor;
+	}
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

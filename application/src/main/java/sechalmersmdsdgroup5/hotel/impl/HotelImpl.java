@@ -2,40 +2,21 @@
  */
 package sechalmersmdsdgroup5.hotel.impl;
 
-import java.util.Collection;
-import java.util.List;
-
-import org.eclipse.emf.common.util.EList;
-
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.InternalEObject;
-
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
-import org.eclipse.emf.ecore.util.BasicInternalEList;
-
 import sechalmersmdsdgroup5.hotel.Hotel;
-
 import sechalmersmdsdgroup5.hotel.clients.Customer;
 import sechalmersmdsdgroup5.hotel.clients.Guest;
-
-import sechalmersmdsdgroup5.hotel.facilities.AccessLog;
-import sechalmersmdsdgroup5.hotel.facilities.Door;
-import sechalmersmdsdgroup5.hotel.facilities.EmployeeArea;
-import sechalmersmdsdgroup5.hotel.facilities.Key;
-import sechalmersmdsdgroup5.hotel.facilities.Room;
-import sechalmersmdsdgroup5.hotel.facilities.RoomPrototype;
-
+import sechalmersmdsdgroup5.hotel.facilities.*;
+import sechalmersmdsdgroup5.hotel.facilities.impl.AccessLogImpl;
 import sechalmersmdsdgroup5.hotel.log.TaskLog;
-
+import sechalmersmdsdgroup5.hotel.log.impl.TaskLogImpl;
 import sechalmersmdsdgroup5.hotel.ordering.Campaign;
 import sechalmersmdsdgroup5.hotel.ordering.Order;
-
 import sechalmersmdsdgroup5.hotel.personnel.Employee;
 import sechalmersmdsdgroup5.hotel.personnel.Subcontractor;
-
 import sechalmersmdsdgroup5.hotel.services.ServiceBlueprint;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * <!-- begin-user-doc -->
@@ -63,19 +44,9 @@ import sechalmersmdsdgroup5.hotel.services.ServiceBlueprint;
  *   <li>{@link sechalmersmdsdgroup5.hotel.impl.HotelImpl#getTaskLog <em>Task Log</em>}</li>
  * </ul>
  *
- * @generated
+ * @generated NOT
  */
-public class HotelImpl extends MinimalEObjectImpl.Container implements Hotel {
-	/**
-	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getName()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String NAME_EDEFAULT = null;
-
+class HotelImpl implements Hotel {
 	/**
 	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -84,17 +55,7 @@ public class HotelImpl extends MinimalEObjectImpl.Container implements Hotel {
 	 * @generated
 	 * @ordered
 	 */
-	protected String name = NAME_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getLocation() <em>Location</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getLocation()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String LOCATION_EDEFAULT = null;
+	private String name = "";
 
 	/**
 	 * The cached value of the '{@link #getLocation() <em>Location</em>}' attribute.
@@ -104,7 +65,7 @@ public class HotelImpl extends MinimalEObjectImpl.Container implements Hotel {
 	 * @generated
 	 * @ordered
 	 */
-	protected String location = LOCATION_EDEFAULT;
+	private String location = "";
 
 	/**
 	 * The cached value of the '{@link #getOrders() <em>Orders</em>}' reference list.
@@ -114,7 +75,7 @@ public class HotelImpl extends MinimalEObjectImpl.Container implements Hotel {
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Order> orders;
+	private List<Order> orders = new ArrayList<>();
 
 	/**
 	 * The cached value of the '{@link #getRooms() <em>Rooms</em>}' reference list.
@@ -124,7 +85,7 @@ public class HotelImpl extends MinimalEObjectImpl.Container implements Hotel {
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Room> rooms;
+	private List<Room> rooms = new ArrayList<>();
 
 	/**
 	 * The cached value of the '{@link #getCampaigns() <em>Campaigns</em>}' reference list.
@@ -134,7 +95,7 @@ public class HotelImpl extends MinimalEObjectImpl.Container implements Hotel {
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Campaign> campaigns;
+	private List<Campaign> campaigns = new ArrayList<>();
 
 	/**
 	 * The cached value of the '{@link #getKeys() <em>Keys</em>}' reference list.
@@ -144,7 +105,7 @@ public class HotelImpl extends MinimalEObjectImpl.Container implements Hotel {
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Key> keys;
+	private List<Key> keys = new ArrayList<>();
 
 	/**
 	 * The cached value of the '{@link #getDoors() <em>Doors</em>}' reference list.
@@ -154,7 +115,7 @@ public class HotelImpl extends MinimalEObjectImpl.Container implements Hotel {
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Door> doors;
+	private List<Door> doors = new ArrayList<>();
 
 	/**
 	 * The cached value of the '{@link #getEmployeeAreas() <em>Employee Areas</em>}' reference list.
@@ -164,7 +125,7 @@ public class HotelImpl extends MinimalEObjectImpl.Container implements Hotel {
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<EmployeeArea> employeeAreas;
+	private List<EmployeeArea> employeeAreas = new ArrayList<>();
 
 	/**
 	 * The cached value of the '{@link #getSubcontractors() <em>Subcontractors</em>}' reference list.
@@ -174,7 +135,7 @@ public class HotelImpl extends MinimalEObjectImpl.Container implements Hotel {
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Subcontractor> subcontractors;
+	private List<Subcontractor> subcontractors = new ArrayList<>();
 
 	/**
 	 * The cached value of the '{@link #getCustomers() <em>Customers</em>}' reference list.
@@ -184,7 +145,7 @@ public class HotelImpl extends MinimalEObjectImpl.Container implements Hotel {
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Customer> customers;
+	private List<Customer> customers = new ArrayList<>();
 
 	/**
 	 * The cached value of the '{@link #getGuests() <em>Guests</em>}' reference list.
@@ -194,7 +155,7 @@ public class HotelImpl extends MinimalEObjectImpl.Container implements Hotel {
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Guest> guests;
+	private List<Guest> guests = new ArrayList<>();
 
 	/**
 	 * The cached value of the '{@link #getEmployees() <em>Employees</em>}' reference list.
@@ -204,7 +165,7 @@ public class HotelImpl extends MinimalEObjectImpl.Container implements Hotel {
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Employee> employees;
+	private List<Employee> employees = new ArrayList<>();
 
 	/**
 	 * The cached value of the '{@link #getServiceBlueprints() <em>Service Blueprints</em>}' reference list.
@@ -214,7 +175,7 @@ public class HotelImpl extends MinimalEObjectImpl.Container implements Hotel {
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<ServiceBlueprint> serviceBlueprints;
+	private List<ServiceBlueprint> serviceBlueprints = new ArrayList<>();
 
 	/**
 	 * The cached value of the '{@link #getRoomPrototypes() <em>Room Prototypes</em>}' reference list.
@@ -224,7 +185,7 @@ public class HotelImpl extends MinimalEObjectImpl.Container implements Hotel {
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<RoomPrototype> roomPrototypes;
+	private List<RoomPrototype> roomPrototypes = new ArrayList<>();
 
 	/**
 	 * The cached value of the '{@link #getAccessLog() <em>Access Log</em>}' reference.
@@ -234,7 +195,7 @@ public class HotelImpl extends MinimalEObjectImpl.Container implements Hotel {
 	 * @generated
 	 * @ordered
 	 */
-	protected AccessLog accessLog;
+	private AccessLog accessLog = new AccessLogImpl();
 
 	/**
 	 * The cached value of the '{@link #getTaskLog() <em>Task Log</em>}' reference.
@@ -244,26 +205,14 @@ public class HotelImpl extends MinimalEObjectImpl.Container implements Hotel {
 	 * @generated
 	 * @ordered
 	 */
-	protected TaskLog taskLog;
+	private TaskLog taskLog = new TaskLogImpl();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
-	protected HotelImpl() {
-		super();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	protected EClass eStaticClass() {
-		return HotelPackageImpl.Literals.HOTEL;
-	}
+	HotelImpl() {}
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -307,9 +256,6 @@ public class HotelImpl extends MinimalEObjectImpl.Container implements Hotel {
 	 * @generated
 	 */
 	public List<Order> getOrders() {
-		if (orders == null) {
-			orders = new BasicInternalEList<Order>(Order.class);
-		}
 		return orders;
 	}
 
@@ -319,9 +265,6 @@ public class HotelImpl extends MinimalEObjectImpl.Container implements Hotel {
 	 * @generated
 	 */
 	public List<Room> getRooms() {
-		if (rooms == null) {
-			rooms = new BasicInternalEList<Room>(Room.class);
-		}
 		return rooms;
 	}
 
@@ -331,9 +274,6 @@ public class HotelImpl extends MinimalEObjectImpl.Container implements Hotel {
 	 * @generated
 	 */
 	public List<Campaign> getCampaigns() {
-		if (campaigns == null) {
-			campaigns = new BasicInternalEList<Campaign>(Campaign.class);
-		}
 		return campaigns;
 	}
 
@@ -343,9 +283,6 @@ public class HotelImpl extends MinimalEObjectImpl.Container implements Hotel {
 	 * @generated
 	 */
 	public List<Key> getKeys() {
-		if (keys == null) {
-			keys = new BasicInternalEList<Key>(Key.class);
-		}
 		return keys;
 	}
 
@@ -355,9 +292,6 @@ public class HotelImpl extends MinimalEObjectImpl.Container implements Hotel {
 	 * @generated
 	 */
 	public List<Door> getDoors() {
-		if (doors == null) {
-			doors = new BasicInternalEList<Door>(Door.class);
-		}
 		return doors;
 	}
 
@@ -367,9 +301,6 @@ public class HotelImpl extends MinimalEObjectImpl.Container implements Hotel {
 	 * @generated
 	 */
 	public List<EmployeeArea> getEmployeeAreas() {
-		if (employeeAreas == null) {
-			employeeAreas = new BasicInternalEList<EmployeeArea>(EmployeeArea.class);
-		}
 		return employeeAreas;
 	}
 
@@ -379,9 +310,6 @@ public class HotelImpl extends MinimalEObjectImpl.Container implements Hotel {
 	 * @generated
 	 */
 	public List<Subcontractor> getSubcontractors() {
-		if (subcontractors == null) {
-			subcontractors = new BasicInternalEList<Subcontractor>(Subcontractor.class);
-		}
 		return subcontractors;
 	}
 
@@ -391,9 +319,6 @@ public class HotelImpl extends MinimalEObjectImpl.Container implements Hotel {
 	 * @generated
 	 */
 	public List<Customer> getCustomers() {
-		if (customers == null) {
-			customers = new BasicInternalEList<Customer>(Customer.class);
-		}
 		return customers;
 	}
 
@@ -403,9 +328,6 @@ public class HotelImpl extends MinimalEObjectImpl.Container implements Hotel {
 	 * @generated
 	 */
 	public List<Guest> getGuests() {
-		if (guests == null) {
-			guests = new BasicInternalEList<Guest>(Guest.class);
-		}
 		return guests;
 	}
 
@@ -415,9 +337,6 @@ public class HotelImpl extends MinimalEObjectImpl.Container implements Hotel {
 	 * @generated
 	 */
 	public List<Employee> getEmployees() {
-		if (employees == null) {
-			employees = new BasicInternalEList<Employee>(Employee.class);
-		}
 		return employees;
 	}
 
@@ -427,9 +346,6 @@ public class HotelImpl extends MinimalEObjectImpl.Container implements Hotel {
 	 * @generated
 	 */
 	public List<ServiceBlueprint> getServiceBlueprints() {
-		if (serviceBlueprints == null) {
-			serviceBlueprints = new BasicInternalEList<ServiceBlueprint>(ServiceBlueprint.class);
-		}
 		return serviceBlueprints;
 	}
 
@@ -439,9 +355,6 @@ public class HotelImpl extends MinimalEObjectImpl.Container implements Hotel {
 	 * @generated
 	 */
 	public List<RoomPrototype> getRoomPrototypes() {
-		if (roomPrototypes == null) {
-			roomPrototypes = new BasicInternalEList<RoomPrototype>(RoomPrototype.class);
-		}
 		return roomPrototypes;
 	}
 
@@ -451,21 +364,6 @@ public class HotelImpl extends MinimalEObjectImpl.Container implements Hotel {
 	 * @generated
 	 */
 	public AccessLog getAccessLog() {
-		if (accessLog != null && ((EObject)accessLog).eIsProxy()) {
-			InternalEObject oldAccessLog = (InternalEObject)accessLog;
-			accessLog = (AccessLog)eResolveProxy(oldAccessLog);
-			if (accessLog != oldAccessLog) {
-			}
-		}
-		return accessLog;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public AccessLog basicGetAccessLog() {
 		return accessLog;
 	}
 
@@ -484,21 +382,6 @@ public class HotelImpl extends MinimalEObjectImpl.Container implements Hotel {
 	 * @generated
 	 */
 	public TaskLog getTaskLog() {
-		if (taskLog != null && ((EObject)taskLog).eIsProxy()) {
-			InternalEObject oldTaskLog = (InternalEObject)taskLog;
-			taskLog = (TaskLog)eResolveProxy(oldTaskLog);
-			if (taskLog != oldTaskLog) {
-			}
-		}
-		return taskLog;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public TaskLog basicGetTaskLog() {
 		return taskLog;
 	}
 
@@ -517,232 +400,7 @@ public class HotelImpl extends MinimalEObjectImpl.Container implements Hotel {
 	 * @generated
 	 */
 	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case HotelPackageImpl.HOTEL__NAME:
-				return getName();
-			case HotelPackageImpl.HOTEL__LOCATION:
-				return getLocation();
-			case HotelPackageImpl.HOTEL__ORDERS:
-				return getOrders();
-			case HotelPackageImpl.HOTEL__ROOMS:
-				return getRooms();
-			case HotelPackageImpl.HOTEL__CAMPAIGNS:
-				return getCampaigns();
-			case HotelPackageImpl.HOTEL__KEYS:
-				return getKeys();
-			case HotelPackageImpl.HOTEL__DOORS:
-				return getDoors();
-			case HotelPackageImpl.HOTEL__EMPLOYEE_AREAS:
-				return getEmployeeAreas();
-			case HotelPackageImpl.HOTEL__SUBCONTRACTORS:
-				return getSubcontractors();
-			case HotelPackageImpl.HOTEL__CUSTOMERS:
-				return getCustomers();
-			case HotelPackageImpl.HOTEL__GUESTS:
-				return getGuests();
-			case HotelPackageImpl.HOTEL__EMPLOYEES:
-				return getEmployees();
-			case HotelPackageImpl.HOTEL__SERVICE_BLUEPRINTS:
-				return getServiceBlueprints();
-			case HotelPackageImpl.HOTEL__ROOM_PROTOTYPES:
-				return getRoomPrototypes();
-			case HotelPackageImpl.HOTEL__ACCESS_LOG:
-				if (resolve) return getAccessLog();
-				return basicGetAccessLog();
-			case HotelPackageImpl.HOTEL__TASK_LOG:
-				if (resolve) return getTaskLog();
-				return basicGetTaskLog();
-		}
-		return eDynamicGet(featureID, resolve, coreType);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@SuppressWarnings("unchecked")
-	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case HotelPackageImpl.HOTEL__NAME:
-				setName((String)newValue);
-				return;
-			case HotelPackageImpl.HOTEL__LOCATION:
-				setLocation((String)newValue);
-				return;
-			case HotelPackageImpl.HOTEL__ORDERS:
-				getOrders().clear();
-				getOrders().addAll((Collection<? extends Order>)newValue);
-				return;
-			case HotelPackageImpl.HOTEL__ROOMS:
-				getRooms().clear();
-				getRooms().addAll((Collection<? extends Room>)newValue);
-				return;
-			case HotelPackageImpl.HOTEL__CAMPAIGNS:
-				getCampaigns().clear();
-				getCampaigns().addAll((Collection<? extends Campaign>)newValue);
-				return;
-			case HotelPackageImpl.HOTEL__KEYS:
-				getKeys().clear();
-				getKeys().addAll((Collection<? extends Key>)newValue);
-				return;
-			case HotelPackageImpl.HOTEL__DOORS:
-				getDoors().clear();
-				getDoors().addAll((Collection<? extends Door>)newValue);
-				return;
-			case HotelPackageImpl.HOTEL__EMPLOYEE_AREAS:
-				getEmployeeAreas().clear();
-				getEmployeeAreas().addAll((Collection<? extends EmployeeArea>)newValue);
-				return;
-			case HotelPackageImpl.HOTEL__SUBCONTRACTORS:
-				getSubcontractors().clear();
-				getSubcontractors().addAll((Collection<? extends Subcontractor>)newValue);
-				return;
-			case HotelPackageImpl.HOTEL__CUSTOMERS:
-				getCustomers().clear();
-				getCustomers().addAll((Collection<? extends Customer>)newValue);
-				return;
-			case HotelPackageImpl.HOTEL__GUESTS:
-				getGuests().clear();
-				getGuests().addAll((Collection<? extends Guest>)newValue);
-				return;
-			case HotelPackageImpl.HOTEL__EMPLOYEES:
-				getEmployees().clear();
-				getEmployees().addAll((Collection<? extends Employee>)newValue);
-				return;
-			case HotelPackageImpl.HOTEL__SERVICE_BLUEPRINTS:
-				getServiceBlueprints().clear();
-				getServiceBlueprints().addAll((Collection<? extends ServiceBlueprint>)newValue);
-				return;
-			case HotelPackageImpl.HOTEL__ROOM_PROTOTYPES:
-				getRoomPrototypes().clear();
-				getRoomPrototypes().addAll((Collection<? extends RoomPrototype>)newValue);
-				return;
-			case HotelPackageImpl.HOTEL__ACCESS_LOG:
-				setAccessLog((AccessLog)newValue);
-				return;
-			case HotelPackageImpl.HOTEL__TASK_LOG:
-				setTaskLog((TaskLog)newValue);
-				return;
-		}
-		eDynamicSet(featureID, newValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-			case HotelPackageImpl.HOTEL__NAME:
-				setName(NAME_EDEFAULT);
-				return;
-			case HotelPackageImpl.HOTEL__LOCATION:
-				setLocation(LOCATION_EDEFAULT);
-				return;
-			case HotelPackageImpl.HOTEL__ORDERS:
-				getOrders().clear();
-				return;
-			case HotelPackageImpl.HOTEL__ROOMS:
-				getRooms().clear();
-				return;
-			case HotelPackageImpl.HOTEL__CAMPAIGNS:
-				getCampaigns().clear();
-				return;
-			case HotelPackageImpl.HOTEL__KEYS:
-				getKeys().clear();
-				return;
-			case HotelPackageImpl.HOTEL__DOORS:
-				getDoors().clear();
-				return;
-			case HotelPackageImpl.HOTEL__EMPLOYEE_AREAS:
-				getEmployeeAreas().clear();
-				return;
-			case HotelPackageImpl.HOTEL__SUBCONTRACTORS:
-				getSubcontractors().clear();
-				return;
-			case HotelPackageImpl.HOTEL__CUSTOMERS:
-				getCustomers().clear();
-				return;
-			case HotelPackageImpl.HOTEL__GUESTS:
-				getGuests().clear();
-				return;
-			case HotelPackageImpl.HOTEL__EMPLOYEES:
-				getEmployees().clear();
-				return;
-			case HotelPackageImpl.HOTEL__SERVICE_BLUEPRINTS:
-				getServiceBlueprints().clear();
-				return;
-			case HotelPackageImpl.HOTEL__ROOM_PROTOTYPES:
-				getRoomPrototypes().clear();
-				return;
-			case HotelPackageImpl.HOTEL__ACCESS_LOG:
-				setAccessLog((AccessLog)null);
-				return;
-			case HotelPackageImpl.HOTEL__TASK_LOG:
-				setTaskLog((TaskLog)null);
-				return;
-		}
-		eDynamicUnset(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case HotelPackageImpl.HOTEL__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case HotelPackageImpl.HOTEL__LOCATION:
-				return LOCATION_EDEFAULT == null ? location != null : !LOCATION_EDEFAULT.equals(location);
-			case HotelPackageImpl.HOTEL__ORDERS:
-				return orders != null && !orders.isEmpty();
-			case HotelPackageImpl.HOTEL__ROOMS:
-				return rooms != null && !rooms.isEmpty();
-			case HotelPackageImpl.HOTEL__CAMPAIGNS:
-				return campaigns != null && !campaigns.isEmpty();
-			case HotelPackageImpl.HOTEL__KEYS:
-				return keys != null && !keys.isEmpty();
-			case HotelPackageImpl.HOTEL__DOORS:
-				return doors != null && !doors.isEmpty();
-			case HotelPackageImpl.HOTEL__EMPLOYEE_AREAS:
-				return employeeAreas != null && !employeeAreas.isEmpty();
-			case HotelPackageImpl.HOTEL__SUBCONTRACTORS:
-				return subcontractors != null && !subcontractors.isEmpty();
-			case HotelPackageImpl.HOTEL__CUSTOMERS:
-				return customers != null && !customers.isEmpty();
-			case HotelPackageImpl.HOTEL__GUESTS:
-				return guests != null && !guests.isEmpty();
-			case HotelPackageImpl.HOTEL__EMPLOYEES:
-				return employees != null && !employees.isEmpty();
-			case HotelPackageImpl.HOTEL__SERVICE_BLUEPRINTS:
-				return serviceBlueprints != null && !serviceBlueprints.isEmpty();
-			case HotelPackageImpl.HOTEL__ROOM_PROTOTYPES:
-				return roomPrototypes != null && !roomPrototypes.isEmpty();
-			case HotelPackageImpl.HOTEL__ACCESS_LOG:
-				return accessLog != null;
-			case HotelPackageImpl.HOTEL__TASK_LOG:
-				return taskLog != null;
-		}
-		return eDynamicIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
-
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (name: ");
 		result.append(name);
@@ -751,5 +409,4 @@ public class HotelImpl extends MinimalEObjectImpl.Container implements Hotel {
 		result.append(')');
 		return result.toString();
 	}
-
 } //HotelImpl

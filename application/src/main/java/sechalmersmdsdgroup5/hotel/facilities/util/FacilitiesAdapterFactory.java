@@ -110,6 +110,10 @@ public class FacilitiesAdapterFactory extends AdapterFactoryImpl {
 				return createAccessLogItemAdapter();
 			}
 			@Override
+			public Adapter caseIFacilities(IFacilities object) {
+				return createIFacilitiesAdapter();
+			}
+			@Override
 			public Adapter defaultCase(EObject object) {
 				return createEObjectAdapter();
 			}
@@ -266,6 +270,20 @@ public class FacilitiesAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createAccessLogItemAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link sechalmersmdsdgroup5.hotel.facilities.IFacilities <em>IFacilities</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see sechalmersmdsdgroup5.hotel.facilities.IFacilities
+	 * @generated
+	 */
+	public Adapter createIFacilitiesAdapter() {
 		return null;
 	}
 

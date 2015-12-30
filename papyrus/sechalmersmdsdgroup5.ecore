@@ -58,8 +58,8 @@
             lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="servicesAfforded" ordered="false"
             upperBound="-1" eType="#//hotel/services/ServiceBlueprint"/>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="states" ordered="false"
-            lowerBound="1" eType="#//hotel/facilities/RoomAttribute"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="attributes" ordered="false"
+            upperBound="-1" eType="#//hotel/facilities/RoomAttribute"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="prototypes" ordered="false"
             upperBound="-1" eType="#//hotel/facilities/PrototypeOrdering" containment="true"/>
       </eClassifiers>
@@ -117,6 +117,39 @@
             lowerBound="1" eType="#//hotel/facilities/Key"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="accessed" ordered="false"
             lowerBound="1" eType="#//hotel/facilities/Door"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="IFacilities" abstract="true" interface="true">
+        <eOperations name="createKey" ordered="false" lowerBound="1" eType="#//hotel/facilities/Key">
+          <eParameters name="id" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+          <eParameters name="unlocks" ordered="false" upperBound="-1" eType="#//hotel/facilities/Door"/>
+        </eOperations>
+        <eOperations name="createRoom" ordered="false" lowerBound="1" eType="#//hotel/facilities/Room">
+          <eParameters name="nr" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+          <eParameters name="floor" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+          <eParameters name="usable" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+          <eParameters name="basePrice" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+          <eParameters name="prototypeOrdering" ordered="false" upperBound="-1" eType="#//hotel/facilities/PrototypeOrdering"/>
+          <eParameters name="roomAttributes" ordered="false" upperBound="-1" eType="#//hotel/facilities/RoomAttribute"/>
+          <eParameters name="serviceBlueprints" ordered="false" upperBound="-1" eType="#//hotel/services/ServiceBlueprint"/>
+        </eOperations>
+        <eOperations name="createRoomPrototype" ordered="false" lowerBound="1" eType="#//hotel/facilities/RoomPrototype">
+          <eParameters name="name" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+          <eParameters name="basePrice" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+          <eParameters name="roomAttributes" ordered="false" upperBound="-1" eType="#//hotel/facilities/RoomAttribute"/>
+        </eOperations>
+        <eOperations name="createRoomAttribute" ordered="false" lowerBound="1" eType="#//hotel/facilities/RoomAttribute">
+          <eParameters name="name" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+          <eParameters name="value" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+          <eParameters name="price" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+        </eOperations>
+        <eOperations name="createDoor" ordered="false" lowerBound="1" eType="#//hotel/facilities/Door">
+          <eParameters name="id" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+          <eParameters name="areas" ordered="false" upperBound="-1" eType="#//hotel/facilities/Area"/>
+        </eOperations>
+        <eOperations name="createEmployeeArea" ordered="false" lowerBound="1" eType="#//hotel/facilities/EmployeeArea">
+          <eParameters name="id" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+          <eParameters name="floor" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+        </eOperations>
       </eClassifiers>
     </eSubpackages>
     <eSubpackages name="services" nsURI="http:///sechalmersmdsdgroup5/hotel/services.ecore"
@@ -286,6 +319,8 @@
             lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="willBook" ordered="false"
             lowerBound="1" eType="#//hotel/facilities/Room"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="services" ordered="false"
+            upperBound="-1" eType="#//hotel/services/ServiceBlueprint"/>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="RoomBooking" eSuperTypes="#//hotel/payment/Payable">
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="startDate" ordered="false"
@@ -300,6 +335,10 @@
             lowerBound="1" eType="#//hotel/facilities/Room"/>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="isPaid" ordered="false"
             lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="guests" ordered="false"
+            lowerBound="1" upperBound="-1" eType="#//hotel/clients/Guest"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="services" ordered="false"
+            upperBound="-1" eType="#//hotel/services/Service" containment="true"/>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="IOrder" abstract="true" interface="true">
         <eOperations name="createBooking" ordered="false" lowerBound="1" eType="#//hotel/ordering/RoomBooking">
@@ -515,45 +554,29 @@
         <eOperations name="getRelevance" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
         <eOperations name="withRelevance" ordered="false" lowerBound="1">
           <eGenericType eClassifier="#//hotel/search/SearchResult">
-            <eTypeArguments>
-              <eUpperBound eTypeParameter="#//hotel/search/SearchResult/SRT"/>
-            </eTypeArguments>
+            <eTypeArguments eTypeParameter="#//hotel/search/SearchResult/SRT"/>
           </eGenericType>
           <eParameters name="relevance" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
         </eOperations>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="SearchQuery">
         <eTypeParameters name="SRT"/>
-        <eOperations name="getCriterias" ordered="false" lowerBound="1">
-          <eGenericType eClassifier="#//hotel/search/List">
-            <eTypeArguments>
-              <eUpperBound eClassifier="#//hotel/search/SearchCriteria">
-                <eTypeArguments>
-                  <eUpperBound eTypeParameter="#//hotel/search/SearchResult/SRT"/>
-                </eTypeArguments>
-              </eUpperBound>
-            </eTypeArguments>
+        <eOperations name="getCriterias" ordered="false" upperBound="-1">
+          <eGenericType eClassifier="#//hotel/search/SearchCriteria">
+            <eTypeArguments eTypeParameter="#//hotel/search/SearchCriteria/SRT"/>
           </eGenericType>
         </eOperations>
-      </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="List" instanceClassName="java.util.List"
-          abstract="true" interface="true">
-        <eTypeParameters name="LT"/>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="SearchCriteria" abstract="true"
           interface="true">
         <eTypeParameters name="SRT"/>
         <eOperations name="apply" ordered="false" lowerBound="1">
           <eGenericType eClassifier="#//hotel/search/SearchResult">
-            <eTypeArguments>
-              <eUpperBound eTypeParameter="#//hotel/search/SearchResult/SRT"/>
-            </eTypeArguments>
+            <eTypeArguments eTypeParameter="#//hotel/search/SearchResult/SRT"/>
           </eGenericType>
-          <eParameters name="results" ordered="false" lowerBound="1">
+          <eParameters name="result" ordered="false" lowerBound="1">
             <eGenericType eClassifier="#//hotel/search/SearchResult">
-              <eTypeArguments>
-                <eUpperBound eTypeParameter="#//hotel/search/SearchResult/SRT"/>
-              </eTypeArguments>
+              <eTypeArguments eTypeParameter="#//hotel/search/SearchResult/SRT"/>
             </eGenericType>
           </eParameters>
         </eOperations>
@@ -569,17 +592,13 @@
         <eStructuralFeatures xsi:type="ecore:EReference" name="left" ordered="false"
             lowerBound="1">
           <eGenericType eClassifier="#//hotel/search/SearchCriteria">
-            <eTypeArguments>
-              <eUpperBound eTypeParameter="#//hotel/search/SearchResult/SRT"/>
-            </eTypeArguments>
+            <eTypeArguments eTypeParameter="#//hotel/search/SearchCriteria/SRT"/>
           </eGenericType>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="right" ordered="false"
             lowerBound="1">
           <eGenericType eClassifier="#//hotel/search/SearchCriteria">
-            <eTypeArguments>
-              <eUpperBound eTypeParameter="#//hotel/search/SearchResult/SRT"/>
-            </eTypeArguments>
+            <eTypeArguments eTypeParameter="#//hotel/search/SearchCriteria/SRT"/>
           </eGenericType>
         </eStructuralFeatures>
         <eGenericSuperTypes eClassifier="#//hotel/search/SearchCriteria">
@@ -591,17 +610,13 @@
         <eStructuralFeatures xsi:type="ecore:EReference" name="left" ordered="false"
             lowerBound="1">
           <eGenericType eClassifier="#//hotel/search/SearchCriteria">
-            <eTypeArguments>
-              <eUpperBound eTypeParameter="#//hotel/search/SearchResult/SRT"/>
-            </eTypeArguments>
+            <eTypeArguments eTypeParameter="#//hotel/search/SearchCriteria/SRT"/>
           </eGenericType>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="right" ordered="false"
             lowerBound="1">
           <eGenericType eClassifier="#//hotel/search/SearchCriteria">
-            <eTypeArguments>
-              <eUpperBound eTypeParameter="#//hotel/search/SearchResult/SRT"/>
-            </eTypeArguments>
+            <eTypeArguments eTypeParameter="#//hotel/search/SearchCriteria/SRT"/>
           </eGenericType>
         </eStructuralFeatures>
         <eGenericSuperTypes eClassifier="#//hotel/search/SearchCriteria">
@@ -613,9 +628,7 @@
         <eStructuralFeatures xsi:type="ecore:EReference" name="criteria" ordered="false"
             lowerBound="1">
           <eGenericType eClassifier="#//hotel/search/SearchCriteria">
-            <eTypeArguments>
-              <eUpperBound eTypeParameter="#//hotel/search/SearchResult/SRT"/>
-            </eTypeArguments>
+            <eTypeArguments eTypeParameter="#//hotel/search/SearchCriteria/SRT"/>
           </eGenericType>
         </eStructuralFeatures>
         <eGenericSuperTypes eClassifier="#//hotel/search/SearchCriteria">
@@ -632,23 +645,15 @@
         <eStructuralFeatures xsi:type="ecore:EReference" name="transform" ordered="false"
             lowerBound="1">
           <eGenericType eClassifier="#//hotel/search/Function">
-            <eTypeArguments>
-              <eUpperBound eTypeParameter="#//hotel/search/SearchResult/SRT"/>
-            </eTypeArguments>
-            <eTypeArguments>
-              <eUpperBound eTypeParameter="#//hotel/search/MatchesSearchCriteria/IN"/>
-            </eTypeArguments>
+            <eTypeArguments eTypeParameter="#//hotel/search/MatchesSearchCriteria/SRT"/>
+            <eTypeArguments eTypeParameter="#//hotel/search/MatchesSearchCriteria/IN"/>
           </eGenericType>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="predicate" ordered="false"
             lowerBound="1">
           <eGenericType eClassifier="#//hotel/search/BiPredicate">
-            <eTypeArguments>
-              <eUpperBound eTypeParameter="#//hotel/search/MatchesSearchCriteria/IN"/>
-            </eTypeArguments>
-            <eTypeArguments>
-              <eUpperBound eTypeParameter="#//hotel/search/MatchesSearchCriteria/IN"/>
-            </eTypeArguments>
+            <eTypeArguments eTypeParameter="#//hotel/search/MatchesSearchCriteria/IN"/>
+            <eTypeArguments eTypeParameter="#//hotel/search/MatchesSearchCriteria/IN"/>
           </eGenericType>
         </eStructuralFeatures>
         <eGenericSuperTypes eClassifier="#//hotel/search/SearchCriteria">

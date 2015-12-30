@@ -2,16 +2,11 @@
  */
 package sechalmersmdsdgroup5.hotel.facilities.impl;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
 import java.util.List;
-
-import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.BasicInternalEList;
@@ -36,7 +31,7 @@ import sechalmersmdsdgroup5.hotel.services.ServiceBlueprint;
  *   <li>{@link sechalmersmdsdgroup5.hotel.facilities.impl.RoomImpl#getBasePrice <em>Base Price</em>}</li>
  *   <li>{@link sechalmersmdsdgroup5.hotel.facilities.impl.RoomImpl#getLastCleaned <em>Last Cleaned</em>}</li>
  *   <li>{@link sechalmersmdsdgroup5.hotel.facilities.impl.RoomImpl#getServicesAfforded <em>Services Afforded</em>}</li>
- *   <li>{@link sechalmersmdsdgroup5.hotel.facilities.impl.RoomImpl#getStates <em>States</em>}</li>
+ *   <li>{@link sechalmersmdsdgroup5.hotel.facilities.impl.RoomImpl#getAttributes <em>Attributes</em>}</li>
  *   <li>{@link sechalmersmdsdgroup5.hotel.facilities.impl.RoomImpl#getPrototypes <em>Prototypes</em>}</li>
  * </ul>
  *
@@ -51,7 +46,7 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final int NR_EDEFAULT = 0;
+	private static final int NR_EDEFAULT = 0;
 
 	/**
 	 * The cached value of the '{@link #getNr() <em>Nr</em>}' attribute.
@@ -61,7 +56,7 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 	 * @generated
 	 * @ordered
 	 */
-	protected int nr = NR_EDEFAULT;
+	private int nr = NR_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getFloor() <em>Floor</em>}' attribute.
@@ -71,7 +66,7 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final int FLOOR_EDEFAULT = 0;
+	private static final int FLOOR_EDEFAULT = 0;
 
 	/**
 	 * The cached value of the '{@link #getFloor() <em>Floor</em>}' attribute.
@@ -81,7 +76,7 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 	 * @generated
 	 * @ordered
 	 */
-	protected int floor = FLOOR_EDEFAULT;
+	private int floor = FLOOR_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #isUsable() <em>Usable</em>}' attribute.
@@ -91,7 +86,7 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final boolean USABLE_EDEFAULT = false;
+	private static final boolean USABLE_EDEFAULT = false;
 
 	/**
 	 * The cached value of the '{@link #isUsable() <em>Usable</em>}' attribute.
@@ -101,7 +96,7 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 	 * @generated
 	 * @ordered
 	 */
-	protected boolean usable = USABLE_EDEFAULT;
+	private boolean usable = USABLE_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getBasePrice() <em>Base Price</em>}' attribute.
@@ -111,7 +106,7 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final double BASE_PRICE_EDEFAULT = 0.0;
+	private static final double BASE_PRICE_EDEFAULT = 0.0;
 
 	/**
 	 * The cached value of the '{@link #getBasePrice() <em>Base Price</em>}' attribute.
@@ -121,7 +116,7 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 	 * @generated
 	 * @ordered
 	 */
-	protected double basePrice = BASE_PRICE_EDEFAULT;
+	private double basePrice = BASE_PRICE_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getLastCleaned() <em>Last Cleaned</em>}' attribute.
@@ -131,7 +126,7 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final Date LAST_CLEANED_EDEFAULT = null;
+	private static final Date LAST_CLEANED_EDEFAULT = null;
 
 	/**
 	 * The cached value of the '{@link #getLastCleaned() <em>Last Cleaned</em>}' attribute.
@@ -141,55 +136,56 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 	 * @generated
 	 * @ordered
 	 */
-	protected Date lastCleaned = LAST_CLEANED_EDEFAULT;
+	private Date lastCleaned = LAST_CLEANED_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getServicesAfforded() <em>Services Afforded</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getServicesAfforded()
-	 * @generated
+	 * @generated NOT
 	 * @ordered
 	 */
-	protected EList<ServiceBlueprint> servicesAfforded;
+	private List<ServiceBlueprint> servicesAfforded;
 
 	/**
-	 * The cached value of the '{@link #getStates() <em>States</em>}' reference.
+	 * The cached value of the '{@link #getAttributes() <em>Attributes</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getStates()
-	 * @generated
+	 * @see #getAttributes()
+	 * @generated NOT
 	 * @ordered
 	 */
-	protected RoomAttribute states;
+	private List<RoomAttribute> attributes;
 
 	/**
 	 * The cached value of the '{@link #getPrototypes() <em>Prototypes</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getPrototypes()
-	 * @generated
+	 * @generated NOT
 	 * @ordered
 	 */
-	protected EList<PrototypeOrdering> prototypes;
+	private List<PrototypeOrdering> prototypes;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected RoomImpl() {
-		super();
-	}
+	RoomImpl() {}
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	protected EClass eStaticClass() {
-		return FacilitiesPackageImpl.Literals.ROOM;
+	RoomImpl( int nr, int floor, boolean usable, double basePrice, List<RoomAttribute> roomAttributes,
+	          List<PrototypeOrdering> prototypeOrderings, List<ServiceBlueprint> serviceBlueprints ) {
+		this.nr = nr;
+		this.floor = floor;
+		this.usable = usable;
+		this.basePrice = basePrice;
+
+		this.attributes = roomAttributes == null ? new ArrayList<>() : roomAttributes;
+		this.prototypes = prototypeOrderings == null ? new ArrayList<>() : prototypeOrderings;
+
+		this.servicesAfforded = serviceBlueprints == null ? new ArrayList<>() : serviceBlueprints;
 	}
 
 	/**
@@ -288,9 +284,6 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 	 * @generated
 	 */
 	public List<ServiceBlueprint> getServicesAfforded() {
-		if (servicesAfforded == null) {
-			servicesAfforded = new BasicInternalEList<ServiceBlueprint>(ServiceBlueprint.class);
-		}
 		return servicesAfforded;
 	}
 
@@ -299,32 +292,8 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public RoomAttribute getStates() {
-		if (states != null && ((EObject)states).eIsProxy()) {
-			InternalEObject oldStates = (InternalEObject)states;
-			states = (RoomAttribute)eResolveProxy(oldStates);
-			if (states != oldStates) {
-			}
-		}
-		return states;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public RoomAttribute basicGetStates() {
-		return states;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setStates(RoomAttribute newStates) {
-		states = newStates;
+	public List<RoomAttribute> getAttributes() {
+		return attributes;
 	}
 
 	/**
@@ -333,9 +302,6 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 	 * @generated
 	 */
 	public List<PrototypeOrdering> getPrototypes() {
-		if (prototypes == null) {
-			prototypes = new BasicInternalEList<PrototypeOrdering>(PrototypeOrdering.class);
-		}
 		return prototypes;
 	}
 
@@ -356,141 +322,7 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 	 * @generated
 	 */
 	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case FacilitiesPackageImpl.ROOM__NR:
-				return getNr();
-			case FacilitiesPackageImpl.ROOM__FLOOR:
-				return getFloor();
-			case FacilitiesPackageImpl.ROOM__USABLE:
-				return isUsable();
-			case FacilitiesPackageImpl.ROOM__BASE_PRICE:
-				return getBasePrice();
-			case FacilitiesPackageImpl.ROOM__LAST_CLEANED:
-				return getLastCleaned();
-			case FacilitiesPackageImpl.ROOM__SERVICES_AFFORDED:
-				return getServicesAfforded();
-			case FacilitiesPackageImpl.ROOM__STATES:
-				if (resolve) return getStates();
-				return basicGetStates();
-			case FacilitiesPackageImpl.ROOM__PROTOTYPES:
-				return getPrototypes();
-		}
-		return eDynamicGet(featureID, resolve, coreType);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@SuppressWarnings("unchecked")
-	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case FacilitiesPackageImpl.ROOM__NR:
-				setNr((Integer)newValue);
-				return;
-			case FacilitiesPackageImpl.ROOM__FLOOR:
-				setFloor((Integer)newValue);
-				return;
-			case FacilitiesPackageImpl.ROOM__USABLE:
-				setUsable((Boolean)newValue);
-				return;
-			case FacilitiesPackageImpl.ROOM__BASE_PRICE:
-				setBasePrice((Double)newValue);
-				return;
-			case FacilitiesPackageImpl.ROOM__LAST_CLEANED:
-				setLastCleaned((Date)newValue);
-				return;
-			case FacilitiesPackageImpl.ROOM__SERVICES_AFFORDED:
-				getServicesAfforded().clear();
-				getServicesAfforded().addAll((Collection<? extends ServiceBlueprint>)newValue);
-				return;
-			case FacilitiesPackageImpl.ROOM__STATES:
-				setStates((RoomAttribute)newValue);
-				return;
-			case FacilitiesPackageImpl.ROOM__PROTOTYPES:
-				getPrototypes().clear();
-				getPrototypes().addAll((Collection<? extends PrototypeOrdering>)newValue);
-				return;
-		}
-		eDynamicSet(featureID, newValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-			case FacilitiesPackageImpl.ROOM__NR:
-				setNr(NR_EDEFAULT);
-				return;
-			case FacilitiesPackageImpl.ROOM__FLOOR:
-				setFloor(FLOOR_EDEFAULT);
-				return;
-			case FacilitiesPackageImpl.ROOM__USABLE:
-				setUsable(USABLE_EDEFAULT);
-				return;
-			case FacilitiesPackageImpl.ROOM__BASE_PRICE:
-				setBasePrice(BASE_PRICE_EDEFAULT);
-				return;
-			case FacilitiesPackageImpl.ROOM__LAST_CLEANED:
-				setLastCleaned(LAST_CLEANED_EDEFAULT);
-				return;
-			case FacilitiesPackageImpl.ROOM__SERVICES_AFFORDED:
-				getServicesAfforded().clear();
-				return;
-			case FacilitiesPackageImpl.ROOM__STATES:
-				setStates((RoomAttribute)null);
-				return;
-			case FacilitiesPackageImpl.ROOM__PROTOTYPES:
-				getPrototypes().clear();
-				return;
-		}
-		eDynamicUnset(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case FacilitiesPackageImpl.ROOM__NR:
-				return nr != NR_EDEFAULT;
-			case FacilitiesPackageImpl.ROOM__FLOOR:
-				return floor != FLOOR_EDEFAULT;
-			case FacilitiesPackageImpl.ROOM__USABLE:
-				return usable != USABLE_EDEFAULT;
-			case FacilitiesPackageImpl.ROOM__BASE_PRICE:
-				return basePrice != BASE_PRICE_EDEFAULT;
-			case FacilitiesPackageImpl.ROOM__LAST_CLEANED:
-				return LAST_CLEANED_EDEFAULT == null ? lastCleaned != null : !LAST_CLEANED_EDEFAULT.equals(lastCleaned);
-			case FacilitiesPackageImpl.ROOM__SERVICES_AFFORDED:
-				return servicesAfforded != null && !servicesAfforded.isEmpty();
-			case FacilitiesPackageImpl.ROOM__STATES:
-				return states != null;
-			case FacilitiesPackageImpl.ROOM__PROTOTYPES:
-				return prototypes != null && !prototypes.isEmpty();
-		}
-		return eDynamicIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
-
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (nr: ");
 		result.append(nr);
@@ -505,5 +337,4 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 		result.append(')');
 		return result.toString();
 	}
-
 } //RoomImpl

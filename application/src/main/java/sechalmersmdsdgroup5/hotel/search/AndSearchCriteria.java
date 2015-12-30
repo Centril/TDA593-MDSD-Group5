@@ -33,7 +33,7 @@ public interface AndSearchCriteria<SRT> extends SearchCriteria<SRT> {
 	 * @model required="true" ordered="false"
 	 * @generated
 	 */
-	SearchCriteria<? extends SRT> getLeft();
+	SearchCriteria<SRT> getLeft();
 
 	/**
 	 * Sets the value of the '{@link sechalmersmdsdgroup5.hotel.search.AndSearchCriteria#getLeft <em>Left</em>}' reference.
@@ -43,7 +43,7 @@ public interface AndSearchCriteria<SRT> extends SearchCriteria<SRT> {
 	 * @see #getLeft()
 	 * @generated
 	 */
-	void setLeft(SearchCriteria<? extends SRT> value);
+	void setLeft(SearchCriteria<SRT> value);
 
 	/**
 	 * Returns the value of the '<em><b>Right</b></em>' reference.
@@ -58,7 +58,7 @@ public interface AndSearchCriteria<SRT> extends SearchCriteria<SRT> {
 	 * @model required="true" ordered="false"
 	 * @generated
 	 */
-	SearchCriteria<? extends SRT> getRight();
+	SearchCriteria<SRT> getRight();
 
 	/**
 	 * Sets the value of the '{@link sechalmersmdsdgroup5.hotel.search.AndSearchCriteria#getRight <em>Right</em>}' reference.
@@ -68,6 +68,6 @@ public interface AndSearchCriteria<SRT> extends SearchCriteria<SRT> {
 	 * @see #getRight()
 	 * @generated
 	 */
-	void setRight(SearchCriteria<? extends SRT> value);
+	void setRight(SearchCriteria<SRT> value);
 
 } // AndSearchCriteria

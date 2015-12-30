@@ -2,8 +2,6 @@
  */
 package sechalmersmdsdgroup5.hotel.search.impl;
 
-import java.util.List;
-
 import java.util.function.BiPredicate;
 import java.util.function.Function;
 import org.eclipse.emf.ecore.EClass;
@@ -157,25 +155,6 @@ public class SearchPackageImpl extends EPackageImpl {
 	public static final int SEARCH_QUERY_FEATURE_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link java.util.List <em>List</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see java.util.List
-	 * @see sechalmersmdsdgroup5.hotel.search.impl.SearchPackageImpl#getList()
-	 * @generated
-	 */
-	public static final int LIST = 3;
-
-	/**
-	 * The number of structural features of the '<em>List</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int LIST_FEATURE_COUNT = 0;
-
-	/**
 	 * The meta object id for the '{@link sechalmersmdsdgroup5.hotel.search.SearchCriteria <em>Criteria</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -183,7 +162,7 @@ public class SearchPackageImpl extends EPackageImpl {
 	 * @see sechalmersmdsdgroup5.hotel.search.impl.SearchPackageImpl#getSearchCriteria()
 	 * @generated
 	 */
-	public static final int SEARCH_CRITERIA = 4;
+	public static final int SEARCH_CRITERIA = 3;
 
 	/**
 	 * The number of structural features of the '<em>Criteria</em>' class.
@@ -202,7 +181,7 @@ public class SearchPackageImpl extends EPackageImpl {
 	 * @see sechalmersmdsdgroup5.hotel.search.impl.SearchPackageImpl#getConcreteSearchResult()
 	 * @generated
 	 */
-	public static final int CONCRETE_SEARCH_RESULT = 5;
+	public static final int CONCRETE_SEARCH_RESULT = 4;
 
 	/**
 	 * The number of structural features of the '<em>Concrete Search Result</em>' class.
@@ -221,7 +200,7 @@ public class SearchPackageImpl extends EPackageImpl {
 	 * @see sechalmersmdsdgroup5.hotel.search.impl.SearchPackageImpl#getAndSearchCriteria()
 	 * @generated
 	 */
-	public static final int AND_SEARCH_CRITERIA = 6;
+	public static final int AND_SEARCH_CRITERIA = 5;
 
 	/**
 	 * The feature id for the '<em><b>Left</b></em>' reference.
@@ -258,7 +237,7 @@ public class SearchPackageImpl extends EPackageImpl {
 	 * @see sechalmersmdsdgroup5.hotel.search.impl.SearchPackageImpl#getOrSearchCriteria()
 	 * @generated
 	 */
-	public static final int OR_SEARCH_CRITERIA = 7;
+	public static final int OR_SEARCH_CRITERIA = 6;
 
 	/**
 	 * The feature id for the '<em><b>Left</b></em>' reference.
@@ -295,7 +274,7 @@ public class SearchPackageImpl extends EPackageImpl {
 	 * @see sechalmersmdsdgroup5.hotel.search.impl.SearchPackageImpl#getNotSearchCriteria()
 	 * @generated
 	 */
-	public static final int NOT_SEARCH_CRITERIA = 8;
+	public static final int NOT_SEARCH_CRITERIA = 7;
 
 	/**
 	 * The feature id for the '<em><b>Criteria</b></em>' reference.
@@ -323,7 +302,7 @@ public class SearchPackageImpl extends EPackageImpl {
 	 * @see sechalmersmdsdgroup5.hotel.search.impl.SearchPackageImpl#getMatchesSearchCriteria()
 	 * @generated
 	 */
-	public static final int MATCHES_SEARCH_CRITERIA = 9;
+	public static final int MATCHES_SEARCH_CRITERIA = 8;
 
 	/**
 	 * The feature id for the '<em><b>Input</b></em>' reference.
@@ -369,7 +348,7 @@ public class SearchPackageImpl extends EPackageImpl {
 	 * @see sechalmersmdsdgroup5.hotel.search.impl.SearchPackageImpl#getBiPredicate()
 	 * @generated
 	 */
-	public static final int BI_PREDICATE = 11;
+	public static final int BI_PREDICATE = 10;
 
 	/**
 	 * The meta object id for the '{@link java.util.function.Function <em>Function</em>}' class.
@@ -379,7 +358,7 @@ public class SearchPackageImpl extends EPackageImpl {
 	 * @see sechalmersmdsdgroup5.hotel.search.impl.SearchPackageImpl#getFunction()
 	 * @generated
 	 */
-	public static final int FUNCTION = 10;
+	public static final int FUNCTION = 9;
 
 	/**
 	 * The number of structural features of the '<em>Function</em>' class.
@@ -419,13 +398,6 @@ public class SearchPackageImpl extends EPackageImpl {
 	 * @generated
 	 */
 	private EClass searchQueryEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass listEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -617,19 +589,6 @@ public class SearchPackageImpl extends EPackageImpl {
 	 */
 	public EClass getSearchQuery() {
 		return searchQueryEClass;
-	}
-
-	/**
-	 * Returns the meta object for class '{@link java.util.List <em>List</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>List</em>'.
-	 * @see java.util.List
-	 * @model instanceClass="java.util.List" typeParameters="LT"
-	 * @generated
-	 */
-	public EClass getList() {
-		return listEClass;
 	}
 
 	/**
@@ -872,8 +831,6 @@ public class SearchPackageImpl extends EPackageImpl {
 
 		searchQueryEClass = createEClass(SEARCH_QUERY);
 
-		listEClass = createEClass(LIST);
-
 		searchCriteriaEClass = createEClass(SEARCH_CRITERIA);
 
 		concreteSearchResultEClass = createEClass(CONCRETE_SEARCH_RESULT);
@@ -911,7 +868,7 @@ public class SearchPackageImpl extends EPackageImpl {
 	 * method is guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void initializePackageContents() {
 		if (isInitialized) return;
@@ -930,7 +887,7 @@ public class SearchPackageImpl extends EPackageImpl {
 		// Create type parameters
 		ETypeParameter searchResultEClass_SRT = addETypeParameter(searchResultEClass, "SRT");
 		addETypeParameter(searchQueryEClass, "SRT");
-		addETypeParameter(listEClass, "LT");
+//		addETypeParameter(listEClass, "LT");
 		addETypeParameter(searchCriteriaEClass, "SRT");
 		addETypeParameter(concreteSearchResultEClass, "SRT");
 		addETypeParameter(andSearchCriteriaEClass, "SRT");
@@ -1041,7 +998,7 @@ public class SearchPackageImpl extends EPackageImpl {
 		initEClass(searchQueryEClass, SearchQuery.class, "SearchQuery", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		op = addEOperation(searchQueryEClass, null, "getCriterias", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		g1 = createEGenericType(this.getList());
+//		g1 = createEGenericType(this.getList());
 		g2 = createEGenericType();
 		g1.getETypeArguments().add(g2);
 		g3 = createEGenericType(this.getSearchCriteria());
@@ -1052,7 +1009,7 @@ public class SearchPackageImpl extends EPackageImpl {
 		g4.setEUpperBound(g5);
 		initEOperation(op, g1);
 
-		initEClass(listEClass, List.class, "List", IS_ABSTRACT, IS_INTERFACE, !IS_GENERATED_INSTANCE_CLASS);
+//		initEClass(listEClass, List.class, "List", IS_ABSTRACT, IS_INTERFACE, !IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(searchCriteriaEClass, SearchCriteria.class, "SearchCriteria", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -1179,16 +1136,6 @@ public class SearchPackageImpl extends EPackageImpl {
 		 * @generated
 		 */
 		public static final EClass SEARCH_QUERY = eINSTANCE.getSearchQuery();
-
-		/**
-		 * The meta object literal for the '{@link java.util.List <em>List</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see java.util.List
-		 * @see sechalmersmdsdgroup5.hotel.search.impl.SearchPackageImpl#getList()
-		 * @generated
-		 */
-		public static final EClass LIST = eINSTANCE.getList();
 
 		/**
 		 * The meta object literal for the '{@link sechalmersmdsdgroup5.hotel.search.SearchCriteria <em>Criteria</em>}' class.

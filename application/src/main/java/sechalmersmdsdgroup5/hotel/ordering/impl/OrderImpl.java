@@ -2,22 +2,14 @@
  */
 package sechalmersmdsdgroup5.hotel.ordering.impl;
 
-import java.util.Collection;
-import java.util.Date;
-import java.util.List;
-
-import org.eclipse.emf.common.util.EList;
-
-import org.eclipse.emf.ecore.EClass;
-
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
-import org.eclipse.emf.ecore.util.BasicInternalEList;
-
 import sechalmersmdsdgroup5.hotel.ordering.Campaign;
 import sechalmersmdsdgroup5.hotel.ordering.Invoice;
 import sechalmersmdsdgroup5.hotel.ordering.Order;
 import sechalmersmdsdgroup5.hotel.ordering.RoomBooking;
+
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
 
 /**
  * <!-- begin-user-doc -->
@@ -33,9 +25,9 @@ import sechalmersmdsdgroup5.hotel.ordering.RoomBooking;
  *   <li>{@link sechalmersmdsdgroup5.hotel.ordering.impl.OrderImpl#getCreationDate <em>Creation Date</em>}</li>
  * </ul>
  *
- * @generated
+ * @generated NOT
  */
-public class OrderImpl extends MinimalEObjectImpl.Container implements Order {
+public class OrderImpl implements Order {
 	/**
 	 * The cached value of the '{@link #getInvoice() <em>Invoice</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
@@ -44,7 +36,7 @@ public class OrderImpl extends MinimalEObjectImpl.Container implements Order {
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Invoice> invoice;
+	private List<Invoice> invoice;
 
 	/**
 	 * The cached value of the '{@link #getCampaigns() <em>Campaigns</em>}' reference list.
@@ -54,7 +46,7 @@ public class OrderImpl extends MinimalEObjectImpl.Container implements Order {
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Campaign> campaigns;
+	private List<Campaign> campaigns = new ArrayList<>();
 
 	/**
 	 * The cached value of the '{@link #getBookings() <em>Bookings</em>}' reference list.
@@ -64,17 +56,7 @@ public class OrderImpl extends MinimalEObjectImpl.Container implements Order {
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<RoomBooking> bookings;
-
-	/**
-	 * The default value of the '{@link #getCreationDate() <em>Creation Date</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCreationDate()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final Date CREATION_DATE_EDEFAULT = null;
+	private List<RoomBooking> bookings = new ArrayList<>();
 
 	/**
 	 * The cached value of the '{@link #getCreationDate() <em>Creation Date</em>}' attribute.
@@ -84,26 +66,14 @@ public class OrderImpl extends MinimalEObjectImpl.Container implements Order {
 	 * @generated
 	 * @ordered
 	 */
-	protected Date creationDate = CREATION_DATE_EDEFAULT;
+	private Date creationDate = new Date();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected OrderImpl() {
-		super();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	protected EClass eStaticClass() {
-		return OrderingPackageImpl.Literals.ORDER;
-	}
+	OrderImpl() {}
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -111,9 +81,6 @@ public class OrderImpl extends MinimalEObjectImpl.Container implements Order {
 	 * @generated
 	 */
 	public List<Invoice> getInvoice() {
-		if (invoice == null) {
-			invoice = new BasicInternalEList<Invoice>(Invoice.class);
-		}
 		return invoice;
 	}
 
@@ -123,9 +90,6 @@ public class OrderImpl extends MinimalEObjectImpl.Container implements Order {
 	 * @generated
 	 */
 	public List<Campaign> getCampaigns() {
-		if (campaigns == null) {
-			campaigns = new BasicInternalEList<Campaign>(Campaign.class);
-		}
 		return campaigns;
 	}
 
@@ -135,9 +99,6 @@ public class OrderImpl extends MinimalEObjectImpl.Container implements Order {
 	 * @generated
 	 */
 	public List<RoomBooking> getBookings() {
-		if (bookings == null) {
-			bookings = new BasicInternalEList<RoomBooking>(RoomBooking.class);
-		}
 		return bookings;
 	}
 
@@ -198,106 +159,11 @@ public class OrderImpl extends MinimalEObjectImpl.Container implements Order {
 	 * @generated
 	 */
 	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case OrderingPackageImpl.ORDER__INVOICE:
-				return getInvoice();
-			case OrderingPackageImpl.ORDER__CAMPAIGNS:
-				return getCampaigns();
-			case OrderingPackageImpl.ORDER__BOOKINGS:
-				return getBookings();
-			case OrderingPackageImpl.ORDER__CREATION_DATE:
-				return getCreationDate();
-		}
-		return eDynamicGet(featureID, resolve, coreType);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@SuppressWarnings("unchecked")
-	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case OrderingPackageImpl.ORDER__INVOICE:
-				getInvoice().clear();
-				getInvoice().addAll((Collection<? extends Invoice>)newValue);
-				return;
-			case OrderingPackageImpl.ORDER__CAMPAIGNS:
-				getCampaigns().clear();
-				getCampaigns().addAll((Collection<? extends Campaign>)newValue);
-				return;
-			case OrderingPackageImpl.ORDER__BOOKINGS:
-				getBookings().clear();
-				getBookings().addAll((Collection<? extends RoomBooking>)newValue);
-				return;
-			case OrderingPackageImpl.ORDER__CREATION_DATE:
-				setCreationDate((Date)newValue);
-				return;
-		}
-		eDynamicSet(featureID, newValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-			case OrderingPackageImpl.ORDER__INVOICE:
-				getInvoice().clear();
-				return;
-			case OrderingPackageImpl.ORDER__CAMPAIGNS:
-				getCampaigns().clear();
-				return;
-			case OrderingPackageImpl.ORDER__BOOKINGS:
-				getBookings().clear();
-				return;
-			case OrderingPackageImpl.ORDER__CREATION_DATE:
-				setCreationDate(CREATION_DATE_EDEFAULT);
-				return;
-		}
-		eDynamicUnset(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case OrderingPackageImpl.ORDER__INVOICE:
-				return invoice != null && !invoice.isEmpty();
-			case OrderingPackageImpl.ORDER__CAMPAIGNS:
-				return campaigns != null && !campaigns.isEmpty();
-			case OrderingPackageImpl.ORDER__BOOKINGS:
-				return bookings != null && !bookings.isEmpty();
-			case OrderingPackageImpl.ORDER__CREATION_DATE:
-				return CREATION_DATE_EDEFAULT == null ? creationDate != null : !CREATION_DATE_EDEFAULT.equals(creationDate);
-		}
-		return eDynamicIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
-
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (creationDate: ");
 		result.append(creationDate);
 		result.append(')');
 		return result.toString();
 	}
-
 } //OrderImpl

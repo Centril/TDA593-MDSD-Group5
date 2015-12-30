@@ -2,10 +2,6 @@
  */
 package sechalmersmdsdgroup5.hotel.search.impl;
 
-import org.eclipse.emf.ecore.EClass;
-
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import sechalmersmdsdgroup5.hotel.search.ConcreteSearchResult;
 import sechalmersmdsdgroup5.hotel.search.SearchResult;
 
@@ -14,16 +10,15 @@ import sechalmersmdsdgroup5.hotel.search.SearchResult;
  * An implementation of the model object '<em><b>Concrete Search Result</b></em>'.
  * <!-- end-user-doc -->
  *
- * @generated
+ * @generated NOT
  */
-public class ConcreteSearchResultImpl<SRT> extends MinimalEObjectImpl.Container implements ConcreteSearchResult<SRT> {
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected ConcreteSearchResultImpl() {
-		super();
+public class ConcreteSearchResultImpl<SRT> implements ConcreteSearchResult<SRT> {
+	private SRT result;
+	private double relevance;
+
+	public ConcreteSearchResultImpl( SRT result, double relevance ) {
+		this.result = result;
+		this.relevance = relevance;
 	}
 
 	/**
@@ -31,10 +26,7 @@ public class ConcreteSearchResultImpl<SRT> extends MinimalEObjectImpl.Container 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	protected EClass eStaticClass() {
-		return SearchPackageImpl.Literals.CONCRETE_SEARCH_RESULT;
-	}
+	protected ConcreteSearchResultImpl() {}
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -42,9 +34,7 @@ public class ConcreteSearchResultImpl<SRT> extends MinimalEObjectImpl.Container 
 	 * @generated
 	 */
 	public SRT getResult() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return result;
 	}
 
 	/**
@@ -53,9 +43,7 @@ public class ConcreteSearchResultImpl<SRT> extends MinimalEObjectImpl.Container 
 	 * @generated
 	 */
 	public double getRelevance() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return relevance;
 	}
 
 	/**
@@ -63,10 +51,7 @@ public class ConcreteSearchResultImpl<SRT> extends MinimalEObjectImpl.Container 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public SearchResult<? extends SRT> withRelevance(double relevance) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+	public SearchResult<SRT> withRelevance( double relevance ) {
+		return new ConcreteSearchResultImpl<>( this.result, relevance );
 	}
-
 } //ConcreteSearchResultImpl
