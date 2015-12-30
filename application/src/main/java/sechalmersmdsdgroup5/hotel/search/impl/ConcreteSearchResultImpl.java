@@ -13,8 +13,8 @@ import sechalmersmdsdgroup5.hotel.search.SearchResult;
  * @generated NOT
  */
 public class ConcreteSearchResultImpl<SRT> implements ConcreteSearchResult<SRT> {
-	SRT result;
-	double relevance;
+	private SRT result;
+	private double relevance;
 
 	public ConcreteSearchResultImpl( SRT result, double relevance ) {
 		this.result = result;
@@ -51,7 +51,7 @@ public class ConcreteSearchResultImpl<SRT> implements ConcreteSearchResult<SRT> 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public SearchResult<? extends SRT> withRelevance( double relevance ) {
+	public SearchResult<SRT> withRelevance( double relevance ) {
 		return new ConcreteSearchResultImpl<>( this.result, relevance );
 	}
 } //ConcreteSearchResultImpl

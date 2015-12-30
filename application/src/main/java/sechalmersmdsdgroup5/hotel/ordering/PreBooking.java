@@ -4,7 +4,9 @@ package sechalmersmdsdgroup5.hotel.ordering;
 
 import java.util.Date;
 
+import java.util.List;
 import sechalmersmdsdgroup5.hotel.facilities.Room;
+import sechalmersmdsdgroup5.hotel.services.ServiceBlueprint;
 
 /**
  * <!-- begin-user-doc -->
@@ -18,6 +20,7 @@ import sechalmersmdsdgroup5.hotel.facilities.Room;
  *   <li>{@link sechalmersmdsdgroup5.hotel.ordering.PreBooking#getStartDate <em>Start Date</em>}</li>
  *   <li>{@link sechalmersmdsdgroup5.hotel.ordering.PreBooking#getEndDate <em>End Date</em>}</li>
  *   <li>{@link sechalmersmdsdgroup5.hotel.ordering.PreBooking#getWillBook <em>Will Book</em>}</li>
+ *   <li>{@link sechalmersmdsdgroup5.hotel.ordering.PreBooking#getServices <em>Services</em>}</li>
  * </ul>
  *
  * @model
@@ -98,5 +101,20 @@ public interface PreBooking {
 	 * @generated
 	 */
 	void setWillBook(Room value);
+
+	/**
+	 * Returns the value of the '<em><b>Services</b></em>' reference list.
+	 * The list contents are of type {@link sechalmersmdsdgroup5.hotel.services.ServiceBlueprint}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Services</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Services</em>' reference list.
+	 * @model ordered="false"
+	 * @generated
+	 */
+	List<ServiceBlueprint> getServices();
 
 } // PreBooking

@@ -16,9 +16,9 @@ public interface SearchCriteria<SRT> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true" ordered="false" resultsRequired="true" resultsOrdered="false"
+	 * @model required="true" ordered="false" resultRequired="true" resultOrdered="false"
 	 * @generated
 	 */
-	SearchResult<? extends SRT> apply(SearchResult<? extends SRT> results);
+	SearchResult<SRT> apply(SearchResult<SRT> result);
 
 } // SearchCriteria

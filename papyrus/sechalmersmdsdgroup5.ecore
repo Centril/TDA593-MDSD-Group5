@@ -254,8 +254,8 @@
             lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="Client" abstract="true" interface="true">
-        <eStructuralFeatures xsi:type="ecore:EReference" name="invoice" ordered="false"
-            lowerBound="1" eType="#//hotel/ordering/Invoice"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="invoices" ordered="false"
+            upperBound="-1" eType="#//hotel/ordering/Invoice"/>
       </eClassifiers>
     </eSubpackages>
     <eSubpackages name="identities" nsURI="http:///sechalmersmdsdgroup5/hotel/identities.ecore"
@@ -319,6 +319,8 @@
             lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="willBook" ordered="false"
             lowerBound="1" eType="#//hotel/facilities/Room"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="services" ordered="false"
+            upperBound="-1" eType="#//hotel/services/ServiceBlueprint"/>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="RoomBooking" eSuperTypes="#//hotel/payment/Payable">
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="startDate" ordered="false"
@@ -333,6 +335,10 @@
             lowerBound="1" eType="#//hotel/facilities/Room"/>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="isPaid" ordered="false"
             lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="guests" ordered="false"
+            lowerBound="1" upperBound="-1" eType="#//hotel/clients/Guest"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="services" ordered="false"
+            upperBound="-1" eType="#//hotel/services/Service" containment="true"/>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="IOrder" abstract="true" interface="true">
         <eOperations name="createBooking" ordered="false" lowerBound="1" eType="#//hotel/ordering/RoomBooking">
@@ -395,6 +401,8 @@
             lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="expiryDate" ordered="false"
             lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="totalPrice" ordered="false"
+            lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
       </eClassifiers>
     </eSubpackages>
     <eSubpackages name="personnel" nsURI="http:///sechalmersmdsdgroup5/hotel/personnel.ecore"
@@ -548,9 +556,7 @@
         <eOperations name="getRelevance" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
         <eOperations name="withRelevance" ordered="false" lowerBound="1">
           <eGenericType eClassifier="#//hotel/search/SearchResult">
-            <eTypeArguments>
-              <eUpperBound eTypeParameter="#//hotel/search/SearchResult/SRT"/>
-            </eTypeArguments>
+            <eTypeArguments eTypeParameter="#//hotel/search/SearchResult/SRT"/>
           </eGenericType>
           <eParameters name="relevance" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
         </eOperations>
@@ -568,15 +574,11 @@
         <eTypeParameters name="SRT"/>
         <eOperations name="apply" ordered="false" lowerBound="1">
           <eGenericType eClassifier="#//hotel/search/SearchResult">
-            <eTypeArguments>
-              <eUpperBound eTypeParameter="#//hotel/search/SearchResult/SRT"/>
-            </eTypeArguments>
+            <eTypeArguments eTypeParameter="#//hotel/search/SearchResult/SRT"/>
           </eGenericType>
-          <eParameters name="results" ordered="false" lowerBound="1">
+          <eParameters name="result" ordered="false" lowerBound="1">
             <eGenericType eClassifier="#//hotel/search/SearchResult">
-              <eTypeArguments>
-                <eUpperBound eTypeParameter="#//hotel/search/SearchResult/SRT"/>
-              </eTypeArguments>
+              <eTypeArguments eTypeParameter="#//hotel/search/SearchResult/SRT"/>
             </eGenericType>
           </eParameters>
         </eOperations>

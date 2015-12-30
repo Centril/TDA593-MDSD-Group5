@@ -43,9 +43,9 @@ public class AccessLogImpl extends MinimalEObjectImpl.Container implements Acces
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
-	protected AccessLogImpl() {
+	public AccessLogImpl() {
 		super();
 	}
 

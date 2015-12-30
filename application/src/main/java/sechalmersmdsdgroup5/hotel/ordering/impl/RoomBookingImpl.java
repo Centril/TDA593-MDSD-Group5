@@ -2,22 +2,15 @@
  */
 package sechalmersmdsdgroup5.hotel.ordering.impl;
 
-import java.util.Collection;
-import java.util.Date;
-
-import java.util.List;
-import org.eclipse.emf.common.util.EList;
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.InternalEObject;
-
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
-import org.eclipse.emf.ecore.util.BasicInternalEList;
+import sechalmersmdsdgroup5.hotel.clients.Guest;
 import sechalmersmdsdgroup5.hotel.facilities.Room;
-
 import sechalmersmdsdgroup5.hotel.ordering.Invoice;
 import sechalmersmdsdgroup5.hotel.ordering.RoomBooking;
+import sechalmersmdsdgroup5.hotel.services.Service;
+
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
 
 /**
  * <!-- begin-user-doc -->
@@ -34,11 +27,13 @@ import sechalmersmdsdgroup5.hotel.ordering.RoomBooking;
  *   <li>{@link sechalmersmdsdgroup5.hotel.ordering.impl.RoomBookingImpl#getCheckoutTime <em>Checkout Time</em>}</li>
  *   <li>{@link sechalmersmdsdgroup5.hotel.ordering.impl.RoomBookingImpl#getBookedRoom <em>Booked Room</em>}</li>
  *   <li>{@link sechalmersmdsdgroup5.hotel.ordering.impl.RoomBookingImpl#isPaid <em>Is Paid</em>}</li>
+ *   <li>{@link sechalmersmdsdgroup5.hotel.ordering.impl.RoomBookingImpl#getGuests <em>Guests</em>}</li>
+ *   <li>{@link sechalmersmdsdgroup5.hotel.ordering.impl.RoomBookingImpl#getServices <em>Services</em>}</li>
  * </ul>
  *
- * @generated
+ * @generated NOT
  */
-public class RoomBookingImpl extends MinimalEObjectImpl.Container implements RoomBooking {
+class RoomBookingImpl implements RoomBooking {
 	/**
 	 * The cached value of the '{@link #getInvoice() <em>Invoice</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
@@ -47,7 +42,7 @@ public class RoomBookingImpl extends MinimalEObjectImpl.Container implements Roo
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Invoice> invoice;
+	private List<Invoice> invoice;
 
 	/**
 	 * The default value of the '{@link #getStartDate() <em>Start Date</em>}' attribute.
@@ -57,7 +52,7 @@ public class RoomBookingImpl extends MinimalEObjectImpl.Container implements Roo
 	 * @generated
 	 * @ordered
 	 */
-	protected static final Date START_DATE_EDEFAULT = null;
+	private static final Date START_DATE_EDEFAULT = null;
 
 	/**
 	 * The cached value of the '{@link #getStartDate() <em>Start Date</em>}' attribute.
@@ -67,7 +62,7 @@ public class RoomBookingImpl extends MinimalEObjectImpl.Container implements Roo
 	 * @generated
 	 * @ordered
 	 */
-	protected Date startDate = START_DATE_EDEFAULT;
+	private Date startDate = START_DATE_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getEndDate() <em>End Date</em>}' attribute.
@@ -77,7 +72,7 @@ public class RoomBookingImpl extends MinimalEObjectImpl.Container implements Roo
 	 * @generated
 	 * @ordered
 	 */
-	protected static final Date END_DATE_EDEFAULT = null;
+	private static final Date END_DATE_EDEFAULT = null;
 
 	/**
 	 * The cached value of the '{@link #getEndDate() <em>End Date</em>}' attribute.
@@ -87,7 +82,7 @@ public class RoomBookingImpl extends MinimalEObjectImpl.Container implements Roo
 	 * @generated
 	 * @ordered
 	 */
-	protected Date endDate = END_DATE_EDEFAULT;
+	private Date endDate = END_DATE_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getCheckinTime() <em>Checkin Time</em>}' attribute.
@@ -97,7 +92,7 @@ public class RoomBookingImpl extends MinimalEObjectImpl.Container implements Roo
 	 * @generated
 	 * @ordered
 	 */
-	protected static final Date CHECKIN_TIME_EDEFAULT = null;
+	private static final Date CHECKIN_TIME_EDEFAULT = null;
 
 	/**
 	 * The cached value of the '{@link #getCheckinTime() <em>Checkin Time</em>}' attribute.
@@ -107,7 +102,7 @@ public class RoomBookingImpl extends MinimalEObjectImpl.Container implements Roo
 	 * @generated
 	 * @ordered
 	 */
-	protected Date checkinTime = CHECKIN_TIME_EDEFAULT;
+	private Date checkinTime = CHECKIN_TIME_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getCheckoutTime() <em>Checkout Time</em>}' attribute.
@@ -117,7 +112,7 @@ public class RoomBookingImpl extends MinimalEObjectImpl.Container implements Roo
 	 * @generated
 	 * @ordered
 	 */
-	protected static final Date CHECKOUT_TIME_EDEFAULT = null;
+	private static final Date CHECKOUT_TIME_EDEFAULT = null;
 
 	/**
 	 * The cached value of the '{@link #getCheckoutTime() <em>Checkout Time</em>}' attribute.
@@ -127,7 +122,7 @@ public class RoomBookingImpl extends MinimalEObjectImpl.Container implements Roo
 	 * @generated
 	 * @ordered
 	 */
-	protected Date checkoutTime = CHECKOUT_TIME_EDEFAULT;
+	private Date checkoutTime = CHECKOUT_TIME_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getBookedRoom() <em>Booked Room</em>}' reference.
@@ -137,7 +132,7 @@ public class RoomBookingImpl extends MinimalEObjectImpl.Container implements Roo
 	 * @generated
 	 * @ordered
 	 */
-	protected Room bookedRoom;
+	private Room bookedRoom;
 
 	/**
 	 * The default value of the '{@link #isPaid() <em>Is Paid</em>}' attribute.
@@ -147,7 +142,7 @@ public class RoomBookingImpl extends MinimalEObjectImpl.Container implements Roo
 	 * @generated
 	 * @ordered
 	 */
-	protected static final boolean IS_PAID_EDEFAULT = false;
+	private static final boolean IS_PAID_EDEFAULT = false;
 
 	/**
 	 * The cached value of the '{@link #isPaid() <em>Is Paid</em>}' attribute.
@@ -160,23 +155,31 @@ public class RoomBookingImpl extends MinimalEObjectImpl.Container implements Roo
 	protected boolean isPaid = IS_PAID_EDEFAULT;
 
 	/**
+	 * The cached value of the '{@link #getGuests() <em>Guests</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @see #getGuests()
 	 * @generated
+	 * @ordered
 	 */
-	protected RoomBookingImpl() {
-		super();
-	}
+	private List<Guest> guests;
+
+	/**
+	 * The cached value of the '{@link #getServices() <em>Services</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getServices()
+	 * @generated
+	 * @ordered
+	 */
+	protected List<Service> services = new ArrayList<>();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	protected EClass eStaticClass() {
-		return OrderingPackageImpl.Literals.ROOM_BOOKING;
-	}
+	RoomBookingImpl() {}
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -184,9 +187,6 @@ public class RoomBookingImpl extends MinimalEObjectImpl.Container implements Roo
 	 * @generated
 	 */
 	public List<Invoice> getInvoice() {
-		if (invoice == null) {
-			invoice = new BasicInternalEList<Invoice>(Invoice.class);
-		}
 		return invoice;
 	}
 
@@ -268,21 +268,6 @@ public class RoomBookingImpl extends MinimalEObjectImpl.Container implements Roo
 	 * @generated
 	 */
 	public Room getBookedRoom() {
-		if (bookedRoom != null && ((EObject)bookedRoom).eIsProxy()) {
-			InternalEObject oldBookedRoom = (InternalEObject)bookedRoom;
-			bookedRoom = (Room)eResolveProxy(oldBookedRoom);
-			if (bookedRoom != oldBookedRoom) {
-			}
-		}
-		return bookedRoom;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Room basicGetBookedRoom() {
 		return bookedRoom;
 	}
 
@@ -318,6 +303,24 @@ public class RoomBookingImpl extends MinimalEObjectImpl.Container implements Roo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public List<Guest> getGuests() {
+		return guests;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public List<Service> getServices() {
+		return services;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public double totalPrice() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
@@ -330,130 +333,7 @@ public class RoomBookingImpl extends MinimalEObjectImpl.Container implements Roo
 	 * @generated
 	 */
 	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case OrderingPackageImpl.ROOM_BOOKING__INVOICE:
-				return getInvoice();
-			case OrderingPackageImpl.ROOM_BOOKING__START_DATE:
-				return getStartDate();
-			case OrderingPackageImpl.ROOM_BOOKING__END_DATE:
-				return getEndDate();
-			case OrderingPackageImpl.ROOM_BOOKING__CHECKIN_TIME:
-				return getCheckinTime();
-			case OrderingPackageImpl.ROOM_BOOKING__CHECKOUT_TIME:
-				return getCheckoutTime();
-			case OrderingPackageImpl.ROOM_BOOKING__BOOKED_ROOM:
-				if (resolve) return getBookedRoom();
-				return basicGetBookedRoom();
-			case OrderingPackageImpl.ROOM_BOOKING__IS_PAID:
-				return isPaid();
-		}
-		return eDynamicGet(featureID, resolve, coreType);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@SuppressWarnings("unchecked")
-	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case OrderingPackageImpl.ROOM_BOOKING__INVOICE:
-				getInvoice().clear();
-				getInvoice().addAll((Collection<? extends Invoice>)newValue);
-				return;
-			case OrderingPackageImpl.ROOM_BOOKING__START_DATE:
-				setStartDate((Date)newValue);
-				return;
-			case OrderingPackageImpl.ROOM_BOOKING__END_DATE:
-				setEndDate((Date)newValue);
-				return;
-			case OrderingPackageImpl.ROOM_BOOKING__CHECKIN_TIME:
-				setCheckinTime((Date)newValue);
-				return;
-			case OrderingPackageImpl.ROOM_BOOKING__CHECKOUT_TIME:
-				setCheckoutTime((Date)newValue);
-				return;
-			case OrderingPackageImpl.ROOM_BOOKING__BOOKED_ROOM:
-				setBookedRoom((Room)newValue);
-				return;
-			case OrderingPackageImpl.ROOM_BOOKING__IS_PAID:
-				setIsPaid((Boolean)newValue);
-				return;
-		}
-		eDynamicSet(featureID, newValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-			case OrderingPackageImpl.ROOM_BOOKING__INVOICE:
-				getInvoice().clear();
-				return;
-			case OrderingPackageImpl.ROOM_BOOKING__START_DATE:
-				setStartDate(START_DATE_EDEFAULT);
-				return;
-			case OrderingPackageImpl.ROOM_BOOKING__END_DATE:
-				setEndDate(END_DATE_EDEFAULT);
-				return;
-			case OrderingPackageImpl.ROOM_BOOKING__CHECKIN_TIME:
-				setCheckinTime(CHECKIN_TIME_EDEFAULT);
-				return;
-			case OrderingPackageImpl.ROOM_BOOKING__CHECKOUT_TIME:
-				setCheckoutTime(CHECKOUT_TIME_EDEFAULT);
-				return;
-			case OrderingPackageImpl.ROOM_BOOKING__BOOKED_ROOM:
-				setBookedRoom((Room)null);
-				return;
-			case OrderingPackageImpl.ROOM_BOOKING__IS_PAID:
-				setIsPaid(IS_PAID_EDEFAULT);
-				return;
-		}
-		eDynamicUnset(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case OrderingPackageImpl.ROOM_BOOKING__INVOICE:
-				return invoice != null && !invoice.isEmpty();
-			case OrderingPackageImpl.ROOM_BOOKING__START_DATE:
-				return START_DATE_EDEFAULT == null ? startDate != null : !START_DATE_EDEFAULT.equals(startDate);
-			case OrderingPackageImpl.ROOM_BOOKING__END_DATE:
-				return END_DATE_EDEFAULT == null ? endDate != null : !END_DATE_EDEFAULT.equals(endDate);
-			case OrderingPackageImpl.ROOM_BOOKING__CHECKIN_TIME:
-				return CHECKIN_TIME_EDEFAULT == null ? checkinTime != null : !CHECKIN_TIME_EDEFAULT.equals(checkinTime);
-			case OrderingPackageImpl.ROOM_BOOKING__CHECKOUT_TIME:
-				return CHECKOUT_TIME_EDEFAULT == null ? checkoutTime != null : !CHECKOUT_TIME_EDEFAULT.equals(checkoutTime);
-			case OrderingPackageImpl.ROOM_BOOKING__BOOKED_ROOM:
-				return bookedRoom != null;
-			case OrderingPackageImpl.ROOM_BOOKING__IS_PAID:
-				return isPaid != IS_PAID_EDEFAULT;
-		}
-		return eDynamicIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
-
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (startDate: ");
 		result.append(startDate);
@@ -468,5 +348,4 @@ public class RoomBookingImpl extends MinimalEObjectImpl.Container implements Roo
 		result.append(')');
 		return result.toString();
 	}
-
 } //RoomBookingImpl

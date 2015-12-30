@@ -43,9 +43,9 @@ public class TaskLogImpl extends MinimalEObjectImpl.Container implements TaskLog
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
-	protected TaskLogImpl() {
+	public TaskLogImpl() {
 		super();
 	}
 

@@ -29,30 +29,30 @@ public class MatchesSearchCriteriaImpl<SRT, IN> implements MatchesSearchCriteria
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getInput()
-	 * @generated
+	 * @generated NOT
 	 * @ordered
 	 */
-	protected IN input;
+	private IN input;
 
 	/**
 	 * The cached value of the '{@link #getTransform() <em>Transform</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getTransform()
-	 * @generated
+	 * @generated NOT
 	 * @ordered
 	 */
-	protected Function<SRT, IN> transform;
+	private Function<SRT, IN> transform;
 
 	/**
 	 * The cached value of the '{@link #getPredicate() <em>Predicate</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getPredicate()
-	 * @generated
+	 * @generated NOT
 	 * @ordered
 	 */
-	protected BiPredicate<IN, IN> predicate;
+	private BiPredicate<IN, IN> predicate;
 
 	public MatchesSearchCriteriaImpl( IN input, Function<SRT, IN> transform, BiPredicate<IN, IN> predicate ) {
 		this.input = input;
@@ -126,10 +126,8 @@ public class MatchesSearchCriteriaImpl<SRT, IN> implements MatchesSearchCriteria
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public SearchResult<? extends SRT> apply(SearchResult<? extends SRT> sr ) {
-		double r = sr.getRelevance();
-		return sr.withRelevance( predicate.test( input, transform.apply( sr.getResult() ) )
-							   ? r * 2
-							   : r / 2 );
+	public SearchResult<SRT> apply(SearchResult<SRT> sr ) {
+		return sr.withRelevance( sr.getRelevance() *
+				(predicate.test( input, transform.apply( sr.getResult() ) ) ? 2 : 0.5) );
 	}
 } //MatchesSearchCriteriaImpl

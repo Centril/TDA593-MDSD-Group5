@@ -35,6 +35,6 @@ public interface SearchResult<SRT> {
 	 * @model required="true" ordered="false" relevanceRequired="true" relevanceOrdered="false"
 	 * @generated
 	 */
-	SearchResult<? extends SRT> withRelevance(double relevance);
+	SearchResult<SRT> withRelevance(double relevance);
 
 } // SearchResult

@@ -2,17 +2,20 @@ package sechalmersmdsdgroup5.hotel.search.logic;
 
 import sechalmersmdsdgroup5.hotel.search.SearchCriteria;
 import sechalmersmdsdgroup5.hotel.search.SearchQuery;
+import sechalmersmdsdgroup5.hotel.utils.Functional;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.function.BiFunction;
 import java.util.function.BiPredicate;
 import java.util.function.Function;
 
 public class SearchQueryBuilder<SRT> {
-	List<SearchCriteria<SRT>> done;
-	SearchCriteria<SRT> criteria;
+	private List<SearchCriteria<SRT>> done;
+	private SearchCriteria<SRT> criteria;
 
-	BranchMode mode;
-	SearchQueryBuilder<SRT> owner;
+	private final BranchMode mode;
+	private final SearchQueryBuilder<SRT> owner;
 
 	private enum BranchMode {
 		NORMAL, AND, OR
@@ -21,6 +24,7 @@ public class SearchQueryBuilder<SRT> {
 	private SearchQueryBuilder( BranchMode mode, SearchQueryBuilder<SRT> owner ) {
 		this.mode = mode;
 		this.owner = owner;
+		this.done = new ArrayList<>();
 	}
 
 	public static <SRT> SearchQueryBuilder<SRT> builder() {
@@ -45,8 +49,8 @@ public class SearchQueryBuilder<SRT> {
 			case NORMAL:
 				if ( criteria != null ) {
 					done.add( criteria );
-					criteria = wrap;
 				}
+				criteria = wrap;
 				break;
 
 			case AND:
@@ -77,12 +81,16 @@ public class SearchQueryBuilder<SRT> {
 	}
 
 	public SearchQueryBuilder<SRT> and( SearchCriteria<SRT> r ) {
-		criteria = SearchCriteriaFactory.and( criteria, r );
+		if ( criteria != null ) {
+			criteria = SearchCriteriaFactory.and( criteria, r );
+		}
 		return this;
 	}
 
 	public SearchQueryBuilder<SRT> or( SearchCriteria<SRT> r ) {
-		criteria = SearchCriteriaFactory.or( criteria, r );
+		if ( criteria != null ) {
+			criteria = SearchCriteriaFactory.or( criteria, r );
+		}
 		return this;
 	}
 
@@ -123,5 +131,10 @@ public class SearchQueryBuilder<SRT> {
 		}
 
 		return this;
+	}
+
+	public <E> SearchQueryBuilder<SRT> each( Iterable<E> iter,
+	    BiFunction<SearchQueryBuilder<SRT>, ? super E, SearchQueryBuilder<SRT>> fn ) {
+		return Functional.foldl( iter, this, fn );
 	}
 }

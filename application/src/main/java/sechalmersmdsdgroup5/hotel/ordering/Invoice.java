@@ -15,6 +15,7 @@ import java.util.Date;
  * <ul>
  *   <li>{@link sechalmersmdsdgroup5.hotel.ordering.Invoice#isPaid <em>Is Paid</em>}</li>
  *   <li>{@link sechalmersmdsdgroup5.hotel.ordering.Invoice#getExpiryDate <em>Expiry Date</em>}</li>
+ *   <li>{@link sechalmersmdsdgroup5.hotel.ordering.Invoice#getTotalPrice <em>Total Price</em>}</li>
  * </ul>
  *
  * @model
@@ -70,5 +71,30 @@ public interface Invoice {
 	 * @generated
 	 */
 	void setExpiryDate(Date value);
+
+	/**
+	 * Returns the value of the '<em><b>Total Price</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Total Price</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Total Price</em>' attribute.
+	 * @see #setTotalPrice(double)
+	 * @model required="true" ordered="false"
+	 * @generated
+	 */
+	double getTotalPrice();
+
+	/**
+	 * Sets the value of the '{@link sechalmersmdsdgroup5.hotel.ordering.Invoice#getTotalPrice <em>Total Price</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Total Price</em>' attribute.
+	 * @see #getTotalPrice()
+	 * @generated
+	 */
+	void setTotalPrice(double value);
 
 } // Invoice

@@ -26,20 +26,20 @@ public class OrSearchCriteriaImpl<SRT> implements OrSearchCriteria<SRT> {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getLeft()
-	 * @generated
+	 * @generated NOT
 	 * @ordered
 	 */
-	protected SearchCriteria<SRT> left;
+	private SearchCriteria<SRT> left;
 
 	/**
 	 * The cached value of the '{@link #getRight() <em>Right</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getRight()
-	 * @generated
+	 * @generated NOT
 	 * @ordered
 	 */
-	protected SearchCriteria<SRT> right;
+	private SearchCriteria<SRT> right;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -63,7 +63,7 @@ public class OrSearchCriteriaImpl<SRT> implements OrSearchCriteria<SRT> {
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	public SearchResult<? extends SRT> apply(SearchResult<? extends SRT> result ) {
+	public SearchResult<SRT> apply(SearchResult<SRT> result ) {
 		double rl = left.apply( result ).getRelevance();
 		double rr = right.apply( result ).getRelevance();
 		return result.withRelevance( Math.max( rl, rr ) );
