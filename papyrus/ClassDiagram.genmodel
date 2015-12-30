@@ -246,7 +246,7 @@
         </genClasses>
         <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="sechalmersmdsdgroup5.ecore#//hotel/clients/Client">
           <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
-              propertySortChoices="true" ecoreFeature="ecore:EReference sechalmersmdsdgroup5.ecore#//hotel/clients/Client/invoice"/>
+              propertySortChoices="true" ecoreFeature="ecore:EReference sechalmersmdsdgroup5.ecore#//hotel/clients/Client/invoices"/>
         </genClasses>
       </nestedGenPackages>
       <nestedGenPackages xsi:type="genmodel:GenPackage" prefix="Identities" basePackage="sechalmersmdsdgroup5.hotel"
@@ -372,6 +372,7 @@
         <genClasses xsi:type="genmodel:GenClass" ecoreClass="sechalmersmdsdgroup5.ecore#//hotel/ordering/Invoice">
           <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute sechalmersmdsdgroup5.ecore#//hotel/ordering/Invoice/isPaid"/>
           <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute sechalmersmdsdgroup5.ecore#//hotel/ordering/Invoice/expiryDate"/>
+          <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute sechalmersmdsdgroup5.ecore#//hotel/ordering/Invoice/totalPrice"/>
         </genClasses>
       </nestedGenPackages>
       <nestedGenPackages xsi:type="genmodel:GenPackage" prefix="Personnel" basePackage="sechalmersmdsdgroup5.hotel"

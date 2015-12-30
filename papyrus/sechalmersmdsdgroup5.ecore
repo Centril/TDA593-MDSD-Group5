@@ -254,8 +254,8 @@
             lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="Client" abstract="true" interface="true">
-        <eStructuralFeatures xsi:type="ecore:EReference" name="invoice" ordered="false"
-            lowerBound="1" eType="#//hotel/ordering/Invoice"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="invoices" ordered="false"
+            upperBound="-1" eType="#//hotel/ordering/Invoice"/>
       </eClassifiers>
     </eSubpackages>
     <eSubpackages name="identities" nsURI="http:///sechalmersmdsdgroup5/hotel/identities.ecore"
@@ -401,6 +401,8 @@
             lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="expiryDate" ordered="false"
             lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="totalPrice" ordered="false"
+            lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
       </eClassifiers>
     </eSubpackages>
     <eSubpackages name="personnel" nsURI="http:///sechalmersmdsdgroup5/hotel/personnel.ecore"

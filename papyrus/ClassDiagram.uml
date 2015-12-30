@@ -299,7 +299,10 @@
           </ownedAttribute>
         </packagedElement>
         <packagedElement xmi:type="uml:Interface" xmi:id="_0CgQwKAsEeWRM8HqbnnQEA" name="Client">
-          <ownedAttribute xmi:type="uml:Property" xmi:id="_9B67c6AvEeWRM8HqbnnQEA" name="invoice" type="_3gRasJRQEeWEKYEtRmghUQ" aggregation="shared" association="_9B67cKAvEeWRM8HqbnnQEA"/>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_9B67c6AvEeWRM8HqbnnQEA" name="invoices" type="_3gRasJRQEeWEKYEtRmghUQ" aggregation="shared" association="_9B67cKAvEeWRM8HqbnnQEA">
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_5W_08K7tEeWKW4OjxoJe1Q"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_5XGioK7tEeWKW4OjxoJe1Q" value="*"/>
+          </ownedAttribute>
         </packagedElement>
       </packagedElement>
       <packagedElement xmi:type="uml:Package" xmi:id="_0zjE4JODEeWEKYEtRmghUQ" name="log">
@@ -819,6 +822,9 @@
           </ownedAttribute>
           <ownedAttribute xmi:type="uml:Property" xmi:id="_EUJEoJTnEeWM7foaxE7ztg" name="expiryDate" visibility="private">
             <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EDate"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_Sfm4IK7uEeWuq4kx9Uw0TA" name="totalPrice">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#double"/>
           </ownedAttribute>
         </packagedElement>
         <packagedElement xmi:type="uml:Realization" xmi:id="_m_ZiMJbpEeWGQOCCfM2qyw" client="_8ormYJOJEeWEKYEtRmghUQ" supplier="_yo2uEJboEeWGQOCCfM2qyw"/>
