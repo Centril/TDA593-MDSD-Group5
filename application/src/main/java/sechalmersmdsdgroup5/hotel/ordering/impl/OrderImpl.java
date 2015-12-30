@@ -38,6 +38,9 @@ public class OrderImpl implements Order {
 	 */
 	private List<Invoice> invoice;
 
+	private boolean isPaid;
+
+
 	/**
 	 * The cached value of the '{@link #getCampaigns() <em>Campaigns</em>}' reference list.
 	 * <!-- begin-user-doc -->
@@ -148,9 +151,12 @@ public class OrderImpl implements Order {
 	 * @generated
 	 */
 	public boolean isPaid() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return isPaid;
+	}
+
+	@Override
+	public void setIsPaid(boolean value) {
+		isPaid = value;
 	}
 
 	/**
