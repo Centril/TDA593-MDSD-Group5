@@ -39,6 +39,8 @@
           lowerBound="1" eType="#//hotel/facilities/AccessLog"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="taskLog" ordered="false"
           lowerBound="1" eType="#//hotel/log/TaskLog"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="blacklist" ordered="false"
+          upperBound="-1" eType="#//hotel/identities/Identity"/>
     </eClassifiers>
     <eSubpackages name="facilities" nsURI="http:///sechalmersmdsdgroup5/hotel/facilities.ecore"
         nsPrefix="sechalmersmdsdgroup5.hotel.facilities">

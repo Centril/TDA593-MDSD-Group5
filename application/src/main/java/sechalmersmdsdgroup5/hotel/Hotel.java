@@ -14,6 +14,7 @@ import sechalmersmdsdgroup5.hotel.facilities.Key;
 import sechalmersmdsdgroup5.hotel.facilities.Room;
 import sechalmersmdsdgroup5.hotel.facilities.RoomPrototype;
 
+import sechalmersmdsdgroup5.hotel.identities.Identity;
 import sechalmersmdsdgroup5.hotel.log.TaskLog;
 
 import sechalmersmdsdgroup5.hotel.ordering.Campaign;
@@ -49,6 +50,7 @@ import sechalmersmdsdgroup5.hotel.services.ServiceBlueprint;
  *   <li>{@link sechalmersmdsdgroup5.hotel.Hotel#getRoomPrototypes <em>Room Prototypes</em>}</li>
  *   <li>{@link sechalmersmdsdgroup5.hotel.Hotel#getAccessLog <em>Access Log</em>}</li>
  *   <li>{@link sechalmersmdsdgroup5.hotel.Hotel#getTaskLog <em>Task Log</em>}</li>
+ *   <li>{@link sechalmersmdsdgroup5.hotel.Hotel#getBlacklist <em>Blacklist</em>}</li>
  * </ul>
  *
  * @model
@@ -334,5 +336,20 @@ public interface Hotel {
 	 * @generated
 	 */
 	void setTaskLog(TaskLog value);
+
+	/**
+	 * Returns the value of the '<em><b>Blacklist</b></em>' reference list.
+	 * The list contents are of type {@link sechalmersmdsdgroup5.hotel.identities.Identity}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Blacklist</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Blacklist</em>' reference list.
+	 * @model ordered="false"
+	 * @generated
+	 */
+	List<Identity> getBlacklist();
 
 } // Hotel
