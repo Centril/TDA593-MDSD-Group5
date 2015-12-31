@@ -81,7 +81,7 @@ public class RoomPrototypeImpl extends MinimalEObjectImpl.Container implements R
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getStates()
-	 * @generated
+	 * @generated NOT
 	 * @ordered
 	 */
 	protected List<RoomAttribute> states;
