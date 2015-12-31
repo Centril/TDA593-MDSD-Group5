@@ -1,6 +1,6 @@
 package sechalmersmdsdgroup5.hotel.cli;
 
-class Application implements Runnable {
+class App implements Runnable {
 	@Override
 	public void run() {
 	}
