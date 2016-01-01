@@ -122,6 +122,12 @@ public class ServiceImpl extends MinimalEObjectImpl.Container implements Service
 	 * @generated
 	 */
 	protected ServiceImpl() { super(); }
+
+	/**
+	 * Creates a ServiceImpl with price and consumer
+	 * @param price the price of the ServiceImpl
+	 * @param consumer the ServiceConsumer of the ServiceImpl
+     */
 	protected ServiceImpl(Double price, ServiceConsumer consumer) {
 		super();
 		this.setPrice(price);
