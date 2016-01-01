@@ -18,6 +18,7 @@ import sechalmersmdsdgroup5.hotel.payment.Payable;
  *   <li>{@link sechalmersmdsdgroup5.hotel.services.Service#getPrice <em>Price</em>}</li>
  *   <li>{@link sechalmersmdsdgroup5.hotel.services.Service#isPaid <em>Is Paid</em>}</li>
  *   <li>{@link sechalmersmdsdgroup5.hotel.services.Service#getCreationDate <em>Creation Date</em>}</li>
+ *   <li>{@link sechalmersmdsdgroup5.hotel.services.Service#getConsumer <em>Consumer</em>}</li>
  * </ul>
  *
  * @model
@@ -98,5 +99,30 @@ public interface Service extends Payable {
 	 * @generated
 	 */
 	void setCreationDate(Date value);
+
+	/**
+	 * Returns the value of the '<em><b>Consumer</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Consumer</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Consumer</em>' reference.
+	 * @see #setConsumer(ServiceConsumer)
+	 * @model required="true" ordered="false"
+	 * @generated
+	 */
+	ServiceConsumer getConsumer();
+
+	/**
+	 * Sets the value of the '{@link sechalmersmdsdgroup5.hotel.services.Service#getConsumer <em>Consumer</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Consumer</em>' reference.
+	 * @see #getConsumer()
+	 * @generated
+	 */
+	void setConsumer(ServiceConsumer value);
 
 } // Service

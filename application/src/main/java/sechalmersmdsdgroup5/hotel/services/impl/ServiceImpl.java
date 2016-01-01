@@ -8,6 +8,8 @@ import java.util.List;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.BasicInternalEList;
@@ -28,6 +30,7 @@ import sechalmersmdsdgroup5.hotel.services.ServiceConsumer;
  *   <li>{@link sechalmersmdsdgroup5.hotel.services.impl.ServiceImpl#getPrice <em>Price</em>}</li>
  *   <li>{@link sechalmersmdsdgroup5.hotel.services.impl.ServiceImpl#isPaid <em>Is Paid</em>}</li>
  *   <li>{@link sechalmersmdsdgroup5.hotel.services.impl.ServiceImpl#getCreationDate <em>Creation Date</em>}</li>
+ *   <li>{@link sechalmersmdsdgroup5.hotel.services.impl.ServiceImpl#getConsumer <em>Consumer</em>}</li>
  * </ul>
  *
  * @generated
@@ -102,6 +105,16 @@ public class ServiceImpl extends MinimalEObjectImpl.Container implements Service
 	 * @ordered
 	 */
 	protected Date creationDate = CREATION_DATE_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getConsumer() <em>Consumer</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getConsumer()
+	 * @generated
+	 * @ordered
+	 */
+	protected ServiceConsumer consumer;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -200,6 +213,39 @@ public class ServiceImpl extends MinimalEObjectImpl.Container implements Service
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public ServiceConsumer getConsumer() {
+		if (consumer != null && ((EObject)consumer).eIsProxy()) {
+			InternalEObject oldConsumer = (InternalEObject)consumer;
+			consumer = (ServiceConsumer)eResolveProxy(oldConsumer);
+			if (consumer != oldConsumer) {
+			}
+		}
+		return consumer;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ServiceConsumer basicGetConsumer() {
+		return consumer;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setConsumer(ServiceConsumer newConsumer) {
+		consumer = newConsumer;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public double totalPrice() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
@@ -222,6 +268,9 @@ public class ServiceImpl extends MinimalEObjectImpl.Container implements Service
 				return isPaid();
 			case ServicesPackageImpl.SERVICE__CREATION_DATE:
 				return getCreationDate();
+			case ServicesPackageImpl.SERVICE__CONSUMER:
+				if (resolve) return getConsumer();
+				return basicGetConsumer();
 		}
 		return eDynamicGet(featureID, resolve, coreType);
 	}
@@ -248,6 +297,9 @@ public class ServiceImpl extends MinimalEObjectImpl.Container implements Service
 			case ServicesPackageImpl.SERVICE__CREATION_DATE:
 				setCreationDate((Date)newValue);
 				return;
+			case ServicesPackageImpl.SERVICE__CONSUMER:
+				setConsumer((ServiceConsumer)newValue);
+				return;
 		}
 		eDynamicSet(featureID, newValue);
 	}
@@ -272,6 +324,9 @@ public class ServiceImpl extends MinimalEObjectImpl.Container implements Service
 			case ServicesPackageImpl.SERVICE__CREATION_DATE:
 				setCreationDate(CREATION_DATE_EDEFAULT);
 				return;
+			case ServicesPackageImpl.SERVICE__CONSUMER:
+				setConsumer((ServiceConsumer)null);
+				return;
 		}
 		eDynamicUnset(featureID);
 	}
@@ -292,6 +347,8 @@ public class ServiceImpl extends MinimalEObjectImpl.Container implements Service
 				return isPaid != IS_PAID_EDEFAULT;
 			case ServicesPackageImpl.SERVICE__CREATION_DATE:
 				return CREATION_DATE_EDEFAULT == null ? creationDate != null : !CREATION_DATE_EDEFAULT.equals(creationDate);
+			case ServicesPackageImpl.SERVICE__CONSUMER:
+				return consumer != null;
 		}
 		return eDynamicIsSet(featureID);
 	}
