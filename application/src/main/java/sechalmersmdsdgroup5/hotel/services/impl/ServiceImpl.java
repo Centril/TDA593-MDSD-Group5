@@ -124,7 +124,7 @@ public class ServiceImpl extends MinimalEObjectImpl.Container implements Service
 	protected ServiceImpl(Double price, ServiceConsumer consumer) {
 		super();
 		this.setPrice(price);
-		//this.setServiceConsumer(consumer);
+		this.setConsumer(consumer);
 		this.setCreationDate(new Date());
 
 		invoice = new BasicInternalEList<Invoice>(Invoice.class);
