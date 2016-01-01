@@ -12,7 +12,9 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.BasicInternalEList;
 import sechalmersmdsdgroup5.hotel.ordering.Invoice;
+import sechalmersmdsdgroup5.hotel.ordering.OrderingFactory;
 import sechalmersmdsdgroup5.hotel.services.Service;
+import sechalmersmdsdgroup5.hotel.services.ServiceConsumer;
 
 /**
  * <!-- begin-user-doc -->
@@ -106,8 +108,15 @@ public class ServiceImpl extends MinimalEObjectImpl.Container implements Service
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ServiceImpl() {
+	protected ServiceImpl(Double price, ServiceConsumer consumer) {
 		super();
+		this.setPrice(price);
+		//this.setServiceConsumer(consumer);
+		this.setCreationDate(new Date());
+
+		invoice = new BasicInternalEList<Invoice>(Invoice.class);
+		// TODO Create a correct standard invoice for this Service
+		invoice.add(OrderingFactory.INSTANCE.createInvoice());
 	}
 
 	/**
