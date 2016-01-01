@@ -29,6 +29,14 @@ public interface ServicesFactory {
 	Service createService();
 
 	/**
+	 * Factory method for creating ServiceImpl with a price and a consumer specified
+	 * @param price the price of the ServiceImpl
+	 * @param consumer the ServiceConsumer of the ServiceImpl
+	 * @return the created Service
+	 */
+	Service createService(Double price, ServiceConsumer consumer);
+
+	/**
 	 * Returns a new object of class '<em>Service Blueprint</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
