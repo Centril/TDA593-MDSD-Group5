@@ -8,6 +8,7 @@ import org.eclipse.emf.ecore.EFactory;
 import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 
+import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import sechalmersmdsdgroup5.hotel.blacklist.impl.BlacklistPackageImpl;
@@ -135,13 +136,22 @@ public class ServicesPackageImpl extends EPackageImpl {
 	public static final int SERVICE__CREATION_DATE = PaymentPackageImpl.PAYABLE_FEATURE_COUNT + 2;
 
 	/**
+	 * The feature id for the '<em><b>Consumer</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int SERVICE__CONSUMER = PaymentPackageImpl.PAYABLE_FEATURE_COUNT + 3;
+
+	/**
 	 * The number of structural features of the '<em>Service</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	public static final int SERVICE_FEATURE_COUNT = PaymentPackageImpl.PAYABLE_FEATURE_COUNT + 3;
+	public static final int SERVICE_FEATURE_COUNT = PaymentPackageImpl.PAYABLE_FEATURE_COUNT + 4;
 
 	/**
 	 * The meta object id for the '{@link sechalmersmdsdgroup5.hotel.services.ServiceConsumer <em>Service Consumer</em>}' class.
@@ -390,6 +400,20 @@ public class ServicesPackageImpl extends EPackageImpl {
 
 
 	/**
+	 * Returns the meta object for the reference '{@link sechalmersmdsdgroup5.hotel.services.Service#getConsumer <em>Consumer</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Consumer</em>'.
+	 * @see sechalmersmdsdgroup5.hotel.services.Service#getConsumer()
+	 * @see #getService()
+	 * @generated
+	 */
+	public EReference getService_Consumer() {
+		return (EReference)serviceEClass.getEStructuralFeatures().get(3);
+	}
+
+
+	/**
 	 * Returns the meta object for class '{@link sechalmersmdsdgroup5.hotel.services.ServiceConsumer <em>Service Consumer</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -472,6 +496,7 @@ public class ServicesPackageImpl extends EPackageImpl {
 		createEAttribute(serviceEClass, SERVICE__PRICE);
 		createEAttribute(serviceEClass, SERVICE__IS_PAID);
 		createEAttribute(serviceEClass, SERVICE__CREATION_DATE);
+		createEReference(serviceEClass, SERVICE__CONSUMER);
 
 		serviceConsumerEClass = createEClass(SERVICE_CONSUMER);
 
@@ -520,6 +545,7 @@ public class ServicesPackageImpl extends EPackageImpl {
 		initEAttribute(getService_Price(), ecorePackage.getEDouble(), "price", null, 1, 1, Service.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getService_IsPaid(), ecorePackage.getEBoolean(), "isPaid", null, 1, 1, Service.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getService_CreationDate(), ecorePackage.getEDate(), "creationDate", null, 1, 1, Service.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getService_Consumer(), this.getServiceConsumer(), null, "consumer", null, 1, 1, Service.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(serviceConsumerEClass, ServiceConsumer.class, "ServiceConsumer", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -583,6 +609,14 @@ public class ServicesPackageImpl extends EPackageImpl {
 		 * @generated
 		 */
 		public static final EAttribute SERVICE__CREATION_DATE = eINSTANCE.getService_CreationDate();
+
+		/**
+		 * The meta object literal for the '<em><b>Consumer</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		public static final EReference SERVICE__CONSUMER = eINSTANCE.getService_Consumer();
 
 		/**
 		 * The meta object literal for the '{@link sechalmersmdsdgroup5.hotel.services.ServiceConsumer <em>Service Consumer</em>}' class.

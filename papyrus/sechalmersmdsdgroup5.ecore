@@ -163,6 +163,8 @@
             lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="creationDate" ordered="false"
             lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="consumer" ordered="false"
+            lowerBound="1" eType="#//hotel/services/ServiceConsumer"/>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="ServiceConsumer" abstract="true"
           interface="true"/>

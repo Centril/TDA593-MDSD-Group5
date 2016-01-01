@@ -965,6 +965,10 @@
           <ownedAttribute xmi:type="uml:Property" xmi:id="_sIcRMJ9QEeW5UY5BQ7hdQQ" name="creationDate" visibility="private">
             <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EDate"/>
           </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_OBeFAJbpEeWGQOCCfM2qyw" name="consumer" type="_yo2uEJboEeWGQOCCfM2qyw" aggregation="shared" association="_OBbowJbpEeWGQOCCfM2qyw">
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_f3qDcJbpEeWGQOCCfM2qyw" value="1"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_f3qqgJbpEeWGQOCCfM2qyw" value="1"/>
+          </ownedAttribute>
           <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_alDh0KAzEeWDjIMsRDMNyg" client="_4zgHsJRREeWEKYEtRmghUQ" supplier="_BDMDQJ9FEeW5UY5BQ7hdQQ" contract="_BDMDQJ9FEeW5UY5BQ7hdQQ"/>
         </packagedElement>
         <packagedElement xmi:type="uml:Class" xmi:id="_6sH2MJRREeWEKYEtRmghUQ" name="ServiceBlueprint">
@@ -1184,14 +1188,10 @@
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_vkYlkJbqEeWGQOCCfM2qyw" value="*"/>
       </ownedEnd>
     </packagedElement>
-    <packagedElement xmi:type="uml:Association" xmi:id="_OBbowJbpEeWGQOCCfM2qyw" memberEnd="_OBcP0ZbpEeWGQOCCfM2qyw _OBeFAJbpEeWGQOCCfM2qyw" navigableOwnedEnd="_OBeFAJbpEeWGQOCCfM2qyw">
+    <packagedElement xmi:type="uml:Association" xmi:id="_OBbowJbpEeWGQOCCfM2qyw" memberEnd="_OBcP0ZbpEeWGQOCCfM2qyw _OBeFAJbpEeWGQOCCfM2qyw">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_OBbowZbpEeWGQOCCfM2qyw" source="org.eclipse.papyrus">
         <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_OBcP0JbpEeWGQOCCfM2qyw" key="nature" value="UML_Nature"/>
       </eAnnotations>
-      <ownedEnd xmi:type="uml:Property" xmi:id="_OBeFAJbpEeWGQOCCfM2qyw" name="consumes" type="_yo2uEJboEeWGQOCCfM2qyw" aggregation="shared" association="_OBbowJbpEeWGQOCCfM2qyw">
-        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_f3qDcJbpEeWGQOCCfM2qyw"/>
-        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_f3qqgJbpEeWGQOCCfM2qyw" value="*"/>
-      </ownedEnd>
       <ownedEnd xmi:type="uml:Property" xmi:id="_OBcP0ZbpEeWGQOCCfM2qyw" name="consumedBy" type="_4zgHsJRREeWEKYEtRmghUQ" association="_OBbowJbpEeWGQOCCfM2qyw">
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_efWMsJbpEeWGQOCCfM2qyw"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_efXa0JbpEeWGQOCCfM2qyw" value="1"/>
