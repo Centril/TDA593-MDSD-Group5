@@ -7,6 +7,7 @@ import sechalmersmdsdgroup5.hotel.clients.Customer;
 import sechalmersmdsdgroup5.hotel.clients.Guest;
 import sechalmersmdsdgroup5.hotel.facilities.*;
 import sechalmersmdsdgroup5.hotel.facilities.impl.AccessLogImpl;
+import sechalmersmdsdgroup5.hotel.identities.Identity;
 import sechalmersmdsdgroup5.hotel.log.TaskLog;
 import sechalmersmdsdgroup5.hotel.log.impl.TaskLogImpl;
 import sechalmersmdsdgroup5.hotel.ordering.Campaign;
@@ -392,6 +393,17 @@ class HotelImpl implements Hotel {
 	 */
 	public void setTaskLog(TaskLog newTaskLog) {
 		taskLog = newTaskLog;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public List<Identity> getBlacklist() {
+		// @todo fix, should return Blacklist.
+		return null;
 	}
 
 	/**

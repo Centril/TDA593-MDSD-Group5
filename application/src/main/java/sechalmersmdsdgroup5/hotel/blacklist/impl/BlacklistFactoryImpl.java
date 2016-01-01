@@ -11,6 +11,7 @@ import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
 import sechalmersmdsdgroup5.hotel.blacklist.*;
+import sechalmersmdsdgroup5.hotel.blacklist.Blacklist;
 
 /**
  * <!-- begin-user-doc -->
@@ -76,6 +77,7 @@ public class BlacklistFactoryImpl extends EFactoryImpl implements BlacklistFacto
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Blacklist createBlacklist() {
 		BlacklistImpl blacklist = new BlacklistImpl();
 		return blacklist;
