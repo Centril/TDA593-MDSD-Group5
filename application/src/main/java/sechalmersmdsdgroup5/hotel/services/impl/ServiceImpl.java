@@ -135,7 +135,7 @@ public class ServiceImpl extends MinimalEObjectImpl.Container implements Service
 		this.setCreationDate(new Date());
 
 		invoice = new BasicInternalEList<Invoice>(Invoice.class);
-		// TODO Create a correct standard invoice for this Service
+		// TODO Create a correct standard invoice for this Service or check if no invoice should be created at this time
 		invoice.add(OrderingFactory.INSTANCE.createInvoice());
 	}
 
