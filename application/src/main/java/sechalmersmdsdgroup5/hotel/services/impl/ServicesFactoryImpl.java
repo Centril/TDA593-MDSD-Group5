@@ -82,6 +82,14 @@ public class ServicesFactoryImpl extends EFactoryImpl implements ServicesFactory
 	}
 
 	/**
+	 * {@inheritDoc}
+	 */
+	public Service createService(Double price, ServiceConsumer consumer) {
+		ServiceImpl service = new ServiceImpl(price, consumer);
+		return service;
+	}
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated

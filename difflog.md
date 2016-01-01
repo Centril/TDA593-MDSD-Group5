@@ -9,5 +9,9 @@
 + 2015-12-26: Fixed generics in SearchQuery, SearchCriteria<? extends SRT> => SearchCriteria<SRT>.
 + 2015-12-29: Fixed generics in SearchCriteria, SearchResult: ? extends SRT => SRT.
 + 2015-12-29: Added Guest:s to RoomBooking - was omitted by mistake prior.
-+ 2015-12-29: Added Services to RoomBooking - ommitted by mistake prior.
++ 2015-12-29: Added Services to RoomBooking - omitted by mistake prior.
 + 2015-12-29: Added ServiceBlueprints to PreBooking.
++ 2015-12-30: Fixed Client -> Invoice aggregation, now 1:0..*, was a mistake in class diagram.
++ 2015-12-30: Added Invoice.totalPrice, omitted by mistake prior.
++ 2015-12-31: Added blacklist to Hotel interface."
++ 2016-12-01: Fixed relationship between Service and ServiceConsumer, now a classifier and 1 as multiplicity.

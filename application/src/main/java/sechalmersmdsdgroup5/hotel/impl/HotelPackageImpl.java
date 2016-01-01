@@ -240,13 +240,22 @@ public class HotelPackageImpl extends EPackageImpl {
 	public static final int HOTEL__TASK_LOG = 15;
 
 	/**
+	 * The feature id for the '<em><b>Blacklist</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int HOTEL__BLACKLIST = 16;
+
+	/**
 	 * The number of structural features of the '<em>Hotel</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	public static final int HOTEL_FEATURE_COUNT = 16;
+	public static final int HOTEL_FEATURE_COUNT = 17;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -576,6 +585,20 @@ public class HotelPackageImpl extends EPackageImpl {
 	}
 
 	/**
+	 * Returns the meta object for the reference list '{@link sechalmersmdsdgroup5.hotel.Hotel#getBlacklist <em>Blacklist</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Blacklist</em>'.
+	 * @see sechalmersmdsdgroup5.hotel.Hotel#getBlacklist()
+	 * @see #getHotel()
+	 * @generated
+	 */
+	public EReference getHotel_Blacklist() {
+		return (EReference)hotelEClass.getEStructuralFeatures().get(16);
+	}
+
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -622,6 +645,7 @@ public class HotelPackageImpl extends EPackageImpl {
 		createEReference(hotelEClass, HOTEL__ROOM_PROTOTYPES);
 		createEReference(hotelEClass, HOTEL__ACCESS_LOG);
 		createEReference(hotelEClass, HOTEL__TASK_LOG);
+		createEReference(hotelEClass, HOTEL__BLACKLIST);
 	}
 
 	/**
@@ -699,6 +723,7 @@ public class HotelPackageImpl extends EPackageImpl {
 		initEReference(getHotel_RoomPrototypes(), theFacilitiesPackage.getRoomPrototype(), null, "roomPrototypes", null, 0, -1, Hotel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getHotel_AccessLog(), theFacilitiesPackage.getAccessLog(), null, "accessLog", null, 1, 1, Hotel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getHotel_TaskLog(), theLogPackage.getTaskLog(), null, "taskLog", null, 1, 1, Hotel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getHotel_Blacklist(), theIdentitiesPackage.getIdentity(), null, "blacklist", null, 0, -1, Hotel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);
@@ -854,6 +879,14 @@ public class HotelPackageImpl extends EPackageImpl {
 		 * @generated
 		 */
 		public static final EReference HOTEL__TASK_LOG = eINSTANCE.getHotel_TaskLog();
+
+		/**
+		 * The meta object literal for the '<em><b>Blacklist</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		public static final EReference HOTEL__BLACKLIST = eINSTANCE.getHotel_Blacklist();
 
 	}
 

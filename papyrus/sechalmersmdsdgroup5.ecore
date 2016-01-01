@@ -39,6 +39,8 @@
           lowerBound="1" eType="#//hotel/facilities/AccessLog"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="taskLog" ordered="false"
           lowerBound="1" eType="#//hotel/log/TaskLog"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="blacklist" ordered="false"
+          upperBound="-1" eType="#//hotel/identities/Identity"/>
     </eClassifiers>
     <eSubpackages name="facilities" nsURI="http:///sechalmersmdsdgroup5/hotel/facilities.ecore"
         nsPrefix="sechalmersmdsdgroup5.hotel.facilities">
@@ -161,6 +163,8 @@
             lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="creationDate" ordered="false"
             lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="consumer" ordered="false"
+            lowerBound="1" eType="#//hotel/services/ServiceConsumer"/>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="ServiceConsumer" abstract="true"
           interface="true"/>
@@ -219,7 +223,7 @@
     </eSubpackages>
     <eSubpackages name="clients" nsURI="http:///sechalmersmdsdgroup5/hotel/clients.ecore"
         nsPrefix="sechalmersmdsdgroup5.hotel.clients">
-      <eClassifiers xsi:type="ecore:EClass" name="Guest" eSuperTypes="#//hotel/clients/Client">
+      <eClassifiers xsi:type="ecore:EClass" name="Guest" eSuperTypes="#//hotel/clients/Client #//hotel/services/ServiceConsumer">
         <eStructuralFeatures xsi:type="ecore:EReference" name="key" ordered="false"
             lowerBound="1" eType="#//hotel/facilities/Key"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="identity" ordered="false"
@@ -254,8 +258,8 @@
             lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="Client" abstract="true" interface="true">
-        <eStructuralFeatures xsi:type="ecore:EReference" name="invoice" ordered="false"
-            lowerBound="1" eType="#//hotel/ordering/Invoice"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="invoices" ordered="false"
+            upperBound="-1" eType="#//hotel/ordering/Invoice"/>
       </eClassifiers>
     </eSubpackages>
     <eSubpackages name="identities" nsURI="http:///sechalmersmdsdgroup5/hotel/identities.ecore"
@@ -322,7 +326,7 @@
         <eStructuralFeatures xsi:type="ecore:EReference" name="services" ordered="false"
             upperBound="-1" eType="#//hotel/services/ServiceBlueprint"/>
       </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="RoomBooking" eSuperTypes="#//hotel/payment/Payable">
+      <eClassifiers xsi:type="ecore:EClass" name="RoomBooking" eSuperTypes="#//hotel/payment/Payable #//hotel/services/ServiceConsumer">
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="startDate" ordered="false"
             lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="endDate" ordered="false"
@@ -401,6 +405,8 @@
             lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="expiryDate" ordered="false"
             lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="totalPrice" ordered="false"
+            lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
       </eClassifiers>
     </eSubpackages>
     <eSubpackages name="personnel" nsURI="http:///sechalmersmdsdgroup5/hotel/personnel.ecore"
