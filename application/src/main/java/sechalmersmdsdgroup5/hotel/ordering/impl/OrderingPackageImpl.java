@@ -1274,6 +1274,7 @@ public class OrderingPackageImpl extends EPackageImpl {
 		// Add supertypes to classes
 		orderEClass.getESuperTypes().add(thePaymentPackage.getPayable());
 		roomBookingEClass.getESuperTypes().add(thePaymentPackage.getPayable());
+		roomBookingEClass.getESuperTypes().add(theServicesPackage.getServiceConsumer());
 		ordinaryPreOrderEClass.getESuperTypes().add(this.getPreOrder());
 		packagePreOrderEClass.getESuperTypes().add(this.getPreOrder());
 

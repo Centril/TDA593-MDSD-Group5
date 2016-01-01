@@ -11,6 +11,7 @@ import sechalmersmdsdgroup5.hotel.ordering.*;
 
 import sechalmersmdsdgroup5.hotel.ordering.impl.OrderingPackageImpl;
 import sechalmersmdsdgroup5.hotel.payment.Payable;
+import sechalmersmdsdgroup5.hotel.services.ServiceConsumer;
 
 /**
  * <!-- begin-user-doc -->
@@ -98,6 +99,7 @@ public class OrderingSwitch<T> extends Switch<T> {
 				RoomBooking roomBooking = (RoomBooking)theEObject;
 				T result = caseRoomBooking(roomBooking);
 				if (result == null) result = casePayable(roomBooking);
+				if (result == null) result = caseServiceConsumer(roomBooking);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -224,6 +226,21 @@ public class OrderingSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T casePayable(Payable object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Service Consumer</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Service Consumer</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseServiceConsumer(ServiceConsumer object) {
 		return null;
 	}
 

@@ -769,6 +769,7 @@ public class ClientsPackageImpl extends EPackageImpl {
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
+		ServicesPackageImpl theServicesPackage = (ServicesPackageImpl)EPackage.Registry.INSTANCE.getEPackage(ServicesPackageImpl.eNS_URI);
 		FacilitiesPackageImpl theFacilitiesPackage = (FacilitiesPackageImpl)EPackage.Registry.INSTANCE.getEPackage(FacilitiesPackageImpl.eNS_URI);
 		IdentitiesPackageImpl theIdentitiesPackage = (IdentitiesPackageImpl)EPackage.Registry.INSTANCE.getEPackage(IdentitiesPackageImpl.eNS_URI);
 		PaymentPackageImpl thePaymentPackage = (PaymentPackageImpl)EPackage.Registry.INSTANCE.getEPackage(PaymentPackageImpl.eNS_URI);
@@ -780,6 +781,7 @@ public class ClientsPackageImpl extends EPackageImpl {
 
 		// Add supertypes to classes
 		guestEClass.getESuperTypes().add(this.getClient());
+		guestEClass.getESuperTypes().add(theServicesPackage.getServiceConsumer());
 		customerEClass.getESuperTypes().add(this.getClient());
 
 		// Initialize classes and features; add operations and parameters

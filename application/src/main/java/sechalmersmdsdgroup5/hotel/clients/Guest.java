@@ -5,6 +5,7 @@ package sechalmersmdsdgroup5.hotel.clients;
 import sechalmersmdsdgroup5.hotel.facilities.Key;
 
 import sechalmersmdsdgroup5.hotel.identities.RealPerson;
+import sechalmersmdsdgroup5.hotel.services.ServiceConsumer;
 
 /**
  * <!-- begin-user-doc -->
@@ -22,7 +23,7 @@ import sechalmersmdsdgroup5.hotel.identities.RealPerson;
  * @model
  * @generated
  */
-public interface Guest extends Client {
+public interface Guest extends Client, ServiceConsumer {
 	/**
 	 * Returns the value of the '<em><b>Key</b></em>' reference.
 	 * <!-- begin-user-doc -->

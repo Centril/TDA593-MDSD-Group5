@@ -12,6 +12,7 @@ import org.eclipse.emf.ecore.EObject;
 import sechalmersmdsdgroup5.hotel.clients.*;
 
 import sechalmersmdsdgroup5.hotel.clients.impl.ClientsPackageImpl;
+import sechalmersmdsdgroup5.hotel.services.ServiceConsumer;
 
 /**
  * <!-- begin-user-doc -->
@@ -86,6 +87,10 @@ public class ClientsAdapterFactory extends AdapterFactoryImpl {
 				return createClientAdapter();
 			}
 			@Override
+			public Adapter caseServiceConsumer(ServiceConsumer object) {
+				return createServiceConsumerAdapter();
+			}
+			@Override
 			public Adapter defaultCase(EObject object) {
 				return createEObjectAdapter();
 			}
@@ -144,6 +149,20 @@ public class ClientsAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createClientAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link sechalmersmdsdgroup5.hotel.services.ServiceConsumer <em>Service Consumer</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see sechalmersmdsdgroup5.hotel.services.ServiceConsumer
+	 * @generated
+	 */
+	public Adapter createServiceConsumerAdapter() {
 		return null;
 	}
 
