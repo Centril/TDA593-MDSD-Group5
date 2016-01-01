@@ -267,6 +267,7 @@
           <ownedAttribute xmi:type="uml:Property" xmi:id="_i8pT4JboEeWGQOCCfM2qyw" name="key" type="_ChtUMJQXEeWEKYEtRmghUQ"/>
           <ownedAttribute xmi:type="uml:Property" xmi:id="_pKxU0JOMEeWEKYEtRmghUQ" name="identity" type="_vWo3oJOAEeWEKYEtRmghUQ" aggregation="shared" association="_pKwtwJOMEeWEKYEtRmghUQ"/>
           <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_pAv-EKAtEeWRM8HqbnnQEA" client="_st4FoJOAEeWEKYEtRmghUQ" supplier="_0CgQwKAsEeWRM8HqbnnQEA" contract="_0CgQwKAsEeWRM8HqbnnQEA"/>
+          <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_26mtQLCpEeWrNd_3evJjTg" client="_st4FoJOAEeWEKYEtRmghUQ" supplier="_yo2uEJboEeWGQOCCfM2qyw" contract="_yo2uEJboEeWGQOCCfM2qyw"/>
         </packagedElement>
         <packagedElement xmi:type="uml:Class" xmi:id="_7PSgoJOAEeWEKYEtRmghUQ" name="Customer">
           <ownedAttribute xmi:type="uml:Property" xmi:id="_5ipv4JRVEeWEKYEtRmghUQ" name="paymentMethod" visibility="private" type="_90_gwJqVEeWXppCtG_WnKw"/>
@@ -278,7 +279,6 @@
           </ownedAttribute>
           <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_no9EsKAtEeWRM8HqbnnQEA" client="_7PSgoJOAEeWEKYEtRmghUQ" supplier="_0CgQwKAsEeWRM8HqbnnQEA" contract="_0CgQwKAsEeWRM8HqbnnQEA"/>
         </packagedElement>
-        <packagedElement xmi:type="uml:Realization" xmi:id="_DwDfkJbpEeWGQOCCfM2qyw" client="_st4FoJOAEeWEKYEtRmghUQ" supplier="_yo2uEJboEeWGQOCCfM2qyw"/>
         <packagedElement xmi:type="uml:Class" xmi:id="_-3k78JqREeWXppCtG_WnKw" name="Address">
           <ownedAttribute xmi:type="uml:Property" xmi:id="_BOMOAJqSEeWXppCtG_WnKw" name="street">
             <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
@@ -782,6 +782,7 @@
             <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_y709AK5YEeWv27QKdYHuVQ" value="*"/>
           </ownedAttribute>
           <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_QkrpEKAzEeWDjIMsRDMNyg" client="_8ormYJOJEeWEKYEtRmghUQ" supplier="_BDMDQJ9FEeW5UY5BQ7hdQQ" contract="_BDMDQJ9FEeW5UY5BQ7hdQQ"/>
+          <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_rKk0wLCpEeWrNd_3evJjTg" client="_8ormYJOJEeWEKYEtRmghUQ" supplier="_yo2uEJboEeWGQOCCfM2qyw" contract="_yo2uEJboEeWGQOCCfM2qyw"/>
         </packagedElement>
         <packagedElement xmi:type="uml:Class" xmi:id="_2hOYgJRQEeWEKYEtRmghUQ" name="Campaign" visibility="public">
           <ownedAttribute xmi:type="uml:Property" xmi:id="_LTLTUJTnEeWM7foaxE7ztg" name="name" visibility="private">
@@ -831,7 +832,6 @@
             <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#double"/>
           </ownedAttribute>
         </packagedElement>
-        <packagedElement xmi:type="uml:Realization" xmi:id="_m_ZiMJbpEeWGQOCCfM2qyw" client="_8ormYJOJEeWEKYEtRmghUQ" supplier="_yo2uEJboEeWGQOCCfM2qyw"/>
         <packagedElement xmi:type="uml:Interface" xmi:id="_rJ4SEJm8EeW2JPAtqMJHLg" name="IOrder">
           <ownedOperation xmi:type="uml:Operation" xmi:id="_FhjwcJm9EeW2JPAtqMJHLg" name="createBooking">
             <ownedParameter xmi:type="uml:Parameter" xmi:id="_FhjwcZm9EeW2JPAtqMJHLg" name="preBooking" type="_bRmzAJxHEeW5eMToz_1RuA"/>
