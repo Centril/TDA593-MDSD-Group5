@@ -31,11 +31,9 @@ public class CheckInCheckOut implements ICheckInCheckOut {
     public boolean checkOut(Guest guest, RoomBooking booking) {
         if (booking.getGuests().contains(guest)) {
             if ((new Date()).getTime() >= booking.getEndDate().getTime()) {
-                // TODO make sure this, via some config, is not neccesarily a thing that happens.
-                // Add penalties by adding a service to the booking that has to be paid
-                // Should have paramters: serviceConsumer, time?, price, name?
-                Service overextendService = ServicesFactory.INSTANCE.createService();
-                // TODO relate this service to the booking or guest in some way
+                // The price 100.0 is just an arbitrary number, should perhaps exist in some config at a later date.
+                Service overextendService = ServicesFactory.INSTANCE.createService(100.0, booking);
+                booking.getServices().add(overextendService);
             }
             booking.setCheckoutTime(new Date());
             return true;
