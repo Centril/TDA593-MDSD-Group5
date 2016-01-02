@@ -15,5 +15,7 @@
 + 2015-12-30: Added Invoice.totalPrice, omitted by mistake prior.
 + 2015-12-31: Added blacklist to Hotel interface."
 + 2016-01-02: Fix blacklist method in hotel interface"
++ 2016-01-02: Add reason parameter to addIdentityToBlacklist Sysop
+
 
 

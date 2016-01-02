@@ -723,6 +723,9 @@
         <packagedElement xmi:type="uml:Interface" xmi:id="_m6QDYJnREeWsldw0CEc3ng" name="IBlacklist">
           <ownedOperation xmi:type="uml:Operation" xmi:id="_ymbWoJnREeWsldw0CEc3ng" name="addToBlackList">
             <ownedParameter xmi:type="uml:Parameter" xmi:id="_9N3PYJnREeWsldw0CEc3ng" name="identity" type="_8icKkJOAEeWEKYEtRmghUQ"/>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_O-k5ALFtEeWRduaQI8tYwQ" name="reason">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+            </ownedParameter>
           </ownedOperation>
           <ownedOperation xmi:type="uml:Operation" xmi:id="_zK3gcJnREeWsldw0CEc3ng" name="removeFromBlackList">
             <ownedParameter xmi:type="uml:Parameter" xmi:id="_Ast74JnSEeWsldw0CEc3ng" name="identity" type="_8icKkJOAEeWEKYEtRmghUQ"/>
