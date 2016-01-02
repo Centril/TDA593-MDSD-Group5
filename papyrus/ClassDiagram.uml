@@ -257,9 +257,9 @@
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="_uUupMJnXEeWXgOnGO-OFAA" name="accessLog" type="_G4u1YJnWEeWsldw0CEc3ng"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="_F0ZWMJpoEeWv8co7MiJhGA" name="taskLog" type="_D__r0JOCEeWEKYEtRmghUQ"/>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_lDhiYK-2EeWOgJF2CrmSRg" name="blacklist" type="_8icKkJOAEeWEKYEtRmghUQ">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_oTL8UK-2EeWOgJF2CrmSRg"/>
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_oTNKcK-2EeWOgJF2CrmSRg" value="*"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_lDhiYK-2EeWOgJF2CrmSRg" name="blacklist" type="_aHGr0JRREeWEKYEtRmghUQ">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_oTL8UK-2EeWOgJF2CrmSRg" value="1"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_oTNKcK-2EeWOgJF2CrmSRg" value="1"/>
         </ownedAttribute>
       </packagedElement>
       <packagedElement xmi:type="uml:Package" xmi:id="_mtmlQJOAEeWEKYEtRmghUQ" name="clients">

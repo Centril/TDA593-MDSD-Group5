@@ -96,25 +96,7 @@ public class BlacklistPackageImpl extends EPackageImpl {
 	 * @see sechalmersmdsdgroup5.hotel.blacklist.impl.BlacklistPackageImpl#getBlacklist()
 	 * @generated
 	 */
-	public static final int BLACKLIST = 0;
-
-	/**
-	 * The feature id for the '<em><b>Items</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int BLACKLIST__ITEMS = 0;
-
-	/**
-	 * The number of structural features of the '<em>Blacklist</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int BLACKLIST_FEATURE_COUNT = 1;
+	public static final int BLACKLIST = 2;
 
 	/**
 	 * The meta object id for the '{@link sechalmersmdsdgroup5.hotel.blacklist.impl.BlacklistItemImpl <em>Item</em>}' class.
@@ -124,7 +106,7 @@ public class BlacklistPackageImpl extends EPackageImpl {
 	 * @see sechalmersmdsdgroup5.hotel.blacklist.impl.BlacklistPackageImpl#getBlacklistItem()
 	 * @generated
 	 */
-	public static final int BLACKLIST_ITEM = 1;
+	public static final int BLACKLIST_ITEM = 0;
 
 	/**
 	 * The feature id for the '<em><b>Identity</b></em>' reference.
@@ -179,7 +161,7 @@ public class BlacklistPackageImpl extends EPackageImpl {
 	 * @see sechalmersmdsdgroup5.hotel.blacklist.impl.BlacklistPackageImpl#getIBlacklist()
 	 * @generated
 	 */
-	public static final int IBLACKLIST = 2;
+	public static final int IBLACKLIST = 1;
 
 	/**
 	 * The number of structural features of the '<em>IBlacklist</em>' class.
@@ -189,6 +171,24 @@ public class BlacklistPackageImpl extends EPackageImpl {
 	 * @ordered
 	 */
 	public static final int IBLACKLIST_FEATURE_COUNT = 0;
+
+	/**
+	 * The feature id for the '<em><b>Items</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int BLACKLIST__ITEMS = 0;
+
+	/**
+	 * The number of structural features of the '<em>Blacklist</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int BLACKLIST_FEATURE_COUNT = 1;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -442,9 +442,6 @@ public class BlacklistPackageImpl extends EPackageImpl {
 		isCreated = true;
 
 		// Create classes and their features
-		blacklistEClass = createEClass(BLACKLIST);
-		createEReference(blacklistEClass, BLACKLIST__ITEMS);
-
 		blacklistItemEClass = createEClass(BLACKLIST_ITEM);
 		createEReference(blacklistItemEClass, BLACKLIST_ITEM__IDENTITY);
 		createEAttribute(blacklistItemEClass, BLACKLIST_ITEM__REASON);
@@ -452,6 +449,9 @@ public class BlacklistPackageImpl extends EPackageImpl {
 		createEAttribute(blacklistItemEClass, BLACKLIST_ITEM__EXPIRY);
 
 		iBlacklistEClass = createEClass(IBLACKLIST);
+
+		blacklistEClass = createEClass(BLACKLIST);
+		createEReference(blacklistEClass, BLACKLIST__ITEMS);
 	}
 
 	/**
@@ -487,9 +487,6 @@ public class BlacklistPackageImpl extends EPackageImpl {
 		// Add supertypes to classes
 
 		// Initialize classes and features; add operations and parameters
-		initEClass(blacklistEClass, Blacklist.class, "Blacklist", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getBlacklist_Items(), this.getBlacklistItem(), null, "items", null, 0, -1, Blacklist.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-
 		initEClass(blacklistItemEClass, BlacklistItem.class, "BlacklistItem", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getBlacklistItem_Identity(), theIdentitiesPackage.getIdentity(), null, "identity", null, 1, 1, BlacklistItem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getBlacklistItem_Reason(), ecorePackage.getEString(), "reason", null, 1, 1, BlacklistItem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -503,6 +500,9 @@ public class BlacklistPackageImpl extends EPackageImpl {
 
 		op = addEOperation(iBlacklistEClass, null, "removeFromBlackList", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, theIdentitiesPackage.getIdentity(), "identity", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
+		initEClass(blacklistEClass, Blacklist.class, "Blacklist", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getBlacklist_Items(), this.getBlacklistItem(), null, "items", null, 0, -1, Blacklist.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 	}
 
 	/**

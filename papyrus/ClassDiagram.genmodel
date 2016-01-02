@@ -437,6 +437,28 @@
               createChild="true" ecoreFeature="ecore:EReference sechalmersmdsdgroup5.ecore#//hotel/log/TaskLog/tasks"/>
         </genClasses>
       </nestedGenPackages>
+      <nestedGenPackages xsi:type="genmodel:GenPackage" prefix="Blacklist" basePackage="sechalmersmdsdgroup5.hotel"
+          disposableProviderFactory="true" ecorePackage="sechalmersmdsdgroup5.ecore#//hotel/blacklist">
+        <genClasses xsi:type="genmodel:GenClass" ecoreClass="sechalmersmdsdgroup5.ecore#//hotel/blacklist/BlacklistItem">
+          <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+              propertySortChoices="true" ecoreFeature="ecore:EReference sechalmersmdsdgroup5.ecore#//hotel/blacklist/BlacklistItem/identity"/>
+          <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute sechalmersmdsdgroup5.ecore#//hotel/blacklist/BlacklistItem/reason"/>
+          <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute sechalmersmdsdgroup5.ecore#//hotel/blacklist/BlacklistItem/date"/>
+          <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute sechalmersmdsdgroup5.ecore#//hotel/blacklist/BlacklistItem/expiry"/>
+        </genClasses>
+        <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="sechalmersmdsdgroup5.ecore#//hotel/blacklist/IBlacklist">
+          <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="sechalmersmdsdgroup5.ecore#//hotel/blacklist/IBlacklist/addToBlackList">
+            <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="sechalmersmdsdgroup5.ecore#//hotel/blacklist/IBlacklist/addToBlackList/identity"/>
+          </genOperations>
+          <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="sechalmersmdsdgroup5.ecore#//hotel/blacklist/IBlacklist/removeFromBlackList">
+            <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="sechalmersmdsdgroup5.ecore#//hotel/blacklist/IBlacklist/removeFromBlackList/identity"/>
+          </genOperations>
+        </genClasses>
+        <genClasses xsi:type="genmodel:GenClass" ecoreClass="sechalmersmdsdgroup5.ecore#//hotel/blacklist/Blacklist">
+          <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+              propertySortChoices="true" ecoreFeature="ecore:EReference sechalmersmdsdgroup5.ecore#//hotel/blacklist/Blacklist/items"/>
+        </genClasses>
+      </nestedGenPackages>
       <nestedGenPackages xsi:type="genmodel:GenPackage" prefix="Inventory" basePackage="sechalmersmdsdgroup5.hotel"
           disposableProviderFactory="true" ecorePackage="sechalmersmdsdgroup5.ecore#//hotel/inventory">
         <genClasses xsi:type="genmodel:GenClass" ecoreClass="sechalmersmdsdgroup5.ecore#//hotel/inventory/Inventory">
@@ -539,28 +561,6 @@
         <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="sechalmersmdsdgroup5.ecore#//hotel/search/BiPredicate">
           <genTypeParameters ecoreTypeParameter="sechalmersmdsdgroup5.ecore#//hotel/search/BiPredicate/BPT1"/>
           <genTypeParameters ecoreTypeParameter="sechalmersmdsdgroup5.ecore#//hotel/search/BiPredicate/BPT2"/>
-        </genClasses>
-      </nestedGenPackages>
-      <nestedGenPackages xsi:type="genmodel:GenPackage" prefix="Blacklist" basePackage="sechalmersmdsdgroup5.hotel"
-          disposableProviderFactory="true" ecorePackage="sechalmersmdsdgroup5.ecore#//hotel/blacklist">
-        <genClasses xsi:type="genmodel:GenClass" ecoreClass="sechalmersmdsdgroup5.ecore#//hotel/blacklist/Blacklist">
-          <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
-              propertySortChoices="true" ecoreFeature="ecore:EReference sechalmersmdsdgroup5.ecore#//hotel/blacklist/Blacklist/items"/>
-        </genClasses>
-        <genClasses xsi:type="genmodel:GenClass" ecoreClass="sechalmersmdsdgroup5.ecore#//hotel/blacklist/BlacklistItem">
-          <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
-              propertySortChoices="true" ecoreFeature="ecore:EReference sechalmersmdsdgroup5.ecore#//hotel/blacklist/BlacklistItem/identity"/>
-          <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute sechalmersmdsdgroup5.ecore#//hotel/blacklist/BlacklistItem/reason"/>
-          <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute sechalmersmdsdgroup5.ecore#//hotel/blacklist/BlacklistItem/date"/>
-          <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute sechalmersmdsdgroup5.ecore#//hotel/blacklist/BlacklistItem/expiry"/>
-        </genClasses>
-        <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="sechalmersmdsdgroup5.ecore#//hotel/blacklist/IBlacklist">
-          <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="sechalmersmdsdgroup5.ecore#//hotel/blacklist/IBlacklist/addToBlackList">
-            <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="sechalmersmdsdgroup5.ecore#//hotel/blacklist/IBlacklist/addToBlackList/identity"/>
-          </genOperations>
-          <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="sechalmersmdsdgroup5.ecore#//hotel/blacklist/IBlacklist/removeFromBlackList">
-            <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="sechalmersmdsdgroup5.ecore#//hotel/blacklist/IBlacklist/removeFromBlackList/identity"/>
-          </genOperations>
         </genClasses>
       </nestedGenPackages>
     </nestedGenPackages>

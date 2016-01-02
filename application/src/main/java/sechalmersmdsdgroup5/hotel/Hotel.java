@@ -4,6 +4,7 @@ package sechalmersmdsdgroup5.hotel;
 
 import java.util.List;
 
+import sechalmersmdsdgroup5.hotel.blacklist.Blacklist;
 import sechalmersmdsdgroup5.hotel.clients.Customer;
 import sechalmersmdsdgroup5.hotel.clients.Guest;
 
@@ -13,8 +14,6 @@ import sechalmersmdsdgroup5.hotel.facilities.EmployeeArea;
 import sechalmersmdsdgroup5.hotel.facilities.Key;
 import sechalmersmdsdgroup5.hotel.facilities.Room;
 import sechalmersmdsdgroup5.hotel.facilities.RoomPrototype;
-
-import sechalmersmdsdgroup5.hotel.identities.Identity;
 import sechalmersmdsdgroup5.hotel.log.TaskLog;
 
 import sechalmersmdsdgroup5.hotel.ordering.Campaign;
@@ -338,18 +337,28 @@ public interface Hotel {
 	void setTaskLog(TaskLog value);
 
 	/**
-	 * Returns the value of the '<em><b>Blacklist</b></em>' reference list.
-	 * The list contents are of type {@link sechalmersmdsdgroup5.hotel.identities.Identity}.
+	 * Returns the value of the '<em><b>Blacklist</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Blacklist</em>' reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Blacklist</em>' reference list.
-	 * @model ordered="false"
+	 * @return the value of the '<em>Blacklist</em>' reference.
+	 * @see #setBlacklist(Blacklist)
+	 * @model required="true" ordered="false"
 	 * @generated
 	 */
-	List<Identity> getBlacklist();
+	Blacklist getBlacklist();
+
+	/**
+	 * Sets the value of the '{@link sechalmersmdsdgroup5.hotel.Hotel#getBlacklist <em>Blacklist</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Blacklist</em>' reference.
+	 * @see #getBlacklist()
+	 * @generated
+	 */
+	void setBlacklist(Blacklist value);
 
 } // Hotel
