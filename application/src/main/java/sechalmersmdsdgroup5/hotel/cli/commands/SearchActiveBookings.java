@@ -9,14 +9,14 @@ import sechalmersmdsdgroup5.hotel.search.impl.Search;
 
 import java.util.Date;
 
-public class SearchAvailableRooms implements Command.Consuming<Hotel>, IdentifiableCommand<Hotel, Void> {
+public class SearchActiveBookings implements Command.Consuming<Hotel>, IdentifiableCommand<Hotel, Void> {
 	@Override
 	public void accept( IOHelper io, Hotel hotel ) {
-		io.info( "Searching for available rooms..." ).newline()
-			.io( () -> new Search( hotel ).searchAvailableRooms( date( "from date:", io ), date( "to date:", io ) ),
-				rooms -> io.info( "Found rooms." ).newline().io( () -> {
-					if ( rooms.isEmpty() ) io.newline( "No rooms found." );
-					else rooms.forEach( io::paragraph );
+		io.info( "Searching for active bookings..." ).newline()
+			.io( () -> new Search( hotel ).searchActiveBookings( date( "from date:", io ), date( "to date:", io ) ),
+				bookings -> io.info( "Found bookings." ).newline().io( () -> {
+					if ( bookings.isEmpty() ) io.newline( "No bookings found." );
+					else bookings.forEach( io::paragraph );
 				} ) );
 	}
 
@@ -26,11 +26,11 @@ public class SearchAvailableRooms implements Command.Consuming<Hotel>, Identifia
 
 	@Override
 	public String help() {
-		return "searches for available rooms in hotel.";
+		return "searches for active bookings in hotel.";
 	}
 
 	@Override
 	public String getIdentifier() {
-		return "search-available-rooms";
+		return "search-active-bookings";
 	}
 }
