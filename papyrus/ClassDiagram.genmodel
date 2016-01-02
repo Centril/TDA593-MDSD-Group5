@@ -253,14 +253,14 @@
       </nestedGenPackages>
       <nestedGenPackages xsi:type="genmodel:GenPackage" prefix="Identities" basePackage="sechalmersmdsdgroup5.hotel"
           disposableProviderFactory="true" ecorePackage="sechalmersmdsdgroup5.ecore#//hotel/identities">
-        <genClasses xsi:type="genmodel:GenClass" ecoreClass="sechalmersmdsdgroup5.ecore#//hotel/identities/RealPerson">
-          <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute sechalmersmdsdgroup5.ecore#//hotel/identities/RealPerson/age"/>
-          <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute sechalmersmdsdgroup5.ecore#//hotel/identities/RealPerson/citizenship"/>
-        </genClasses>
-        <genClasses xsi:type="genmodel:GenClass" ecoreClass="sechalmersmdsdgroup5.ecore#//hotel/identities/Organisation"/>
         <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="sechalmersmdsdgroup5.ecore#//hotel/identities/Identity">
           <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute sechalmersmdsdgroup5.ecore#//hotel/identities/Identity/name"/>
           <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute sechalmersmdsdgroup5.ecore#//hotel/identities/Identity/idNumber"/>
+        </genClasses>
+        <genClasses xsi:type="genmodel:GenClass" ecoreClass="sechalmersmdsdgroup5.ecore#//hotel/identities/Organisation"/>
+        <genClasses xsi:type="genmodel:GenClass" ecoreClass="sechalmersmdsdgroup5.ecore#//hotel/identities/RealPerson">
+          <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute sechalmersmdsdgroup5.ecore#//hotel/identities/RealPerson/age"/>
+          <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute sechalmersmdsdgroup5.ecore#//hotel/identities/RealPerson/citizenship"/>
         </genClasses>
       </nestedGenPackages>
       <nestedGenPackages xsi:type="genmodel:GenPackage" prefix="Ordering" basePackage="sechalmersmdsdgroup5.hotel"

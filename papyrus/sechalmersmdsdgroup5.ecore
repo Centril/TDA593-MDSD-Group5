@@ -223,7 +223,7 @@
     </eSubpackages>
     <eSubpackages name="clients" nsURI="http:///sechalmersmdsdgroup5/hotel/clients.ecore"
         nsPrefix="sechalmersmdsdgroup5.hotel.clients">
-      <eClassifiers xsi:type="ecore:EClass" name="Guest" eSuperTypes="#//hotel/clients/Client #//hotel/services/ServiceConsumer">
+      <eClassifiers xsi:type="ecore:EClass" name="Guest" eSuperTypes="#//hotel/identities/RealPerson #//hotel/clients/Client #//hotel/services/ServiceConsumer">
         <eStructuralFeatures xsi:type="ecore:EReference" name="key" ordered="false"
             lowerBound="1" eType="#//hotel/facilities/Key"/>
       </eClassifiers>
@@ -262,17 +262,17 @@
     </eSubpackages>
     <eSubpackages name="identities" nsURI="http:///sechalmersmdsdgroup5/hotel/identities.ecore"
         nsPrefix="sechalmersmdsdgroup5.hotel.identities">
-      <eClassifiers xsi:type="ecore:EClass" name="RealPerson" eSuperTypes="#//hotel/identities/Identity">
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="age" ordered="false"
-            lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="citizenship" ordered="false"
-            lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="Organisation" eSuperTypes="#//hotel/identities/Identity"/>
       <eClassifiers xsi:type="ecore:EClass" name="Identity" abstract="true">
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" ordered="false"
             lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="idNumber" ordered="false"
+            lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="Organisation" eSuperTypes="#//hotel/identities/Identity"/>
+      <eClassifiers xsi:type="ecore:EClass" name="RealPerson" eSuperTypes="#//hotel/identities/Identity">
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="age" ordered="false"
+            lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="citizenship" ordered="false"
             lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       </eClassifiers>
     </eSubpackages>
@@ -409,7 +409,7 @@
     </eSubpackages>
     <eSubpackages name="personnel" nsURI="http:///sechalmersmdsdgroup5/hotel/personnel.ecore"
         nsPrefix="sechalmersmdsdgroup5.hotel.personnel">
-      <eClassifiers xsi:type="ecore:EClass" name="Employee">
+      <eClassifiers xsi:type="ecore:EClass" name="Employee" eSuperTypes="#//hotel/identities/RealPerson">
         <eStructuralFeatures xsi:type="ecore:EReference" name="schedule" ordered="false"
             lowerBound="1" eType="#//hotel/schedule/Schedule"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="key" ordered="false"

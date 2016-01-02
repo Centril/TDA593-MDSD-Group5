@@ -94,7 +94,7 @@ public class IdentitiesPackageImpl extends EPackageImpl {
 	 * @see sechalmersmdsdgroup5.hotel.identities.impl.IdentitiesPackageImpl#getIdentity()
 	 * @generated
 	 */
-	public static final int IDENTITY = 2;
+	public static final int IDENTITY = 0;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -131,7 +131,7 @@ public class IdentitiesPackageImpl extends EPackageImpl {
 	 * @see sechalmersmdsdgroup5.hotel.identities.impl.IdentitiesPackageImpl#getRealPerson()
 	 * @generated
 	 */
-	public static final int REAL_PERSON = 0;
+	public static final int REAL_PERSON = 2;
 
 	/**
 	 * The meta object id for the '{@link sechalmersmdsdgroup5.hotel.identities.impl.OrganisationImpl <em>Organisation</em>}' class.
@@ -142,6 +142,33 @@ public class IdentitiesPackageImpl extends EPackageImpl {
 	 * @generated
 	 */
 	public static final int ORGANISATION = 1;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int ORGANISATION__NAME = IDENTITY__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Id Number</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int ORGANISATION__ID_NUMBER = IDENTITY__ID_NUMBER;
+
+	/**
+	 * The number of structural features of the '<em>Organisation</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int ORGANISATION_FEATURE_COUNT = IDENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -187,33 +214,6 @@ public class IdentitiesPackageImpl extends EPackageImpl {
 	 * @ordered
 	 */
 	public static final int REAL_PERSON_FEATURE_COUNT = IDENTITY_FEATURE_COUNT + 2;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int ORGANISATION__NAME = IDENTITY__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Id Number</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int ORGANISATION__ID_NUMBER = IDENTITY__ID_NUMBER;
-
-	/**
-	 * The number of structural features of the '<em>Organisation</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int ORGANISATION_FEATURE_COUNT = IDENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -455,15 +455,15 @@ public class IdentitiesPackageImpl extends EPackageImpl {
 		isCreated = true;
 
 		// Create classes and their features
-		realPersonEClass = createEClass(REAL_PERSON);
-		createEAttribute(realPersonEClass, REAL_PERSON__AGE);
-		createEAttribute(realPersonEClass, REAL_PERSON__CITIZENSHIP);
-
-		organisationEClass = createEClass(ORGANISATION);
-
 		identityEClass = createEClass(IDENTITY);
 		createEAttribute(identityEClass, IDENTITY__NAME);
 		createEAttribute(identityEClass, IDENTITY__ID_NUMBER);
+
+		organisationEClass = createEClass(ORGANISATION);
+
+		realPersonEClass = createEClass(REAL_PERSON);
+		createEAttribute(realPersonEClass, REAL_PERSON__AGE);
+		createEAttribute(realPersonEClass, REAL_PERSON__CITIZENSHIP);
 	}
 
 	/**
@@ -494,19 +494,19 @@ public class IdentitiesPackageImpl extends EPackageImpl {
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		realPersonEClass.getESuperTypes().add(this.getIdentity());
 		organisationEClass.getESuperTypes().add(this.getIdentity());
+		realPersonEClass.getESuperTypes().add(this.getIdentity());
 
 		// Initialize classes and features; add operations and parameters
-		initEClass(realPersonEClass, RealPerson.class, "RealPerson", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getRealPerson_Age(), ecorePackage.getEInt(), "age", null, 1, 1, RealPerson.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getRealPerson_Citizenship(), ecorePackage.getEString(), "citizenship", null, 1, 1, RealPerson.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-
-		initEClass(organisationEClass, Organisation.class, "Organisation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
 		initEClass(identityEClass, Identity.class, "Identity", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getIdentity_Name(), ecorePackage.getEString(), "name", null, 1, 1, Identity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getIdentity_IdNumber(), ecorePackage.getEString(), "idNumber", null, 1, 1, Identity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+
+		initEClass(organisationEClass, Organisation.class, "Organisation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(realPersonEClass, RealPerson.class, "RealPerson", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getRealPerson_Age(), ecorePackage.getEInt(), "age", null, 1, 1, RealPerson.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getRealPerson_Citizenship(), ecorePackage.getEString(), "citizenship", null, 1, 1, RealPerson.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 	}
 
 	/**
