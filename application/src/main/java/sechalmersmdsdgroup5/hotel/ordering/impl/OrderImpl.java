@@ -6,6 +6,7 @@ import sechalmersmdsdgroup5.hotel.ordering.Campaign;
 import sechalmersmdsdgroup5.hotel.ordering.Invoice;
 import sechalmersmdsdgroup5.hotel.ordering.Order;
 import sechalmersmdsdgroup5.hotel.ordering.RoomBooking;
+import sechalmersmdsdgroup5.hotel.utils.Functional;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -129,20 +130,18 @@ public class OrderImpl implements Order {
 	 * @generated
 	 */
 	public double totalPrice() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return calculatePrice();
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
+	 * This calculates the price of the order, including campaigns, services and bookings.
 	 */
 	public double calculatePrice() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		double total = 0;
+		for (RoomBooking booking: this.getBookings()) {
+			total += booking.totalPrice();
+		}
+		return Functional.foldl(campaigns, total, (price, campaign) -> campaign.discount(this, price ));
 	}
 
 	/**
