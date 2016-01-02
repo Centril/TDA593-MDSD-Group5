@@ -3,9 +3,7 @@
 package sechalmersmdsdgroup5.hotel.personnel;
 
 import sechalmersmdsdgroup5.hotel.facilities.Key;
-
 import sechalmersmdsdgroup5.hotel.identities.RealPerson;
-
 import sechalmersmdsdgroup5.hotel.schedule.Schedule;
 
 /**
@@ -19,14 +17,13 @@ import sechalmersmdsdgroup5.hotel.schedule.Schedule;
  * <ul>
  *   <li>{@link sechalmersmdsdgroup5.hotel.personnel.Employee#getSchedule <em>Schedule</em>}</li>
  *   <li>{@link sechalmersmdsdgroup5.hotel.personnel.Employee#getKey <em>Key</em>}</li>
- *   <li>{@link sechalmersmdsdgroup5.hotel.personnel.Employee#getIdentity <em>Identity</em>}</li>
  *   <li>{@link sechalmersmdsdgroup5.hotel.personnel.Employee#getRole <em>Role</em>}</li>
  * </ul>
  *
  * @model
  * @generated
  */
-public interface Employee {
+public interface Employee extends RealPerson {
 	/**
 	 * Returns the value of the '<em><b>Schedule</b></em>' reference.
 	 * <!-- begin-user-doc -->
@@ -76,31 +73,6 @@ public interface Employee {
 	 * @generated
 	 */
 	void setKey(Key value);
-
-	/**
-	 * Returns the value of the '<em><b>Identity</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Identity</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Identity</em>' reference.
-	 * @see #setIdentity(RealPerson)
-	 * @model required="true" ordered="false"
-	 * @generated
-	 */
-	RealPerson getIdentity();
-
-	/**
-	 * Sets the value of the '{@link sechalmersmdsdgroup5.hotel.personnel.Employee#getIdentity <em>Identity</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Identity</em>' reference.
-	 * @see #getIdentity()
-	 * @generated
-	 */
-	void setIdentity(RealPerson value);
 
 	/**
 	 * Returns the value of the '<em><b>Role</b></em>' reference.

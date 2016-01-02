@@ -9,6 +9,7 @@ import sechalmersmdsdgroup5.hotel.clients.Guest;
 import sechalmersmdsdgroup5.hotel.facilities.Room;
 import sechalmersmdsdgroup5.hotel.payment.Payable;
 import sechalmersmdsdgroup5.hotel.services.Service;
+import sechalmersmdsdgroup5.hotel.services.ServiceConsumer;
 
 /**
  * <!-- begin-user-doc -->
@@ -32,7 +33,7 @@ import sechalmersmdsdgroup5.hotel.services.Service;
  * @model
  * @generated
  */
-public interface RoomBooking extends Payable {
+public interface RoomBooking extends Payable, ServiceConsumer {
 	/**
 	 * Returns the value of the '<em><b>Start Date</b></em>' attribute.
 	 * <!-- begin-user-doc -->

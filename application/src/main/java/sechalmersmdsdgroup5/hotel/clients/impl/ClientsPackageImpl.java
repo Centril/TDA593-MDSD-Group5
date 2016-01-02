@@ -99,24 +99,6 @@ public class ClientsPackageImpl extends EPackageImpl {
 	public static final int CLIENT = 3;
 
 	/**
-	 * The feature id for the '<em><b>Invoices</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int CLIENT__INVOICES = 0;
-
-	/**
-	 * The number of structural features of the '<em>Client</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int CLIENT_FEATURE_COUNT = 1;
-
-	/**
 	 * The meta object id for the '{@link sechalmersmdsdgroup5.hotel.clients.impl.CustomerImpl <em>Customer</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -147,13 +129,49 @@ public class ClientsPackageImpl extends EPackageImpl {
 	public static final int GUEST = 0;
 
 	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int GUEST__NAME = IdentitiesPackageImpl.REAL_PERSON__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Id Number</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int GUEST__ID_NUMBER = IdentitiesPackageImpl.REAL_PERSON__ID_NUMBER;
+
+	/**
+	 * The feature id for the '<em><b>Age</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int GUEST__AGE = IdentitiesPackageImpl.REAL_PERSON__AGE;
+
+	/**
+	 * The feature id for the '<em><b>Citizenship</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int GUEST__CITIZENSHIP = IdentitiesPackageImpl.REAL_PERSON__CITIZENSHIP;
+
+	/**
 	 * The feature id for the '<em><b>Invoices</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	public static final int GUEST__INVOICES = CLIENT__INVOICES;
+	public static final int GUEST__INVOICES = IdentitiesPackageImpl.REAL_PERSON_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Key</b></em>' reference.
@@ -162,16 +180,7 @@ public class ClientsPackageImpl extends EPackageImpl {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int GUEST__KEY = CLIENT_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Identity</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int GUEST__IDENTITY = CLIENT_FEATURE_COUNT + 1;
+	public static final int GUEST__KEY = IdentitiesPackageImpl.REAL_PERSON_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Guest</em>' class.
@@ -180,7 +189,25 @@ public class ClientsPackageImpl extends EPackageImpl {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int GUEST_FEATURE_COUNT = CLIENT_FEATURE_COUNT + 2;
+	public static final int GUEST_FEATURE_COUNT = IdentitiesPackageImpl.REAL_PERSON_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Invoices</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int CLIENT__INVOICES = 0;
+
+	/**
+	 * The number of structural features of the '<em>Client</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int CLIENT_FEATURE_COUNT = 1;
 
 	/**
 	 * The feature id for the '<em><b>Invoices</b></em>' reference list.
@@ -679,19 +706,6 @@ public class ClientsPackageImpl extends EPackageImpl {
 	}
 
 	/**
-	 * Returns the meta object for the reference '{@link sechalmersmdsdgroup5.hotel.clients.Guest#getIdentity <em>Identity</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Identity</em>'.
-	 * @see sechalmersmdsdgroup5.hotel.clients.Guest#getIdentity()
-	 * @see #getGuest()
-	 * @generated
-	 */
-	public EReference getGuest_Identity() {
-		return (EReference)guestEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -723,7 +737,6 @@ public class ClientsPackageImpl extends EPackageImpl {
 		// Create classes and their features
 		guestEClass = createEClass(GUEST);
 		createEReference(guestEClass, GUEST__KEY);
-		createEReference(guestEClass, GUEST__IDENTITY);
 
 		customerEClass = createEClass(CUSTOMER);
 		createEAttribute(customerEClass, CUSTOMER__PAYMENT_METHOD);
@@ -769,8 +782,9 @@ public class ClientsPackageImpl extends EPackageImpl {
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
-		FacilitiesPackageImpl theFacilitiesPackage = (FacilitiesPackageImpl)EPackage.Registry.INSTANCE.getEPackage(FacilitiesPackageImpl.eNS_URI);
 		IdentitiesPackageImpl theIdentitiesPackage = (IdentitiesPackageImpl)EPackage.Registry.INSTANCE.getEPackage(IdentitiesPackageImpl.eNS_URI);
+		ServicesPackageImpl theServicesPackage = (ServicesPackageImpl)EPackage.Registry.INSTANCE.getEPackage(ServicesPackageImpl.eNS_URI);
+		FacilitiesPackageImpl theFacilitiesPackage = (FacilitiesPackageImpl)EPackage.Registry.INSTANCE.getEPackage(FacilitiesPackageImpl.eNS_URI);
 		PaymentPackageImpl thePaymentPackage = (PaymentPackageImpl)EPackage.Registry.INSTANCE.getEPackage(PaymentPackageImpl.eNS_URI);
 		OrderingPackageImpl theOrderingPackage = (OrderingPackageImpl)EPackage.Registry.INSTANCE.getEPackage(OrderingPackageImpl.eNS_URI);
 
@@ -779,13 +793,14 @@ public class ClientsPackageImpl extends EPackageImpl {
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
+		guestEClass.getESuperTypes().add(theIdentitiesPackage.getRealPerson());
 		guestEClass.getESuperTypes().add(this.getClient());
+		guestEClass.getESuperTypes().add(theServicesPackage.getServiceConsumer());
 		customerEClass.getESuperTypes().add(this.getClient());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(guestEClass, Guest.class, "Guest", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getGuest_Key(), theFacilitiesPackage.getKey(), null, "key", null, 1, 1, Guest.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getGuest_Identity(), theIdentitiesPackage.getRealPerson(), null, "identity", null, 1, 1, Guest.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(customerEClass, Customer.class, "Customer", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getCustomer_PaymentMethod(), thePaymentPackage.getPaymentMethod(), "paymentMethod", null, 1, 1, Customer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -971,14 +986,6 @@ public class ClientsPackageImpl extends EPackageImpl {
 		 * @generated
 		 */
 		public static final EReference GUEST__KEY = eINSTANCE.getGuest_Key();
-
-		/**
-		 * The meta object literal for the '<em><b>Identity</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		public static final EReference GUEST__IDENTITY = eINSTANCE.getGuest_Identity();
 
 	}
 

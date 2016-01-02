@@ -13,6 +13,7 @@ import sechalmersmdsdgroup5.hotel.ordering.*;
 
 import sechalmersmdsdgroup5.hotel.ordering.impl.OrderingPackageImpl;
 import sechalmersmdsdgroup5.hotel.payment.Payable;
+import sechalmersmdsdgroup5.hotel.services.ServiceConsumer;
 
 /**
  * <!-- begin-user-doc -->
@@ -115,6 +116,10 @@ public class OrderingAdapterFactory extends AdapterFactoryImpl {
 				return createPayableAdapter();
 			}
 			@Override
+			public Adapter caseServiceConsumer(ServiceConsumer object) {
+				return createServiceConsumerAdapter();
+			}
+			@Override
 			public Adapter defaultCase(EObject object) {
 				return createEObjectAdapter();
 			}
@@ -215,6 +220,20 @@ public class OrderingAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createPayableAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link sechalmersmdsdgroup5.hotel.services.ServiceConsumer <em>Service Consumer</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see sechalmersmdsdgroup5.hotel.services.ServiceConsumer
+	 * @generated
+	 */
+	public Adapter createServiceConsumerAdapter() {
 		return null;
 	}
 

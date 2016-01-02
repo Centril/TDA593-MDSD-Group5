@@ -98,13 +98,49 @@ public class PersonnelPackageImpl extends EPackageImpl {
 	public static final int EMPLOYEE = 0;
 
 	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int EMPLOYEE__NAME = IdentitiesPackageImpl.REAL_PERSON__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Id Number</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int EMPLOYEE__ID_NUMBER = IdentitiesPackageImpl.REAL_PERSON__ID_NUMBER;
+
+	/**
+	 * The feature id for the '<em><b>Age</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int EMPLOYEE__AGE = IdentitiesPackageImpl.REAL_PERSON__AGE;
+
+	/**
+	 * The feature id for the '<em><b>Citizenship</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int EMPLOYEE__CITIZENSHIP = IdentitiesPackageImpl.REAL_PERSON__CITIZENSHIP;
+
+	/**
 	 * The feature id for the '<em><b>Schedule</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	public static final int EMPLOYEE__SCHEDULE = 0;
+	public static final int EMPLOYEE__SCHEDULE = IdentitiesPackageImpl.REAL_PERSON_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Key</b></em>' reference.
@@ -113,16 +149,7 @@ public class PersonnelPackageImpl extends EPackageImpl {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int EMPLOYEE__KEY = 1;
-
-	/**
-	 * The feature id for the '<em><b>Identity</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int EMPLOYEE__IDENTITY = 2;
+	public static final int EMPLOYEE__KEY = IdentitiesPackageImpl.REAL_PERSON_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Role</b></em>' reference.
@@ -131,7 +158,7 @@ public class PersonnelPackageImpl extends EPackageImpl {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int EMPLOYEE__ROLE = 3;
+	public static final int EMPLOYEE__ROLE = IdentitiesPackageImpl.REAL_PERSON_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Employee</em>' class.
@@ -140,7 +167,7 @@ public class PersonnelPackageImpl extends EPackageImpl {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int EMPLOYEE_FEATURE_COUNT = 4;
+	public static final int EMPLOYEE_FEATURE_COUNT = IdentitiesPackageImpl.REAL_PERSON_FEATURE_COUNT + 3;
 
 	/**
 	 * The meta object id for the '{@link sechalmersmdsdgroup5.hotel.personnel.impl.RoleImpl <em>Role</em>}' class.
@@ -394,19 +421,6 @@ public class PersonnelPackageImpl extends EPackageImpl {
 	}
 
 	/**
-	 * Returns the meta object for the reference '{@link sechalmersmdsdgroup5.hotel.personnel.Employee#getIdentity <em>Identity</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Identity</em>'.
-	 * @see sechalmersmdsdgroup5.hotel.personnel.Employee#getIdentity()
-	 * @see #getEmployee()
-	 * @generated
-	 */
-	public EReference getEmployee_Identity() {
-		return (EReference)employeeEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
 	 * Returns the meta object for the reference '{@link sechalmersmdsdgroup5.hotel.personnel.Employee#getRole <em>Role</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -416,7 +430,7 @@ public class PersonnelPackageImpl extends EPackageImpl {
 	 * @generated
 	 */
 	public EReference getEmployee_Role() {
-		return (EReference)employeeEClass.getEStructuralFeatures().get(3);
+		return (EReference)employeeEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -554,7 +568,6 @@ public class PersonnelPackageImpl extends EPackageImpl {
 		employeeEClass = createEClass(EMPLOYEE);
 		createEReference(employeeEClass, EMPLOYEE__SCHEDULE);
 		createEReference(employeeEClass, EMPLOYEE__KEY);
-		createEReference(employeeEClass, EMPLOYEE__IDENTITY);
 		createEReference(employeeEClass, EMPLOYEE__ROLE);
 
 		roleEClass = createEClass(ROLE);
@@ -592,21 +605,21 @@ public class PersonnelPackageImpl extends EPackageImpl {
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
+		IdentitiesPackageImpl theIdentitiesPackage = (IdentitiesPackageImpl)EPackage.Registry.INSTANCE.getEPackage(IdentitiesPackageImpl.eNS_URI);
 		SchedulePackageImpl theSchedulePackage = (SchedulePackageImpl)EPackage.Registry.INSTANCE.getEPackage(SchedulePackageImpl.eNS_URI);
 		FacilitiesPackageImpl theFacilitiesPackage = (FacilitiesPackageImpl)EPackage.Registry.INSTANCE.getEPackage(FacilitiesPackageImpl.eNS_URI);
-		IdentitiesPackageImpl theIdentitiesPackage = (IdentitiesPackageImpl)EPackage.Registry.INSTANCE.getEPackage(IdentitiesPackageImpl.eNS_URI);
 
 		// Create type parameters
 
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
+		employeeEClass.getESuperTypes().add(theIdentitiesPackage.getRealPerson());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(employeeEClass, Employee.class, "Employee", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getEmployee_Schedule(), theSchedulePackage.getSchedule(), null, "schedule", null, 1, 1, Employee.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getEmployee_Key(), theFacilitiesPackage.getKey(), null, "key", null, 1, 1, Employee.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getEmployee_Identity(), theIdentitiesPackage.getRealPerson(), null, "identity", null, 1, 1, Employee.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getEmployee_Role(), this.getRole(), null, "role", null, 1, 1, Employee.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(roleEClass, Role.class, "Role", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -658,14 +671,6 @@ public class PersonnelPackageImpl extends EPackageImpl {
 		 * @generated
 		 */
 		public static final EReference EMPLOYEE__KEY = eINSTANCE.getEmployee_Key();
-
-		/**
-		 * The meta object literal for the '<em><b>Identity</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		public static final EReference EMPLOYEE__IDENTITY = eINSTANCE.getEmployee_Identity();
 
 		/**
 		 * The meta object literal for the '<em><b>Role</b></em>' reference feature.
