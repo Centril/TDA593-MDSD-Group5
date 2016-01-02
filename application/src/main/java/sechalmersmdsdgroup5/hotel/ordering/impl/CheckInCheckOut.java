@@ -5,6 +5,7 @@ import sechalmersmdsdgroup5.hotel.facilities.Key;
 import sechalmersmdsdgroup5.hotel.identities.Identity;
 import sechalmersmdsdgroup5.hotel.ordering.ICheckInCheckOut;
 import sechalmersmdsdgroup5.hotel.ordering.RoomBooking;
+import sechalmersmdsdgroup5.hotel.personnel.Employee;
 import sechalmersmdsdgroup5.hotel.services.Service;
 import sechalmersmdsdgroup5.hotel.services.ServicesFactory;
 
@@ -45,8 +46,11 @@ public class CheckInCheckOut implements ICheckInCheckOut {
     @Override
     public boolean giveOutKey(Identity identity, Key key) {
         if(identity != null && key != null){
-            
-
+            if(identity instanceof Guest){
+                ((Guest) identity).setKey(key);
+            }else if(identity instanceof Employee){
+                ((Employee) identity).setKey(key);
+            }
             return true;
         }
         return false;
