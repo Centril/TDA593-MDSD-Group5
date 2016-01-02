@@ -39,6 +39,14 @@ public class OrderImpl implements Order {
 	 */
 	private List<Invoice> invoice;
 
+	public OrderImpl(List<Invoice> invoice, boolean isPaid, List<Campaign> campaigns, List<RoomBooking> bookings, Date creationDate) {
+		this.invoice = invoice;
+		this.isPaid = isPaid;
+		this.campaigns = campaigns;
+		this.bookings = bookings;
+		this.creationDate = creationDate;
+	}
+
 	private boolean isPaid;
 
 
@@ -132,7 +140,6 @@ public class OrderImpl implements Order {
 	public double totalPrice() {
 		return calculatePrice();
 	}
-
 	/**
 	 * This calculates the price of the order, including campaigns, services and bookings.
 	 */
