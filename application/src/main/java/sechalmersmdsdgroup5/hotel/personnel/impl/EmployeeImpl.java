@@ -5,10 +5,8 @@ package sechalmersmdsdgroup5.hotel.personnel.impl;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import sechalmersmdsdgroup5.hotel.facilities.Key;
+import sechalmersmdsdgroup5.hotel.identities.impl.RealPersonImpl;
 import sechalmersmdsdgroup5.hotel.personnel.Employee;
 import sechalmersmdsdgroup5.hotel.personnel.Role;
 
@@ -29,7 +27,7 @@ import sechalmersmdsdgroup5.hotel.schedule.Schedule;
  *
  * @generated
  */
-public class EmployeeImpl extends MinimalEObjectImpl.Container implements Employee {
+public class EmployeeImpl extends RealPersonImpl implements Employee {
 	/**
 	 * The cached value of the '{@link #getSchedule() <em>Schedule</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -186,6 +184,14 @@ public class EmployeeImpl extends MinimalEObjectImpl.Container implements Employ
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case PersonnelPackageImpl.EMPLOYEE__NAME:
+				return getName();
+			case PersonnelPackageImpl.EMPLOYEE__ID_NUMBER:
+				return getIdNumber();
+			case PersonnelPackageImpl.EMPLOYEE__AGE:
+				return getAge();
+			case PersonnelPackageImpl.EMPLOYEE__CITIZENSHIP:
+				return getCitizenship();
 			case PersonnelPackageImpl.EMPLOYEE__SCHEDULE:
 				if (resolve) return getSchedule();
 				return basicGetSchedule();
@@ -207,6 +213,18 @@ public class EmployeeImpl extends MinimalEObjectImpl.Container implements Employ
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case PersonnelPackageImpl.EMPLOYEE__NAME:
+				setName((String)newValue);
+				return;
+			case PersonnelPackageImpl.EMPLOYEE__ID_NUMBER:
+				setIdNumber((String)newValue);
+				return;
+			case PersonnelPackageImpl.EMPLOYEE__AGE:
+				setAge((Integer)newValue);
+				return;
+			case PersonnelPackageImpl.EMPLOYEE__CITIZENSHIP:
+				setCitizenship((String)newValue);
+				return;
 			case PersonnelPackageImpl.EMPLOYEE__SCHEDULE:
 				setSchedule((Schedule)newValue);
 				return;
@@ -228,6 +246,18 @@ public class EmployeeImpl extends MinimalEObjectImpl.Container implements Employ
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case PersonnelPackageImpl.EMPLOYEE__NAME:
+				setName(NAME_EDEFAULT);
+				return;
+			case PersonnelPackageImpl.EMPLOYEE__ID_NUMBER:
+				setIdNumber(ID_NUMBER_EDEFAULT);
+				return;
+			case PersonnelPackageImpl.EMPLOYEE__AGE:
+				setAge(AGE_EDEFAULT);
+				return;
+			case PersonnelPackageImpl.EMPLOYEE__CITIZENSHIP:
+				setCitizenship(CITIZENSHIP_EDEFAULT);
+				return;
 			case PersonnelPackageImpl.EMPLOYEE__SCHEDULE:
 				setSchedule((Schedule)null);
 				return;
@@ -249,6 +279,14 @@ public class EmployeeImpl extends MinimalEObjectImpl.Container implements Employ
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case PersonnelPackageImpl.EMPLOYEE__NAME:
+				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+			case PersonnelPackageImpl.EMPLOYEE__ID_NUMBER:
+				return ID_NUMBER_EDEFAULT == null ? idNumber != null : !ID_NUMBER_EDEFAULT.equals(idNumber);
+			case PersonnelPackageImpl.EMPLOYEE__AGE:
+				return age != AGE_EDEFAULT;
+			case PersonnelPackageImpl.EMPLOYEE__CITIZENSHIP:
+				return CITIZENSHIP_EDEFAULT == null ? citizenship != null : !CITIZENSHIP_EDEFAULT.equals(citizenship);
 			case PersonnelPackageImpl.EMPLOYEE__SCHEDULE:
 				return schedule != null;
 			case PersonnelPackageImpl.EMPLOYEE__KEY:

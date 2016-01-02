@@ -264,6 +264,7 @@
       </packagedElement>
       <packagedElement xmi:type="uml:Package" xmi:id="_mtmlQJOAEeWEKYEtRmghUQ" name="clients">
         <packagedElement xmi:type="uml:Class" xmi:id="_st4FoJOAEeWEKYEtRmghUQ" name="Guest">
+          <generalization xmi:type="uml:Generalization" xmi:id="_sqw5QLFmEeWRduaQI8tYwQ" general="_vWo3oJOAEeWEKYEtRmghUQ"/>
           <ownedAttribute xmi:type="uml:Property" xmi:id="_i8pT4JboEeWGQOCCfM2qyw" name="key" type="_ChtUMJQXEeWEKYEtRmghUQ"/>
           <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_pAv-EKAtEeWRM8HqbnnQEA" client="_st4FoJOAEeWEKYEtRmghUQ" supplier="_0CgQwKAsEeWRM8HqbnnQEA" contract="_0CgQwKAsEeWRM8HqbnnQEA"/>
           <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_26mtQLCpEeWrNd_3evJjTg" client="_st4FoJOAEeWEKYEtRmghUQ" supplier="_yo2uEJboEeWGQOCCfM2qyw" contract="_yo2uEJboEeWGQOCCfM2qyw"/>
@@ -307,7 +308,6 @@
             <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_5XGioK7tEeWKW4OjxoJe1Q" value="*"/>
           </ownedAttribute>
         </packagedElement>
-        <packagedElement xmi:type="uml:Realization" xmi:id="__DT3gLFeEeW55omBkUBSKA" client="_st4FoJOAEeWEKYEtRmghUQ" supplier="_vWo3oJOAEeWEKYEtRmghUQ"/>
       </packagedElement>
       <packagedElement xmi:type="uml:Package" xmi:id="_0zjE4JODEeWEKYEtRmghUQ" name="log">
         <packagedElement xmi:type="uml:Class" xmi:id="_D__r0JOCEeWEKYEtRmghUQ" name="TaskLog">
@@ -355,6 +355,7 @@
       </packagedElement>
       <packagedElement xmi:type="uml:Package" xmi:id="_GIovEJRNEeWEKYEtRmghUQ" name="personnel">
         <packagedElement xmi:type="uml:Class" xmi:id="_28enoJOAEeWEKYEtRmghUQ" name="Employee">
+          <generalization xmi:type="uml:Generalization" xmi:id="_vw-cQLFmEeWRduaQI8tYwQ" general="_vWo3oJOAEeWEKYEtRmghUQ"/>
           <ownedAttribute xmi:type="uml:Property" xmi:id="_dlLVYJbnEeWGQOCCfM2qyw" name="schedule" type="_iViNMJROEeWEKYEtRmghUQ"/>
           <ownedAttribute xmi:type="uml:Property" xmi:id="_jbkhAJbnEeWGQOCCfM2qyw" name="key" type="_ChtUMJQXEeWEKYEtRmghUQ"/>
           <ownedAttribute xmi:type="uml:Property" xmi:id="_QknAgJQSEeWEKYEtRmghUQ" name="role" type="_HDwBoJOLEeWEKYEtRmghUQ" aggregation="shared" association="_QklyYJQSEeWEKYEtRmghUQ"/>
@@ -379,7 +380,6 @@
           </ownedAttribute>
           <ownedAttribute xmi:type="uml:Property" xmi:id="_nTxokJTtEeWzTqnQSzpdtA" name="key" type="_ChtUMJQXEeWEKYEtRmghUQ" aggregation="shared" association="_nTvMUJTtEeWzTqnQSzpdtA"/>
         </packagedElement>
-        <packagedElement xmi:type="uml:Realization" xmi:id="_AMPOcLFfEeW55omBkUBSKA" client="_28enoJOAEeWEKYEtRmghUQ" supplier="_vWo3oJOAEeWEKYEtRmghUQ"/>
       </packagedElement>
       <packagedElement xmi:type="uml:Package" xmi:id="_fFIMYJROEeWEKYEtRmghUQ" name="schedule">
         <packagedElement xmi:type="uml:Class" xmi:id="_iViNMJROEeWEKYEtRmghUQ" name="Schedule">

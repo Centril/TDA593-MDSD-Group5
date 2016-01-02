@@ -7,6 +7,8 @@ import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.util.Switch;
 
+import sechalmersmdsdgroup5.hotel.identities.Identity;
+import sechalmersmdsdgroup5.hotel.identities.RealPerson;
 import sechalmersmdsdgroup5.hotel.personnel.*;
 
 import sechalmersmdsdgroup5.hotel.personnel.impl.PersonnelPackageImpl;
@@ -71,6 +73,8 @@ public class PersonnelSwitch<T> extends Switch<T> {
 			case PersonnelPackageImpl.EMPLOYEE: {
 				Employee employee = (Employee)theEObject;
 				T result = caseEmployee(employee);
+				if (result == null) result = caseRealPerson(employee);
+				if (result == null) result = caseIdentity(employee);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -132,6 +136,36 @@ public class PersonnelSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseSubcontractor(Subcontractor object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Identity</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Identity</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseIdentity(Identity object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Real Person</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Real Person</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseRealPerson(RealPerson object) {
 		return null;
 	}
 

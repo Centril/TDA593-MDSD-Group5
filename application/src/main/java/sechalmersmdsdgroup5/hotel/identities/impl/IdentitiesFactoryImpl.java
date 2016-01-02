@@ -64,8 +64,8 @@ public class IdentitiesFactoryImpl extends EFactoryImpl implements IdentitiesFac
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case IdentitiesPackageImpl.REAL_PERSON: return (EObject)createRealPerson();
 			case IdentitiesPackageImpl.ORGANISATION: return (EObject)createOrganisation();
+			case IdentitiesPackageImpl.REAL_PERSON: return (EObject)createRealPerson();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}

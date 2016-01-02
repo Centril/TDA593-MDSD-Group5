@@ -9,6 +9,8 @@ import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 
 import org.eclipse.emf.ecore.EObject;
 
+import sechalmersmdsdgroup5.hotel.identities.Identity;
+import sechalmersmdsdgroup5.hotel.identities.RealPerson;
 import sechalmersmdsdgroup5.hotel.personnel.*;
 
 import sechalmersmdsdgroup5.hotel.personnel.impl.PersonnelPackageImpl;
@@ -82,6 +84,14 @@ public class PersonnelAdapterFactory extends AdapterFactoryImpl {
 				return createSubcontractorAdapter();
 			}
 			@Override
+			public Adapter caseIdentity(Identity object) {
+				return createIdentityAdapter();
+			}
+			@Override
+			public Adapter caseRealPerson(RealPerson object) {
+				return createRealPersonAdapter();
+			}
+			@Override
 			public Adapter defaultCase(EObject object) {
 				return createEObjectAdapter();
 			}
@@ -140,6 +150,34 @@ public class PersonnelAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createSubcontractorAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link sechalmersmdsdgroup5.hotel.identities.Identity <em>Identity</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see sechalmersmdsdgroup5.hotel.identities.Identity
+	 * @generated
+	 */
+	public Adapter createIdentityAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link sechalmersmdsdgroup5.hotel.identities.RealPerson <em>Real Person</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see sechalmersmdsdgroup5.hotel.identities.RealPerson
+	 * @generated
+	 */
+	public Adapter createRealPersonAdapter() {
 		return null;
 	}
 

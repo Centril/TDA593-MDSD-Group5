@@ -98,13 +98,49 @@ public class PersonnelPackageImpl extends EPackageImpl {
 	public static final int EMPLOYEE = 0;
 
 	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int EMPLOYEE__NAME = IdentitiesPackageImpl.REAL_PERSON__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Id Number</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int EMPLOYEE__ID_NUMBER = IdentitiesPackageImpl.REAL_PERSON__ID_NUMBER;
+
+	/**
+	 * The feature id for the '<em><b>Age</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int EMPLOYEE__AGE = IdentitiesPackageImpl.REAL_PERSON__AGE;
+
+	/**
+	 * The feature id for the '<em><b>Citizenship</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int EMPLOYEE__CITIZENSHIP = IdentitiesPackageImpl.REAL_PERSON__CITIZENSHIP;
+
+	/**
 	 * The feature id for the '<em><b>Schedule</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	public static final int EMPLOYEE__SCHEDULE = 0;
+	public static final int EMPLOYEE__SCHEDULE = IdentitiesPackageImpl.REAL_PERSON_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Key</b></em>' reference.
@@ -113,7 +149,7 @@ public class PersonnelPackageImpl extends EPackageImpl {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int EMPLOYEE__KEY = 1;
+	public static final int EMPLOYEE__KEY = IdentitiesPackageImpl.REAL_PERSON_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Role</b></em>' reference.
@@ -122,7 +158,7 @@ public class PersonnelPackageImpl extends EPackageImpl {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int EMPLOYEE__ROLE = 2;
+	public static final int EMPLOYEE__ROLE = IdentitiesPackageImpl.REAL_PERSON_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Employee</em>' class.
@@ -131,7 +167,7 @@ public class PersonnelPackageImpl extends EPackageImpl {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int EMPLOYEE_FEATURE_COUNT = 3;
+	public static final int EMPLOYEE_FEATURE_COUNT = IdentitiesPackageImpl.REAL_PERSON_FEATURE_COUNT + 3;
 
 	/**
 	 * The meta object id for the '{@link sechalmersmdsdgroup5.hotel.personnel.impl.RoleImpl <em>Role</em>}' class.
@@ -569,6 +605,7 @@ public class PersonnelPackageImpl extends EPackageImpl {
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
+		IdentitiesPackageImpl theIdentitiesPackage = (IdentitiesPackageImpl)EPackage.Registry.INSTANCE.getEPackage(IdentitiesPackageImpl.eNS_URI);
 		SchedulePackageImpl theSchedulePackage = (SchedulePackageImpl)EPackage.Registry.INSTANCE.getEPackage(SchedulePackageImpl.eNS_URI);
 		FacilitiesPackageImpl theFacilitiesPackage = (FacilitiesPackageImpl)EPackage.Registry.INSTANCE.getEPackage(FacilitiesPackageImpl.eNS_URI);
 
@@ -577,6 +614,7 @@ public class PersonnelPackageImpl extends EPackageImpl {
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
+		employeeEClass.getESuperTypes().add(theIdentitiesPackage.getRealPerson());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(employeeEClass, Employee.class, "Employee", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

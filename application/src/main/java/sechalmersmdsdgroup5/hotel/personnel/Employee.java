@@ -3,6 +3,7 @@
 package sechalmersmdsdgroup5.hotel.personnel;
 
 import sechalmersmdsdgroup5.hotel.facilities.Key;
+import sechalmersmdsdgroup5.hotel.identities.RealPerson;
 import sechalmersmdsdgroup5.hotel.schedule.Schedule;
 
 /**
@@ -22,7 +23,7 @@ import sechalmersmdsdgroup5.hotel.schedule.Schedule;
  * @model
  * @generated
  */
-public interface Employee {
+public interface Employee extends RealPerson {
 	/**
 	 * Returns the value of the '<em><b>Schedule</b></em>' reference.
 	 * <!-- begin-user-doc -->

@@ -8,14 +8,14 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.emf.ecore.util.BasicInternalEList;
+import sechalmersmdsdgroup5.hotel.clients.Client;
 import sechalmersmdsdgroup5.hotel.clients.Guest;
 
 import sechalmersmdsdgroup5.hotel.facilities.Key;
+import sechalmersmdsdgroup5.hotel.identities.impl.RealPersonImpl;
 import sechalmersmdsdgroup5.hotel.ordering.Invoice;
+import sechalmersmdsdgroup5.hotel.services.ServiceConsumer;
 
 /**
  * <!-- begin-user-doc -->
@@ -31,7 +31,7 @@ import sechalmersmdsdgroup5.hotel.ordering.Invoice;
  *
  * @generated
  */
-public class GuestImpl extends MinimalEObjectImpl.Container implements Guest {
+public class GuestImpl extends RealPersonImpl implements Guest {
 	/**
 	 * The cached value of the '{@link #getInvoices() <em>Invoices</em>}' reference list.
 	 * <!-- begin-user-doc -->
@@ -124,6 +124,14 @@ public class GuestImpl extends MinimalEObjectImpl.Container implements Guest {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case ClientsPackageImpl.GUEST__NAME:
+				return getName();
+			case ClientsPackageImpl.GUEST__ID_NUMBER:
+				return getIdNumber();
+			case ClientsPackageImpl.GUEST__AGE:
+				return getAge();
+			case ClientsPackageImpl.GUEST__CITIZENSHIP:
+				return getCitizenship();
 			case ClientsPackageImpl.GUEST__INVOICES:
 				return getInvoices();
 			case ClientsPackageImpl.GUEST__KEY:
@@ -142,6 +150,18 @@ public class GuestImpl extends MinimalEObjectImpl.Container implements Guest {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case ClientsPackageImpl.GUEST__NAME:
+				setName((String)newValue);
+				return;
+			case ClientsPackageImpl.GUEST__ID_NUMBER:
+				setIdNumber((String)newValue);
+				return;
+			case ClientsPackageImpl.GUEST__AGE:
+				setAge((Integer)newValue);
+				return;
+			case ClientsPackageImpl.GUEST__CITIZENSHIP:
+				setCitizenship((String)newValue);
+				return;
 			case ClientsPackageImpl.GUEST__INVOICES:
 				getInvoices().clear();
 				getInvoices().addAll((Collection<? extends Invoice>)newValue);
@@ -161,6 +181,18 @@ public class GuestImpl extends MinimalEObjectImpl.Container implements Guest {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case ClientsPackageImpl.GUEST__NAME:
+				setName(NAME_EDEFAULT);
+				return;
+			case ClientsPackageImpl.GUEST__ID_NUMBER:
+				setIdNumber(ID_NUMBER_EDEFAULT);
+				return;
+			case ClientsPackageImpl.GUEST__AGE:
+				setAge(AGE_EDEFAULT);
+				return;
+			case ClientsPackageImpl.GUEST__CITIZENSHIP:
+				setCitizenship(CITIZENSHIP_EDEFAULT);
+				return;
 			case ClientsPackageImpl.GUEST__INVOICES:
 				getInvoices().clear();
 				return;
@@ -179,12 +211,62 @@ public class GuestImpl extends MinimalEObjectImpl.Container implements Guest {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case ClientsPackageImpl.GUEST__NAME:
+				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+			case ClientsPackageImpl.GUEST__ID_NUMBER:
+				return ID_NUMBER_EDEFAULT == null ? idNumber != null : !ID_NUMBER_EDEFAULT.equals(idNumber);
+			case ClientsPackageImpl.GUEST__AGE:
+				return age != AGE_EDEFAULT;
+			case ClientsPackageImpl.GUEST__CITIZENSHIP:
+				return CITIZENSHIP_EDEFAULT == null ? citizenship != null : !CITIZENSHIP_EDEFAULT.equals(citizenship);
 			case ClientsPackageImpl.GUEST__INVOICES:
 				return invoices != null && !invoices.isEmpty();
 			case ClientsPackageImpl.GUEST__KEY:
 				return key != null;
 		}
 		return eDynamicIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
+		if (baseClass == Client.class) {
+			switch (derivedFeatureID) {
+				case ClientsPackageImpl.GUEST__INVOICES: return ClientsPackageImpl.CLIENT__INVOICES;
+				default: return -1;
+			}
+		}
+		if (baseClass == ServiceConsumer.class) {
+			switch (derivedFeatureID) {
+				default: return -1;
+			}
+		}
+		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
+		if (baseClass == Client.class) {
+			switch (baseFeatureID) {
+				case ClientsPackageImpl.CLIENT__INVOICES: return ClientsPackageImpl.GUEST__INVOICES;
+				default: return -1;
+			}
+		}
+		if (baseClass == ServiceConsumer.class) {
+			switch (baseFeatureID) {
+				default: return -1;
+			}
+		}
+		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
 	}
 
 } //GuestImpl
