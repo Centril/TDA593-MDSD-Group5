@@ -5,7 +5,6 @@ import java.util.function.Consumer;
 
 import static sechalmersmdsdgroup5.hotel.cli.infrastructure.Command.commandVoid;
 import static sechalmersmdsdgroup5.hotel.cli.infrastructure.Readers.reader;
-import static sechalmersmdsdgroup5.hotel.cli.infrastructure.color.StandardPrintColor.RED;
 import static sechalmersmdsdgroup5.hotel.cli.infrastructure.color.StandardPrintColor.YELLOW;
 
 /**
@@ -55,19 +54,15 @@ public class ApplicationRunner<I> implements Consumer<Application<I>> {
 
 		while ( true ) {
 			// Reset cancelable state:
-			helper.cancelable( false );
-
-			// Fetch & Execute command:
-			try {
-				helper.read( "Specify command:", reader( available::containsKey, available::get ) )
-					  .apply( helper, state );
-				helper.newline();
-			} catch ( QuitException e ) {
-				helper.bracketln( RED, "QUIT", "Good bye." );
-				return;
-			} catch ( CancelException ignored ) {
-				helper.cancelling( "Command" );
-			}
+			helper.cancelable( false ).quitAware( io -> {
+				// Fetch & Execute command:
+				try {
+					io.io( io2 -> io.read( "Specify command:", reader( available::containsKey, available::get ) )
+									.apply( helper, state ) ).newline();
+				} catch ( CancelException ignored ) {
+					io.cancelling( "Command" );
+				}
+			} );
 		}
 	}
 }

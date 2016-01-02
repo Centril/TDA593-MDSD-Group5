@@ -2,6 +2,7 @@ package sechalmersmdsdgroup5.hotel.cli;
 
 import sechalmersmdsdgroup5.hotel.Hotel;
 import sechalmersmdsdgroup5.hotel.cli.infrastructure.Application;
+import sechalmersmdsdgroup5.hotel.cli.infrastructure.IOHelper;
 import sechalmersmdsdgroup5.hotel.cli.infrastructure.color.TermColor;
 
 import java.util.Arrays;
@@ -25,7 +26,7 @@ public class Main {
 	public static void main( String[] args ) {
 		checkDisableColors( args );
 
-		runner( system(), INSTANCE.createHotel() ).accept( Application.<Hotel>builder()
+		runner( header( system() ), INSTANCE.createHotel() ).accept( Application.<Hotel>builder()
 			.cmdVoid( "error", "tests error", (io, $) -> io.error( "hello world" ) )
 			.cmdVoid( "hello", "displays hello world", (io, $) -> io.info( "hello world" ) )
 			.cmdVoid( "green", "displays hello world in green", (io, $) -> io.newline( GREEN, "hello world" ) )
@@ -42,6 +43,11 @@ public class Main {
 				  .info( "size: " + io.executeMany( 2, $, command( "", (io2, $2) -> io2.read( "aaa" ) ) ).size() )
 				  .info( "1337" ) )
 			.build() );
+	}
+
+	private static IOHelper header( IOHelper helper ) {
+		return helper.paragraph( "n00dels, Hotel management system 1.0.0" )
+					.quitAware( io -> io.paragraph( "Welcome back " + io.read( "Please identify" ) + "!" ) );
 	}
 
 	/**

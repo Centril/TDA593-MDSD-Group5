@@ -7,6 +7,7 @@ import sechalmersmdsdgroup5.hotel.cli.infrastructure.color.TermColor;
 import java.io.*;
 import java.util.List;
 import java.util.Optional;
+import java.util.function.Consumer;
 import java.util.function.Supplier;
 
 import static java.util.stream.Stream.concat;
@@ -339,9 +340,28 @@ public class IOHelper {
 				.filter( Optional::isPresent ).map( Optional::get ) ) );
 	}
 
+	/**
+	 * Performs an operation on this IOHelper.
+	 *
+	 * @param operation the operation.
+	 */
+	public IOHelper io( Consumer<IOHelper> operation ) {
+		operation.accept( this );
+		return this;
+	}
+
+	public IOHelper quitAware( Consumer<IOHelper> operation ) {
+		try {
+			return io( operation );
+		} catch ( QuitException ignored ) {
+			bracketln( RED, "QUIT", "Good bye." );
+			System.exit( 0 );
+			return this;
+		}
+	}
+
 	IOHelper cancelling( String what ) {
-		bracketln( PURPLE, "CANCELLING", what );
-		return newline();
+		return bracketln( PURPLE, "CANCELLING", what ).newline();
 	}
 
 	private boolean isCancelable() {
