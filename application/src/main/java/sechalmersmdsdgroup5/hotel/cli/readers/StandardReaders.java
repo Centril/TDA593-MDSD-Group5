@@ -6,6 +6,8 @@ import sechalmersmdsdgroup5.hotel.utils.Dates;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Date;
+import java.util.List;
+import java.util.function.ToIntFunction;
 
 /**
  * StandardReaders provide a bunch of standard readers.
@@ -13,5 +15,12 @@ import java.util.Date;
 public class StandardReaders {
 	public static ExceptionalRead<Date> date() {
 		return input -> Dates.toDate( LocalDate.parse( input, DateTimeFormatter.ISO_DATE ) );
+	}
+
+	public static <T> ExceptionalRead<T> intId( List<T> from, ToIntFunction<T> idMapper ) {
+		return input -> {
+			int id = Integer.parseInt( input );
+			return from.stream().filter( x -> idMapper.applyAsInt( x ) == id ).findFirst().get();
+		};
 	}
 }

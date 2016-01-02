@@ -33,6 +33,11 @@ public class ListMonad<A> implements Monad<A>, List<A> {
 	}
 
 	@Override
+	public <B> ListMonad<A> composeInv( Monad<B> mb ) {
+		return (ListMonad<A>) Monad.super.composeInv( mb );
+	}
+
+	@Override
 	public <B> ListMonad<B> fmap( Function<A, B> mapper ) {
 		return (ListMonad<B>) Monad.super.fmap( mapper );
 	}

@@ -3,6 +3,8 @@ package sechalmersmdsdgroup5.hotel.cli;
 import sechalmersmdsdgroup5.hotel.Hotel;
 import sechalmersmdsdgroup5.hotel.cli.commands.SearchActiveBookings;
 import sechalmersmdsdgroup5.hotel.cli.commands.SearchAvailableRooms;
+import sechalmersmdsdgroup5.hotel.cli.commands.SearchAvailableServices;
+import sechalmersmdsdgroup5.hotel.cli.commands.SearchOccupiedRooms;
 import sechalmersmdsdgroup5.hotel.cli.infrastructure.Application;
 import sechalmersmdsdgroup5.hotel.cli.infrastructure.IOHelper;
 import sechalmersmdsdgroup5.hotel.cli.infrastructure.color.TermColor;
@@ -30,7 +32,9 @@ public class Main {
 
 		runner( header( system() ), INSTANCE.createHotel() ).accept( Application.<Hotel>builder()
 			.add( SearchAvailableRooms::new )
+			.add( SearchOccupiedRooms::new )
 			.add( SearchActiveBookings::new )
+			.add( SearchAvailableServices::new )
 			.cmdVoid( "error", "tests error", (io, $) -> io.error( "hello world" ) )
 			.cmdVoid( "hello", "displays hello world", (io, $) -> io.info( "hello world" ) )
 			.cmdVoid( "green", "displays hello world in green", (io, $) -> io.newline( GREEN, "hello world" ) )

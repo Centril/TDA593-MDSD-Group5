@@ -55,6 +55,17 @@ public interface Monad<A> {
 	}
 
 	/**
+	 * Does the inverse compose.
+	 *
+	 * @param mb the second monad.
+	 * @param <B> the monadic value type of this monad.
+	 * @return the first monad.
+	 */
+	default <B> Monad<A> composeInv( Monad<B> mb ) {
+		return mb.compose( this );
+	}
+
+	/**
 	 * fmap: the same as this >>= return . mapper.
 	 *
 	 * @param mapper the mapper.
