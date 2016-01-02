@@ -15,8 +15,6 @@ import org.eclipse.emf.ecore.util.BasicInternalEList;
 import sechalmersmdsdgroup5.hotel.clients.Guest;
 
 import sechalmersmdsdgroup5.hotel.facilities.Key;
-
-import sechalmersmdsdgroup5.hotel.identities.RealPerson;
 import sechalmersmdsdgroup5.hotel.ordering.Invoice;
 
 /**
@@ -29,7 +27,6 @@ import sechalmersmdsdgroup5.hotel.ordering.Invoice;
  * <ul>
  *   <li>{@link sechalmersmdsdgroup5.hotel.clients.impl.GuestImpl#getInvoices <em>Invoices</em>}</li>
  *   <li>{@link sechalmersmdsdgroup5.hotel.clients.impl.GuestImpl#getKey <em>Key</em>}</li>
- *   <li>{@link sechalmersmdsdgroup5.hotel.clients.impl.GuestImpl#getIdentity <em>Identity</em>}</li>
  * </ul>
  *
  * @generated
@@ -54,16 +51,6 @@ public class GuestImpl extends MinimalEObjectImpl.Container implements Guest {
 	 * @ordered
 	 */
 	protected Key key;
-
-	/**
-	 * The cached value of the '{@link #getIdentity() <em>Identity</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getIdentity()
-	 * @generated
-	 * @ordered
-	 */
-	protected RealPerson identity;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -134,39 +121,6 @@ public class GuestImpl extends MinimalEObjectImpl.Container implements Guest {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public RealPerson getIdentity() {
-		if (identity != null && ((EObject)identity).eIsProxy()) {
-			InternalEObject oldIdentity = (InternalEObject)identity;
-			identity = (RealPerson)eResolveProxy(oldIdentity);
-			if (identity != oldIdentity) {
-			}
-		}
-		return identity;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public RealPerson basicGetIdentity() {
-		return identity;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setIdentity(RealPerson newIdentity) {
-		identity = newIdentity;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -175,9 +129,6 @@ public class GuestImpl extends MinimalEObjectImpl.Container implements Guest {
 			case ClientsPackageImpl.GUEST__KEY:
 				if (resolve) return getKey();
 				return basicGetKey();
-			case ClientsPackageImpl.GUEST__IDENTITY:
-				if (resolve) return getIdentity();
-				return basicGetIdentity();
 		}
 		return eDynamicGet(featureID, resolve, coreType);
 	}
@@ -198,9 +149,6 @@ public class GuestImpl extends MinimalEObjectImpl.Container implements Guest {
 			case ClientsPackageImpl.GUEST__KEY:
 				setKey((Key)newValue);
 				return;
-			case ClientsPackageImpl.GUEST__IDENTITY:
-				setIdentity((RealPerson)newValue);
-				return;
 		}
 		eDynamicSet(featureID, newValue);
 	}
@@ -219,9 +167,6 @@ public class GuestImpl extends MinimalEObjectImpl.Container implements Guest {
 			case ClientsPackageImpl.GUEST__KEY:
 				setKey((Key)null);
 				return;
-			case ClientsPackageImpl.GUEST__IDENTITY:
-				setIdentity((RealPerson)null);
-				return;
 		}
 		eDynamicUnset(featureID);
 	}
@@ -238,8 +183,6 @@ public class GuestImpl extends MinimalEObjectImpl.Container implements Guest {
 				return invoices != null && !invoices.isEmpty();
 			case ClientsPackageImpl.GUEST__KEY:
 				return key != null;
-			case ClientsPackageImpl.GUEST__IDENTITY:
-				return identity != null;
 		}
 		return eDynamicIsSet(featureID);
 	}

@@ -68,9 +68,10 @@ public class IdentitiesSwitch<T> extends Switch<T> {
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
-			case IdentitiesPackageImpl.IDENTITY: {
-				Identity identity = (Identity)theEObject;
-				T result = caseIdentity(identity);
+			case IdentitiesPackageImpl.REAL_PERSON: {
+				RealPerson realPerson = (RealPerson)theEObject;
+				T result = caseRealPerson(realPerson);
+				if (result == null) result = caseIdentity(realPerson);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -81,10 +82,9 @@ public class IdentitiesSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case IdentitiesPackageImpl.REAL_PERSON: {
-				RealPerson realPerson = (RealPerson)theEObject;
-				T result = caseRealPerson(realPerson);
-				if (result == null) result = caseIdentity(realPerson);
+			case IdentitiesPackageImpl.IDENTITY: {
+				Identity identity = (Identity)theEObject;
+				T result = caseIdentity(identity);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}

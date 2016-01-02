@@ -121,7 +121,9 @@ public class ServiceImpl extends MinimalEObjectImpl.Container implements Service
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ServiceImpl() { super(); }
+	protected ServiceImpl() {
+		super();
+	}
 
 	/**
 	 * Creates a ServiceImpl with price and consumer

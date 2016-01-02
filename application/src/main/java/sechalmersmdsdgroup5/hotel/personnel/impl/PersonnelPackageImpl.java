@@ -116,22 +116,13 @@ public class PersonnelPackageImpl extends EPackageImpl {
 	public static final int EMPLOYEE__KEY = 1;
 
 	/**
-	 * The feature id for the '<em><b>Identity</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int EMPLOYEE__IDENTITY = 2;
-
-	/**
 	 * The feature id for the '<em><b>Role</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	public static final int EMPLOYEE__ROLE = 3;
+	public static final int EMPLOYEE__ROLE = 2;
 
 	/**
 	 * The number of structural features of the '<em>Employee</em>' class.
@@ -140,7 +131,7 @@ public class PersonnelPackageImpl extends EPackageImpl {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int EMPLOYEE_FEATURE_COUNT = 4;
+	public static final int EMPLOYEE_FEATURE_COUNT = 3;
 
 	/**
 	 * The meta object id for the '{@link sechalmersmdsdgroup5.hotel.personnel.impl.RoleImpl <em>Role</em>}' class.
@@ -394,19 +385,6 @@ public class PersonnelPackageImpl extends EPackageImpl {
 	}
 
 	/**
-	 * Returns the meta object for the reference '{@link sechalmersmdsdgroup5.hotel.personnel.Employee#getIdentity <em>Identity</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Identity</em>'.
-	 * @see sechalmersmdsdgroup5.hotel.personnel.Employee#getIdentity()
-	 * @see #getEmployee()
-	 * @generated
-	 */
-	public EReference getEmployee_Identity() {
-		return (EReference)employeeEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
 	 * Returns the meta object for the reference '{@link sechalmersmdsdgroup5.hotel.personnel.Employee#getRole <em>Role</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -416,7 +394,7 @@ public class PersonnelPackageImpl extends EPackageImpl {
 	 * @generated
 	 */
 	public EReference getEmployee_Role() {
-		return (EReference)employeeEClass.getEStructuralFeatures().get(3);
+		return (EReference)employeeEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -554,7 +532,6 @@ public class PersonnelPackageImpl extends EPackageImpl {
 		employeeEClass = createEClass(EMPLOYEE);
 		createEReference(employeeEClass, EMPLOYEE__SCHEDULE);
 		createEReference(employeeEClass, EMPLOYEE__KEY);
-		createEReference(employeeEClass, EMPLOYEE__IDENTITY);
 		createEReference(employeeEClass, EMPLOYEE__ROLE);
 
 		roleEClass = createEClass(ROLE);
@@ -594,7 +571,6 @@ public class PersonnelPackageImpl extends EPackageImpl {
 		// Obtain other dependent packages
 		SchedulePackageImpl theSchedulePackage = (SchedulePackageImpl)EPackage.Registry.INSTANCE.getEPackage(SchedulePackageImpl.eNS_URI);
 		FacilitiesPackageImpl theFacilitiesPackage = (FacilitiesPackageImpl)EPackage.Registry.INSTANCE.getEPackage(FacilitiesPackageImpl.eNS_URI);
-		IdentitiesPackageImpl theIdentitiesPackage = (IdentitiesPackageImpl)EPackage.Registry.INSTANCE.getEPackage(IdentitiesPackageImpl.eNS_URI);
 
 		// Create type parameters
 
@@ -606,7 +582,6 @@ public class PersonnelPackageImpl extends EPackageImpl {
 		initEClass(employeeEClass, Employee.class, "Employee", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getEmployee_Schedule(), theSchedulePackage.getSchedule(), null, "schedule", null, 1, 1, Employee.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getEmployee_Key(), theFacilitiesPackage.getKey(), null, "key", null, 1, 1, Employee.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getEmployee_Identity(), theIdentitiesPackage.getRealPerson(), null, "identity", null, 1, 1, Employee.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getEmployee_Role(), this.getRole(), null, "role", null, 1, 1, Employee.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(roleEClass, Role.class, "Role", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -658,14 +633,6 @@ public class PersonnelPackageImpl extends EPackageImpl {
 		 * @generated
 		 */
 		public static final EReference EMPLOYEE__KEY = eINSTANCE.getEmployee_Key();
-
-		/**
-		 * The meta object literal for the '<em><b>Identity</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		public static final EReference EMPLOYEE__IDENTITY = eINSTANCE.getEmployee_Identity();
 
 		/**
 		 * The meta object literal for the '<em><b>Role</b></em>' reference feature.

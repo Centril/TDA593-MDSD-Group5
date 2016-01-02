@@ -70,16 +70,16 @@ public class IdentitiesAdapterFactory extends AdapterFactoryImpl {
 	protected IdentitiesSwitch<Adapter> modelSwitch =
 		new IdentitiesSwitch<Adapter>() {
 			@Override
-			public Adapter caseIdentity(Identity object) {
-				return createIdentityAdapter();
+			public Adapter caseRealPerson(RealPerson object) {
+				return createRealPersonAdapter();
 			}
 			@Override
 			public Adapter caseOrganisation(Organisation object) {
 				return createOrganisationAdapter();
 			}
 			@Override
-			public Adapter caseRealPerson(RealPerson object) {
-				return createRealPersonAdapter();
+			public Adapter caseIdentity(Identity object) {
+				return createIdentityAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {

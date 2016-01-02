@@ -226,8 +226,6 @@
         <genClasses xsi:type="genmodel:GenClass" ecoreClass="sechalmersmdsdgroup5.ecore#//hotel/clients/Guest">
           <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
               propertySortChoices="true" ecoreFeature="ecore:EReference sechalmersmdsdgroup5.ecore#//hotel/clients/Guest/key"/>
-          <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
-              propertySortChoices="true" ecoreFeature="ecore:EReference sechalmersmdsdgroup5.ecore#//hotel/clients/Guest/identity"/>
         </genClasses>
         <genClasses xsi:type="genmodel:GenClass" ecoreClass="sechalmersmdsdgroup5.ecore#//hotel/clients/Customer">
           <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute sechalmersmdsdgroup5.ecore#//hotel/clients/Customer/paymentMethod"/>
@@ -255,14 +253,14 @@
       </nestedGenPackages>
       <nestedGenPackages xsi:type="genmodel:GenPackage" prefix="Identities" basePackage="sechalmersmdsdgroup5.hotel"
           disposableProviderFactory="true" ecorePackage="sechalmersmdsdgroup5.ecore#//hotel/identities">
-        <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="sechalmersmdsdgroup5.ecore#//hotel/identities/Identity">
-          <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute sechalmersmdsdgroup5.ecore#//hotel/identities/Identity/name"/>
-          <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute sechalmersmdsdgroup5.ecore#//hotel/identities/Identity/idNumber"/>
-        </genClasses>
-        <genClasses xsi:type="genmodel:GenClass" ecoreClass="sechalmersmdsdgroup5.ecore#//hotel/identities/Organisation"/>
         <genClasses xsi:type="genmodel:GenClass" ecoreClass="sechalmersmdsdgroup5.ecore#//hotel/identities/RealPerson">
           <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute sechalmersmdsdgroup5.ecore#//hotel/identities/RealPerson/age"/>
           <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute sechalmersmdsdgroup5.ecore#//hotel/identities/RealPerson/citizenship"/>
+        </genClasses>
+        <genClasses xsi:type="genmodel:GenClass" ecoreClass="sechalmersmdsdgroup5.ecore#//hotel/identities/Organisation"/>
+        <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="sechalmersmdsdgroup5.ecore#//hotel/identities/Identity">
+          <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute sechalmersmdsdgroup5.ecore#//hotel/identities/Identity/name"/>
+          <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute sechalmersmdsdgroup5.ecore#//hotel/identities/Identity/idNumber"/>
         </genClasses>
       </nestedGenPackages>
       <nestedGenPackages xsi:type="genmodel:GenPackage" prefix="Ordering" basePackage="sechalmersmdsdgroup5.hotel"
@@ -386,8 +384,6 @@
               propertySortChoices="true" ecoreFeature="ecore:EReference sechalmersmdsdgroup5.ecore#//hotel/personnel/Employee/schedule"/>
           <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
               propertySortChoices="true" ecoreFeature="ecore:EReference sechalmersmdsdgroup5.ecore#//hotel/personnel/Employee/key"/>
-          <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
-              propertySortChoices="true" ecoreFeature="ecore:EReference sechalmersmdsdgroup5.ecore#//hotel/personnel/Employee/identity"/>
           <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
               propertySortChoices="true" ecoreFeature="ecore:EReference sechalmersmdsdgroup5.ecore#//hotel/personnel/Employee/role"/>
         </genClasses>
