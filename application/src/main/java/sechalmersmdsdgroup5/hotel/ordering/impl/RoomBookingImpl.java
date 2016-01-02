@@ -162,7 +162,7 @@ class RoomBookingImpl implements RoomBooking {
 	 * @generated
 	 * @ordered
 	 */
-	private List<Guest> guests;
+	private List<Guest> guests = new ArrayList<Guest>();
 
 	/**
 	 * The cached value of the '{@link #getServices() <em>Services</em>}' containment reference list.
@@ -172,7 +172,7 @@ class RoomBookingImpl implements RoomBooking {
 	 * @generated
 	 * @ordered
 	 */
-	protected List<Service> services = new ArrayList<>();
+	protected List<Service> services = new ArrayList<Service>();
 
 	/**
 	 * <!-- begin-user-doc -->
