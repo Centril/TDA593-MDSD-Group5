@@ -67,6 +67,20 @@ public class IOHelper {
 		parent = helper;
 	}
 
+	/**
+	 * Returns an IOMonadic view of this helper.
+	 *
+	 * @return the IOMonadic helper.
+	 */
+	public IOMonadic monadic() {
+		return new IOMonadic( this );
+	}
+
+	/**
+	 * Returns a IOPromising view of this helper.
+	 *
+	 * @return the IOPromising helper.
+	 */
 	public IOPromising promising() {
 		return new IOPromising( this );
 	}
