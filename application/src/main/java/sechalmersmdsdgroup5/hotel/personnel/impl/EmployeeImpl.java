@@ -9,9 +9,6 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import sechalmersmdsdgroup5.hotel.facilities.Key;
-
-import sechalmersmdsdgroup5.hotel.identities.RealPerson;
-
 import sechalmersmdsdgroup5.hotel.personnel.Employee;
 import sechalmersmdsdgroup5.hotel.personnel.Role;
 
@@ -27,7 +24,6 @@ import sechalmersmdsdgroup5.hotel.schedule.Schedule;
  * <ul>
  *   <li>{@link sechalmersmdsdgroup5.hotel.personnel.impl.EmployeeImpl#getSchedule <em>Schedule</em>}</li>
  *   <li>{@link sechalmersmdsdgroup5.hotel.personnel.impl.EmployeeImpl#getKey <em>Key</em>}</li>
- *   <li>{@link sechalmersmdsdgroup5.hotel.personnel.impl.EmployeeImpl#getIdentity <em>Identity</em>}</li>
  *   <li>{@link sechalmersmdsdgroup5.hotel.personnel.impl.EmployeeImpl#getRole <em>Role</em>}</li>
  * </ul>
  *
@@ -53,16 +49,6 @@ public class EmployeeImpl extends MinimalEObjectImpl.Container implements Employ
 	 * @ordered
 	 */
 	protected Key key;
-
-	/**
-	 * The cached value of the '{@link #getIdentity() <em>Identity</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getIdentity()
-	 * @generated
-	 * @ordered
-	 */
-	protected RealPerson identity;
 
 	/**
 	 * The cached value of the '{@link #getRole() <em>Role</em>}' reference.
@@ -164,39 +150,6 @@ public class EmployeeImpl extends MinimalEObjectImpl.Container implements Employ
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public RealPerson getIdentity() {
-		if (identity != null && ((EObject)identity).eIsProxy()) {
-			InternalEObject oldIdentity = (InternalEObject)identity;
-			identity = (RealPerson)eResolveProxy(oldIdentity);
-			if (identity != oldIdentity) {
-			}
-		}
-		return identity;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public RealPerson basicGetIdentity() {
-		return identity;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setIdentity(RealPerson newIdentity) {
-		identity = newIdentity;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public Role getRole() {
 		if (role != null && ((EObject)role).eIsProxy()) {
 			InternalEObject oldRole = (InternalEObject)role;
@@ -239,9 +192,6 @@ public class EmployeeImpl extends MinimalEObjectImpl.Container implements Employ
 			case PersonnelPackageImpl.EMPLOYEE__KEY:
 				if (resolve) return getKey();
 				return basicGetKey();
-			case PersonnelPackageImpl.EMPLOYEE__IDENTITY:
-				if (resolve) return getIdentity();
-				return basicGetIdentity();
 			case PersonnelPackageImpl.EMPLOYEE__ROLE:
 				if (resolve) return getRole();
 				return basicGetRole();
@@ -262,9 +212,6 @@ public class EmployeeImpl extends MinimalEObjectImpl.Container implements Employ
 				return;
 			case PersonnelPackageImpl.EMPLOYEE__KEY:
 				setKey((Key)newValue);
-				return;
-			case PersonnelPackageImpl.EMPLOYEE__IDENTITY:
-				setIdentity((RealPerson)newValue);
 				return;
 			case PersonnelPackageImpl.EMPLOYEE__ROLE:
 				setRole((Role)newValue);
@@ -287,9 +234,6 @@ public class EmployeeImpl extends MinimalEObjectImpl.Container implements Employ
 			case PersonnelPackageImpl.EMPLOYEE__KEY:
 				setKey((Key)null);
 				return;
-			case PersonnelPackageImpl.EMPLOYEE__IDENTITY:
-				setIdentity((RealPerson)null);
-				return;
 			case PersonnelPackageImpl.EMPLOYEE__ROLE:
 				setRole((Role)null);
 				return;
@@ -309,8 +253,6 @@ public class EmployeeImpl extends MinimalEObjectImpl.Container implements Employ
 				return schedule != null;
 			case PersonnelPackageImpl.EMPLOYEE__KEY:
 				return key != null;
-			case PersonnelPackageImpl.EMPLOYEE__IDENTITY:
-				return identity != null;
 			case PersonnelPackageImpl.EMPLOYEE__ROLE:
 				return role != null;
 		}

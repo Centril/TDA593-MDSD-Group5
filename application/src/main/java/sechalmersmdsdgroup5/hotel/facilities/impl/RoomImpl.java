@@ -177,10 +177,10 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 		this.usable = usable;
 		this.basePrice = basePrice;
 
-		this.attributes = roomAttributes == null ? new ArrayList<>() : roomAttributes;
-		this.prototypes = prototypeOrderings == null ? new ArrayList<>() : prototypeOrderings;
+		this.attributes = roomAttributes == null ? new ArrayList<RoomAttribute>() : roomAttributes;
+		this.prototypes = prototypeOrderings == null ? new ArrayList<PrototypeOrdering>() : prototypeOrderings;
 
-		this.servicesAfforded = serviceBlueprints == null ? new ArrayList<>() : serviceBlueprints;
+		this.servicesAfforded = serviceBlueprints == null ? new ArrayList<ServiceBlueprint>() : serviceBlueprints;
 	}
 
 	/**

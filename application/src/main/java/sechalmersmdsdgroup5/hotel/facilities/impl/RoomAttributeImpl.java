@@ -24,6 +24,7 @@ import sechalmersmdsdgroup5.hotel.facilities.RoomAttribute;
  * @generated
  */
 public class RoomAttributeImpl extends MinimalEObjectImpl.Container implements RoomAttribute {
+	public static final String AMOUNT_OF_BEDS = "AMOUNT_OF_BEDS";
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
