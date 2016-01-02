@@ -30,6 +30,11 @@ public class Holder<A> implements Monad<A>, Supplier<A> {
 	}
 
 	@Override
+	public <B> Holder<A> composeInv( Monad<B> mb ) {
+		return (Holder<A>) Monad.super.composeInv( mb );
+	}
+
+	@Override
 	public <B> Holder<B> fmap( Function<A, B> mapper ) {
 		return (Holder<B>) Monad.super.fmap( mapper );
 	}

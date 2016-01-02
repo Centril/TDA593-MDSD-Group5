@@ -49,6 +49,11 @@ public class Maybe<A> implements Monad<A> {
 	}
 
 	@Override
+	public <B> Maybe<A> composeInv( Monad<B> mb ) {
+		return (Maybe<A>) Monad.super.composeInv( mb );
+	}
+
+	@Override
 	public <B> Maybe<B> fmap( Function<A, B> mapper ) {
 		return (Maybe<B>) Monad.super.fmap( mapper );
 	}
