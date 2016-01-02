@@ -366,7 +366,7 @@
             <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="sechalmersmdsdgroup5.ecore#//hotel/ordering/ICheckInCheckOut/giveOutKey/key"/>
           </genOperations>
           <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="sechalmersmdsdgroup5.ecore#//hotel/ordering/ICheckInCheckOut/takeBackKey">
-            <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="sechalmersmdsdgroup5.ecore#//hotel/ordering/ICheckInCheckOut/takeBackKey/key"/>
+            <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="sechalmersmdsdgroup5.ecore#//hotel/ordering/ICheckInCheckOut/takeBackKey/identity"/>
           </genOperations>
         </genClasses>
         <genClasses xsi:type="genmodel:GenClass" ecoreClass="sechalmersmdsdgroup5.ecore#//hotel/ordering/OrdinaryPreOrder"/>
