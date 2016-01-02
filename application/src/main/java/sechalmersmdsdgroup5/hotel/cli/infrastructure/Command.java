@@ -27,7 +27,7 @@ public interface Command<I, O> extends BiFunction<IOHelper, I, O> {
 	 * @return the command.
 	 */
 	static <I> Command<I, Void> commandVoid( String help, BiConsumer<IOHelper, I> cmd ) {
-		return command( help, (io, input) -> { cmd.accept( io, input ); return null; } );
+		return new BaseConsuming<>( help, cmd );
 	}
 
 	/**
@@ -42,6 +42,30 @@ public interface Command<I, O> extends BiFunction<IOHelper, I, O> {
 	 */
 	static <I, O> Command<I, O> command( String help, BiFunction<IOHelper, I, O> cmd ) {
 		return new Base<>( help, cmd );
+	}
+
+	/**
+	 * A consuming command.
+	 *
+	 * @param <I> input type
+	 */
+	interface Consuming<I> extends Command<I, Void>, BiConsumer<IOHelper, I> {
+		@Override
+		default Void apply( IOHelper io, I input ) {
+			accept( io, input );
+			return null;
+		}
+	}
+
+	/**
+	 * Consuming base class for a command.
+	 *
+	 * @param <I> the input type.
+	 */
+	class BaseConsuming<I> extends Base<I, Void> {
+		public BaseConsuming( String help, BiConsumer<IOHelper, I> cmd ) {
+			super( help, (io, input) -> { cmd.accept( io, input ); return null; } );
+		}
 	}
 
 	/**
