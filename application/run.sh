@@ -1,2 +1,2 @@
 #!/bin/sh
-./gradlew build run -q
+./gradlew build run -q -Dexec.args="$@"

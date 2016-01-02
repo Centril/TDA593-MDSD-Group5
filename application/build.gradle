@@ -73,5 +73,9 @@ test {
 apply plugin: "application"
 mainClassName = "sechalmersmdsdgroup5.hotel.cli.Main"
 run {
+	if ( System.getProperty( "exec.args" ) != null ) {
+		args System.getProperty( "exec.args" ).split()
+	}
+
 	standardInput = System.in
 }
