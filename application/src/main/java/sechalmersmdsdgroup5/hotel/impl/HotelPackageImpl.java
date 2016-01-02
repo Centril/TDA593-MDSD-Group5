@@ -240,7 +240,7 @@ public class HotelPackageImpl extends EPackageImpl {
 	public static final int HOTEL__TASK_LOG = 15;
 
 	/**
-	 * The feature id for the '<em><b>Blacklist</b></em>' reference.
+	 * The feature id for the '<em><b>Blacklist</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -320,9 +320,9 @@ public class HotelPackageImpl extends EPackageImpl {
 		PersonnelPackageImpl thePersonnelPackage = (PersonnelPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(PersonnelPackageImpl.eNS_URI) instanceof PersonnelPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(PersonnelPackageImpl.eNS_URI) : PersonnelPackageImpl.eINSTANCE);
 		SchedulePackageImpl theSchedulePackage = (SchedulePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(SchedulePackageImpl.eNS_URI) instanceof SchedulePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(SchedulePackageImpl.eNS_URI) : SchedulePackageImpl.eINSTANCE);
 		LogPackageImpl theLogPackage = (LogPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(LogPackageImpl.eNS_URI) instanceof LogPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(LogPackageImpl.eNS_URI) : LogPackageImpl.eINSTANCE);
-		BlacklistPackageImpl theBlacklistPackage = (BlacklistPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(BlacklistPackageImpl.eNS_URI) instanceof BlacklistPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(BlacklistPackageImpl.eNS_URI) : BlacklistPackageImpl.eINSTANCE);
 		InventoryPackageImpl theInventoryPackage = (InventoryPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(InventoryPackageImpl.eNS_URI) instanceof InventoryPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(InventoryPackageImpl.eNS_URI) : InventoryPackageImpl.eINSTANCE);
 		SearchPackageImpl theSearchPackage = (SearchPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(SearchPackageImpl.eNS_URI) instanceof SearchPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(SearchPackageImpl.eNS_URI) : SearchPackageImpl.eINSTANCE);
+		BlacklistPackageImpl theBlacklistPackage = (BlacklistPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(BlacklistPackageImpl.eNS_URI) instanceof BlacklistPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(BlacklistPackageImpl.eNS_URI) : BlacklistPackageImpl.eINSTANCE);
 
 		// Create package meta-data objects
 		theHotelPackage.createPackageContents();
@@ -335,9 +335,9 @@ public class HotelPackageImpl extends EPackageImpl {
 		thePersonnelPackage.createPackageContents();
 		theSchedulePackage.createPackageContents();
 		theLogPackage.createPackageContents();
-		theBlacklistPackage.createPackageContents();
 		theInventoryPackage.createPackageContents();
 		theSearchPackage.createPackageContents();
+		theBlacklistPackage.createPackageContents();
 
 		// Initialize created meta-data
 		theHotelPackage.initializePackageContents();
@@ -350,9 +350,9 @@ public class HotelPackageImpl extends EPackageImpl {
 		thePersonnelPackage.initializePackageContents();
 		theSchedulePackage.initializePackageContents();
 		theLogPackage.initializePackageContents();
-		theBlacklistPackage.initializePackageContents();
 		theInventoryPackage.initializePackageContents();
 		theSearchPackage.initializePackageContents();
+		theBlacklistPackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
 		theHotelPackage.freeze();
@@ -585,10 +585,10 @@ public class HotelPackageImpl extends EPackageImpl {
 	}
 
 	/**
-	 * Returns the meta object for the reference '{@link sechalmersmdsdgroup5.hotel.Hotel#getBlacklist <em>Blacklist</em>}'.
+	 * Returns the meta object for the reference list '{@link sechalmersmdsdgroup5.hotel.Hotel#getBlacklist <em>Blacklist</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Blacklist</em>'.
+	 * @return the meta object for the reference list '<em>Blacklist</em>'.
 	 * @see sechalmersmdsdgroup5.hotel.Hotel#getBlacklist()
 	 * @see #getHotel()
 	 * @generated
@@ -681,9 +681,9 @@ public class HotelPackageImpl extends EPackageImpl {
 		PersonnelPackageImpl thePersonnelPackage = (PersonnelPackageImpl)EPackage.Registry.INSTANCE.getEPackage(PersonnelPackageImpl.eNS_URI);
 		SchedulePackageImpl theSchedulePackage = (SchedulePackageImpl)EPackage.Registry.INSTANCE.getEPackage(SchedulePackageImpl.eNS_URI);
 		LogPackageImpl theLogPackage = (LogPackageImpl)EPackage.Registry.INSTANCE.getEPackage(LogPackageImpl.eNS_URI);
-		BlacklistPackageImpl theBlacklistPackage = (BlacklistPackageImpl)EPackage.Registry.INSTANCE.getEPackage(BlacklistPackageImpl.eNS_URI);
 		InventoryPackageImpl theInventoryPackage = (InventoryPackageImpl)EPackage.Registry.INSTANCE.getEPackage(InventoryPackageImpl.eNS_URI);
 		SearchPackageImpl theSearchPackage = (SearchPackageImpl)EPackage.Registry.INSTANCE.getEPackage(SearchPackageImpl.eNS_URI);
+		BlacklistPackageImpl theBlacklistPackage = (BlacklistPackageImpl)EPackage.Registry.INSTANCE.getEPackage(BlacklistPackageImpl.eNS_URI);
 
 		// Add subpackages
 		getESubpackages().add(theFacilitiesPackage);
@@ -695,9 +695,9 @@ public class HotelPackageImpl extends EPackageImpl {
 		getESubpackages().add(thePersonnelPackage);
 		getESubpackages().add(theSchedulePackage);
 		getESubpackages().add(theLogPackage);
-		getESubpackages().add(theBlacklistPackage);
 		getESubpackages().add(theInventoryPackage);
 		getESubpackages().add(theSearchPackage);
+		getESubpackages().add(theBlacklistPackage);
 
 		// Create type parameters
 
@@ -723,7 +723,7 @@ public class HotelPackageImpl extends EPackageImpl {
 		initEReference(getHotel_RoomPrototypes(), theFacilitiesPackage.getRoomPrototype(), null, "roomPrototypes", null, 0, -1, Hotel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getHotel_AccessLog(), theFacilitiesPackage.getAccessLog(), null, "accessLog", null, 1, 1, Hotel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getHotel_TaskLog(), theLogPackage.getTaskLog(), null, "taskLog", null, 1, 1, Hotel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getHotel_Blacklist(), theBlacklistPackage.getIBlacklist(), null, "blacklist", null, 1, 1, Hotel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getHotel_Blacklist(), theIdentitiesPackage.getIdentity(), null, "blacklist", null, 0, -1, Hotel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);
@@ -881,7 +881,7 @@ public class HotelPackageImpl extends EPackageImpl {
 		public static final EReference HOTEL__TASK_LOG = eINSTANCE.getHotel_TaskLog();
 
 		/**
-		 * The meta object literal for the '<em><b>Blacklist</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Blacklist</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
