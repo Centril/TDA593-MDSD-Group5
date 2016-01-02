@@ -9,14 +9,9 @@ import sechalmersmdsdgroup5.hotel.ordering.RoomBooking;
 import sechalmersmdsdgroup5.hotel.services.Service;
 
 import java.time.*;
-import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
-import java.util.concurrent.TimeUnit;
-
-import static groovy.util.GroovyTestCase.assertEquals;
 
 /**
  * <!-- begin-user-doc -->
