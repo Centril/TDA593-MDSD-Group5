@@ -35,6 +35,28 @@ public interface Application<I> extends Supplier<Map<String, Command<I, ?>>> {
 		Application<I> build();
 
 		/**
+		 * Adds a command withn ident(ifier).
+		 *
+		 * @param ident the identifier.
+		 * @param gen the command supplier.
+		 * @return the builder.
+		 */
+		default Builder<I> add( String ident, Supplier<Command<I, ?>> gen ) {
+			return add( ident, gen.get() );
+		}
+
+		/**
+		 * Adds a command that supplies its own identifier.
+		 *
+		 * @param gen the command supplier.
+		 * @return the builder.
+		 */
+		default Builder<I> add( Supplier<IdentifiableCommand<I, ?>> gen ) {
+			IdentifiableCommand<I, ?> cmd = gen.get();
+			return add( cmd.getIdentifier(), cmd );
+		}
+
+		/**
 		 * Adds a command with ident(ifier), help message and cmd (a function, IOHelper -> I -> ?
 		 *
 		 * @param ident the identifier.

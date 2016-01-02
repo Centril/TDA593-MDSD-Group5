@@ -106,7 +106,7 @@ public class IOHelper {
 	 *
 	 * @param msg the message.
 	 */
-	public IOHelper error( String msg ) {
+	public IOHelper error( Object msg ) {
 		bracketln( err, RED, "ERROR", msg );
 		err.println();
 		throw new QuitException();
@@ -117,7 +117,7 @@ public class IOHelper {
 	 *
 	 * @param msg the message.
 	 */
-	public IOHelper warn( String msg ) {
+	public IOHelper warn( Object msg ) {
 		return bracketln( err, YELLOW, "WARN", msg );
 	}
 
@@ -126,7 +126,7 @@ public class IOHelper {
 	 *
 	 * @param msg the message.
 	 */
-	public IOHelper info( String msg ) {
+	public IOHelper info( Object msg ) {
 		return bracketln( CYAN, "INFO", msg );
 	}
 
@@ -137,7 +137,7 @@ public class IOHelper {
 	 * @param inside the inside msg.
 	 * @param msg the outside msg.
 	 */
-	public IOHelper bracketln( PrintColor color, String inside, String msg ) {
+	public IOHelper bracketln( PrintColor color, Object inside, Object msg ) {
 		return bracketln( out, color, inside, msg );
 	}
 
@@ -148,7 +148,7 @@ public class IOHelper {
 	 * @param inside the inside msg.
 	 * @param msg the outside msg.
 	 */
-	public IOHelper bracket( PrintColor color, String inside, String msg ) {
+	public IOHelper bracket( PrintColor color, Object inside, Object msg ) {
 		return bracket( out, color, inside, msg );
 	}
 
@@ -157,7 +157,7 @@ public class IOHelper {
 	 *
 	 * @param msg the message.
 	 */
-	public IOHelper paragraph( String msg ) {
+	public IOHelper paragraph( Object msg ) {
 		newline( msg );
 		return newline();
 	}
@@ -168,7 +168,7 @@ public class IOHelper {
 	 * @param color the color.
 	 * @param msg the message.
 	 */
-	public IOHelper paragraph( PrintColor color, String msg ) {
+	public IOHelper paragraph( PrintColor color, Object msg ) {
 		newline( color, msg );
 		return newline();
 	}
@@ -186,8 +186,8 @@ public class IOHelper {
 	 *
 	 * @param msg the message.
 	 */
-	public IOHelper newline( String msg ) {
-		out.println( msg );
+	public IOHelper newline( Object msg ) {
+		out.println( msg.toString() );
 		return this;
 	}
 
@@ -197,8 +197,8 @@ public class IOHelper {
 	 * @param color the color.
 	 * @param msg the message.
 	 */
-	public IOHelper newline( PrintColor color, String msg ) {
-		out.println( color, msg );
+	public IOHelper newline( PrintColor color, Object msg ) {
+		out.println( color, msg.toString() );
 		return this;
 	}
 
@@ -207,8 +207,8 @@ public class IOHelper {
 	 *
 	 * @param msg the message.
 	 */
-	public IOHelper print( String msg ) {
-		out.print( msg );
+	public IOHelper print( Object msg ) {
+		out.print( msg.toString() );
 		out.flush();
 		return this;
 	}
@@ -219,7 +219,7 @@ public class IOHelper {
 	 * @param color the color.
 	 * @param msg the message.
 	 */
-	public IOHelper print( PrintColor color, String msg ) {
+	public IOHelper print( PrintColor color, Object msg ) {
 		out.print( color, msg );
 		return this;
 	}
@@ -368,6 +368,29 @@ public class IOHelper {
 	 * @param <T> the type of the value produced.
 	 * @return the produced value.
 	 */
+	public <T> T io( Supplier<T> producer, Consumer<T> consumer ) {
+		T e = producer.get();
+		consumer.accept( e );
+		return e;
+	}
+
+	/**
+	 * Performs an operation.
+	 *
+	 * @param operation the operation.
+	 */
+	public IOHelper io( Runnable operation ) {
+		return io( io -> operation.run() );
+	}
+
+	/**
+	 * Produces a value, consumes it and then returns the produced value.
+	 *
+	 * @param producer the produces.
+	 * @param consumer the consumer.
+	 * @param <T> the type of the value produced.
+	 * @return the produced value.
+	 */
 	public <T> T io( Function<IOHelper, T> producer, BiConsumer<IOHelper, T> consumer ) {
 		return io( producer.apply( this ), consumer );
 	}
@@ -436,15 +459,15 @@ public class IOHelper {
 			str -> str.startsWith( "y" ) ) );
 	}
 
-	private IOHelper bracketln( PrintColorWriter writer, PrintColor color, String inside, String msg ) {
+	private IOHelper bracketln( PrintColorWriter writer, PrintColor color, Object inside, Object msg ) {
 		bracket( writer, color, inside, msg );
 		writer.println();
 		return this;
 	}
 
-	private IOHelper bracket( PrintColorWriter writer, PrintColor color, String inside, String msg ) {
+	private IOHelper bracket( PrintColorWriter writer, PrintColor color, Object inside, Object msg ) {
 		writer.print( '[' );
-		writer.print( color, inside );
+		writer.print( color, inside.toString() );
 		writer.print( "] " );
 		writer.print( msg );
 		writer.flush();

@@ -15,18 +15,18 @@ public class PrintColorWriter extends PrintWriter {
 		super( new OutputStreamWriter( out, "UTF-8" ), true );
 	}
 
-	public void print( PrintColor color, String msg ) {
+	public void print( PrintColor color, Object msg ) {
 		printColor( color, msg );
 		flush();
 	}
 
-	public void println( PrintColor color, String msg ) {
+	public void println( PrintColor color, Object msg ) {
 		printColor( color, msg );
 		println();
 		flush();
 	}
 
-	private void printColor( PrintColor color, String msg ) {
+	private void printColor( PrintColor color, Object msg ) {
 		if ( TermColor.enabled ) {
 			print( color.getAnsiColor() );
 			print( msg );
