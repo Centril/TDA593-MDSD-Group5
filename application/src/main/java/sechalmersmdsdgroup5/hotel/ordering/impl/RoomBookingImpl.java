@@ -8,9 +8,15 @@ import sechalmersmdsdgroup5.hotel.ordering.Invoice;
 import sechalmersmdsdgroup5.hotel.ordering.RoomBooking;
 import sechalmersmdsdgroup5.hotel.services.Service;
 
+import java.time.*;
+import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
+
+import static groovy.util.GroovyTestCase.assertEquals;
 
 /**
  * <!-- begin-user-doc -->
@@ -34,25 +40,50 @@ import java.util.List;
  * @generated NOT
  */
 class RoomBookingImpl implements RoomBooking {
+
+	/**
+	 * Default constructor. Feel free to add another when needed.
+	 * @param invoice
+	 * @param startDate
+	 * @param endDate
+	 * @param checkinTime
+	 * @param checkoutTime
+	 * @param bookedRoom
+	 * @param isPaid
+     * @param guests
+     * @param services
+     */
+	public RoomBookingImpl(List<Invoice> invoice, Date startDate, Date endDate, Date checkinTime, Date checkoutTime, Room bookedRoom, boolean isPaid, List<Guest> guests, List<Service> services) {
+		this.invoice = invoice;
+		this.startDate = startDate;
+		this.endDate = endDate;
+		this.checkinTime = checkinTime;
+		this.checkoutTime = checkoutTime;
+		this.bookedRoom = bookedRoom;
+		this.isPaid = isPaid;
+		this.guests = guests;
+		this.services = services;
+	}
+
 	/**
 	 * The cached value of the '{@link #getInvoice() <em>Invoice</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getInvoice()
+
 	 * @generated
 	 * @ordered
 	 */
 	private List<Invoice> invoice;
 
 	/**
-	 * The default value of the '{@link #getStartDate() <em>Start Date</em>}' attribute.
+	 * The date the object was created.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getStartDate()
-	 * @generated
 	 * @ordered
 	 */
-	private static final Date START_DATE_EDEFAULT = null;
+	private static final Date START_DATE_EDEFAULT = new Date();
 
 	/**
 	 * The cached value of the '{@link #getStartDate() <em>Start Date</em>}' attribute.
@@ -65,14 +96,11 @@ class RoomBookingImpl implements RoomBooking {
 	private Date startDate = START_DATE_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getEndDate() <em>End Date</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * The end-date is automatically when the object was created.
 	 * @see #getEndDate()
-	 * @generated
 	 * @ordered
 	 */
-	private static final Date END_DATE_EDEFAULT = null;
+	private static final Date END_DATE_EDEFAULT = new Date();
 
 	/**
 	 * The cached value of the '{@link #getEndDate() <em>End Date</em>}' attribute.
@@ -89,10 +117,9 @@ class RoomBookingImpl implements RoomBooking {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getCheckinTime()
-	 * @generated
 	 * @ordered
 	 */
-	private static final Date CHECKIN_TIME_EDEFAULT = null;
+	private static final Date CHECKIN_TIME_EDEFAULT = new Date();
 
 	/**
 	 * The cached value of the '{@link #getCheckinTime() <em>Checkin Time</em>}' attribute.
@@ -109,10 +136,9 @@ class RoomBookingImpl implements RoomBooking {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getCheckoutTime()
-	 * @generated
 	 * @ordered
 	 */
-	private static final Date CHECKOUT_TIME_EDEFAULT = null;
+	private static final Date CHECKOUT_TIME_EDEFAULT = new Date();
 
 	/**
 	 * The cached value of the '{@link #getCheckoutTime() <em>Checkout Time</em>}' attribute.
@@ -322,11 +348,34 @@ class RoomBookingImpl implements RoomBooking {
 	 * @generated
 	 */
 	public double totalPrice() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		double total = 0;
+		//Services
+		for (Service service : services) {
+			total += service.totalPrice();
+		}
+		//Days times base price for the room
+		total += bookedRoom.getBasePrice() * daysBetween(startDate,endDate);
+		return total;
 	}
 
+	/**
+	 * Finds the interval of the roomBooking in number of days..
+	 * Converts to Java 8 library for dates, unsure whether
+	 * Papyrus would have supported it natively.
+	 * @param d1
+	 * @param d2
+     * @return
+     */
+	private int daysBetween(Date d1, Date d2) {
+		Instant instant1 = d1.toInstant();
+		Instant instant2 = d2.toInstant();
+		ZonedDateTime zdt1 = instant1.atZone(ZoneId.systemDefault());
+		ZonedDateTime zdt2 = instant2.atZone(ZoneId.systemDefault());
+		LocalDate startDate = zdt1.toLocalDate();
+		LocalDate endDate = zdt2.toLocalDate();
+		return Period.between(startDate, endDate).getDays();
+	}
+	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
