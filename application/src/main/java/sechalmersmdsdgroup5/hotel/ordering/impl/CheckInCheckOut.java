@@ -44,6 +44,11 @@ public class CheckInCheckOut implements ICheckInCheckOut {
 
     @Override
     public boolean giveOutKey(Identity identity, Key key) {
+        if(identity != null && key != null){
+            
+
+            return true;
+        }
         return false;
     }
 
