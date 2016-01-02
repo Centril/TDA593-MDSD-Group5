@@ -7,7 +7,9 @@ import sechalmersmdsdgroup5.hotel.cli.infrastructure.color.TermColor;
 import java.io.*;
 import java.util.List;
 import java.util.Optional;
+import java.util.function.BiConsumer;
 import java.util.function.Consumer;
+import java.util.function.Function;
 import java.util.function.Supplier;
 
 import static java.util.stream.Stream.concat;
@@ -63,6 +65,10 @@ public class IOHelper {
 		out = helper.out;
 		err = helper.err;
 		parent = helper;
+	}
+
+	public IOPromising promising() {
+		return new IOPromising( this );
 	}
 
 	/**
@@ -341,6 +347,32 @@ public class IOHelper {
 	}
 
 	/**
+	 * Produces a value, consumes it and then returns the produced value.
+	 *
+	 * @param producer the produces.
+	 * @param consumer the consumer.
+	 * @param <T> the type of the value produced.
+	 * @return the produced value.
+	 */
+	public <T> T io( Function<IOHelper, T> producer, BiConsumer<IOHelper, T> consumer ) {
+		return io( producer.apply( this ), consumer );
+	}
+
+	/**
+	 * Does an operation on some data and then returns that data.
+	 * Can be seen as (<*) in terms of Monad:s.
+	 *
+	 * @param elem the data.
+	 * @param operation the operation to run.
+	 * @param <T> the type of the data.
+	 * @return the data.
+	 */
+	public <T> T io( T elem, BiConsumer<IOHelper, T> operation ) {
+		operation.accept( this, elem );
+		return elem;
+	}
+
+	/**
 	 * Performs an operation on this IOHelper.
 	 *
 	 * @param operation the operation.
@@ -350,6 +382,11 @@ public class IOHelper {
 		return this;
 	}
 
+	/**
+	 * Makes a specific operation quit instruction aware.
+	 *
+	 * @param operation the operation.
+	 */
 	public IOHelper quitAware( Consumer<IOHelper> operation ) {
 		try {
 			return io( operation );
