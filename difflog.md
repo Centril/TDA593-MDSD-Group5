@@ -14,4 +14,4 @@
 + 2015-12-30: Fixed Client -> Invoice aggregation, now 1:0..*, was a mistake in class diagram.
 + 2015-12-30: Added Invoice.totalPrice, omitted by mistake prior.
 + 2015-12-31: Added blacklist to Hotel interface."
-
++ 2016-01-02: Fixed correct return type  on getblacklist method in hotel interface"

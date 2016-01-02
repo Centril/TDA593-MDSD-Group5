@@ -40,7 +40,7 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="taskLog" ordered="false"
           lowerBound="1" eType="#//hotel/log/TaskLog"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="blacklist" ordered="false"
-          upperBound="-1" eType="#//hotel/identities/Identity"/>
+          lowerBound="1" eType="#//hotel/blacklist/IBlacklist"/>
     </eClassifiers>
     <eSubpackages name="facilities" nsURI="http:///sechalmersmdsdgroup5/hotel/facilities.ecore"
         nsPrefix="sechalmersmdsdgroup5.hotel.facilities">
@@ -482,6 +482,31 @@
             upperBound="-1" eType="#//hotel/log/TaskItem" containment="true"/>
       </eClassifiers>
     </eSubpackages>
+    <eSubpackages name="blacklist" nsURI="http:///sechalmersmdsdgroup5/hotel/blacklist.ecore"
+        nsPrefix="sechalmersmdsdgroup5.hotel.blacklist">
+      <eClassifiers xsi:type="ecore:EClass" name="Blacklist">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="items" ordered="false"
+            upperBound="-1" eType="#//hotel/blacklist/BlacklistItem"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="BlacklistItem">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="identity" ordered="false"
+            lowerBound="1" eType="#//hotel/identities/Identity"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="reason" ordered="false"
+            lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="date" ordered="false"
+            lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="expiry" ordered="false"
+            lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="IBlacklist" abstract="true" interface="true">
+        <eOperations name="addToBlackList" ordered="false" lowerBound="1">
+          <eParameters name="identity" ordered="false" lowerBound="1" eType="#//hotel/identities/Identity"/>
+        </eOperations>
+        <eOperations name="removeFromBlackList" ordered="false" lowerBound="1">
+          <eParameters name="identity" ordered="false" lowerBound="1" eType="#//hotel/identities/Identity"/>
+        </eOperations>
+      </eClassifiers>
+    </eSubpackages>
     <eSubpackages name="inventory" nsURI="http:///sechalmersmdsdgroup5/hotel/inventory.ecore"
         nsPrefix="sechalmersmdsdgroup5.hotel.inventory">
       <eClassifiers xsi:type="ecore:EClass" name="Inventory">
@@ -673,31 +698,6 @@
           abstract="true" interface="true">
         <eTypeParameters name="BPT1"/>
         <eTypeParameters name="BPT2"/>
-      </eClassifiers>
-    </eSubpackages>
-    <eSubpackages name="blacklist" nsURI="http:///sechalmersmdsdgroup5/hotel/blacklist.ecore"
-        nsPrefix="sechalmersmdsdgroup5.hotel.blacklist">
-      <eClassifiers xsi:type="ecore:EClass" name="Blacklist">
-        <eStructuralFeatures xsi:type="ecore:EReference" name="items" ordered="false"
-            upperBound="-1" eType="#//hotel/blacklist/BlacklistItem"/>
-      </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="BlacklistItem">
-        <eStructuralFeatures xsi:type="ecore:EReference" name="identity" ordered="false"
-            lowerBound="1" eType="#//hotel/identities/Identity"/>
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="reason" ordered="false"
-            lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="date" ordered="false"
-            lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="expiry" ordered="false"
-            lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
-      </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="IBlacklist" abstract="true" interface="true">
-        <eOperations name="addToBlackList" ordered="false" lowerBound="1">
-          <eParameters name="identity" ordered="false" lowerBound="1" eType="#//hotel/identities/Identity"/>
-        </eOperations>
-        <eOperations name="removeFromBlackList" ordered="false" lowerBound="1">
-          <eParameters name="identity" ordered="false" lowerBound="1" eType="#//hotel/identities/Identity"/>
-        </eOperations>
       </eClassifiers>
     </eSubpackages>
   </eSubpackages>
