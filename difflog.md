@@ -16,3 +16,5 @@
 + 2015-12-31: Added blacklist to Hotel interface."
 + 2016-12-01: Fixed relationship between Service and ServiceConsumer, now a classifier and 1 as multiplicity.
 + 2016-01-02: Change relationshionship between realperson to guest and employee
++ 2016-01-03: To pay for an order the client now gives his or her name 
+	      instead of the system asking for an order or service. Should be changed in the UC and any other occurrences in the report.
