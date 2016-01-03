@@ -2,6 +2,7 @@
  */
 package sechalmersmdsdgroup5.hotel.ordering.impl;
 
+import sechalmersmdsdgroup5.hotel.clients.Customer;
 import sechalmersmdsdgroup5.hotel.ordering.Campaign;
 import sechalmersmdsdgroup5.hotel.ordering.Invoice;
 import sechalmersmdsdgroup5.hotel.ordering.Order;
@@ -29,6 +30,7 @@ import java.util.List;
  */
 public class OrderImpl implements Order {
 	private int id;
+	private Customer customer;
 
 	/**
 	 * The cached value of the '{@link #getInvoice() <em>Invoice</em>}' containment reference list.
@@ -132,6 +134,16 @@ public class OrderImpl implements Order {
 		id = value;
 	}
 
+	@Override
+	public Customer getCustomer() {
+		return customer;
+	}
+
+	@Override
+	public void setCustomer(Customer value) {
+		this.customer = value;
+	}
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -175,6 +187,7 @@ public class OrderImpl implements Order {
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (booking ID: " + id + ")");
 		result.append(" (creationDate: " + creationDate + ")");
+		result.append(" (customer: " + customer + ")");
 		for(RoomBooking booking: getBookings()) {
 			result.append(" (booking: " + booking.toString());
 		}
