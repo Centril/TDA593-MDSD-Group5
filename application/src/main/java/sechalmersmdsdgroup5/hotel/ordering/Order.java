@@ -4,6 +4,8 @@ package sechalmersmdsdgroup5.hotel.ordering;
 
 import java.util.Date;
 import java.util.List;
+
+import sechalmersmdsdgroup5.hotel.clients.Customer;
 import sechalmersmdsdgroup5.hotel.payment.Payable;
 
 /**
@@ -38,6 +40,12 @@ public interface Order extends Payable {
 	 * @generated
 	 */
 	List<Campaign> getCampaigns();
+
+	/**
+	 * Acquires the associated client.
+	 * @return the client associated with the order.
+     */
+	Customer getCustomer();
 
 	/**
 	 * Returns the value of the '<em><b>Bookings</b></em>' reference list.
