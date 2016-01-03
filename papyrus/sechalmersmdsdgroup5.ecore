@@ -286,6 +286,8 @@
             upperBound="-1" eType="#//hotel/ordering/RoomBooking"/>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="creationDate" ordered="false"
             lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" ordered="false"
+            lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="Campaign">
         <eOperations name="discount" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble">
@@ -341,6 +343,8 @@
             lowerBound="1" upperBound="-1" eType="#//hotel/clients/Guest"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="services" ordered="false"
             upperBound="-1" eType="#//hotel/services/Service" containment="true"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" ordered="false"
+            lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="IOrder" abstract="true" interface="true">
         <eOperations name="createBooking" ordered="false" lowerBound="1" eType="#//hotel/ordering/RoomBooking">
