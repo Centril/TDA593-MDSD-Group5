@@ -28,10 +28,10 @@ public interface ISearch {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model ordered="false" queryRequired="true" queryOrdered="false"
+	 * @model ordered="false" fromRequired="true" fromOrdered="false" toRequired="true" toOrdered="false" queryRequired="true" queryOrdered="false"
 	 * @generated
 	 */
-	List<SearchResult<PreOrder>> searchAvailableOrders(SearchQuery<PreOrder> query);
+	List<SearchResult<PreOrder>> searchAvailableOrders(Date from, Date to, SearchQuery<PreOrder> query);
 
 	/**
 	 * <!-- begin-user-doc -->

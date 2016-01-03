@@ -23,7 +23,8 @@ import static sechalmersmdsdgroup5.hotel.search.logic.SearchCriteriaFactory.matc
 import static sechalmersmdsdgroup5.hotel.search.logic.SearchCriteriaFactory.query;
 import static sechalmersmdsdgroup5.hotel.utils.Dates.leq;
 import static sechalmersmdsdgroup5.hotel.utils.Dates.within;
-import static sechalmersmdsdgroup5.hotel.utils.Functional.*;
+import static sechalmersmdsdgroup5.hotel.utils.Functional.concatMap;
+import static sechalmersmdsdgroup5.hotel.utils.Functional.listify;
 
 public class Search implements ISearch {
 	private final Hotel hotel;
@@ -33,7 +34,7 @@ public class Search implements ISearch {
 	}
 
 	@Override
-	public List<SearchResult<PreOrder>> searchAvailableOrders( SearchQuery<PreOrder> query ) {
+	public List<SearchResult<PreOrder>> searchAvailableOrders(Date from, Date to, SearchQuery<PreOrder> query) {
 		return null;
 	}
 
