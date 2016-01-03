@@ -70,16 +70,16 @@ public class BlacklistAdapterFactory extends AdapterFactoryImpl {
 	protected BlacklistSwitch<Adapter> modelSwitch =
 		new BlacklistSwitch<Adapter>() {
 			@Override
-			public Adapter caseBlacklist(Blacklist object) {
-				return createBlacklistAdapter();
-			}
-			@Override
 			public Adapter caseBlacklistItem(BlacklistItem object) {
 				return createBlacklistItemAdapter();
 			}
 			@Override
 			public Adapter caseIBlacklist(IBlacklist object) {
 				return createIBlacklistAdapter();
+			}
+			@Override
+			public Adapter caseBlacklist(Blacklist object) {
+				return createBlacklistAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {

@@ -295,9 +295,9 @@ public class PaymentPackageImpl extends EPackageImpl {
 		PersonnelPackageImpl thePersonnelPackage = (PersonnelPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(PersonnelPackageImpl.eNS_URI) instanceof PersonnelPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(PersonnelPackageImpl.eNS_URI) : PersonnelPackageImpl.eINSTANCE);
 		SchedulePackageImpl theSchedulePackage = (SchedulePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(SchedulePackageImpl.eNS_URI) instanceof SchedulePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(SchedulePackageImpl.eNS_URI) : SchedulePackageImpl.eINSTANCE);
 		LogPackageImpl theLogPackage = (LogPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(LogPackageImpl.eNS_URI) instanceof LogPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(LogPackageImpl.eNS_URI) : LogPackageImpl.eINSTANCE);
+		BlacklistPackageImpl theBlacklistPackage = (BlacklistPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(BlacklistPackageImpl.eNS_URI) instanceof BlacklistPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(BlacklistPackageImpl.eNS_URI) : BlacklistPackageImpl.eINSTANCE);
 		InventoryPackageImpl theInventoryPackage = (InventoryPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(InventoryPackageImpl.eNS_URI) instanceof InventoryPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(InventoryPackageImpl.eNS_URI) : InventoryPackageImpl.eINSTANCE);
 		SearchPackageImpl theSearchPackage = (SearchPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(SearchPackageImpl.eNS_URI) instanceof SearchPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(SearchPackageImpl.eNS_URI) : SearchPackageImpl.eINSTANCE);
-		BlacklistPackageImpl theBlacklistPackage = (BlacklistPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(BlacklistPackageImpl.eNS_URI) instanceof BlacklistPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(BlacklistPackageImpl.eNS_URI) : BlacklistPackageImpl.eINSTANCE);
 
 		// Create package meta-data objects
 		thePaymentPackage.createPackageContents();
@@ -310,9 +310,9 @@ public class PaymentPackageImpl extends EPackageImpl {
 		thePersonnelPackage.createPackageContents();
 		theSchedulePackage.createPackageContents();
 		theLogPackage.createPackageContents();
+		theBlacklistPackage.createPackageContents();
 		theInventoryPackage.createPackageContents();
 		theSearchPackage.createPackageContents();
-		theBlacklistPackage.createPackageContents();
 
 		// Initialize created meta-data
 		thePaymentPackage.initializePackageContents();
@@ -325,9 +325,9 @@ public class PaymentPackageImpl extends EPackageImpl {
 		thePersonnelPackage.initializePackageContents();
 		theSchedulePackage.initializePackageContents();
 		theLogPackage.initializePackageContents();
+		theBlacklistPackage.initializePackageContents();
 		theInventoryPackage.initializePackageContents();
 		theSearchPackage.initializePackageContents();
-		theBlacklistPackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
 		thePaymentPackage.freeze();

@@ -43,9 +43,9 @@ public class BlacklistImpl extends MinimalEObjectImpl.Container implements Black
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
-	protected BlacklistImpl() {
+	public BlacklistImpl() {
 		super();
 	}
 

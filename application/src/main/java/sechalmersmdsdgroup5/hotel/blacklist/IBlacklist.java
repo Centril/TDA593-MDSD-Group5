@@ -17,10 +17,10 @@ public interface IBlacklist {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model identityRequired="true" identityOrdered="false"
+	 * @model identityRequired="true" identityOrdered="false" reasonRequired="true" reasonOrdered="false"
 	 * @generated
 	 */
-	void addToBlackList(Identity identity);
+	void addToBlackList(Identity identity, String reason);
 
 	/**
 	 * <!-- begin-user-doc -->
