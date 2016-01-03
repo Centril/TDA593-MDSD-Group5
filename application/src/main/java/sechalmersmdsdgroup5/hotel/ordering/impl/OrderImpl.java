@@ -2,6 +2,7 @@
  */
 package sechalmersmdsdgroup5.hotel.ordering.impl;
 
+import sechalmersmdsdgroup5.hotel.clients.Customer;
 import sechalmersmdsdgroup5.hotel.ordering.Campaign;
 import sechalmersmdsdgroup5.hotel.ordering.Invoice;
 import sechalmersmdsdgroup5.hotel.ordering.Order;
@@ -38,9 +39,11 @@ public class OrderImpl implements Order {
 	 * @ordered
 	 */
 	private List<Invoice> invoice;
+	private  Customer customer;
 
-	public OrderImpl(List<Invoice> invoice, boolean isPaid, List<Campaign> campaigns, List<RoomBooking> bookings, Date creationDate) {
+	public OrderImpl(List<Invoice> invoice, Customer customer, boolean isPaid, List<Campaign> campaigns, List<RoomBooking> bookings, Date creationDate) {
 		this.invoice = invoice;
+		this.customer = customer;
 		this.isPaid = isPaid;
 		this.campaigns = campaigns;
 		this.bookings = bookings;
@@ -103,6 +106,11 @@ public class OrderImpl implements Order {
 	 */
 	public List<Campaign> getCampaigns() {
 		return campaigns;
+	}
+
+	@Override
+	public Customer getCustomer() {
+		return customer;
 	}
 
 	/**
