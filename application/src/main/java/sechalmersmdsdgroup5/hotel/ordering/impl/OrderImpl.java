@@ -28,6 +28,8 @@ import java.util.List;
  * @generated NOT
  */
 public class OrderImpl implements Order {
+	private int id;
+
 	/**
 	 * The cached value of the '{@link #getInvoice() <em>Invoice</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
@@ -118,6 +120,16 @@ public class OrderImpl implements Order {
 	 */
 	public void setCreationDate(Date newCreationDate) {
 		creationDate = newCreationDate;
+	}
+
+	@Override
+	public int getId() {
+		return id;
+	}
+
+	@Override
+	public void setId( int value ) {
+		id = value;
 	}
 
 	/**
