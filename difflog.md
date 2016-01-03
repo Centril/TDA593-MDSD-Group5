@@ -64,7 +64,7 @@ for ( LocalDate f = ldFrom; f.isBefore( ldTo ); f = f.plusDays( 1 ) )
 Then, to get all the room-bookings, you have to compute the cartesian product
 of periods X rooms and creating a PreBooking from ((from, to), room).
 
-```
+```java
 /* Complexity:
  * r = |available rooms|
  * rbs = size(available-room-bookings) = r * d^2
