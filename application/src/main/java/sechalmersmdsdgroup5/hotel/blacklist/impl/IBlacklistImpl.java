@@ -10,11 +10,11 @@ import java.util.Date;
 /**
  * Created by Kerp on 31/12/15.
  */
-public class Blacklist implements IBlacklist {
+public class IBlacklistImpl implements IBlacklist {
 
     private Hotel hotel;
 
-    public Blacklist(Hotel hotel) {
+    public IBlacklistImpl(Hotel hotel) {
         this.hotel = hotel;
     }
 
