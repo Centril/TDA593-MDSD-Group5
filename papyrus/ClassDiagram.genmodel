@@ -477,6 +477,8 @@
           disposableProviderFactory="true" ecorePackage="sechalmersmdsdgroup5.ecore#//hotel/search">
         <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="sechalmersmdsdgroup5.ecore#//hotel/search/ISearch">
           <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="sechalmersmdsdgroup5.ecore#//hotel/search/ISearch/searchAvailableOrders">
+            <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="sechalmersmdsdgroup5.ecore#//hotel/search/ISearch/searchAvailableOrders/from"/>
+            <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="sechalmersmdsdgroup5.ecore#//hotel/search/ISearch/searchAvailableOrders/to"/>
             <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="sechalmersmdsdgroup5.ecore#//hotel/search/ISearch/searchAvailableOrders/query"/>
           </genOperations>
           <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="sechalmersmdsdgroup5.ecore#//hotel/search/ISearch/searchAvailableRooms">

@@ -441,6 +441,12 @@
       <packagedElement xmi:type="uml:Package" xmi:id="_NeNHEJRQEeWEKYEtRmghUQ" name="search">
         <packagedElement xmi:type="uml:Interface" xmi:id="_JXGsYJnCEeW2JPAtqMJHLg" name="ISearch">
           <ownedOperation xmi:type="uml:Operation" xmi:id="_Tv5FIJnCEeW2JPAtqMJHLg" name="searchAvailableOrders">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_g-lpILIuEeWYjdT3qEhzxQ" name="from">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EDate"/>
+            </ownedParameter>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_jAczMLIuEeWYjdT3qEhzxQ" name="to">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EDate"/>
+            </ownedParameter>
             <ownedParameter xmi:type="uml:Parameter" xmi:id="_Tv5FIZnCEeW2JPAtqMJHLg" name="query" type="_m8xH4JxuEeWiw-HwyxZ8Kg"/>
             <ownedParameter xmi:type="uml:Parameter" xmi:id="_Tv5FIpnCEeW2JPAtqMJHLg" name="result" type="_TUVIsJxuEeWiw-HwyxZ8Kg" direction="return">
               <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_lnyuMJqbEeWhp8VYZPcMtQ"/>

@@ -532,6 +532,8 @@
           <eGenericType eClassifier="#//hotel/search/SearchResult">
             <eTypeArguments eClassifier="#//hotel/ordering/PreOrder"/>
           </eGenericType>
+          <eParameters name="from" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
+          <eParameters name="to" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
           <eParameters name="query" ordered="false" lowerBound="1">
             <eGenericType eClassifier="#//hotel/search/SearchQuery">
               <eTypeArguments eClassifier="#//hotel/ordering/PreOrder"/>
