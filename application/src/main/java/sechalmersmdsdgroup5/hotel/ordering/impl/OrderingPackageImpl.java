@@ -1424,7 +1424,7 @@ public class OrderingPackageImpl extends EPackageImpl {
 		addEParameter(op, theFacilitiesPackage.getKey(), "key", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		op = addEOperation(iCheckInCheckOutEClass, ecorePackage.getEBoolean(), "takeBackKey", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, theFacilitiesPackage.getKey(), "key", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, theIdentitiesPackage.getIdentity(), "identity", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		initEClass(ordinaryPreOrderEClass, OrdinaryPreOrder.class, "OrdinaryPreOrder", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
