@@ -20,7 +20,9 @@ public class AddRoom implements Command.Consuming<Hotel>, IdentifiableCommand<Ho
                 info( "Input room details:" ).newline()
                 .io( () ->
                         room.setNr(
-                            io.read("RoomNr: ", StandardReaders.intNotFound(hotel.getRooms(), (r -> r.getNr())))
+                            io.read("RoomNr: ",
+                                    "RoomNr already exists",
+                                    StandardReaders.intNotFound(hotel.getRooms(), (r -> r.getNr())))
                         )
                 )
                 .io( () -> room.setFloor( readInteger("Floor: ",  io) ) )
