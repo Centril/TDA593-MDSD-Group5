@@ -58,6 +58,14 @@ public class CheckInCheckOut implements ICheckInCheckOut {
 
     @Override
     public boolean takeBackKey(Identity identity) {
+        if(identity != null){
+            if(identity instanceof Guest){
+                ((Guest) identity).setKey(null);
+            }else if(identity instanceof Employee){
+                ((Employee) identity).setKey(null);
+            }
+            return true;
+        }
         return false;
     }
 }
