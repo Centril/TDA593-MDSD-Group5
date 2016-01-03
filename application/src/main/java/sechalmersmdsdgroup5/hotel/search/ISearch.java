@@ -5,6 +5,7 @@ package sechalmersmdsdgroup5.hotel.search;
 import java.util.Date;
 import java.util.List;
 
+import sechalmersmdsdgroup5.hotel.clients.Customer;
 import sechalmersmdsdgroup5.hotel.facilities.Key;
 import sechalmersmdsdgroup5.hotel.facilities.Room;
 
@@ -25,6 +26,13 @@ import sechalmersmdsdgroup5.hotel.services.ServiceBlueprint;
  * @generated
  */
 public interface ISearch {
+
+    /**
+     * Returns a list of current orders associated with a client.
+     * @param clientName
+     * @return
+     */
+	List<Order> searchActiveOrders(String clientName);
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
