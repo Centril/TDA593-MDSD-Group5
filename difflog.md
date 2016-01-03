@@ -22,3 +22,74 @@
 + 2016-01-03: Added id property to Order, RoomBooking for searchability.
 + 2016-01-03: Added relationship between order and customer.
 + 2016-01-03: Added from: Date, to: Date to ISearch::searchAvailableOrders.
++ 2016-01-03: List<SearchResult<PreOrder>> searchAvailableOrders( SearchQuery<PreOrder> query )
+			  changed to List<SearchResult<PreBooking>> searchAvailableBooking( Date from, Date to, SearchQuery<PreBooking> query ).
+
+			  Why? The reason is:
+
+			  - In order to search for a list of PreOrder:s at all, first you must compute the universe/the-initial-data-set.
+			  	To do this, you must have a finite interval, otherwise the data set is infinite by definition and
+			  	thus makes the problem intractable.
+			  - Computing all possible orders is can be done in many different ways...
+			  	First, lets start with computing all possible bookings.
+			  	In order to do that, you must first obtain a list of available rooms:
+
+			  	```
+				List<Room> rooms = searchAvailableRooms( from, to );
+				```
+
+				Complexity:
+
+				n = |all bookings|
+				m = |all rooms|
+				O( n^2 + m )
+
+				Then, you could choose to compute all the permutations of all periods in [from, to]
+				with 1 day as the discrete time step.
+
+				```
+				List<Pair<LocalDate, LocalDate>> periods = new ArrayList<>();
+				for ( LocalDate f = ldFrom; f.isBefore( ldTo ); f = f.plusDays( 1 ) )
+					for ( LocalDate t = f; t.isBefore( ldTo ); t = t.plusDays( 1 ) )
+						periods.add( Pair.create( toDate( f ), toDate( t ) ) );
+				```
+
+				Complexity:
+
+				d = |days between from and to|
+				O( d^2 )
+
+				Then, to get all the room-bookings, you have to compute the cartesian product
+				of periods X rooms and creating a PreBooking from ((from, to), room).
+
+				```
+				// Compute stream of PreBooking with periods X rooms:
+				Stream<PreBooking> pbs = concatMap( rooms.stream(),
+					room -> listify( periods.map( period -> {
+						PreBooking pb = factory.createPreBooking();
+						pb.setWillBook( room );
+						pb.setStartDate( period.fst() );
+						pb.setEndDate( period.snd() );
+						return pb;
+					} ) ) );
+				```
+
+				Complexity:
+				r = |available rooms|
+				rbs = size(available-room-bookings) = r * d^2
+				O(rbs) = O( r * d^2 ) = O( (n^2 + m) * d^2 )
+
+				The computational complexity is now extreme, and the data set is huge.
+				All of this can be vastly simplified if you assume that the user wants the entire interval.
+				The complexity is now O(r).
+
+				Now, the most complete way to compute all PreOrders is to compute the
+				power set of all the available PreBooking:s.
+
+				The size of this data set is 2^rbs.
+				Assuming that 33 rooms out of 1000 rooms are available, which is reasonable,
+				then the size(available-pre-orders) = 2^33, which is larger than an integer on 32-bit platforms.
+
+				We therefore decided that the most reasonable thing to do is to just
+				let the user pick from the list of available bookings and
+				perhaps give higher relevance for those rooms that have more beds.
