@@ -23,4 +23,19 @@ public class StandardReaders {
 			return from.stream().filter( x -> idMapper.applyAsInt( x ) == id ).findFirst().get();
 		};
 	}
+
+	public static <T> ExceptionalRead<Integer> intNotFound( List<T> from, ToIntFunction<T> idMapper ) {
+		return input -> {
+			int id = Integer.parseInt( input );
+			return from.stream().noneMatch( x -> idMapper.applyAsInt( x ) == id ) ? id : null;
+		};
+	}
+
+	public static ExceptionalRead<Integer> integer() {
+		return input -> Integer.parseInt( input );
+	}
+
+	public static ExceptionalRead<Boolean> bool() {
+		return input -> Boolean.parseBoolean( input );
+	}
 }

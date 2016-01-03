@@ -12,4 +12,12 @@ public class Utils {
 	public static Date readDate( String label, IOHelper io ) {
 		return io.readOpt( label, StandardReaders.date() ).orElseGet( Date::new );
 	}
+
+	public static Integer readInteger( String label, IOHelper io ) {
+		return io.read( label, StandardReaders.integer() );
+	}
+
+	public static Boolean readBool( String label, IOHelper io ) {
+		return io.read( label, StandardReaders.bool() );
+	}
 }
