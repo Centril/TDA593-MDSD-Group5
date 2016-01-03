@@ -3,7 +3,6 @@
 package sechalmersmdsdgroup5.hotel.clients;
 
 import sechalmersmdsdgroup5.hotel.identities.Identity;
-
 import sechalmersmdsdgroup5.hotel.payment.CreditCard;
 import sechalmersmdsdgroup5.hotel.payment.PaymentMethod;
 

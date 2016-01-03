@@ -288,6 +288,8 @@
             lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" ordered="false"
             lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="customer" ordered="false"
+            lowerBound="1" eType="#//hotel/clients/Customer"/>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="Campaign">
         <eOperations name="discount" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble">
