@@ -16,3 +16,4 @@
 + 2015-12-31: Added blacklist to Hotel interface."
 + 2016-12-01: Fixed relationship between Service and ServiceConsumer, now a classifier and 1 as multiplicity.
 + 2016-01-02: Change relationshionship between realperson to guest and employee
++ 2016-01-03: Added id property to Order, RoomBooking for searchability.
