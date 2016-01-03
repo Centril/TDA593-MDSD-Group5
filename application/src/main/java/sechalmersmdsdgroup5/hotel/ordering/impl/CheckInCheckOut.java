@@ -57,7 +57,7 @@ public class CheckInCheckOut implements ICheckInCheckOut {
     }
 
     @Override
-    public boolean takeBackKey(Key key) {
+    public boolean takeBackKey(Identity identity) {
         return false;
     }
 }
