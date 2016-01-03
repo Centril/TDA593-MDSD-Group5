@@ -415,17 +415,6 @@ class HotelImpl implements Hotel {
 	 * @generated
 	 */
 	@Override
-	public List<Identity> getBlacklist() {
-		// @todo fix, should return Blacklist.
-		return null;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public String toString() {
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (name: ");
