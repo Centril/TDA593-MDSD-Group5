@@ -173,9 +173,17 @@ public class OrderImpl implements Order {
 	@Override
 	public String toString() {
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (creationDate: ");
-		result.append(creationDate);
-		result.append(')');
+		result.append(" (booking ID: " + id + ")");
+		result.append(" (creationDate: " + creationDate + ")");
+		for(RoomBooking booking: getBookings()) {
+			result.append(" (booking: " + booking.toString());
+		}
+		for(Campaign campaign : getCampaigns()) {
+			result.append(" (campaign: " + campaign.toString());
+		}
+		for(Invoice invoice : getInvoice()) {
+			result.append(" (invoice: " + invoice.toString());
+		}
 		return result.toString();
 	}
 } //OrderImpl
