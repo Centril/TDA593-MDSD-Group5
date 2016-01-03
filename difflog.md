@@ -21,4 +21,4 @@
 + 2016-01-02: Add reason parameter to addIdentityToBlacklist Sysop
 + 2016-01-03: Added id property to Order, RoomBooking for searchability.
 + 2016-01-03: Added relationship between order and customer.
-
++ 2016-01-03: Added from: Date, to: Date to ISearch::searchAvailableOrders.
