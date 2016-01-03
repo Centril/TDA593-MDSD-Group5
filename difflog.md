@@ -18,3 +18,5 @@
 + 2016-01-02: Change relationshionship between realperson to guest and employee
 + 2016-01-03: To pay for an order the client now gives his or her name 
 	      instead of the system asking for an order or service. Should be changed in the UC and any other occurrences in the report.
++ 2016-01-03: Added system operation for searching for orders associated with a customer's name.
++ 2016-01-03: Added getter for customer in the Order interface. Was forgotten, present in domain model.
