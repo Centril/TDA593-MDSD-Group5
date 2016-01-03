@@ -9,7 +9,6 @@ import sechalmersmdsdgroup5.hotel.clients.Customer;
 import sechalmersmdsdgroup5.hotel.clients.Guest;
 import sechalmersmdsdgroup5.hotel.facilities.*;
 import sechalmersmdsdgroup5.hotel.facilities.impl.AccessLogImpl;
-import sechalmersmdsdgroup5.hotel.identities.Identity;
 import sechalmersmdsdgroup5.hotel.log.TaskLog;
 import sechalmersmdsdgroup5.hotel.log.impl.TaskLogImpl;
 import sechalmersmdsdgroup5.hotel.ordering.Campaign;

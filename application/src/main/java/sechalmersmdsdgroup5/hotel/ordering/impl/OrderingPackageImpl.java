@@ -106,60 +106,6 @@ public class OrderingPackageImpl extends EPackageImpl {
 	public static final int ORDER = 0;
 
 	/**
-	 * The feature id for the '<em><b>Invoice</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int ORDER__INVOICE = PaymentPackageImpl.PAYABLE__INVOICE;
-
-	/**
-	 * The feature id for the '<em><b>Campaigns</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int ORDER__CAMPAIGNS = PaymentPackageImpl.PAYABLE_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Bookings</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int ORDER__BOOKINGS = PaymentPackageImpl.PAYABLE_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Creation Date</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int ORDER__CREATION_DATE = PaymentPackageImpl.PAYABLE_FEATURE_COUNT + 2;
-
-	/**
-	 * The feature id for the '<em><b>Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int ORDER__ID = PaymentPackageImpl.PAYABLE_FEATURE_COUNT + 3;
-
-	/**
-	 * The number of structural features of the '<em>Order</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int ORDER_FEATURE_COUNT = PaymentPackageImpl.PAYABLE_FEATURE_COUNT + 4;
-
-	/**
 	 * The meta object id for the '{@link sechalmersmdsdgroup5.hotel.ordering.impl.CampaignImpl <em>Campaign</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -168,51 +114,6 @@ public class OrderingPackageImpl extends EPackageImpl {
 	 * @generated
 	 */
 	public static final int CAMPAIGN = 1;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int CAMPAIGN__NAME = 0;
-
-	/**
-	 * The feature id for the '<em><b>Description</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int CAMPAIGN__DESCRIPTION = 1;
-
-	/**
-	 * The feature id for the '<em><b>Start Date</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int CAMPAIGN__START_DATE = 2;
-
-	/**
-	 * The feature id for the '<em><b>End Date</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int CAMPAIGN__END_DATE = 3;
-
-	/**
-	 * The number of structural features of the '<em>Campaign</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int CAMPAIGN_FEATURE_COUNT = 4;
 
 	/**
 	 * The meta object id for the '{@link sechalmersmdsdgroup5.hotel.ordering.impl.PreOrderImpl <em>Pre Order</em>}' class.
@@ -225,33 +126,6 @@ public class OrderingPackageImpl extends EPackageImpl {
 	public static final int PRE_ORDER = 2;
 
 	/**
-	 * The feature id for the '<em><b>Bookings</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int PRE_ORDER__BOOKINGS = 0;
-
-	/**
-	 * The feature id for the '<em><b>Campaigns</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int PRE_ORDER__CAMPAIGNS = 1;
-
-	/**
-	 * The number of structural features of the '<em>Pre Order</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int PRE_ORDER_FEATURE_COUNT = 2;
-
-	/**
 	 * The meta object id for the '{@link sechalmersmdsdgroup5.hotel.ordering.impl.PreBookingImpl <em>Pre Booking</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -260,51 +134,6 @@ public class OrderingPackageImpl extends EPackageImpl {
 	 * @generated
 	 */
 	public static final int PRE_BOOKING = 3;
-
-	/**
-	 * The feature id for the '<em><b>Start Date</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int PRE_BOOKING__START_DATE = 0;
-
-	/**
-	 * The feature id for the '<em><b>End Date</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int PRE_BOOKING__END_DATE = 1;
-
-	/**
-	 * The feature id for the '<em><b>Will Book</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int PRE_BOOKING__WILL_BOOK = 2;
-
-	/**
-	 * The feature id for the '<em><b>Services</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int PRE_BOOKING__SERVICES = 3;
-
-	/**
-	 * The number of structural features of the '<em>Pre Booking</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	public static final int PRE_BOOKING_FEATURE_COUNT = 4;
 
 	/**
 	 * The meta object id for the '{@link sechalmersmdsdgroup5.hotel.ordering.impl.InvoiceImpl <em>Invoice</em>}' class.
@@ -365,6 +194,186 @@ public class OrderingPackageImpl extends EPackageImpl {
 	 * @generated
 	 */
 	public static final int ROOM_BOOKING = 4;
+
+	/**
+	 * The feature id for the '<em><b>Invoice</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int ORDER__INVOICE = PaymentPackageImpl.PAYABLE__INVOICE;
+
+	/**
+	 * The feature id for the '<em><b>Campaigns</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int ORDER__CAMPAIGNS = PaymentPackageImpl.PAYABLE_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Bookings</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int ORDER__BOOKINGS = PaymentPackageImpl.PAYABLE_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Creation Date</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int ORDER__CREATION_DATE = PaymentPackageImpl.PAYABLE_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int ORDER__ID = PaymentPackageImpl.PAYABLE_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Customer</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int ORDER__CUSTOMER = PaymentPackageImpl.PAYABLE_FEATURE_COUNT + 4;
+
+	/**
+	 * The number of structural features of the '<em>Order</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int ORDER_FEATURE_COUNT = PaymentPackageImpl.PAYABLE_FEATURE_COUNT + 5;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int CAMPAIGN__NAME = 0;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int CAMPAIGN__DESCRIPTION = 1;
+
+	/**
+	 * The feature id for the '<em><b>Start Date</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int CAMPAIGN__START_DATE = 2;
+
+	/**
+	 * The feature id for the '<em><b>End Date</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int CAMPAIGN__END_DATE = 3;
+
+	/**
+	 * The number of structural features of the '<em>Campaign</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int CAMPAIGN_FEATURE_COUNT = 4;
+
+	/**
+	 * The feature id for the '<em><b>Bookings</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int PRE_ORDER__BOOKINGS = 0;
+
+	/**
+	 * The feature id for the '<em><b>Campaigns</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int PRE_ORDER__CAMPAIGNS = 1;
+
+	/**
+	 * The number of structural features of the '<em>Pre Order</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int PRE_ORDER_FEATURE_COUNT = 2;
+
+	/**
+	 * The feature id for the '<em><b>Start Date</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int PRE_BOOKING__START_DATE = 0;
+
+	/**
+	 * The feature id for the '<em><b>End Date</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int PRE_BOOKING__END_DATE = 1;
+
+	/**
+	 * The feature id for the '<em><b>Will Book</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int PRE_BOOKING__WILL_BOOK = 2;
+
+	/**
+	 * The feature id for the '<em><b>Services</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int PRE_BOOKING__SERVICES = 3;
+
+	/**
+	 * The number of structural features of the '<em>Pre Booking</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int PRE_BOOKING_FEATURE_COUNT = 4;
 
 	/**
 	 * The feature id for the '<em><b>Invoice</b></em>' containment reference list.
@@ -810,6 +819,20 @@ public class OrderingPackageImpl extends EPackageImpl {
 
 
 	/**
+	 * Returns the meta object for the reference '{@link sechalmersmdsdgroup5.hotel.ordering.Order#getCustomer <em>Customer</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Customer</em>'.
+	 * @see sechalmersmdsdgroup5.hotel.ordering.Order#getCustomer()
+	 * @see #getOrder()
+	 * @generated
+	 */
+	public EReference getOrder_Customer() {
+		return (EReference)orderEClass.getEStructuralFeatures().get(4);
+	}
+
+
+	/**
 	 * Returns the meta object for class '{@link sechalmersmdsdgroup5.hotel.ordering.Campaign <em>Campaign</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1243,6 +1266,7 @@ public class OrderingPackageImpl extends EPackageImpl {
 		createEReference(orderEClass, ORDER__BOOKINGS);
 		createEAttribute(orderEClass, ORDER__CREATION_DATE);
 		createEAttribute(orderEClass, ORDER__ID);
+		createEReference(orderEClass, ORDER__CUSTOMER);
 
 		campaignEClass = createEClass(CAMPAIGN);
 		createEAttribute(campaignEClass, CAMPAIGN__NAME);
@@ -1310,9 +1334,9 @@ public class OrderingPackageImpl extends EPackageImpl {
 
 		// Obtain other dependent packages
 		PaymentPackageImpl thePaymentPackage = (PaymentPackageImpl)EPackage.Registry.INSTANCE.getEPackage(PaymentPackageImpl.eNS_URI);
+		ClientsPackageImpl theClientsPackage = (ClientsPackageImpl)EPackage.Registry.INSTANCE.getEPackage(ClientsPackageImpl.eNS_URI);
 		FacilitiesPackageImpl theFacilitiesPackage = (FacilitiesPackageImpl)EPackage.Registry.INSTANCE.getEPackage(FacilitiesPackageImpl.eNS_URI);
 		ServicesPackageImpl theServicesPackage = (ServicesPackageImpl)EPackage.Registry.INSTANCE.getEPackage(ServicesPackageImpl.eNS_URI);
-		ClientsPackageImpl theClientsPackage = (ClientsPackageImpl)EPackage.Registry.INSTANCE.getEPackage(ClientsPackageImpl.eNS_URI);
 		IdentitiesPackageImpl theIdentitiesPackage = (IdentitiesPackageImpl)EPackage.Registry.INSTANCE.getEPackage(IdentitiesPackageImpl.eNS_URI);
 
 		// Create type parameters
@@ -1332,6 +1356,7 @@ public class OrderingPackageImpl extends EPackageImpl {
 		initEReference(getOrder_Bookings(), this.getRoomBooking(), null, "bookings", null, 0, -1, Order.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getOrder_CreationDate(), ecorePackage.getEDate(), "creationDate", null, 1, 1, Order.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getOrder_Id(), ecorePackage.getEInt(), "id", null, 1, 1, Order.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getOrder_Customer(), theClientsPackage.getCustomer(), null, "customer", null, 1, 1, Order.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		addEOperation(orderEClass, ecorePackage.getEDouble(), "calculatePrice", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
@@ -1490,6 +1515,14 @@ public class OrderingPackageImpl extends EPackageImpl {
 		 * @generated
 		 */
 		public static final EAttribute ORDER__ID = eINSTANCE.getOrder_Id();
+
+		/**
+		 * The meta object literal for the '<em><b>Customer</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		public static final EReference ORDER__CUSTOMER = eINSTANCE.getOrder_Customer();
 
 		/**
 		 * The meta object literal for the '{@link sechalmersmdsdgroup5.hotel.ordering.impl.CampaignImpl <em>Campaign</em>}' class.
