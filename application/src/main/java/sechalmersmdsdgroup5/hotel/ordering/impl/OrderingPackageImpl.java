@@ -142,13 +142,22 @@ public class OrderingPackageImpl extends EPackageImpl {
 	public static final int ORDER__CREATION_DATE = PaymentPackageImpl.PAYABLE_FEATURE_COUNT + 2;
 
 	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int ORDER__ID = PaymentPackageImpl.PAYABLE_FEATURE_COUNT + 3;
+
+	/**
 	 * The number of structural features of the '<em>Order</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	public static final int ORDER_FEATURE_COUNT = PaymentPackageImpl.PAYABLE_FEATURE_COUNT + 3;
+	public static final int ORDER_FEATURE_COUNT = PaymentPackageImpl.PAYABLE_FEATURE_COUNT + 4;
 
 	/**
 	 * The meta object id for the '{@link sechalmersmdsdgroup5.hotel.ordering.impl.CampaignImpl <em>Campaign</em>}' class.
@@ -439,13 +448,22 @@ public class OrderingPackageImpl extends EPackageImpl {
 	public static final int ROOM_BOOKING__SERVICES = PaymentPackageImpl.PAYABLE_FEATURE_COUNT + 7;
 
 	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int ROOM_BOOKING__ID = PaymentPackageImpl.PAYABLE_FEATURE_COUNT + 8;
+
+	/**
 	 * The number of structural features of the '<em>Room Booking</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	public static final int ROOM_BOOKING_FEATURE_COUNT = PaymentPackageImpl.PAYABLE_FEATURE_COUNT + 8;
+	public static final int ROOM_BOOKING_FEATURE_COUNT = PaymentPackageImpl.PAYABLE_FEATURE_COUNT + 9;
 
 	/**
 	 * The number of structural features of the '<em>IOrder</em>' class.
@@ -681,9 +699,9 @@ public class OrderingPackageImpl extends EPackageImpl {
 		PersonnelPackageImpl thePersonnelPackage = (PersonnelPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(PersonnelPackageImpl.eNS_URI) instanceof PersonnelPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(PersonnelPackageImpl.eNS_URI) : PersonnelPackageImpl.eINSTANCE);
 		SchedulePackageImpl theSchedulePackage = (SchedulePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(SchedulePackageImpl.eNS_URI) instanceof SchedulePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(SchedulePackageImpl.eNS_URI) : SchedulePackageImpl.eINSTANCE);
 		LogPackageImpl theLogPackage = (LogPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(LogPackageImpl.eNS_URI) instanceof LogPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(LogPackageImpl.eNS_URI) : LogPackageImpl.eINSTANCE);
+		BlacklistPackageImpl theBlacklistPackage = (BlacklistPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(BlacklistPackageImpl.eNS_URI) instanceof BlacklistPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(BlacklistPackageImpl.eNS_URI) : BlacklistPackageImpl.eINSTANCE);
 		InventoryPackageImpl theInventoryPackage = (InventoryPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(InventoryPackageImpl.eNS_URI) instanceof InventoryPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(InventoryPackageImpl.eNS_URI) : InventoryPackageImpl.eINSTANCE);
 		SearchPackageImpl theSearchPackage = (SearchPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(SearchPackageImpl.eNS_URI) instanceof SearchPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(SearchPackageImpl.eNS_URI) : SearchPackageImpl.eINSTANCE);
-		BlacklistPackageImpl theBlacklistPackage = (BlacklistPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(BlacklistPackageImpl.eNS_URI) instanceof BlacklistPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(BlacklistPackageImpl.eNS_URI) : BlacklistPackageImpl.eINSTANCE);
 
 		// Create package meta-data objects
 		theOrderingPackage.createPackageContents();
@@ -696,9 +714,9 @@ public class OrderingPackageImpl extends EPackageImpl {
 		thePersonnelPackage.createPackageContents();
 		theSchedulePackage.createPackageContents();
 		theLogPackage.createPackageContents();
+		theBlacklistPackage.createPackageContents();
 		theInventoryPackage.createPackageContents();
 		theSearchPackage.createPackageContents();
-		theBlacklistPackage.createPackageContents();
 
 		// Initialize created meta-data
 		theOrderingPackage.initializePackageContents();
@@ -711,9 +729,9 @@ public class OrderingPackageImpl extends EPackageImpl {
 		thePersonnelPackage.initializePackageContents();
 		theSchedulePackage.initializePackageContents();
 		theLogPackage.initializePackageContents();
+		theBlacklistPackage.initializePackageContents();
 		theInventoryPackage.initializePackageContents();
 		theSearchPackage.initializePackageContents();
-		theBlacklistPackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
 		theOrderingPackage.freeze();
@@ -774,6 +792,20 @@ public class OrderingPackageImpl extends EPackageImpl {
 	 */
 	public EAttribute getOrder_CreationDate() {
 		return (EAttribute)orderEClass.getEStructuralFeatures().get(2);
+	}
+
+
+	/**
+	 * Returns the meta object for the attribute '{@link sechalmersmdsdgroup5.hotel.ordering.Order#getId <em>Id</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Id</em>'.
+	 * @see sechalmersmdsdgroup5.hotel.ordering.Order#getId()
+	 * @see #getOrder()
+	 * @generated
+	 */
+	public EAttribute getOrder_Id() {
+		return (EAttribute)orderEClass.getEStructuralFeatures().get(3);
 	}
 
 
@@ -1163,6 +1195,20 @@ public class OrderingPackageImpl extends EPackageImpl {
 
 
 	/**
+	 * Returns the meta object for the attribute '{@link sechalmersmdsdgroup5.hotel.ordering.RoomBooking#getId <em>Id</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Id</em>'.
+	 * @see sechalmersmdsdgroup5.hotel.ordering.RoomBooking#getId()
+	 * @see #getRoomBooking()
+	 * @generated
+	 */
+	public EAttribute getRoomBooking_Id() {
+		return (EAttribute)roomBookingEClass.getEStructuralFeatures().get(8);
+	}
+
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1196,6 +1242,7 @@ public class OrderingPackageImpl extends EPackageImpl {
 		createEReference(orderEClass, ORDER__CAMPAIGNS);
 		createEReference(orderEClass, ORDER__BOOKINGS);
 		createEAttribute(orderEClass, ORDER__CREATION_DATE);
+		createEAttribute(orderEClass, ORDER__ID);
 
 		campaignEClass = createEClass(CAMPAIGN);
 		createEAttribute(campaignEClass, CAMPAIGN__NAME);
@@ -1222,6 +1269,7 @@ public class OrderingPackageImpl extends EPackageImpl {
 		createEAttribute(roomBookingEClass, ROOM_BOOKING__IS_PAID);
 		createEReference(roomBookingEClass, ROOM_BOOKING__GUESTS);
 		createEReference(roomBookingEClass, ROOM_BOOKING__SERVICES);
+		createEAttribute(roomBookingEClass, ROOM_BOOKING__ID);
 
 		iOrderEClass = createEClass(IORDER);
 
@@ -1283,6 +1331,7 @@ public class OrderingPackageImpl extends EPackageImpl {
 		initEReference(getOrder_Campaigns(), this.getCampaign(), null, "campaigns", null, 0, -1, Order.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getOrder_Bookings(), this.getRoomBooking(), null, "bookings", null, 0, -1, Order.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getOrder_CreationDate(), ecorePackage.getEDate(), "creationDate", null, 1, 1, Order.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getOrder_Id(), ecorePackage.getEInt(), "id", null, 1, 1, Order.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		addEOperation(orderEClass, ecorePackage.getEDouble(), "calculatePrice", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
@@ -1323,6 +1372,7 @@ public class OrderingPackageImpl extends EPackageImpl {
 		initEAttribute(getRoomBooking_IsPaid(), ecorePackage.getEBoolean(), "isPaid", null, 1, 1, RoomBooking.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getRoomBooking_Guests(), theClientsPackage.getGuest(), null, "guests", null, 1, -1, RoomBooking.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getRoomBooking_Services(), theServicesPackage.getService(), null, "services", null, 0, -1, RoomBooking.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getRoomBooking_Id(), ecorePackage.getEInt(), "id", null, 1, 1, RoomBooking.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(iOrderEClass, IOrder.class, "IOrder", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -1374,7 +1424,7 @@ public class OrderingPackageImpl extends EPackageImpl {
 		addEParameter(op, theFacilitiesPackage.getKey(), "key", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		op = addEOperation(iCheckInCheckOutEClass, ecorePackage.getEBoolean(), "takeBackKey", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, theFacilitiesPackage.getKey(), "key", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, theIdentitiesPackage.getIdentity(), "identity", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		initEClass(ordinaryPreOrderEClass, OrdinaryPreOrder.class, "OrdinaryPreOrder", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -1432,6 +1482,14 @@ public class OrderingPackageImpl extends EPackageImpl {
 		 * @generated
 		 */
 		public static final EAttribute ORDER__CREATION_DATE = eINSTANCE.getOrder_CreationDate();
+
+		/**
+		 * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		public static final EAttribute ORDER__ID = eINSTANCE.getOrder_Id();
 
 		/**
 		 * The meta object literal for the '{@link sechalmersmdsdgroup5.hotel.ordering.impl.CampaignImpl <em>Campaign</em>}' class.
@@ -1690,6 +1748,14 @@ public class OrderingPackageImpl extends EPackageImpl {
 		 * @generated
 		 */
 		public static final EReference ROOM_BOOKING__SERVICES = eINSTANCE.getRoomBooking_Services();
+
+		/**
+		 * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		public static final EAttribute ROOM_BOOKING__ID = eINSTANCE.getRoomBooking_Id();
 
 	}
 

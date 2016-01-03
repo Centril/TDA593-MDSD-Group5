@@ -2,14 +2,14 @@
  */
 package sechalmersmdsdgroup5.hotel.ordering;
 
-import java.util.Date;
-
-import java.util.List;
 import sechalmersmdsdgroup5.hotel.clients.Guest;
 import sechalmersmdsdgroup5.hotel.facilities.Room;
 import sechalmersmdsdgroup5.hotel.payment.Payable;
 import sechalmersmdsdgroup5.hotel.services.Service;
 import sechalmersmdsdgroup5.hotel.services.ServiceConsumer;
+
+import java.util.Date;
+import java.util.List;
 
 /**
  * <!-- begin-user-doc -->
@@ -28,6 +28,7 @@ import sechalmersmdsdgroup5.hotel.services.ServiceConsumer;
  *   <li>{@link sechalmersmdsdgroup5.hotel.ordering.RoomBooking#isPaid <em>Is Paid</em>}</li>
  *   <li>{@link sechalmersmdsdgroup5.hotel.ordering.RoomBooking#getGuests <em>Guests</em>}</li>
  *   <li>{@link sechalmersmdsdgroup5.hotel.ordering.RoomBooking#getServices <em>Services</em>}</li>
+ *   <li>{@link sechalmersmdsdgroup5.hotel.ordering.RoomBooking#getId <em>Id</em>}</li>
  * </ul>
  *
  * @model
@@ -213,5 +214,30 @@ public interface RoomBooking extends Payable, ServiceConsumer {
 	 * @generated
 	 */
 	List<Service> getServices();
+
+	/**
+	 * Returns the value of the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Id</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Id</em>' attribute.
+	 * @see #setId(int)
+	 * @model required="true" ordered="false"
+	 * @generated
+	 */
+	int getId();
+
+	/**
+	 * Sets the value of the '{@link sechalmersmdsdgroup5.hotel.ordering.RoomBooking#getId <em>Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Id</em>' attribute.
+	 * @see #getId()
+	 * @generated
+	 */
+	void setId(int value);
 
 } // RoomBooking

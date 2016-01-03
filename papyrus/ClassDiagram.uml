@@ -257,9 +257,9 @@
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="_uUupMJnXEeWXgOnGO-OFAA" name="accessLog" type="_G4u1YJnWEeWsldw0CEc3ng"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="_F0ZWMJpoEeWv8co7MiJhGA" name="taskLog" type="_D__r0JOCEeWEKYEtRmghUQ"/>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_lDhiYK-2EeWOgJF2CrmSRg" name="blacklist" type="_8icKkJOAEeWEKYEtRmghUQ">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_oTL8UK-2EeWOgJF2CrmSRg"/>
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_oTNKcK-2EeWOgJF2CrmSRg" value="*"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_lDhiYK-2EeWOgJF2CrmSRg" name="blacklist" type="_aHGr0JRREeWEKYEtRmghUQ">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_oTL8UK-2EeWOgJF2CrmSRg" value="1"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_oTNKcK-2EeWOgJF2CrmSRg" value="1"/>
         </ownedAttribute>
       </packagedElement>
       <packagedElement xmi:type="uml:Package" xmi:id="_mtmlQJOAEeWEKYEtRmghUQ" name="clients">
@@ -723,6 +723,9 @@
         <packagedElement xmi:type="uml:Interface" xmi:id="_m6QDYJnREeWsldw0CEc3ng" name="IBlacklist">
           <ownedOperation xmi:type="uml:Operation" xmi:id="_ymbWoJnREeWsldw0CEc3ng" name="addToBlackList">
             <ownedParameter xmi:type="uml:Parameter" xmi:id="_9N3PYJnREeWsldw0CEc3ng" name="identity" type="_8icKkJOAEeWEKYEtRmghUQ"/>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_O-k5ALFtEeWRduaQI8tYwQ" name="reason">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+            </ownedParameter>
           </ownedOperation>
           <ownedOperation xmi:type="uml:Operation" xmi:id="_zK3gcJnREeWsldw0CEc3ng" name="removeFromBlackList">
             <ownedParameter xmi:type="uml:Parameter" xmi:id="_Ast74JnSEeWsldw0CEc3ng" name="identity" type="_8icKkJOAEeWEKYEtRmghUQ"/>
@@ -743,6 +746,9 @@
             <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EDate"/>
             <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_M1dFgJ9HEeW5UY5BQ7hdQQ" value="1"/>
             <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_M1fhwJ9HEeW5UY5BQ7hdQQ" value="1"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_uJL_0LH6EeWDoIN5Fo4rKw" name="id">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
           </ownedAttribute>
           <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_3LB5MKAyEeWDjIMsRDMNyg" client="_f1YaIJOJEeWEKYEtRmghUQ" supplier="_BDMDQJ9FEeW5UY5BQ7hdQQ" contract="_BDMDQJ9FEeW5UY5BQ7hdQQ"/>
           <ownedOperation xmi:type="uml:Operation" xmi:id="_wS58gJOJEeWEKYEtRmghUQ" name="calculatePrice">
@@ -780,6 +786,9 @@
           <ownedAttribute xmi:type="uml:Property" xmi:id="_VnsxEK5XEeWv27QKdYHuVQ" name="services" type="_4zgHsJRREeWEKYEtRmghUQ" aggregation="composite" association="_VnsKAK5XEeWv27QKdYHuVQ">
             <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_y7zH0K5YEeWv27QKdYHuVQ"/>
             <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_y709AK5YEeWv27QKdYHuVQ" value="*"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_xkzLELH6EeWDoIN5Fo4rKw" name="id">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
           </ownedAttribute>
           <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_QkrpEKAzEeWDjIMsRDMNyg" client="_8ormYJOJEeWEKYEtRmghUQ" supplier="_BDMDQJ9FEeW5UY5BQ7hdQQ" contract="_BDMDQJ9FEeW5UY5BQ7hdQQ"/>
           <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_rKk0wLCpEeWrNd_3evJjTg" client="_8ormYJOJEeWEKYEtRmghUQ" supplier="_yo2uEJboEeWGQOCCfM2qyw" contract="_yo2uEJboEeWGQOCCfM2qyw"/>
@@ -914,7 +923,7 @@
             </ownedParameter>
           </ownedOperation>
           <ownedOperation xmi:type="uml:Operation" xmi:id="_si5nlJnJEeW2JPAtqMJHLg" name="takeBackKey">
-            <ownedParameter xmi:type="uml:Parameter" xmi:id="_si5nlZnJEeW2JPAtqMJHLg" name="key" type="_ChtUMJQXEeWEKYEtRmghUQ"/>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_si5nlZnJEeW2JPAtqMJHLg" name="identity" type="_8icKkJOAEeWEKYEtRmghUQ"/>
             <ownedParameter xmi:type="uml:Parameter" xmi:id="_si5nlpnJEeW2JPAtqMJHLg" name="result" direction="return">
               <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
             </ownedParameter>

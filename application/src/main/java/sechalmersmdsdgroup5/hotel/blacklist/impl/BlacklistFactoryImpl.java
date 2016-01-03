@@ -65,8 +65,8 @@ public class BlacklistFactoryImpl extends EFactoryImpl implements BlacklistFacto
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case BlacklistPackageImpl.BLACKLIST: return (EObject)createBlacklist();
 			case BlacklistPackageImpl.BLACKLIST_ITEM: return (EObject)createBlacklistItem();
+			case BlacklistPackageImpl.BLACKLIST: return (EObject)createBlacklist();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}

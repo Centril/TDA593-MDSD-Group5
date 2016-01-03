@@ -28,6 +28,8 @@ import java.util.List;
  * @generated NOT
  */
 public class OrderImpl implements Order {
+	private int id;
+
 	/**
 	 * The cached value of the '{@link #getInvoice() <em>Invoice</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
@@ -120,6 +122,16 @@ public class OrderImpl implements Order {
 		creationDate = newCreationDate;
 	}
 
+	@Override
+	public int getId() {
+		return id;
+	}
+
+	@Override
+	public void setId( int value ) {
+		id = value;
+	}
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -161,9 +173,17 @@ public class OrderImpl implements Order {
 	@Override
 	public String toString() {
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (creationDate: ");
-		result.append(creationDate);
-		result.append(')');
+		result.append(" (booking ID: " + id + ")");
+		result.append(" (creationDate: " + creationDate + ")");
+		for(RoomBooking booking: getBookings()) {
+			result.append(" (booking: " + booking.toString());
+		}
+		for(Campaign campaign : getCampaigns()) {
+			result.append(" (campaign: " + campaign.toString());
+		}
+		for(Invoice invoice : getInvoice()) {
+			result.append(" (invoice: " + invoice.toString());
+		}
 		return result.toString();
 	}
 } //OrderImpl

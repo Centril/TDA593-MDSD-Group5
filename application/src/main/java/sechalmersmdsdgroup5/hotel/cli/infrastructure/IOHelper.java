@@ -289,11 +289,26 @@ public class IOHelper {
 	 * @return the read object.
 	 */
 	public <T> T read( String label, Read<T> reader ) {
+		return read( label, "Invalid input specified.", reader );
+	}
+
+	/**
+	 * Reads a line and feeds into a Reader that results in T.
+	 * Keeps reading until reader is satisfied.
+	 *
+	 * @param label The label to present to user.
+	 * @param onError The error message to warn() on error.
+	 * @param reader the reader.
+	 * @param <T> the type of the reader.
+	 * @return the read object.
+	 */
+	public <T> T read( String label, String onError, Read<T> reader ) {
 		return doWhile( () -> readOpt( label, reader ), () -> {
-			warn( "Invalid input specified." );
+			warn( onError );
 			err.println();
 		} );
 	}
+
 
 	/**
 	 * Reads at least min times with reader, optionally more.

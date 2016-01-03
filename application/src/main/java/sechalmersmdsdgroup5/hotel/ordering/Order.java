@@ -2,9 +2,10 @@
  */
 package sechalmersmdsdgroup5.hotel.ordering;
 
+import sechalmersmdsdgroup5.hotel.payment.Payable;
+
 import java.util.Date;
 import java.util.List;
-import sechalmersmdsdgroup5.hotel.payment.Payable;
 
 /**
  * <!-- begin-user-doc -->
@@ -18,6 +19,7 @@ import sechalmersmdsdgroup5.hotel.payment.Payable;
  *   <li>{@link sechalmersmdsdgroup5.hotel.ordering.Order#getCampaigns <em>Campaigns</em>}</li>
  *   <li>{@link sechalmersmdsdgroup5.hotel.ordering.Order#getBookings <em>Bookings</em>}</li>
  *   <li>{@link sechalmersmdsdgroup5.hotel.ordering.Order#getCreationDate <em>Creation Date</em>}</li>
+ *   <li>{@link sechalmersmdsdgroup5.hotel.ordering.Order#getId <em>Id</em>}</li>
  * </ul>
  *
  * @model
@@ -78,6 +80,31 @@ public interface Order extends Payable {
 	 * @generated
 	 */
 	void setCreationDate(Date value);
+
+	/**
+	 * Returns the value of the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Id</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Id</em>' attribute.
+	 * @see #setId(int)
+	 * @model required="true" ordered="false"
+	 * @generated
+	 */
+	int getId();
+
+	/**
+	 * Sets the value of the '{@link sechalmersmdsdgroup5.hotel.ordering.Order#getId <em>Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Id</em>' attribute.
+	 * @see #getId()
+	 * @generated
+	 */
+	void setId(int value);
 
 	/**
 	 * <!-- begin-user-doc -->

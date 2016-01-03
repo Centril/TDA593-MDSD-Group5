@@ -47,8 +47,12 @@ public class OrderingFacade implements IOrder {
         return null;
     }
 
+    //will not be implemented further.
     @Override
     public boolean sendConfirmationMail(Order order, String email) {
+        if(email != null && order != null){
+            return true;
+        }
         return false;
     }
 

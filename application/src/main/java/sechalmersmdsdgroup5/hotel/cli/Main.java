@@ -28,12 +28,19 @@ public class Main {
 		checkDisableColors( args );
 
 		runner( header( system() ), INSTANCE.createHotel() ).accept( Application.<Hotel>builder()
+			.add( ReadOrder::new)
+            .add( TakeBackKey::new )
 			.add( SearchAvailableRooms::new )
 			.add( SearchOccupiedRooms::new )
 			.add( SearchActiveBookings::new )
 			.add( SearchAvailableServices::new )
+			.add( SearchUsedServices::new )
 			.add( AddRoom::new )
 			.add( ListRooms::new )
+			.build() );
+
+		/*
+>>>>>>> development
 			.cmdVoid( "error", "tests error", (io, $) -> io.error( "hello world" ) )
 			.cmdVoid( "hello", "displays hello world", (io, $) -> io.info( "hello world" ) )
 			.cmdVoid( "green", "displays hello world in green", (io, $) -> io.newline( GREEN, "hello world" ) )
@@ -50,6 +57,7 @@ public class Main {
 				  .info( "size: " + io.executeMany( 2, $, command( "", (io2, $2) -> io2.read( "aaa" ) ) ).size() )
 				  .info( "1337" ) )
 			.build() );
+		*/
 	}
 
 	private static IOHelper header( IOHelper helper ) {

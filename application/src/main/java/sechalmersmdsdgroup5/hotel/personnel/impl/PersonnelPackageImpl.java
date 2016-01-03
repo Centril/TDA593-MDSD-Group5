@@ -338,9 +338,9 @@ public class PersonnelPackageImpl extends EPackageImpl {
 		OrderingPackageImpl theOrderingPackage = (OrderingPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(OrderingPackageImpl.eNS_URI) instanceof OrderingPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(OrderingPackageImpl.eNS_URI) : OrderingPackageImpl.eINSTANCE);
 		SchedulePackageImpl theSchedulePackage = (SchedulePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(SchedulePackageImpl.eNS_URI) instanceof SchedulePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(SchedulePackageImpl.eNS_URI) : SchedulePackageImpl.eINSTANCE);
 		LogPackageImpl theLogPackage = (LogPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(LogPackageImpl.eNS_URI) instanceof LogPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(LogPackageImpl.eNS_URI) : LogPackageImpl.eINSTANCE);
+		BlacklistPackageImpl theBlacklistPackage = (BlacklistPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(BlacklistPackageImpl.eNS_URI) instanceof BlacklistPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(BlacklistPackageImpl.eNS_URI) : BlacklistPackageImpl.eINSTANCE);
 		InventoryPackageImpl theInventoryPackage = (InventoryPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(InventoryPackageImpl.eNS_URI) instanceof InventoryPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(InventoryPackageImpl.eNS_URI) : InventoryPackageImpl.eINSTANCE);
 		SearchPackageImpl theSearchPackage = (SearchPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(SearchPackageImpl.eNS_URI) instanceof SearchPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(SearchPackageImpl.eNS_URI) : SearchPackageImpl.eINSTANCE);
-		BlacklistPackageImpl theBlacklistPackage = (BlacklistPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(BlacklistPackageImpl.eNS_URI) instanceof BlacklistPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(BlacklistPackageImpl.eNS_URI) : BlacklistPackageImpl.eINSTANCE);
 
 		// Create package meta-data objects
 		thePersonnelPackage.createPackageContents();
@@ -353,9 +353,9 @@ public class PersonnelPackageImpl extends EPackageImpl {
 		theOrderingPackage.createPackageContents();
 		theSchedulePackage.createPackageContents();
 		theLogPackage.createPackageContents();
+		theBlacklistPackage.createPackageContents();
 		theInventoryPackage.createPackageContents();
 		theSearchPackage.createPackageContents();
-		theBlacklistPackage.createPackageContents();
 
 		// Initialize created meta-data
 		thePersonnelPackage.initializePackageContents();
@@ -368,9 +368,9 @@ public class PersonnelPackageImpl extends EPackageImpl {
 		theOrderingPackage.initializePackageContents();
 		theSchedulePackage.initializePackageContents();
 		theLogPackage.initializePackageContents();
+		theBlacklistPackage.initializePackageContents();
 		theInventoryPackage.initializePackageContents();
 		theSearchPackage.initializePackageContents();
-		theBlacklistPackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
 		thePersonnelPackage.freeze();

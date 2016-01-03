@@ -34,6 +34,8 @@ import java.util.List;
  * @generated NOT
  */
 class RoomBookingImpl implements RoomBooking {
+	private int id;
+
 	/**
 	 * The cached value of the '{@link #getInvoice() <em>Invoice</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
@@ -314,6 +316,16 @@ class RoomBookingImpl implements RoomBooking {
 	 */
 	public List<Service> getServices() {
 		return services;
+	}
+
+	@Override
+	public int getId() {
+		return id;
+	}
+
+	@Override
+	public void setId( int value ) {
+		id = value;
 	}
 
 	/**

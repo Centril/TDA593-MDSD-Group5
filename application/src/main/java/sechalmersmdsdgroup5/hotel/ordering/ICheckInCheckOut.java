@@ -45,9 +45,9 @@ public interface ICheckInCheckOut {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true" ordered="false" keyRequired="true" keyOrdered="false"
+	 * @model required="true" ordered="false" identityRequired="true" identityOrdered="false"
 	 * @generated
 	 */
-	boolean takeBackKey(Key key);
+	boolean takeBackKey(Identity identity);
 
 } // ICheckInCheckOut

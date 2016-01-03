@@ -68,12 +68,6 @@ public class BlacklistSwitch<T> extends Switch<T> {
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
-			case BlacklistPackageImpl.BLACKLIST: {
-				Blacklist blacklist = (Blacklist)theEObject;
-				T result = caseBlacklist(blacklist);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case BlacklistPackageImpl.BLACKLIST_ITEM: {
 				BlacklistItem blacklistItem = (BlacklistItem)theEObject;
 				T result = caseBlacklistItem(blacklistItem);
@@ -83,6 +77,12 @@ public class BlacklistSwitch<T> extends Switch<T> {
 			case BlacklistPackageImpl.IBLACKLIST: {
 				IBlacklist iBlacklist = (IBlacklist)theEObject;
 				T result = caseIBlacklist(iBlacklist);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case BlacklistPackageImpl.BLACKLIST: {
+				Blacklist blacklist = (Blacklist)theEObject;
+				T result = caseBlacklist(blacklist);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}

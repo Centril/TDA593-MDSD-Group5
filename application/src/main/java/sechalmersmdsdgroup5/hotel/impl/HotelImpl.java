@@ -3,6 +3,8 @@
 package sechalmersmdsdgroup5.hotel.impl;
 
 import sechalmersmdsdgroup5.hotel.Hotel;
+import sechalmersmdsdgroup5.hotel.blacklist.Blacklist;
+import sechalmersmdsdgroup5.hotel.blacklist.impl.BlacklistImpl;
 import sechalmersmdsdgroup5.hotel.clients.Customer;
 import sechalmersmdsdgroup5.hotel.clients.Guest;
 import sechalmersmdsdgroup5.hotel.facilities.*;
@@ -208,6 +210,8 @@ class HotelImpl implements Hotel {
 	 */
 	private TaskLog taskLog = new TaskLogImpl();
 
+	private Blacklist blacklist = new BlacklistImpl();
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -395,15 +399,14 @@ class HotelImpl implements Hotel {
 		taskLog = newTaskLog;
 	}
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@Override
-	public List<Identity> getBlacklist() {
-		// @todo fix, should return Blacklist.
-		return null;
+	public Blacklist getBlacklist() {
+		return blacklist;
+	}
+
+	@Override
+	public void setBlacklist(Blacklist value) {
+		blacklist = value;
 	}
 
 	/**
