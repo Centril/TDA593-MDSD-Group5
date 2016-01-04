@@ -870,7 +870,10 @@
             <ownedParameter xmi:type="uml:Parameter" xmi:id="_Fhjwc5m9EeW2JPAtqMJHLg" name="result" type="_8ormYJOJEeWEKYEtRmghUQ" direction="return"/>
           </ownedOperation>
           <ownedOperation xmi:type="uml:Operation" xmi:id="_FhkXgJm9EeW2JPAtqMJHLg" name="createOrder">
-            <ownedParameter xmi:type="uml:Parameter" xmi:id="_FhkXgZm9EeW2JPAtqMJHLg" name="preOrder" type="_b34qgJw0EeWJcrkAjYwcTw"/>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_FhkXgZm9EeW2JPAtqMJHLg" name="roomBookings" type="_8ormYJOJEeWEKYEtRmghUQ">
+              <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_oxOt4LMREeWjk5gVdy9UnA"/>
+              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_oxZtALMREeWjk5gVdy9UnA" value="*"/>
+            </ownedParameter>
             <ownedParameter xmi:type="uml:Parameter" xmi:id="_FhkXgpm9EeW2JPAtqMJHLg" name="customer" type="_7PSgoJOAEeWEKYEtRmghUQ"/>
             <ownedParameter xmi:type="uml:Parameter" xmi:id="_FhkXg5m9EeW2JPAtqMJHLg" name="result" type="_f1YaIJOJEeWEKYEtRmghUQ" direction="return"/>
           </ownedOperation>
