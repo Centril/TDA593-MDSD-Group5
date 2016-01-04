@@ -502,6 +502,9 @@ public class BlacklistPackageImpl extends EPackageImpl {
 		op = addEOperation(iBlacklistEClass, null, "removeFromBlackList", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, theIdentitiesPackage.getIdentity(), "identity", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
+		op = addEOperation(iBlacklistEClass, ecorePackage.getEString(), "getBlacklistReason", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, theIdentitiesPackage.getIdentity(), "identity", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
 		initEClass(blacklistEClass, Blacklist.class, "Blacklist", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getBlacklist_Items(), this.getBlacklistItem(), null, "items", null, 0, -1, Blacklist.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 	}

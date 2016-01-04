@@ -506,6 +506,9 @@
         <eOperations name="removeFromBlackList" ordered="false" lowerBound="1">
           <eParameters name="identity" ordered="false" lowerBound="1" eType="#//hotel/identities/Identity"/>
         </eOperations>
+        <eOperations name="getBlacklistReason" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+          <eParameters name="identity" ordered="false" lowerBound="1" eType="#//hotel/identities/Identity"/>
+        </eOperations>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="Blacklist">
         <eStructuralFeatures xsi:type="ecore:EReference" name="items" ordered="false"

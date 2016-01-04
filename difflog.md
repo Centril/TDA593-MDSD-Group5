@@ -22,6 +22,7 @@
 + 2016-01-03: Added `id` property to `Order`, `RoomBooking` for searchability.
 + 2016-01-03: Added relationship between `Order` and `Customer`.
 + 2016-01-03: `List<SearchResult<PreOrder>> searchAvailableOrders( SearchQuery<PreOrder> query )`
+- 2016-01-04: Added sysop getBlacklistreason(identity) which returns the reason an identity is blacklisted or null if the identity isn't blacklisted. 
 			  changed to `List<SearchResult<PreBooking>> searchAvailableBookings( Date from, Date to, SearchQuery<PreBooking> query )`
 
 # Regarding `searchAvailableOrders -> searchAvailableBookings`

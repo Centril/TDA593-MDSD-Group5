@@ -456,6 +456,9 @@
           <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="sechalmersmdsdgroup5.ecore#//hotel/blacklist/IBlacklist/removeFromBlackList">
             <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="sechalmersmdsdgroup5.ecore#//hotel/blacklist/IBlacklist/removeFromBlackList/identity"/>
           </genOperations>
+          <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="sechalmersmdsdgroup5.ecore#//hotel/blacklist/IBlacklist/getBlacklistReason">
+            <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="sechalmersmdsdgroup5.ecore#//hotel/blacklist/IBlacklist/getBlacklistReason/identity"/>
+          </genOperations>
         </genClasses>
         <genClasses xsi:type="genmodel:GenClass" ecoreClass="sechalmersmdsdgroup5.ecore#//hotel/blacklist/Blacklist">
           <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
