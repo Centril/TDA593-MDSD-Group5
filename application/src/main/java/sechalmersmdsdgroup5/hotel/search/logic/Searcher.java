@@ -47,13 +47,15 @@ public class Searcher<SRT> {
 	/**
 	 * Performs search given initial data with query.
 	 *
-	 * @param data initializes the results with relevance of 1.0 each.
+	 * @param data initializes the results with relevance of 0 each unless empty query.
 	 * @param query the queries to search with.
 	 * @return the results, with new relevance depending on query,
 	 *         and without those below relevance of 1.0
 	 */
 	public List<SearchResult<SRT>> searchInit( List<SRT> data, SearchQuery<SRT> query ) {
-		return this.search( this.init( data ), query );
+		return	query.getCriterias().isEmpty()
+				?	listify( this.init( data ).stream().map( sr -> sr.withRelevance( 1 ) ) )
+				:	this.search( this.init( data ), query );
 	}
 
 	/**
@@ -79,7 +81,7 @@ public class Searcher<SRT> {
 	 *         and without those below relevance of 1.0
 	 */
 	public List<SRT> searchInitFlatten( List<SRT> data, SearchQuery<SRT> query ) {
-		return this.flatten( this.search( this.init( data ), query ) );
+		return this.flatten( this.searchInit( data, query ) );
 	}
 
 	private List<SRT> flatten( List<SearchResult<SRT>> results ) {
