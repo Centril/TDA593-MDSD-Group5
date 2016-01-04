@@ -28,6 +28,7 @@ public class Main {
 			.add( ReadBooking::new)
             .add( ReadOrder::new)
             .add( TakeBackKey::new )
+			.add( SearchAvailableBookings::new )
 			.add( SearchAvailableRooms::new )
 			.add( SearchOccupiedRooms::new )
 			.add( SearchActiveBookings::new )
