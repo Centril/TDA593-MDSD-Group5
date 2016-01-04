@@ -36,11 +36,27 @@ public class StandardReaders {
 		};
 	}
 
+	public static ExceptionalRead<Integer> naturalInt() {
+		return integer().andThen( i -> i < 1 ? null : i );
+	}
+
+	public static ExceptionalRead<Integer> nonNegativeInt() {
+		return integer().andThen( i -> i < 0 ? null : i );
+	}
+
 	public static ExceptionalRead<Integer> integer() {
 		return Integer::parseInt;
 	}
 
 	public static ExceptionalRead<Boolean> bool() {
 		return Boolean::parseBoolean;
+	}
+
+	public static ExceptionalRead<Float> floating() {
+		return Float::parseFloat;
+	}
+
+	public static ExceptionalRead<Double> doubleR() {
+		return Double::parseDouble;
 	}
 }
