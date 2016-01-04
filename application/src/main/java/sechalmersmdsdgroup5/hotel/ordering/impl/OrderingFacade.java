@@ -1,5 +1,7 @@
 package sechalmersmdsdgroup5.hotel.ordering.impl;
 
+import sechalmersmdsdgroup5.hotel.Hotel;
+import sechalmersmdsdgroup5.hotel.HotelFactory;
 import sechalmersmdsdgroup5.hotel.clients.Customer;
 import sechalmersmdsdgroup5.hotel.clients.Guest;
 import sechalmersmdsdgroup5.hotel.facilities.Room;
@@ -7,13 +9,21 @@ import sechalmersmdsdgroup5.hotel.facilities.impl.RoomAttributeImpl;
 import sechalmersmdsdgroup5.hotel.facilities.impl.RoomImpl;
 import sechalmersmdsdgroup5.hotel.ordering.*;
 
+import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.Date;
 import java.util.List;
+
+import static sechalmersmdsdgroup5.hotel.utils.Functional.concatMap;
 
 /**
  * Created by neon on 2015-12-29.
  */
 public class OrderingFacade implements IOrder {
+    private final Hotel hotel;
+    public OrderingFacade(Hotel hotel) {
+        this.hotel = hotel;
+    }
     @Override
     public RoomBooking createBooking(PreBooking preBooking, List<Guest> guests) {
         if(preBooking == null || guests == null) {
@@ -22,19 +32,32 @@ public class OrderingFacade implements IOrder {
 
         RoomBooking newRoomBooking;
         newRoomBooking = new RoomBookingImpl();
+
+        int newId = calculateNewBookingID();
+        newRoomBooking.setId(newId);
         newRoomBooking.setBookedRoom(preBooking.getWillBook());
         newRoomBooking.setStartDate(preBooking.getStartDate());
         newRoomBooking.setEndDate(preBooking.getEndDate());
         newRoomBooking.setIsPaid(false); // you cant pay before this
 
+        addGuestsToBooking(newRoomBooking,preBooking,guests);
+
+        return newRoomBooking;
+    }
+
+    private void addGuestsToBooking(RoomBooking newRoomBooking,PreBooking preBooking, List<Guest> guests) {
         List<Guest> currentGuests = newRoomBooking.getGuests();
         checkAmountOfGuestsOK(currentGuests,preBooking);
         for(Guest g:guests) {
             currentGuests.add(g);
         }
-
-        return newRoomBooking;
     }
+
+    private int calculateNewBookingID() {
+        List<RoomBooking> rbs = concatMap(hotel.getOrders(),Order::getBookings);
+        return rbs.stream().mapToInt(RoomBooking::getId).max().orElse(0);
+    }
+
     private void checkAmountOfGuestsOK(List<Guest> guests, PreBooking preBooking) {
         Room roomToBook = preBooking.getWillBook();
         if(guests.size() > (Integer) roomToBook.getAttribute(RoomAttributeImpl.AMOUNT_OF_BEDS).getValue()) {
@@ -44,8 +67,29 @@ public class OrderingFacade implements IOrder {
 
     @Override
     public Order createOrder(PreOrder preOrder, Customer customer) {
-        return null;
+        if(preOrder == null || customer == null) {
+            throw new IllegalArgumentException("null argument in createOrder");
+        }
+
+        Order newOrder = new OrderImpl();
+        int nextId = calculateNewOrderID();
+        newOrder.setId(nextId);
+        addBookingsToOrder(preOrder, newOrder);
+
+        return newOrder;
     }
+
+    private void addBookingsToOrder(PreOrder preOrder, Order newOrder) {
+        List<RoomBooking> currentBookings = newOrder.getBookings();
+        for(PreBooking preBooking:preOrder.getBookings()) {
+            currentBookings.add(createBooking(preBooking,new ArrayList<Guest>()));
+        }
+    }
+
+    private int calculateNewOrderID() {
+        return hotel.getOrders().stream().mapToInt( Order::getId ).max().orElse(0);
+    }
+
 
     //will not be implemented further.
     @Override
@@ -80,4 +124,5 @@ public class OrderingFacade implements IOrder {
     public boolean isValidDate(Date from, Date to) {
         return false;
     }
+
 }

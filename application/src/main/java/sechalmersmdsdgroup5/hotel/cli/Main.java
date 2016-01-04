@@ -10,10 +10,7 @@ import java.util.Arrays;
 
 import static sechalmersmdsdgroup5.hotel.HotelFactory.INSTANCE;
 import static sechalmersmdsdgroup5.hotel.cli.infrastructure.ApplicationRunner.runner;
-import static sechalmersmdsdgroup5.hotel.cli.infrastructure.Command.command;
 import static sechalmersmdsdgroup5.hotel.cli.infrastructure.IOHelper.system;
-import static sechalmersmdsdgroup5.hotel.cli.infrastructure.Readers.reader;
-import static sechalmersmdsdgroup5.hotel.cli.infrastructure.color.StandardPrintColor.GREEN;
 
 /**
  * CLI program.
@@ -28,7 +25,8 @@ public class Main {
 		checkDisableColors( args );
 
 		runner( header( system() ), INSTANCE.createHotel() ).accept( Application.<Hotel>builder()
-			.add( ReadOrder::new)
+			.add( ReadBooking::new)
+            .add( ReadOrder::new)
             .add( TakeBackKey::new )
 			.add( SearchAvailableRooms::new )
 			.add( SearchOccupiedRooms::new )
@@ -40,7 +38,6 @@ public class Main {
 			.build() );
 
 		/*
->>>>>>> development
 			.cmdVoid( "error", "tests error", (io, $) -> io.error( "hello world" ) )
 			.cmdVoid( "hello", "displays hello world", (io, $) -> io.info( "hello world" ) )
 			.cmdVoid( "green", "displays hello world in green", (io, $) -> io.newline( GREEN, "hello world" ) )

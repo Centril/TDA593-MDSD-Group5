@@ -347,7 +347,9 @@ class RoomBookingImpl implements RoomBooking {
 	@Override
 	public String toString() {
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (startDate: ");
+		result.append("(room ID: " + getId());
+		result.append(", booked room: " + getBookedRoom().toString());
+		result.append(", startDate: ");
 		result.append(startDate);
 		result.append(", endDate: ");
 		result.append(endDate);
@@ -355,9 +357,19 @@ class RoomBookingImpl implements RoomBooking {
 		result.append(checkinTime);
 		result.append(", checkoutTime: ");
 		result.append(checkoutTime);
+		for(Guest guest : getGuests()){
+			result.append(", guest: " + guest.toString());
+		}
+		for(Service service : getServices()){
+			result.append(", service: " + service.toString());
+		}
 		result.append(", isPaid: ");
 		result.append(isPaid);
+		for(Invoice invoice : getInvoice()){
+			result.append(", invoice: " + invoice.toString());
+		}
 		result.append(')');
+
 		return result.toString();
 	}
 } //RoomBookingImpl

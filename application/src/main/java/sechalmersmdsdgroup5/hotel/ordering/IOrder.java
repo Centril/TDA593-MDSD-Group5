@@ -27,10 +27,9 @@ public interface IOrder {
 	RoomBooking createBooking(PreBooking preBooking, List<Guest> guests);
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * Creates a new Order, but does not add any guests, this has to be done later by the user.
 	 * @model required="true" ordered="false" preOrderRequired="true" preOrderOrdered="false" customerRequired="true" customerOrdered="false"
-	 * @generated
+	 * @generated NOT
 	 */
 	Order createOrder(PreOrder preOrder, Customer customer);
 

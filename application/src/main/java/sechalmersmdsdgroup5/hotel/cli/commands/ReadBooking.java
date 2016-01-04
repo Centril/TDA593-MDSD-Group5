@@ -5,26 +5,29 @@ import sechalmersmdsdgroup5.hotel.cli.infrastructure.Command;
 import sechalmersmdsdgroup5.hotel.cli.infrastructure.IOHelper;
 import sechalmersmdsdgroup5.hotel.cli.infrastructure.IdentifiableCommand;
 import sechalmersmdsdgroup5.hotel.ordering.Order;
+import sechalmersmdsdgroup5.hotel.ordering.RoomBooking;
 
 import static sechalmersmdsdgroup5.hotel.cli.readers.StandardReaders.intId;
+import static sechalmersmdsdgroup5.hotel.utils.Functional.concatMap;
 
 /**
- * Created by Hampus on 2016-01-03.
+ * Created by parke_000 on 2016-01-03.
  */
-public class ReadOrder implements Command.Consuming<Hotel>, IdentifiableCommand<Hotel, Void> {
+public class ReadBooking implements Command.Consuming<Hotel>, IdentifiableCommand<Hotel, Void> {
     @Override
     public void accept( IOHelper io, Hotel hotel ) {
-        io.info( "Displays order..." ).newline()
-          .info( io.read("Order ID:", "Order not found!", intId( hotel.getOrders(), Order::getId ) ) );
+        io.info( "Displays booking..." ).newline()
+          .info( io.read( "Booking ID:", "Booking not found!",
+                intId( concatMap( hotel.getOrders(), Order::getBookings ), RoomBooking::getId ) ) );
     }
 
     @Override
     public String help() {
-        return "displays an order.";
+        return "displays a booking.";
     }
 
     @Override
     public String getIdentifier() {
-        return "read-order";
+        return "read-booking";
     }
 }
