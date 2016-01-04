@@ -5,6 +5,7 @@ import sechalmersmdsdgroup5.hotel.HotelFactory;
 import sechalmersmdsdgroup5.hotel.clients.Customer;
 import sechalmersmdsdgroup5.hotel.clients.Guest;
 import sechalmersmdsdgroup5.hotel.facilities.Room;
+import sechalmersmdsdgroup5.hotel.facilities.RoomAttribute;
 import sechalmersmdsdgroup5.hotel.facilities.impl.RoomAttributeImpl;
 import sechalmersmdsdgroup5.hotel.facilities.impl.RoomImpl;
 import sechalmersmdsdgroup5.hotel.ordering.*;
@@ -107,7 +108,21 @@ public class OrderingFacade implements IOrder {
 
     @Override
     public void addGuestToBooking(Guest guest, RoomBooking booking) {
+        RoomAttribute a = booking.getBookedRoom().getAttribute(RoomAttributeImpl.AMOUNT_OF_BEDS);
+        int nbrOfGuests = booking.getGuests().size();
 
+        Integer nbrOfBeds;
+        try {
+            nbrOfBeds = Integer.parseInt((String) a.getValue());
+        } catch (NumberFormatException e) {
+            throw new RuntimeException(RoomAttributeImpl.AMOUNT_OF_BEDS + " value is not an integer: " + a.getValue());
+        }
+
+        if (nbrOfGuests >= nbrOfBeds) {
+            throw new IllegalArgumentException("No more space in room.");
+        } else {
+            booking.getGuests().add(guest);
+        }
     }
 
     @Override
