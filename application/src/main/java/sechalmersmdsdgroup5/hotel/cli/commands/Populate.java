@@ -6,15 +6,14 @@ import sechalmersmdsdgroup5.hotel.cli.infrastructure.Command;
 import sechalmersmdsdgroup5.hotel.cli.infrastructure.IOHelper;
 import sechalmersmdsdgroup5.hotel.cli.infrastructure.IdentifiableCommand;
 import sechalmersmdsdgroup5.hotel.clients.Guest;
-import sechalmersmdsdgroup5.hotel.facilities.IFacilities;
-import sechalmersmdsdgroup5.hotel.facilities.Room;
-import sechalmersmdsdgroup5.hotel.facilities.RoomAttribute;
-import sechalmersmdsdgroup5.hotel.facilities.RoomPrototype;
+import sechalmersmdsdgroup5.hotel.facilities.*;
 import sechalmersmdsdgroup5.hotel.facilities.impl.Facilities;
 import sechalmersmdsdgroup5.hotel.ordering.IOrder;
 import sechalmersmdsdgroup5.hotel.ordering.impl.OrderingFacade;
+import sechalmersmdsdgroup5.hotel.facilities.impl.RoomAttributeImpl;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class Populate implements Command.Consuming<Hotel>, IdentifiableCommand<Hotel, Void> {
@@ -45,8 +44,8 @@ public class Populate implements Command.Consuming<Hotel>, IdentifiableCommand<H
 
         List<RoomAttribute> attr3 = new ArrayList<>();
 
-        RoomAttribute twoBeds = fac.createRoomAttribute("Two beds", 2, 100);
-        RoomAttribute threeBeds = fac.createRoomAttribute("Three beds", 3, 150);
+        RoomAttribute twoBeds = fac.createRoomAttribute(RoomAttributeImpl.AMOUNT_OF_BEDS, 2, 100);
+        RoomAttribute threeBeds = fac.createRoomAttribute(RoomAttributeImpl.AMOUNT_OF_BEDS, 3, 150);
         RoomAttribute seaView = fac.createRoomAttribute("Sea view", 1, 2);
         RoomAttribute plant = fac.createRoomAttribute("Plant", 1, 320);
 
@@ -72,13 +71,19 @@ public class Populate implements Command.Consuming<Hotel>, IdentifiableCommand<H
         List<RoomPrototype> roomPrototypes = generateRoomPrototypes();
         List<Room> rooms = new ArrayList<>();
 
-        rooms.add(fac.createRoom(101, 1, true, 500, null, roomPrototypes.get(1).getStates(), null));
-        rooms.add(fac.createRoom(102, 1, true, 500, null, roomPrototypes.get(1).getStates(), null));
-        rooms.add(fac.createRoom(103, 1, true, 500, null, roomPrototypes.get(1).getStates(), null));
-        rooms.add(fac.createRoom(201, 2, true, 1000, null, roomPrototypes.get(2).getStates(), null));
-        rooms.add(fac.createRoom(202, 2, true, 1000, null, roomPrototypes.get(2).getStates(), null));
-        rooms.add(fac.createRoom(203, 2, true, 1000, null, roomPrototypes.get(2).getStates(), null));
-        rooms.add(fac.createRoom(301, 3, true, 2000, null, roomPrototypes.get(3).getStates(), null));
+
+        List<PrototypeOrdering> asd = new ArrayList<>();
+        asd.add(fac.createPrototypeOrdering(1, roomPrototypes.get(0)));
+        asd.add(fac.createPrototypeOrdering(4, roomPrototypes.get(1)));
+
+        rooms.add(fac.createRoom(101, 1, true, 500, null, roomPrototypes.get(0).getStates(), null));
+        rooms.add(fac.createRoom(102, 1, true, 500, null, roomPrototypes.get(0).getStates(), null));
+        rooms.add(fac.createRoom(103, 1, true, 500, null, roomPrototypes.get(0).getStates(), null));
+        rooms.add(fac.createRoom(201, 2, true, 1000, null, roomPrototypes.get(1).getStates(), null));
+        rooms.add(fac.createRoom(202, 2, true, 1000, null, roomPrototypes.get(1).getStates(), null));
+        rooms.add(fac.createRoom(203, 2, true, 1000, null, roomPrototypes.get(1).getStates(), null));
+        rooms.add(fac.createRoom(301, 3, true, 2000, null, roomPrototypes.get(2).getStates(), null));
+        rooms.add(fac.createRoom(401, 4, true, 2200, asd, null, null));
 
         return rooms;
     }
