@@ -55,7 +55,7 @@ public class CheckIn implements Command.Consuming<Hotel>, IdentifiableCommand<Ho
 
     @Override
     public String getIdentifier() {
-        return null;
+        return "check-in-room";
     }
 
     @Override
