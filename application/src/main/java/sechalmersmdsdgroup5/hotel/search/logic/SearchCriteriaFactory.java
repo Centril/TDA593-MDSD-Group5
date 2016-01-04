@@ -13,6 +13,7 @@ import java.util.function.Function;
 import java.util.function.Predicate;
 
 public class SearchCriteriaFactory {
+	@SafeVarargs
 	public static <SRT> SearchQuery<SRT> query( SearchCriteria<SRT>... criterion ) {
 		return query( Arrays.asList( criterion ) );
 	}
