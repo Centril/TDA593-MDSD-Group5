@@ -17,6 +17,32 @@ public interface Command<I, O> extends BiFunction<IOHelper, I, O> {
 	 */
 	String help();
 
+
+	/**
+	 * Returns a command from a BiConsumer as command body.
+	 * Useful for lambda expressions without explicit return.
+	 *
+	 * @param cmd the command.
+	 * @param <I> the input type.
+	 * @return the command.
+	 */
+	static <I> Command<I, Void> commandVoid( BiConsumer<IOHelper, I> cmd ) {
+		return commandVoid( "", cmd );
+	}
+
+	/**
+	 * Returns a command from a function as command body.
+	 * Useful for lambda expressions.
+	 *
+	 * @param cmd the command.
+	 * @param <I> the input type.
+	 * @param <O> the output type.
+	 * @return the command.
+	 */
+	static <I, O> Command<I, O> command( BiFunction<IOHelper, I, O> cmd ) {
+		return command( "", cmd );
+	}
+
 	/**
 	 * Returns a command from help message and a BiConsumer as command body.
 	 * Useful for lambda expressions without explicit return.

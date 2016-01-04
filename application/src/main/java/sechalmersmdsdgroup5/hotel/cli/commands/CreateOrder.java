@@ -1,6 +1,9 @@
 package sechalmersmdsdgroup5.hotel.cli.commands;
 
 import sechalmersmdsdgroup5.hotel.Hotel;
+import sechalmersmdsdgroup5.hotel.blacklist.IBlacklist;
+import sechalmersmdsdgroup5.hotel.blacklist.impl.IBlacklistImpl;
+import sechalmersmdsdgroup5.hotel.cli.infrastructure.Command;
 import sechalmersmdsdgroup5.hotel.cli.infrastructure.IOHelper;
 import sechalmersmdsdgroup5.hotel.cli.infrastructure.IdentifiableCommand;
 import sechalmersmdsdgroup5.hotel.cli.readers.StandardReaders;
@@ -17,6 +20,7 @@ import java.util.List;
 import java.util.Set;
 
 import static java.util.Collections.singletonList;
+import static sechalmersmdsdgroup5.hotel.cli.infrastructure.Command.command;
 import static sechalmersmdsdgroup5.hotel.cli.readers.StandardReaders.nonNegativeInt;
 import static sechalmersmdsdgroup5.hotel.utils.Functional.listify;
 
@@ -37,10 +41,12 @@ public class CreateOrder implements IdentifiableCommand<Hotel, Order> {
 
         //int guestCount = io.read( "Amount of guests?", "Not a valid amount", naturalInt() );
 
-        List<SearchResult<PreBooking>> resultBookings;
-        while ( (resultBookings = io.execute( hotel, new SearchAvailableBookings() )).isEmpty() ) {
+        List<SearchResult<PreBooking>> resultBookingsMut;
+        while ( (resultBookingsMut = io.execute( hotel, new SearchAvailableBookings() )).isEmpty() ) {
             io.warn( "There were no available bookings!" );
         };
+
+        final List<SearchResult<PreBooking>> resultBookings = resultBookingsMut;
 
         io.io( () -> {
             for ( int i = 0; i < resultBookings.size(); ++i )
@@ -67,8 +73,10 @@ public class CreateOrder implements IdentifiableCommand<Hotel, Order> {
         IOrder facade = new OrderingFacade( hotel );
 
         List<RoomBooking> bookeds = listify( selected.stream().map( pre -> {
-            Guest firstGuest = readGuest( io, hotel );
+            Guest firstGuest = io.execute( hotel, command( this::readGuest ) );
             facade.createBooking( pre, singletonList( firstGuest ) );
+
+
 
             return null;
         } ) );
@@ -77,10 +85,23 @@ public class CreateOrder implements IdentifiableCommand<Hotel, Order> {
     }
 
     private Guest readGuest( IOHelper io, Hotel hotel ) {
+        io.info( "Adding a guest..." ).newline();
+
         String name = io.read( "Guest name?" );
         // 3 month old baby...
         int age = io.read( "Guest age?", "Invalid age.", nonNegativeInt() );
         String ssn = io.read( "Guest SSN?" );
+
+        IOrder facade = new OrderingFacade( hotel );
+        Guest guest = facade.createGuest( name, ssn, age );
+
+        String reason = new IBlacklistImpl( hotel ).getBlacklistReason( guest );
+
+        if( reason == null ) {
+            return guest;
+        }
+
+        io.info( "Person is blacklisted, reason: " + reason ).newline();
         return null;
     }
-}   
+}
