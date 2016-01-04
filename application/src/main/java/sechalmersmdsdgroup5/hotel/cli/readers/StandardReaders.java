@@ -1,6 +1,7 @@
 package sechalmersmdsdgroup5.hotel.cli.readers;
 
 import sechalmersmdsdgroup5.hotel.cli.infrastructure.ExceptionalRead;
+import sechalmersmdsdgroup5.hotel.cli.infrastructure.Read;
 import sechalmersmdsdgroup5.hotel.utils.Dates;
 
 import java.time.LocalDate;
@@ -9,10 +10,17 @@ import java.util.Date;
 import java.util.List;
 import java.util.function.ToIntFunction;
 
+import static sechalmersmdsdgroup5.hotel.cli.infrastructure.Readers.reader;
+
 /**
  * StandardReaders provide a bunch of standard readers.
  */
 public class StandardReaders {
+	public static Read<Boolean> addMore() {
+		return reader( str -> str.startsWith( "y" ) || str.startsWith( "n" ),
+					   str -> str.startsWith( "y" ) );
+	}
+
 	public static ExceptionalRead<Date> date() {
 		return input -> Dates.toDate( LocalDate.parse( input, DateTimeFormatter.ISO_DATE ) );
 	}
