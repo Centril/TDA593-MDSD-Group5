@@ -41,6 +41,12 @@
             </ownedParameter>
             <ownedParameter xmi:type="uml:Parameter" xmi:id="_5CkckJyjEeWiw-HwyxZ8Kg" name="return" type="_owOzEJN6EeWEKYEtRmghUQ" direction="return"/>
           </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_3CCwALMwEeWs2L07nlyhug" name="getLocalAttributes">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_d6WdYLMxEeWerNXOe7Huxg" name="return" type="_owOzEJN6EeWEKYEtRmghUQ" direction="return">
+              <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_uCkosLMyEeWerNXOe7Huxg"/>
+              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_uCqIQLMyEeWerNXOe7Huxg" value="*"/>
+            </ownedParameter>
+          </ownedOperation>
         </packagedElement>
         <packagedElement xmi:type="uml:Class" xmi:id="_CKsl0JN8EeWEKYEtRmghUQ" name="RoomPrototype">
           <ownedAttribute xmi:type="uml:Property" xmi:id="_G3vjwJN8EeWEKYEtRmghUQ" name="name" visibility="private">
