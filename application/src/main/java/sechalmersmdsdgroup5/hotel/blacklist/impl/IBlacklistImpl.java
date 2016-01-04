@@ -37,12 +37,10 @@ public class IBlacklistImpl implements IBlacklist {
 
     @Override
     public String getBlacklistReason(Identity identity) {
-        BlacklistItem blacklistItem = hotel.getBlacklist().getItems().stream().filter((item)
-                                                -> item.getIdentity().getIdNumber().equals(identity.getIdNumber())).findFirst().get();
+        Optional<BlacklistItem> blacklistItem = hotel.getBlacklist().getItems().stream()
+                .filter((item) -> item.getIdentity().getIdNumber().equals(identity.getIdNumber()))
+                .findFirst();
 
-        if(blacklistItem != null) {
-            return blacklistItem.getReason();
-        }
-        return null;
+        return blacklistItem.isPresent() ? blacklistItem.get().getReason() : null;
     }
 }
