@@ -11,7 +11,6 @@ import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
 import sechalmersmdsdgroup5.hotel.clients.Customer;
-import sechalmersmdsdgroup5.hotel.facilities.Room;
 import sechalmersmdsdgroup5.hotel.ordering.*;
 
 import java.util.Date;

@@ -10,7 +10,8 @@ import sechalmersmdsdgroup5.hotel.ordering.Invoice;
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Payable</b></em>'.
  * <!-- end-user-doc -->
- * * <p>
+ *
+ * <p>
  * The following features are supported:
  * </p>
  * <ul>

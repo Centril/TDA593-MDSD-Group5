@@ -48,6 +48,16 @@ public class InvoiceImpl extends MinimalEObjectImpl.Container implements Invoice
 	protected boolean isPaid = IS_PAID_EDEFAULT;
 
 	/**
+	 * The default value of the '{@link #getExpiryDate() <em>Expiry Date</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getExpiryDate()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final Date EXPIRY_DATE_EDEFAULT = null;
+
+	/**
 	 *Creates a default expiry date one month from the current date.
 	 */
 	private static Date expiryDateDefault() {
@@ -64,7 +74,7 @@ public class InvoiceImpl extends MinimalEObjectImpl.Container implements Invoice
 	 * @generated
 	 * @ordered
 	 */
-	protected Date expiryDate = expiryDateDefault();
+	protected Date expiryDate = EXPIRY_DATE_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getTotalPrice() <em>Total Price</em>}' attribute.
@@ -210,7 +220,7 @@ public class InvoiceImpl extends MinimalEObjectImpl.Container implements Invoice
 				setIsPaid(IS_PAID_EDEFAULT);
 				return;
 			case OrderingPackageImpl.INVOICE__EXPIRY_DATE:
-				setExpiryDate(expiryDateDefault());
+				setExpiryDate(EXPIRY_DATE_EDEFAULT);
 				return;
 			case OrderingPackageImpl.INVOICE__TOTAL_PRICE:
 				setTotalPrice(TOTAL_PRICE_EDEFAULT);
@@ -230,11 +240,9 @@ public class InvoiceImpl extends MinimalEObjectImpl.Container implements Invoice
 			case OrderingPackageImpl.INVOICE__IS_PAID:
 				return isPaid != IS_PAID_EDEFAULT;
 			case OrderingPackageImpl.INVOICE__EXPIRY_DATE:
-				Date testDate = expiryDateDefault();
-				return testDate == null ? expiryDate != null : !testDate.equals(expiryDate);
+				return EXPIRY_DATE_EDEFAULT == null ? expiryDate != null : !EXPIRY_DATE_EDEFAULT.equals(expiryDate);
 			case OrderingPackageImpl.INVOICE__TOTAL_PRICE:
 				return totalPrice != TOTAL_PRICE_EDEFAULT;
-
 		}
 		return eDynamicIsSet(featureID);
 	}

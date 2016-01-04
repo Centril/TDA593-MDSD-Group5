@@ -63,4 +63,12 @@ public interface IFacilities {
 	 */
 	EmployeeArea createEmployeeArea(int id, int floor);
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model orderRequired="true" orderOrdered="false" prototypeRequired="true" prototypeOrdered="false"
+	 * @generated
+	 */
+	void createPrototypeOrdering(int order, RoomPrototype prototype);
+
 } // IFacilities

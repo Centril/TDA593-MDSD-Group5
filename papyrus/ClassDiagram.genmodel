@@ -163,6 +163,10 @@
             <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="sechalmersmdsdgroup5.ecore#//hotel/facilities/IFacilities/createEmployeeArea/id"/>
             <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="sechalmersmdsdgroup5.ecore#//hotel/facilities/IFacilities/createEmployeeArea/floor"/>
           </genOperations>
+          <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="sechalmersmdsdgroup5.ecore#//hotel/facilities/IFacilities/createPrototypeOrdering">
+            <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="sechalmersmdsdgroup5.ecore#//hotel/facilities/IFacilities/createPrototypeOrdering/order"/>
+            <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="sechalmersmdsdgroup5.ecore#//hotel/facilities/IFacilities/createPrototypeOrdering/prototype"/>
+          </genOperations>
         </genClasses>
       </nestedGenPackages>
       <nestedGenPackages xsi:type="genmodel:GenPackage" prefix="Services" basePackage="sechalmersmdsdgroup5.hotel"
@@ -327,7 +331,7 @@
             <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="sechalmersmdsdgroup5.ecore#//hotel/ordering/IOrder/createBooking/guests"/>
           </genOperations>
           <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="sechalmersmdsdgroup5.ecore#//hotel/ordering/IOrder/createOrder">
-            <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="sechalmersmdsdgroup5.ecore#//hotel/ordering/IOrder/createOrder/preOrder"/>
+            <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="sechalmersmdsdgroup5.ecore#//hotel/ordering/IOrder/createOrder/roomBookings"/>
             <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="sechalmersmdsdgroup5.ecore#//hotel/ordering/IOrder/createOrder/customer"/>
           </genOperations>
           <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="sechalmersmdsdgroup5.ecore#//hotel/ordering/IOrder/sendConfirmationMail">

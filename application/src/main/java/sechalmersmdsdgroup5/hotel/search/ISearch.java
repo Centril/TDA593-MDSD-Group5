@@ -4,8 +4,6 @@ package sechalmersmdsdgroup5.hotel.search;
 
 import java.util.Date;
 import java.util.List;
-
-import sechalmersmdsdgroup5.hotel.clients.Customer;
 import sechalmersmdsdgroup5.hotel.facilities.Key;
 import sechalmersmdsdgroup5.hotel.facilities.Room;
 

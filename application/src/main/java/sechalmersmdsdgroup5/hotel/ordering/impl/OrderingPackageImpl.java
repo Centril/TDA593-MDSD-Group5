@@ -1406,7 +1406,7 @@ public class OrderingPackageImpl extends EPackageImpl {
 		addEParameter(op, theClientsPackage.getGuest(), "guests", 1, -1, IS_UNIQUE, !IS_ORDERED);
 
 		op = addEOperation(iOrderEClass, this.getOrder(), "createOrder", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, this.getPreOrder(), "preOrder", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, this.getRoomBooking(), "roomBookings", 0, -1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, theClientsPackage.getCustomer(), "customer", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		op = addEOperation(iOrderEClass, ecorePackage.getEBoolean(), "sendConfirmationMail", 1, 1, IS_UNIQUE, !IS_ORDERED);
