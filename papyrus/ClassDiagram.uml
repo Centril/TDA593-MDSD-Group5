@@ -540,6 +540,13 @@
               <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_-825AJqbEeWhp8VYZPcMtQ" value="*"/>
             </ownedParameter>
           </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_hL1fcLM1EeWerNXOe7Huxg" name="searchCustomer">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_xHGpULM1EeWOjeQU4OUwPQ" name="return" type="_WB-EgLM0EeWerNXOe7Huxg" direction="return">
+              <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_BbonwLM2EeWOjeQU4OUwPQ"/>
+              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_BbuuYLM2EeWOjeQU4OUwPQ" value="*"/>
+            </ownedParameter>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_QktfsLM2EeWOjeQU4OUwPQ" name="query" type="_vtxw0LMzEeWerNXOe7Huxg"/>
+          </ownedOperation>
         </packagedElement>
         <packagedElement xmi:type="uml:Class" xmi:id="_Tb9e8JRQEeWEKYEtRmghUQ" name="SearchQuery">
           <ownedTemplateSignature xmi:type="uml:RedefinableTemplateSignature" xmi:id="_5RFDMJxiEeWESJEFGhWPTA" name="SQ_RTS" parameter="_8g3Y8JxiEeWESJEFGhWPTA">
@@ -717,6 +724,16 @@
           </templateBinding>
           <templateBinding xmi:type="uml:TemplateBinding" xmi:id="_58uHwJyPEeWiw-HwyxZ8Kg" signature="_3tmsMJyMEeWiw-HwyxZ8Kg">
             <parameterSubstitution xmi:type="uml:TemplateParameterSubstitution" xmi:id="_-Trg8JyPEeWiw-HwyxZ8Kg" actual="_ypg5gJ74EeWFma49OO7DuQ" formal="_28imMJyNEeWiw-HwyxZ8Kg"/>
+          </templateBinding>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_vtxw0LMzEeWerNXOe7Huxg" name="SearchQuery_Customer">
+          <templateBinding xmi:type="uml:TemplateBinding" xmi:id="_Fi8GQLM0EeWerNXOe7Huxg" signature="_5RFDMJxiEeWESJEFGhWPTA">
+            <parameterSubstitution xmi:type="uml:TemplateParameterSubstitution" xmi:id="_PxBq4LM0EeWerNXOe7Huxg" actual="_7PSgoJOAEeWEKYEtRmghUQ" formal="_8g3Y8JxiEeWESJEFGhWPTA"/>
+          </templateBinding>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_WB-EgLM0EeWerNXOe7Huxg" name="SearchResult_Customer">
+          <templateBinding xmi:type="uml:TemplateBinding" xmi:id="_VDGMALM1EeWerNXOe7Huxg" signature="_nwJ1cJvmEeWJcrkAjYwcTw">
+            <parameterSubstitution xmi:type="uml:TemplateParameterSubstitution" xmi:id="_YTflwLM1EeWerNXOe7Huxg" actual="_7PSgoJOAEeWEKYEtRmghUQ" formal="_8g3Y8JxiEeWESJEFGhWPTA"/>
           </templateBinding>
         </packagedElement>
       </packagedElement>
@@ -1387,4 +1404,6 @@
   <Ecore:EGenericType xmi:id="_9h5CMJyQEeWiw-HwyxZ8Kg" base_Class="_7LmgQJyQEeWiw-HwyxZ8Kg"/>
   <Ecore:ETypeParameter xmi:id="_xT048J74EeWFma49OO7DuQ" base_TemplateParameter="_wWsiUJ74EeWFma49OO7DuQ"/>
   <Ecore:ETypeParameter xmi:id="_Ss4S4J76EeWFma49OO7DuQ" base_TemplateParameter="_Rkd5UJ76EeWFma49OO7DuQ"/>
+  <Ecore:EGenericType xmi:id="_yfwwQLMzEeWerNXOe7Huxg" base_Class="_vtxw0LMzEeWerNXOe7Huxg"/>
+  <Ecore:EGenericType xmi:id="_LlC9MLM1EeWerNXOe7Huxg" base_Class="_WB-EgLM0EeWerNXOe7Huxg"/>
 </xmi:XMI>

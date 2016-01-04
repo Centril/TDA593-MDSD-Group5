@@ -590,6 +590,16 @@
             </eGenericType>
           </eParameters>
         </eOperations>
+        <eOperations name="searchCustomer" ordered="false" upperBound="-1">
+          <eGenericType eClassifier="#//hotel/search/SearchResult">
+            <eTypeArguments eClassifier="#//hotel/clients/Customer"/>
+          </eGenericType>
+          <eParameters name="query" ordered="false" lowerBound="1">
+            <eGenericType eClassifier="#//hotel/search/SearchQuery">
+              <eTypeArguments eClassifier="#//hotel/clients/Customer"/>
+            </eGenericType>
+          </eParameters>
+        </eOperations>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="SearchResult" abstract="true" interface="true">
         <eTypeParameters name="SRT"/>
