@@ -1,10 +1,12 @@
 package sechalmersmdsdgroup5.hotel.search.impl;
 
-import com.sun.org.apache.xpath.internal.operations.Or;
 import sechalmersmdsdgroup5.hotel.Hotel;
 import sechalmersmdsdgroup5.hotel.facilities.Key;
 import sechalmersmdsdgroup5.hotel.facilities.Room;
-import sechalmersmdsdgroup5.hotel.ordering.*;
+import sechalmersmdsdgroup5.hotel.ordering.Order;
+import sechalmersmdsdgroup5.hotel.ordering.OrderingFactory;
+import sechalmersmdsdgroup5.hotel.ordering.PreBooking;
+import sechalmersmdsdgroup5.hotel.ordering.RoomBooking;
 import sechalmersmdsdgroup5.hotel.search.ISearch;
 import sechalmersmdsdgroup5.hotel.search.SearchCriteria;
 import sechalmersmdsdgroup5.hotel.search.SearchQuery;
@@ -34,7 +36,7 @@ public class Search implements ISearch {
     @Override
     public List<Order> searchActiveOrders(String clientName) {
         List<Order> allOrders = new ArrayList<>(hotel.getOrders());
-        List<Order> clientOrders = null;
+        List<Order> clientOrders = new ArrayList<>();
         for (Order order : allOrders ) {
             String acquiredName = order.getCustomer().getIdentity().getName();
             if ( null != acquiredName && acquiredName.equals(clientName) ) {
