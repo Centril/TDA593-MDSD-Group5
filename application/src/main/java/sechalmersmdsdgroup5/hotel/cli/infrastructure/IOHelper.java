@@ -319,7 +319,21 @@ public class IOHelper {
 	 * @return the read objects.
 	 */
 	public <T> List<T> readMany( int min, String label, Read<T> reader ) {
-		return listify( atLeast( min, reader, this::readMore ).map( r -> read( label, r ) ) );
+		return readMany( min, label, "Invalid input specified.", reader );
+	}
+
+	/**
+	 * Reads at least min times with reader, optionally more.
+	 *
+	 * @param min minimum amount of times to read.
+	 * @param label The label to present to user.
+	 * @param onError The error message to warn() on error.
+	 * @param reader the reader.
+	 * @param <T> the type of the reader.
+	 * @return the read objects.
+	 */
+	public <T> List<T> readMany( int min, String label, String onError, Read<T> reader ) {
+		return listify( atLeast( min, reader, this::readMore ).map( r -> read( label, onError, r ) ) );
 	}
 
 	/**
