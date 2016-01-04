@@ -3,6 +3,7 @@
 package sechalmersmdsdgroup5.hotel.ordering.impl;
 
 import sechalmersmdsdgroup5.hotel.clients.Customer;
+import sechalmersmdsdgroup5.hotel.facilities.Room;
 import sechalmersmdsdgroup5.hotel.ordering.Campaign;
 import sechalmersmdsdgroup5.hotel.ordering.Invoice;
 import sechalmersmdsdgroup5.hotel.ordering.Order;
@@ -90,6 +91,11 @@ public class OrderImpl implements Order {
 	 */
 	OrderImpl() {}
 
+	public OrderImpl(RoomBooking room, Customer customer) {
+		bookings.add(room);
+		this.customer = customer;
+	}
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -148,6 +154,7 @@ public class OrderImpl implements Order {
 	public double totalPrice() {
 		return calculatePrice();
 	}
+
 	/**
 	 * This calculates the price of the order, including campaigns, services and bookings.
 	 */
@@ -156,7 +163,10 @@ public class OrderImpl implements Order {
 		for (RoomBooking booking: this.getBookings()) {
 			total += booking.totalPrice();
 		}
-		return Functional.foldl(campaigns, total, (price, campaign) -> campaign.discount(this, price ));
+		if (campaigns != null) {
+			total += Functional.foldl(campaigns, total, (price, campaign) -> campaign.discount(this, price ));
+		}
+		return total;
 	}
 
 	/**
