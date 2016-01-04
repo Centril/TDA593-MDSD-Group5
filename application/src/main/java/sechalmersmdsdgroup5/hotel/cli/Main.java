@@ -23,7 +23,7 @@ public class Main {
 	 */
 	public static void main( String[] args ) {
 		checkDisableColors( args );
-		
+
 		runner(header(system()), INSTANCE.createHotel()).accept(Application.<Hotel>builder()
 				.add(ReadBooking::new)
 				.add(ReadOrder::new)
@@ -40,7 +40,6 @@ public class Main {
 				.add(ListRooms::new)
 				.add(IsBlacklisted::new)
 				.build());
-
 		/*
 			.cmdVoid( "error", "tests error", (io, $) -> io.error( "hello world" ) )
 			.cmdVoid( "hello", "displays hello world", (io, $) -> io.info( "hello world" ) )
