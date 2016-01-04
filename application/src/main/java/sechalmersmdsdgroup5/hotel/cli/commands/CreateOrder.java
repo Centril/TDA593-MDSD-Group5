@@ -29,7 +29,6 @@ import java.util.Optional;
 import java.util.Set;
 
 import static java.util.Collections.singletonList;
-import static sechalmersmdsdgroup5.hotel.cli.infrastructure.Command.command;
 import static sechalmersmdsdgroup5.hotel.cli.infrastructure.Readers.reader;
 import static sechalmersmdsdgroup5.hotel.cli.readers.StandardReaders.*;
 import static sechalmersmdsdgroup5.hotel.utils.Functional.listify;
@@ -84,14 +83,14 @@ public class CreateOrder implements IdentifiableCommand<Hotel, Order> {
 
         List<RoomBooking> bookeds = listify( selected.stream().map( pre -> {
             // Should never fail... all rooms have min 1 room:
-            Guest firstGuest = io.execute( hotel, command( this::readGuest ) );
+            Guest firstGuest = io.execute( hotel, Command.command( this::readGuest ) );
             RoomBooking booking = facade.createBooking( pre, singletonList( firstGuest ) );
 
             // Keep adding forever until we can't add guests anymore:
             while ( true ) {
                 if ( !io.read( "Add more guests?", addMore() ) ) break;
 
-                Optional<Guest> maybeGuest = io.executeOpt( hotel, command( this::readGuest ) );
+                Optional<Guest> maybeGuest = io.executeOpt( hotel, Command.command( this::readGuest ) );
 
                 if ( !maybeGuest.isPresent() )
                     io.warn( "Not a valid guest specified." );
@@ -106,10 +105,15 @@ public class CreateOrder implements IdentifiableCommand<Hotel, Order> {
             return booking;
         } ) );
 
-        Customer customer = io.execute( hotel, command( this::readCustomer ) );
+        Customer customer = io.execute( hotel, Command.command( this::readCustomer ) );
 
-        // TODO: 2016-01-04 , replace null with bookeds.
-        return facade.createOrder( null, customer );
+        Order order = facade.createOrder( bookeds, customer );
+
+        if ( !io.read( "Do you accept the terms and conditions (yes/no)?", "Specify yes or no.", yesNo() ) ) {
+            hotel.getOrders().remove( order );
+        }
+
+        return order;
     }
 
     private Customer readCustomer( IOHelper io, Hotel hotel ) {
