@@ -15,11 +15,13 @@ import sechalmersmdsdgroup5.hotel.identities.impl.IdentitiesFactoryImpl;
 import sechalmersmdsdgroup5.hotel.ordering.Order;
 import sechalmersmdsdgroup5.hotel.ordering.OrderingFactory;
 import sechalmersmdsdgroup5.hotel.ordering.RoomBooking;
+import sechalmersmdsdgroup5.hotel.payment.IPayment;
+import sechalmersmdsdgroup5.hotel.payment.impl.Payment;
 import sechalmersmdsdgroup5.hotel.search.impl.Search;
+import sechalmersmdsdgroup5.hotel.utils.Pair;
 
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.Date;
 import java.util.List;
 
 public class PayForOrder  implements Command.Consuming<Hotel>, IdentifiableCommand<Hotel, Void> {
@@ -29,24 +31,72 @@ public class PayForOrder  implements Command.Consuming<Hotel>, IdentifiableComma
         List<Order> orders = findCustomerOrders(io.read( "Please specify the first name followed by" +
                 " the surname under which the order was created. [Example: John Doe]\n: " ), hotel);
 
-        if ( null == testOrders() ) {
+        if ( null == orders ) {
             io.info("There are no orders associated with that name. Exiting command.");
         }
 
         else {
-            //List the orders associated with the customer.
+            //List the orders associated with the customer as pairs.
+            List<Pair<Integer, Order>> pairs = new ArrayList<>();
 
             StringBuilder builder = new StringBuilder();
             int count = 1;
-
-            for (Order order : testOrders()) {
+            for (Order order : orders) {
                 appendOrder(builder, count, order);
+                builder.append("\n");
+                pairs.add(new Pair<>(count, order));
             }
 
-            io.read("These are the associated orders. Please specify which order you wish to " +
+            String msg = io.read("These are the associated orders. Please specify which order you wish to " +
                     "pay for by inputting the corresponding number." + builder.toString());
+            int nbr = parseInteger(msg);
+            if (nbr == -1) {
+                io.info("Incorrect input. Exiting.");
+            } else {
+                Order orderToPay = findOrder(pairs, nbr);
+                if ( orderToPay != null ) {
+                    String choice = io.read("Do you wish to pay the following by " +
+                            " [1: invoice] or [2: directly using your credit card]?" + builder.toString());
 
+                    int nbr1 = parseInteger(choice);
+                    IPayment payment = new Payment();
+                    if (nbr1 == 1) {
+                        io.info("An invoice will be sent to your home address. " +
+                                "A receipt will be printed shortly... Thank you for your stay.");
+                        payment.debit(orderToPay, orderToPay.getCustomer());
+                    } else if (nbr1 == 2) {
+                        io.info("Please pay through the credit card reader. Thank you for your visit.");
+                        payment.debit(orderToPay);
+                    } else {
+                        io.info("Invalid input. Exiting.");
+                    }
+                }
+            }
         }
+    }
+
+    /**
+     * returns -1 if the parsing was unsuccessful.
+     * @param msg
+     * @return
+     */
+    private int parseInteger(String msg) {
+        int nbr = -1;
+        try {
+            nbr = Integer.parseInt(msg);
+        } catch (NumberFormatException e) {
+        }
+        return nbr;
+    }
+
+    private Order findOrder(List<Pair<Integer, Order>> pairs, int nbr) {
+
+        for (Pair pair : pairs) {
+            if (((Integer) pair.fst()).equals(nbr)) {
+                return ((Order) pair.snd());
+            }
+        }
+        return  null;
     }
 
     /**
@@ -57,7 +107,8 @@ public class PayForOrder  implements Command.Consuming<Hotel>, IdentifiableComma
      */
     private void appendOrder(StringBuilder builder, int count, Order order) {
         builder.append( "\n" +  count + ". ");
-        System.out.println(order.getBookings().get(0).getBookedRoom().getPrototypes().get(0).getPrototype().getName());
+        // This is how to get the name:
+        // System.out.println(order.getBookings().get(0).getBookedRoom().getPrototypes().get(0).getPrototype().getName());
         List<RoomBooking> bookings = order.getBookings();
         for (RoomBooking roomBooking : bookings) {
             appendRoomName(builder, roomBooking);
@@ -74,7 +125,6 @@ public class PayForOrder  implements Command.Consuming<Hotel>, IdentifiableComma
     private void appendRoomName(StringBuilder builder, RoomBooking roomBooking) {
         List<PrototypeOrdering> orderedPrototypes = roomBooking.getBookedRoom().getPrototypes();
         for (PrototypeOrdering orderedPrototype : orderedPrototypes) {
-            System.out.println(orderedPrototype.getPrototype().getName());
             builder.append(orderedPrototype.getPrototype().getName() + " ");
         }
     }
@@ -93,10 +143,12 @@ public class PayForOrder  implements Command.Consuming<Hotel>, IdentifiableComma
         return "pay-for-order";
     }
 
-
+    /**
+     * Can be used to test this command.
+     * @return
+     */
     private List<Order> testOrders() {
         // Create test customer
-        //System.out.println(order.getBookings().get(0).getBookedRoom().getPrototypes().get(0).getPrototype().getName());
 
         Customer customer = ClientsFactoryImpl.eINSTANCE.createCustomer();
         RealPerson testPerson = IdentitiesFactoryImpl.eINSTANCE.createRealPerson();
