@@ -37,10 +37,10 @@ public class StandardReaders {
 	}
 
 	public static ExceptionalRead<Integer> integer() {
-		return input -> Integer.parseInt( input );
+		return Integer::parseInt;
 	}
 
 	public static ExceptionalRead<Boolean> bool() {
-		return input -> Boolean.parseBoolean( input );
+		return Boolean::parseBoolean;
 	}
 }
