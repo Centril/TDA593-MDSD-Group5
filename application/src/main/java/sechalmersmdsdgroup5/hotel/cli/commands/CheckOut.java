@@ -16,7 +16,7 @@ public class CheckOut implements Command.Consuming<Hotel>, IdentifiableCommand<H
 
     @Override
     public String getIdentifier() {
-        return null;
+        return "check-out-room";
     }
 
     @Override
