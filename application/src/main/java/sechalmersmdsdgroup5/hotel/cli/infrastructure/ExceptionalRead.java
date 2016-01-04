@@ -1,6 +1,7 @@
 package sechalmersmdsdgroup5.hotel.cli.infrastructure;
 
 import java.util.Optional;
+import java.util.function.Function;
 
 import static java.util.Optional.empty;
 import static java.util.Optional.ofNullable;
@@ -26,4 +27,15 @@ public interface ExceptionalRead<T> extends Read<T> {
 	 * @return T.
 	 */
 	T readE( String input );
+
+	/**
+	 * Composes this reader with a function.
+	 *
+	 * @param mapper the mapping function.
+	 * @param <U> the resulting type.
+	 * @return the new Read.
+	 */
+	default <U> ExceptionalRead<U> andThen( Function<? super T, ? extends U> mapper ) {
+		return input -> this.read( input ).map( mapper ).get();
+	}
 }
