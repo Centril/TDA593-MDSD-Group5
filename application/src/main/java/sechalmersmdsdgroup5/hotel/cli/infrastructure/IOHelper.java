@@ -29,7 +29,7 @@ public class IOHelper {
 	private PrintColorWriter out;
 	private PrintColorWriter err;
 
-	private boolean cancelable = false;
+	private boolean cancelable = true;
 	private IOHelper parent;
 
 	/**
