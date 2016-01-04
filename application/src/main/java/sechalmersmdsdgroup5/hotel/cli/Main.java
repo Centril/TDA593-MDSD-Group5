@@ -36,7 +36,8 @@ public class Main {
 			.add( SearchUsedServices::new )
 			.add( AddRoom::new )
 			.add( ListRooms::new )
-			.add( CheckIn::new)
+			.add( CheckIn::new )
+			.add( CheckOut::new )
 			.build() );
 
 		/*
