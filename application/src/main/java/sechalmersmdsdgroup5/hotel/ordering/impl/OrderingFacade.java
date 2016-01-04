@@ -69,15 +69,17 @@ public class OrderingFacade implements IOrder {
     }
 
     @Override
-    public Order createOrder(PreOrder preOrder, Customer customer) {
-        if(preOrder == null || customer == null) {
+    public Order createOrder(List<RoomBooking> bookings, Customer customer) {
+        if(bookings == null || customer == null) {
             throw new IllegalArgumentException("null argument in createOrder");
         }
 
         Order newOrder = new OrderImpl();
         int nextId = calculateNewOrderID();
         newOrder.setId(nextId);
-        addBookingsToOrder(preOrder, newOrder);
+        for(RoomBooking rb : newOrder.getBookings()) {
+            newOrder.getBookings().add(rb);
+        }
 
         hotel.getOrders().add(newOrder);
         return newOrder;
