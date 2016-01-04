@@ -25,6 +25,7 @@ public class Main {
 		checkDisableColors( args );
 
 		runner(header(system()), INSTANCE.createHotel()).accept(Application.<Hotel>builder()
+				.add(CreateOrder::new)
 				.add(PayForOrder::new)
 				.add(ReadBooking::new)
 				.add(ReadOrder::new)
