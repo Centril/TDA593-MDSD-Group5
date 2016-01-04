@@ -100,3 +100,4 @@ then the `size(available-pre-orders) = 2^33`, which is larger than an integer on
 We therefore decided that the most reasonable thing to do is to just
 let the user pick from the list of available bookings and
 perhaps give higher relevance for those rooms that have more beds.
++2016-01-04: Add createRoomPrototype sysop

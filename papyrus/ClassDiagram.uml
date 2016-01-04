@@ -198,6 +198,12 @@
             </ownedParameter>
             <ownedParameter xmi:type="uml:Parameter" xmi:id="_RQlwwKWtEeWDk9xEWZYKsg" name="return" type="_EzYb4JQXEeWEKYEtRmghUQ" direction="return"/>
           </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_wjEH8LMQEeWjk5gVdy9UnA" name="createPrototypeOrdering">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_C9FMMLMREeWjk5gVdy9UnA" name="order">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+            </ownedParameter>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_FowIQLMREeWjk5gVdy9UnA" name="prototype" type="_CKsl0JN8EeWEKYEtRmghUQ"/>
+          </ownedOperation>
         </packagedElement>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_L2f_8JOAEeWEKYEtRmghUQ" name="Hotel">
