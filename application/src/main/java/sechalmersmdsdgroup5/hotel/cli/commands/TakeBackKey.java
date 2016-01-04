@@ -6,9 +6,11 @@ import sechalmersmdsdgroup5.hotel.cli.infrastructure.IOHelper;
 import sechalmersmdsdgroup5.hotel.cli.infrastructure.IdentifiableCommand;
 import sechalmersmdsdgroup5.hotel.clients.Guest;
 import sechalmersmdsdgroup5.hotel.identities.Identity;
+import sechalmersmdsdgroup5.hotel.ordering.impl.CheckInCheckOut;
 import sechalmersmdsdgroup5.hotel.personnel.Employee;
 import sechalmersmdsdgroup5.hotel.search.impl.Search;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import static sechalmersmdsdgroup5.hotel.cli.commands.Utils.readDate;
@@ -34,19 +36,14 @@ public class TakeBackKey  implements Command.Consuming<Hotel>, IdentifiableComma
     }
 
     private boolean removeKey(Hotel hotel, String id) {
-        List<Guest> guests = hotel.getGuests();
-        List<Employee> employees = hotel.getEmployees();
+        List<Identity> guestsAndEmployees = new ArrayList<Identity>();
+        guestsAndEmployees.addAll(hotel.getGuests());
+        guestsAndEmployees.addAll(hotel.getEmployees());
 
-        for(Guest guest : guests){
-            if(guest.getIdNumber().equals(id)){
-                guest.setKey(null);
-                return true;
-            }
-        }
 
-        for (Employee employee : employees){
-            if(employee.getIdNumber().equals(id)){
-                employee.setKey(null);
+        for(Identity identity : guestsAndEmployees){
+            if(identity.getIdNumber().equals(id)){
+                new CheckInCheckOut().takeBackKey(identity);
                 return true;
             }
         }
