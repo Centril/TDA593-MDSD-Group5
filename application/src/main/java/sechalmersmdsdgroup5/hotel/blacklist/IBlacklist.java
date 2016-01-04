@@ -30,4 +30,12 @@ public interface IBlacklist {
 	 */
 	void removeFromBlackList(Identity identity);
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model required="true" ordered="false" identityRequired="true" identityOrdered="false"
+	 * @generated
+	 */
+	String getBlacklistReason(Identity identity);
+
 } // IBlacklist
