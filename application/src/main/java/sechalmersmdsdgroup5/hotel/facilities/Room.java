@@ -208,4 +208,12 @@ public interface Room extends Area {
 	 */
 	RoomAttribute getAttribute(String key);
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model kind="operation" ordered="false"
+	 * @generated
+	 */
+	List<RoomAttribute> getLocalAttributes();
+
 } // Room

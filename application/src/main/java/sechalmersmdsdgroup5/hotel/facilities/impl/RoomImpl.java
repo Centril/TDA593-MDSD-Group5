@@ -323,6 +323,11 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 		return getAttributesMap().get(key);
 	}
 
+	@Override
+	public List<RoomAttribute> getLocalAttributes() {
+		return null;
+	}
+
 	private Map<String, RoomAttribute> getAttributesMap() {
 		Map<String, RoomAttribute> protAttr = getRoomAttributesFromPrototypes();
 		attributes.forEach(attr -> protAttr.put(attr.getName(), attr));

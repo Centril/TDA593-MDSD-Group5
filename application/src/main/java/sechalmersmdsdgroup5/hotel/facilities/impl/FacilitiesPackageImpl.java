@@ -1338,6 +1338,8 @@ public class FacilitiesPackageImpl extends EPackageImpl {
 		EOperation op = addEOperation(roomEClass, this.getRoomAttribute(), "getAttribute", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "key", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
+		addEOperation(roomEClass, this.getRoomAttribute(), "getLocalAttributes", 0, -1, IS_UNIQUE, !IS_ORDERED);
+
 		initEClass(areaEClass, Area.class, "Area", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(keyEClass, Key.class, "Key", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
