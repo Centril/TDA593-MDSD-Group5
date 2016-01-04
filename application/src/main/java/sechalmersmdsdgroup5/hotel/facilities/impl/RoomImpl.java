@@ -8,9 +8,7 @@ import sechalmersmdsdgroup5.hotel.facilities.Room;
 import sechalmersmdsdgroup5.hotel.facilities.RoomAttribute;
 import sechalmersmdsdgroup5.hotel.services.ServiceBlueprint;
 
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 
 /**
  * <!-- begin-user-doc -->
@@ -300,8 +298,10 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 	 * @generated
 	 */
 	public List<RoomAttribute> getAttributes() {
-		return attributes;
+		return new ArrayList<>(getAttributesMap().values());
 	}
+
+
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -314,13 +314,33 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 
 	/**
 	 * <!-- begin-user-doc -->
+	 *     gets a attribute by combining all attributes from prototypes,
+	 *     regarding their ordering, and the attributes in the room.
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public RoomAttribute getAttribute(String key) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return getAttributesMap().get(key);
+	}
+
+	private Map<String, RoomAttribute> getAttributesMap() {
+		Map<String, RoomAttribute> protAttr = getRoomAttributesFromPrototypes();
+		attributes.forEach(attr -> protAttr.put(attr.getName(), attr));
+		return protAttr;
+	}
+
+	/**
+	 *
+	 * @return map of attributes from prototypes.
+	 * overlapping attributes are respected from the priority order of the prototypes
+     */
+	private Map<String, RoomAttribute> getRoomAttributesFromPrototypes() {
+		Map<String, RoomAttribute> attributeMap = new HashMap<>();
+		prototypes.stream()
+				.sorted(Comparator.comparingInt(PrototypeOrdering::getOrder))
+				.map(p -> p.getPrototype().getStates())
+				.forEach(aList -> aList.forEach(attr -> attributeMap.put(attr.getName(), attr)));
+		return attributeMap;
 	}
 
 	/**
@@ -330,7 +350,7 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 	 */
 	@Override
 	public String toString() {
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuffer result = new StringBuffer();
 		result.append(" (nr: ");
 		result.append(nr);
 		result.append(", floor: ");
@@ -341,6 +361,8 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 		result.append(basePrice);
 		result.append(", lastCleaned: ");
 		result.append(lastCleaned);
+		result.append(", RoomAttributes: ");
+		getAttributes().forEach( a -> result.append(a) );
 		result.append(')');
 		return result.toString();
 	}
