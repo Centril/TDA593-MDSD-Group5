@@ -40,6 +40,8 @@ public class Main {
 				.add(AddRoom::new)
 				.add(ListRooms::new)
 				.add(IsBlacklisted::new)
+				.add( CheckIn::new )
+				.add( CheckOut::new )
 				.build());
 		/*
 			.cmdVoid( "error", "tests error", (io, $) -> io.error( "hello world" ) )
