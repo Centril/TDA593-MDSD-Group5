@@ -3,7 +3,9 @@ package sechalmersmdsdgroup5.hotel.utils;
 import java.util.List;
 import java.util.function.BiFunction;
 import java.util.function.Function;
+import java.util.function.ObjIntConsumer;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 import java.util.stream.Stream;
 import java.util.stream.StreamSupport;
 
@@ -79,5 +81,16 @@ public class Functional {
 	 */
 	public static <T, S> Stream<T> concatMap( Stream<S> outer, Function<? super S, ? extends Iterable<T>> mapper ) {
 		return outer.flatMap( elem -> StreamSupport.stream( mapper.apply( elem ).spliterator(), false ) );
+	}
+
+	/**
+	 * Performs an indexed foreach of a list.
+	 *
+	 * @param list the list to perform foreach of.
+	 * @param consumer the consumer.
+	 * @param <T> the type of list elements.
+     */
+	public static <T> void foreachIndexed( List<T> list, ObjIntConsumer<T> consumer ) {
+		IntStream.range( 0, list.size() ).forEach( index -> consumer.accept( list.get( index ), index ) );
 	}
 }
