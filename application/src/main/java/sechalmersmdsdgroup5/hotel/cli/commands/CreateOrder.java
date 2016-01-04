@@ -57,7 +57,7 @@ public class CreateOrder implements IdentifiableCommand<Hotel, Order> {
 
         io.io( () -> foreachIndexed( resultBookings, (sr, index) ->
             io.newline( (index + 1) + ") " + sr.getResult() )
-              .newline( "relevance:" + resultBookings.get( index ).getRelevance() )
+              .newline( "relevance: " + resultBookings.get( index ).getRelevance() )
         ) ).newline();
 
         List<PreBooking> bookings = listify( resultBookings.stream().map( SearchResult::getResult ) );
