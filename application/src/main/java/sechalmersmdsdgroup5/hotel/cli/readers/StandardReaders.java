@@ -67,4 +67,9 @@ public class StandardReaders {
 	public static ExceptionalRead<Double> doubleR() {
 		return Double::parseDouble;
 	}
+
+	public static Read<Boolean> yesNo() {
+		return reader( str -> str.startsWith( "y" ) || str.startsWith( "n" ),
+					   str -> str.startsWith( "y" ) );
+	}
 }
