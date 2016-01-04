@@ -170,17 +170,29 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 	 */
 	RoomImpl() {}
 
-	RoomImpl( int nr, int floor, boolean usable, double basePrice, List<RoomAttribute> roomAttributes,
-	          List<PrototypeOrdering> prototypeOrderings, List<ServiceBlueprint> serviceBlueprints ) {
+	RoomImpl( int nr, int floor, boolean usable, List<RoomAttribute> roomAttributes,
+			  List<PrototypeOrdering> prototypeOrderings, List<ServiceBlueprint> serviceBlueprints ) {
 		this.nr = nr;
 		this.floor = floor;
 		this.usable = usable;
-		this.basePrice = basePrice;
-
-		this.attributes = roomAttributes == null ? new ArrayList<RoomAttribute>() : roomAttributes;
 		this.prototypes = prototypeOrderings == null ? new ArrayList<PrototypeOrdering>() : prototypeOrderings;
-
+		this.attributes = roomAttributes == null ? new ArrayList<RoomAttribute>() : roomAttributes;
 		this.servicesAfforded = serviceBlueprints == null ? new ArrayList<ServiceBlueprint>() : serviceBlueprints;
+
+		updateBasePrice();
+	}
+
+	private void updateBasePrice() {
+		if (prototypes != null) {
+			for (PrototypeOrdering prototypeOrdering: prototypes) {
+				basePrice += prototypeOrdering.getPrototype().getBasePrice();
+			}
+			if (attributes != null) {
+				for (RoomAttribute attribute : attributes) {
+					basePrice += attribute.getPrice();
+				}
+			}
+		}
 	}
 
 	/**

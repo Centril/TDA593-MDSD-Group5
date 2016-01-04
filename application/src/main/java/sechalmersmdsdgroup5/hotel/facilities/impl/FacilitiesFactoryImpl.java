@@ -172,7 +172,7 @@ public class FacilitiesFactoryImpl extends EFactoryImpl implements FacilitiesFac
 
 	@Override
 	public Room createRoom(List<PrototypeOrdering> orderedPrototypes) {
-		return new RoomImpl(0,0,false,0,null,orderedPrototypes,null);
+		return new RoomImpl(0,0,false,null,orderedPrototypes,null);
 	}
 
 	/**

@@ -19,7 +19,7 @@ public class Facilities implements IFacilities {
     public Room createRoom(int nr, int floor, boolean usable, double basePrice, List<PrototypeOrdering> prototypeOrdering,
                            List<RoomAttribute> roomAttributes, List<ServiceBlueprint> serviceBlueprints) {
 
-        return new RoomImpl(nr, floor, usable, basePrice, roomAttributes, prototypeOrdering, serviceBlueprints);
+        return new RoomImpl(nr, floor, usable, roomAttributes, prototypeOrdering, serviceBlueprints);
     }
 
     @Override
