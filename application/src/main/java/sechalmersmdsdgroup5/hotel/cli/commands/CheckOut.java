@@ -21,6 +21,6 @@ public class CheckOut implements Command.Consuming<Hotel>, IdentifiableCommand<H
 
     @Override
     public String help() {
-        return null;
+        return "Checks out a room with a guest";
     }
 }
