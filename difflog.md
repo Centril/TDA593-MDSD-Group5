@@ -20,15 +20,13 @@
 + 2016-01-02: Add reason parameter to `addIdentityToBlacklist` sysop
 + 2016-01-03: Added `id` property to `Order`, `RoomBooking` for searchability.
 + 2016-01-03: Added relationship between `Order` and `Customer`.
-+ 2016-01-03: `List<SearchResult<PreOrder>> searchAvailableOrders( SearchQuery<PreOrder> query )`
-+ 2016-01-03: To pay for an order the client now gives his or her name 
-	      instead of the system asking for an order or service. Should be changed in the UC and any other occurrences in the report.
-+ 2016-01-03: Added system operation for searching for orders associated with a customer's name.
-+ 2016-01-03: Added getter for customer in the Order interface. Was forgotten, present in domain model.
++ 2016-01-03: `List<SearchResult<PreOrder>> searchAvailableOrders( SearchQuery<PreOrder> query )` changed to `List<SearchResult<PreBooking>> searchAvailableBookings( Date from, Date to, SearchQuery<PreBooking> query )`
++ 2016-01-03: To pay for an `Order` the `Client` now gives his or her name instead of the system asking for an `Order` or `Service`. Should be changed in the UC and any other occurrences in the report.
++ 2016-01-03: Added system operation for searching for `Order`s associated with a `Customer`'s name.
++ 2016-01-03: Added getter for `Customer` in the `Order` interface. Was forgotten, present in domain model.
 
 
-- 2016-01-04: Added sysop getBlacklistreason(identity) which returns the reason an identity is blacklisted or null if the identity isn't blacklisted. 
-			  changed to `List<SearchResult<PreBooking>> searchAvailableBookings( Date from, Date to, SearchQuery<PreBooking> query )`
+- 2016-01-04: Added sysop `getBlacklistreason(identity)` which returns the reason an `Identity` is blacklisted or `null` if the `Identity` isn't blacklisted. 
 
 # Regarding `searchAvailableOrders -> searchAvailableBookings`
 > `List<SearchResult<PreOrder>> searchAvailableOrders( SearchQuery<PreOrder> query )`
