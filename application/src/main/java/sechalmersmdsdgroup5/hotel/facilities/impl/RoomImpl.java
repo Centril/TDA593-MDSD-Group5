@@ -325,7 +325,7 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 
 	@Override
 	public List<RoomAttribute> getLocalAttributes() {
-		return null;
+		return attributes;
 	}
 
 	private Map<String, RoomAttribute> getAttributesMap() {
