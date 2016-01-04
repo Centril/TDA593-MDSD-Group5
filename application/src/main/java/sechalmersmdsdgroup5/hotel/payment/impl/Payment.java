@@ -27,6 +27,7 @@ public class Payment implements IPayment{
         //Here the customer pays externally using a card reader,
         //such that the payable's total cost is covered.
         payable.setIsPaid(true);
+        printReceipt(payable);
     }
 
     /**
@@ -72,6 +73,7 @@ public class Payment implements IPayment{
         // The client will then get a mail or physical copy of the invoice which he or she will pay for.
         //This is outside the system and therefore the invoice will simply be regarded as paid here.
         newInvoice.setIsPaid(true);
+        printReceipt(payable);
     }
 
     private void addInvoice(Client client, Invoice invoice) {
@@ -80,6 +82,7 @@ public class Payment implements IPayment{
 
     @Override
     public void printReceipt(Payable invoicable) {
-
+        // Should not be entirely implemented in our system.
+        System.out.print("\n Printing receipt..");
     }
 }
