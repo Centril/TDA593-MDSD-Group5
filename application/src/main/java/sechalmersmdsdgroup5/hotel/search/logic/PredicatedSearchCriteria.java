@@ -8,7 +8,7 @@ import java.util.function.Predicate;
 public class PredicatedSearchCriteria<SRT> implements SearchCriteria<SRT> {
 	private final Predicate<SRT> predicate;
 
-	PredicatedSearchCriteria( Predicate<SRT> predicate ) {
+	public PredicatedSearchCriteria( Predicate<SRT> predicate ) {
 		this.predicate = predicate;
 	}
 
