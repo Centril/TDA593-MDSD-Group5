@@ -4,6 +4,7 @@ package sechalmersmdsdgroup5.hotel.search;
 
 import java.util.Date;
 import java.util.List;
+import sechalmersmdsdgroup5.hotel.clients.Customer;
 import sechalmersmdsdgroup5.hotel.facilities.Key;
 import sechalmersmdsdgroup5.hotel.facilities.Room;
 
@@ -102,5 +103,12 @@ public interface ISearch {
 	 * @generated
 	 */
 	List<SearchResult<Key>> searchKey(SearchQuery<Key> query);
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model ordered="false" queryRequired="true" queryOrdered="false"
+	 * @generated
+	 */
+	List<SearchResult<Customer>> searchCustomer(SearchQuery<Customer> query);
 
 } // ISearch

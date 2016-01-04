@@ -1,6 +1,7 @@
 package sechalmersmdsdgroup5.hotel.search.impl;
 
 import sechalmersmdsdgroup5.hotel.Hotel;
+import sechalmersmdsdgroup5.hotel.clients.Customer;
 import sechalmersmdsdgroup5.hotel.facilities.Key;
 import sechalmersmdsdgroup5.hotel.facilities.Room;
 import sechalmersmdsdgroup5.hotel.ordering.Order;
@@ -155,6 +156,11 @@ public class Search implements ISearch {
 	@Override
 	public List<SearchResult<Key>> searchKey( SearchQuery<Key> query ) {
 		return new Searcher<Key>().searchInit( hotel.getKeys(), query );
+	}
+
+	@Override
+	public List<SearchResult<Customer>> searchCustomer( SearchQuery<Customer> query ) {
+		return new Searcher<Customer>().searchInit( hotel.getCustomers(), query );
 	}
 
 	private List<RoomBooking> allBookings() {
