@@ -2,8 +2,10 @@ package sechalmersmdsdgroup5.hotel.ordering.impl;
 
 import sechalmersmdsdgroup5.hotel.Hotel;
 import sechalmersmdsdgroup5.hotel.HotelFactory;
+import sechalmersmdsdgroup5.hotel.clients.ClientsFactory;
 import sechalmersmdsdgroup5.hotel.clients.Customer;
 import sechalmersmdsdgroup5.hotel.clients.Guest;
+import sechalmersmdsdgroup5.hotel.clients.impl.GuestImpl;
 import sechalmersmdsdgroup5.hotel.facilities.Room;
 import sechalmersmdsdgroup5.hotel.facilities.RoomAttribute;
 import sechalmersmdsdgroup5.hotel.facilities.impl.RoomAttributeImpl;
@@ -103,7 +105,16 @@ public class OrderingFacade implements IOrder {
 
     @Override
     public Guest createGuest(String name, String ssn, int age) {
-        return null;
+        if(name == null || ssn == null || age < 0) {
+            throw new IllegalArgumentException("Illegal age or null argument in createGuest");
+        }
+        ClientsFactory factory = ClientsFactory.INSTANCE;
+        Guest newGuest = factory.createGuest();
+        newGuest.setName(name);
+        newGuest.setAge(age);
+        newGuest.setIdNumber(ssn);
+
+        return newGuest;
     }
 
     @Override
