@@ -33,6 +33,7 @@ public class Main {
 				.add(SearchAvailableRooms::new)
 				.add(SearchOccupiedRooms::new)
 				.add(SearchActiveBookings::new)
+				.add(SearchUnpaidOrders::new)
 				.add(SearchAvailableServices::new)
 				.add(SearchUsedServices::new)
 				.add(AddRoom::new)
