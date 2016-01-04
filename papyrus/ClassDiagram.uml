@@ -440,7 +440,7 @@
       </packagedElement>
       <packagedElement xmi:type="uml:Package" xmi:id="_NeNHEJRQEeWEKYEtRmghUQ" name="search">
         <packagedElement xmi:type="uml:Interface" xmi:id="_JXGsYJnCEeW2JPAtqMJHLg" name="ISearch">
-          <ownedOperation xmi:type="uml:Operation" xmi:id="_Tv5FIJnCEeW2JPAtqMJHLg" name="searchAvailableOrders">
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_Tv5FIJnCEeW2JPAtqMJHLg" name="searchAvailableBookings">
             <ownedParameter xmi:type="uml:Parameter" xmi:id="_g-lpILIuEeWYjdT3qEhzxQ" name="from">
               <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EDate"/>
             </ownedParameter>
@@ -581,7 +581,7 @@
         </packagedElement>
         <packagedElement xmi:type="uml:Class" xmi:id="_TUVIsJxuEeWiw-HwyxZ8Kg" name="SearchResult_PreOrder">
           <templateBinding xmi:type="uml:TemplateBinding" xmi:id="_ekG-YJxvEeWiw-HwyxZ8Kg" signature="_nwJ1cJvmEeWJcrkAjYwcTw">
-            <parameterSubstitution xmi:type="uml:TemplateParameterSubstitution" xmi:id="_pjWTIJxvEeWiw-HwyxZ8Kg" actual="_b34qgJw0EeWJcrkAjYwcTw" formal="_p2l9gJvmEeWJcrkAjYwcTw"/>
+            <parameterSubstitution xmi:type="uml:TemplateParameterSubstitution" xmi:id="_pjWTIJxvEeWiw-HwyxZ8Kg" actual="_bRmzAJxHEeW5eMToz_1RuA" formal="_p2l9gJvmEeWJcrkAjYwcTw"/>
           </templateBinding>
         </packagedElement>
         <packagedElement xmi:type="uml:Class" xmi:id="_ZcjEIJxuEeWiw-HwyxZ8Kg" name="SearchResult_Booking">
@@ -594,9 +594,9 @@
             <parameterSubstitution xmi:type="uml:TemplateParameterSubstitution" xmi:id="_lejA8JxvEeWiw-HwyxZ8Kg" actual="_ChtUMJQXEeWEKYEtRmghUQ" formal="_p2l9gJvmEeWJcrkAjYwcTw"/>
           </templateBinding>
         </packagedElement>
-        <packagedElement xmi:type="uml:Class" xmi:id="_m8xH4JxuEeWiw-HwyxZ8Kg" name="SearchQuery_PreOrder">
+        <packagedElement xmi:type="uml:Class" xmi:id="_m8xH4JxuEeWiw-HwyxZ8Kg" name="SearchQuery_PreBooking">
           <templateBinding xmi:type="uml:TemplateBinding" xmi:id="_DqUKEJxyEeWiw-HwyxZ8Kg" signature="_5RFDMJxiEeWESJEFGhWPTA">
-            <parameterSubstitution xmi:type="uml:TemplateParameterSubstitution" xmi:id="_TPGtoJxyEeWiw-HwyxZ8Kg" actual="_b34qgJw0EeWJcrkAjYwcTw" formal="_8g3Y8JxiEeWESJEFGhWPTA"/>
+            <parameterSubstitution xmi:type="uml:TemplateParameterSubstitution" xmi:id="_TPGtoJxyEeWiw-HwyxZ8Kg" actual="_bRmzAJxHEeW5eMToz_1RuA" formal="_8g3Y8JxiEeWESJEFGhWPTA"/>
           </templateBinding>
         </packagedElement>
         <packagedElement xmi:type="uml:Class" xmi:id="_rBqgsJxuEeWiw-HwyxZ8Kg" name="SearchQuery_Booking">
