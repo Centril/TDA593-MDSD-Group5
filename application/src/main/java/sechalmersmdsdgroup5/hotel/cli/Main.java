@@ -23,7 +23,7 @@ public class Main {
 	 */
 	public static void main( String[] args ) {
 		checkDisableColors( args );
-
+		
 		runner(header(system()), INSTANCE.createHotel()).accept(Application.<Hotel>builder()
 				.add(ReadBooking::new)
 				.add(ReadOrder::new)
@@ -38,6 +38,7 @@ public class Main {
 				.add(SearchUsedServices::new)
 				.add(AddRoom::new)
 				.add(ListRooms::new)
+				.add(IsBlacklisted::new)
 				.build());
 
 		/*
