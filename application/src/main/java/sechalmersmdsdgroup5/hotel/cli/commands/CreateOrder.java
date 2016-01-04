@@ -31,6 +31,7 @@ import java.util.Set;
 import static java.util.Collections.singletonList;
 import static sechalmersmdsdgroup5.hotel.cli.infrastructure.Readers.reader;
 import static sechalmersmdsdgroup5.hotel.cli.readers.StandardReaders.*;
+import static sechalmersmdsdgroup5.hotel.utils.Functional.foreachIndexed;
 import static sechalmersmdsdgroup5.hotel.utils.Functional.listify;
 
 public class CreateOrder implements IdentifiableCommand<Hotel, Order> {
@@ -48,19 +49,16 @@ public class CreateOrder implements IdentifiableCommand<Hotel, Order> {
     public Order apply( IOHelper io, Hotel hotel ) {
         io.info( "Creating an order..." ).newline();
 
-        //int guestCount = io.read( "Amount of guests?", "Not a valid amount", naturalInt() );
-
         List<SearchResult<PreBooking>> resultBookingsMut;
-        while ( (resultBookingsMut = io.execute( hotel, new SearchAvailableBookings() )).isEmpty() ) {
-            io.warn( "There were no available bookings!" );
-        };
+        while ( (resultBookingsMut = io.execute( hotel, new SearchAvailableBookings() )).isEmpty() )
+            io.warn( "There were no available bookings!" ).newline();
 
         final List<SearchResult<PreBooking>> resultBookings = resultBookingsMut;
 
-        io.io( () -> {
-            for ( int i = 0; i < resultBookings.size(); ++i )
-                io.paragraph( i + ") " + resultBookings.get( i ) );
-        } ).newline();
+        io.io( () -> foreachIndexed( resultBookings, (sr, index) ->
+            io.newline( (index + 1) + ") " + sr.getResult() )
+              .newline( "relevance:" + resultBookings.get( index ).getRelevance() )
+        ) ).newline();
 
         List<PreBooking> bookings = listify( resultBookings.stream().map( SearchResult::getResult ) );
         Set<Integer> picked = new HashSet<>();
@@ -109,9 +107,8 @@ public class CreateOrder implements IdentifiableCommand<Hotel, Order> {
 
         Order order = facade.createOrder( bookeds, customer );
 
-        if ( !io.read( "Do you accept the terms and conditions (yes/no)?", "Specify yes or no.", yesNo() ) ) {
+        if ( !io.read( "Do you accept the terms and conditions (yes/no)?", "Specify yes or no.", yesNo() ) )
             hotel.getOrders().remove( order );
-        }
 
         return order;
     }

@@ -1,6 +1,7 @@
 package sechalmersmdsdgroup5.hotel.cli.commands;
 
 import sechalmersmdsdgroup5.hotel.Hotel;
+import sechalmersmdsdgroup5.hotel.cli.infrastructure.Command;
 import sechalmersmdsdgroup5.hotel.cli.infrastructure.IOHelper;
 import sechalmersmdsdgroup5.hotel.cli.infrastructure.IdentifiableCommand;
 import sechalmersmdsdgroup5.hotel.facilities.impl.RoomAttributeImpl;
@@ -32,7 +33,7 @@ public class SearchAvailableBookings implements IdentifiableCommand<Hotel, List<
                 io.info("Searching for available rooms orders...").newline() ),
             readOrTomorrow( "to when? [default: tomorrow]", io ),
             query( io.paragraph( CYAN, "Please enter zero or more criterias where one or more matches:" )
-                     .executeMany( 0, hotel, command( "", this::criteriaMaker ) ) ) );
+                     .executeMany( 0, hotel, Command.command( "", this::criteriaMaker ) ) ) );
     }
 
     private SearchCriteria<PreBooking> criteriaMaker( IOHelper io, Hotel hotel ) {
@@ -80,7 +81,7 @@ public class SearchAvailableBookings implements IdentifiableCommand<Hotel, List<
     }
 
     private SearchCriteria<PreBooking> subCriteria( IOHelper io, Hotel hotel ) {
-        return io.execute( hotel, command( "", this::criteriaMaker ) );
+        return io.execute( hotel, Command.command( "", this::criteriaMaker ) );
     }
 
     private SearchCriteria<PreBooking> rangePrice( IOHelper io ) {
