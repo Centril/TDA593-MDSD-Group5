@@ -41,13 +41,12 @@ public class CheckIn implements Command.Consuming<Hotel>, IdentifiableCommand<Ho
             }
             if (roomBooking == null) {
                 ioHelper.info("No booking selected");
+            } else if ((new CheckInCheckOut()).checkIn(guest, roomBooking)) {
+                ioHelper.info("Guest and booking successfully checked in");
             } else {
-                if ((new CheckInCheckOut()).checkIn(guest, roomBooking)) {
-                    ioHelper.info("Guest and booking successfully checked in");
-                } else {
-                    ioHelper.info("Guest and booking failed to check in");
-                }
+                ioHelper.info("Guest and booking failed to check in");
             }
+
         } else {
             ioHelper.info("Invalid number");
         }

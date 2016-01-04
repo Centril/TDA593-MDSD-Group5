@@ -43,13 +43,12 @@ public class CheckOut implements Command.Consuming<Hotel>, IdentifiableCommand<H
             }
             if (roomBooking == null) {
                 ioHelper.info("No booking selected");
+            } else if ((new CheckInCheckOut()).checkOut(guest, roomBooking)) {
+                ioHelper.info("Guest and booking successfully checked out");
             } else {
-                if ((new CheckInCheckOut()).checkOut(guest, roomBooking)) {
-                    ioHelper.info("Guest and booking successfully checked out");
-                } else {
-                    ioHelper.info("Guest and booking failed to check out");
-                }
+                ioHelper.info("Guest and booking failed to check out");
             }
+
         } else {
             ioHelper.info("Invalid number");
         }
