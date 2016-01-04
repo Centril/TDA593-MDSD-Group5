@@ -309,7 +309,6 @@ public class IOHelper {
 		} );
 	}
 
-
 	/**
 	 * Reads at least min times with reader, optionally more.
 	 *
@@ -336,7 +335,7 @@ public class IOHelper {
 		IOHelper io = new IOHelper( this );
 
 		try {
-			return Optional.of( cmd.apply( io, input ) );
+			return Optional.ofNullable( cmd.apply( io, input ) );
 		} catch( CancelException ignored ) {
 			if ( !io.cancelable ) throw ignored;
 			io.cancelling( "Subcommand" );
