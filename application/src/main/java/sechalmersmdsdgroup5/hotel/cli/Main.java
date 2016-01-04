@@ -36,6 +36,7 @@ public class Main {
 			.add( SearchUsedServices::new )
 			.add( AddRoom::new )
 			.add( ListRooms::new )
+			.add( IsBlacklisted::new)
 			.build() );
 
 		/*
