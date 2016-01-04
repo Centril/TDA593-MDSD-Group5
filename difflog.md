@@ -24,9 +24,8 @@
 + 2016-01-03: To pay for an `Order` the `Client` now gives his or her name instead of the system asking for an `Order` or `Service`. Should be changed in the UC and any other occurrences in the report.
 + 2016-01-03: Added system operation for searching for `Order`s associated with a `Customer`'s name.
 + 2016-01-03: Added getter for `Customer` in the `Order` interface. Was forgotten, present in domain model.
-
-
-- 2016-01-04: Added sysop `getBlacklistreason(identity)` which returns the reason an `Identity` is blacklisted or `null` if the `Identity` isn't blacklisted. 
++ 2016-01-04: Added sysop `getBlacklistreason(identity)` which returns the reason an `Identity` is blacklisted or `null` if the `Identity` isn't blacklisted.
++ 2016-01-04: Added Room::getLocalAttributes().
 
 # Regarding `searchAvailableOrders -> searchAvailableBookings`
 > `List<SearchResult<PreOrder>> searchAvailableOrders( SearchQuery<PreOrder> query )`
