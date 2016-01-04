@@ -3,7 +3,6 @@
 package sechalmersmdsdgroup5.hotel.ordering.impl;
 
 import sechalmersmdsdgroup5.hotel.clients.Customer;
-import sechalmersmdsdgroup5.hotel.facilities.Room;
 import sechalmersmdsdgroup5.hotel.ordering.Campaign;
 import sechalmersmdsdgroup5.hotel.ordering.Invoice;
 import sechalmersmdsdgroup5.hotel.ordering.Order;
