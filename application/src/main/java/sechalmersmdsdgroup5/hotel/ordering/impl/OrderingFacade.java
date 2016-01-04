@@ -79,6 +79,7 @@ public class OrderingFacade implements IOrder {
         newOrder.setId(nextId);
         addBookingsToOrder(preOrder, newOrder);
 
+        hotel.getOrders().add(newOrder);
         return newOrder;
     }
 
