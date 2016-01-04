@@ -7,6 +7,7 @@ import sechalmersmdsdgroup5.hotel.ordering.Campaign;
 import sechalmersmdsdgroup5.hotel.ordering.Invoice;
 import sechalmersmdsdgroup5.hotel.ordering.Order;
 import sechalmersmdsdgroup5.hotel.ordering.RoomBooking;
+import sechalmersmdsdgroup5.hotel.utils.Functional;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -30,8 +31,6 @@ import java.util.List;
  */
 public class OrderImpl implements Order {
 	private int id;
-	private Customer customer;
-
 	/**
 	 * The cached value of the '{@link #getInvoice() <em>Invoice</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
@@ -41,6 +40,19 @@ public class OrderImpl implements Order {
 	 * @ordered
 	 */
 	private List<Invoice> invoice;
+	private  Customer customer;
+
+	public OrderImpl(List<Invoice> invoice, Customer customer, boolean isPaid, List<Campaign> campaigns, List<RoomBooking> bookings, Date creationDate) {
+		this.invoice = invoice;
+		this.customer = customer;
+		this.isPaid = isPaid;
+		this.campaigns = campaigns;
+		this.bookings = bookings;
+		this.creationDate = creationDate;
+	}
+
+	private boolean isPaid;
+
 
 	/**
 	 * The cached value of the '{@link #getCampaigns() <em>Campaigns</em>}' reference list.
@@ -79,6 +91,11 @@ public class OrderImpl implements Order {
 	 */
 	OrderImpl() {}
 
+	public OrderImpl(RoomBooking room, Customer customer) {
+		bookings.add(room);
+		this.customer = customer;
+	}
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -96,7 +113,7 @@ public class OrderImpl implements Order {
 	public List<Campaign> getCampaigns() {
 		return campaigns;
 	}
-
+	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -150,20 +167,21 @@ public class OrderImpl implements Order {
 	 * @generated
 	 */
 	public double totalPrice() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return calculatePrice();
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
+	 * This calculates the price of the order, including campaigns, services and bookings.
 	 */
 	public double calculatePrice() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		double total = 0;
+		for (RoomBooking booking: this.getBookings()) {
+			total += booking.totalPrice();
+		}
+		if (campaigns != null) {
+			total += Functional.foldl(campaigns, total, (price, campaign) -> campaign.discount(this, price ));
+		}
+		return total;
 	}
 
 	/**
@@ -172,9 +190,12 @@ public class OrderImpl implements Order {
 	 * @generated
 	 */
 	public boolean isPaid() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return isPaid;
+	}
+
+	@Override
+	public void setIsPaid(boolean value) {
+		isPaid = value;
 	}
 
 	/**

@@ -2,6 +2,7 @@
  */
 package sechalmersmdsdgroup5.hotel.ordering.impl;
 
+import java.util.Calendar;
 import java.util.Date;
 
 import org.eclipse.emf.ecore.EClass;
@@ -47,14 +48,13 @@ public class InvoiceImpl extends MinimalEObjectImpl.Container implements Invoice
 	protected boolean isPaid = IS_PAID_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getExpiryDate() <em>Expiry Date</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getExpiryDate()
-	 * @generated
-	 * @ordered
+	 *Creates a default expiry date one month from the current date.
 	 */
-	protected static final Date EXPIRY_DATE_EDEFAULT = null;
+	private static Date expiryDateDefault() {
+		Calendar cal = Calendar.getInstance();
+		cal.add(Calendar.MONTH, 1);
+		return cal.getTime();
+	}
 
 	/**
 	 * The cached value of the '{@link #getExpiryDate() <em>Expiry Date</em>}' attribute.
@@ -64,7 +64,7 @@ public class InvoiceImpl extends MinimalEObjectImpl.Container implements Invoice
 	 * @generated
 	 * @ordered
 	 */
-	protected Date expiryDate = EXPIRY_DATE_EDEFAULT;
+	protected Date expiryDate = expiryDateDefault();
 
 	/**
 	 * The default value of the '{@link #getTotalPrice() <em>Total Price</em>}' attribute.
@@ -210,7 +210,7 @@ public class InvoiceImpl extends MinimalEObjectImpl.Container implements Invoice
 				setIsPaid(IS_PAID_EDEFAULT);
 				return;
 			case OrderingPackageImpl.INVOICE__EXPIRY_DATE:
-				setExpiryDate(EXPIRY_DATE_EDEFAULT);
+				setExpiryDate(expiryDateDefault());
 				return;
 			case OrderingPackageImpl.INVOICE__TOTAL_PRICE:
 				setTotalPrice(TOTAL_PRICE_EDEFAULT);
@@ -230,9 +230,11 @@ public class InvoiceImpl extends MinimalEObjectImpl.Container implements Invoice
 			case OrderingPackageImpl.INVOICE__IS_PAID:
 				return isPaid != IS_PAID_EDEFAULT;
 			case OrderingPackageImpl.INVOICE__EXPIRY_DATE:
-				return EXPIRY_DATE_EDEFAULT == null ? expiryDate != null : !EXPIRY_DATE_EDEFAULT.equals(expiryDate);
+				Date testDate = expiryDateDefault();
+				return testDate == null ? expiryDate != null : !testDate.equals(expiryDate);
 			case OrderingPackageImpl.INVOICE__TOTAL_PRICE:
 				return totalPrice != TOTAL_PRICE_EDEFAULT;
+
 		}
 		return eDynamicIsSet(featureID);
 	}

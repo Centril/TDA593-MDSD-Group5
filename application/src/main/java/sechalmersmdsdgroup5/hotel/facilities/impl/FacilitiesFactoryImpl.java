@@ -12,6 +12,8 @@ import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
 import sechalmersmdsdgroup5.hotel.facilities.*;
 
+import java.util.List;
+
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
@@ -166,6 +168,11 @@ public class FacilitiesFactoryImpl extends EFactoryImpl implements FacilitiesFac
 	public AccessLogItem createAccessLogItem() {
 		AccessLogItemImpl accessLogItem = new AccessLogItemImpl();
 		return accessLogItem;
+	}
+
+	@Override
+	public Room createRoom(List<PrototypeOrdering> orderedPrototypes) {
+		return new RoomImpl(0,0,false,null,orderedPrototypes,null);
 	}
 
 	/**

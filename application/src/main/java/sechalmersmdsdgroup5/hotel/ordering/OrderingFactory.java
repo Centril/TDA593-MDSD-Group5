@@ -3,6 +3,11 @@
 package sechalmersmdsdgroup5.hotel.ordering;
 
 
+import sechalmersmdsdgroup5.hotel.clients.Customer;
+
+import java.util.Date;
+import java.util.List;
+
 /**
  * <!-- begin-user-doc -->
  * The <b>Factory</b> for the model.
@@ -27,6 +32,9 @@ public interface OrderingFactory {
 	 * @generated
 	 */
 	Order createOrder();
+
+	Order createOrder(List<Invoice> invoice, Customer customer, boolean isPaid,
+					  List<Campaign > campaigns, List<RoomBooking> bookings, Date creationDate);
 
 	/**
 	 * Returns a new object of class '<em>Campaign</em>'.

@@ -10,7 +10,12 @@ import org.eclipse.emf.ecore.impl.EFactoryImpl;
 
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
+import sechalmersmdsdgroup5.hotel.clients.Customer;
+import sechalmersmdsdgroup5.hotel.facilities.Room;
 import sechalmersmdsdgroup5.hotel.ordering.*;
+
+import java.util.Date;
+import java.util.List;
 
 /**
  * <!-- begin-user-doc -->
@@ -85,6 +90,15 @@ public class OrderingFactoryImpl extends EFactoryImpl implements OrderingFactory
 		OrderImpl order = new OrderImpl();
 		return order;
 	}
+
+	public Order createOrder(RoomBooking room, Customer customer) {
+		OrderImpl order = new OrderImpl(room, customer);
+		return order;
+	}
+	public Order createOrder(List<Invoice> invoice, Customer customer, boolean isPaid, List<Campaign> campaigns, List<RoomBooking> bookings, Date creationDate) {
+		return new OrderImpl(invoice,customer,isPaid,campaigns,bookings,creationDate);
+	}
+
 
 	/**
 	 * <!-- begin-user-doc -->

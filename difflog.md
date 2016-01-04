@@ -1,7 +1,6 @@
 # Diff Log of things changed in interfaces
 
 > Add as you go...
-
 + 2015-12-18: Added `IFacilities` interface to `facilities` packages.
 + 2015-12-18: Fixed relationship between `Room` and `RoomAttribute`:s.
 + 2015-12-18: Fixed generics in `And`, `Or`, `Not`, `MatchesCriteria` in that `? extends SRT` and `? extends IN` was wrong for properties, so it now takes `SRT` & `IN`.
@@ -22,6 +21,12 @@
 + 2016-01-03: Added `id` property to `Order`, `RoomBooking` for searchability.
 + 2016-01-03: Added relationship between `Order` and `Customer`.
 + 2016-01-03: `List<SearchResult<PreOrder>> searchAvailableOrders( SearchQuery<PreOrder> query )`
++ 2016-01-03: To pay for an order the client now gives his or her name 
+	      instead of the system asking for an order or service. Should be changed in the UC and any other occurrences in the report.
++ 2016-01-03: Added system operation for searching for orders associated with a customer's name.
++ 2016-01-03: Added getter for customer in the Order interface. Was forgotten, present in domain model.
+
+
 - 2016-01-04: Added sysop getBlacklistreason(identity) which returns the reason an identity is blacklisted or null if the identity isn't blacklisted. 
 			  changed to `List<SearchResult<PreBooking>> searchAvailableBookings( Date from, Date to, SearchQuery<PreBooking> query )`
 

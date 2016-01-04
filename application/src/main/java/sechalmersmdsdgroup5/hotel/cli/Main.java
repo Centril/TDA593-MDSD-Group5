@@ -25,6 +25,7 @@ public class Main {
 		checkDisableColors( args );
 
 		runner(header(system()), INSTANCE.createHotel()).accept(Application.<Hotel>builder()
+				.add(PayForOrder::new)
 				.add(ReadBooking::new)
 				.add(ReadOrder::new)
 				.add(SearchCustomer::new)
@@ -47,6 +48,12 @@ public class Main {
 
 
 		/*
+		runner( header( system() ), INSTANCE.createHotel() ).accept( Application.<Hotel>builder()
+			.add( SearchAvailableRooms::new )
+			.add( PayForOrder::new )
+			.add( SearchOccupiedRooms::new )
+			.add( SearchActiveBookings::new )
+			.add( SearchAvailableServices::new )
 			.cmdVoid( "error", "tests error", (io, $) -> io.error( "hello world" ) )
 			.cmdVoid( "hello", "displays hello world", (io, $) -> io.info( "hello world" ) )
 			.cmdVoid( "green", "displays hello world in green", (io, $) -> io.newline( GREEN, "hello world" ) )
