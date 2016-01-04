@@ -60,6 +60,6 @@ public class CheckIn implements Command.Consuming<Hotel>, IdentifiableCommand<Ho
 
     @Override
     public String help() {
-        return null;
+        return "Check in a room in the hotel with the help of a guest";
     }
 }
