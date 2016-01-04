@@ -2294,6 +2294,10 @@
                 <element xmi:type="uml:Operation" href="ClassDiagram.uml#_zK3gcJnREeWsldw0CEc3ng"/>
                 <layoutConstraint xmi:type="notation:Location" xmi:id="_zMwW0ZnREeWsldw0CEc3ng"/>
               </children>
+              <children xmi:type="notation:Shape" xmi:id="_mQaIALLyEeWjk5gVdy9UnA" type="3007">
+                <element xmi:type="uml:Operation" href="ClassDiagram.uml#_mOFz0LLyEeWjk5gVdy9UnA"/>
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_mQaIAbLyEeWjk5gVdy9UnA"/>
+              </children>
               <styles xmi:type="notation:TitleStyle" xmi:id="_m9K0hpnREeWsldw0CEc3ng"/>
               <styles xmi:type="notation:SortingStyle" xmi:id="_m9K0h5nREeWsldw0CEc3ng"/>
               <styles xmi:type="notation:FilteringStyle" xmi:id="_m9K0iJnREeWsldw0CEc3ng"/>
