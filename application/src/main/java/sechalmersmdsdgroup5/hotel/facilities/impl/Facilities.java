@@ -28,6 +28,11 @@ public class Facilities implements IFacilities {
     }
 
     @Override
+    public PrototypeOrdering createPrototypeOrdering(int priority, RoomPrototype prototype) {
+        return new PrototypeOrderingImpl(priority, prototype);
+    }
+
+    @Override
     public RoomAttribute createRoomAttribute(String name, Object value, double price) {
         return new RoomAttributeImpl(name, value, price);
     }

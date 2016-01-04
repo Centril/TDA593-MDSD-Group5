@@ -65,6 +65,12 @@ public class PrototypeOrderingImpl extends MinimalEObjectImpl.Container implemen
 		super();
 	}
 
+	protected PrototypeOrderingImpl(int order, RoomPrototype prototype) {
+		super();
+		this.order = order;
+		this.prototype = prototype;
+	}
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
