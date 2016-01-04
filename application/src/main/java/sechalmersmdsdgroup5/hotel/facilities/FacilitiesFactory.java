@@ -3,6 +3,8 @@
 package sechalmersmdsdgroup5.hotel.facilities;
 
 
+import java.util.List;
+
 /**
  * <!-- begin-user-doc -->
  * The <b>Factory</b> for the model.
@@ -99,5 +101,7 @@ public interface FacilitiesFactory {
 	 * @generated
 	 */
 	AccessLogItem createAccessLogItem();
+
+	Room createRoom(List<PrototypeOrdering> testList);
 
 } //FacilitiesFactory
