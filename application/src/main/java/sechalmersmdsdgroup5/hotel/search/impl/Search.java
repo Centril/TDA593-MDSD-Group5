@@ -31,12 +31,7 @@ public class Search implements ISearch {
 	}
 
 	@Override
-	public List<SearchResult<PreOrder>> searchAvailableOrders( Date from, Date to, SearchQuery<PreOrder> query ) {
-		// Compute stream of PreOrder with power set of PreBooking:s.
-		return null;
-	}
-
-	private List<SearchResult<PreBooking>> searchAvailableBookings( Date from, Date to, SearchQuery<PreBooking> query ) {
+	public List<SearchResult<PreBooking>> searchAvailableBookings( Date from, Date to, SearchQuery<PreBooking> query ) {
 		// Swap if to <= from:
 		if ( leq( to, from ) ) {
 			Date tmp = from;

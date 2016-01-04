@@ -9,7 +9,7 @@ import sechalmersmdsdgroup5.hotel.facilities.Key;
 import sechalmersmdsdgroup5.hotel.facilities.Room;
 
 import sechalmersmdsdgroup5.hotel.ordering.Order;
-import sechalmersmdsdgroup5.hotel.ordering.PreOrder;
+import sechalmersmdsdgroup5.hotel.ordering.PreBooking;
 import sechalmersmdsdgroup5.hotel.ordering.RoomBooking;
 
 import sechalmersmdsdgroup5.hotel.services.Service;
@@ -31,7 +31,7 @@ public interface ISearch {
 	 * @model ordered="false" fromRequired="true" fromOrdered="false" toRequired="true" toOrdered="false" queryRequired="true" queryOrdered="false"
 	 * @generated
 	 */
-	List<SearchResult<PreOrder>> searchAvailableOrders(Date from, Date to, SearchQuery<PreOrder> query);
+	List<SearchResult<PreBooking>> searchAvailableBookings(Date from, Date to, SearchQuery<PreBooking> query);
 
 	/**
 	 * <!-- begin-user-doc -->
