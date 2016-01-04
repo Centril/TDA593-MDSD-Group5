@@ -1,27 +1,37 @@
 package sechalmersmdsdgroup5.hotel.cli.commands;
 
 import sechalmersmdsdgroup5.hotel.Hotel;
-import sechalmersmdsdgroup5.hotel.blacklist.IBlacklist;
 import sechalmersmdsdgroup5.hotel.blacklist.impl.IBlacklistImpl;
 import sechalmersmdsdgroup5.hotel.cli.infrastructure.Command;
 import sechalmersmdsdgroup5.hotel.cli.infrastructure.IOHelper;
 import sechalmersmdsdgroup5.hotel.cli.infrastructure.IdentifiableCommand;
 import sechalmersmdsdgroup5.hotel.cli.readers.StandardReaders;
+import sechalmersmdsdgroup5.hotel.clients.Address;
+import sechalmersmdsdgroup5.hotel.clients.ClientsFactory;
+import sechalmersmdsdgroup5.hotel.clients.Customer;
 import sechalmersmdsdgroup5.hotel.clients.Guest;
+import sechalmersmdsdgroup5.hotel.identities.IdentitiesFactory;
+import sechalmersmdsdgroup5.hotel.identities.Identity;
+import sechalmersmdsdgroup5.hotel.identities.Organisation;
+import sechalmersmdsdgroup5.hotel.identities.RealPerson;
 import sechalmersmdsdgroup5.hotel.ordering.IOrder;
 import sechalmersmdsdgroup5.hotel.ordering.Order;
 import sechalmersmdsdgroup5.hotel.ordering.PreBooking;
 import sechalmersmdsdgroup5.hotel.ordering.RoomBooking;
 import sechalmersmdsdgroup5.hotel.ordering.impl.OrderingFacade;
+import sechalmersmdsdgroup5.hotel.payment.CreditCard;
+import sechalmersmdsdgroup5.hotel.payment.PaymentFactory;
 import sechalmersmdsdgroup5.hotel.search.SearchResult;
 
 import java.util.HashSet;
 import java.util.List;
+import java.util.Optional;
 import java.util.Set;
 
 import static java.util.Collections.singletonList;
 import static sechalmersmdsdgroup5.hotel.cli.infrastructure.Command.command;
-import static sechalmersmdsdgroup5.hotel.cli.readers.StandardReaders.nonNegativeInt;
+import static sechalmersmdsdgroup5.hotel.cli.infrastructure.Readers.reader;
+import static sechalmersmdsdgroup5.hotel.cli.readers.StandardReaders.*;
 import static sechalmersmdsdgroup5.hotel.utils.Functional.listify;
 
 public class CreateOrder implements IdentifiableCommand<Hotel, Order> {
@@ -73,15 +83,94 @@ public class CreateOrder implements IdentifiableCommand<Hotel, Order> {
         IOrder facade = new OrderingFacade( hotel );
 
         List<RoomBooking> bookeds = listify( selected.stream().map( pre -> {
+            // Should never fail... all rooms have min 1 room:
             Guest firstGuest = io.execute( hotel, command( this::readGuest ) );
-            facade.createBooking( pre, singletonList( firstGuest ) );
+            RoomBooking booking = facade.createBooking( pre, singletonList( firstGuest ) );
 
+            // Keep adding forever until we can't add guests anymore:
+            while ( true ) {
+                if ( !io.read( "Add more guests?", addMore() ) ) break;
 
+                Optional<Guest> maybeGuest = io.executeOpt( hotel, command( this::readGuest ) );
 
-            return null;
+                if ( !maybeGuest.isPresent() )
+                    io.warn( "Not a valid guest specified." );
+
+                try {
+                    facade.addGuestToBooking( maybeGuest.get(), booking );
+                } catch ( IllegalArgumentException iag ) {
+                    io.warn( "Can't add more to booking because room is full." );
+                }
+            }
+
+            return booking;
         } ) );
 
-        return null;
+        Customer customer = io.execute( hotel, command( this::readCustomer ) );
+
+        // TODO: 2016-01-04 , replace null with bookeds.
+        return facade.createOrder( null, customer );
+    }
+
+    private Customer readCustomer( IOHelper io, Hotel hotel ) {
+        io.info( "Specify the customer..." ).newline();
+
+        ClientsFactory factory = ClientsFactory.INSTANCE;
+        Customer customer = factory.createCustomer();
+
+        if ( io.read(
+                "Is customer a real person or organisation?",
+                "Invalid input, answer real or organisation",
+                reader( str -> str.startsWith( "r" ) || str.startsWith( "o" ),
+                        str -> str.startsWith( "r" ) ) ) ) {
+            io.info( "OK, specifying a real person." ).newline();
+
+            RealPerson person = IdentitiesFactory.INSTANCE.createRealPerson();
+            customer.setIdentity( person );
+
+            specifyIdentity( io, person );
+            person.setAge( io.read( "Customer age?", "Invalid age.", nonNegativeInt() ) );
+            person.setCitizenship( io.read( "Customer citizenship?" ) );
+        } else {
+            io.info( "OK, specifying an organisation." ).newline();
+
+            Organisation organisation = IdentitiesFactory.INSTANCE.createOrganisation();
+            customer.setIdentity( organisation );
+            specifyIdentity( io, organisation );
+        }
+
+        String reason = new IBlacklistImpl( hotel ).getBlacklistReason( customer.getIdentity() );
+        if( reason != null ) {
+            io.warn( "Person is blacklisted, reason: " + reason ).newline();
+            return null;
+        }
+
+        customer.setEmail( io.read( "Customer email?" ) );
+        customer.setPaymentMethod( null );
+
+        Address address = factory.createAddress();
+        customer.setAssociatedAdress( address );
+        address.setCountry( io.read( "Address, country?" ) );
+        address.setRegion( io.read( "Address, region?" ) );
+        address.setMunicipality( io.read( "Address, municipality?" ) );
+        address.setStreet( io.read( "Address, street?" ) );
+        address.setZipArea( io.read( "Address, zip area?" ) );
+        address.setZipCode( io.read( "Address, zip code?", "Not a zip code.", naturalInt() ) );
+
+        CreditCard card = PaymentFactory.INSTANCE.createCreditCard();
+        customer.setCard( card );
+        card.setName( io.read( "Card holder?" ) );
+        card.setNumber( io.read( "Card number?" ) );
+        card.setCcv( io.read( "Card ccv?", "Invalid ccv.", naturalInt() ) );
+        card.setExpiryMonth( io.read( "Card expiry month?", "Not a month.", naturalInt() ) );
+        card.setExpiryYear( io.read( "Card expiry year?", "Not a year.", naturalInt() ) );
+
+        return customer;
+    }
+
+    private void specifyIdentity( IOHelper io, Identity identity ) {
+        identity.setName( io.read( "Guest name?" ) );
+        identity.setIdNumber( io.read( "Guest SSN?" ) );
     }
 
     private Guest readGuest( IOHelper io, Hotel hotel ) {
@@ -101,7 +190,7 @@ public class CreateOrder implements IdentifiableCommand<Hotel, Order> {
             return guest;
         }
 
-        io.info( "Person is blacklisted, reason: " + reason ).newline();
+        io.warn( "Person is blacklisted, reason: " + reason ).newline();
         return null;
     }
 }
