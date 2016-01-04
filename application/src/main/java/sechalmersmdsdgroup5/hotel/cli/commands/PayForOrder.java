@@ -18,6 +18,8 @@ import sechalmersmdsdgroup5.hotel.ordering.RoomBooking;
 import sechalmersmdsdgroup5.hotel.search.impl.Search;
 
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 public class PayForOrder  implements Command.Consuming<Hotel>, IdentifiableCommand<Hotel, Void> {
@@ -45,8 +47,6 @@ public class PayForOrder  implements Command.Consuming<Hotel>, IdentifiableComma
                     "pay for by inputting the corresponding number." + builder.toString());
 
         }
-
-
     }
 
     /**
@@ -116,6 +116,12 @@ public class PayForOrder  implements Command.Consuming<Hotel>, IdentifiableComma
         Room room = FacilitiesFactory.INSTANCE.createRoom(prototypeOrderings);
         RoomBooking booking = OrderingFactory.INSTANCE.createRoomBooking();
         booking.setBookedRoom(room);
+        // Set start and end-dates.
+        Calendar cal = Calendar.getInstance();
+        cal.set(2016,1,7);
+        booking.setStartDate(cal.getTime());
+        cal.set(2016,1,8);
+        booking.setEndDate(cal.getTime());
         List<RoomBooking> bookingsList = new ArrayList<>();
         bookingsList.add(booking);
         //Create test order
