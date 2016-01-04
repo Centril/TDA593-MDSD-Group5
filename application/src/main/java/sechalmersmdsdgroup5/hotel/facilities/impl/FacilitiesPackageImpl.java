@@ -1408,7 +1408,7 @@ public class FacilitiesPackageImpl extends EPackageImpl {
 		addEParameter(op, ecorePackage.getEInt(), "id", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEInt(), "floor", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
-		op = addEOperation(iFacilitiesEClass, null, "createPrototypeOrdering", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		op = addEOperation(iFacilitiesEClass, this.getPrototypeOrdering(), "createPrototypeOrdering", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEInt(), "order", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, this.getRoomPrototype(), "prototype", 1, 1, IS_UNIQUE, !IS_ORDERED);
 	}

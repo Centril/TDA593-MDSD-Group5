@@ -203,6 +203,7 @@
               <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
             </ownedParameter>
             <ownedParameter xmi:type="uml:Parameter" xmi:id="_FowIQLMREeWjk5gVdy9UnA" name="prototype" type="_CKsl0JN8EeWEKYEtRmghUQ"/>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_nA8xILMTEeWjk5gVdy9UnA" name="return" type="_rnubgJy4EeWo8dNNGRJY3w" direction="return"/>
           </ownedOperation>
         </packagedElement>
       </packagedElement>

@@ -152,7 +152,8 @@
           <eParameters name="id" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
           <eParameters name="floor" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
         </eOperations>
-        <eOperations name="createPrototypeOrdering" ordered="false" lowerBound="1">
+        <eOperations name="createPrototypeOrdering" ordered="false" lowerBound="1"
+            eType="#//hotel/facilities/PrototypeOrdering">
           <eParameters name="order" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
           <eParameters name="prototype" ordered="false" lowerBound="1" eType="#//hotel/facilities/RoomPrototype"/>
         </eOperations>

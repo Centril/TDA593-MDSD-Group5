@@ -66,9 +66,9 @@ public interface IFacilities {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model orderRequired="true" orderOrdered="false" prototypeRequired="true" prototypeOrdered="false"
+	 * @model required="true" ordered="false" orderRequired="true" orderOrdered="false" prototypeRequired="true" prototypeOrdered="false"
 	 * @generated
 	 */
-	void createPrototypeOrdering(int order, RoomPrototype prototype);
+	PrototypeOrdering createPrototypeOrdering(int order, RoomPrototype prototype);
 
 } // IFacilities
