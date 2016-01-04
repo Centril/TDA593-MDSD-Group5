@@ -24,19 +24,20 @@ public class Main {
 	public static void main( String[] args ) {
 		checkDisableColors( args );
 
-		runner( header( system() ), INSTANCE.createHotel() ).accept( Application.<Hotel>builder()
-			.add( ReadBooking::new)
-            .add( ReadOrder::new)
-            .add( TakeBackKey::new )
-			.add( SearchAvailableBookings::new )
-			.add( SearchAvailableRooms::new )
-			.add( SearchOccupiedRooms::new )
-			.add( SearchActiveBookings::new )
-			.add( SearchAvailableServices::new )
-			.add( SearchUsedServices::new )
-			.add( AddRoom::new )
-			.add( ListRooms::new )
-			.build() );
+		runner(header(system()), INSTANCE.createHotel()).accept(Application.<Hotel>builder()
+				.add(ReadBooking::new)
+				.add(ReadOrder::new)
+				.add(SearchCustomer::new)
+				.add(TakeBackKey::new)
+				.add(SearchAvailableBookings::new)
+				.add(SearchAvailableRooms::new)
+				.add(SearchOccupiedRooms::new)
+				.add(SearchActiveBookings::new)
+				.add(SearchAvailableServices::new)
+				.add(SearchUsedServices::new)
+				.add(AddRoom::new)
+				.add(ListRooms::new)
+				.build());
 
 		/*
 			.cmdVoid( "error", "tests error", (io, $) -> io.error( "hello world" ) )
