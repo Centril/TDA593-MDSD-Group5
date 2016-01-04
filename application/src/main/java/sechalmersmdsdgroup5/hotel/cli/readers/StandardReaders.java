@@ -17,6 +17,11 @@ public class StandardReaders {
 		return input -> Dates.toDate( LocalDate.parse( input, DateTimeFormatter.ISO_DATE ) );
 	}
 
+	public static <T> ExceptionalRead<T> choice( List<T> from ) {
+		// It is natural to use 1 indexing.
+		return integer().andThen( index -> from.get( index - 1 ) );
+	}
+
 	public static <T> ExceptionalRead<T> intId( List<T> from, ToIntFunction<T> idMapper ) {
 		return input -> {
 			int id = Integer.parseInt( input );
