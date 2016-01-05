@@ -7,21 +7,23 @@ import sechalmersmdsdgroup5.hotel.cli.infrastructure.IdentifiableCommand;
 import sechalmersmdsdgroup5.hotel.facilities.PrototypeOrdering;
 import sechalmersmdsdgroup5.hotel.ordering.Order;
 import sechalmersmdsdgroup5.hotel.ordering.RoomBooking;
-import sechalmersmdsdgroup5.hotel.services.Service;
+import sechalmersmdsdgroup5.hotel.services.IService;
 import sechalmersmdsdgroup5.hotel.services.ServiceBlueprint;
+import sechalmersmdsdgroup5.hotel.services.impl.ServiceFacade;
 import sechalmersmdsdgroup5.hotel.utils.Pair;
+import sechalmersmdsdgroup5.hotel.utils.PairList;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class AddServiceToBooking implements Command.Consuming<Hotel>, IdentifiableCommand<Hotel, Void> {
     @Override
     public void accept(IOHelper io, Hotel hotel) {
-        if ( null == hotel.getOrders() || hotel.getOrders().isEmpty() ) {
+        if ( null == Utils.testOrders() || Utils.testOrders().isEmpty() ) {
             io.info("There are no current bookings. Exiting command.");
         }
         else {
-            List<Pair<Integer, RoomBooking>> pairs = new ArrayList<>();
+            hotel.getServiceBlueprints().addAll(Utils.testServiceBlueprints());
+            PairList<Integer, RoomBooking> pairs = new PairList<>();
             StringBuilder builder = new StringBuilder();
             int count = 1;
             List<Order> orders = Utils.testOrders();
@@ -30,28 +32,40 @@ public class AddServiceToBooking implements Command.Consuming<Hotel>, Identifiab
                     pairs.add(new Pair<>(count, booking));
                     appendBooking(builder,count,booking);
                     builder.append("\n");
+                    count++;
                 }
             }
 
             String msg = io.read("These are the current room bookings. Please specify which room you wish to " +
-                    "add a service to by inputting the corresponding number." + builder.toString());
+                    "add a service to by inputting the corresponding number.\n " + builder.toString());
             int nbr = Utils.parseInteger(msg);
-
             if (nbr == -1) {
                 io.info("Incorrect input. Exiting.");}
 
             else {
-                RoomBooking bookingToUse = pairs.get(nbr).snd();
-                if (bookingToUse == null) {io.info("Invalid input. Exiting.");}
+                System.out.println("Number of the pair entry: " + pairs.get(0).fst());
+                RoomBooking bookingToUse = (RoomBooking) pairs.getPair(nbr).snd();
+                if (bookingToUse == null) {io.info("There is no such index. Exiting.");}
 
                 else {
                     builder = new StringBuilder();
                     count = 1;
+                    PairList<Integer,ServiceBlueprint> blueprintList = new PairList<>();
                     for (ServiceBlueprint service : hotel.getServiceBlueprints()) {
                         appendService(builder,count,service);
+                        blueprintList.add(new Pair<Integer, ServiceBlueprint>(count,service));
+                        count++;
                     }
 
-                        io.info("Pick a service to add to your booking: \n" + builder.toString());
+                        String pick = io.read("Pick a service to add to your booking: \n" + builder.toString());
+                    if (nbr == -1) {
+                        io.info("Incorrect input. Exiting.");
+                    } else {
+                        ServiceBlueprint blueprint = (ServiceBlueprint) blueprintList.getPair(nbr).snd();
+                        IService serviceFacade = new ServiceFacade();
+                        serviceFacade.bookService(bookingToUse,blueprint);
+                        io.info("The desired service has been booked. Thank you.\n Exiting.");
+                        }
                 }
             }
         }
@@ -65,12 +79,11 @@ public class AddServiceToBooking implements Command.Consuming<Hotel>, Identifiab
      * @param booking
      */
     private void appendBooking(StringBuilder builder, int count, RoomBooking booking) {
-        builder.append("\n" + count + ". ");
+        builder.append( count + ". ");
         // This is how to get the name:
         // System.out.println(order.getBookings().get(0).getBookedRoom().getPrototypes().get(0).getPrototype().getName());
         appendRoomName(builder, booking);
         builder.append(" \n Room Number: "+ booking.getBookedRoom().getNr());
-        count++;
     }
 
     /**
@@ -80,7 +93,7 @@ public class AddServiceToBooking implements Command.Consuming<Hotel>, Identifiab
      * @param count
      * @param service
      */
-    private void appendService(StringBuilder builder, int count, ServiceBlueprint service) {
+    private void appendService(StringBuilder builder, Integer count, ServiceBlueprint service) {
         builder.append("\n" + count + ". ");
         // This is how to get the name:
         // System.out.println(order.getBookings().get(0).getBookedRoom().getPrototypes().get(0).getPrototype().getName());
@@ -99,6 +112,9 @@ public class AddServiceToBooking implements Command.Consuming<Hotel>, Identifiab
             builder.append(orderedPrototype.getPrototype().getName() + " ");
         }
     }
+
+
+
 
 
     @Override
