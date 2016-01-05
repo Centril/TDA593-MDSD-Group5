@@ -1,27 +1,19 @@
 package sechalmersmdsdgroup5.hotel.ordering.impl;
 
 import sechalmersmdsdgroup5.hotel.Hotel;
-import sechalmersmdsdgroup5.hotel.HotelFactory;
-import sechalmersmdsdgroup5.hotel.clients.ClientsFactory;
 import sechalmersmdsdgroup5.hotel.clients.Customer;
 import sechalmersmdsdgroup5.hotel.clients.Guest;
-import sechalmersmdsdgroup5.hotel.clients.impl.GuestImpl;
 import sechalmersmdsdgroup5.hotel.facilities.Room;
 import sechalmersmdsdgroup5.hotel.facilities.RoomAttribute;
 import sechalmersmdsdgroup5.hotel.facilities.impl.RoomAttributeImpl;
-import sechalmersmdsdgroup5.hotel.facilities.impl.RoomImpl;
 import sechalmersmdsdgroup5.hotel.ordering.*;
 
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.Date;
 import java.util.List;
 
 import static sechalmersmdsdgroup5.hotel.utils.Functional.concatMap;
 
-/**
- * Created by neon on 2015-12-29.
- */
 public class OrderingFacade implements IOrder {
     private final Hotel hotel;
     public OrderingFacade(Hotel hotel) {
