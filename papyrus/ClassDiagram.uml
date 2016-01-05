@@ -328,6 +328,43 @@
             <ownedParameter xmi:type="uml:Parameter" xmi:id="_z4ABMLPFEeW-BMSKTAd4hg" name="email">
               <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
             </ownedParameter>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_pWB9oLPNEeW-BMSKTAd4hg" name="return" type="_7PSgoJOAEeWEKYEtRmghUQ" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_qwIZkLPMEeW-BMSKTAd4hg" name="createGuest">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_0DmJALPMEeW-BMSKTAd4hg" name="name">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+            </ownedParameter>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_WTdroLPNEeW-BMSKTAd4hg" name="ssn">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+            </ownedParameter>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_YLu00LPNEeW-BMSKTAd4hg" name="age">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+            </ownedParameter>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_lASscLPNEeW-BMSKTAd4hg" name="return" type="_st4FoJOAEeWEKYEtRmghUQ" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_r5HlcLPNEeW-BMSKTAd4hg" name="createAddress">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_0qQD4LPNEeW-BMSKTAd4hg" name="street">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+            </ownedParameter>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_79hdMLPNEeW-BMSKTAd4hg" name="zipCode">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+            </ownedParameter>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_9k_xULPNEeW-BMSKTAd4hg" name="zipArea">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+            </ownedParameter>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="__26JkLPNEeW-BMSKTAd4hg" name="country">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+            </ownedParameter>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_NWU8ELPOEeW-BMSKTAd4hg" name="region">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+            </ownedParameter>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_SQtycLPOEeW-BMSKTAd4hg" name="municipality">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+            </ownedParameter>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_UVQdELPOEeW-BMSKTAd4hg" name="careOf">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+            </ownedParameter>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_XE1owLPOEeW-BMSKTAd4hg" name="return" type="_-3k78JqREeWXppCtG_WnKw" direction="return"/>
           </ownedOperation>
         </packagedElement>
       </packagedElement>
@@ -929,18 +966,6 @@
             <ownedParameter xmi:type="uml:Parameter" xmi:id="_FhkXh5m9EeW2JPAtqMJHLg" name="result" direction="return">
               <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
             </ownedParameter>
-          </ownedOperation>
-          <ownedOperation xmi:type="uml:Operation" xmi:id="_Fhk-kJm9EeW2JPAtqMJHLg" name="createGuest">
-            <ownedParameter xmi:type="uml:Parameter" xmi:id="_Fhk-kZm9EeW2JPAtqMJHLg" name="name">
-              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
-            </ownedParameter>
-            <ownedParameter xmi:type="uml:Parameter" xmi:id="_Fhk-kpm9EeW2JPAtqMJHLg" name="ssn">
-              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
-            </ownedParameter>
-            <ownedParameter xmi:type="uml:Parameter" xmi:id="_Fhk-k5m9EeW2JPAtqMJHLg" name="age">
-              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
-            </ownedParameter>
-            <ownedParameter xmi:type="uml:Parameter" xmi:id="_Fhk-lJm9EeW2JPAtqMJHLg" name="result" type="_st4FoJOAEeWEKYEtRmghUQ" direction="return"/>
           </ownedOperation>
           <ownedOperation xmi:type="uml:Operation" xmi:id="_LLTnMJm9EeW2JPAtqMJHLg" name="addGuestToBooking">
             <ownedParameter xmi:type="uml:Parameter" xmi:id="_ekFZwJm9EeW2JPAtqMJHLg" name="guest" type="_st4FoJOAEeWEKYEtRmghUQ"/>

@@ -45,14 +45,6 @@ public interface IOrder {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true" ordered="false" nameRequired="true" nameOrdered="false" ssnRequired="true" ssnOrdered="false" ageRequired="true" ageOrdered="false"
-	 * @generated
-	 */
-	Guest createGuest(String name, String ssn, int age);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
 	 * @model guestRequired="true" guestOrdered="false" bookingRequired="true" bookingOrdered="false"
 	 * @generated
 	 */
