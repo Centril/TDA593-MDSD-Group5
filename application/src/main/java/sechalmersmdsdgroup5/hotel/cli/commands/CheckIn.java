@@ -27,6 +27,8 @@ public class CheckIn implements Command.Consuming<Hotel>, IdentifiableCommand<Ho
         if (guestNr >= 0 && guestNr < hotel.getGuests().size()) {
             Guest guest = hotel.getGuests().get(guestNr);
 
+            ioHelper.info("The chosen guest is:").info(guest);
+
             ioHelper.info("Bookings related to guest that can be checked in").newline();
             RoomBooking roomBooking = null;
             for (Order order : hotel.getOrders()) {
