@@ -29,9 +29,7 @@ import java.util.Set;
 import static java.util.Collections.singletonList;
 import static sechalmersmdsdgroup5.hotel.cli.commands.Utils.readInteger;
 import static sechalmersmdsdgroup5.hotel.cli.infrastructure.Readers.reader;
-import static sechalmersmdsdgroup5.hotel.cli.infrastructure.color.StandardPrintColor.CYAN;
 import static sechalmersmdsdgroup5.hotel.cli.readers.StandardReaders.*;
-import static sechalmersmdsdgroup5.hotel.utils.Functional.foreachIndexed;
 import static sechalmersmdsdgroup5.hotel.utils.Functional.listify;
 
 public class CreateOrder implements IdentifiableCommand<Hotel, Order> {
@@ -49,22 +47,11 @@ public class CreateOrder implements IdentifiableCommand<Hotel, Order> {
     public Order apply( IOHelper io, Hotel hotel ) {
         io.info( "Creating an order..." ).newline();
 
-        if (!verifyCustomerLegality(io)) {
-            return null;
-        }
+        if ( !verifyCustomerLegality( io ) ) return null;
 
-        List<SearchResult<PreBooking>> resultBookingsMut;
-        while ( (resultBookingsMut = io.execute( hotel, new SearchAvailableBookings() )).isEmpty() )
+        List<SearchResult<PreBooking>> resultBookings;
+        while ( (resultBookings = io.execute( hotel, new SearchAvailableBookings() )).isEmpty() )
             io.warn( "There were no available bookings!" ).newline();
-
-        final List<SearchResult<PreBooking>> resultBookings = resultBookingsMut;
-
-        io.info( "The results were:" ).newline()
-          .io( () -> foreachIndexed( resultBookings, (sr, index) ->
-            io.print( CYAN, (index + 1) + ") " )
-              .paragraph( sr.getResult() )
-              .paragraph( "relevance: " + resultBookings.get( index ).getRelevance() )
-        ) ).newline();
 
         List<PreBooking> bookings = listify( resultBookings.stream().map( SearchResult::getResult ) );
         Set<Integer> picked = new HashSet<>();
@@ -167,8 +154,9 @@ public class CreateOrder implements IdentifiableCommand<Hotel, Order> {
         String street = io.read( "Address, street?" ) ;
         String zipArea = io.read( "Address, zip area?" ) ;
         String zipCode = io.read( "Address, zip code?", "Not a zip code.", naturalInt() ).toString() ;
+        String careOf = io.read( "Address, care of?" );
 
-        Address address = facade.createAddress(street, zipCode, zipArea, country, region, municipality, null);
+        Address address = facade.createAddress(street, zipCode, zipArea, country, region, municipality, careOf);
 
         CreditCard card = PaymentFactory.INSTANCE.createCreditCard();
         card.setName( io.read( "Card holder?" ) );
@@ -206,7 +194,7 @@ public class CreateOrder implements IdentifiableCommand<Hotel, Order> {
     }
 
     private boolean verifyCustomerLegality(IOHelper io) {
-        io.info( "Verifying that you are allowed to make an order" );
+        io.info( "Verifying that you are allowed to make an order" ).newline();
         int age = readInteger("What is your age? ", io);
         // In the future, get some config about age here
         // And add other legality factors

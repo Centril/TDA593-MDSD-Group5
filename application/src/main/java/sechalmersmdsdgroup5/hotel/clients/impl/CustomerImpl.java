@@ -402,17 +402,21 @@ public class CustomerImpl extends MinimalEObjectImpl.Container implements Custom
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuffer result = new StringBuffer();
 		result.append(" (paymentMethod: ");
 		result.append(paymentMethod);
 		result.append(", email: ");
 		result.append(email);
+		result.append(", identity: ");
+		result.append(identity);
+		result.append(", card: ");
+		result.append(card);
+		result.append(", address: ");
+		result.append(associatedAdress);
 		result.append(')');
 		return result.toString();
 	}

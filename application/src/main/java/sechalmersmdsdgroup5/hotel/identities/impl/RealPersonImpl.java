@@ -207,14 +207,16 @@ public class RealPersonImpl extends IdentityImpl implements RealPerson {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (age: ");
+		StringBuffer result = new StringBuffer("RealPerson");
+		result.append(" (name: ");
+		result.append(name);
+		result.append(", idNumber: ");
+		result.append(idNumber);
+		result.append(", age: ");
 		result.append(age);
 		result.append(", citizenship: ");
 		result.append(citizenship);

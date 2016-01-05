@@ -290,17 +290,17 @@ public class PreBookingImpl extends MinimalEObjectImpl.Container implements PreB
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (startDate: ");
+		StringBuffer result = new StringBuffer();
+		result.append("Booking (start: ");
 		result.append(startDate);
-		result.append(", endDate: ");
+		result.append(", end: ");
 		result.append(endDate);
+		result.append("\nroom: ");
+		result.append(willBook);
 		result.append(')');
 		return result.toString();
 	}
