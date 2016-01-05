@@ -31,7 +31,7 @@ public class PayForOrder  implements Command.Consuming<Hotel>, IdentifiableComma
         List<Order> orders = findCustomerOrders(io.read( "Please specify the first name followed by" +
                 " the surname under which the order was created. [Example: John Doe]\n: " ), hotel);
 
-        if ( null == orders ) {
+        if ( null == orders || orders.isEmpty() ) {
             io.info("There are no orders associated with that name. Exiting command.");
         }
 
