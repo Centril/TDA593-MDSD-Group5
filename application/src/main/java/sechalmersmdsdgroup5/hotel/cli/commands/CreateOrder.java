@@ -215,7 +215,11 @@ public class CreateOrder implements IdentifiableCommand<Hotel, Order> {
         int age = readInteger("What is your age? ", io);
         // In the future, get some config about age here
         // And add other legality factors
-        return age > 15;
+        if (age <= 15) {
+            io.warn("Not old enough to make order");
+            return false;
+        }
+        return true;
 
     }
 }
