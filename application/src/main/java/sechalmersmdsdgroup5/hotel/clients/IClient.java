@@ -8,14 +8,14 @@ import sechalmersmdsdgroup5.hotel.payment.PaymentMethod;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Interface1</b></em>'.
+ * A representation of the model object '<em><b>IClient</b></em>'.
  * <!-- end-user-doc -->
  *
  *
  * @model interface="true" abstract="true"
  * @generated
  */
-public interface Interface1 {
+public interface IClient {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -24,4 +24,4 @@ public interface Interface1 {
 	 */
 	void createCustomer(Identity identity, PaymentMethod paymentMethod, String email);
 
-} // Interface1
+} // IClient

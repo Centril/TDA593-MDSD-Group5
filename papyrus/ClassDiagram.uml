@@ -321,7 +321,7 @@
             <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_5XGioK7tEeWKW4OjxoJe1Q" value="*"/>
           </ownedAttribute>
         </packagedElement>
-        <packagedElement xmi:type="uml:Interface" xmi:id="_4dZUcLPEEeW-BMSKTAd4hg" name="Interface1">
+        <packagedElement xmi:type="uml:Interface" xmi:id="_4dZUcLPEEeW-BMSKTAd4hg" name="IClient">
           <ownedOperation xmi:type="uml:Operation" xmi:id="_6La8gLPEEeW-BMSKTAd4hg" name="createCustomer">
             <ownedParameter xmi:type="uml:Parameter" xmi:id="_PZ8vwLPFEeW-BMSKTAd4hg" name="identity" type="_8icKkJOAEeWEKYEtRmghUQ"/>
             <ownedParameter xmi:type="uml:Parameter" xmi:id="_nTgl4LPFEeW-BMSKTAd4hg" name="paymentMethod" type="_90_gwJqVEeWXppCtG_WnKw"/>

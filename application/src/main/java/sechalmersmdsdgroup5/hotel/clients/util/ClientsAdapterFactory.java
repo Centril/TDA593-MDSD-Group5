@@ -85,8 +85,8 @@ public class ClientsAdapterFactory extends AdapterFactoryImpl {
 				return createAddressAdapter();
 			}
 			@Override
-			public Adapter caseInterface1(Interface1 object) {
-				return createInterface1Adapter();
+			public Adapter caseIClient(IClient object) {
+				return createIClientAdapter();
 			}
 			@Override
 			public Adapter caseClient(Client object) {
@@ -153,16 +153,16 @@ public class ClientsAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link sechalmersmdsdgroup5.hotel.clients.Interface1 <em>Interface1</em>}'.
+	 * Creates a new adapter for an object of class '{@link sechalmersmdsdgroup5.hotel.clients.IClient <em>IClient</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see sechalmersmdsdgroup5.hotel.clients.Interface1
+	 * @see sechalmersmdsdgroup5.hotel.clients.IClient
 	 * @generated
 	 */
-	public Adapter createInterface1Adapter() {
+	public Adapter createIClientAdapter() {
 		return null;
 	}
 
