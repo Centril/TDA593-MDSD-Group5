@@ -5,6 +5,7 @@ package sechalmersmdsdgroup5.hotel.identities.impl;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EFactory;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
@@ -15,6 +16,7 @@ import sechalmersmdsdgroup5.hotel.clients.impl.ClientsPackageImpl;
 
 import sechalmersmdsdgroup5.hotel.facilities.impl.FacilitiesPackageImpl;
 
+import sechalmersmdsdgroup5.hotel.identities.IIdentity;
 import sechalmersmdsdgroup5.hotel.identities.IdentitiesFactory;
 import sechalmersmdsdgroup5.hotel.identities.Identity;
 import sechalmersmdsdgroup5.hotel.identities.Organisation;
@@ -131,7 +133,7 @@ public class IdentitiesPackageImpl extends EPackageImpl {
 	 * @see sechalmersmdsdgroup5.hotel.identities.impl.IdentitiesPackageImpl#getRealPerson()
 	 * @generated
 	 */
-	public static final int REAL_PERSON = 2;
+	public static final int REAL_PERSON = 3;
 
 	/**
 	 * The meta object id for the '{@link sechalmersmdsdgroup5.hotel.identities.impl.OrganisationImpl <em>Organisation</em>}' class.
@@ -169,6 +171,25 @@ public class IdentitiesPackageImpl extends EPackageImpl {
 	 * @ordered
 	 */
 	public static final int ORGANISATION_FEATURE_COUNT = IDENTITY_FEATURE_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link sechalmersmdsdgroup5.hotel.identities.IIdentity <em>IIdentity</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see sechalmersmdsdgroup5.hotel.identities.IIdentity
+	 * @see sechalmersmdsdgroup5.hotel.identities.impl.IdentitiesPackageImpl#getIIdentity()
+	 * @generated
+	 */
+	public static final int IIDENTITY = 2;
+
+	/**
+	 * The number of structural features of the '<em>IIdentity</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int IIDENTITY_FEATURE_COUNT = 0;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -228,6 +249,13 @@ public class IdentitiesPackageImpl extends EPackageImpl {
 	 * @generated
 	 */
 	private EClass organisationEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass iIdentityEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -388,6 +416,19 @@ public class IdentitiesPackageImpl extends EPackageImpl {
 	}
 
 	/**
+	 * Returns the meta object for class '{@link sechalmersmdsdgroup5.hotel.identities.IIdentity <em>IIdentity</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>IIdentity</em>'.
+	 * @see sechalmersmdsdgroup5.hotel.identities.IIdentity
+	 * @generated
+	 */
+	public EClass getIIdentity() {
+		return iIdentityEClass;
+	}
+
+
+	/**
 	 * Returns the meta object for class '{@link sechalmersmdsdgroup5.hotel.identities.Identity <em>Identity</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -461,6 +502,8 @@ public class IdentitiesPackageImpl extends EPackageImpl {
 
 		organisationEClass = createEClass(ORGANISATION);
 
+		iIdentityEClass = createEClass(IIDENTITY);
+
 		realPersonEClass = createEClass(REAL_PERSON);
 		createEAttribute(realPersonEClass, REAL_PERSON__AGE);
 		createEAttribute(realPersonEClass, REAL_PERSON__CITIZENSHIP);
@@ -503,6 +546,12 @@ public class IdentitiesPackageImpl extends EPackageImpl {
 		initEAttribute(getIdentity_IdNumber(), ecorePackage.getEString(), "idNumber", null, 1, 1, Identity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(organisationEClass, Organisation.class, "Organisation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(iIdentityEClass, IIdentity.class, "IIdentity", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		EOperation op = addEOperation(iIdentityEClass, this.getIdentity(), "createIdentity", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "name", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "ssn", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		initEClass(realPersonEClass, RealPerson.class, "RealPerson", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getRealPerson_Age(), ecorePackage.getEInt(), "age", null, 1, 1, RealPerson.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -557,6 +606,16 @@ public class IdentitiesPackageImpl extends EPackageImpl {
 		 * @generated
 		 */
 		public static final EClass ORGANISATION = eINSTANCE.getOrganisation();
+
+		/**
+		 * The meta object literal for the '{@link sechalmersmdsdgroup5.hotel.identities.IIdentity <em>IIdentity</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see sechalmersmdsdgroup5.hotel.identities.IIdentity
+		 * @see sechalmersmdsdgroup5.hotel.identities.impl.IdentitiesPackageImpl#getIIdentity()
+		 * @generated
+		 */
+		public static final EClass IIDENTITY = eINSTANCE.getIIdentity();
 
 		/**
 		 * The meta object literal for the '{@link sechalmersmdsdgroup5.hotel.identities.impl.IdentityImpl <em>Identity</em>}' class.

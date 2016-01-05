@@ -94,6 +94,12 @@ public class ClientsSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case ClientsPackageImpl.INTERFACE1: {
+				Interface1 interface1 = (Interface1)theEObject;
+				T result = caseInterface1(interface1);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case ClientsPackageImpl.CLIENT: {
 				Client client = (Client)theEObject;
 				T result = caseClient(client);
@@ -131,6 +137,21 @@ public class ClientsSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseAddress(Address object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Interface1</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Interface1</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseInterface1(Interface1 object) {
 		return null;
 	}
 

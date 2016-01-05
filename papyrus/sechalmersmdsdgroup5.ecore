@@ -261,6 +261,13 @@
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="careOf" ordered="false"
             lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="Interface1" abstract="true" interface="true">
+        <eOperations name="createCustomer" ordered="false" lowerBound="1">
+          <eParameters name="identity" ordered="false" lowerBound="1" eType="#//hotel/identities/Identity"/>
+          <eParameters name="paymentMethod" ordered="false" lowerBound="1" eType="#//hotel/payment/PaymentMethod"/>
+          <eParameters name="email" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        </eOperations>
+      </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="Client" abstract="true" interface="true">
         <eStructuralFeatures xsi:type="ecore:EReference" name="invoices" ordered="false"
             upperBound="-1" eType="#//hotel/ordering/Invoice"/>
@@ -275,6 +282,12 @@
             lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="Organisation" eSuperTypes="#//hotel/identities/Identity"/>
+      <eClassifiers xsi:type="ecore:EClass" name="IIdentity" abstract="true" interface="true">
+        <eOperations name="createIdentity" ordered="false" lowerBound="1" eType="#//hotel/identities/Identity">
+          <eParameters name="name" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+          <eParameters name="ssn" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        </eOperations>
+      </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="RealPerson" eSuperTypes="#//hotel/identities/Identity">
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="age" ordered="false"
             lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>

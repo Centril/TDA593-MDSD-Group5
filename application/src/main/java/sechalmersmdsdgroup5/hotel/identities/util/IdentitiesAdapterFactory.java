@@ -78,6 +78,10 @@ public class IdentitiesAdapterFactory extends AdapterFactoryImpl {
 				return createOrganisationAdapter();
 			}
 			@Override
+			public Adapter caseIIdentity(IIdentity object) {
+				return createIIdentityAdapter();
+			}
+			@Override
 			public Adapter caseRealPerson(RealPerson object) {
 				return createRealPersonAdapter();
 			}
@@ -126,6 +130,20 @@ public class IdentitiesAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createOrganisationAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link sechalmersmdsdgroup5.hotel.identities.IIdentity <em>IIdentity</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see sechalmersmdsdgroup5.hotel.identities.IIdentity
+	 * @generated
+	 */
+	public Adapter createIIdentityAdapter() {
 		return null;
 	}
 

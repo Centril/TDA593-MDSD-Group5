@@ -5,6 +5,7 @@ package sechalmersmdsdgroup5.hotel.clients.impl;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EFactory;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -18,6 +19,7 @@ import sechalmersmdsdgroup5.hotel.clients.ClientsFactory;
 import sechalmersmdsdgroup5.hotel.clients.Customer;
 import sechalmersmdsdgroup5.hotel.clients.Guest;
 
+import sechalmersmdsdgroup5.hotel.clients.Interface1;
 import sechalmersmdsdgroup5.hotel.facilities.impl.FacilitiesPackageImpl;
 
 import sechalmersmdsdgroup5.hotel.identities.impl.IdentitiesPackageImpl;
@@ -96,7 +98,7 @@ public class ClientsPackageImpl extends EPackageImpl {
 	 * @see sechalmersmdsdgroup5.hotel.clients.impl.ClientsPackageImpl#getClient()
 	 * @generated
 	 */
-	public static final int CLIENT = 3;
+	public static final int CLIENT = 4;
 
 	/**
 	 * The meta object id for the '{@link sechalmersmdsdgroup5.hotel.clients.impl.CustomerImpl <em>Customer</em>}' class.
@@ -345,6 +347,25 @@ public class ClientsPackageImpl extends EPackageImpl {
 	public static final int ADDRESS_FEATURE_COUNT = 7;
 
 	/**
+	 * The meta object id for the '{@link sechalmersmdsdgroup5.hotel.clients.Interface1 <em>Interface1</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see sechalmersmdsdgroup5.hotel.clients.Interface1
+	 * @see sechalmersmdsdgroup5.hotel.clients.impl.ClientsPackageImpl#getInterface1()
+	 * @generated
+	 */
+	public static final int INTERFACE1 = 3;
+
+	/**
+	 * The number of structural features of the '<em>Interface1</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int INTERFACE1_FEATURE_COUNT = 0;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -357,6 +378,13 @@ public class ClientsPackageImpl extends EPackageImpl {
 	 * @generated
 	 */
 	private EClass addressEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass interface1EClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -654,6 +682,19 @@ public class ClientsPackageImpl extends EPackageImpl {
 	}
 
 	/**
+	 * Returns the meta object for class '{@link sechalmersmdsdgroup5.hotel.clients.Interface1 <em>Interface1</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Interface1</em>'.
+	 * @see sechalmersmdsdgroup5.hotel.clients.Interface1
+	 * @generated
+	 */
+	public EClass getInterface1() {
+		return interface1EClass;
+	}
+
+
+	/**
 	 * Returns the meta object for class '{@link sechalmersmdsdgroup5.hotel.clients.Client <em>Client</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -754,6 +795,8 @@ public class ClientsPackageImpl extends EPackageImpl {
 		createEAttribute(addressEClass, ADDRESS__MUNICIPALITY);
 		createEAttribute(addressEClass, ADDRESS__CARE_OF);
 
+		interface1EClass = createEClass(INTERFACE1);
+
 		clientEClass = createEClass(CLIENT);
 		createEReference(clientEClass, CLIENT__INVOICES);
 	}
@@ -817,6 +860,13 @@ public class ClientsPackageImpl extends EPackageImpl {
 		initEAttribute(getAddress_Region(), ecorePackage.getEString(), "region", null, 1, 1, Address.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getAddress_Municipality(), ecorePackage.getEString(), "municipality", null, 1, 1, Address.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getAddress_CareOf(), ecorePackage.getEString(), "careOf", null, 1, 1, Address.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+
+		initEClass(interface1EClass, Interface1.class, "Interface1", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		EOperation op = addEOperation(interface1EClass, null, "createCustomer", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, theIdentitiesPackage.getIdentity(), "identity", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, thePaymentPackage.getPaymentMethod(), "paymentMethod", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "email", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		initEClass(clientEClass, Client.class, "Client", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getClient_Invoices(), theOrderingPackage.getInvoice(), null, "invoices", null, 0, -1, Client.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -950,6 +1000,16 @@ public class ClientsPackageImpl extends EPackageImpl {
 		 * @generated
 		 */
 		public static final EAttribute ADDRESS__CARE_OF = eINSTANCE.getAddress_CareOf();
+
+		/**
+		 * The meta object literal for the '{@link sechalmersmdsdgroup5.hotel.clients.Interface1 <em>Interface1</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see sechalmersmdsdgroup5.hotel.clients.Interface1
+		 * @see sechalmersmdsdgroup5.hotel.clients.impl.ClientsPackageImpl#getInterface1()
+		 * @generated
+		 */
+		public static final EClass INTERFACE1 = eINSTANCE.getInterface1();
 
 		/**
 		 * The meta object literal for the '{@link sechalmersmdsdgroup5.hotel.clients.Client <em>Client</em>}' class.

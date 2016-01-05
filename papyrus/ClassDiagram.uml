@@ -328,7 +328,6 @@
             <ownedParameter xmi:type="uml:Parameter" xmi:id="_z4ABMLPFEeW-BMSKTAd4hg" name="email">
               <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
             </ownedParameter>
-            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4PTYoLPFEeW-BMSKTAd4hg" name="return" type="_7PSgoJOAEeWEKYEtRmghUQ" direction="return"/>
           </ownedOperation>
         </packagedElement>
       </packagedElement>
@@ -443,6 +442,17 @@
         </packagedElement>
         <packagedElement xmi:type="uml:Class" xmi:id="_r4qT0JRPEeWEKYEtRmghUQ" name="Organisation">
           <generalization xmi:type="uml:Generalization" xmi:id="_P1thMJx4EeWiw-HwyxZ8Kg" general="_8icKkJOAEeWEKYEtRmghUQ"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Interface" xmi:id="_IXY2gLPGEeW-BMSKTAd4hg" name="IIdentity">
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_LmZJILPGEeW-BMSKTAd4hg" name="createIdentity">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_R-y1oLPGEeW-BMSKTAd4hg" name="name">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+            </ownedParameter>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_d--qALPGEeW-BMSKTAd4hg" name="ssn">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+            </ownedParameter>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_lNZYgLPGEeW-BMSKTAd4hg" name="return" type="_8icKkJOAEeWEKYEtRmghUQ" direction="return"/>
+          </ownedOperation>
         </packagedElement>
       </packagedElement>
       <packagedElement xmi:type="uml:Package" xmi:id="_6fI1AJRPEeWEKYEtRmghUQ" name="inventory">
