@@ -4,24 +4,16 @@ import sechalmersmdsdgroup5.hotel.Hotel;
 import sechalmersmdsdgroup5.hotel.cli.infrastructure.Command;
 import sechalmersmdsdgroup5.hotel.cli.infrastructure.IOHelper;
 import sechalmersmdsdgroup5.hotel.cli.infrastructure.IdentifiableCommand;
-import sechalmersmdsdgroup5.hotel.clients.Customer;
-import sechalmersmdsdgroup5.hotel.clients.impl.ClientsFactoryImpl;
-import sechalmersmdsdgroup5.hotel.facilities.FacilitiesFactory;
 import sechalmersmdsdgroup5.hotel.facilities.PrototypeOrdering;
-import sechalmersmdsdgroup5.hotel.facilities.Room;
-import sechalmersmdsdgroup5.hotel.facilities.RoomPrototype;
-import sechalmersmdsdgroup5.hotel.identities.RealPerson;
-import sechalmersmdsdgroup5.hotel.identities.impl.IdentitiesFactoryImpl;
 import sechalmersmdsdgroup5.hotel.ordering.Order;
-import sechalmersmdsdgroup5.hotel.ordering.OrderingFactory;
 import sechalmersmdsdgroup5.hotel.ordering.RoomBooking;
 import sechalmersmdsdgroup5.hotel.payment.IPayment;
 import sechalmersmdsdgroup5.hotel.payment.impl.Payment;
 import sechalmersmdsdgroup5.hotel.search.impl.Search;
 import sechalmersmdsdgroup5.hotel.utils.Pair;
+import sechalmersmdsdgroup5.hotel.utils.PairList;
 
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 
 public class PayForOrder  implements Command.Consuming<Hotel>, IdentifiableCommand<Hotel, Void> {
@@ -37,7 +29,7 @@ public class PayForOrder  implements Command.Consuming<Hotel>, IdentifiableComma
 
         else {
             //List the orders associated with the customer as pairs.
-            List<Pair<Integer, Order>> pairs = new ArrayList<>();
+            PairList pairs = new PairList();
 
             StringBuilder builder = new StringBuilder();
             int count = 1;
@@ -53,10 +45,11 @@ public class PayForOrder  implements Command.Consuming<Hotel>, IdentifiableComma
             if (nbr == -1) {
                 io.info("Incorrect input. Exiting.");
             } else {
-                Order orderToPay = pairs.get(nbr).snd();
+                Order orderToPay = (Order) pairs.getPair(nbr).snd();
                 if ( orderToPay != null ) {
                     String choice = io.read("Do you wish to pay the following by " +
                             " [1: invoice] or [2: directly using your credit card]?" + builder.toString());
+
 
                     int nbr1 = Utils.parseInteger(choice);
                     IPayment payment = new Payment();
