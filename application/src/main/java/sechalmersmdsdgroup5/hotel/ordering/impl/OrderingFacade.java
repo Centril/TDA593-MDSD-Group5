@@ -108,20 +108,6 @@ public class OrderingFacade implements IOrder {
     }
 
     @Override
-    public Guest createGuest(String name, String ssn, int age) {
-        if(name == null || ssn == null || age < 0) {
-            throw new IllegalArgumentException("Illegal age or null argument in createGuest");
-        }
-        ClientsFactory factory = ClientsFactory.INSTANCE;
-        Guest newGuest = factory.createGuest();
-        newGuest.setName(name);
-        newGuest.setAge(age);
-        newGuest.setIdNumber(ssn);
-
-        return newGuest;
-    }
-
-    @Override
     public void addGuestToBooking(Guest guest, RoomBooking booking) {
         RoomAttribute a = booking.getBookedRoom().getAttribute(RoomAttributeImpl.AMOUNT_OF_BEDS);
         int nbrOfGuests = booking.getGuests().size();
