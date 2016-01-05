@@ -6,10 +6,8 @@ import sechalmersmdsdgroup5.hotel.cli.infrastructure.Command;
 import sechalmersmdsdgroup5.hotel.cli.infrastructure.IOHelper;
 import sechalmersmdsdgroup5.hotel.cli.infrastructure.IdentifiableCommand;
 import sechalmersmdsdgroup5.hotel.cli.readers.StandardReaders;
-import sechalmersmdsdgroup5.hotel.clients.Address;
-import sechalmersmdsdgroup5.hotel.clients.ClientsFactory;
-import sechalmersmdsdgroup5.hotel.clients.Customer;
-import sechalmersmdsdgroup5.hotel.clients.Guest;
+import sechalmersmdsdgroup5.hotel.clients.*;
+import sechalmersmdsdgroup5.hotel.clients.impl.ClientFacade;
 import sechalmersmdsdgroup5.hotel.identities.IdentitiesFactory;
 import sechalmersmdsdgroup5.hotel.identities.Identity;
 import sechalmersmdsdgroup5.hotel.identities.Organisation;
@@ -131,9 +129,9 @@ public class CreateOrder implements IdentifiableCommand<Hotel, Order> {
     private Customer readCustomer( IOHelper io, Hotel hotel ) {
         io.info( "Specify the customer..." ).newline();
 
-        ClientsFactory factory = ClientsFactory.INSTANCE;
-        Customer customer = factory.createCustomer();
+        IClient facade = new ClientFacade();
 
+        Identity identity;
         if ( io.read(
                 "Is customer a real person or organisation?",
                 "Invalid input, answer real or organisation",
@@ -142,45 +140,44 @@ public class CreateOrder implements IdentifiableCommand<Hotel, Order> {
             io.info( "OK, specifying a real person." ).newline();
 
             RealPerson person = IdentitiesFactory.INSTANCE.createRealPerson();
-            customer.setIdentity( person );
 
             specifyIdentity( io, person );
             person.setAge( io.read( "Customer age?", "Invalid age.", nonNegativeInt() ) );
             person.setCitizenship( io.read( "Customer citizenship?" ) );
+            identity = person;
         } else {
             io.info( "OK, specifying an organisation." ).newline();
 
             Organisation organisation = IdentitiesFactory.INSTANCE.createOrganisation();
-            customer.setIdentity( organisation );
+            identity = organisation;
             specifyIdentity( io, organisation );
         }
 
-        String reason = new IBlacklistImpl( hotel ).getBlacklistReason( customer.getIdentity() );
+        String reason = new IBlacklistImpl( hotel ).getBlacklistReason( identity );
         if( reason != null ) {
             io.warn( "Person is blacklisted, reason: " + reason ).newline();
             return null;
         }
 
-        customer.setEmail( io.read( "Customer email?" ) );
-        customer.setPaymentMethod( null );
+        String email = ( io.read( "Customer email?" ) );
 
-        Address address = factory.createAddress();
-        customer.setAssociatedAdress( address );
-        address.setCountry( io.read( "Address, country?" ) );
-        address.setRegion( io.read( "Address, region?" ) );
-        address.setMunicipality( io.read( "Address, municipality?" ) );
-        address.setStreet( io.read( "Address, street?" ) );
-        address.setZipArea( io.read( "Address, zip area?" ) );
-        address.setZipCode( io.read( "Address, zip code?", "Not a zip code.", naturalInt() ) );
+        String country = io.read( "Address, country?" ) ;
+        String region = io.read( "Address, region?" ) ;
+        String municipality = io.read( "Address, municipality?" ) ;
+        String street = io.read( "Address, street?" ) ;
+        String zipArea = io.read( "Address, zip area?" ) ;
+        String zipCode = io.read( "Address, zip code?", "Not a zip code.", naturalInt() ).toString() ;
+
+        Address address = facade.createAddress(street, zipCode, zipArea, country, region, municipality, null);
 
         CreditCard card = PaymentFactory.INSTANCE.createCreditCard();
-        customer.setCard( card );
         card.setName( io.read( "Card holder?" ) );
         card.setNumber( io.read( "Card number?" ) );
         card.setCcv( io.read( "Card ccv?", "Invalid ccv.", naturalInt() ) );
         card.setExpiryMonth( io.read( "Card expiry month?", "Not a month.", naturalInt() ) );
         card.setExpiryYear( io.read( "Card expiry year?", "Not a year.", naturalInt() ) );
 
+        Customer customer = facade.createCustomer(identity, null, email);
         return customer;
     }
 
@@ -192,11 +189,11 @@ public class CreateOrder implements IdentifiableCommand<Hotel, Order> {
     private Guest readGuest( IOHelper io, Hotel hotel ) {
         io.info( "Adding a guest..." ).newline();
 
-        IOrder facade = new OrderingFacade( hotel );
+        IClient facade = new ClientFacade();
         Guest guest = facade.createGuest(
             io.read( "Guest name?" ),
             io.read( "Guest SSN?" ),
-            io.read( "Guest age?", "Invalid age.", nonNegativeInt() ) );
+            io.read( "Guest age?", "Invalid age.", nonNegativeInt()).toString()  );
 
         String reason = new IBlacklistImpl( hotel ).getBlacklistReason( guest );
 
