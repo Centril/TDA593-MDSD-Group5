@@ -143,6 +143,7 @@ public class OrderingFacade implements IOrder {
 
     @Override
     public void addBookingToOrder(RoomBooking booking, Order order) {
+        order.getBookings().add(booking);
 
     }
 
@@ -153,7 +154,7 @@ public class OrderingFacade implements IOrder {
 
     @Override
     public boolean isValidDate(Date from, Date to) {
-        return false;
+        return from.before(to);
     }
 
 }
