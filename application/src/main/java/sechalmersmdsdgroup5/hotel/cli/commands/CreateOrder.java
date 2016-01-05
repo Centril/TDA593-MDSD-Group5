@@ -192,13 +192,11 @@ public class CreateOrder implements IdentifiableCommand<Hotel, Order> {
     private Guest readGuest( IOHelper io, Hotel hotel ) {
         io.info( "Adding a guest..." ).newline();
 
-        String name = io.read( "Guest name?" );
-        // 3 month old baby...
-        int age = io.read( "Guest age?", "Invalid age.", nonNegativeInt() );
-        String ssn = io.read( "Guest SSN?" );
-
         IOrder facade = new OrderingFacade( hotel );
-        Guest guest = facade.createGuest( name, ssn, age );
+        Guest guest = facade.createGuest(
+            io.read( "Guest name?" ),
+            io.read( "Guest SSN?" ),
+            io.read( "Guest age?", "Invalid age.", nonNegativeInt() ) );
 
         String reason = new IBlacklistImpl( hotel ).getBlacklistReason( guest );
 
@@ -211,12 +209,12 @@ public class CreateOrder implements IdentifiableCommand<Hotel, Order> {
     }
 
     private boolean verifyCustomerLegality(IOHelper io) {
-        io.info("Verifying that you are allowed to make an order");
+        io.info( "Verifying that you are allowed to make an order" );
         int age = readInteger("What is your age? ", io);
         // In the future, get some config about age here
         // And add other legality factors
         if (age <= 15) {
-            io.warn("Not old enough to make order");
+            io.warn("Not old enough to make order").newline();
             return false;
         }
         return true;
