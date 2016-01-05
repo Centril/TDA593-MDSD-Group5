@@ -100,3 +100,4 @@ let the user pick from the list of available bookings and
 perhaps give higher relevance for those rooms that have more beds.
 +2016-01-04: Add createRoomPrototype sysop
 +2016-01-04: Change createOrder to take a list of roombookings instead of a preorder
++2016-01-05: Add IClient interface and sysop createCustomer(identiy, paymenmethod, email)

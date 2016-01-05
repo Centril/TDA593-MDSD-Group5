@@ -321,6 +321,16 @@
             <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_5XGioK7tEeWKW4OjxoJe1Q" value="*"/>
           </ownedAttribute>
         </packagedElement>
+        <packagedElement xmi:type="uml:Interface" xmi:id="_4dZUcLPEEeW-BMSKTAd4hg" name="Interface1">
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_6La8gLPEEeW-BMSKTAd4hg" name="createCustomer">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_PZ8vwLPFEeW-BMSKTAd4hg" name="identity" type="_8icKkJOAEeWEKYEtRmghUQ"/>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_nTgl4LPFEeW-BMSKTAd4hg" name="paymentMethod" type="_90_gwJqVEeWXppCtG_WnKw"/>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_z4ABMLPFEeW-BMSKTAd4hg" name="email">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+            </ownedParameter>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4PTYoLPFEeW-BMSKTAd4hg" name="return" type="_7PSgoJOAEeWEKYEtRmghUQ" direction="return"/>
+          </ownedOperation>
+        </packagedElement>
       </packagedElement>
       <packagedElement xmi:type="uml:Package" xmi:id="_0zjE4JODEeWEKYEtRmghUQ" name="log">
         <packagedElement xmi:type="uml:Class" xmi:id="_D__r0JOCEeWEKYEtRmghUQ" name="TaskLog">
