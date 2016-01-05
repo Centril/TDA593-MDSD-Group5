@@ -18,10 +18,10 @@ import sechalmersmdsdgroup5.hotel.facilities.FacilitiesFactory;
 import sechalmersmdsdgroup5.hotel.ordering.Campaign;
 import sechalmersmdsdgroup5.hotel.ordering.Invoice;
 import sechalmersmdsdgroup5.hotel.ordering.OrderingFactory;
+import sechalmersmdsdgroup5.hotel.ordering.RoomBooking;
 import sechalmersmdsdgroup5.hotel.ordering.util.OrderingSwitch;
 import sechalmersmdsdgroup5.hotel.payment.PaymentFactory;
-import sechalmersmdsdgroup5.hotel.services.Service;
-import sechalmersmdsdgroup5.hotel.services.ServiceConsumer;
+import sechalmersmdsdgroup5.hotel.services.*;
 
 /**
  * <!-- begin-user-doc -->
@@ -40,7 +40,7 @@ import sechalmersmdsdgroup5.hotel.services.ServiceConsumer;
  *
  * @generated
  */
-public class ServiceImpl extends MinimalEObjectImpl.Container implements Service {
+public class ServiceImpl extends MinimalEObjectImpl.Container implements Service{
 	/**
 	 * The cached value of the '{@link #getInvoice() <em>Invoice</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
@@ -50,15 +50,7 @@ public class ServiceImpl extends MinimalEObjectImpl.Container implements Service
 	 * @ordered
 	 */
 	protected EList<Invoice> invoice;
-
-	public ServiceImpl(EList<Invoice> invoice, double price, boolean isPaid, Date creationDate, ServiceConsumer consumer) {
-		this.invoice = invoice;
-		this.price = price;
-		this.isPaid = isPaid;
-		this.creationDate = creationDate;
-		this.consumer = consumer;
-	}
-
+	
 	/**
 	 * The default value of the '{@link #getPrice() <em>Price</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -148,10 +140,6 @@ public class ServiceImpl extends MinimalEObjectImpl.Container implements Service
 		this.setPrice(price);
 		this.setConsumer(consumer);
 		this.setCreationDate(new Date());
-
-		invoice = new BasicInternalEList<Invoice>(Invoice.class);
-		// TODO Create a correct standard invoice for this Service or check if no invoice should be created at this time
-		invoice.add(OrderingFactory.INSTANCE.createInvoice());
 	}
 
 	/**
