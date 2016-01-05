@@ -5,7 +5,6 @@ import sechalmersmdsdgroup5.hotel.blacklist.impl.IBlacklistImpl;
 import sechalmersmdsdgroup5.hotel.cli.infrastructure.Command;
 import sechalmersmdsdgroup5.hotel.cli.infrastructure.IOHelper;
 import sechalmersmdsdgroup5.hotel.cli.infrastructure.IdentifiableCommand;
-import sechalmersmdsdgroup5.hotel.cli.infrastructure.color.StandardPrintColor;
 import sechalmersmdsdgroup5.hotel.cli.readers.StandardReaders;
 import sechalmersmdsdgroup5.hotel.clients.Address;
 import sechalmersmdsdgroup5.hotel.clients.ClientsFactory;
@@ -112,12 +111,14 @@ public class CreateOrder implements IdentifiableCommand<Hotel, Order> {
 
         Order order = facade.createOrder( bookeds, customer );
 
+        io.info( "The created order will be:" ).newline().paragraph( order );
+
         if ( !io.read( "Do you accept the terms and conditions (yes/no)?", "Specify yes or no.", yesNo() ) ) {
             hotel.getOrders().remove(order);
             return null;
         }
 
-        io.info( "Your order has been created!" ).newline().paragraph( order );
+        io.info( "Your order has been created!" );
 
         return order;
     }
