@@ -84,14 +84,6 @@ public class ClientsFactoryImpl extends EFactoryImpl implements ClientsFactory {
 		return customer;
 	}
 
-	public Customer createCustomer(PaymentMethod paymentMethod, Identity identity, String email) {
-		Customer customer = createCustomer();
-		customer.setPaymentMethod(paymentMethod);
-		customer.setIdentity(identity);
-		customer.setEmail(email);
-		return customer;
-	}
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
