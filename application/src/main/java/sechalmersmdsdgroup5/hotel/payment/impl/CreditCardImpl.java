@@ -336,13 +336,11 @@ public class CreditCardImpl extends MinimalEObjectImpl.Container implements Cred
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuffer result = new StringBuffer("CreditCard");
 		result.append(" (name: ");
 		result.append(name);
 		result.append(", expiryMonth: ");

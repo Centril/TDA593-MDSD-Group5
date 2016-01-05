@@ -20,20 +20,28 @@ import java.util.function.Function;
 import static java.lang.Integer.parseInt;
 import static sechalmersmdsdgroup5.hotel.cli.commands.Utils.readDate;
 import static sechalmersmdsdgroup5.hotel.cli.commands.Utils.readOrTomorrow;
-import static sechalmersmdsdgroup5.hotel.cli.infrastructure.Command.command;
 import static sechalmersmdsdgroup5.hotel.cli.infrastructure.color.StandardPrintColor.CYAN;
 import static sechalmersmdsdgroup5.hotel.cli.readers.StandardReaders.*;
 import static sechalmersmdsdgroup5.hotel.search.logic.SearchCriteriaFactory.query;
+import static sechalmersmdsdgroup5.hotel.utils.Functional.foreachIndexed;
 
 public class SearchAvailableBookings implements IdentifiableCommand<Hotel, List<SearchResult<PreBooking>>> {
     @Override
     public List<SearchResult<PreBooking>> apply( IOHelper io, Hotel hotel ) {
-        return new Search( hotel ).searchAvailableBookings(
-            readDate( "from when? [default: now]",
-                io.info("Searching for available rooms orders...").newline() ),
-            readOrTomorrow( "to when? [default: tomorrow]", io ),
-            query( io.paragraph( CYAN, "Please enter zero or more criterias where one or more matches:" )
-                     .executeMany( 0, hotel, Command.command( "", this::criteriaMaker ) ) ) );
+        return io.io(
+            () -> new Search( hotel ).searchAvailableBookings(
+                readDate( "from when? [default: now]",
+                    io.info("Searching for available rooms orders...").newline() ),
+                readOrTomorrow( "to when? [default: tomorrow]", io ),
+                query( io.paragraph( CYAN, "Please enter zero or more criterias where one or more matches:" )
+                         .executeMany( 0, hotel, Command.command( "", this::criteriaMaker ) ) ) ),
+            bookings ->
+                io.info( "The results were:" ).newline().io(
+                    () -> foreachIndexed( bookings, (sr, index) ->
+                        io.print( CYAN, (index + 1) + ") " )
+                          .paragraph( sr.getResult() )
+                          .paragraph( "relevance: " + bookings.get( index ).getRelevance() ) )
+                ).newline() );
     }
 
     private SearchCriteria<PreBooking> criteriaMaker( IOHelper io, Hotel hotel ) {

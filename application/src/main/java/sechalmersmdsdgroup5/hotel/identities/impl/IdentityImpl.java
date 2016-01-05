@@ -189,13 +189,11 @@ public abstract class IdentityImpl extends MinimalEObjectImpl.Container implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuffer result = new StringBuffer("Identity");
 		result.append(" (name: ");
 		result.append(name);
 		result.append(", idNumber: ");

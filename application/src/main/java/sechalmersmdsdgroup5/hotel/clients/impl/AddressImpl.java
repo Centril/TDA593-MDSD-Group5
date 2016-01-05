@@ -434,13 +434,11 @@ public class AddressImpl extends MinimalEObjectImpl.Container implements Address
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuffer result = new StringBuffer("Address");
 		result.append(" (street: ");
 		result.append(street);
 		result.append(", zipCode: ");

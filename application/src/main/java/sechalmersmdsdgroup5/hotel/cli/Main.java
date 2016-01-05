@@ -31,6 +31,7 @@ public class Main {
 				.add(ReadOrder::new)
 				.add(SearchCustomer::new)
 				.add(TakeBackKey::new)
+				.add(SearchAvailableBookings::new)
 				.add(SearchAvailableRooms::new)
 				.add(SearchOccupiedRooms::new)
 				.add(SearchActiveBookings::new)
