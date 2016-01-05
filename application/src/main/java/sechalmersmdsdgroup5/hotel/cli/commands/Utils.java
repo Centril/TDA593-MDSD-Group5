@@ -13,6 +13,11 @@ import sechalmersmdsdgroup5.hotel.identities.impl.IdentitiesFactoryImpl;
 import sechalmersmdsdgroup5.hotel.ordering.Order;
 import sechalmersmdsdgroup5.hotel.ordering.OrderingFactory;
 import sechalmersmdsdgroup5.hotel.ordering.RoomBooking;
+import sechalmersmdsdgroup5.hotel.services.IService;
+import sechalmersmdsdgroup5.hotel.services.Service;
+import sechalmersmdsdgroup5.hotel.services.ServiceBlueprint;
+import sechalmersmdsdgroup5.hotel.services.ServicesFactory;
+import sechalmersmdsdgroup5.hotel.services.impl.ServiceFacade;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -60,6 +65,21 @@ public class Utils {
 		}
 		return nbr;
 	}
+
+	/**
+	 * returns some test blueprints for services.
+	 * @return
+     */
+	public static List<ServiceBlueprint> testServiceBlueprints() {
+		List<ServiceBlueprint> blueprints = new ArrayList<>();
+		for (int i = 0; i < 10; i++) {
+			ServiceBlueprint blueprint = ServicesFactory.INSTANCE.createServiceBlueprint();
+			blueprint.setBasePrice(Math.random()*300);
+			blueprints.add(blueprint);
+		}
+		return blueprints;
+	}
+
 	/**
 	 * Can be used to test this command.
 	 * @return
@@ -93,6 +113,9 @@ public class Utils {
 		booking.setEndDate(cal.getTime());
 		List<RoomBooking> bookingsList = new ArrayList<>();
 		bookingsList.add(booking);
+		//Add service to booking.
+		IService service = new ServiceFacade();
+		service.addServiceToBooking(booking, ServicesFactory.INSTANCE.createService(204.8, booking));
 		//Create test order
 
 		List<Order> orderList = new ArrayList<>();
