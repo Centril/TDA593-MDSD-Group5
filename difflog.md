@@ -27,6 +27,7 @@
 + 2016-01-04: Added sysop `getBlacklistreason(identity)` which returns the reason an `Identity` is blacklisted or `null` if the `Identity` isn't blacklisted.
 + 2016-01-04: Added Room::getLocalAttributes().
 + 2016-01-04: Added ISearch::searchCustomer().
++ 2016-01-05: Added IClient.
 
 # Regarding `searchAvailableOrders -> searchAvailableBookings`
 > `List<SearchResult<PreOrder>> searchAvailableOrders( SearchQuery<PreOrder> query )`
