@@ -153,7 +153,7 @@ public class OrderingFacade implements IOrder {
 
     @Override
     public boolean isValidDate(Date from, Date to) {
-        return false;
+        return from.before(to);
     }
 
 }
