@@ -1,19 +1,16 @@
 package sechalmersmdsdgroup5.hotel.clients.impl;
 
-import sechalmersmdsdgroup5.hotel.clients.Address;
-import sechalmersmdsdgroup5.hotel.clients.Customer;
-import sechalmersmdsdgroup5.hotel.clients.Guest;
-import sechalmersmdsdgroup5.hotel.clients.IClient;
+import sechalmersmdsdgroup5.hotel.clients.*;
 import sechalmersmdsdgroup5.hotel.identities.Identity;
 import sechalmersmdsdgroup5.hotel.payment.PaymentMethod;
 
 /**
  * Created by cb on 05/01/16.
  */
-public class CustomerFacade implements IClient {
+public class ClientFacade implements IClient {
     @Override
     public Customer createCustomer(Identity identity, PaymentMethod paymentMethod, String email) {
-            Customer customer = new ClientsFactoryImpl().createCustomer();
+            Customer customer = ClientsFactory.INSTANCE.createCustomer();
             customer.setPaymentMethod(paymentMethod);
             customer.setIdentity(identity);
             customer.setEmail(email);
@@ -21,10 +18,19 @@ public class CustomerFacade implements IClient {
         }
 
     @Override
-    public Guest createGuest(String name, String ssn, String age) {
-        return null;
-    }
+    public Guest createGuest(String name, String ssn, String ageString) {
+        int age = Integer.parseInt(ageString);
+        if(name == null || ssn == null || age < 0) {
+            throw new IllegalArgumentException("Illegal age or null argument in createGuest");
+        }
+        ClientsFactory factory = ClientsFactory.INSTANCE;
+        Guest newGuest = factory.createGuest();
+        newGuest.setName(name);
+        newGuest.setAge(age);
+        newGuest.setIdNumber(ssn);
 
+        return newGuest;
+    }
     @Override
     public Address createAddress(String street, String zipCode, String zipArea, String country, String region, String municipality, String careOf) {
         return null;
