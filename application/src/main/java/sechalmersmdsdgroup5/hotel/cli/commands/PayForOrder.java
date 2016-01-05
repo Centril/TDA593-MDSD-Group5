@@ -49,16 +49,16 @@ public class PayForOrder  implements Command.Consuming<Hotel>, IdentifiableComma
 
             String msg = io.read("These are the associated orders. Please specify which order you wish to " +
                     "pay for by inputting the corresponding number." + builder.toString());
-            int nbr = parseInteger(msg);
+            int nbr = Utils.parseInteger(msg);
             if (nbr == -1) {
                 io.info("Incorrect input. Exiting.");
             } else {
-                Order orderToPay = findOrder(pairs, nbr);
+                Order orderToPay = pairs.get(nbr).snd();
                 if ( orderToPay != null ) {
                     String choice = io.read("Do you wish to pay the following by " +
                             " [1: invoice] or [2: directly using your credit card]?" + builder.toString());
 
-                    int nbr1 = parseInteger(choice);
+                    int nbr1 = Utils.parseInteger(choice);
                     IPayment payment = new Payment();
                     if (nbr1 == 1) {
                         io.info("An invoice will be sent to your home address. " +
@@ -73,30 +73,6 @@ public class PayForOrder  implements Command.Consuming<Hotel>, IdentifiableComma
                 }
             }
         }
-    }
-
-    /**
-     * returns -1 if the parsing was unsuccessful.
-     * @param msg
-     * @return
-     */
-    private int parseInteger(String msg) {
-        int nbr = -1;
-        try {
-            nbr = Integer.parseInt(msg);
-        } catch (NumberFormatException e) {
-        }
-        return nbr;
-    }
-
-    private Order findOrder(List<Pair<Integer, Order>> pairs, int nbr) {
-
-        for (Pair pair : pairs) {
-            if (((Integer) pair.fst()).equals(nbr)) {
-                return ((Order) pair.snd());
-            }
-        }
-        return  null;
     }
 
     /**
@@ -141,46 +117,6 @@ public class PayForOrder  implements Command.Consuming<Hotel>, IdentifiableComma
     @Override
     public String getIdentifier() {
         return "pay-for-order";
-    }
-
-    /**
-     * Can be used to test this command.
-     * @return
-     */
-    private List<Order> testOrders() {
-        // Create test customer
-
-        Customer customer = ClientsFactoryImpl.eINSTANCE.createCustomer();
-        RealPerson testPerson = IdentitiesFactoryImpl.eINSTANCE.createRealPerson();
-        testPerson.setName("John Doe");
-
-        //Create room prototype
-        RoomPrototype testRoomPrototype = FacilitiesFactory.INSTANCE.createRoomPrototype();
-        testRoomPrototype.setName("Single-room suite");
-        testRoomPrototype.setBasePrice(705.50);
-        PrototypeOrdering orderingTest = FacilitiesFactory.INSTANCE.createPrototypeOrdering();
-        orderingTest.setOrder(1);
-        orderingTest.setPrototype(testRoomPrototype);
-        List<PrototypeOrdering> prototypeOrderings = new ArrayList<>();
-        prototypeOrderings.add(orderingTest);
-
-        //Create test room booking using prototype.
-        Room room = FacilitiesFactory.INSTANCE.createRoom(prototypeOrderings);
-        RoomBooking booking = OrderingFactory.INSTANCE.createRoomBooking();
-        booking.setBookedRoom(room);
-        // Set start and end-dates.
-        Calendar cal = Calendar.getInstance();
-        cal.set(2016,1,7);
-        booking.setStartDate(cal.getTime());
-        cal.set(2016,1,8);
-        booking.setEndDate(cal.getTime());
-        List<RoomBooking> bookingsList = new ArrayList<>();
-        bookingsList.add(booking);
-        //Create test order
-
-        List<Order> orderList = new ArrayList<>();
-        orderList.add(OrderingFactory.INSTANCE.createOrder(null, customer, false, null, bookingsList, null));
-        return orderList;
     }
 
 }
