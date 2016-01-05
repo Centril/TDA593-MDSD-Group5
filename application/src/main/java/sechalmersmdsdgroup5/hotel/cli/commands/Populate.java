@@ -6,6 +6,8 @@ import sechalmersmdsdgroup5.hotel.cli.infrastructure.Command;
 import sechalmersmdsdgroup5.hotel.cli.infrastructure.IOHelper;
 import sechalmersmdsdgroup5.hotel.cli.infrastructure.IdentifiableCommand;
 import sechalmersmdsdgroup5.hotel.clients.Guest;
+import sechalmersmdsdgroup5.hotel.clients.IClient;
+import sechalmersmdsdgroup5.hotel.clients.impl.ClientFacade;
 import sechalmersmdsdgroup5.hotel.facilities.*;
 import sechalmersmdsdgroup5.hotel.facilities.impl.Facilities;
 import sechalmersmdsdgroup5.hotel.ordering.IOrder;
@@ -88,9 +90,9 @@ public class Populate implements Command.Consuming<Hotel>, IdentifiableCommand<H
         return rooms;
     }
     private List<Guest> generateGuests(Hotel hotel) {
-        IOrder facade = new OrderingFacade(hotel);
+        IClient facade = new ClientFacade();
         List<Guest> someGuests = new ArrayList<>();
-        someGuests.add(facade.createGuest("Einstein","18790314-1337",134));
+        /*someGuests.add(facade.createGuest("Einstein","18790314-1337",134));
         someGuests.add(facade.createGuest("Hillbert","19860513-3321",73));
         someGuests.add(facade.createGuest("Erik N","19911211-5321",24));
         someGuests.add(facade.createGuest("Bill G","19560713-2121",56));
@@ -101,6 +103,7 @@ public class Populate implements Command.Consuming<Hotel>, IdentifiableCommand<H
         someGuests.add(facade.createGuest("Joel G","19941127-0101",22));
         someGuests.add(facade.createGuest("Alma O","19940202-9912",22));
         someGuests.add(facade.createGuest("Hampus D","1990715-7777",22));
+        */
         return someGuests;
 
     }
