@@ -46,32 +46,6 @@ public class Main {
 				.add(CheckOut::new )
 				.add(Populate::new)
 				.build());
-
-
-		/*
-		runner( header( system() ), INSTANCE.createHotel() ).accept( Application.<Hotel>builder()
-			.add( SearchAvailableRooms::new )
-			.add( PayForOrder::new )
-			.add( SearchOccupiedRooms::new )
-			.add( SearchActiveBookings::new )
-			.add( SearchAvailableServices::new )
-			.cmdVoid( "error", "tests error", (io, $) -> io.error( "hello world" ) )
-			.cmdVoid( "hello", "displays hello world", (io, $) -> io.info( "hello world" ) )
-			.cmdVoid( "green", "displays hello world in green", (io, $) -> io.newline( GREEN, "hello world" ) )
-			.cmdVoid( "test", "stuff", (io, $) ->
-				io.cancelable().info( "size: " + io.readMany( 2, "label:", reader(
-					x -> x.startsWith( "a" ) ) ).size() ) )
-			.cmdVoid( "sub", "runs subcommands", (io, $) ->
-				io.cancelable()
-				  .info( "size: " + io.executeMany( 2, $, command( "",
-						(io2, $2) -> io2.cancelable().read( "aaa" ) ) ).size() )
-				  .info( "1337" ) )
-			.cmdVoid( "sub2", "runs subcommands", (io, $) ->
-				io.cancelable()
-				  .info( "size: " + io.executeMany( 2, $, command( "", (io2, $2) -> io2.read( "aaa" ) ) ).size() )
-				  .info( "1337" ) )
-			.build() );
-		*/
 	}
 
 	private static IOHelper header( IOHelper helper ) {
