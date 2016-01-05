@@ -75,8 +75,8 @@ public class Main {
 	}
 
 	private static IOHelper header( IOHelper helper ) {
-		return helper.paragraph( "n00dels, Hotel management system 1.0.0" )
-					.quitAware( io -> io.paragraph( "Welcome back " + io.read( "Please identify" ) + "!" ) );
+		return helper.paragraph( "n00dels, Hotel Management System 1.0.0" )
+					.quitAware( io -> io.paragraph( "Welcome back " + io.read( "Please identify:" ) + "!" ) );
 	}
 
 	/**

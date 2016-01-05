@@ -69,7 +69,7 @@ class RoomBookingImpl implements RoomBooking {
 	 * @generated
 	 * @ordered
 	 */
-	private List<Invoice> invoice;
+	private List<Invoice> invoice = new ArrayList<>();
 
 	/**
 	 * The date the object was created.
@@ -388,8 +388,8 @@ class RoomBookingImpl implements RoomBooking {
 	 */
 	@Override
 	public String toString() {
-		StringBuffer result = new StringBuffer(super.toString());
-		result.append("(room ID: " + getId());
+		StringBuffer result = new StringBuffer();
+		result.append("RoomBooking (ID: " + getId());
 		result.append(", booked room: " + getBookedRoom().toString());
 		result.append(", startDate: ");
 		result.append(startDate);

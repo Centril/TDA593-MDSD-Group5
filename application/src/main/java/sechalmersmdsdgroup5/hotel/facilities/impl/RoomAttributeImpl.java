@@ -256,9 +256,7 @@ public class RoomAttributeImpl extends MinimalEObjectImpl.Container implements R
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuffer result = new StringBuffer();
 		result.append(" (name: ");
 		result.append(name);
 		result.append(", value: ");

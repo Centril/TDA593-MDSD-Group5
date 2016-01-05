@@ -77,9 +77,10 @@ public class OrderingFacade implements IOrder {
         Order newOrder = new OrderImpl();
         int nextId = calculateNewOrderID();
         newOrder.setId(nextId);
-        for(RoomBooking rb : newOrder.getBookings()) {
-            newOrder.getBookings().add(rb);
-        }
+
+        newOrder.getBookings().addAll( bookings );
+
+        newOrder.setCustomer( customer );
 
         hotel.getOrders().add(newOrder);
         return newOrder;
@@ -127,7 +128,8 @@ public class OrderingFacade implements IOrder {
 
         Integer nbrOfBeds;
         try {
-            nbrOfBeds = Integer.parseInt((String) a.getValue());
+            Object val = a.getValue();
+            nbrOfBeds = val instanceof Integer ? (int) val : Integer.parseInt( (String) val );
         } catch (NumberFormatException e) {
             throw new RuntimeException(RoomAttributeImpl.AMOUNT_OF_BEDS + " value is not an integer: " + a.getValue());
         }

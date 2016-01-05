@@ -39,7 +39,7 @@ public class OrderImpl implements Order {
 	 * @generated
 	 * @ordered
 	 */
-	private List<Invoice> invoice;
+	private List<Invoice> invoice = new ArrayList<>();
 	private  Customer customer;
 
 	public OrderImpl(List<Invoice> invoice, Customer customer, boolean isPaid, List<Campaign> campaigns, List<RoomBooking> bookings, Date creationDate) {
@@ -205,18 +205,24 @@ public class OrderImpl implements Order {
 	 */
 	@Override
 	public String toString() {
-		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (booking ID: " + id + ")");
-		result.append(" (creationDate: " + creationDate + ")");
-		result.append(" (customer: " + customer + ")");
+		StringBuffer result = new StringBuffer();
+		result.append("Order\n\tID: " + id + ",");
+		result.append("\n\tcreated: " + creationDate + ",");
+		result.append("\n\tcustomer: " + customer);
 		for(RoomBooking booking: getBookings()) {
-			result.append(" (booking: " + booking.toString());
+			result.append(",");
+			result.append("\n\tbooking: ");
+			result.append(booking.toString());
 		}
 		for(Campaign campaign : getCampaigns()) {
-			result.append(" (campaign: " + campaign.toString());
+			result.append(",");
+			result.append("\n\tcampaign: ");
+			result.append(campaign.toString());
 		}
 		for(Invoice invoice : getInvoice()) {
-			result.append(" (invoice: " + invoice.toString());
+			result.append(",");
+			result.append("\n\tinvoice: ");
+			result.append(invoice.toString());
 		}
 		return result.toString();
 	}

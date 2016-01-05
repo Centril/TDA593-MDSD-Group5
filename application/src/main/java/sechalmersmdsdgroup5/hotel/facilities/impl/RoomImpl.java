@@ -356,6 +356,7 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 	@Override
 	public String toString() {
 		StringBuffer result = new StringBuffer();
+		result.append("Room");
 		result.append(" (nr: ");
 		result.append(nr);
 		result.append(", floor: ");
@@ -365,9 +366,12 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 		result.append(", basePrice: ");
 		result.append(basePrice);
 		result.append(", lastCleaned: ");
-		result.append(lastCleaned);
-		result.append(", RoomAttributes: ");
-		getAttributes().forEach( a -> result.append(a) );
+		result.append(lastCleaned == null ? "N/A" : lastCleaned);
+		result.append(",\n      attributes: ");
+		getAttributes().forEach( a -> {
+			result.append("\n\t");
+			result.append(a);
+		} );
 		result.append(')');
 		return result.toString();
 	}

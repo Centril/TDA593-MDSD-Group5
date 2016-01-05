@@ -5,6 +5,7 @@ import sechalmersmdsdgroup5.hotel.blacklist.impl.IBlacklistImpl;
 import sechalmersmdsdgroup5.hotel.cli.infrastructure.Command;
 import sechalmersmdsdgroup5.hotel.cli.infrastructure.IOHelper;
 import sechalmersmdsdgroup5.hotel.cli.infrastructure.IdentifiableCommand;
+import sechalmersmdsdgroup5.hotel.cli.infrastructure.color.StandardPrintColor;
 import sechalmersmdsdgroup5.hotel.cli.readers.StandardReaders;
 import sechalmersmdsdgroup5.hotel.clients.Address;
 import sechalmersmdsdgroup5.hotel.clients.ClientsFactory;
@@ -30,6 +31,7 @@ import java.util.Set;
 
 import static java.util.Collections.singletonList;
 import static sechalmersmdsdgroup5.hotel.cli.infrastructure.Readers.reader;
+import static sechalmersmdsdgroup5.hotel.cli.infrastructure.color.StandardPrintColor.CYAN;
 import static sechalmersmdsdgroup5.hotel.cli.readers.StandardReaders.*;
 import static sechalmersmdsdgroup5.hotel.utils.Functional.foreachIndexed;
 import static sechalmersmdsdgroup5.hotel.utils.Functional.listify;
@@ -55,9 +57,11 @@ public class CreateOrder implements IdentifiableCommand<Hotel, Order> {
 
         final List<SearchResult<PreBooking>> resultBookings = resultBookingsMut;
 
-        io.io( () -> foreachIndexed( resultBookings, (sr, index) ->
-            io.newline( (index + 1) + ") " + sr.getResult() )
-              .newline( "relevance: " + resultBookings.get( index ).getRelevance() )
+        io.info( "The results were:" ).newline()
+          .io( () -> foreachIndexed( resultBookings, (sr, index) ->
+            io.print( CYAN, (index + 1) + ") " )
+              .paragraph( sr.getResult() )
+              .paragraph( "relevance: " + resultBookings.get( index ).getRelevance() )
         ) ).newline();
 
         List<PreBooking> bookings = listify( resultBookings.stream().map( SearchResult::getResult ) );
@@ -96,7 +100,8 @@ public class CreateOrder implements IdentifiableCommand<Hotel, Order> {
                 try {
                     facade.addGuestToBooking( maybeGuest.get(), booking );
                 } catch ( IllegalArgumentException iag ) {
-                    io.warn( "Can't add more to booking because room is full." );
+                    io.warn( "Can't add more to booking because room is full." ).newline();
+                    break;
                 }
             }
 
@@ -107,8 +112,12 @@ public class CreateOrder implements IdentifiableCommand<Hotel, Order> {
 
         Order order = facade.createOrder( bookeds, customer );
 
-        if ( !io.read( "Do you accept the terms and conditions (yes/no)?", "Specify yes or no.", yesNo() ) )
-            hotel.getOrders().remove( order );
+        if ( !io.read( "Do you accept the terms and conditions (yes/no)?", "Specify yes or no.", yesNo() ) ) {
+            hotel.getOrders().remove(order);
+            return null;
+        }
+
+        io.info( "Your order has been created!" ).newline().paragraph( order );
 
         return order;
     }
@@ -170,8 +179,8 @@ public class CreateOrder implements IdentifiableCommand<Hotel, Order> {
     }
 
     private void specifyIdentity( IOHelper io, Identity identity ) {
-        identity.setName( io.read( "Guest name?" ) );
-        identity.setIdNumber( io.read( "Guest SSN?" ) );
+        identity.setName( io.read( "Customer name?" ) );
+        identity.setIdNumber( io.read( "Customer SSN?" ) );
     }
 
     private Guest readGuest( IOHelper io, Hotel hotel ) {
