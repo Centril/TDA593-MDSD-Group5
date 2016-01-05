@@ -143,6 +143,7 @@ public class OrderingFacade implements IOrder {
 
     @Override
     public void addBookingToOrder(RoomBooking booking, Order order) {
+        order.getBookings().add(booking);
 
     }
 
