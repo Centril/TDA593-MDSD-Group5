@@ -6,7 +6,10 @@ import sechalmersmdsdgroup5.hotel.cli.infrastructure.Command;
 import sechalmersmdsdgroup5.hotel.cli.infrastructure.IOHelper;
 import sechalmersmdsdgroup5.hotel.cli.infrastructure.IdentifiableCommand;
 import sechalmersmdsdgroup5.hotel.cli.readers.StandardReaders;
-import sechalmersmdsdgroup5.hotel.clients.*;
+import sechalmersmdsdgroup5.hotel.clients.Address;
+import sechalmersmdsdgroup5.hotel.clients.Customer;
+import sechalmersmdsdgroup5.hotel.clients.Guest;
+import sechalmersmdsdgroup5.hotel.clients.IClient;
 import sechalmersmdsdgroup5.hotel.clients.impl.ClientFacade;
 import sechalmersmdsdgroup5.hotel.identities.IdentitiesFactory;
 import sechalmersmdsdgroup5.hotel.identities.Identity;
@@ -23,10 +26,10 @@ import sechalmersmdsdgroup5.hotel.search.SearchResult;
 
 import java.util.HashSet;
 import java.util.List;
-import java.util.Optional;
 import java.util.Set;
 
 import static java.util.Collections.singletonList;
+import static sechalmersmdsdgroup5.hotel.cli.commands.AddGuest.basicAddGuest;
 import static sechalmersmdsdgroup5.hotel.cli.commands.Utils.readInteger;
 import static sechalmersmdsdgroup5.hotel.cli.infrastructure.Readers.reader;
 import static sechalmersmdsdgroup5.hotel.cli.readers.StandardReaders.*;
@@ -74,25 +77,11 @@ public class CreateOrder implements IdentifiableCommand<Hotel, Order> {
 
         List<RoomBooking> bookeds = listify( selected.stream().map( pre -> {
             // Should never fail... all rooms have min 1 room:
-            Guest firstGuest = io.execute( hotel, Command.command( this::readGuest ) );
+            Guest firstGuest = io.execute( hotel, Command.command( AddGuest::readGuest ) );
             RoomBooking booking = facade.createBooking( pre, singletonList( firstGuest ) );
 
             // Keep adding forever until we can't add guests anymore:
-            while ( true ) {
-                if ( !io.read( "Add more guests?", addMore() ) ) break;
-
-                Optional<Guest> maybeGuest = io.executeOpt( hotel, Command.command( this::readGuest ) );
-
-                if ( !maybeGuest.isPresent() )
-                    io.warn( "Not a valid guest specified." );
-
-                try {
-                    facade.addGuestToBooking( maybeGuest.get(), booking );
-                } catch ( IllegalArgumentException iag ) {
-                    io.warn( "Can't add more to booking because room is full." ).newline();
-                    break;
-                }
-            }
+            while ( io.read( "Add more guests?", addMore() ) && basicAddGuest( io, hotel, booking ) != null );
 
             return booking;
         } ) );
@@ -172,25 +161,6 @@ public class CreateOrder implements IdentifiableCommand<Hotel, Order> {
     private void specifyIdentity( IOHelper io, Identity identity ) {
         identity.setName( io.read( "Customer name?" ) );
         identity.setIdNumber( io.read( "Customer SSN?" ) );
-    }
-
-    private Guest readGuest( IOHelper io, Hotel hotel ) {
-        io.info( "Adding a guest..." ).newline();
-
-        IClient facade = new ClientFacade();
-        Guest guest = facade.createGuest(
-            io.read( "Guest name?" ),
-            io.read( "Guest SSN?" ),
-            io.read( "Guest age?", "Invalid age.", nonNegativeInt()).toString()  );
-
-        String reason = new IBlacklistImpl( hotel ).getBlacklistReason( guest );
-
-        if( reason == null ) {
-            return guest;
-        }
-
-        io.warn( "Person is blacklisted, reason: " + reason ).newline();
-        return null;
     }
 
     private boolean verifyCustomerLegality(IOHelper io) {
