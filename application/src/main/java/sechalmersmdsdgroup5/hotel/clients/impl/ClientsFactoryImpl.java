@@ -11,6 +11,8 @@ import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
 import sechalmersmdsdgroup5.hotel.clients.*;
+import sechalmersmdsdgroup5.hotel.identities.Identity;
+import sechalmersmdsdgroup5.hotel.payment.PaymentMethod;
 
 /**
  * <!-- begin-user-doc -->
@@ -79,6 +81,14 @@ public class ClientsFactoryImpl extends EFactoryImpl implements ClientsFactory {
 	 */
 	public Customer createCustomer() {
 		CustomerImpl customer = new CustomerImpl();
+		return customer;
+	}
+
+	public Customer createCustomer(PaymentMethod paymentMethod, Identity identity, String email) {
+		Customer customer = createCustomer();
+		customer.setPaymentMethod(paymentMethod);
+		customer.setIdentity(identity);
+		customer.setEmail(email);
 		return customer;
 	}
 
