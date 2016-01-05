@@ -51,6 +51,10 @@ public class CreateOrder implements IdentifiableCommand<Hotel, Order> {
     public Order apply( IOHelper io, Hotel hotel ) {
         io.info( "Creating an order..." ).newline();
 
+        if (!verifyCustomerLegality(io)) {
+            return null;
+        }
+
         List<SearchResult<PreBooking>> resultBookingsMut;
         while ( (resultBookingsMut = io.execute( hotel, new SearchAvailableBookings() )).isEmpty() )
             io.warn( "There were no available bookings!" ).newline();
