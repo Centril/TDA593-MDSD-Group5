@@ -29,6 +29,7 @@ import java.util.Optional;
 import java.util.Set;
 
 import static java.util.Collections.singletonList;
+import static sechalmersmdsdgroup5.hotel.cli.commands.Utils.readInteger;
 import static sechalmersmdsdgroup5.hotel.cli.infrastructure.Readers.reader;
 import static sechalmersmdsdgroup5.hotel.cli.infrastructure.color.StandardPrintColor.CYAN;
 import static sechalmersmdsdgroup5.hotel.cli.readers.StandardReaders.*;
@@ -203,5 +204,14 @@ public class CreateOrder implements IdentifiableCommand<Hotel, Order> {
 
         io.warn( "Person is blacklisted, reason: " + reason ).newline();
         return null;
+    }
+
+    private boolean verifyCustomerLegality(IOHelper io) {
+        io.info("Verifying that you are allowed to make an order");
+        int age = readInteger("What is your age? ", io);
+        // In the future, get some config about age here
+        // And add other legality factors
+        return age > 15;
+
     }
 }
