@@ -13,8 +13,13 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.BasicInternalEList;
+import sechalmersmdsdgroup5.hotel.HotelFactory;
+import sechalmersmdsdgroup5.hotel.facilities.FacilitiesFactory;
+import sechalmersmdsdgroup5.hotel.ordering.Campaign;
 import sechalmersmdsdgroup5.hotel.ordering.Invoice;
 import sechalmersmdsdgroup5.hotel.ordering.OrderingFactory;
+import sechalmersmdsdgroup5.hotel.ordering.util.OrderingSwitch;
+import sechalmersmdsdgroup5.hotel.payment.PaymentFactory;
 import sechalmersmdsdgroup5.hotel.services.Service;
 import sechalmersmdsdgroup5.hotel.services.ServiceConsumer;
 
@@ -45,6 +50,14 @@ public class ServiceImpl extends MinimalEObjectImpl.Container implements Service
 	 * @ordered
 	 */
 	protected EList<Invoice> invoice;
+
+	public ServiceImpl(EList<Invoice> invoice, double price, boolean isPaid, Date creationDate, ServiceConsumer consumer) {
+		this.invoice = invoice;
+		this.price = price;
+		this.isPaid = isPaid;
+		this.creationDate = creationDate;
+		this.consumer = consumer;
+	}
 
 	/**
 	 * The default value of the '{@link #getPrice() <em>Price</em>}' attribute.
@@ -253,12 +266,9 @@ public class ServiceImpl extends MinimalEObjectImpl.Container implements Service
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
 	 */
 	public double totalPrice() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return price;
 	}
 
 	/**
