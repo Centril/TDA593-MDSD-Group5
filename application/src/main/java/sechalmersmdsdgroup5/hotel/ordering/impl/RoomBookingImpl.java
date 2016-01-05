@@ -356,7 +356,10 @@ class RoomBookingImpl implements RoomBooking {
 		double total = 0;
 		//Services
 		for (Service service : services) {
-			total += service.totalPrice();
+			//Makes sure a service can be paid for before the order is paid for.
+			if (!service.isPaid()) {
+				total += service.totalPrice();
+			}
 		}
 		//Days times base price for the room
 		total += bookedRoom.getBasePrice() * daysBetween(startDate,endDate);
