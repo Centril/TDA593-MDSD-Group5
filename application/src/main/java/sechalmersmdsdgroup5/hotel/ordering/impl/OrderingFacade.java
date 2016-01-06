@@ -127,7 +127,7 @@ public class OrderingFacade implements IOrder {
 
     @Override
     public void addCustomerToOrder(Customer customer, Order order) {
-
+        order.setCustomer(customer);
     }
 
     @Override
