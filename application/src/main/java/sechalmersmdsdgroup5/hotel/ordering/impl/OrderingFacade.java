@@ -83,7 +83,7 @@ public class OrderingFacade implements IOrder {
     }
     
     private int calculateNewOrderID() {
-        return hotel.getOrders().stream().mapToInt( Order::getId ).max().orElse(0);
+        return hotel.getOrders().stream().mapToInt( Order::getId ).max().orElse(-1) + 1;
     }
 
 
