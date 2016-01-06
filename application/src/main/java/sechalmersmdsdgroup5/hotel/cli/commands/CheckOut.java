@@ -35,7 +35,7 @@ public class CheckOut implements Command.Consuming<Hotel>, IdentifiableCommand<H
             for (RoomBooking booking : activeBookings) {
                 if (booking.getGuests().contains(guest)) {
                     String input = ioHelper.info(booking).newline().read("This booking? (y/n)");
-                    if (input == "y") {
+                    if (input.equals("y")) {
                         roomBooking = booking;
                     }
                 }
