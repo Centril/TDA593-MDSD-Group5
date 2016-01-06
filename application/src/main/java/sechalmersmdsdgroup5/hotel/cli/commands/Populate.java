@@ -201,7 +201,7 @@ public class Populate implements Command.Consuming<Hotel>, IdentifiableCommand<H
             double r = (Math.random()*300)+75;
             blueprint.setBasePrice(r);
             blueprint.setId((int) r);
-            blueprint.setName("The price is: " + r);
+            blueprint.setName("Service " + i);
             blueprints.add(blueprint);
         }
         return blueprints;
