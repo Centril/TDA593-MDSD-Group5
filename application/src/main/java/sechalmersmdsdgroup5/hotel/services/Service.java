@@ -19,6 +19,9 @@ import sechalmersmdsdgroup5.hotel.payment.Payable;
  *   <li>{@link sechalmersmdsdgroup5.hotel.services.Service#isPaid <em>Is Paid</em>}</li>
  *   <li>{@link sechalmersmdsdgroup5.hotel.services.Service#getCreationDate <em>Creation Date</em>}</li>
  *   <li>{@link sechalmersmdsdgroup5.hotel.services.Service#getConsumer <em>Consumer</em>}</li>
+ *   <li>{@link sechalmersmdsdgroup5.hotel.services.Service#getId <em>Id</em>}</li>
+ *   <li>{@link sechalmersmdsdgroup5.hotel.services.Service#getName <em>Name</em>}</li>
+ *   <li>{@link sechalmersmdsdgroup5.hotel.services.Service#getBlueprint <em>Blueprint</em>}</li>
  * </ul>
  *
  * @model
@@ -124,5 +127,80 @@ public interface Service extends Payable {
 	 * @generated
 	 */
 	void setConsumer(ServiceConsumer value);
+
+	/**
+	 * Returns the value of the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Id</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Id</em>' attribute.
+	 * @see #setId(int)
+	 * @model required="true" ordered="false"
+	 * @generated
+	 */
+	int getId();
+
+	/**
+	 * Sets the value of the '{@link sechalmersmdsdgroup5.hotel.services.Service#getId <em>Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Id</em>' attribute.
+	 * @see #getId()
+	 * @generated
+	 */
+	void setId(int value);
+
+	/**
+	 * Returns the value of the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Name</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Name</em>' attribute.
+	 * @see #setName(String)
+	 * @model required="true" ordered="false"
+	 * @generated
+	 */
+	String getName();
+
+	/**
+	 * Sets the value of the '{@link sechalmersmdsdgroup5.hotel.services.Service#getName <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Name</em>' attribute.
+	 * @see #getName()
+	 * @generated
+	 */
+	void setName(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Blueprint</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Blueprint</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Blueprint</em>' reference.
+	 * @see #setBlueprint(ServiceBlueprint)
+	 * @model required="true" ordered="false"
+	 * @generated
+	 */
+	ServiceBlueprint getBlueprint();
+
+	/**
+	 * Sets the value of the '{@link sechalmersmdsdgroup5.hotel.services.Service#getBlueprint <em>Blueprint</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Blueprint</em>' reference.
+	 * @see #getBlueprint()
+	 * @generated
+	 */
+	void setBlueprint(ServiceBlueprint value);
 
 } // Service
