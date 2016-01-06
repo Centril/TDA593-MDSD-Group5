@@ -5,15 +5,27 @@ import sechalmersmdsdgroup5.hotel.Hotel;
 import sechalmersmdsdgroup5.hotel.cli.infrastructure.Command;
 import sechalmersmdsdgroup5.hotel.cli.infrastructure.IOHelper;
 import sechalmersmdsdgroup5.hotel.cli.infrastructure.IdentifiableCommand;
+import sechalmersmdsdgroup5.hotel.clients.Customer;
 import sechalmersmdsdgroup5.hotel.clients.Guest;
+import sechalmersmdsdgroup5.hotel.clients.impl.ClientsFactoryImpl;
 import sechalmersmdsdgroup5.hotel.facilities.*;
 import sechalmersmdsdgroup5.hotel.facilities.impl.Facilities;
+import sechalmersmdsdgroup5.hotel.identities.RealPerson;
+import sechalmersmdsdgroup5.hotel.identities.impl.IdentitiesFactoryImpl;
 import sechalmersmdsdgroup5.hotel.ordering.IOrder;
+import sechalmersmdsdgroup5.hotel.ordering.Order;
+import sechalmersmdsdgroup5.hotel.ordering.OrderingFactory;
+import sechalmersmdsdgroup5.hotel.ordering.RoomBooking;
 import sechalmersmdsdgroup5.hotel.ordering.impl.OrderingFacade;
 import sechalmersmdsdgroup5.hotel.facilities.impl.RoomAttributeImpl;
+import sechalmersmdsdgroup5.hotel.services.IService;
+import sechalmersmdsdgroup5.hotel.services.ServiceBlueprint;
+import sechalmersmdsdgroup5.hotel.services.ServicesFactory;
+import sechalmersmdsdgroup5.hotel.services.impl.ServiceFacade;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Calendar;
 import java.util.List;
 
 public class Populate implements Command.Consuming<Hotel>, IdentifiableCommand<Hotel, Void> {
@@ -104,4 +116,65 @@ public class Populate implements Command.Consuming<Hotel>, IdentifiableCommand<H
         return someGuests;
 
     }
+
+    /**
+     * returns some test blueprints for services.
+     * @return
+     */
+    public static List<ServiceBlueprint> generateServiceBlueprints() {
+        List<ServiceBlueprint> blueprints = new ArrayList<>();
+        for (int i = 0; i < 10; i++) {
+            ServiceBlueprint blueprint = ServicesFactory.INSTANCE.createServiceBlueprint();
+            blueprint.setBasePrice((Math.random()*300)+75);
+            blueprints.add(blueprint);
+        }
+        return blueprints;
+    }
+
+    /**
+     * Can be used to test this command.
+     * @return
+     */
+    public static List<Order> generateOrders() {
+        // Create test customer
+
+        Customer customer = ClientsFactoryImpl.eINSTANCE.createCustomer();
+        RealPerson testPerson = IdentitiesFactoryImpl.eINSTANCE.createRealPerson();
+        testPerson.setName("John Doe");
+
+        //Create room prototype
+        RoomPrototype testRoomPrototype = FacilitiesFactory.INSTANCE.createRoomPrototype();
+        testRoomPrototype.setName("Single-room suite");
+        testRoomPrototype.setBasePrice(705.50);
+        PrototypeOrdering orderingTest = FacilitiesFactory.INSTANCE.createPrototypeOrdering();
+        orderingTest.setOrder(1);
+        orderingTest.setPrototype(testRoomPrototype);
+        List<PrototypeOrdering> prototypeOrderings = new ArrayList<>();
+        prototypeOrderings.add(orderingTest);
+
+        //Create test room booking using prototype.
+        Room room = FacilitiesFactory.INSTANCE.createRoom(prototypeOrderings);
+        RoomBooking booking = OrderingFactory.INSTANCE.createRoomBooking();
+        booking.setBookedRoom(room);
+        // Set start and end-dates.
+        Calendar cal = Calendar.getInstance();
+        cal.set(2016,1,7);
+        booking.setStartDate(cal.getTime());
+        cal.set(2016,1,8);
+        booking.setEndDate(cal.getTime());
+        List<RoomBooking> bookingsList = new ArrayList<>();
+        bookingsList.add(booking);
+        //Add service to booking.
+        IService service = new ServiceFacade();
+        service.addServiceToBooking(booking, ServicesFactory.INSTANCE.createService(204.8, booking));
+        //Create test order
+
+        List<Order> orderList = new ArrayList<>();
+        orderList.add(OrderingFactory.INSTANCE.createOrder(null, customer, false, null, bookingsList, null));
+        return orderList;
+    }
+
+
+
+
 }

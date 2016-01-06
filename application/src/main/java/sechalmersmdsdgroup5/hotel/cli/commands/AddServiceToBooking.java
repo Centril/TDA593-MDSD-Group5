@@ -18,15 +18,18 @@ import java.util.List;
 public class AddServiceToBooking implements Command.Consuming<Hotel>, IdentifiableCommand<Hotel, Void> {
     @Override
     public void accept(IOHelper io, Hotel hotel) {
-        if ( null == Utils.testOrders() || Utils.testOrders().isEmpty() ) {
+        List<Order> hotelOrders = hotel.getOrders();
+        // Some default blueprints and orders (Shouldn't be here in a real system.)
+        hotel.getServiceBlueprints().addAll(Populate.generateServiceBlueprints());
+        hotel.getOrders().addAll(Populate.generateOrders());
+        if ( null == hotelOrders || hotelOrders.isEmpty() ) {
             io.info("There are no current bookings. Exiting command.");
         }
         else {
-            hotel.getServiceBlueprints().addAll(Utils.testServiceBlueprints());
             PairList<Integer, RoomBooking> pairs = new PairList<>();
             StringBuilder builder = new StringBuilder();
             int count = 1;
-            List<Order> orders = Utils.testOrders();
+            List<Order> orders = hotelOrders;
             for (Order order : orders) {
                 for (RoomBooking booking : order.getBookings()) {
                     pairs.add(new Pair<>(count, booking));
@@ -35,40 +38,45 @@ public class AddServiceToBooking implements Command.Consuming<Hotel>, Identifiab
                     count++;
                 }
             }
-
-            String msg = io.read("These are the current room bookings. Please specify which room you wish to " +
-                    "add a service to by inputting the corresponding number.\n " + builder.toString());
-            int nbr = Utils.parseInteger(msg);
-            if (nbr == -1) {
-                io.info("Incorrect input. Exiting.");}
-
+            if  (pairs.isEmpty()) {
+                io.info("There are no current bookings. Exiting.");
+            }
             else {
-                System.out.println("Number of the pair entry: " + pairs.get(0).fst());
-                RoomBooking bookingToUse = (RoomBooking) pairs.getPair(nbr).snd();
-                if (bookingToUse == null) {io.info("There is no such index. Exiting.");}
+                String msg = io.read("These are the current room bookings. Please specify which room you wish to " +
+                        "add a service to by inputting the corresponding number.\n " + builder.toString());
+                int nbr = Utils.parseInteger(msg);
+                if (nbr == -1) {
+                    io.info("Incorrect input. Exiting.");}
 
                 else {
-                    builder = new StringBuilder();
-                    count = 1;
-                    PairList<Integer,ServiceBlueprint> blueprintList = new PairList<>();
-                    for (ServiceBlueprint service : hotel.getServiceBlueprints()) {
-                        appendService(builder,count,service);
-                        blueprintList.add(new Pair<Integer, ServiceBlueprint>(count,service));
-                        count++;
-                    }
+                    System.out.println("Number of the pair entry: " + pairs.get(0).fst());
+                    RoomBooking bookingToUse = (RoomBooking) pairs.getPair(nbr).snd();
+                    if (bookingToUse == null) {io.info("There is no such index. Exiting.");}
+
+                    else {
+                        builder = new StringBuilder();
+                        count = 1;
+                        PairList<Integer,ServiceBlueprint> blueprintList = new PairList<>();
+                        for (ServiceBlueprint service : hotel.getServiceBlueprints()) {
+                            appendService(builder,count,service);
+                            blueprintList.add(new Pair<Integer, ServiceBlueprint>(count,service));
+                            count++;
+                        }
 
                         String pick = io.read("Pick a service to add to your booking: \n" + builder.toString());
-                    if (nbr == -1) {
-                        io.info("Incorrect input. Exiting.");
-                    } else {
-                        ServiceBlueprint blueprint = (ServiceBlueprint) blueprintList.getPair(nbr).snd();
-                        IService serviceFacade = new ServiceFacade();
-                        serviceFacade.bookService(bookingToUse,blueprint);
-                        io.info("The desired service has been booked. Thank you.\n Exiting.");
+                        if (nbr == -1) {
+                            io.info("Incorrect input. Exiting.");
+                        } else {
+                            ServiceBlueprint blueprint = (ServiceBlueprint) blueprintList.getPair(nbr).snd();
+                            IService serviceFacade = new ServiceFacade();
+                            serviceFacade.bookService(bookingToUse,blueprint);
+                            io.info("The desired service has been booked. Thank you.\n Exiting.");
                         }
+                    }
                 }
             }
         }
+
     }
 
     /**
@@ -97,7 +105,7 @@ public class AddServiceToBooking implements Command.Consuming<Hotel>, Identifiab
         builder.append("\n" + count + ". ");
         // This is how to get the name:
         // System.out.println(order.getBookings().get(0).getBookedRoom().getPrototypes().get(0).getPrototype().getName());
-        builder.append(" \n Service information: " + service.toString());
+        builder.append(" \n Service: " + service.getBasePrice() + "SEK");
         count++;
     }
 
@@ -112,10 +120,6 @@ public class AddServiceToBooking implements Command.Consuming<Hotel>, Identifiab
             builder.append(orderedPrototype.getPrototype().getName() + " ");
         }
     }
-
-
-
-
 
     @Override
     public String help() {
