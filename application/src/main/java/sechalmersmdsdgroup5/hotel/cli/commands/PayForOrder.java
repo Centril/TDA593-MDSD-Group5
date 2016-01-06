@@ -13,7 +13,6 @@ import sechalmersmdsdgroup5.hotel.search.impl.Search;
 import sechalmersmdsdgroup5.hotel.utils.Pair;
 import sechalmersmdsdgroup5.hotel.utils.PairList;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class PayForOrder  implements Command.Consuming<Hotel>, IdentifiableCommand<Hotel, Void> {
@@ -23,7 +22,7 @@ public class PayForOrder  implements Command.Consuming<Hotel>, IdentifiableComma
 
         String input = io.read("Please specify the first name followed by" +
                 " the surname under which the order was created. [Example: John Doe]\n: ");
-        List<Order> orders = new ArrayList<>();
+        List<Order> orders;
 
         try {
             orders = findCustomerOrders(input, hotel);
@@ -34,44 +33,43 @@ public class PayForOrder  implements Command.Consuming<Hotel>, IdentifiableComma
 
         if ( null == orders || orders.isEmpty() ) {
             io.info("There are no orders associated with that name. Exiting command.");
+            return;
         }
 
-        else {
-            //List the orders associated with the customer as pairs.
-            PairList pairs = new PairList();
+        //List the orders associated with the customer as pairs.
+        PairList pairs = new PairList();
 
-            StringBuilder builder = new StringBuilder();
-            int count = 1;
-            for (Order order : orders) {
-                appendOrder(builder, count, order);
-                builder.append("\n");
-                pairs.add(new Pair<>(count, order));
-            }
+        StringBuilder builder = new StringBuilder();
+        int count = 1;
+        for (Order order : orders) {
+            appendOrder(builder, count, order);
+            builder.append("\n");
+            pairs.add(new Pair<>(count, order));
+        }
 
-            String msg = io.read("These are the associated orders. Please specify which order you wish to " +
-                    "pay for by inputting the corresponding number." + builder.toString());
-            int nbr = Utils.parseInteger(msg);
-            if (nbr == -1) {
-                io.info("Incorrect input. Exiting.");
-            } else {
-                Order orderToPay = (Order) pairs.getPair(nbr).snd();
-                if ( orderToPay != null ) {
-                    String choice = io.read("Do you wish to pay the following by " +
-                            " [1: invoice] or [2: directly using your credit card]?" + builder.toString());
+        String msg = io.read("These are the associated orders. Please specify which order you wish to " +
+                "pay for by inputting the corresponding number." + builder.toString());
+        int nbr = Utils.parseInteger(msg);
+        if (nbr == -1) {
+            io.info("Incorrect input. Exiting.");
+        } else {
+            Order orderToPay = (Order) pairs.getPair(nbr).snd();
+            if ( orderToPay != null ) {
+                String choice = io.read("Do you wish to pay the following by " +
+                        " [1: invoice] or [2: directly using your credit card]?" + builder.toString());
 
 
-                    int nbr1 = Utils.parseInteger(choice);
-                    IPayment payment = new Payment();
-                    if (nbr1 == 1) {
-                        io.info("An invoice will be sent to your home address. " +
-                                "A receipt will be printed shortly... Thank you for your stay.");
-                        payment.debit(orderToPay, orderToPay.getCustomer());
-                    } else if (nbr1 == 2) {
-                        io.info("Please pay through the credit card reader. Thank you for your visit.");
-                        payment.debit(orderToPay);
-                    } else {
-                        io.info("Invalid input. Exiting.");
-                    }
+                int nbr1 = Utils.parseInteger(choice);
+                IPayment payment = new Payment();
+                if (nbr1 == 1) {
+                    io.info("An invoice will be sent to your home address. " +
+                            "A receipt will be printed shortly... Thank you for your stay.");
+                    payment.debit(orderToPay, orderToPay.getCustomer());
+                } else if (nbr1 == 2) {
+                    io.info("Please pay through the credit card reader. Thank you for your visit.");
+                    payment.debit(orderToPay);
+                } else {
+                    io.info("Invalid input. Exiting.");
                 }
             }
         }

@@ -37,17 +37,23 @@ public class Search implements ISearch {
 	}
 
     @Override
-    public List<Order> searchActiveOrders(String clientName) {
+    public List<Order> searchActiveOrders( String clientName ) {
+		return listify( hotel.getOrders().stream().filter( order ->
+			!order.isPaid() &&
+			Objects.equals( order.getCustomer().getIdentity().getName(), clientName ) ) );
+
+		/*
 		Date from = new Date();
 		Date to = new Date();
 
-		Stream<RoomBooking> bookings = searchActiveBookings( from, to ).stream();
+		List<RoomBooking> bookings = searchActiveBookings( from, to );
 		return listify( hotel.getOrders().stream().filter(
 				order -> Objects.equals( order.getCustomer().getIdentity().getName(), clientName ) &&
 						 order.getBookings().stream().anyMatch(
-							l -> bookings.anyMatch(
+							l -> bookings.stream().anyMatch(
 							r -> l.getId() == r.getId() ) )
 			).distinct() );
+    	*/
     }
 
 	@Override
