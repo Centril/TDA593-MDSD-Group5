@@ -30,6 +30,7 @@ public class Main {
 				.add(PayForOrder::new)
 				.add(ReadBooking::new)
 				.add(ReadOrder::new)
+				.add(ReadServices::new)
 				.add(SearchCustomer::new)
 				.add(TakeBackKey::new)
 				.add(SearchAvailableBookings::new)
