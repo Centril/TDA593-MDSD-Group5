@@ -10,12 +10,15 @@ import sechalmersmdsdgroup5.hotel.clients.IClient;
 import sechalmersmdsdgroup5.hotel.clients.impl.ClientFacade;
 import sechalmersmdsdgroup5.hotel.facilities.*;
 import sechalmersmdsdgroup5.hotel.facilities.impl.Facilities;
-import sechalmersmdsdgroup5.hotel.ordering.IOrder;
-import sechalmersmdsdgroup5.hotel.ordering.impl.OrderingFacade;
+import sechalmersmdsdgroup5.hotel.ordering.RoomBooking;
+import sechalmersmdsdgroup5.hotel.ordering.impl.RoomBookingImpl;
 import sechalmersmdsdgroup5.hotel.facilities.impl.RoomAttributeImpl;
+import sechalmersmdsdgroup5.hotel.services.Service;
+import sechalmersmdsdgroup5.hotel.services.ServiceBlueprint;
+import sechalmersmdsdgroup5.hotel.services.ServicesFactory;
 
 import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.Date;
 import java.util.List;
 
 public class Populate implements Command.Consuming<Hotel>, IdentifiableCommand<Hotel, Void> {
@@ -23,8 +26,10 @@ public class Populate implements Command.Consuming<Hotel>, IdentifiableCommand<H
     public void accept(IOHelper io, Hotel hotel) {
         hotel.getRoomPrototypes().addAll(generateRoomPrototypes());
         hotel.getRooms().addAll(generateRooms());
-        // TODO create some active bookings
+        hotel.getGuests().addAll(generateGuests(hotel));
 
+        // TODO create some active bookings
+        // Alma har gjort service blueprints, order.
         
     }
 
@@ -92,18 +97,18 @@ public class Populate implements Command.Consuming<Hotel>, IdentifiableCommand<H
     private List<Guest> generateGuests(Hotel hotel) {
         IClient facade = new ClientFacade();
         List<Guest> someGuests = new ArrayList<>();
-        /*someGuests.add(facade.createGuest("Einstein","18790314-1337",134));
-        someGuests.add(facade.createGuest("Hillbert","19860513-3321",73));
-        someGuests.add(facade.createGuest("Erik N","19911211-5321",24));
-        someGuests.add(facade.createGuest("Bill G","19560713-2121",56));
-        someGuests.add(facade.createGuest("André S","19941914-2246",21));
-        someGuests.add(facade.createGuest("Mazdak F","19901011-7631",25));
-        someGuests.add(facade.createGuest("Mattias N","19930301-9999",22));
-        someGuests.add(facade.createGuest("Ivar J","19940101-1212",22));
-        someGuests.add(facade.createGuest("Joel G","19941127-0101",22));
-        someGuests.add(facade.createGuest("Alma O","19940202-9912",22));
-        someGuests.add(facade.createGuest("Hampus D","1990715-7777",22));
-        */
+        someGuests.add(facade.createGuest("Einstein","18790314-1337","134"));
+        someGuests.add(facade.createGuest("Hillbert","19860513-3321","73"));
+        someGuests.add(facade.createGuest("Erik N","19911211-5321","24"));
+        someGuests.add(facade.createGuest("Bill G","19560713-2121","56"));
+        someGuests.add(facade.createGuest("André S","19941914-2246","21"));
+        someGuests.add(facade.createGuest("Mazdak F","19901011-7631","25"));
+        someGuests.add(facade.createGuest("Mattias N","19930301-9999","22"));
+        someGuests.add(facade.createGuest("Ivar J","19940101-1212","22"));
+        someGuests.add(facade.createGuest("Joel G","19941127-0101","22"));
+        someGuests.add(facade.createGuest("Alma O","19940202-9912","22"));
+        someGuests.add(facade.createGuest("Hampus D","1990715-7777","22"));
+
         return someGuests;
 
     }
