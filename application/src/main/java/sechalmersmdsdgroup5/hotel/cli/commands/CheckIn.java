@@ -5,6 +5,9 @@ import sechalmersmdsdgroup5.hotel.cli.infrastructure.Command;
 import sechalmersmdsdgroup5.hotel.cli.infrastructure.IOHelper;
 import sechalmersmdsdgroup5.hotel.cli.infrastructure.IdentifiableCommand;
 import sechalmersmdsdgroup5.hotel.clients.Guest;
+import sechalmersmdsdgroup5.hotel.facilities.FacilitiesFactory;
+import sechalmersmdsdgroup5.hotel.facilities.impl.Facilities;
+import sechalmersmdsdgroup5.hotel.facilities.impl.KeyImpl;
 import sechalmersmdsdgroup5.hotel.ordering.Order;
 import sechalmersmdsdgroup5.hotel.ordering.RoomBooking;
 import sechalmersmdsdgroup5.hotel.ordering.impl.CheckInCheckOut;
@@ -33,7 +36,7 @@ public class CheckIn implements Command.Consuming<Hotel>, IdentifiableCommand<Ho
             RoomBooking roomBooking = null;
             for (Order order : hotel.getOrders()) {
                 for (RoomBooking booking : order.getBookings()) {
-                    if ( booking.getGuests().contains(guest)) {
+                    if (booking.getGuests().contains(guest) && booking.getCheckinTime() == null) {
                         String input = ioHelper.info(booking).newline().read("This booking? (y/n)");
                         if (input.equals("y")) {
                             roomBooking = booking;
@@ -45,6 +48,8 @@ public class CheckIn implements Command.Consuming<Hotel>, IdentifiableCommand<Ho
                 ioHelper.warn("No booking selected, or none found");
             } else if ((new CheckInCheckOut()).checkIn(guest, roomBooking)) {
                 ioHelper.info("Guest and booking successfully checked in");
+                roomBooking.getGuests().forEach(g -> (new CheckInCheckOut()).giveOutKey(g, FacilitiesFactory
+                        .INSTANCE.createKey()));
             } else {
                 ioHelper.warn("Guest and booking failed to check in");
             }
