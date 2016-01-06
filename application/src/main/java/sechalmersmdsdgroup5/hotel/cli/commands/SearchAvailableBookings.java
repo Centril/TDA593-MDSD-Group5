@@ -4,6 +4,7 @@ import sechalmersmdsdgroup5.hotel.Hotel;
 import sechalmersmdsdgroup5.hotel.cli.infrastructure.Command;
 import sechalmersmdsdgroup5.hotel.cli.infrastructure.IOHelper;
 import sechalmersmdsdgroup5.hotel.cli.infrastructure.IdentifiableCommand;
+import sechalmersmdsdgroup5.hotel.facilities.RoomAttribute;
 import sechalmersmdsdgroup5.hotel.facilities.impl.RoomAttributeImpl;
 import sechalmersmdsdgroup5.hotel.ordering.PreBooking;
 import sechalmersmdsdgroup5.hotel.search.SearchCriteria;
@@ -127,7 +128,10 @@ public class SearchAvailableBookings implements IdentifiableCommand<Hotel, List<
 
     private SearchCriteria<PreBooking> attributeTest( String name, Object value, BiPredicate<Object, Object> test ) {
         return new PredicatedSearchCriteria<>(
-                booking -> test.test( booking.getWillBook().getAttribute( name ).getValue(), value ) );
+                booking -> {
+                    RoomAttribute attr = booking.getWillBook().getAttribute( name );
+                    return attr != null && test.test( attr.getValue(), value );
+                } );
     }
 
     @Override
