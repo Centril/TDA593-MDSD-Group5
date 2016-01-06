@@ -75,10 +75,10 @@ public class Populate implements Command.Consuming<Hotel>, IdentifiableCommand<H
                 .io( () ->
                         hotel.getRooms().forEach( io::paragraph )
                 );
-        hotel.getOrders().addAll(generateOrders(hotel, generateBookings(hotel)));
+        List<Order> orders = generateOrders(hotel, generateBookings(hotel));
         io.info( "Generated orders:" ).newline()
                 .io( () ->
-                        hotel.getOrders().forEach( io::paragraph )
+                        orders.forEach( io::paragraph )
                 );
     }
 
@@ -194,7 +194,7 @@ public class Populate implements Command.Consuming<Hotel>, IdentifiableCommand<H
         service2.setPrice(hotel.getServiceBlueprints().get(0).getBasePrice());
         serviceList1.add(service1);
         serviceList1.add(service2);
-        RoomBooking booking2 = new RoomBookingImpl(new Date(116, 4, 20), new Date(116, 4, 24), hotel.getRooms().get(4),
+        RoomBooking booking2 = new RoomBookingImpl(new Date(116, 0, 2), new Date(116, 0, 24), hotel.getRooms().get(4),
                 guestList3, serviceList1);
         service1.setConsumer(booking2);
         service2.setConsumer(booking2);
@@ -281,8 +281,4 @@ public class Populate implements Command.Consuming<Hotel>, IdentifiableCommand<H
         someCustomers.add(customer2);
         return  someCustomers;
     }
-
-
-
-
 }
