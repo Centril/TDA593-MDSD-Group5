@@ -34,6 +34,8 @@ public class OrderingFacade implements IOrder {
         newRoomBooking.setStartDate(preBooking.getStartDate());
         newRoomBooking.setEndDate(preBooking.getEndDate());
         newRoomBooking.setIsPaid(false); // you cant pay before this
+        newRoomBooking.setCheckinTime(null);
+        newRoomBooking.setCheckoutTime(null);
 
         addGuestsToBooking(newRoomBooking,preBooking,guests);
 
