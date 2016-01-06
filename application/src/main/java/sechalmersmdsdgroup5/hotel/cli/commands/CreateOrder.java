@@ -163,28 +163,7 @@ public class CreateOrder implements IdentifiableCommand<Hotel, Order> {
         return customer;
     }
 
-    private void setServices(RoomBooking booking, Hotel hotel, IOHelper io){
-        List<ServiceBlueprint> bookableServices = new ArrayList<>();
-        hotel.getServiceBlueprints();
-        List<Service> bookedServices = booking.getServices();
-        List<ServiceBlueprint> includedServices = null;//TODO Not null
-        int choice = 0;
-
-        while(true) {
-            io.info("Adding services to booking...").newline();
-            for (ServiceBlueprint bp : bookableServices) {
-                io.info(bp.toString()).newline();
-            }
-            try {
-                choice = Integer.parseInt(io.read("Choose service by index, type non-numeral to exit"));
-            } catch (NumberFormatException e) {
-                break;
-            }
-            includedServices.add(bookableServices.get(choice));
-            bookableServices.remo
-
-        }
-    }
+  
 
     private void specifyIdentity( IOHelper io, Identity identity ) {
         identity.setName( io.read( "Customer name?" ) );
