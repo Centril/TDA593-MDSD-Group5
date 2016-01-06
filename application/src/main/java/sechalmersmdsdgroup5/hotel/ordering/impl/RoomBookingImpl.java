@@ -34,7 +34,7 @@ import java.util.List;
  *
  * @generated NOT
  */
-class RoomBookingImpl implements RoomBooking {
+public class RoomBookingImpl implements RoomBooking {
 	private int id;
 
 	/**
