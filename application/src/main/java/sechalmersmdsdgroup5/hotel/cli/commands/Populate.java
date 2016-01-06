@@ -45,19 +45,42 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
+import static sechalmersmdsdgroup5.hotel.cli.readers.StandardReaders.naturalInt;
+
 public class Populate implements Command.Consuming<Hotel>, IdentifiableCommand<Hotel, Void> {
     @Override
     public void accept(IOHelper io, Hotel hotel) {
         hotel.getRoomPrototypes().addAll(generateRoomPrototypes());
-        hotel.getRooms().addAll(generateRooms());
-        hotel.getGuests().addAll(generateGuests(hotel));
-        hotel.getOrders().addAll(generateOrders());
+        io.info( "Generated room prototypes:" ).newline()
+                .io( () ->
+                        hotel.getRoomPrototypes().forEach( io::paragraph )
+                );
         hotel.getServiceBlueprints().addAll(generateServiceBlueprints());
-
-        // TODO create some active bookings
-        // Alma har gjort service blueprints, order.
-        
-    }3
+        io.info( "Generated service blueprints:" ).newline()
+                .io( () ->
+                        hotel.getServiceBlueprints().forEach( io::paragraph )
+                );
+        hotel.getGuests().addAll(generateGuests(hotel));
+        io.info( "Generated guests:" ).newline()
+                .io( () ->
+                        hotel.getGuests().forEach( io::paragraph )
+                );
+        hotel.getCustomers().addAll(generateCustomer());
+        io.info( "Generated customers:" ).newline()
+                .io( () ->
+                        hotel.getCustomers().forEach( io::paragraph )
+                );
+        hotel.getRooms().addAll(generateRooms());
+        io.info( "Generated rooms:" ).newline()
+                .io( () ->
+                        hotel.getRooms().forEach( io::paragraph )
+                );
+        hotel.getOrders().addAll(generateOrders(hotel, generateBookings(hotel)));
+        io.info( "Generated orders:" ).newline()
+                .io( () ->
+                        hotel.getOrders().forEach( io::paragraph )
+                );
+    }
 
     @Override
     public String getIdentifier() {
