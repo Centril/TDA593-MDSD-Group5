@@ -173,6 +173,7 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 		this.nr = nr;
 		this.floor = floor;
 		this.usable = usable;
+		this.lastCleaned = null;
 		this.prototypes = prototypeOrderings == null ? new ArrayList<PrototypeOrdering>() : prototypeOrderings;
 		this.attributes = roomAttributes == null ? new ArrayList<RoomAttribute>() : roomAttributes;
 		this.servicesAfforded = serviceBlueprints == null ? new ArrayList<ServiceBlueprint>() : serviceBlueprints;
@@ -369,6 +370,11 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 		result.append(lastCleaned == null ? "N/A" : lastCleaned);
 		result.append(",\n      attributes: ");
 		getAttributes().forEach( a -> {
+			result.append("\n\t");
+			result.append(a);
+		} );
+		result.append(",\n      services available: ");
+		getServicesAfforded().forEach( a -> {
 			result.append("\n\t");
 			result.append(a);
 		} );
