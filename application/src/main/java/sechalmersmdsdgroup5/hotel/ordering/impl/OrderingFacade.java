@@ -79,14 +79,7 @@ public class OrderingFacade implements IOrder {
         hotel.getOrders().add(newOrder);
         return newOrder;
     }
-
-    private void addBookingsToOrder(PreOrder preOrder, Order newOrder) {
-        List<RoomBooking> currentBookings = newOrder.getBookings();
-        for(PreBooking preBooking:preOrder.getBookings()) {
-            currentBookings.add(createBooking(preBooking,new ArrayList<Guest>()));
-        }
-    }
-
+    
     private int calculateNewOrderID() {
         return hotel.getOrders().stream().mapToInt( Order::getId ).max().orElse(0);
     }
