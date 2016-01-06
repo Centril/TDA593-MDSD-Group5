@@ -19,9 +19,6 @@ public class AddServiceToBooking implements Command.Consuming<Hotel>, Identifiab
     @Override
     public void accept(IOHelper io, Hotel hotel) {
         List<Order> hotelOrders = hotel.getOrders();
-        // Some default blueprints and orders (Shouldn't be here in a real system.)
-        hotel.getServiceBlueprints().addAll(Populate.generateServiceBlueprints());
-        hotel.getOrders().addAll(Populate.generateOrders());
         if ( null == hotelOrders || hotelOrders.isEmpty() ) {
             io.info("There are no current bookings. Exiting command.");
         }
@@ -33,7 +30,7 @@ public class AddServiceToBooking implements Command.Consuming<Hotel>, Identifiab
             for (Order order : orders) {
                 for (RoomBooking booking : order.getBookings()) {
                     pairs.add(new Pair<>(count, booking));
-                    appendBooking(builder,count,booking);
+                    Utils.appendBooking(builder,count,booking);
                     builder.append("\n");
                     count++;
                 }
@@ -49,7 +46,6 @@ public class AddServiceToBooking implements Command.Consuming<Hotel>, Identifiab
                     io.info("Incorrect input. Exiting.");}
 
                 else {
-                    System.out.println("Number of the pair entry: " + pairs.get(0).fst());
                     RoomBooking bookingToUse = (RoomBooking) pairs.getPair(nbr).snd();
                     if (bookingToUse == null) {io.info("There is no such index. Exiting.");}
 
@@ -58,7 +54,7 @@ public class AddServiceToBooking implements Command.Consuming<Hotel>, Identifiab
                         count = 1;
                         PairList<Integer,ServiceBlueprint> blueprintList = new PairList<>();
                         for (ServiceBlueprint service : hotel.getServiceBlueprints()) {
-                            appendService(builder,count,service);
+                            Utils.appendServiceBlueprint(builder,count,service);
                             blueprintList.add(new Pair<Integer, ServiceBlueprint>(count,service));
                             count++;
                         }
@@ -77,48 +73,6 @@ public class AddServiceToBooking implements Command.Consuming<Hotel>, Identifiab
             }
         }
 
-    }
-
-    /**
-     * Lists the given bookings and total cost.
-     *
-     * @param builder
-     * @param count
-     * @param booking
-     */
-    private void appendBooking(StringBuilder builder, int count, RoomBooking booking) {
-        builder.append( count + ". ");
-        // This is how to get the name:
-        // System.out.println(order.getBookings().get(0).getBookedRoom().getPrototypes().get(0).getPrototype().getName());
-        appendRoomName(builder, booking);
-        builder.append(" \n Room Number: "+ booking.getBookedRoom().getNr());
-    }
-
-    /**
-     * Lists the given bookings and total cost.
-     *
-     * @param builder
-     * @param count
-     * @param service
-     */
-    private void appendService(StringBuilder builder, Integer count, ServiceBlueprint service) {
-        builder.append("\n" + count + ". ");
-        // This is how to get the name:
-        // System.out.println(order.getBookings().get(0).getBookedRoom().getPrototypes().get(0).getPrototype().getName());
-        builder.append(" \n Service: " + service.getBasePrice() + "SEK");
-        count++;
-    }
-
-    /**
-     * Appends the names of the prototypes for the room to a given StringBuilder.
-     * @param builder
-     * @param roomBooking
-     */
-    private void appendRoomName(StringBuilder builder, RoomBooking roomBooking) {
-        List<PrototypeOrdering> orderedPrototypes = roomBooking.getBookedRoom().getPrototypes();
-        for (PrototypeOrdering orderedPrototype : orderedPrototypes) {
-            builder.append(orderedPrototype.getPrototype().getName() + " ");
-        }
     }
 
     @Override

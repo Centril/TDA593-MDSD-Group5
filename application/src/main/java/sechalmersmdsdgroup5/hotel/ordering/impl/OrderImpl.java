@@ -187,14 +187,21 @@ public class OrderImpl implements Order {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
 	 */
 	public boolean isPaid() {
+		for (RoomBooking booking: bookings) {
+			if (!booking.isPaid()) {
+				return false;
+			}
+		}
 		return isPaid;
 	}
 
 	@Override
 	public void setIsPaid(boolean value) {
+		for (RoomBooking booking : bookings) {
+			booking.setIsPaid(value);
+		}
 		isPaid = value;
 	}
 

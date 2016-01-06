@@ -90,7 +90,6 @@ public class ServiceImpl extends MinimalEObjectImpl.Container implements Service
 	 * @ordered
 	 */
 	protected boolean isPaid = IS_PAID_EDEFAULT;
-
 	/**
 	 * The default value of the '{@link #getCreationDate() <em>Creation Date</em>}' attribute.
 	 * <!-- begin-user-doc -->
