@@ -34,7 +34,7 @@ import java.util.List;
  *
  * @generated NOT
  */
-class RoomBookingImpl implements RoomBooking {
+public class RoomBookingImpl implements RoomBooking {
 	private int id;
 
 	/**
@@ -59,6 +59,17 @@ class RoomBookingImpl implements RoomBooking {
 		this.isPaid = isPaid;
 		this.guests = guests;
 		this.services = services;
+	}
+
+	public RoomBookingImpl(Date startDate, Date endDate, Room bookedRoom, List<Guest> guests, List<Service> services) {
+		this.startDate = startDate;
+		this.endDate = endDate;
+		this.bookedRoom = bookedRoom;
+		this.guests = guests;
+		this.services = services;
+
+		invoice = new ArrayList<>();
+		isPaid = false;
 	}
 	/**
 	 * The cached value of the '{@link #getInvoice() <em>Invoice</em>}' containment reference list.

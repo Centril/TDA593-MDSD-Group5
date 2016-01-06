@@ -5,6 +5,7 @@ import sechalmersmdsdgroup5.hotel.Hotel;
 import sechalmersmdsdgroup5.hotel.cli.infrastructure.Command;
 import sechalmersmdsdgroup5.hotel.cli.infrastructure.IOHelper;
 import sechalmersmdsdgroup5.hotel.cli.infrastructure.IdentifiableCommand;
+import sechalmersmdsdgroup5.hotel.clients.Address;
 import sechalmersmdsdgroup5.hotel.clients.Customer;
 import sechalmersmdsdgroup5.hotel.clients.Guest;
 import sechalmersmdsdgroup5.hotel.clients.IClient;
@@ -12,6 +13,23 @@ import sechalmersmdsdgroup5.hotel.clients.impl.ClientFacade;
 import sechalmersmdsdgroup5.hotel.clients.impl.ClientsFactoryImpl;
 import sechalmersmdsdgroup5.hotel.facilities.*;
 import sechalmersmdsdgroup5.hotel.facilities.impl.Facilities;
+import sechalmersmdsdgroup5.hotel.identities.IdentitiesFactory;
+import sechalmersmdsdgroup5.hotel.identities.Identity;
+import sechalmersmdsdgroup5.hotel.identities.Organisation;
+import sechalmersmdsdgroup5.hotel.identities.impl.IdentityImpl;
+import sechalmersmdsdgroup5.hotel.ordering.RoomBooking;
+import sechalmersmdsdgroup5.hotel.ordering.impl.CheckInCheckOut;
+import sechalmersmdsdgroup5.hotel.ordering.impl.OrderingFacade;
+import sechalmersmdsdgroup5.hotel.ordering.impl.RoomBookingImpl;
+import sechalmersmdsdgroup5.hotel.facilities.impl.RoomAttributeImpl;
+import sechalmersmdsdgroup5.hotel.payment.CreditCard;
+import sechalmersmdsdgroup5.hotel.payment.PaymentFactory;
+import sechalmersmdsdgroup5.hotel.services.Service;
+import sechalmersmdsdgroup5.hotel.services.ServiceBlueprint;
+import sechalmersmdsdgroup5.hotel.services.ServicesFactory;
+
+import java.util.ArrayList;
+import java.util.Date;
 import sechalmersmdsdgroup5.hotel.facilities.impl.RoomAttributeImpl;
 import sechalmersmdsdgroup5.hotel.identities.RealPerson;
 import sechalmersmdsdgroup5.hotel.identities.impl.IdentitiesFactoryImpl;
@@ -27,16 +45,41 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
+import static sechalmersmdsdgroup5.hotel.cli.readers.StandardReaders.naturalInt;
+
 public class Populate implements Command.Consuming<Hotel>, IdentifiableCommand<Hotel, Void> {
     @Override
     public void accept(IOHelper io, Hotel hotel) {
         hotel.getRoomPrototypes().addAll(generateRoomPrototypes());
-        hotel.getRooms().addAll(generateRooms());
-        hotel.getOrders().addAll(generateOrders());
+        io.info( "Generated room prototypes:" ).newline()
+                .io( () ->
+                        hotel.getRoomPrototypes().forEach( io::paragraph )
+                );
         hotel.getServiceBlueprints().addAll(generateServiceBlueprints());
-        // TODO create some active bookings
-
-        
+        io.info( "Generated service blueprints:" ).newline()
+                .io( () ->
+                        hotel.getServiceBlueprints().forEach( io::paragraph )
+                );
+        hotel.getGuests().addAll(generateGuests(hotel));
+        io.info( "Generated guests:" ).newline()
+                .io( () ->
+                        hotel.getGuests().forEach( io::paragraph )
+                );
+        hotel.getCustomers().addAll(generateCustomer());
+        io.info( "Generated customers:" ).newline()
+                .io( () ->
+                        hotel.getCustomers().forEach( io::paragraph )
+                );
+        hotel.getRooms().addAll(generateRooms());
+        io.info( "Generated rooms:" ).newline()
+                .io( () ->
+                        hotel.getRooms().forEach( io::paragraph )
+                );
+        hotel.getOrders().addAll(generateOrders(hotel, generateBookings(hotel)));
+        io.info( "Generated orders:" ).newline()
+                .io( () ->
+                        hotel.getOrders().forEach( io::paragraph )
+                );
     }
 
     @Override
@@ -103,7 +146,7 @@ public class Populate implements Command.Consuming<Hotel>, IdentifiableCommand<H
     private List<Guest> generateGuests(Hotel hotel) {
         IClient facade = new ClientFacade();
         List<Guest> someGuests = new ArrayList<>();
-        /*someGuests.add(facade.createGuest("Einstein","18790314-1337",134));
+        someGuests.add(facade.createGuest("Einstein","18790314-1337",134));
         someGuests.add(facade.createGuest("Hillbert","19860513-3321",73));
         someGuests.add(facade.createGuest("Erik N","19911211-5321",24));
         someGuests.add(facade.createGuest("Bill G","19560713-2121",56));
@@ -114,20 +157,67 @@ public class Populate implements Command.Consuming<Hotel>, IdentifiableCommand<H
         someGuests.add(facade.createGuest("Joel G","19941127-0101",22));
         someGuests.add(facade.createGuest("Alma O","19940202-9912",22));
         someGuests.add(facade.createGuest("Hampus D","1990715-7777",22));
-        */
-        return someGuests;
 
+        return someGuests;
+    }
+
+    private List<RoomBooking> generateBookings(Hotel hotel) {
+        List<RoomBooking> someBookings = new ArrayList<>();
+
+
+        List <Guest> guestList2 = new ArrayList<>();
+        guestList2.add(hotel.getGuests().get(5));
+        List <Service> serviceList = new ArrayList<>();
+        Service service = ServicesFactory.INSTANCE.createService();
+        service.setPrice(hotel.getServiceBlueprints().get(0).getBasePrice());
+        serviceList.add(service);
+        RoomBooking booking = new RoomBookingImpl(new Date(116, 0, 14), new Date(116, 0,15), hotel.getRooms().get(4),
+                guestList2, serviceList);
+        service.setConsumer(booking);
+
+
+        List <Guest> guestList1 = new ArrayList<>();
+        guestList1.add(hotel.getGuests().get(4));
+        RoomBooking booking1 = new RoomBookingImpl(new Date(116, 2, 0), new Date(116, 2,15), hotel.getRooms().get(2),
+                guestList1, new ArrayList<>());
+        (new CheckInCheckOut()).checkIn(hotel.getGuests().get(4), booking1);
+
+
+        List <Guest> guestList3 = new ArrayList<>();
+        guestList3.add(hotel.getGuests().get(9));
+        guestList3.add(hotel.getGuests().get(10));
+
+        List<Service> serviceList1 = new ArrayList<>();
+        Service service1 = ServicesFactory.INSTANCE.createService();
+        service1.setPrice(hotel.getServiceBlueprints().get(1).getBasePrice());
+        Service service2 = ServicesFactory.INSTANCE.createService();
+        service2.setPrice(hotel.getServiceBlueprints().get(0).getBasePrice());
+        serviceList1.add(service1);
+        serviceList1.add(service2);
+        RoomBooking booking2 = new RoomBookingImpl(new Date(116, 4, 20), new Date(116, 4, 24), hotel.getRooms().get(4),
+                guestList3, serviceList1);
+        service1.setConsumer(booking2);
+        service2.setConsumer(booking2);
+
+        someBookings.add(booking1);
+        someBookings.add(booking);
+        someBookings.add(booking2);
+
+        return someBookings;
     }
 
     /**
      * returns some test blueprints for services.
      * @return
      */
-    public static List<ServiceBlueprint> generateServiceBlueprints() {
+    public List<ServiceBlueprint> generateServiceBlueprints() {
         List<ServiceBlueprint> blueprints = new ArrayList<>();
         for (int i = 0; i < 10; i++) {
             ServiceBlueprint blueprint = ServicesFactory.INSTANCE.createServiceBlueprint();
-            blueprint.setBasePrice((Math.random()*300)+75);
+            double r = (Math.random()*300)+75;
+            blueprint.setBasePrice(r);
+            blueprint.setId((int) r);
+            blueprint.setName("The price is: " + r);
             blueprints.add(blueprint);
         }
         return blueprints;
@@ -137,43 +227,59 @@ public class Populate implements Command.Consuming<Hotel>, IdentifiableCommand<H
      * Can be used to test this command.
      * @return
      */
-    public static List<Order> generateOrders() {
-        // Create test customer
+    public List<Order> generateOrders(Hotel hotel, List<RoomBooking> bookings) {
+        List<Order> someOrders = new ArrayList<>();
 
-        Customer customer = ClientsFactoryImpl.eINSTANCE.createCustomer();
-        RealPerson testPerson = IdentitiesFactoryImpl.eINSTANCE.createRealPerson();
-        testPerson.setName("John Doe");
+        List<RoomBooking> bookings1 = new ArrayList<>();
+        bookings1.add(bookings.get(0));
+        Order order1 = (new OrderingFacade(hotel)).createOrder(bookings1, hotel.getCustomers().get(0));
 
-        //Create room prototype
-        RoomPrototype testRoomPrototype = FacilitiesFactory.INSTANCE.createRoomPrototype();
-        testRoomPrototype.setName("Single-room suite");
-        testRoomPrototype.setBasePrice(705.50);
-        PrototypeOrdering orderingTest = FacilitiesFactory.INSTANCE.createPrototypeOrdering();
-        orderingTest.setOrder(1);
-        orderingTest.setPrototype(testRoomPrototype);
-        List<PrototypeOrdering> prototypeOrderings = new ArrayList<>();
-        prototypeOrderings.add(orderingTest);
+        List<RoomBooking> bookings2 = new ArrayList<>();
+        bookings2.add(bookings.get(1));
+        bookings2.add(bookings.get(2));
+        Order order2 = (new OrderingFacade(hotel)).createOrder(bookings2, hotel.getCustomers().get(1));
 
-        //Create test room booking using prototype.
-        Room room = FacilitiesFactory.INSTANCE.createRoom(prototypeOrderings);
-        RoomBooking booking = OrderingFactory.INSTANCE.createRoomBooking();
-        booking.setBookedRoom(room);
-        // Set start and end-dates.
-        Calendar cal = Calendar.getInstance();
-        cal.set(2016,1,7);
-        booking.setStartDate(cal.getTime());
-        cal.set(2016,1,8);
-        booking.setEndDate(cal.getTime());
-        List<RoomBooking> bookingsList = new ArrayList<>();
-        bookingsList.add(booking);
-        //Add service to booking.
-        IService service = new ServiceFacade();
-        service.addServiceToBooking(booking, ServicesFactory.INSTANCE.createService(204.8, booking));
-        //Create test order
+        someOrders.add(order1);
+        someOrders.add(order2);
+        return someOrders;
+    }
 
-        List<Order> orderList = new ArrayList<>();
-        orderList.add(OrderingFactory.INSTANCE.createOrder(null, customer, false, null, bookingsList, null));
-        return orderList;
+    
+    private List<Customer> generateCustomer() {
+        List<Customer> someCustomers = new ArrayList<>();
+
+        RealPerson identity1 = IdentitiesFactory.INSTANCE.createRealPerson();
+        identity1.setName("Linus Torvalds");
+        identity1.setIdNumber("LT");
+        identity1.setAge(46);
+        identity1.setCitizenship("Finland");
+        Address address1 = (new ClientFacade()).createAddress("Linus gata", 1337, "Stad", "Land", "Region",
+                "Municipality", "No careof");
+        CreditCard card1 = PaymentFactory.INSTANCE.createCreditCard();
+        card1.setName("Linus Torvalds");
+        card1.setNumber("5545012301529281");
+        card1.setCcv(123);
+        card1.setExpiryMonth(9);
+        card1.setExpiryYear(2018);
+        Customer customer = (new ClientFacade()).createCustomer(identity1, null, "linus@adress", card1, address1);
+
+
+        Organisation identity2 = IdentitiesFactory.INSTANCE.createOrganisation();
+        identity2.setIdNumber("G");
+        identity2.setName("google");
+        Address address2 = (new ClientFacade()).createAddress("googles gata", 1337, "Stad", "Land", "Region",
+                "Municipality", "No careof");
+        CreditCard card2 = PaymentFactory.INSTANCE.createCreditCard();
+        card2.setName("Linus Torvalds");
+        card2.setNumber("5545012301529281");
+        card2.setCcv(123);
+        card2.setExpiryMonth(9);
+        card2.setExpiryYear(2018);
+        Customer customer2 = (new ClientFacade()).createCustomer(identity2, null, "google@adress", card2, address2);
+
+        someCustomers.add(customer);
+        someCustomers.add(customer2);
+        return  someCustomers;
     }
 
 
