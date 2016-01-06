@@ -1,9 +1,9 @@
 # Chalmers University of Technology, TDA593, 2015-2016, group 5
 
 + Course page: http://www.cse.chalmers.se/edu/course/TDA593/
-+ [Diff/Changelog](blob/development/difflog.md)
-+ [Instructions for interaction testing](blob/development/interaction-testing.md)
-	
++ [Diff/Changelog](difflog.md)
++ [Instructions for interaction testing](interaction-testing.md)
+
 ## Running the application:
 
 The build is gradle based.
