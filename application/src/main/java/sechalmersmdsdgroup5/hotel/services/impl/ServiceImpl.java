@@ -13,10 +13,15 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.BasicInternalEList;
+import sechalmersmdsdgroup5.hotel.HotelFactory;
+import sechalmersmdsdgroup5.hotel.facilities.FacilitiesFactory;
+import sechalmersmdsdgroup5.hotel.ordering.Campaign;
 import sechalmersmdsdgroup5.hotel.ordering.Invoice;
 import sechalmersmdsdgroup5.hotel.ordering.OrderingFactory;
-import sechalmersmdsdgroup5.hotel.services.Service;
-import sechalmersmdsdgroup5.hotel.services.ServiceConsumer;
+import sechalmersmdsdgroup5.hotel.ordering.RoomBooking;
+import sechalmersmdsdgroup5.hotel.ordering.util.OrderingSwitch;
+import sechalmersmdsdgroup5.hotel.payment.PaymentFactory;
+import sechalmersmdsdgroup5.hotel.services.*;
 
 /**
  * <!-- begin-user-doc -->
@@ -35,7 +40,7 @@ import sechalmersmdsdgroup5.hotel.services.ServiceConsumer;
  *
  * @generated
  */
-public class ServiceImpl extends MinimalEObjectImpl.Container implements Service {
+public class ServiceImpl extends MinimalEObjectImpl.Container implements Service{
 	/**
 	 * The cached value of the '{@link #getInvoice() <em>Invoice</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
@@ -45,7 +50,7 @@ public class ServiceImpl extends MinimalEObjectImpl.Container implements Service
 	 * @ordered
 	 */
 	protected EList<Invoice> invoice;
-
+	
 	/**
 	 * The default value of the '{@link #getPrice() <em>Price</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -135,10 +140,6 @@ public class ServiceImpl extends MinimalEObjectImpl.Container implements Service
 		this.setPrice(price);
 		this.setConsumer(consumer);
 		this.setCreationDate(new Date());
-
-		invoice = new BasicInternalEList<Invoice>(Invoice.class);
-		// TODO Create a correct standard invoice for this Service or check if no invoice should be created at this time
-		invoice.add(OrderingFactory.INSTANCE.createInvoice());
 	}
 
 	/**
@@ -253,12 +254,9 @@ public class ServiceImpl extends MinimalEObjectImpl.Container implements Service
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
 	 */
 	public double totalPrice() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return price;
 	}
 
 	/**
