@@ -176,11 +176,14 @@ public class Populate implements Command.Consuming<Hotel>, IdentifiableCommand<H
      * returns some test blueprints for services.
      * @return
      */
-    public static List<ServiceBlueprint> generateServiceBlueprints() {
+    public List<ServiceBlueprint> generateServiceBlueprints() {
         List<ServiceBlueprint> blueprints = new ArrayList<>();
         for (int i = 0; i < 10; i++) {
             ServiceBlueprint blueprint = ServicesFactory.INSTANCE.createServiceBlueprint();
-            blueprint.setBasePrice((Math.random()*300)+75);
+            double r = (Math.random()*300)+75;
+            blueprint.setBasePrice(r);
+            blueprint.setId((int) r);
+            blueprint.setName("The price is: " + r);
             blueprints.add(blueprint);
         }
         return blueprints;
