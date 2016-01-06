@@ -130,7 +130,7 @@ public class SearchAvailableBookings implements IdentifiableCommand<Hotel, List<
         return new PredicatedSearchCriteria<>(
                 booking -> {
                     RoomAttribute attr = booking.getWillBook().getAttribute( name );
-                    return attr != null && test.test( attr.getValue(), value );
+                    return attr != null && test.test( attr.getValue().toString(), value.toString() );
                 } );
     }
 
