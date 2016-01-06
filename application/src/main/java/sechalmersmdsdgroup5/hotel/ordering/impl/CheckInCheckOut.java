@@ -30,7 +30,7 @@ public class CheckInCheckOut implements ICheckInCheckOut {
 
     @Override
     public boolean checkOut(Guest guest, RoomBooking booking) {
-        if (booking.getGuests().contains(guest)) {
+        if (booking.getGuests().contains(guest) && booking.getCheckinTime() != null) {
             if ((new Date()).getTime() >= booking.getEndDate().getTime()) {
                 // The price 100.0 is just an arbitrary number, should perhaps exist in some config at a later date.
                 Service overextendService = ServicesFactory.INSTANCE.createService(100.0, booking);
