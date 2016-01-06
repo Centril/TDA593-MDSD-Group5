@@ -37,7 +37,22 @@ public class ClientFacade implements IClient {
 
     @Override
     public Address createAddress(String street, int zipCode, String zipArea, String country, String region, String municipality, String careOf) {
-        return null;
+        if (street == null || zipArea == null || country == null || region == null || municipality == null || careOf
+                == null) {
+            throw new IllegalArgumentException("Illegal age or null argument in createAdress");
+        }
+        ClientsFactory factory = ClientsFactory.INSTANCE;
+        Address address = factory.createAddress();
+
+        address.setStreet(street);
+        address.setZipCode(zipCode);
+        address.setZipArea(zipArea);
+        address.setCountry(country);
+        address.setRegion(region);
+        address.setMunicipality(municipality);
+        address.setCareOf(careOf);
+
+        return address;
     }
 }
 
