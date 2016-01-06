@@ -67,7 +67,8 @@ public class RoomBookingImpl implements RoomBooking {
 		this.bookedRoom = bookedRoom;
 		this.guests = guests;
 		this.services = services;
-
+		this.checkinTime = null;
+		this.checkoutTime = null;
 		invoice = new ArrayList<>();
 		isPaid = false;
 	}
