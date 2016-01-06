@@ -5,6 +5,7 @@ import sechalmersmdsdgroup5.hotel.Hotel;
 import sechalmersmdsdgroup5.hotel.cli.infrastructure.Command;
 import sechalmersmdsdgroup5.hotel.cli.infrastructure.IOHelper;
 import sechalmersmdsdgroup5.hotel.cli.infrastructure.IdentifiableCommand;
+import sechalmersmdsdgroup5.hotel.clients.Address;
 import sechalmersmdsdgroup5.hotel.clients.Customer;
 import sechalmersmdsdgroup5.hotel.clients.Guest;
 import sechalmersmdsdgroup5.hotel.clients.IClient;
@@ -12,9 +13,17 @@ import sechalmersmdsdgroup5.hotel.clients.impl.ClientFacade;
 import sechalmersmdsdgroup5.hotel.clients.impl.ClientsFactoryImpl;
 import sechalmersmdsdgroup5.hotel.facilities.*;
 import sechalmersmdsdgroup5.hotel.facilities.impl.Facilities;
+import sechalmersmdsdgroup5.hotel.identities.IdentitiesFactory;
+import sechalmersmdsdgroup5.hotel.identities.Identity;
+import sechalmersmdsdgroup5.hotel.identities.Organisation;
+import sechalmersmdsdgroup5.hotel.identities.impl.IdentityImpl;
 import sechalmersmdsdgroup5.hotel.ordering.RoomBooking;
+import sechalmersmdsdgroup5.hotel.ordering.impl.CheckInCheckOut;
+import sechalmersmdsdgroup5.hotel.ordering.impl.OrderingFacade;
 import sechalmersmdsdgroup5.hotel.ordering.impl.RoomBookingImpl;
 import sechalmersmdsdgroup5.hotel.facilities.impl.RoomAttributeImpl;
+import sechalmersmdsdgroup5.hotel.payment.CreditCard;
+import sechalmersmdsdgroup5.hotel.payment.PaymentFactory;
 import sechalmersmdsdgroup5.hotel.services.Service;
 import sechalmersmdsdgroup5.hotel.services.ServiceBlueprint;
 import sechalmersmdsdgroup5.hotel.services.ServicesFactory;
@@ -132,10 +141,6 @@ public class Populate implements Command.Consuming<Hotel>, IdentifiableCommand<H
     private List<RoomBooking> generateBookings(Hotel hotel) {
         List<RoomBooking> someBookings = new ArrayList<>();
 
-        List <Guest> guestList1 = new ArrayList<>();
-        guestList1.add(hotel.getGuests().get(4));
-        someBookings.add(new RoomBookingImpl(new Date(116, 2, 0), new Date(116, 2,15), hotel.getRooms().get(2),
-                guestList1, new ArrayList<>()));
 
         List <Guest> guestList2 = new ArrayList<>();
         guestList2.add(hotel.getGuests().get(5));
@@ -146,28 +151,34 @@ public class Populate implements Command.Consuming<Hotel>, IdentifiableCommand<H
         RoomBooking booking = new RoomBookingImpl(new Date(116, 0, 14), new Date(116, 0,15), hotel.getRooms().get(4),
                 guestList2, serviceList);
         service.setConsumer(booking);
-        someBookings.add(booking);
+
+
+        List <Guest> guestList1 = new ArrayList<>();
+        guestList1.add(hotel.getGuests().get(4));
+        RoomBooking booking1 = new RoomBookingImpl(new Date(116, 2, 0), new Date(116, 2,15), hotel.getRooms().get(2),
+                guestList1, new ArrayList<>());
+        (new CheckInCheckOut()).checkIn(hotel.getGuests().get(4), booking1);
+
 
         List <Guest> guestList3 = new ArrayList<>();
         guestList3.add(hotel.getGuests().get(9));
         guestList3.add(hotel.getGuests().get(10));
 
         List<Service> serviceList1 = new ArrayList<>();
-
-
         Service service1 = ServicesFactory.INSTANCE.createService();
         service1.setPrice(hotel.getServiceBlueprints().get(1).getBasePrice());
         Service service2 = ServicesFactory.INSTANCE.createService();
         service2.setPrice(hotel.getServiceBlueprints().get(0).getBasePrice());
         serviceList1.add(service1);
         serviceList1.add(service2);
-        RoomBooking booking1 = new RoomBookingImpl(new Date(116, 4, 20), new Date(116, 4,24), hotel.getRooms().get(4),
+        RoomBooking booking2 = new RoomBookingImpl(new Date(116, 4, 20), new Date(116, 4, 24), hotel.getRooms().get(4),
                 guestList3, serviceList1);
-        service1.setConsumer(booking1);
-        service2.setConsumer(booking1);
+        service1.setConsumer(booking2);
+        service2.setConsumer(booking2);
 
         someBookings.add(booking1);
-
+        someBookings.add(booking);
+        someBookings.add(booking2);
 
         return someBookings;
     }
