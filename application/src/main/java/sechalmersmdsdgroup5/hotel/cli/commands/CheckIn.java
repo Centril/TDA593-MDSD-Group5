@@ -46,7 +46,7 @@ public class CheckIn implements Command.Consuming<Hotel>, IdentifiableCommand<Ho
             } else if ((new CheckInCheckOut()).checkIn(guest, roomBooking)) {
                 ioHelper.info("Guest and booking successfully checked in");
             } else {
-                ioHelper.info("Guest and booking failed to check in");
+                ioHelper.warn("Guest and booking failed to check in");
             }
 
         } else {
