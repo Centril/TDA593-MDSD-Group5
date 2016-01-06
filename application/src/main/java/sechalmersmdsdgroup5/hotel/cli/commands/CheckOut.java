@@ -44,6 +44,7 @@ public class CheckOut implements Command.Consuming<Hotel>, IdentifiableCommand<H
                 ioHelper.info("No booking selected");
             } else if ((new CheckInCheckOut()).checkOut(guest, roomBooking)) {
                 ioHelper.info("Guest and booking successfully checked out");
+                roomBooking.getGuests().forEach(g -> (new CheckInCheckOut()).takeBackKey(g));
             } else {
                 ioHelper.info("Guest and booking failed to check out");
             }
