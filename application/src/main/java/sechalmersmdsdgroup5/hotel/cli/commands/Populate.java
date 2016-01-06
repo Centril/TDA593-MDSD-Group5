@@ -155,7 +155,7 @@ public class Populate implements Command.Consuming<Hotel>, IdentifiableCommand<H
         Service service = ServicesFactory.INSTANCE.createService();
         service.setPrice(hotel.getServiceBlueprints().get(0).getBasePrice());
         serviceList.add(service);
-        RoomBooking booking = new RoomBookingImpl(new Date(116, 0, 14), new Date(116, 0,15), hotel.getRooms().get(4),
+        RoomBooking booking = new RoomBookingImpl(new Date(116, 0, 14), new Date(116, 0,15), hotel.getRooms().get(1),
                 guestList2, serviceList);
         service.setConsumer(booking);
 
