@@ -222,6 +222,41 @@ public class Populate implements Command.Consuming<Hotel>, IdentifiableCommand<H
     }
 
     
+    private List<Customer> generateCustomer() {
+        List<Customer> someCustomers = new ArrayList<>();
+
+        RealPerson identity1 = IdentitiesFactory.INSTANCE.createRealPerson();
+        identity1.setName("Linus Torvalds");
+        identity1.setIdNumber("LT");
+        identity1.setAge(46);
+        identity1.setCitizenship("Finland");
+        Address address1 = (new ClientFacade()).createAddress("Linus gata", 1337, "Stad", "Land", "Region",
+                "Municipality", "No careof");
+        CreditCard card1 = PaymentFactory.INSTANCE.createCreditCard();
+        card1.setName("Linus Torvalds");
+        card1.setNumber("5545012301529281");
+        card1.setCcv(123);
+        card1.setExpiryMonth(9);
+        card1.setExpiryYear(2018);
+        Customer customer = (new ClientFacade()).createCustomer(identity1, null, "linus@adress", card1, address1);
+
+
+        Organisation identity2 = IdentitiesFactory.INSTANCE.createOrganisation();
+        identity2.setIdNumber("G");
+        identity2.setName("google");
+        Address address2 = (new ClientFacade()).createAddress("googles gata", 1337, "Stad", "Land", "Region",
+                "Municipality", "No careof");
+        CreditCard card2 = PaymentFactory.INSTANCE.createCreditCard();
+        card2.setName("Linus Torvalds");
+        card2.setNumber("5545012301529281");
+        card2.setCcv(123);
+        card2.setExpiryMonth(9);
+        card2.setExpiryYear(2018);
+        Customer customer2 = (new ClientFacade()).createCustomer(identity2, null, "google@adress", card2, address2);
+
+        someCustomers.add(customer);
+        someCustomers.add(customer2);
+        return  someCustomers;
     }
 
 
