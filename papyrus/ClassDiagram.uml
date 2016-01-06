@@ -329,6 +329,8 @@
               <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
             </ownedParameter>
             <ownedParameter xmi:type="uml:Parameter" xmi:id="_pWB9oLPNEeW-BMSKTAd4hg" name="return" type="_7PSgoJOAEeWEKYEtRmghUQ" direction="return"/>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_6ZJ0QLR5EeWqYuhazXk3YA" name="card" type="_YJJ_IJRWEeWEKYEtRmghUQ"/>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_RMN8YLR6EeWqYuhazXk3YA" name="address" type="_-3k78JqREeWXppCtG_WnKw"/>
           </ownedOperation>
           <ownedOperation xmi:type="uml:Operation" xmi:id="_qwIZkLPMEeW-BMSKTAd4hg" name="createGuest">
             <ownedParameter xmi:type="uml:Parameter" xmi:id="_0DmJALPMEeW-BMSKTAd4hg" name="name">
@@ -338,7 +340,7 @@
               <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
             </ownedParameter>
             <ownedParameter xmi:type="uml:Parameter" xmi:id="_YLu00LPNEeW-BMSKTAd4hg" name="age">
-              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
             </ownedParameter>
             <ownedParameter xmi:type="uml:Parameter" xmi:id="_lASscLPNEeW-BMSKTAd4hg" name="return" type="_st4FoJOAEeWEKYEtRmghUQ" direction="return"/>
           </ownedOperation>
@@ -347,7 +349,7 @@
               <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
             </ownedParameter>
             <ownedParameter xmi:type="uml:Parameter" xmi:id="_79hdMLPNEeW-BMSKTAd4hg" name="zipCode">
-              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
             </ownedParameter>
             <ownedParameter xmi:type="uml:Parameter" xmi:id="_9k_xULPNEeW-BMSKTAd4hg" name="zipArea">
               <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>

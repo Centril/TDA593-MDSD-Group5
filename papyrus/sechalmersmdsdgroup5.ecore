@@ -266,15 +266,17 @@
           <eParameters name="identity" ordered="false" lowerBound="1" eType="#//hotel/identities/Identity"/>
           <eParameters name="paymentMethod" ordered="false" lowerBound="1" eType="#//hotel/payment/PaymentMethod"/>
           <eParameters name="email" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+          <eParameters name="card" ordered="false" lowerBound="1" eType="#//hotel/payment/CreditCard"/>
+          <eParameters name="address" ordered="false" lowerBound="1" eType="#//hotel/clients/Address"/>
         </eOperations>
         <eOperations name="createGuest" ordered="false" lowerBound="1" eType="#//hotel/clients/Guest">
           <eParameters name="name" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
           <eParameters name="ssn" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-          <eParameters name="age" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+          <eParameters name="age" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
         </eOperations>
         <eOperations name="createAddress" ordered="false" lowerBound="1" eType="#//hotel/clients/Address">
           <eParameters name="street" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-          <eParameters name="zipCode" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+          <eParameters name="zipCode" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
           <eParameters name="zipArea" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
           <eParameters name="country" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
           <eParameters name="region" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>

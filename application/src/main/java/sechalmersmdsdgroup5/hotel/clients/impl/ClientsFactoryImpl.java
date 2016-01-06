@@ -11,8 +11,6 @@ import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
 import sechalmersmdsdgroup5.hotel.clients.*;
-import sechalmersmdsdgroup5.hotel.identities.Identity;
-import sechalmersmdsdgroup5.hotel.payment.PaymentMethod;
 
 /**
  * <!-- begin-user-doc -->
