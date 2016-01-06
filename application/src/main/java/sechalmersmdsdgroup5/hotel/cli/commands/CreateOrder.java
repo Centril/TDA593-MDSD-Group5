@@ -142,7 +142,7 @@ public class CreateOrder implements IdentifiableCommand<Hotel, Order> {
         String municipality = io.read( "Address, municipality?" ) ;
         String street = io.read( "Address, street?" ) ;
         String zipArea = io.read( "Address, zip area?" ) ;
-        String zipCode = io.read( "Address, zip code?", "Not a zip code.", naturalInt() ).toString() ;
+        int zipCode = io.read( "Address, zip code?", "Not a zip code.", naturalInt() );
         String careOf = io.read( "Address, care of?" );
 
         Address address = facade.createAddress(street, zipCode, zipArea, country, region, municipality, careOf);
@@ -154,7 +154,7 @@ public class CreateOrder implements IdentifiableCommand<Hotel, Order> {
         card.setExpiryMonth( io.read( "Card expiry month?", "Not a month.", naturalInt() ) );
         card.setExpiryYear( io.read( "Card expiry year?", "Not a year.", naturalInt() ) );
 
-        Customer customer = facade.createCustomer(identity, null, email);
+        Customer customer = facade.createCustomer(identity, null, email, card, address);
         return customer;
     }
 

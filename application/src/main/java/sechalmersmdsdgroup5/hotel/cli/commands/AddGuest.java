@@ -64,7 +64,7 @@ public class AddGuest implements IdentifiableCommand<Hotel, Optional<Guest>> {
 		Guest guest = facade.createGuest(
 				io.read( "Guest name?" ),
 				io.read( "Guest SSN?" ),
-				io.read( "Guest age?", "Invalid age.", nonNegativeInt()).toString()  );
+				io.read( "Guest age?", "Invalid age.", nonNegativeInt() ) );
 
 		String reason = new IBlacklistImpl( hotel ).getBlacklistReason( guest );
 
