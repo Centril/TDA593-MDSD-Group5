@@ -169,15 +169,9 @@ public class CreateOrder implements IdentifiableCommand<Hotel, Order> {
     private void setServices(RoomBooking booking, Hotel hotel, IOHelper io){
         List<ServiceBlueprint> bookableServices = new ArrayList<>();
         bookableServices.addAll(hotel.getServiceBlueprints());
+        bookableServices.remove(booking.getBookedRoom().getServicesAfforded());
 
         List<Service> bookedServices = booking.getServices();
-
-        List<ServiceBlueprint> includedServices = new ArrayList<ServiceBlueprint>();
-        for(Service s : bookedServices){
-            includedServices.add(s.getBlueprint());
-        }
-
-        bookableServices.removeAll(includedServices);
 
         int choice = 0;
 
