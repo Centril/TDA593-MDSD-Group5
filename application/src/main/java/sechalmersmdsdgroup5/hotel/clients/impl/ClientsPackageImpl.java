@@ -867,15 +867,17 @@ public class ClientsPackageImpl extends EPackageImpl {
 		addEParameter(op, theIdentitiesPackage.getIdentity(), "identity", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, thePaymentPackage.getPaymentMethod(), "paymentMethod", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "email", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, thePaymentPackage.getCreditCard(), "card", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, this.getAddress(), "address", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		op = addEOperation(iClientEClass, this.getGuest(), "createGuest", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "name", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "ssn", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "age", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEInt(), "age", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		op = addEOperation(iClientEClass, this.getAddress(), "createAddress", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "street", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "zipCode", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEInt(), "zipCode", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "zipArea", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "country", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "region", 1, 1, IS_UNIQUE, !IS_ORDERED);

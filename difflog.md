@@ -28,6 +28,7 @@
 + 2016-01-04: Added Room::getLocalAttributes().
 + 2016-01-04: Added ISearch::searchCustomer().
 + 2016-01-05: Added IClient.
++ 2016-01-06: Added ServiceBlueprint.{name, id}, Setvice.{name, id, blueprint}.
 
 # Regarding `searchAvailableOrders -> searchAvailableBookings`
 > `List<SearchResult<PreOrder>> searchAvailableOrders( SearchQuery<PreOrder> query )`

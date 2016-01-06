@@ -31,6 +31,7 @@ public class Main {
 				.add(PayForOrder::new)
 				.add(ReadBooking::new)
 				.add(ReadOrder::new)
+				.add(ReadServicesBooking::new)
 				.add(SearchCustomer::new)
 				.add(TakeBackKey::new)
 				.add(SearchAvailableBookings::new)
@@ -43,9 +44,11 @@ public class Main {
 				.add(SearchBookingsNotCheckedIn::new)
 				.add(AddRoom::new)
 				.add(ListRooms::new)
+				.add(SearchUnpaidServicesBooking::new)
+				.add(SearchUnpaidServicesOrder::new)
 				.add(IsBlacklisted::new)
-				.add(CheckIn::new )
-				.add(CheckOut::new )
+				.add(CheckIn::new)
+				.add(CheckOut::new)
 				.add(Populate::new)
 				.build());
 	}

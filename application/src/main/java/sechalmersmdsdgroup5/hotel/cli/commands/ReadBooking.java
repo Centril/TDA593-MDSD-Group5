@@ -10,9 +10,7 @@ import sechalmersmdsdgroup5.hotel.ordering.RoomBooking;
 import static sechalmersmdsdgroup5.hotel.cli.readers.StandardReaders.intId;
 import static sechalmersmdsdgroup5.hotel.utils.Functional.concatMap;
 
-/**
- * Created by parke_000 on 2016-01-03.
- */
+
 public class ReadBooking implements Command.Consuming<Hotel>, IdentifiableCommand<Hotel, Void> {
     @Override
     public void accept( IOHelper io, Hotel hotel ) {

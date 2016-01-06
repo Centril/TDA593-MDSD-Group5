@@ -145,13 +145,40 @@ public class ServicesPackageImpl extends EPackageImpl {
 	public static final int SERVICE__CONSUMER = PaymentPackageImpl.PAYABLE_FEATURE_COUNT + 3;
 
 	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int SERVICE__ID = PaymentPackageImpl.PAYABLE_FEATURE_COUNT + 4;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int SERVICE__NAME = PaymentPackageImpl.PAYABLE_FEATURE_COUNT + 5;
+
+	/**
+	 * The feature id for the '<em><b>Blueprint</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int SERVICE__BLUEPRINT = PaymentPackageImpl.PAYABLE_FEATURE_COUNT + 6;
+
+	/**
 	 * The number of structural features of the '<em>Service</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	public static final int SERVICE_FEATURE_COUNT = PaymentPackageImpl.PAYABLE_FEATURE_COUNT + 4;
+	public static final int SERVICE_FEATURE_COUNT = PaymentPackageImpl.PAYABLE_FEATURE_COUNT + 7;
 
 	/**
 	 * The meta object id for the '{@link sechalmersmdsdgroup5.hotel.services.ServiceConsumer <em>Service Consumer</em>}' class.
@@ -211,13 +238,31 @@ public class ServicesPackageImpl extends EPackageImpl {
 	public static final int SERVICE_BLUEPRINT__BASE_PRICE = 0;
 
 	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int SERVICE_BLUEPRINT__ID = 1;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int SERVICE_BLUEPRINT__NAME = 2;
+
+	/**
 	 * The number of structural features of the '<em>Service Blueprint</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	public static final int SERVICE_BLUEPRINT_FEATURE_COUNT = 1;
+	public static final int SERVICE_BLUEPRINT_FEATURE_COUNT = 3;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -414,6 +459,48 @@ public class ServicesPackageImpl extends EPackageImpl {
 
 
 	/**
+	 * Returns the meta object for the attribute '{@link sechalmersmdsdgroup5.hotel.services.Service#getId <em>Id</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Id</em>'.
+	 * @see sechalmersmdsdgroup5.hotel.services.Service#getId()
+	 * @see #getService()
+	 * @generated
+	 */
+	public EAttribute getService_Id() {
+		return (EAttribute)serviceEClass.getEStructuralFeatures().get(4);
+	}
+
+
+	/**
+	 * Returns the meta object for the attribute '{@link sechalmersmdsdgroup5.hotel.services.Service#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see sechalmersmdsdgroup5.hotel.services.Service#getName()
+	 * @see #getService()
+	 * @generated
+	 */
+	public EAttribute getService_Name() {
+		return (EAttribute)serviceEClass.getEStructuralFeatures().get(5);
+	}
+
+
+	/**
+	 * Returns the meta object for the reference '{@link sechalmersmdsdgroup5.hotel.services.Service#getBlueprint <em>Blueprint</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Blueprint</em>'.
+	 * @see sechalmersmdsdgroup5.hotel.services.Service#getBlueprint()
+	 * @see #getService()
+	 * @generated
+	 */
+	public EReference getService_Blueprint() {
+		return (EReference)serviceEClass.getEStructuralFeatures().get(6);
+	}
+
+
+	/**
 	 * Returns the meta object for class '{@link sechalmersmdsdgroup5.hotel.services.ServiceConsumer <em>Service Consumer</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -463,6 +550,34 @@ public class ServicesPackageImpl extends EPackageImpl {
 	}
 
 	/**
+	 * Returns the meta object for the attribute '{@link sechalmersmdsdgroup5.hotel.services.ServiceBlueprint#getId <em>Id</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Id</em>'.
+	 * @see sechalmersmdsdgroup5.hotel.services.ServiceBlueprint#getId()
+	 * @see #getServiceBlueprint()
+	 * @generated
+	 */
+	public EAttribute getServiceBlueprint_Id() {
+		return (EAttribute)serviceBlueprintEClass.getEStructuralFeatures().get(1);
+	}
+
+
+	/**
+	 * Returns the meta object for the attribute '{@link sechalmersmdsdgroup5.hotel.services.ServiceBlueprint#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see sechalmersmdsdgroup5.hotel.services.ServiceBlueprint#getName()
+	 * @see #getServiceBlueprint()
+	 * @generated
+	 */
+	public EAttribute getServiceBlueprint_Name() {
+		return (EAttribute)serviceBlueprintEClass.getEStructuralFeatures().get(2);
+	}
+
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -497,6 +612,9 @@ public class ServicesPackageImpl extends EPackageImpl {
 		createEAttribute(serviceEClass, SERVICE__IS_PAID);
 		createEAttribute(serviceEClass, SERVICE__CREATION_DATE);
 		createEReference(serviceEClass, SERVICE__CONSUMER);
+		createEAttribute(serviceEClass, SERVICE__ID);
+		createEAttribute(serviceEClass, SERVICE__NAME);
+		createEReference(serviceEClass, SERVICE__BLUEPRINT);
 
 		serviceConsumerEClass = createEClass(SERVICE_CONSUMER);
 
@@ -504,6 +622,8 @@ public class ServicesPackageImpl extends EPackageImpl {
 
 		serviceBlueprintEClass = createEClass(SERVICE_BLUEPRINT);
 		createEAttribute(serviceBlueprintEClass, SERVICE_BLUEPRINT__BASE_PRICE);
+		createEAttribute(serviceBlueprintEClass, SERVICE_BLUEPRINT__ID);
+		createEAttribute(serviceBlueprintEClass, SERVICE_BLUEPRINT__NAME);
 	}
 
 	/**
@@ -546,6 +666,9 @@ public class ServicesPackageImpl extends EPackageImpl {
 		initEAttribute(getService_IsPaid(), ecorePackage.getEBoolean(), "isPaid", null, 1, 1, Service.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getService_CreationDate(), ecorePackage.getEDate(), "creationDate", null, 1, 1, Service.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getService_Consumer(), this.getServiceConsumer(), null, "consumer", null, 1, 1, Service.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getService_Id(), ecorePackage.getEInt(), "id", null, 1, 1, Service.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getService_Name(), ecorePackage.getEString(), "name", null, 1, 1, Service.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getService_Blueprint(), this.getServiceBlueprint(), null, "blueprint", null, 1, 1, Service.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(serviceConsumerEClass, ServiceConsumer.class, "ServiceConsumer", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -561,6 +684,8 @@ public class ServicesPackageImpl extends EPackageImpl {
 
 		initEClass(serviceBlueprintEClass, ServiceBlueprint.class, "ServiceBlueprint", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getServiceBlueprint_BasePrice(), ecorePackage.getEDouble(), "basePrice", null, 1, 1, ServiceBlueprint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getServiceBlueprint_Id(), ecorePackage.getEInt(), "id", null, 1, 1, ServiceBlueprint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getServiceBlueprint_Name(), ecorePackage.getEString(), "name", null, 1, 1, ServiceBlueprint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 	}
 
 	/**
@@ -619,6 +744,30 @@ public class ServicesPackageImpl extends EPackageImpl {
 		public static final EReference SERVICE__CONSUMER = eINSTANCE.getService_Consumer();
 
 		/**
+		 * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		public static final EAttribute SERVICE__ID = eINSTANCE.getService_Id();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		public static final EAttribute SERVICE__NAME = eINSTANCE.getService_Name();
+
+		/**
+		 * The meta object literal for the '<em><b>Blueprint</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		public static final EReference SERVICE__BLUEPRINT = eINSTANCE.getService_Blueprint();
+
+		/**
 		 * The meta object literal for the '{@link sechalmersmdsdgroup5.hotel.services.ServiceConsumer <em>Service Consumer</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -655,6 +804,22 @@ public class ServicesPackageImpl extends EPackageImpl {
 		 * @generated
 		 */
 		public static final EAttribute SERVICE_BLUEPRINT__BASE_PRICE = eINSTANCE.getServiceBlueprint_BasePrice();
+
+		/**
+		 * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		public static final EAttribute SERVICE_BLUEPRINT__ID = eINSTANCE.getServiceBlueprint_Id();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		public static final EAttribute SERVICE_BLUEPRINT__NAME = eINSTANCE.getServiceBlueprint_Name();
 
 	}
 
