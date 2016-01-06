@@ -155,7 +155,7 @@ public class Search implements ISearch {
 		// Restriction: Limit to bookings with start/end date in future & not checked in:
 		Date now = new Date();
 		SearchCriteria<RoomBooking> restriction = matches( booking -> booking.getCheckinTime() == null &&
-			leq( now, booking.getStartDate() ) || leq( now, booking.getEndDate() ) );
+				(leq( now, booking.getStartDate() ) || leq( now, booking.getEndDate() )) );
 
 		return new Searcher<RoomBooking>().searchInit( allBookings(),
 				SearchQueryBuilder.<RoomBooking>builder().wrap( restriction )
