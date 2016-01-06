@@ -25,6 +25,9 @@ import sechalmersmdsdgroup5.hotel.payment.PaymentFactory;
 import sechalmersmdsdgroup5.hotel.search.SearchResult;
 import sechalmersmdsdgroup5.hotel.services.Service;
 import sechalmersmdsdgroup5.hotel.services.ServiceBlueprint;
+import sechalmersmdsdgroup5.hotel.services.ServicesFactory;
+import sechalmersmdsdgroup5.hotel.services.impl.ServiceImpl;
+import sechalmersmdsdgroup5.hotel.services.impl.ServicesFactoryImpl;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -86,7 +89,7 @@ public class CreateOrder implements IdentifiableCommand<Hotel, Order> {
             // Keep adding forever until we can't add guests anymore:
             while ( io.read( "Add more guests?", addMore() ) && basicAddGuest( io, hotel, booking ) != null );
 
-            //TODO: add services to booking.
+            setServices(booking, hotel, io);
 
             return booking;
         } ) );
@@ -163,7 +166,38 @@ public class CreateOrder implements IdentifiableCommand<Hotel, Order> {
         return customer;
     }
 
-  
+    private void setServices(RoomBooking booking, Hotel hotel, IOHelper io){
+        List<ServiceBlueprint> bookableServices = new ArrayList<>();
+        bookableServices.addAll(hotel.getServiceBlueprints());
+
+        List<Service> bookedServices = booking.getServices();
+
+        List<ServiceBlueprint> includedServices = new ArrayList<ServiceBlueprint>();
+        for(Service s : bookedServices){
+            includedServices.add(s.getBlueprint());
+        }
+
+        bookableServices.removeAll(includedServices);
+
+        int choice = 0;
+
+        while(true) {
+            io.info("Adding services to booking...").newline();
+            for (ServiceBlueprint bp : bookableServices) {
+                io.info(bp.toString()).newline();
+            }
+            try {
+                choice = Integer.parseInt(io.read("Choose service by index, type non-numeral to exit"));
+            } catch (NumberFormatException e) {
+                break;
+            }
+
+            Service toAdd = new ServicesFactoryImpl().createService();
+            toAdd.setBlueprint(bookableServices.get(choice));
+            bookableServices.remove(choice);
+            bookedServices.add(toAdd);
+        }
+    }
 
     private void specifyIdentity( IOHelper io, Identity identity ) {
         identity.setName( io.read( "Customer name?" ) );
