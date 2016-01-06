@@ -20,6 +20,8 @@ import sechalmersmdsdgroup5.hotel.services.ServiceBlueprint;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Objects;
+import java.util.stream.Stream;
 
 import static sechalmersmdsdgroup5.hotel.search.logic.SearchCriteriaFactory.matches;
 import static sechalmersmdsdgroup5.hotel.search.logic.SearchCriteriaFactory.query;
@@ -36,15 +38,16 @@ public class Search implements ISearch {
 
     @Override
     public List<Order> searchActiveOrders(String clientName) {
-        List<Order> allOrders = new ArrayList<>(hotel.getOrders());
-        List<Order> clientOrders = new ArrayList<>();
-        for (Order order : allOrders ) {
-            String acquiredName = order.getCustomer().getIdentity().getName();
-            if ( null != acquiredName && acquiredName.equals(clientName) ) {
-                clientOrders.add(order);
-            }
-        }
-        return clientOrders;
+		Date from = new Date();
+		Date to = new Date();
+
+		Stream<RoomBooking> bookings = searchActiveBookings( from, to ).stream();
+		return listify( hotel.getOrders().stream().filter(
+				order -> Objects.equals( order.getCustomer().getIdentity().getName(), clientName ) &&
+						 order.getBookings().stream().anyMatch(
+							l -> bookings.anyMatch(
+							r -> l.getId() == r.getId() ) )
+			).distinct() );
     }
 
 	@Override
