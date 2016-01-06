@@ -7,8 +7,6 @@ import sechalmersmdsdgroup5.hotel.cli.infrastructure.IdentifiableCommand;
 import sechalmersmdsdgroup5.hotel.facilities.Room;
 import sechalmersmdsdgroup5.hotel.facilities.impl.FacilitiesFactoryImpl;
 
-import static sechalmersmdsdgroup5.hotel.cli.commands.Utils.*;
-
 public class ListRooms implements Command.Consuming<Hotel>, IdentifiableCommand<Hotel, Void> {
     @Override
     public void accept(IOHelper io, Hotel hotel) {

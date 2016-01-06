@@ -5,12 +5,12 @@ package sechalmersmdsdgroup5.hotel.clients.impl;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
-
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-
-import sechalmersmdsdgroup5.hotel.clients.*;
+import sechalmersmdsdgroup5.hotel.clients.Address;
+import sechalmersmdsdgroup5.hotel.clients.ClientsFactory;
+import sechalmersmdsdgroup5.hotel.clients.Customer;
+import sechalmersmdsdgroup5.hotel.clients.Guest;
 
 /**
  * <!-- begin-user-doc -->

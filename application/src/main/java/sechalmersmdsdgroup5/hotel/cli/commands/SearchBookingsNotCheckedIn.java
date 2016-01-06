@@ -4,9 +4,7 @@ import sechalmersmdsdgroup5.hotel.Hotel;
 import sechalmersmdsdgroup5.hotel.cli.infrastructure.Command;
 import sechalmersmdsdgroup5.hotel.cli.infrastructure.IOHelper;
 import sechalmersmdsdgroup5.hotel.cli.infrastructure.IdentifiableCommand;
-import sechalmersmdsdgroup5.hotel.facilities.Room;
 import sechalmersmdsdgroup5.hotel.facilities.impl.RoomAttributeImpl;
-import sechalmersmdsdgroup5.hotel.ordering.PreBooking;
 import sechalmersmdsdgroup5.hotel.ordering.RoomBooking;
 import sechalmersmdsdgroup5.hotel.search.SearchCriteria;
 import sechalmersmdsdgroup5.hotel.search.SearchResult;
@@ -21,9 +19,7 @@ import java.util.function.Function;
 
 import static java.lang.Integer.parseInt;
 import static sechalmersmdsdgroup5.hotel.cli.infrastructure.color.StandardPrintColor.CYAN;
-import static sechalmersmdsdgroup5.hotel.cli.readers.StandardReaders.choice;
-import static sechalmersmdsdgroup5.hotel.cli.readers.StandardReaders.doubleR;
-import static sechalmersmdsdgroup5.hotel.cli.readers.StandardReaders.naturalInt;
+import static sechalmersmdsdgroup5.hotel.cli.readers.StandardReaders.*;
 import static sechalmersmdsdgroup5.hotel.search.logic.SearchCriteriaFactory.query;
 import static sechalmersmdsdgroup5.hotel.utils.Functional.foreachIndexed;
 

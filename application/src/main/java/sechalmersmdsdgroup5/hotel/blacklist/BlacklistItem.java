@@ -2,9 +2,9 @@
  */
 package sechalmersmdsdgroup5.hotel.blacklist;
 
-import java.util.Date;
-
 import sechalmersmdsdgroup5.hotel.identities.Identity;
+
+import java.util.Date;
 
 /**
  * <!-- begin-user-doc -->

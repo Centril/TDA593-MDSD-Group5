@@ -2,17 +2,14 @@
  */
 package sechalmersmdsdgroup5.hotel.personnel.impl;
 
-import java.util.Date;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import sechalmersmdsdgroup5.hotel.facilities.Key;
-
 import sechalmersmdsdgroup5.hotel.personnel.Subcontractor;
+
+import java.util.Date;
 
 /**
  * <!-- begin-user-doc -->

@@ -2,16 +2,14 @@
  */
 package sechalmersmdsdgroup5.hotel.search.util;
 
-import java.util.function.BiPredicate;
-import java.util.function.Function;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.util.Switch;
-
 import sechalmersmdsdgroup5.hotel.search.*;
-
 import sechalmersmdsdgroup5.hotel.search.impl.SearchPackageImpl;
+
+import java.util.function.BiPredicate;
+import java.util.function.Function;
 
 /**
  * <!-- begin-user-doc -->

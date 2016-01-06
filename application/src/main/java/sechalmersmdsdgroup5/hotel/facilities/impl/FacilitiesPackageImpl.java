@@ -2,50 +2,20 @@
  */
 package sechalmersmdsdgroup5.hotel.facilities.impl;
 
-import org.eclipse.emf.ecore.EAttribute;
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EFactory;
-import org.eclipse.emf.ecore.EOperation;
-import org.eclipse.emf.ecore.EPackage;
-import org.eclipse.emf.ecore.EReference;
-
+import org.eclipse.emf.ecore.*;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
-
 import sechalmersmdsdgroup5.hotel.blacklist.impl.BlacklistPackageImpl;
-
 import sechalmersmdsdgroup5.hotel.clients.impl.ClientsPackageImpl;
-
-import sechalmersmdsdgroup5.hotel.facilities.AccessLog;
-import sechalmersmdsdgroup5.hotel.facilities.AccessLogItem;
-import sechalmersmdsdgroup5.hotel.facilities.Area;
-import sechalmersmdsdgroup5.hotel.facilities.Door;
-import sechalmersmdsdgroup5.hotel.facilities.EmployeeArea;
-import sechalmersmdsdgroup5.hotel.facilities.FacilitiesFactory;
-import sechalmersmdsdgroup5.hotel.facilities.IFacilities;
-import sechalmersmdsdgroup5.hotel.facilities.Key;
-import sechalmersmdsdgroup5.hotel.facilities.PrototypeOrdering;
-import sechalmersmdsdgroup5.hotel.facilities.Room;
-import sechalmersmdsdgroup5.hotel.facilities.RoomAttribute;
-import sechalmersmdsdgroup5.hotel.facilities.RoomPrototype;
-
+import sechalmersmdsdgroup5.hotel.facilities.*;
 import sechalmersmdsdgroup5.hotel.identities.impl.IdentitiesPackageImpl;
-
 import sechalmersmdsdgroup5.hotel.impl.HotelPackageImpl;
-
 import sechalmersmdsdgroup5.hotel.inventory.impl.InventoryPackageImpl;
-
 import sechalmersmdsdgroup5.hotel.log.impl.LogPackageImpl;
-
 import sechalmersmdsdgroup5.hotel.ordering.impl.OrderingPackageImpl;
-
 import sechalmersmdsdgroup5.hotel.payment.impl.PaymentPackageImpl;
-
 import sechalmersmdsdgroup5.hotel.personnel.impl.PersonnelPackageImpl;
-
 import sechalmersmdsdgroup5.hotel.schedule.impl.SchedulePackageImpl;
-
 import sechalmersmdsdgroup5.hotel.search.impl.SearchPackageImpl;
-
 import sechalmersmdsdgroup5.hotel.services.impl.ServicesPackageImpl;
 
 /**

@@ -2,8 +2,9 @@
  */
 package sechalmersmdsdgroup5.hotel.services;
 
-import java.util.Date;
 import sechalmersmdsdgroup5.hotel.payment.Payable;
+
+import java.util.Date;
 
 
 /**

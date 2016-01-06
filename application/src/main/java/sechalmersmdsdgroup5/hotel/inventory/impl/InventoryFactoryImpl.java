@@ -5,12 +5,11 @@ package sechalmersmdsdgroup5.hotel.inventory.impl;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
-
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-
-import sechalmersmdsdgroup5.hotel.inventory.*;
+import sechalmersmdsdgroup5.hotel.inventory.Inventory;
+import sechalmersmdsdgroup5.hotel.inventory.InventoryFactory;
+import sechalmersmdsdgroup5.hotel.inventory.Product;
 
 /**
  * <!-- begin-user-doc -->

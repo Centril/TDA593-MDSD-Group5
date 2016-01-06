@@ -3,9 +3,7 @@
 package sechalmersmdsdgroup5.hotel.ordering;
 
 import sechalmersmdsdgroup5.hotel.clients.Guest;
-
 import sechalmersmdsdgroup5.hotel.facilities.Key;
-
 import sechalmersmdsdgroup5.hotel.identities.Identity;
 
 /**

@@ -4,11 +4,9 @@ package sechalmersmdsdgroup5.hotel.inventory.util;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.util.Switch;
-
-import sechalmersmdsdgroup5.hotel.inventory.*;
-
+import sechalmersmdsdgroup5.hotel.inventory.Inventory;
+import sechalmersmdsdgroup5.hotel.inventory.Product;
 import sechalmersmdsdgroup5.hotel.inventory.impl.InventoryPackageImpl;
 
 /**

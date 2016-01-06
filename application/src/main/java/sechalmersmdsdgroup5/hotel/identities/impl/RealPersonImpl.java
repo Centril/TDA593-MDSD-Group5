@@ -3,7 +3,6 @@
 package sechalmersmdsdgroup5.hotel.identities.impl;
 
 import org.eclipse.emf.ecore.EClass;
-
 import sechalmersmdsdgroup5.hotel.identities.RealPerson;
 
 /**

@@ -6,9 +6,11 @@ import sechalmersmdsdgroup5.hotel.clients.Guest;
 import sechalmersmdsdgroup5.hotel.facilities.Room;
 import sechalmersmdsdgroup5.hotel.facilities.RoomAttribute;
 import sechalmersmdsdgroup5.hotel.facilities.impl.RoomAttributeImpl;
-import sechalmersmdsdgroup5.hotel.ordering.*;
+import sechalmersmdsdgroup5.hotel.ordering.IOrder;
+import sechalmersmdsdgroup5.hotel.ordering.Order;
+import sechalmersmdsdgroup5.hotel.ordering.PreBooking;
+import sechalmersmdsdgroup5.hotel.ordering.RoomBooking;
 
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 

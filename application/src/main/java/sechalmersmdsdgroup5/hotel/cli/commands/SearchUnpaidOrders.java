@@ -4,9 +4,7 @@ import sechalmersmdsdgroup5.hotel.Hotel;
 import sechalmersmdsdgroup5.hotel.cli.infrastructure.Command;
 import sechalmersmdsdgroup5.hotel.cli.infrastructure.IOHelper;
 import sechalmersmdsdgroup5.hotel.cli.infrastructure.IdentifiableCommand;
-import sechalmersmdsdgroup5.hotel.identities.Identity;
 import sechalmersmdsdgroup5.hotel.ordering.Order;
-import sechalmersmdsdgroup5.hotel.ordering.impl.CheckInCheckOut;
 
 import java.util.ArrayList;
 import java.util.List;

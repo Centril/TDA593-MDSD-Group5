@@ -2,9 +2,9 @@
  */
 package sechalmersmdsdgroup5.hotel.payment;
 
-import java.util.List;
-
 import sechalmersmdsdgroup5.hotel.ordering.Invoice;
+
+import java.util.List;
 
 /**
  * <!-- begin-user-doc -->

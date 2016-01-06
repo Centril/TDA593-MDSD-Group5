@@ -3,9 +3,7 @@
 package sechalmersmdsdgroup5.hotel.payment.impl;
 
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import sechalmersmdsdgroup5.hotel.payment.CreditCard;
 
 /**

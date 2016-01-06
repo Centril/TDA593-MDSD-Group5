@@ -2,8 +2,9 @@
  */
 package sechalmersmdsdgroup5.hotel.facilities;
 
-import java.util.List;
 import sechalmersmdsdgroup5.hotel.services.ServiceBlueprint;
+
+import java.util.List;
 
 /**
  * <!-- begin-user-doc -->

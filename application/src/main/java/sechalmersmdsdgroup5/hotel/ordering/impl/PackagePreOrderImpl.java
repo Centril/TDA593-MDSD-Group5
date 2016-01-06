@@ -3,7 +3,6 @@
 package sechalmersmdsdgroup5.hotel.ordering.impl;
 
 import org.eclipse.emf.ecore.EClass;
-
 import sechalmersmdsdgroup5.hotel.ordering.PackagePreOrder;
 
 /**

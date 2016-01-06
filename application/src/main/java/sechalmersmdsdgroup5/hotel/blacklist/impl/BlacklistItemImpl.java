@@ -2,17 +2,14 @@
  */
 package sechalmersmdsdgroup5.hotel.blacklist.impl;
 
-import java.util.Date;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import sechalmersmdsdgroup5.hotel.blacklist.BlacklistItem;
-
 import sechalmersmdsdgroup5.hotel.identities.Identity;
+
+import java.util.Date;
 
 /**
  * <!-- begin-user-doc -->

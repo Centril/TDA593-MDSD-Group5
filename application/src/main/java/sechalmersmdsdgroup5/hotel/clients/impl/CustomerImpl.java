@@ -2,24 +2,21 @@
  */
 package sechalmersmdsdgroup5.hotel.clients.impl;
 
-import java.util.Collection;
-import java.util.List;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.emf.ecore.util.BasicInternalEList;
 import sechalmersmdsdgroup5.hotel.clients.Address;
 import sechalmersmdsdgroup5.hotel.clients.Customer;
-
 import sechalmersmdsdgroup5.hotel.identities.Identity;
-
 import sechalmersmdsdgroup5.hotel.ordering.Invoice;
 import sechalmersmdsdgroup5.hotel.payment.CreditCard;
 import sechalmersmdsdgroup5.hotel.payment.PaymentMethod;
+
+import java.util.Collection;
+import java.util.List;
 
 /**
  * <!-- begin-user-doc -->

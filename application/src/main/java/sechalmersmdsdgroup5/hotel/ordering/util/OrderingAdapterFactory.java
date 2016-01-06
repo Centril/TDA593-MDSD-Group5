@@ -4,13 +4,9 @@ package sechalmersmdsdgroup5.hotel.ordering.util;
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
-
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
-
 import org.eclipse.emf.ecore.EObject;
-
 import sechalmersmdsdgroup5.hotel.ordering.*;
-
 import sechalmersmdsdgroup5.hotel.ordering.impl.OrderingPackageImpl;
 import sechalmersmdsdgroup5.hotel.payment.Payable;
 import sechalmersmdsdgroup5.hotel.services.ServiceConsumer;

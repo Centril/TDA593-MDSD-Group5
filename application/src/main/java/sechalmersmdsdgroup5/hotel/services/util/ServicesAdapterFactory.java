@@ -4,13 +4,13 @@ package sechalmersmdsdgroup5.hotel.services.util;
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
-
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
-
 import org.eclipse.emf.ecore.EObject;
 import sechalmersmdsdgroup5.hotel.payment.Payable;
-import sechalmersmdsdgroup5.hotel.services.*;
-
+import sechalmersmdsdgroup5.hotel.services.IService;
+import sechalmersmdsdgroup5.hotel.services.Service;
+import sechalmersmdsdgroup5.hotel.services.ServiceBlueprint;
+import sechalmersmdsdgroup5.hotel.services.ServiceConsumer;
 import sechalmersmdsdgroup5.hotel.services.impl.ServicesPackageImpl;
 
 /**

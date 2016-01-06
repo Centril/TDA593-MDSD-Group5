@@ -4,7 +4,6 @@ import sechalmersmdsdgroup5.hotel.Hotel;
 import sechalmersmdsdgroup5.hotel.cli.infrastructure.Command;
 import sechalmersmdsdgroup5.hotel.cli.infrastructure.IOHelper;
 import sechalmersmdsdgroup5.hotel.cli.infrastructure.IdentifiableCommand;
-import sechalmersmdsdgroup5.hotel.facilities.PrototypeOrdering;
 import sechalmersmdsdgroup5.hotel.ordering.Order;
 import sechalmersmdsdgroup5.hotel.ordering.RoomBooking;
 import sechalmersmdsdgroup5.hotel.services.IService;

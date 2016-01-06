@@ -4,11 +4,8 @@ package sechalmersmdsdgroup5.hotel.facilities.util;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.util.Switch;
-
 import sechalmersmdsdgroup5.hotel.facilities.*;
-
 import sechalmersmdsdgroup5.hotel.facilities.impl.FacilitiesPackageImpl;
 
 /**

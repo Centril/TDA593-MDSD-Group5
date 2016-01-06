@@ -2,13 +2,11 @@
  */
 package sechalmersmdsdgroup5.hotel.schedule.impl;
 
-import java.util.Date;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import sechalmersmdsdgroup5.hotel.schedule.Shift;
+
+import java.util.Date;
 
 /**
  * <!-- begin-user-doc -->

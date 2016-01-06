@@ -9,7 +9,8 @@ import java.util.List;
 import java.util.function.ToDoubleFunction;
 import java.util.stream.Collectors;
 
-import static sechalmersmdsdgroup5.hotel.utils.Functional.*;
+import static sechalmersmdsdgroup5.hotel.utils.Functional.foldl;
+import static sechalmersmdsdgroup5.hotel.utils.Functional.listify;
 
 /**
  * Searcher performs searching given queries and initial data.

@@ -2,20 +2,16 @@
  */
 package sechalmersmdsdgroup5.hotel.ordering.impl;
 
-import java.util.Collection;
-import java.util.List;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.emf.ecore.util.BasicInternalEList;
-
 import sechalmersmdsdgroup5.hotel.ordering.Campaign;
 import sechalmersmdsdgroup5.hotel.ordering.PreBooking;
 import sechalmersmdsdgroup5.hotel.ordering.PreOrder;
+
+import java.util.Collection;
+import java.util.List;
 
 /**
  * <!-- begin-user-doc -->

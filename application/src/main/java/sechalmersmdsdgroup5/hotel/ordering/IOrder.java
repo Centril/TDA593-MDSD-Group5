@@ -2,11 +2,11 @@
  */
 package sechalmersmdsdgroup5.hotel.ordering;
 
-import java.util.Date;
-import java.util.List;
-
 import sechalmersmdsdgroup5.hotel.clients.Customer;
 import sechalmersmdsdgroup5.hotel.clients.Guest;
+
+import java.util.Date;
+import java.util.List;
 
 /**
  * <!-- begin-user-doc -->

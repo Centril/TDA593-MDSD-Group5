@@ -4,13 +4,11 @@ package sechalmersmdsdgroup5.hotel.blacklist.util;
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
-
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
-
 import org.eclipse.emf.ecore.EObject;
-
-import sechalmersmdsdgroup5.hotel.blacklist.*;
-
+import sechalmersmdsdgroup5.hotel.blacklist.Blacklist;
+import sechalmersmdsdgroup5.hotel.blacklist.BlacklistItem;
+import sechalmersmdsdgroup5.hotel.blacklist.IBlacklist;
 import sechalmersmdsdgroup5.hotel.blacklist.impl.BlacklistPackageImpl;
 
 /**

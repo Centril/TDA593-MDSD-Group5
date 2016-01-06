@@ -4,11 +4,10 @@ package sechalmersmdsdgroup5.hotel.log.util;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.util.Switch;
-
-import sechalmersmdsdgroup5.hotel.log.*;
-
+import sechalmersmdsdgroup5.hotel.log.TaskItem;
+import sechalmersmdsdgroup5.hotel.log.TaskLog;
+import sechalmersmdsdgroup5.hotel.log.TaskTag;
 import sechalmersmdsdgroup5.hotel.log.impl.LogPackageImpl;
 
 /**

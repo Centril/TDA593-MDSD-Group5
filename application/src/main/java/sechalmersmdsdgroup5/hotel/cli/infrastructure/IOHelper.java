@@ -3,7 +3,6 @@ package sechalmersmdsdgroup5.hotel.cli.infrastructure;
 import sechalmersmdsdgroup5.hotel.cli.infrastructure.color.PrintColor;
 import sechalmersmdsdgroup5.hotel.cli.infrastructure.color.PrintColorWriter;
 import sechalmersmdsdgroup5.hotel.cli.infrastructure.color.TermColor;
-import sechalmersmdsdgroup5.hotel.cli.readers.StandardReaders;
 
 import java.io.*;
 import java.util.List;
@@ -14,7 +13,6 @@ import java.util.function.Function;
 import java.util.function.Supplier;
 
 import static java.util.stream.Stream.concat;
-import static sechalmersmdsdgroup5.hotel.cli.infrastructure.Readers.reader;
 import static sechalmersmdsdgroup5.hotel.cli.infrastructure.color.StandardPrintColor.*;
 import static sechalmersmdsdgroup5.hotel.cli.readers.StandardReaders.addMore;
 import static sechalmersmdsdgroup5.hotel.utils.Functional.listify;

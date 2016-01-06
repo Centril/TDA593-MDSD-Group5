@@ -4,11 +4,8 @@ package sechalmersmdsdgroup5.hotel.ordering.util;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.util.Switch;
-
 import sechalmersmdsdgroup5.hotel.ordering.*;
-
 import sechalmersmdsdgroup5.hotel.ordering.impl.OrderingPackageImpl;
 import sechalmersmdsdgroup5.hotel.payment.Payable;
 import sechalmersmdsdgroup5.hotel.services.ServiceConsumer;

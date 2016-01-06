@@ -4,11 +4,11 @@ package sechalmersmdsdgroup5.hotel.identities.util;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.util.Switch;
-
-import sechalmersmdsdgroup5.hotel.identities.*;
-
+import sechalmersmdsdgroup5.hotel.identities.IIdentity;
+import sechalmersmdsdgroup5.hotel.identities.Identity;
+import sechalmersmdsdgroup5.hotel.identities.Organisation;
+import sechalmersmdsdgroup5.hotel.identities.RealPerson;
 import sechalmersmdsdgroup5.hotel.identities.impl.IdentitiesPackageImpl;
 
 /**

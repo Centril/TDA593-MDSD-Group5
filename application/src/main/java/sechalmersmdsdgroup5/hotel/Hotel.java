@@ -2,27 +2,18 @@
  */
 package sechalmersmdsdgroup5.hotel;
 
-import java.util.List;
-
 import sechalmersmdsdgroup5.hotel.blacklist.Blacklist;
 import sechalmersmdsdgroup5.hotel.clients.Customer;
 import sechalmersmdsdgroup5.hotel.clients.Guest;
-
-import sechalmersmdsdgroup5.hotel.facilities.AccessLog;
-import sechalmersmdsdgroup5.hotel.facilities.Door;
-import sechalmersmdsdgroup5.hotel.facilities.EmployeeArea;
-import sechalmersmdsdgroup5.hotel.facilities.Key;
-import sechalmersmdsdgroup5.hotel.facilities.Room;
-import sechalmersmdsdgroup5.hotel.facilities.RoomPrototype;
+import sechalmersmdsdgroup5.hotel.facilities.*;
 import sechalmersmdsdgroup5.hotel.log.TaskLog;
-
 import sechalmersmdsdgroup5.hotel.ordering.Campaign;
 import sechalmersmdsdgroup5.hotel.ordering.Order;
-
 import sechalmersmdsdgroup5.hotel.personnel.Employee;
 import sechalmersmdsdgroup5.hotel.personnel.Subcontractor;
-
 import sechalmersmdsdgroup5.hotel.services.ServiceBlueprint;
+
+import java.util.List;
 
 /**
  * <!-- begin-user-doc -->

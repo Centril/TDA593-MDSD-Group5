@@ -12,6 +12,7 @@ import sechalmersmdsdgroup5.hotel.ordering.Invoice;
 import sechalmersmdsdgroup5.hotel.services.Service;
 import sechalmersmdsdgroup5.hotel.services.ServiceBlueprint;
 import sechalmersmdsdgroup5.hotel.services.ServiceConsumer;
+
 import java.util.Collection;
 import java.util.Date;
 import java.util.List;

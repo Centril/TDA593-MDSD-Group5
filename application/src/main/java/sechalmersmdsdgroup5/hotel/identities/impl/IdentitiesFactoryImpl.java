@@ -5,12 +5,11 @@ package sechalmersmdsdgroup5.hotel.identities.impl;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
-
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-
-import sechalmersmdsdgroup5.hotel.identities.*;
+import sechalmersmdsdgroup5.hotel.identities.IdentitiesFactory;
+import sechalmersmdsdgroup5.hotel.identities.Organisation;
+import sechalmersmdsdgroup5.hotel.identities.RealPerson;
 
 /**
  * <!-- begin-user-doc -->

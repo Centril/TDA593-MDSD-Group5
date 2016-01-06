@@ -2,10 +2,10 @@
  */
 package sechalmersmdsdgroup5.hotel.log;
 
+import sechalmersmdsdgroup5.hotel.personnel.Employee;
+
 import java.util.Date;
 import java.util.List;
-
-import sechalmersmdsdgroup5.hotel.personnel.Employee;
 
 /**
  * <!-- begin-user-doc -->

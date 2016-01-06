@@ -4,11 +4,9 @@ package sechalmersmdsdgroup5.hotel.schedule.util;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.util.Switch;
-
-import sechalmersmdsdgroup5.hotel.schedule.*;
-
+import sechalmersmdsdgroup5.hotel.schedule.Schedule;
+import sechalmersmdsdgroup5.hotel.schedule.Shift;
 import sechalmersmdsdgroup5.hotel.schedule.impl.SchedulePackageImpl;
 
 /**

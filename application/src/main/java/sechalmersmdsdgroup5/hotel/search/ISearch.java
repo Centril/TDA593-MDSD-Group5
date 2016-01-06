@@ -2,18 +2,17 @@
  */
 package sechalmersmdsdgroup5.hotel.search;
 
-import java.util.Date;
-import java.util.List;
 import sechalmersmdsdgroup5.hotel.clients.Customer;
 import sechalmersmdsdgroup5.hotel.facilities.Key;
 import sechalmersmdsdgroup5.hotel.facilities.Room;
-
 import sechalmersmdsdgroup5.hotel.ordering.Order;
 import sechalmersmdsdgroup5.hotel.ordering.PreBooking;
 import sechalmersmdsdgroup5.hotel.ordering.RoomBooking;
-
 import sechalmersmdsdgroup5.hotel.services.Service;
 import sechalmersmdsdgroup5.hotel.services.ServiceBlueprint;
+
+import java.util.Date;
+import java.util.List;
 
 /**
  * <!-- begin-user-doc -->

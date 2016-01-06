@@ -4,13 +4,11 @@ package sechalmersmdsdgroup5.hotel.payment.util;
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
-
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
-
 import org.eclipse.emf.ecore.EObject;
-
-import sechalmersmdsdgroup5.hotel.payment.*;
-
+import sechalmersmdsdgroup5.hotel.payment.CreditCard;
+import sechalmersmdsdgroup5.hotel.payment.IPayment;
+import sechalmersmdsdgroup5.hotel.payment.Payable;
 import sechalmersmdsdgroup5.hotel.payment.impl.PaymentPackageImpl;
 
 /**

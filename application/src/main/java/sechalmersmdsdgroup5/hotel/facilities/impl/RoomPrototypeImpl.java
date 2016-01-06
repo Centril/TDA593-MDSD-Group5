@@ -2,22 +2,17 @@
  */
 package sechalmersmdsdgroup5.hotel.facilities.impl;
 
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+import org.eclipse.emf.ecore.util.BasicInternalEList;
+import sechalmersmdsdgroup5.hotel.facilities.RoomAttribute;
+import sechalmersmdsdgroup5.hotel.facilities.RoomPrototype;
+import sechalmersmdsdgroup5.hotel.services.ServiceBlueprint;
+
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
-
-import org.eclipse.emf.common.util.EList;
-
-import org.eclipse.emf.ecore.EClass;
-
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
-import org.eclipse.emf.ecore.util.BasicInternalEList;
-
-import sechalmersmdsdgroup5.hotel.facilities.RoomAttribute;
-import sechalmersmdsdgroup5.hotel.facilities.RoomPrototype;
-
-import sechalmersmdsdgroup5.hotel.services.ServiceBlueprint;
 
 /**
  * <!-- begin-user-doc -->

@@ -2,19 +2,15 @@
  */
 package sechalmersmdsdgroup5.hotel.inventory.impl;
 
-import java.util.Collection;
-import java.util.List;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.emf.ecore.util.BasicInternalEList;
-
 import sechalmersmdsdgroup5.hotel.inventory.Inventory;
 import sechalmersmdsdgroup5.hotel.inventory.Product;
+
+import java.util.Collection;
+import java.util.List;
 
 /**
  * <!-- begin-user-doc -->

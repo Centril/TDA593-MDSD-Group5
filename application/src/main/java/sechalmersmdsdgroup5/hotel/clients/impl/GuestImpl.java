@@ -2,8 +2,6 @@
  */
 package sechalmersmdsdgroup5.hotel.clients.impl;
 
-import java.util.Collection;
-import java.util.List;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
@@ -11,11 +9,13 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.util.BasicInternalEList;
 import sechalmersmdsdgroup5.hotel.clients.Client;
 import sechalmersmdsdgroup5.hotel.clients.Guest;
-
 import sechalmersmdsdgroup5.hotel.facilities.Key;
 import sechalmersmdsdgroup5.hotel.identities.impl.RealPersonImpl;
 import sechalmersmdsdgroup5.hotel.ordering.Invoice;
 import sechalmersmdsdgroup5.hotel.services.ServiceConsumer;
+
+import java.util.Collection;
+import java.util.List;
 
 /**
  * <!-- begin-user-doc -->

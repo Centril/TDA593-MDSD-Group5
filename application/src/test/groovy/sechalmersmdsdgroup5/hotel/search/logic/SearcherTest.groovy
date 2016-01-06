@@ -1,11 +1,7 @@
 package sechalmersmdsdgroup5.hotel.search.logic
 
 import sechalmersmdsdgroup5.hotel.search.SearchCriteria
-import sechalmersmdsdgroup5.hotel.search.impl.A
-import sechalmersmdsdgroup5.hotel.search.impl.AndSearchCriteriaImpl
-import sechalmersmdsdgroup5.hotel.search.impl.MatchesSearchCriteriaImpl
-import sechalmersmdsdgroup5.hotel.search.impl.SR
-import sechalmersmdsdgroup5.hotel.search.impl.SearchQueryImpl
+import sechalmersmdsdgroup5.hotel.search.impl.*
 import spock.lang.Specification
 
 class SearcherTest extends Specification {

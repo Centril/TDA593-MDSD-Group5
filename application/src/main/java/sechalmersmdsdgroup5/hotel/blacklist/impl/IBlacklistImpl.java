@@ -7,7 +7,6 @@ import sechalmersmdsdgroup5.hotel.identities.Identity;
 
 import java.util.Date;
 import java.util.Optional;
-import java.util.stream.Stream;
 
 /**
  * Created by Kerp on 31/12/15.

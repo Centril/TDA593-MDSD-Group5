@@ -8,8 +8,6 @@ import sechalmersmdsdgroup5.hotel.clients.Customer;
 import java.util.ArrayList;
 import java.util.List;
 
-import static sechalmersmdsdgroup5.hotel.cli.readers.StandardReaders.intId;
-
 public class SearchCustomer  implements IdentifiableCommand<Hotel, List<Customer>> {
     @Override
     public List<Customer> apply( IOHelper io, Hotel hotel ) {

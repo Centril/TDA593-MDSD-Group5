@@ -2,26 +2,12 @@ package sechalmersmdsdgroup5.hotel.cli.commands;
 
 import sechalmersmdsdgroup5.hotel.cli.infrastructure.IOHelper;
 import sechalmersmdsdgroup5.hotel.cli.readers.StandardReaders;
-import sechalmersmdsdgroup5.hotel.clients.Customer;
-import sechalmersmdsdgroup5.hotel.clients.impl.ClientsFactoryImpl;
-import sechalmersmdsdgroup5.hotel.facilities.FacilitiesFactory;
 import sechalmersmdsdgroup5.hotel.facilities.PrototypeOrdering;
-import sechalmersmdsdgroup5.hotel.facilities.Room;
-import sechalmersmdsdgroup5.hotel.facilities.RoomPrototype;
-import sechalmersmdsdgroup5.hotel.identities.RealPerson;
-import sechalmersmdsdgroup5.hotel.identities.impl.IdentitiesFactoryImpl;
-import sechalmersmdsdgroup5.hotel.ordering.Order;
-import sechalmersmdsdgroup5.hotel.ordering.OrderingFactory;
 import sechalmersmdsdgroup5.hotel.ordering.RoomBooking;
-import sechalmersmdsdgroup5.hotel.services.IService;
 import sechalmersmdsdgroup5.hotel.services.Service;
 import sechalmersmdsdgroup5.hotel.services.ServiceBlueprint;
-import sechalmersmdsdgroup5.hotel.services.ServicesFactory;
-import sechalmersmdsdgroup5.hotel.services.impl.ServiceFacade;
 
 import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 import java.util.function.Supplier;

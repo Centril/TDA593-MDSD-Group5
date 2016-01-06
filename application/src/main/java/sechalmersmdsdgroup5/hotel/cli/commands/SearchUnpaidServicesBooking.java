@@ -9,10 +9,6 @@ import sechalmersmdsdgroup5.hotel.ordering.RoomBooking;
 import sechalmersmdsdgroup5.hotel.services.Service;
 
 import java.util.ArrayList;
-import java.util.List;
-
-import static sechalmersmdsdgroup5.hotel.cli.readers.StandardReaders.intId;
-import static sechalmersmdsdgroup5.hotel.utils.Functional.concatMap;
 
 public class SearchUnpaidServicesBooking implements Command.Consuming<Hotel>, IdentifiableCommand<Hotel, Void> {
     @Override

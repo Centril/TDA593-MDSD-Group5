@@ -5,12 +5,11 @@ package sechalmersmdsdgroup5.hotel.schedule.impl;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
-
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-
-import sechalmersmdsdgroup5.hotel.schedule.*;
+import sechalmersmdsdgroup5.hotel.schedule.Schedule;
+import sechalmersmdsdgroup5.hotel.schedule.ScheduleFactory;
+import sechalmersmdsdgroup5.hotel.schedule.Shift;
 
 /**
  * <!-- begin-user-doc -->

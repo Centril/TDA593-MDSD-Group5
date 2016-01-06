@@ -2,52 +2,24 @@
  */
 package sechalmersmdsdgroup5.hotel.search.impl;
 
+import org.eclipse.emf.ecore.*;
+import org.eclipse.emf.ecore.impl.EPackageImpl;
+import sechalmersmdsdgroup5.hotel.blacklist.impl.BlacklistPackageImpl;
+import sechalmersmdsdgroup5.hotel.clients.impl.ClientsPackageImpl;
+import sechalmersmdsdgroup5.hotel.facilities.impl.FacilitiesPackageImpl;
+import sechalmersmdsdgroup5.hotel.identities.impl.IdentitiesPackageImpl;
+import sechalmersmdsdgroup5.hotel.impl.HotelPackageImpl;
+import sechalmersmdsdgroup5.hotel.inventory.impl.InventoryPackageImpl;
+import sechalmersmdsdgroup5.hotel.log.impl.LogPackageImpl;
+import sechalmersmdsdgroup5.hotel.ordering.impl.OrderingPackageImpl;
+import sechalmersmdsdgroup5.hotel.payment.impl.PaymentPackageImpl;
+import sechalmersmdsdgroup5.hotel.personnel.impl.PersonnelPackageImpl;
+import sechalmersmdsdgroup5.hotel.schedule.impl.SchedulePackageImpl;
+import sechalmersmdsdgroup5.hotel.search.*;
+import sechalmersmdsdgroup5.hotel.services.impl.ServicesPackageImpl;
+
 import java.util.function.BiPredicate;
 import java.util.function.Function;
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EFactory;
-import org.eclipse.emf.ecore.EGenericType;
-import org.eclipse.emf.ecore.EOperation;
-import org.eclipse.emf.ecore.EPackage;
-import org.eclipse.emf.ecore.EReference;
-import org.eclipse.emf.ecore.ETypeParameter;
-
-import org.eclipse.emf.ecore.impl.EPackageImpl;
-
-import sechalmersmdsdgroup5.hotel.blacklist.impl.BlacklistPackageImpl;
-
-import sechalmersmdsdgroup5.hotel.clients.impl.ClientsPackageImpl;
-
-import sechalmersmdsdgroup5.hotel.facilities.impl.FacilitiesPackageImpl;
-
-import sechalmersmdsdgroup5.hotel.identities.impl.IdentitiesPackageImpl;
-
-import sechalmersmdsdgroup5.hotel.impl.HotelPackageImpl;
-
-import sechalmersmdsdgroup5.hotel.inventory.impl.InventoryPackageImpl;
-
-import sechalmersmdsdgroup5.hotel.log.impl.LogPackageImpl;
-
-import sechalmersmdsdgroup5.hotel.ordering.impl.OrderingPackageImpl;
-
-import sechalmersmdsdgroup5.hotel.payment.impl.PaymentPackageImpl;
-
-import sechalmersmdsdgroup5.hotel.personnel.impl.PersonnelPackageImpl;
-
-import sechalmersmdsdgroup5.hotel.schedule.impl.SchedulePackageImpl;
-
-import sechalmersmdsdgroup5.hotel.search.AndSearchCriteria;
-import sechalmersmdsdgroup5.hotel.search.ConcreteSearchResult;
-import sechalmersmdsdgroup5.hotel.search.ISearch;
-import sechalmersmdsdgroup5.hotel.search.MatchesSearchCriteria;
-import sechalmersmdsdgroup5.hotel.search.NotSearchCriteria;
-import sechalmersmdsdgroup5.hotel.search.OrSearchCriteria;
-import sechalmersmdsdgroup5.hotel.search.SearchCriteria;
-import sechalmersmdsdgroup5.hotel.search.SearchFactory;
-import sechalmersmdsdgroup5.hotel.search.SearchQuery;
-import sechalmersmdsdgroup5.hotel.search.SearchResult;
-
-import sechalmersmdsdgroup5.hotel.services.impl.ServicesPackageImpl;
 
 /**
  * <!-- begin-user-doc -->

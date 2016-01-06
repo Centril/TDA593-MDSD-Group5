@@ -4,11 +4,10 @@ package sechalmersmdsdgroup5.hotel.payment.util;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.util.Switch;
-
-import sechalmersmdsdgroup5.hotel.payment.*;
-
+import sechalmersmdsdgroup5.hotel.payment.CreditCard;
+import sechalmersmdsdgroup5.hotel.payment.IPayment;
+import sechalmersmdsdgroup5.hotel.payment.Payable;
 import sechalmersmdsdgroup5.hotel.payment.impl.PaymentPackageImpl;
 
 /**

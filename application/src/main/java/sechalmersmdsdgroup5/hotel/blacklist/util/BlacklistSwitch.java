@@ -4,11 +4,10 @@ package sechalmersmdsdgroup5.hotel.blacklist.util;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.util.Switch;
-
-import sechalmersmdsdgroup5.hotel.blacklist.*;
-
+import sechalmersmdsdgroup5.hotel.blacklist.Blacklist;
+import sechalmersmdsdgroup5.hotel.blacklist.BlacklistItem;
+import sechalmersmdsdgroup5.hotel.blacklist.IBlacklist;
 import sechalmersmdsdgroup5.hotel.blacklist.impl.BlacklistPackageImpl;
 
 /**

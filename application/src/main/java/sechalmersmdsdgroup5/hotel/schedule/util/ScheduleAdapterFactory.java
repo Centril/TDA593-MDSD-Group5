@@ -4,13 +4,10 @@ package sechalmersmdsdgroup5.hotel.schedule.util;
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
-
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
-
 import org.eclipse.emf.ecore.EObject;
-
-import sechalmersmdsdgroup5.hotel.schedule.*;
-
+import sechalmersmdsdgroup5.hotel.schedule.Schedule;
+import sechalmersmdsdgroup5.hotel.schedule.Shift;
 import sechalmersmdsdgroup5.hotel.schedule.impl.SchedulePackageImpl;
 
 /**

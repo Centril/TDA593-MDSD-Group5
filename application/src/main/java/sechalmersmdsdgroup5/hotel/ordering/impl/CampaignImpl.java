@@ -2,15 +2,13 @@
  */
 package sechalmersmdsdgroup5.hotel.ordering.impl;
 
-import java.util.Date;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import sechalmersmdsdgroup5.hotel.ordering.Campaign;
 import sechalmersmdsdgroup5.hotel.ordering.Order;
 import sechalmersmdsdgroup5.hotel.ordering.PreOrder;
+
+import java.util.Date;
 
 /**
  * <!-- begin-user-doc -->

@@ -2,9 +2,9 @@
  */
 package sechalmersmdsdgroup5.hotel.personnel;
 
-import java.util.Date;
-
 import sechalmersmdsdgroup5.hotel.facilities.Key;
+
+import java.util.Date;
 
 /**
  * <!-- begin-user-doc -->

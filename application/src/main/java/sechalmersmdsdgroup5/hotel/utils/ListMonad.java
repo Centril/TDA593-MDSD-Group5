@@ -1,6 +1,9 @@
 package sechalmersmdsdgroup5.hotel.utils;
 
-import java.util.*;
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.List;
+import java.util.ListIterator;
 import java.util.function.Function;
 import java.util.stream.Stream;
 

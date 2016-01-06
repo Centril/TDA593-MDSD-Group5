@@ -25,8 +25,6 @@ import sechalmersmdsdgroup5.hotel.payment.PaymentFactory;
 import sechalmersmdsdgroup5.hotel.search.SearchResult;
 import sechalmersmdsdgroup5.hotel.services.Service;
 import sechalmersmdsdgroup5.hotel.services.ServiceBlueprint;
-import sechalmersmdsdgroup5.hotel.services.ServicesFactory;
-import sechalmersmdsdgroup5.hotel.services.impl.ServiceImpl;
 import sechalmersmdsdgroup5.hotel.services.impl.ServicesFactoryImpl;
 
 import java.util.ArrayList;

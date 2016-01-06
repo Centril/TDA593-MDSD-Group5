@@ -10,18 +10,17 @@ import sechalmersmdsdgroup5.hotel.clients.Customer;
 import sechalmersmdsdgroup5.hotel.clients.Guest;
 import sechalmersmdsdgroup5.hotel.clients.IClient;
 import sechalmersmdsdgroup5.hotel.clients.impl.ClientFacade;
-import sechalmersmdsdgroup5.hotel.clients.impl.ClientsFactoryImpl;
 import sechalmersmdsdgroup5.hotel.facilities.*;
 import sechalmersmdsdgroup5.hotel.facilities.impl.Facilities;
+import sechalmersmdsdgroup5.hotel.facilities.impl.RoomAttributeImpl;
 import sechalmersmdsdgroup5.hotel.identities.IdentitiesFactory;
-import sechalmersmdsdgroup5.hotel.identities.Identity;
 import sechalmersmdsdgroup5.hotel.identities.Organisation;
-import sechalmersmdsdgroup5.hotel.identities.impl.IdentityImpl;
+import sechalmersmdsdgroup5.hotel.identities.RealPerson;
+import sechalmersmdsdgroup5.hotel.ordering.Order;
 import sechalmersmdsdgroup5.hotel.ordering.RoomBooking;
 import sechalmersmdsdgroup5.hotel.ordering.impl.CheckInCheckOut;
 import sechalmersmdsdgroup5.hotel.ordering.impl.OrderingFacade;
 import sechalmersmdsdgroup5.hotel.ordering.impl.RoomBookingImpl;
-import sechalmersmdsdgroup5.hotel.facilities.impl.RoomAttributeImpl;
 import sechalmersmdsdgroup5.hotel.payment.CreditCard;
 import sechalmersmdsdgroup5.hotel.payment.PaymentFactory;
 import sechalmersmdsdgroup5.hotel.services.Service;
@@ -30,22 +29,7 @@ import sechalmersmdsdgroup5.hotel.services.ServicesFactory;
 
 import java.util.ArrayList;
 import java.util.Date;
-import sechalmersmdsdgroup5.hotel.facilities.impl.RoomAttributeImpl;
-import sechalmersmdsdgroup5.hotel.identities.RealPerson;
-import sechalmersmdsdgroup5.hotel.identities.impl.IdentitiesFactoryImpl;
-import sechalmersmdsdgroup5.hotel.ordering.Order;
-import sechalmersmdsdgroup5.hotel.ordering.OrderingFactory;
-import sechalmersmdsdgroup5.hotel.ordering.RoomBooking;
-import sechalmersmdsdgroup5.hotel.services.IService;
-import sechalmersmdsdgroup5.hotel.services.ServiceBlueprint;
-import sechalmersmdsdgroup5.hotel.services.ServicesFactory;
-import sechalmersmdsdgroup5.hotel.services.impl.ServiceFacade;
-
-import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
-
-import static sechalmersmdsdgroup5.hotel.cli.readers.StandardReaders.naturalInt;
 
 public class Populate implements Command.Consuming<Hotel>, IdentifiableCommand<Hotel, Void> {
     @Override

@@ -2,17 +2,15 @@
  */
 package sechalmersmdsdgroup5.hotel.facilities.impl;
 
-import java.util.Date;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import sechalmersmdsdgroup5.hotel.facilities.AccessLogItem;
 import sechalmersmdsdgroup5.hotel.facilities.Door;
 import sechalmersmdsdgroup5.hotel.facilities.Key;
+
+import java.util.Date;
 
 /**
  * <!-- begin-user-doc -->

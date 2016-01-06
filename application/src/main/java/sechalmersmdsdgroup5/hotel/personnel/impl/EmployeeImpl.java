@@ -9,7 +9,6 @@ import sechalmersmdsdgroup5.hotel.facilities.Key;
 import sechalmersmdsdgroup5.hotel.identities.impl.RealPersonImpl;
 import sechalmersmdsdgroup5.hotel.personnel.Employee;
 import sechalmersmdsdgroup5.hotel.personnel.Role;
-
 import sechalmersmdsdgroup5.hotel.schedule.Schedule;
 
 /**

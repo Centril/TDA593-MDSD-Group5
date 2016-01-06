@@ -4,15 +4,13 @@ package sechalmersmdsdgroup5.hotel.personnel.util;
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
-
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
-
 import org.eclipse.emf.ecore.EObject;
-
 import sechalmersmdsdgroup5.hotel.identities.Identity;
 import sechalmersmdsdgroup5.hotel.identities.RealPerson;
-import sechalmersmdsdgroup5.hotel.personnel.*;
-
+import sechalmersmdsdgroup5.hotel.personnel.Employee;
+import sechalmersmdsdgroup5.hotel.personnel.Role;
+import sechalmersmdsdgroup5.hotel.personnel.Subcontractor;
 import sechalmersmdsdgroup5.hotel.personnel.impl.PersonnelPackageImpl;
 
 /**

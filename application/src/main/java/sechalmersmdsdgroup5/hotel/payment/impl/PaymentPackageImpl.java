@@ -2,44 +2,20 @@
  */
 package sechalmersmdsdgroup5.hotel.payment.impl;
 
-import org.eclipse.emf.ecore.EAttribute;
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EEnum;
-import org.eclipse.emf.ecore.EFactory;
-import org.eclipse.emf.ecore.EOperation;
-import org.eclipse.emf.ecore.EPackage;
-
-import org.eclipse.emf.ecore.EReference;
+import org.eclipse.emf.ecore.*;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
-
 import sechalmersmdsdgroup5.hotel.blacklist.impl.BlacklistPackageImpl;
-
 import sechalmersmdsdgroup5.hotel.clients.impl.ClientsPackageImpl;
-
 import sechalmersmdsdgroup5.hotel.facilities.impl.FacilitiesPackageImpl;
-
 import sechalmersmdsdgroup5.hotel.identities.impl.IdentitiesPackageImpl;
-
 import sechalmersmdsdgroup5.hotel.impl.HotelPackageImpl;
-
 import sechalmersmdsdgroup5.hotel.inventory.impl.InventoryPackageImpl;
-
 import sechalmersmdsdgroup5.hotel.log.impl.LogPackageImpl;
-
 import sechalmersmdsdgroup5.hotel.ordering.impl.OrderingPackageImpl;
-
-import sechalmersmdsdgroup5.hotel.payment.CreditCard;
-import sechalmersmdsdgroup5.hotel.payment.IPayment;
-import sechalmersmdsdgroup5.hotel.payment.Payable;
-import sechalmersmdsdgroup5.hotel.payment.PaymentFactory;
-import sechalmersmdsdgroup5.hotel.payment.PaymentMethod;
-
+import sechalmersmdsdgroup5.hotel.payment.*;
 import sechalmersmdsdgroup5.hotel.personnel.impl.PersonnelPackageImpl;
-
 import sechalmersmdsdgroup5.hotel.schedule.impl.SchedulePackageImpl;
-
 import sechalmersmdsdgroup5.hotel.search.impl.SearchPackageImpl;
-
 import sechalmersmdsdgroup5.hotel.services.impl.ServicesPackageImpl;
 
 /**

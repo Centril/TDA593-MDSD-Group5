@@ -5,13 +5,11 @@ package sechalmersmdsdgroup5.hotel.blacklist.impl;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
-
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-
-import sechalmersmdsdgroup5.hotel.blacklist.*;
 import sechalmersmdsdgroup5.hotel.blacklist.Blacklist;
+import sechalmersmdsdgroup5.hotel.blacklist.BlacklistFactory;
+import sechalmersmdsdgroup5.hotel.blacklist.BlacklistItem;
 
 /**
  * <!-- begin-user-doc -->

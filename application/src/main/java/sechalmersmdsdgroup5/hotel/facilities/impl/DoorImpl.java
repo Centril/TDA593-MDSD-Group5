@@ -2,17 +2,15 @@
  */
 package sechalmersmdsdgroup5.hotel.facilities.impl;
 
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+import org.eclipse.emf.ecore.util.BasicInternalEList;
+import sechalmersmdsdgroup5.hotel.facilities.Area;
+import sechalmersmdsdgroup5.hotel.facilities.Door;
+
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
-import org.eclipse.emf.ecore.EClass;
-
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
-import org.eclipse.emf.ecore.util.BasicInternalEList;
-
-import sechalmersmdsdgroup5.hotel.facilities.Area;
-import sechalmersmdsdgroup5.hotel.facilities.Door;
 
 /**
  * <!-- begin-user-doc -->

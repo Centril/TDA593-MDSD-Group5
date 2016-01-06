@@ -4,11 +4,12 @@ package sechalmersmdsdgroup5.hotel.services.util;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.util.Switch;
 import sechalmersmdsdgroup5.hotel.payment.Payable;
-import sechalmersmdsdgroup5.hotel.services.*;
-
+import sechalmersmdsdgroup5.hotel.services.IService;
+import sechalmersmdsdgroup5.hotel.services.Service;
+import sechalmersmdsdgroup5.hotel.services.ServiceBlueprint;
+import sechalmersmdsdgroup5.hotel.services.ServiceConsumer;
 import sechalmersmdsdgroup5.hotel.services.impl.ServicesPackageImpl;
 
 /**

@@ -5,12 +5,12 @@ package sechalmersmdsdgroup5.hotel.personnel.impl;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
-
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-
-import sechalmersmdsdgroup5.hotel.personnel.*;
+import sechalmersmdsdgroup5.hotel.personnel.Employee;
+import sechalmersmdsdgroup5.hotel.personnel.PersonnelFactory;
+import sechalmersmdsdgroup5.hotel.personnel.Role;
+import sechalmersmdsdgroup5.hotel.personnel.Subcontractor;
 
 /**
  * <!-- begin-user-doc -->

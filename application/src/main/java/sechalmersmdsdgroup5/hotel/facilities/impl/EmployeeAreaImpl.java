@@ -3,9 +3,7 @@
 package sechalmersmdsdgroup5.hotel.facilities.impl;
 
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import sechalmersmdsdgroup5.hotel.facilities.EmployeeArea;
 
 /**
