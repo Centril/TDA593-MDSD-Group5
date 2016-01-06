@@ -42,7 +42,7 @@ public class CheckIn implements Command.Consuming<Hotel>, IdentifiableCommand<Ho
                 }
             }
             if (roomBooking == null) {
-                ioHelper.info("No booking selected");
+                ioHelper.warn("No booking selected, or none found");
             } else if ((new CheckInCheckOut()).checkIn(guest, roomBooking)) {
                 ioHelper.info("Guest and booking successfully checked in");
             } else {
