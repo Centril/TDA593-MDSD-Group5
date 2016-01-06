@@ -307,15 +307,22 @@ class RoomBookingImpl implements RoomBooking {
 	 * @generated
 	 */
 	public boolean isPaid() {
-		return isPaid;
+		for (Service service : services) {
+			if (!service.isPaid()) {
+				return false;
+			}
+		}
+
+		return this.isPaid;
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
+	 * sets all payables in the room to the new value.
 	 */
 	public void setIsPaid(boolean newIsPaid) {
+		for (Service service : services) {
+			service.setIsPaid(newIsPaid);
+		}
 		isPaid = newIsPaid;
 	}
 

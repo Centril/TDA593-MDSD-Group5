@@ -29,6 +29,7 @@ public class Main {
 				.add(AddGuest::new)
 				.add(AddServiceToBooking::new)
 				.add(PayForOrder::new)
+				.add(Debit::new)
 				.add(ReadBooking::new)
 				.add(ReadOrder::new)
 				.add(ReadServicesBooking::new)

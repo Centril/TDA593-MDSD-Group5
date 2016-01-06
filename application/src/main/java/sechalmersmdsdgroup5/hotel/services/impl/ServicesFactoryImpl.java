@@ -20,6 +20,7 @@ import sechalmersmdsdgroup5.hotel.services.*;
  */
 public class ServicesFactoryImpl extends EFactoryImpl implements ServicesFactory {
 	/**
+	 *
 	 * The singleton instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

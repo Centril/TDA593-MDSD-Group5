@@ -32,6 +32,8 @@ public class Populate implements Command.Consuming<Hotel>, IdentifiableCommand<H
     public void accept(IOHelper io, Hotel hotel) {
         hotel.getRoomPrototypes().addAll(generateRoomPrototypes());
         hotel.getRooms().addAll(generateRooms());
+        hotel.getOrders().addAll(generateOrders());
+        hotel.getServiceBlueprints().addAll(generateServiceBlueprints());
         // TODO create some active bookings
 
         
