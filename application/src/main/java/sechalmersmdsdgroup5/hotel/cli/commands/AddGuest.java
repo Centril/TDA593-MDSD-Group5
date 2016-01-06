@@ -69,6 +69,7 @@ public class AddGuest implements IdentifiableCommand<Hotel, Optional<Guest>> {
 		String reason = new IBlacklistImpl( hotel ).getBlacklistReason( guest );
 
 		if( reason == null ) {
+			hotel.getGuests().add(guest);
 			return guest;
 		}
 
