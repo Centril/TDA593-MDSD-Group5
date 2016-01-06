@@ -318,15 +318,22 @@ public class RoomBookingImpl implements RoomBooking {
 	 * @generated
 	 */
 	public boolean isPaid() {
-		return isPaid;
+		for (Service service : services) {
+			if (!service.isPaid()) {
+				return false;
+			}
+		}
+
+		return this.isPaid;
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
+	 * sets all payables in the room to the new value.
 	 */
 	public void setIsPaid(boolean newIsPaid) {
+		for (Service service : services) {
+			service.setIsPaid(newIsPaid);
+		}
 		isPaid = newIsPaid;
 	}
 
@@ -367,7 +374,10 @@ public class RoomBookingImpl implements RoomBooking {
 		double total = 0;
 		//Services
 		for (Service service : services) {
-			total += service.totalPrice();
+			//Makes sure a service can be paid for before the order is paid for.
+			if (!service.isPaid()) {
+				total += service.totalPrice();
+			}
 		}
 		//Days times base price for the room
 		total += bookedRoom.getBasePrice() * daysBetween(startDate,endDate);

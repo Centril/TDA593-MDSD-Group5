@@ -2,21 +2,19 @@
  */
 package sechalmersmdsdgroup5.hotel.services.impl;
 
-import java.util.Collection;
-import java.util.Date;
-import java.util.List;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.emf.ecore.util.BasicInternalEList;
 import sechalmersmdsdgroup5.hotel.ordering.Invoice;
-import sechalmersmdsdgroup5.hotel.ordering.OrderingFactory;
 import sechalmersmdsdgroup5.hotel.services.Service;
+import sechalmersmdsdgroup5.hotel.services.ServiceBlueprint;
 import sechalmersmdsdgroup5.hotel.services.ServiceConsumer;
+import java.util.Collection;
+import java.util.Date;
+import java.util.List;
 
 /**
  * <!-- begin-user-doc -->
@@ -31,11 +29,14 @@ import sechalmersmdsdgroup5.hotel.services.ServiceConsumer;
  *   <li>{@link sechalmersmdsdgroup5.hotel.services.impl.ServiceImpl#isPaid <em>Is Paid</em>}</li>
  *   <li>{@link sechalmersmdsdgroup5.hotel.services.impl.ServiceImpl#getCreationDate <em>Creation Date</em>}</li>
  *   <li>{@link sechalmersmdsdgroup5.hotel.services.impl.ServiceImpl#getConsumer <em>Consumer</em>}</li>
+ *   <li>{@link sechalmersmdsdgroup5.hotel.services.impl.ServiceImpl#getId <em>Id</em>}</li>
+ *   <li>{@link sechalmersmdsdgroup5.hotel.services.impl.ServiceImpl#getName <em>Name</em>}</li>
+ *   <li>{@link sechalmersmdsdgroup5.hotel.services.impl.ServiceImpl#getBlueprint <em>Blueprint</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class ServiceImpl extends MinimalEObjectImpl.Container implements Service {
+public class ServiceImpl extends MinimalEObjectImpl.Container implements Service{
 	/**
 	 * The cached value of the '{@link #getInvoice() <em>Invoice</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
@@ -45,7 +46,7 @@ public class ServiceImpl extends MinimalEObjectImpl.Container implements Service
 	 * @ordered
 	 */
 	protected EList<Invoice> invoice;
-
+	
 	/**
 	 * The default value of the '{@link #getPrice() <em>Price</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -85,7 +86,6 @@ public class ServiceImpl extends MinimalEObjectImpl.Container implements Service
 	 * @ordered
 	 */
 	protected boolean isPaid = IS_PAID_EDEFAULT;
-
 	/**
 	 * The default value of the '{@link #getCreationDate() <em>Creation Date</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -117,6 +117,56 @@ public class ServiceImpl extends MinimalEObjectImpl.Container implements Service
 	protected ServiceConsumer consumer;
 
 	/**
+	 * The default value of the '{@link #getId() <em>Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getId()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final int ID_EDEFAULT = 0;
+
+	/**
+	 * The cached value of the '{@link #getId() <em>Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getId()
+	 * @generated
+	 * @ordered
+	 */
+	protected int id = ID_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String NAME_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected String name = NAME_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getBlueprint() <em>Blueprint</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getBlueprint()
+	 * @generated
+	 * @ordered
+	 */
+	protected ServiceBlueprint blueprint;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -135,10 +185,6 @@ public class ServiceImpl extends MinimalEObjectImpl.Container implements Service
 		this.setPrice(price);
 		this.setConsumer(consumer);
 		this.setCreationDate(new Date());
-
-		invoice = new BasicInternalEList<Invoice>(Invoice.class);
-		// TODO Create a correct standard invoice for this Service or check if no invoice should be created at this time
-		invoice.add(OrderingFactory.INSTANCE.createInvoice());
 	}
 
 	/**
@@ -253,12 +299,78 @@ public class ServiceImpl extends MinimalEObjectImpl.Container implements Service
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 */
+	public int getId() {
+		return id;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setId(int newId) {
+		id = newId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getName() {
+		return name;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setName(String newName) {
+		name = newName;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ServiceBlueprint getBlueprint() {
+		if (blueprint != null && ((EObject)blueprint).eIsProxy()) {
+			InternalEObject oldBlueprint = (InternalEObject)blueprint;
+			blueprint = (ServiceBlueprint)eResolveProxy(oldBlueprint);
+			if (blueprint != oldBlueprint) {
+			}
+		}
+		return blueprint;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ServiceBlueprint basicGetBlueprint() {
+		return blueprint;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setBlueprint(ServiceBlueprint newBlueprint) {
+		blueprint = newBlueprint;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public double totalPrice() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return price;
 	}
 
 	/**
@@ -280,6 +392,13 @@ public class ServiceImpl extends MinimalEObjectImpl.Container implements Service
 			case ServicesPackageImpl.SERVICE__CONSUMER:
 				if (resolve) return getConsumer();
 				return basicGetConsumer();
+			case ServicesPackageImpl.SERVICE__ID:
+				return getId();
+			case ServicesPackageImpl.SERVICE__NAME:
+				return getName();
+			case ServicesPackageImpl.SERVICE__BLUEPRINT:
+				if (resolve) return getBlueprint();
+				return basicGetBlueprint();
 		}
 		return eDynamicGet(featureID, resolve, coreType);
 	}
@@ -309,6 +428,15 @@ public class ServiceImpl extends MinimalEObjectImpl.Container implements Service
 			case ServicesPackageImpl.SERVICE__CONSUMER:
 				setConsumer((ServiceConsumer)newValue);
 				return;
+			case ServicesPackageImpl.SERVICE__ID:
+				setId((Integer)newValue);
+				return;
+			case ServicesPackageImpl.SERVICE__NAME:
+				setName((String)newValue);
+				return;
+			case ServicesPackageImpl.SERVICE__BLUEPRINT:
+				setBlueprint((ServiceBlueprint)newValue);
+				return;
 		}
 		eDynamicSet(featureID, newValue);
 	}
@@ -336,6 +464,15 @@ public class ServiceImpl extends MinimalEObjectImpl.Container implements Service
 			case ServicesPackageImpl.SERVICE__CONSUMER:
 				setConsumer((ServiceConsumer)null);
 				return;
+			case ServicesPackageImpl.SERVICE__ID:
+				setId(ID_EDEFAULT);
+				return;
+			case ServicesPackageImpl.SERVICE__NAME:
+				setName(NAME_EDEFAULT);
+				return;
+			case ServicesPackageImpl.SERVICE__BLUEPRINT:
+				setBlueprint((ServiceBlueprint)null);
+				return;
 		}
 		eDynamicUnset(featureID);
 	}
@@ -358,6 +495,12 @@ public class ServiceImpl extends MinimalEObjectImpl.Container implements Service
 				return CREATION_DATE_EDEFAULT == null ? creationDate != null : !CREATION_DATE_EDEFAULT.equals(creationDate);
 			case ServicesPackageImpl.SERVICE__CONSUMER:
 				return consumer != null;
+			case ServicesPackageImpl.SERVICE__ID:
+				return id != ID_EDEFAULT;
+			case ServicesPackageImpl.SERVICE__NAME:
+				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+			case ServicesPackageImpl.SERVICE__BLUEPRINT:
+				return blueprint != null;
 		}
 		return eDynamicIsSet(featureID);
 	}
@@ -378,6 +521,10 @@ public class ServiceImpl extends MinimalEObjectImpl.Container implements Service
 		result.append(isPaid);
 		result.append(", creationDate: ");
 		result.append(creationDate);
+		result.append(", id: ");
+		result.append(id);
+		result.append(", name: ");
+		result.append(name);
 		result.append(')');
 		return result.toString();
 	}

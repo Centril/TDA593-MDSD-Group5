@@ -23,7 +23,13 @@ import sechalmersmdsdgroup5.hotel.ordering.impl.OrderingFacade;
 import sechalmersmdsdgroup5.hotel.payment.CreditCard;
 import sechalmersmdsdgroup5.hotel.payment.PaymentFactory;
 import sechalmersmdsdgroup5.hotel.search.SearchResult;
+import sechalmersmdsdgroup5.hotel.services.Service;
+import sechalmersmdsdgroup5.hotel.services.ServiceBlueprint;
+import sechalmersmdsdgroup5.hotel.services.ServicesFactory;
+import sechalmersmdsdgroup5.hotel.services.impl.ServiceImpl;
+import sechalmersmdsdgroup5.hotel.services.impl.ServicesFactoryImpl;
 
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -82,6 +88,8 @@ public class CreateOrder implements IdentifiableCommand<Hotel, Order> {
 
             // Keep adding forever until we can't add guests anymore:
             while ( io.read( "Add more guests?", addMore() ) && basicAddGuest( io, hotel, booking ) != null );
+
+            setServices(booking, hotel, io);
 
             return booking;
         } ) );
@@ -142,7 +150,7 @@ public class CreateOrder implements IdentifiableCommand<Hotel, Order> {
         String municipality = io.read( "Address, municipality?" ) ;
         String street = io.read( "Address, street?" ) ;
         String zipArea = io.read( "Address, zip area?" ) ;
-        String zipCode = io.read( "Address, zip code?", "Not a zip code.", naturalInt() ).toString() ;
+        int zipCode = io.read( "Address, zip code?", "Not a zip code.", naturalInt() );
         String careOf = io.read( "Address, care of?" );
 
         Address address = facade.createAddress(street, zipCode, zipArea, country, region, municipality, careOf);
@@ -154,8 +162,35 @@ public class CreateOrder implements IdentifiableCommand<Hotel, Order> {
         card.setExpiryMonth( io.read( "Card expiry month?", "Not a month.", naturalInt() ) );
         card.setExpiryYear( io.read( "Card expiry year?", "Not a year.", naturalInt() ) );
 
-        Customer customer = facade.createCustomer(identity, null, email);
+        Customer customer = facade.createCustomer(identity, null, email, card, address);
         return customer;
+    }
+
+    private void setServices(RoomBooking booking, Hotel hotel, IOHelper io){
+        List<ServiceBlueprint> bookableServices = new ArrayList<>();
+        bookableServices.addAll(hotel.getServiceBlueprints());
+        bookableServices.remove(booking.getBookedRoom().getServicesAfforded());
+
+        List<Service> bookedServices = booking.getServices();
+
+        int choice = 0;
+
+        while(true) {
+            io.info("Adding services to booking...").newline();
+            for (ServiceBlueprint bp : bookableServices) {
+                io.info(bp.toString()).newline();
+            }
+            try {
+                choice = Integer.parseInt(io.read("Choose service by index, type non-numeral to exit"));
+            } catch (NumberFormatException e) {
+                break;
+            }
+
+            Service toAdd = new ServicesFactoryImpl().createService();
+            toAdd.setBlueprint(bookableServices.get(choice));
+            bookableServices.remove(choice);
+            bookedServices.add(toAdd);
+        }
     }
 
     private void specifyIdentity( IOHelper io, Identity identity ) {

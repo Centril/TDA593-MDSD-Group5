@@ -329,6 +329,8 @@
               <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
             </ownedParameter>
             <ownedParameter xmi:type="uml:Parameter" xmi:id="_pWB9oLPNEeW-BMSKTAd4hg" name="return" type="_7PSgoJOAEeWEKYEtRmghUQ" direction="return"/>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_6ZJ0QLR5EeWqYuhazXk3YA" name="card" type="_YJJ_IJRWEeWEKYEtRmghUQ"/>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_RMN8YLR6EeWqYuhazXk3YA" name="address" type="_-3k78JqREeWXppCtG_WnKw"/>
           </ownedOperation>
           <ownedOperation xmi:type="uml:Operation" xmi:id="_qwIZkLPMEeW-BMSKTAd4hg" name="createGuest">
             <ownedParameter xmi:type="uml:Parameter" xmi:id="_0DmJALPMEeW-BMSKTAd4hg" name="name">
@@ -338,7 +340,7 @@
               <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
             </ownedParameter>
             <ownedParameter xmi:type="uml:Parameter" xmi:id="_YLu00LPNEeW-BMSKTAd4hg" name="age">
-              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
             </ownedParameter>
             <ownedParameter xmi:type="uml:Parameter" xmi:id="_lASscLPNEeW-BMSKTAd4hg" name="return" type="_st4FoJOAEeWEKYEtRmghUQ" direction="return"/>
           </ownedOperation>
@@ -347,7 +349,7 @@
               <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
             </ownedParameter>
             <ownedParameter xmi:type="uml:Parameter" xmi:id="_79hdMLPNEeW-BMSKTAd4hg" name="zipCode">
-              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
             </ownedParameter>
             <ownedParameter xmi:type="uml:Parameter" xmi:id="_9k_xULPNEeW-BMSKTAd4hg" name="zipArea">
               <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
@@ -1069,11 +1071,24 @@
             <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_f3qDcJbpEeWGQOCCfM2qyw" value="1"/>
             <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_f3qqgJbpEeWGQOCCfM2qyw" value="1"/>
           </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_RqZMgLSCEeWJL4tgK1WEsQ" name="id">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_mIAgMLSCEeWJL4tgK1WEsQ" name="name">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_1Uji4LSCEeWJL4tgK1WEsQ" name="blueprint" type="_6sH2MJRREeWEKYEtRmghUQ" aggregation="shared" association="_1UfRcLSCEeWJL4tgK1WEsQ"/>
           <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_alDh0KAzEeWDjIMsRDMNyg" client="_4zgHsJRREeWEKYEtRmghUQ" supplier="_BDMDQJ9FEeW5UY5BQ7hdQQ" contract="_BDMDQJ9FEeW5UY5BQ7hdQQ"/>
         </packagedElement>
         <packagedElement xmi:type="uml:Class" xmi:id="_6sH2MJRREeWEKYEtRmghUQ" name="ServiceBlueprint">
           <ownedAttribute xmi:type="uml:Property" xmi:id="_KbVbkJXHEeWibcI8pRhyBw" name="basePrice" visibility="private">
             <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#double"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_Ws6EILSCEeWJL4tgK1WEsQ" name="id">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_bkHqsLSCEeWJL4tgK1WEsQ" name="name">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
           </ownedAttribute>
         </packagedElement>
         <packagedElement xmi:type="uml:Interface" xmi:id="_yo2uEJboEeWGQOCCfM2qyw" name="ServiceConsumer"/>
@@ -1395,6 +1410,12 @@
         <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_ha-nArIqEeWBP-vFFLUuRA" key="nature" value="UML_Nature"/>
       </eAnnotations>
       <ownedEnd xmi:type="uml:Property" xmi:id="_ha_OELIqEeWBP-vFFLUuRA" name="order" type="_f1YaIJOJEeWEKYEtRmghUQ" association="_ha-nALIqEeWBP-vFFLUuRA"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_1UfRcLSCEeWJL4tgK1WEsQ" memberEnd="_1Uji4LSCEeWJL4tgK1WEsQ _1UkJ8LSCEeWJL4tgK1WEsQ">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_1UhGoLSCEeWJL4tgK1WEsQ" source="org.eclipse.papyrus">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_1UhtsLSCEeWJL4tgK1WEsQ" key="nature" value="UML_Nature"/>
+      </eAnnotations>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_1UkJ8LSCEeWJL4tgK1WEsQ" name="service" type="_4zgHsJRREeWEKYEtRmghUQ" association="_1UfRcLSCEeWJL4tgK1WEsQ"/>
     </packagedElement>
     <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_0lMEUJN5EeWEKYEtRmghUQ">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_0lNScJN5EeWEKYEtRmghUQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
