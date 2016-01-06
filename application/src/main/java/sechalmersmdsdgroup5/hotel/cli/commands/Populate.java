@@ -110,6 +110,48 @@ public class Populate implements Command.Consuming<Hotel>, IdentifiableCommand<H
         someGuests.add(facade.createGuest("Hampus D","1990715-7777","22"));
 
         return someGuests;
+    }
 
+    private List<RoomBooking> generateBookings(Hotel hotel) {
+        List<RoomBooking> someBookings = new ArrayList<>();
+
+        List <Guest> guestList1 = new ArrayList<>();
+        guestList1.add(hotel.getGuests().get(4));
+        someBookings.add(new RoomBookingImpl(new Date(116, 2, 0), new Date(116, 2,15), hotel.getRooms().get(2),
+                guestList1, new ArrayList<>()));
+
+        List <Guest> guestList2 = new ArrayList<>();
+        guestList2.add(hotel.getGuests().get(5));
+        List <Service> serviceList = new ArrayList<>();
+        Service service = ServicesFactory.INSTANCE.createService();
+        service.setPrice(hotel.getServiceBlueprints().get(0).getBasePrice());
+        serviceList.add(service);
+        RoomBooking booking = new RoomBookingImpl(new Date(116, 0, 14), new Date(116, 0,15), hotel.getRooms().get(4),
+                guestList2, serviceList);
+        service.setConsumer(booking);
+        someBookings.add(booking);
+
+        List <Guest> guestList3 = new ArrayList<>();
+        guestList3.add(hotel.getGuests().get(9));
+        guestList3.add(hotel.getGuests().get(10));
+
+        List<Service> serviceList1 = new ArrayList<>();
+
+
+        Service service1 = ServicesFactory.INSTANCE.createService();
+        service1.setPrice(hotel.getServiceBlueprints().get(1).getBasePrice());
+        Service service2 = ServicesFactory.INSTANCE.createService();
+        service2.setPrice(hotel.getServiceBlueprints().get(0).getBasePrice());
+        serviceList1.add(service1);
+        serviceList1.add(service2);
+        RoomBooking booking1 = new RoomBookingImpl(new Date(116, 4, 20), new Date(116, 4,24), hotel.getRooms().get(4),
+                guestList3, serviceList1);
+        service1.setConsumer(booking1);
+        service2.setConsumer(booking1);
+
+        someBookings.add(booking1);
+
+
+        return someBookings;
     }
 }
