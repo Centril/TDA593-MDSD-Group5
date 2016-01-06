@@ -1,6 +1,6 @@
 # Diff Log of things changed in interfaces
+This list specifies all changes that have been done to the classdiagram since the hand in of the final report. This includes the addition of sysops and interfaces as well as minor changes of spelling and clarification of names.
 
-> Add as you go...
 + 2015-12-18: Added `IFacilities` interface to `facilities` packages.
 + 2015-12-18: Fixed relationship between `Room` and `RoomAttribute`:s.
 + 2015-12-18: Fixed generics in `And`, `Or`, `Not`, `MatchesCriteria` in that `? extends SRT` and `? extends IN` was wrong for properties, so it now takes `SRT` & `IN`.
@@ -25,10 +25,10 @@
 + 2016-01-03: Added system operation for searching for `Order`s associated with a `Customer`'s name.
 + 2016-01-03: Added getter for `Customer` in the `Order` interface. Was forgotten, present in domain model.
 + 2016-01-04: Added sysop `getBlacklistreason(identity)` which returns the reason an `Identity` is blacklisted or `null` if the `Identity` isn't blacklisted.
-+ 2016-01-04: Added Room::getLocalAttributes().
-+ 2016-01-04: Added ISearch::searchCustomer().
-+ 2016-01-05: Added IClient.
-+ 2016-01-06: Added ServiceBlueprint.{name, id}, Setvice.{name, id, blueprint}.
++ 2016-01-04: Added `Room::getLocalAttributes()`.
++ 2016-01-04: Added `ISearch::searchCustomer()`.
++ 2016-01-05: Added `IClient`.
++ 2016-01-06: Added `ServiceBlueprint.{name, id}, Service.{name, id, blueprint}`.
 
 # Regarding `searchAvailableOrders -> searchAvailableBookings`
 > `List<SearchResult<PreOrder>> searchAvailableOrders( SearchQuery<PreOrder> query )`
@@ -100,8 +100,8 @@ then the `size(available-pre-orders) = 2^33`, which is larger than an integer on
 We therefore decided that the most reasonable thing to do is to just
 let the user pick from the list of available bookings and
 perhaps give higher relevance for those rooms that have more beds.
-+2016-01-04: Add createRoomPrototype sysop
-+2016-01-04: Change createOrder to take a list of roombookings instead of a preorder
-+2016-01-05: Add IClient interface and sysop createCustomer(identiy, paymenmethod, email)
-+2016-01-05: Add IIdentity interface and sysop createIdentity(name, ssn)
-+2016-01-05: Add createAddress and move createGuest into IClient
++2016-01-04: Add `createRoomPrototype` sysop
++2016-01-04: Change `createOrder` to take a list of `roomBookings` instead of a `preOrder`
++2016-01-05: Add `IClient` interface and sysop `createCustomer(identiy, paymenmethod, email)`
++2016-01-05: Add `IIdentity` interface and sysop `createIdentity(name, ssn)`
++2016-01-05: Add `createAddress` and move `createGuest` into `IClient`
