@@ -204,43 +204,24 @@ public class Populate implements Command.Consuming<Hotel>, IdentifiableCommand<H
      * Can be used to test this command.
      * @return
      */
-    public static List<Order> generateOrders() {
-        // Create test customer
+    public List<Order> generateOrders(Hotel hotel, List<RoomBooking> bookings) {
+        List<Order> someOrders = new ArrayList<>();
 
-        Customer customer = ClientsFactoryImpl.eINSTANCE.createCustomer();
-        RealPerson testPerson = IdentitiesFactoryImpl.eINSTANCE.createRealPerson();
-        testPerson.setName("John Doe");
+        List<RoomBooking> bookings1 = new ArrayList<>();
+        bookings1.add(bookings.get(0));
+        Order order1 = (new OrderingFacade(hotel)).createOrder(bookings1, hotel.getCustomers().get(0));
 
-        //Create room prototype
-        RoomPrototype testRoomPrototype = FacilitiesFactory.INSTANCE.createRoomPrototype();
-        testRoomPrototype.setName("Single-room suite");
-        testRoomPrototype.setBasePrice(705.50);
-        PrototypeOrdering orderingTest = FacilitiesFactory.INSTANCE.createPrototypeOrdering();
-        orderingTest.setOrder(1);
-        orderingTest.setPrototype(testRoomPrototype);
-        List<PrototypeOrdering> prototypeOrderings = new ArrayList<>();
-        prototypeOrderings.add(orderingTest);
+        List<RoomBooking> bookings2 = new ArrayList<>();
+        bookings2.add(bookings.get(1));
+        bookings2.add(bookings.get(2));
+        Order order2 = (new OrderingFacade(hotel)).createOrder(bookings2, hotel.getCustomers().get(1));
 
-        //Create test room booking using prototype.
-        Room room = FacilitiesFactory.INSTANCE.createRoom(prototypeOrderings);
-        RoomBooking booking = OrderingFactory.INSTANCE.createRoomBooking();
-        booking.setBookedRoom(room);
-        // Set start and end-dates.
-        Calendar cal = Calendar.getInstance();
-        cal.set(2016,1,7);
-        booking.setStartDate(cal.getTime());
-        cal.set(2016,1,8);
-        booking.setEndDate(cal.getTime());
-        List<RoomBooking> bookingsList = new ArrayList<>();
-        bookingsList.add(booking);
-        //Add service to booking.
-        IService service = new ServiceFacade();
-        service.addServiceToBooking(booking, ServicesFactory.INSTANCE.createService(204.8, booking));
-        //Create test order
+        someOrders.add(order1);
+        someOrders.add(order2);
+        return someOrders;
+    }
 
-        List<Order> orderList = new ArrayList<>();
-        orderList.add(OrderingFactory.INSTANCE.createOrder(null, customer, false, null, bookingsList, null));
-        return orderList;
+    
     }
 
 
